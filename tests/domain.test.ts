@@ -12,6 +12,7 @@ import { assertReleaseConfiguration } from '../src/config/release.ts';
 import { assertPublishable } from '../src/domain/evidence.ts';
 import { present } from '../src/domain/format.ts';
 import { fieldSeasonExample, focusField } from '../src/content/examples/field-season.ts';
+import { fieldSensitivityBreakEven, fieldSensitivityScenarios } from '../src/content/examples/field-sensitivity.ts';
 
 const units = {
   perArea: { ha: '/ha' },
@@ -45,6 +46,23 @@ test('statistics-calibrated focus field stays hypothetical and internally consis
   assert.equal(fieldSeasonExample.meta.evidence, 'hypothetical');
   assert.equal(fieldSeasonExample.meta.confidence, 'not-assessed');
   assert.deepEqual(fieldSeasonExample.meta.provenance, ['market', 'derived-modelled']);
+});
+
+test('deterministic sensitivity scenarios isolate yield and price without becoming a forecast', () => {
+  const byId = Object.fromEntries(fieldSensitivityScenarios.map((s) => [s.id, s]));
+
+  assert.equal(byId.base.operatingProfitPerHa, -69.1);
+  assert.equal(byId.downside.operatingProfitPerHa, -214.62);
+  assert.equal(byId['price-up'].operatingProfitPerHa, 7.49);
+  assert.equal(byId['yield-up'].operatingProfitPerHa, 7.49);
+  assert.equal(byId.upside.operatingProfitPerHa, 91.74);
+
+  for (const s of fieldSensitivityScenarios) {
+    assert.equal(s.operatingCostsPerHa, 835, `${s.id}: costs stay fixed by design`);
+  }
+
+  assert.equal(fieldSensitivityBreakEven.pricePerT, 225.68);
+  assert.equal(fieldSensitivityBreakEven.yieldPerHa, 4.03);
 });
 
 test('the same value is presented per locale and currency, never with a hard-coded symbol', () => {
