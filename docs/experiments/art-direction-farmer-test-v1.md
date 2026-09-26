@@ -117,7 +117,7 @@ For each participant:
 9. Repeat with remaining directions.
 10. Only after all independent tasks, ask comparative preference and why.
 11. Run the AD-5 mobile task on the same direction set or a balanced subset.
-12. Run AD-6 (bad news / uncertainty) and the AD-7 surface transfer as separate tasks, in counterbalanced direction order. The AD-7 domain transfer (crop/pig/dairy) is an internal team diagnostic and is not shown to participants.
+12. Run AD-6 (bad news / uncertainty) and the AD-7 surface transfer as separate tasks, in counterbalanced direction order. The AD-7 domain transfer (crop/horticulture-greenhouse/pig/dairy-other-livestock) is an internal team diagnostic and is not shown to participants.
 
 Do not disclose the internal research prior (§2) to participants.
 
@@ -354,7 +354,7 @@ For each direction record:
 | Category-confusion pattern | | | |
 | Trust under bad news | | | |
 | Brand-system transfer — surfaces | | | |
-| Master-brand domain transfer (internal: crop/pig/dairy) | | | |
+| Master-brand domain transfer (internal: crop/horticulture-greenhouse/pig/dairy-other-livestock) | | | |
 | Qualitative farmer preference | | | |
 
 Use:
