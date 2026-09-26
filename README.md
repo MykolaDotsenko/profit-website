@@ -25,10 +25,12 @@ The website must communicate:
 
 “Verified” must only be used when the evidence and attribution standard is actually satisfied.
 
-## Documentation
+## Canonical documentation
 
-- [Website Strategy](docs/website-strategy.md)
-- [Website Blueprint v1](docs/website-blueprint-v1.md)
+- [Website Blueprint v1](docs/website-blueprint-v1.md) — operational source of truth for implementation
+- [Website Strategy](docs/website-strategy.md) — strategic source of truth
+
+## Research and supporting documentation
 - [Research Findings](docs/research-findings.md)
 - [Marketing Bestseller Findings](docs/marketing-bestseller-findings.md)
 - [Psychology Bestseller Findings](docs/psychology-bestseller-findings.md)
