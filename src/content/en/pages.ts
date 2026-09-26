@@ -12,6 +12,8 @@ import {
   pilotSteps,
   pilotStepsReview,
   primaryCta,
+  productionScopeNote,
+  productionSystems,
 } from './shared';
 
 const exampleLabels = {
@@ -41,12 +43,24 @@ const pilotCta = {
 export const farmers = {
   meta: {
     title: 'For farmers',
-    description: 'What PROFIT’s first module needs from a farm, what it gives back, what it does not do, and how the pilot would work.',
+    description: 'How PROFIT is being built across crop, horticulture and livestock production, with Field Profitability as the current first concrete product focus.',
   },
   intro: {
     eyebrow: 'For farmers',
-    title: 'What PROFIT asks of you, and what you get back',
-    lead: 'PROFIT starts with the operating economics of each field. Here is what the first module, Field Profitability, needs, what it produces, what it does not do, and how the pilot would work.',
+    title: 'Built for different farms — starting with one concrete product',
+    lead:
+      'PROFIT is being built around agricultural decision economics across crop, horticulture and livestock systems. The current first pilot focus is narrower: Field Profitability for field crops.',
+  },
+  scope: {
+    intro: {
+      id: 'production-systems',
+      eyebrow: 'Farm types',
+      title: 'Different production systems need different economic models',
+      lead:
+        'The common PROFIT logic is production reality → data/context → economics → uncertainty/evidence → decision. The operating unit and the inputs change by domain.',
+    } satisfies SectionIntro,
+    systems: productionSystems,
+    note: productionScopeNote,
   },
   provide: {
     intro: { id: 'what-you-provide', eyebrow: 'Inputs', title: 'What you would provide', lead: 'For each field and season.' } satisfies SectionIntro,
@@ -194,14 +208,124 @@ export const company = {
   intro: {
     eyebrow: 'Company',
     title: 'What we are building, and what is still being proven',
-    lead: 'PROFIT is building decision support that connects what happens on the farm with what it means economically.',
+    lead: 'PROFIT is building agricultural decision support that connects production reality with economic meaning across different farm systems.',
   },
   building: {
     intro: { id: 'what', eyebrow: 'What', title: 'What we are building' } satisfies SectionIntro,
     text: [
-      'Decision support for farm businesses, built on one idea: a farm decision should be made with its economics in view.',
-      'We start with one module, Field Profitability: the operating economics of each field, season by season.',
+      'Decision support for farm businesses, built on one idea: a production decision should be made with its economics, uncertainty and evidence in view.',
+      'The master brand is intended to span field crops, horticulture, orchards, greenhouse production, pigs, dairy and other livestock without forcing them into one production model.',
+      'We start concrete with one module, Field Profitability: the operating economics of each field, season by season.',
     ],
+  },
+  scope: {
+    intro: {
+      id: 'scope',
+      eyebrow: 'Scope',
+      title: 'One economic discipline, domain-specific production models',
+      lead:
+        'A hectare, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd are not interchangeable. PROFIT should preserve the production model while making the economics comparable and inspectable.',
+    } satisfies SectionIntro,
+    systems: productionSystems,
+    note: productionScopeNote,
+    evidence:
+      'EU agricultural output was €531.9B in 2024: €267.7B from crops and €218.8B from animals and animal products. Among the largest categories were milk (€78.6B), vegetables and horticultural products (€72.0B), pigs (€46.8B), fruits (€39.5B) and cattle (€38.4B). These are gross output values, not farm profit.',
+    source: {
+      label: 'Eurostat · Key figures on the European food chain 2025',
+      href: 'https://ec.europa.eu/eurostat/en/web/products-key-figures/w/ks-01-25-049',
+    },
+  },
+  dataStrategy: {
+    intro: {
+      id: 'data-strategy',
+      eyebrow: 'Data',
+      title: 'Work with the farm that exists',
+      lead:
+        'PROFIT should reduce manual data work, not make digital sophistication a condition for understanding farm economics.',
+    } satisfies SectionIntro,
+    items: [
+      {
+        title: 'Existing records first',
+        text: 'Use production, sales, cost, feed, herd, field and operational records that already exist before asking the farm to create another parallel record system.',
+      },
+      {
+        title: 'Automatic where reliable',
+        text: 'Use machine, sensor, positioning or external data when it improves quality and reduces workload. Do not make telemetry a prerequisite.',
+      },
+      {
+        title: 'Older equipment must still fit',
+        text: 'For non-connected machinery, future workflows should minimise operator input and use context such as time and location where appropriate, with human confirmation for exceptions.',
+      },
+      {
+        title: 'Offline-first where operations require it',
+        text: 'Farm work cannot depend on continuous coverage. Capture locally and synchronise later when connectivity returns.',
+      },
+      {
+        title: 'Permission and provenance',
+        text: 'Every important input needs a known source, a stated purpose and farmer permission. Inferred data must remain distinguishable from recorded data.',
+      },
+    ] satisfies TextItem[],
+    evidence:
+      'Eurostat reported that about 11% of EU farms used a farm management information system in 2023 and around 18% of farms with utilised agricultural area used some precision-farming technology or practice. A 2026 European Commission connectivity study also recommends digital solutions that can work offline and synchronise later.',
+    sources: [
+      {
+        label: 'Eurostat · Digitalisation in EU agriculture, 2023 data',
+        href: 'https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260724-1',
+      },
+      {
+        label: 'European Commission · Future connectivity needs for precision farming, 2026',
+        href: 'https://digital-strategy.ec.europa.eu/en/library/assessment-future-connectivity-needs-precision-farming-adoption',
+      },
+    ],
+  },
+  forecasting: {
+    intro: {
+      id: 'forecasting',
+      eyebrow: 'Forecasting',
+      title: 'Forecast uncertainty, then translate it into economics',
+      lead:
+        'PROFIT should not hide uncertain farm outcomes behind one precise-looking profit forecast. Known arithmetic stays deterministic; uncertain drivers are forecast, validated and carried into economic scenarios.',
+    } satisfies SectionIntro,
+    items: [
+      {
+        title: 'Baseline before sophistication',
+        text: 'Start with historical or simple statistical baselines. A complex model has to earn its place by materially improving out-of-sample performance.',
+      },
+      {
+        title: 'Forecast drivers, not a black-box profit number',
+        text: 'Yield, production, selling price, feed, energy or other domain-specific uncertainties can be modelled separately and then passed through explicit economics.',
+      },
+      {
+        title: 'Compare alternatives',
+        text: 'Decision support should compare scenario A, scenario B and a defensible do-nothing or current-practice counterfactual.',
+      },
+      {
+        title: 'Validate through time and across farms',
+        text: 'Use future periods and independent farms/fields where possible, not only random splits that leak the structure of historical data.',
+      },
+      {
+        title: 'Show range, confidence and assumptions',
+        text: 'A calibrated range is more useful than false precision when weather, biology and markets remain uncertain.',
+      },
+      {
+        title: 'Close the evidence loop',
+        text: 'A forecast is not Verified Economic Value. After the decision, actual outcome, counterfactual, incremental effect, attribution and confidence still have to be assessed.',
+      },
+    ] satisfies TextItem[],
+    research:
+      'A 2025 systematic review of 97 crop-yield studies found Linear Regression, Random Forest and Gradient Boosting Trees among the most-used ML approaches; a 2024 tree-crop review found that smaller datasets often use simpler models while larger datasets can justify more complex methods. PROFIT’s rule is therefore baseline-first and evidence-led, not AI-for-AI’s-sake.',
+    sources: [
+      {
+        label: 'Smart Agricultural Technology · crop-yield ML systematic review',
+        href: 'https://doi.org/10.1016/j.atech.2024.100718',
+      },
+      {
+        label: 'Smart Agricultural Technology · tree-crop yield systematic review',
+        href: 'https://doi.org/10.1016/j.atech.2024.100556',
+      },
+    ],
+    note:
+      'This is the PROFIT development direction. It is not a claim that the current Field Profitability build already performs forecasting, optimisation or scenario simulation.',
   },
   why: {
     intro: { id: 'why', eyebrow: 'Why', title: 'Why' } satisfies SectionIntro,
@@ -312,13 +436,19 @@ const pilotForm: PilotFormContent = {
     email: { label: 'Email', hint: 'We reply to this address.' },
     farmType: {
       label: 'Farm type',
-      hint: 'The first pilot module, Field Profitability, is for field crops.',
+      hint: 'Field Profitability is the first pilot focus. Other choices record your production context and interest; they do not imply a current module is available.',
       placeholder: 'Choose one',
       options: [
         { value: 'arable', label: 'Arable / field crops' },
-        { value: 'mixed', label: 'Mixed: crops and livestock' },
-        { value: 'livestock', label: 'Livestock' },
-        { value: 'other', label: 'Other' },
+        { value: 'horticulture', label: 'Horticulture / orchards / berries' },
+        { value: 'vegetables', label: 'Vegetables — open field' },
+        { value: 'greenhouse', label: 'Greenhouse / protected cultivation' },
+        { value: 'pigs', label: 'Pig production' },
+        { value: 'dairy', label: 'Dairy' },
+        { value: 'beef-grazing', label: 'Beef cattle / grazing livestock' },
+        { value: 'poultry-eggs', label: 'Poultry / eggs' },
+        { value: 'mixed', label: 'Mixed farm' },
+        { value: 'other', label: 'Other agricultural production' },
       ],
     },
   },
