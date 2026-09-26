@@ -682,3 +682,34 @@ Brand language includes both:
 **what we say + how we say it.**
 
 Avoid generic SaaS/AI language and corporate filler.
+
+
+## 27. AI sameness prevention
+
+AI-generated polish must never become the source of PROFIT's creative point of view.
+
+Required process:
+1. category deconstruction / exclusion board;
+2. human/problem-led divergent framing;
+3. at least 3 independent concept territories;
+4. proprietary inputs (real farm imagery, field geometry, product UI, economic/evidence system);
+5. AI used to expand/adapt, not define the initial identity;
+6. human convergence against trust, distinctiveness and product truth;
+7. systemise approved direction into tokens/components/rules;
+8. competitor-confusion and logo-off recognition tests;
+9. governed AI generation only from approved brand context.
+
+Primary anti-sameness signature:
+
+**real agriculture + field geometry + economic typography + evidence language + measured causal motion**
+
+Treat generic cues as high-risk by default:
+- stock farmer + tablet;
+- generic green SaaS;
+- AI glow/particles;
+- abstract neural networks;
+- generic satellite hero;
+- bento-card template;
+- "AI-powered / smarter / optimize / unlock insights" as identity language.
+
+A design is not considered brand-distinctive until target users can begin to recognise PROFIT codes without relying on the logo/name.
