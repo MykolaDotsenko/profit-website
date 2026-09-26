@@ -76,6 +76,7 @@ These files are an evidence library. They support decisions but do not silently 
 - [Frontend Masterclasses Deep Pass 2026](docs/frontend-masterclasses-deep-pass-2026.md)
 - [Frontend Technologies & Frameworks](docs/frontend-technologies-frameworks.md)
 - [Homepage Copy Deck v1](docs/homepage-copy-deck-v1.md) — implementation-ready English homepage copy; hero remains under WWW-000 validation.
+- [WWW-000 Statistical Surrogate v1](docs/experiments/www-000-statistical-surrogate-v1.md) — Finnish official-statistics calibration for synthetic field examples and a proxy H1/H2/H3 risk audit; not farmer evidence.
 - [Homepage Content Brief v1](docs/homepage-content-brief-v1.md) — section-by-section English homepage control for message, evidence, scope, trust, visual intent and claim boundaries.
 - [Whole-Farm Scope, Data Collection & Forecasting Evidence](docs/whole-farm-scope-evidence-2026-09-27.md)
 - [Website Trust & Professionalism Synthesis](docs/website-trust-professionalism-synthesis-2026-09-27.md) — cross-disciplinary bridge from website/brand/AI-sameness research and project work on human factors, data collection, forecasting and decision-support systems.
