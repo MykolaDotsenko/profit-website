@@ -285,10 +285,14 @@ Standardize these states across the site:
 - Verified
 
 ### Confidence
+Assessed confidence:
 - High
 - Medium
 - Low
 - Insufficient evidence
+
+Meta-state:
+- Not assessed — use only when confidence has not been evaluated; it is not a confidence level
 
 ### Data provenance
 - Farmer-provided
@@ -917,3 +921,21 @@ For every brand-critical AI-assisted asset, retain:
 - evidence status if economic claims appear.
 
 Brand-critical AI workflows must be versioned, auditable, and reversible.
+
+
+## 31. Research saturation and next-stage rule
+
+The general strategy/design/frontend research foundation is now sufficient for pre-production validation.
+
+Do not continue broad theory collection by default.
+
+Prioritize:
+1. three independent art-direction prototypes;
+2. farmer 10-second comprehension testing;
+3. brand-code recognition/confusion testing;
+4. signature-motion validation only after divergent art directions exist;
+5. production-platform decision.
+
+Start additional research only to resolve a specific OPEN hypothesis, verify a time-sensitive technical fact, materially challenge an existing decision, or reduce a meaningful risk.
+
+Repository context should carry persistent project rules; individual prompts should stay narrow and task-focused.
