@@ -70,7 +70,7 @@ Depends on: none.
 Outcome:
 Create three genuinely different concept territories:
 
-- A — Evidence-Led Editorial (current leading hypothesis)
+- A — Evidence-Led Editorial
 - B — Farm Operations Layer
 - C — Economic Control Room
 
@@ -81,6 +81,8 @@ Constraints:
 - keep evidence/confidence/provenance semantics identical across variants;
 - do not combine H1/H2/H3 with A/B/C as nine uncontrolled concepts;
 - do not hybridize A/B/C before the first visual test;
+- build all three to equivalent fidelity, content completeness and visual-production quality;
+- do not tell test participants which direction is the internal research prior;
 - illustrative values must be labelled correctly.
 
 Acceptance:
@@ -449,11 +451,12 @@ Do **not** create the entire backlog as active work at once.
 
 Current recommended active sequence:
 
-1. WWW-001 — create three genuinely different art directions
-2. WWW-002 — run farmer 10-second comprehension testing
-3. WWW-003 — run brand-code recognition/confusion testing
-4. WWW-004 — validate or reject the signature motion within the broader visual exploration
-5. WWW-005 — decide production platform only when implementation creates more learning value than another validation cycle
+1. WWW-000 — validate hero message/positioning on a neutral static scaffold
+2. WWW-001 — create three genuinely different art directions from the surviving message
+3. WWW-002 — run art-direction farmer comprehension + calibrated-trust testing
+4. WWW-003 — run brand-code recognition/confusion testing
+5. WWW-004 — validate or reject the signature motion within the broader visual exploration
+6. WWW-005 — decide production platform only when implementation creates more learning value than another validation cycle
 
 Only after that promote W1/W2 implementation issues.
 
