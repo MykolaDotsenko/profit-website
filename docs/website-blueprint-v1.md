@@ -205,7 +205,8 @@ Primary assumptions:
 Main risks:
 - narrows perceived company scope too early;
 - “margin by field” may imply unsupported precision;
-- the hero fails if Field Profitability is not yet credible enough to show as product truth.
+- the hero fails if Field Profitability is not yet credible enough to show as product truth;
+- “margin” may be read differently from the Field Profitability reference's defined economics (e.g. operating profit, which is not gross margin or net profit), and “what drives it” may imply driver/causal analysis the current reference does not provide (reference status and details: `docs/experiments/hero-message-test-v1.md` §4.4).
 
 #### Hero decision rule
 
@@ -662,16 +663,17 @@ Keep constant:
 - typography hierarchy;
 - layout;
 - CTA wording/placement;
-- proof-object complexity;
+- proof-object complexity and fidelity (never a real or higher-fidelity product UI for one direction only);
 - image quality;
 - motion: off.
 
 Do not pair each message direction with a different art direction in this round. That would confound message and visual effects.
 
-Procedure — every participant evaluates all three directions:
+Procedure — every participant evaluates all three directions, in three phases:
 1. assign each participant a counterbalanced H1/H2/H3 order, so each direction is seen first, second and third equally often;
-2. for each direction in that order: expose it for the same fixed duration (**10 seconds** throughout the first round), hide it, ask the open recall questions before giving any explanation, then show it again and run the credibility probe;
-3. only after all three directions have been evaluated independently, allow overall comparison between them.
+2. **Phase A — independent exposure + recall:** for each direction in that order, expose it for the same fixed duration (**10 seconds** throughout the first round), hide it and ask the open recall questions only. No credibility, data or guaranteed-profit probes, no explanation and no comparison until Phase A is complete for all three;
+3. **Phase B — second viewing + probes:** show each direction again, in the same assigned order, and run the credibility probe;
+4. **Phase C — comparison:** only after Phases A and B, allow overall comparison between directions.
 
 First-round sample:
 - **9–12 target farmers** is sufficient for qualitative elimination signals;
@@ -717,7 +719,7 @@ This preserves:
 These are directional qualitative gates, not statistical proof.
 
 Counting rules:
-- count each criterion across all participants who evaluated that direction; keep and report first-exposure results separately as the least-contaminated signal;
+- count each criterion across all participants who evaluated that direction; keep and report first-position recall results separately as the least-contaminated signal;
 - a **repeated pattern** means 3 or more independent participants; 2 independent participants is a **CONCERN**, not an automatic kill;
 - the count does not apply to critical evidence-integrity failures: a single case that shows a false or unsupported claim must be corrected regardless of count.
 

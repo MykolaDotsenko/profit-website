@@ -46,7 +46,12 @@ Stimulus:
 `prototypes/hero-message-test/`
 
 Status:
-**Test instrument drafted — not approved to run.** D1–D3 were approved on 2026-09-26: all three directions per participant, fixed 10 s exposure, and the counting rules (now in Blueprint §17). D4, the Field Profitability product-truth reference, is blocking. D5–D8 must be settled before session 1. No acceptance criterion below has been met yet.
+**Test instrument drafted — not approved to run.**
+- D1–D3 were approved on 2026-09-26: a Phase A → B → C session flow, fixed 10 s exposure, and the counting rules (now in Blueprint §17).
+- A D4 product-truth reference has been found. It is an implemented but unmerged and unshipped Field Profitability vertical slice, used only for product-truth checking and not as production proof.
+- Before the stimulus is frozen: D5–D7 must be settled, the approved D8 documentary image supplied, and the protocol's PT-1/PT-2 questions answered.
+
+No acceptance criterion below has been met yet.
 
 Outcome:
 Eliminate weak hero positioning before visual art direction becomes a confounding variable.
