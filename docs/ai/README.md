@@ -30,7 +30,7 @@ The research archive is deliberately not the default AI context. This reduces:
 | Positioning / headline / CTA | Homepage Copy Deck → WWW-000 protocol/preflight → Strategy → Trust & Professionalism Synthesis → Marketing findings → Psychology findings |
 | Farmer trust / evidence / claims | Blueprint → Trust & Professionalism Synthesis → Psychology findings → Triple-check audit |
 | Agricultural data / forecasting / DSS public copy | Trust & Professionalism Synthesis → Whole-Farm Evidence Note → Blueprint |
-| Brand identity / visual direction | Blueprint → Trust & Professionalism Synthesis → Modern Branding → Avoiding AI Sameness |
+| Brand identity / visual direction | Blueprint → WWW-001 prototypes + internal red-team → Trust & Professionalism Synthesis → Modern Branding → Avoiding AI Sameness |
 | AI-generated visual/design work | Avoiding AI Sameness → Modern Branding |
 | Layout / responsive design | Blueprint → Design Masterclass → Modern Design Deep Pass |
 | Motion / visual effects | Blueprint → Modern Visual Effects → Visual Effects Roadmap |
@@ -88,6 +88,7 @@ ADRs preserve rationale for material durable decisions. They do not replace the 
 - `whole-farm-scope-evidence-2026-09-27.md`
 - `experiments/www-000-preflight-pack-v1.md`
 - `experiments/www-000-statistical-surrogate-v1.md` — official-statistics calibration + proxy message-risk audit; never substitute for farmer comprehension evidence.
+- `experiments/art-direction-internal-red-team-v1.md` — A/B/C internal diagnostic plus A2/B2/C2 challenge findings; no winner.
 
 These are valuable references but must not silently override the Blueprint.
 
