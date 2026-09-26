@@ -823,3 +823,572 @@ For PROFIT:
 If AI is asked to invent PROFIT from scratch, it will regress toward the category average.
 
 If AI is given a mature PROFIT system, it can scale distinctiveness instead of erasing it.
+
+
+# Second five-pass research — Masterclasses, workshops, and AI-era design systems
+
+Research date: 2026-09-26
+
+This section extends the original standard with five additional passes focused specifically on current masterclasses, workshops, design-system practice, and AI-assisted creative workflows.
+
+The strongest sources in this pass were:
+- D&AD — AI for Creativity: Amplify your Creative Practice
+  https://campus.dandad.org/courses/ai-for-creativity
+- D&AD — AI: Your Creative Collaborator
+  https://www.dandad.org/learning/masterclasses/ai-your-creative-collaborator
+- D&AD — Creative Evaluation
+  https://www.dandad.org/learning/masterclasses/creative-evaluation
+- D&AD — Creative Collider
+  https://www.dandad.org/learning/masterclasses/creative-collider
+- D&AD — Art & Science of Ideas
+  https://www.dandad.org/learning/masterclasses/art-science-of-ideas
+- Figma — LLM Context Design
+  https://www.figma.com/resource-library/llm-context-design/
+- Figma — AI Design Prompts
+  https://www.figma.com/resource-library/ai-design-prompts/
+- Adobe — Brand-Specific Custom AI Models
+  https://business.adobe.com/uk/blog/developing-a-brand-specific-custom-ai-model
+- Adobe — Training Custom AI Models with Existing Creative Assets
+  https://business.adobe.com/blog/training-custom-ai-models-on-brand-visual-identity
+- Ehrenberg-Bass Institute — Brands of Distinction
+  https://marketingscience.info/news-and-insights/brands-of-distinction
+- Ehrenberg-Bass Institute — The Four Commandments
+  https://marketingscience.info/news-and-insights/the-four-commandments-future-proofing-a-brands-identity
+- 2026 Design Society study on AI in design-thinking workshops
+  https://www.cambridge.org/core/journals/proceedings-of-the-design-society/article/design-and-evaluation-of-an-aibased-application-to-enhance-creativity-in-design-thinking-workshops/FFAB4360E61272E2DBC7F2E3B06B5735
+- Exploration vs. Fixation research
+  https://arxiv.org/abs/2512.18388
+
+---
+
+## Pass 6 — Human judgement must own the creative process
+
+D&AD's 2026 AI for Creativity curriculum contains explicit modules on:
+- AI Sameness;
+- Creative Integrity;
+- The Human Advantage;
+- Strategic Framing;
+- Contextual Intelligence;
+- Mischievous Thinking;
+- Taste & Judgement.
+
+It treats AI as a collaborator with multiple roles:
+- Challenger;
+- Explorer;
+- Analyst;
+- Builder;
+- Simulator.
+
+### PROFIT conclusion
+
+The dangerous pattern is one universal AI assistant that:
+- frames the brief;
+- generates the concept;
+- chooses the winner;
+- writes the copy;
+- creates the visuals;
+- evaluates itself.
+
+That collapses independent judgement into one statistical prior.
+
+### Mandatory role separation
+
+Use AI in explicit roles.
+
+#### Challenger
+Purpose:
+attack assumptions and identify category clichés.
+
+Allowed:
+- "What about this concept looks generic?"
+- "Which parts resemble standard agritech/SaaS patterns?"
+- "What assumption are we taking for granted?"
+
+Not allowed:
+select the final creative direction.
+
+#### Explorer
+Purpose:
+expand conceptual possibilities after the human brief exists.
+
+Allowed:
+- generate alternative metaphors;
+- find adjacent references;
+- propose unusual combinations.
+
+#### Analyst
+Purpose:
+compare against:
+- competitor patterns;
+- brand constraints;
+- accessibility/performance limits;
+- research evidence.
+
+#### Builder
+Purpose:
+productionise an already selected direction.
+
+Allowed:
+- responsive variants;
+- component implementations;
+- image adaptations;
+- layout production.
+
+#### Simulator
+Purpose:
+simulate reactions from different viewpoints.
+
+Examples:
+- skeptical farmer;
+- investor;
+- agronomist;
+- non-technical visitor.
+
+### Human-only ownership
+
+Humans retain final ownership of:
+- strategic framing;
+- creative point of view;
+- brand codes;
+- taste;
+- final selection;
+- exceptions to the system.
+
+### New rule
+
+**AI can occupy one creative role at a time. It must not be brief writer, creator, judge, and approver in the same loop.**
+
+---
+
+## Pass 7 — Protect divergence before refinement
+
+D&AD's Creative Collider teaches repeatable ideation and explicitly highlights the "secret power of solo vs plenary thinking."
+
+D&AD's Art & Science of Ideas separates:
+- Think it;
+- Contextualise it;
+- Create it;
+- Push it;
+- Refine it.
+
+Current human-AI research also shows that linear chat workflows can encourage premature convergence, while explicit divergent and convergent stages reduce fixation.
+
+A 2026 Design Society study found that AI could improve usability of ideas but also hinder human creativity and reduce idea generation in the divergent phase.
+
+### PROFIT conclusion
+
+A polished first answer is dangerous because it creates an anchor.
+
+### Mandatory divergence protocol
+
+#### Phase A — Solo framing
+Before seeing AI concepts, each involved human writes:
+- the problem;
+- the ownable truth;
+- 2–3 tensions;
+- one unexpected direction.
+
+Do not share yet.
+
+#### Phase B — Independent concept territories
+Create at least three genuinely different territories.
+
+They must differ in:
+- underlying idea;
+- visual metaphor;
+- information hierarchy;
+- emotional register.
+
+Color changes do not count.
+
+#### Phase C — AI expansion
+Use AI to expand each territory separately.
+
+Do not ask:
+"Which of these is best?"
+
+Do ask:
+"What unexplored direction exists within this territory?"
+
+#### Phase D — Forced push
+Before selection, push promising ideas one step further.
+
+Ask:
+- What would make this less expected?
+- What could be removed?
+- What if we invert the hierarchy?
+- What proprietary PROFIT material could replace generic imagery?
+
+#### Phase E — Convergence
+Only after divergence is documented:
+- evaluate;
+- combine if justified;
+- choose;
+- refine.
+
+### First-good-concept quarantine
+
+Do not polish the first acceptable AI concept immediately.
+
+Before refinement begins, the concept space must contain multiple independent strategic options.
+
+### New rule
+
+**Breadth before beauty.**
+
+---
+
+## Pass 8 — Replace taste arguments with a creative evaluation framework
+
+D&AD's Creative Evaluation workshop explicitly targets:
+- a shared language for evaluating creativity;
+- clear benchmarks for creative excellence/effectiveness;
+- frameworks that can also assess AI output.
+
+### PROFIT implication
+
+"Looks premium" and "I like version B" are not adequate review criteria.
+
+### PROFIT Creative Evaluation Compass
+
+This is a PROFIT-specific framework; it is not claimed to reproduce D&AD's proprietary Creative Compass.
+
+For each major creative direction, review eight questions:
+
+#### 1. Product Truth
+Does the idea emerge from something true about PROFIT?
+
+#### 2. Farmer Relevance
+Does it represent a real farmer problem/outcome?
+
+#### 3. Distinctiveness Potential
+Could this become recognisably PROFIT with repetition?
+
+#### 4. Category Contrast
+Does it avoid collapsing into generic agritech/SaaS cues?
+
+#### 5. Evidence Integrity
+Does the creative treatment preserve evidence, uncertainty, and VEV semantics?
+
+#### 6. Comprehension
+Can a visitor understand the core message quickly?
+
+#### 7. System Potential
+Can the idea scale across:
+- website;
+- product;
+- presentations;
+- reports;
+- social;
+- future modules?
+
+#### 8. Execution Quality
+Can it be implemented with high accessibility, performance, and craft?
+
+### Review states
+
+Avoid pseudo-precise /100 scoring.
+
+Use:
+- PASS;
+- CONCERN;
+- REJECT;
+- NEEDS EVIDENCE.
+
+### Blind review rule
+
+Where practical, reviewers should first assess concepts without knowing:
+- who created them;
+- whether they came from AI;
+- which person internally prefers them.
+
+This reduces status/tool bias.
+
+---
+
+## Pass 9 — Make the brand system machine-readable
+
+Figma's 2026 LLM Context Design guidance identifies three layers required for reliable AI use:
+
+1. tokens;
+2. explicit specs / usage rules;
+3. an audit loop.
+
+The key lesson is that a human can infer missing context; an LLM guesses.
+
+### PROFIT implication
+
+A traditional PDF guideline is insufficient for AI-assisted production.
+
+### Required AI-readable context package
+
+Create a version-controlled context layer that includes:
+
+#### Tokens
+Examples:
+- color roles;
+- typography roles;
+- spacing;
+- radii;
+- motion durations/easing;
+- evidence colors;
+- confidence styles.
+
+#### Component specs
+For each component:
+- what it is;
+- when to use;
+- when not to use;
+- required content;
+- allowed variants;
+- accessibility behavior;
+- responsive behavior.
+
+#### Brand rules
+Examples:
+- preferred vocabulary;
+- banned category-average phrases;
+- evidence terminology;
+- photography rules;
+- numeric formatting;
+- motion grammar.
+
+#### Relationships
+The system must encode not only values, but relationships.
+
+Example:
+- "verified" may only appear when VEV criteria are met;
+- "primary CTA" exists once per major decision surface;
+- field geometry is supporting context, not decorative wallpaper;
+- green is not sufficient to indicate positive economic value without accessible redundant cues.
+
+#### Examples
+Include:
+- approved examples;
+- rejected examples;
+- explanation of why.
+
+### Frozen zones
+
+Figma's prompt guidance recommends explicitly stating what must not change during exploration.
+
+For PROFIT, define three classes:
+
+#### LOCKED
+AI cannot change without human approval:
+- evidence terminology;
+- core brand codes;
+- canonical units;
+- accessibility constraints;
+- logo/symbol;
+- approved type roles.
+
+#### FLEXIBLE
+AI may explore within constraints:
+- section composition;
+- crop choices;
+- editorial rhythm;
+- supporting illustration;
+- micro-layout.
+
+#### OPEN
+AI may diverge widely:
+- early concept metaphors;
+- non-production moodboards;
+- exploratory references.
+
+### Audit loop
+
+Every week or every meaningful batch of AI-generated work:
+- sample recent outputs;
+- compare against tokens/specs;
+- identify drift;
+- update context if the drift reveals a genuine missing rule.
+
+### New rule
+
+**If AI repeatedly gets something wrong, do not keep correcting the output. Fix the context/system that allowed the guess.**
+
+---
+
+## Pass 10 — Curated training/reference data + distinctive asset memory building
+
+Adobe's current custom-model guidance makes several useful points:
+- custom models need approved brand assets, not only written guidelines;
+- quality outweighs quantity;
+- training sets should be stylistically coherent;
+- compositional variety should exist inside that coherent language;
+- outdated or conflicting design eras should not be mixed;
+- IP and usage rights must be explicit;
+- human review remains essential.
+
+Adobe currently describes small, focused custom-model training sets (often 10–30 images for a single concept).
+
+### PROFIT implication
+
+Do **not** rush to train a custom image model now.
+
+If the brand language is not yet validated, a custom model would simply scale immature decisions.
+
+### Custom-model readiness criteria
+
+Only consider brand-specific model training after:
+- visual direction is stable;
+- photography treatment is approved;
+- a meaningful corpus of high-quality owned/licensed examples exists;
+- brand codes have been used repeatedly;
+- user testing supports the direction;
+- rights/provenance are clear.
+
+### Approved Brand Corpus v2
+
+Organise by concept, not one giant folder.
+
+Possible collections:
+- Farm Photography / Fields
+- Farm Photography / Machinery & Operators
+- Field Geometry
+- Economic Typography
+- Evidence Visualisation
+- Product Exhibits
+- Motion Keyframes / Storyboards
+
+For each asset record:
+- status;
+- purpose;
+- rights/provenance;
+- why approved;
+- channel;
+- visual attributes;
+- exclusions.
+
+### Important brand-memory correction
+
+Ehrenberg-Bass research says distinctive assets become strong through repeated linkage with the brand name.
+
+Therefore:
+
+**Logo-off recognition is a diagnostic goal, not a production rule for a young brand.**
+
+Early PROFIT assets should usually be **co-presented with the PROFIT name/logo** so the memory link can form.
+
+### Asset-building sequence
+
+1. Choose very few candidate assets.
+2. Pair them consistently with PROFIT.
+3. Use them prominently across touchpoints.
+4. Resist unnecessary changes.
+5. Measure recognition/uniqueness later.
+6. Only then reduce reliance on the brand name where evidence supports it.
+
+### New rule
+
+**One strong repeated brand code is more valuable than ten fashionable ones.**
+
+---
+
+# New cross-pass operating rules
+
+## Rule A — Human-first brief
+No brand-defining generation before a human-authored strategic brief exists.
+
+## Rule B — Solo-before-group
+Generate independent human framings before seeing group/AI concepts.
+
+## Rule C — Role-bound AI
+AI must have a declared role: Challenger, Explorer, Analyst, Builder, or Simulator.
+
+## Rule D — Divergence evidence
+The team must show that multiple independent territories existed before refinement.
+
+## Rule E — No aesthetic-only approval
+Every accepted idea must pass the PROFIT Creative Evaluation Compass.
+
+## Rule F — Machine-readable brand context
+Tokens + usage rules + examples + exclusions + audit loop.
+
+## Rule G — Fix systems, not recurring outputs
+Repeated AI mistakes indicate missing context/governance.
+
+## Rule H — Curate training assets
+Quality, coherence, rights, and relevance before quantity.
+
+## Rule I — Delay custom models
+Do not fine-tune/brand-train AI on an identity still being discovered.
+
+## Rule J — Build memory through co-presentation
+Pair emerging brand codes with PROFIT consistently before expecting independent recognition.
+
+---
+
+# New AI-Sameness Red-Team Checklist
+
+Before approving any major concept, ask:
+
+### Origin
+- Did the concept begin from PROFIT-specific truth or from AI aesthetics?
+- Was human framing completed before generative exploration?
+
+### Divergence
+- Were there multiple independent territories?
+- Did we push beyond the first acceptable solution?
+- Did solo thinking happen before group convergence?
+
+### Category
+- Which current competitors or category patterns does this resemble?
+- Is that resemblance strategically useful or accidental?
+
+### Brand
+- Which specific PROFIT code is being strengthened?
+- Is the code unique enough to merit long-term investment?
+- Are we trying to own an obvious category cue that competitors can own equally well?
+
+### AI process
+- What role did AI play?
+- Did AI also judge its own output?
+- Did it have the current tokens/specs/exclusions?
+- What did a human contribute that the model could not infer?
+
+### Evidence
+- Does the design preserve the difference between modelled, observed, attributed, and verified?
+- Does visual drama overstate confidence?
+
+### Memory
+- Is the new code paired clearly with the PROFIT name?
+- Are we repeating a stable code or inventing another new one?
+
+### System
+- Could the same rule work in product UI, reports, investor material, and future modules?
+- If not, is this intentionally campaign-specific?
+
+---
+
+# Updated strongest conclusion
+
+The second five-pass review strengthens the original conclusion:
+
+**The defense against AI sameness is not more creative prompting. It is creative process architecture.**
+
+For PROFIT, the full system is:
+
+**Human strategic framing**
+→
+**solo/divergent exploration**
+→
+**role-bound AI collaboration**
+→
+**shared creative evaluation**
+→
+**machine-readable brand system**
+→
+**curated proprietary corpus**
+→
+**human approval**
+→
+**co-presented distinctive assets**
+→
+**audit and recognition testing**
+
+AI should make a distinctive PROFIT system faster to execute.
+
+It should never be allowed to decide what PROFIT's distinctiveness is.
