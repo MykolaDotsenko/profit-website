@@ -1,6 +1,6 @@
 # Field → Economics Reveal prototype
 
-Self-contained interaction prototype for PROFIT's candidate signature motion.
+Self-contained interaction prototype for PROFIT's candidate explanatory motion.
 
 ## Open
 
@@ -10,7 +10,9 @@ No build step, package manager, framework, external font, or JavaScript is requi
 
 ## Purpose
 
-Validate the motion concept before creating the Astro production scaffold.
+Explore implementation feasibility only.
+
+Do not use this prototype as evidence that motion improves comprehension. The canonical next decision is a controlled Static vs Motion farmer experiment after a surviving art direction exists.
 
 The prototype intentionally uses an abstract agricultural placeholder. Production must use approved real farm photography or clearly illustrative material.
 
