@@ -34,6 +34,12 @@ The v1 candidates were superseded **before any farmer session** by the product-t
 
 This test does **not** decide the art direction, final headline wording, the category label as brand language, the platform or motion. It produces no statistical winner.
 
+**Scope — wedge, not master brand.**
+- WWW-000 tests the **Field Profitability wedge** message.
+- It does not test or decide the PROFIT master-brand positioning or category scope.
+- Its results must not redefine PROFIT as a field-crop-only company. The master brand, naming and website architecture stay extensible to crop production, pig production and dairy without rebranding (Blueprint §2.1).
+- Nothing in the stimulus or the session presents pig production or dairy as available.
+
 Only the surviving message(s) feed WWW-001. No H direction is a winner before this test is run and analysed.
 
 ## 2. Decisions and pre-freeze requirements
@@ -88,7 +94,8 @@ Blueprint §17 Round 1 requires the same neutral/static scaffold. It holds const
 - low enough salience that copy and proof remain the variable;
 - relevant to field-crop farming;
 - clear source, rights and provenance recorded;
-- no farmer-with-tablet cliché.
+- no farmer-with-tablet cliché;
+- a wedge-test asset only, not a master-brand image choice.
 
 After adding it, re-check that H1/H2/H3 still get equal visual weight.
 
@@ -191,6 +198,9 @@ This session could not read the branch. The read-only clone was denied by the se
 | `HYPOTHETICAL EXAMPLE`, `Confidence: Not assessed` (all) | no confidence model (PT-1) | website evidence/meta labels, not a product capability claim (§3) |
 | Decision question (all) | no recommendation feature | **CONSISTENT** as a question to the farmer. *Watch:* record readings that PROFIT recommends what to investigate (PRECISION-SCOPE). |
 | Source line (all) | user-entered inputs incl. season | **CONSISTENT** |
+| Master-brand scope: all three supports make "PROFIT" the subject of field-level functions (all) | the §2.2 boundary is module-level; Blueprint §2.1 keeps the master brand extensible | **ALLOWED for a wedge test**. *Risk:* read as the whole company; captured as SCOPE-READING. Not promotable to master-brand positioning (§12). |
+| H2 v2 narrowing from "farm data" to "field data" / yield, price (H2) | module-level product truth | **RISK (rewrite-induced)**. WWW-000 now contains no domain-agnostic master-brand candidate, so the Blueprint §3 positioning stays untested and needs a separate decision. |
+| "FIELD ECONOMICS" eyebrow (H1) | field-specific label | **RISK if promoted**. A wedge/section eyebrow only, never the master-brand category (Blueprint §2.1). |
 
 ## 5. Participants
 
@@ -334,6 +344,7 @@ CODES per direction (§10): JOB-CONCRETE P/PA/F  JOB-INTENDED Y/N  AUDIENCE Y/N 
   ECON-RESULT Y/N  NEXT-ACTION Y/N  CATEGORY-WITHOUT-JOB Y/N  MISCLASS: ____
   PROMISE spontaneous / prompted-only / none  PRECISION-SCOPE Y/N  CAUSAL Y/N
   OP-READING FIELD-OP / NET / GM / UNC  COMPOSITION-READING (H3) COMP / CAUSE / REC / UNC
+  SCOPE-READING FIELD-CROP / FARMS / OTHER / UNC
   PROOF-UNAIDED Y/P/N  NUMBERS-READ-AS-REAL Y/N  LABEL-ECHO Y/N  UNCLEAR WORDS: ____
 
 PHASE C (verbatim): clearest: ____  least trusted: ____  over-promise: ____  keep sentence: ____
@@ -348,6 +359,7 @@ Two people should code the answers independently where possible, then settle dis
 | JOB-CONCRETE | Coded from **Phase A** recall. **PASS (P):** names a concrete economic job for a farm, e.g. "shows which fields make or lose money", "works out profit per hectare by field", "shows where costs eat the profit". **PARTIAL (PA):** farm plus generic data/decisions/profit with no concrete job, e.g. "farm data software", "helps farmers decide better". **FAIL (F):** no farm-economic job, or a misclassification. For K1, PA and F both count as "cannot state a concrete farmer-economic job"; report them separately. |
 | JOB-INTENDED | Coded from Phase A. Matches this direction's intended v2 job. H1: which fields make money and which don't (operating profitability field by field). H2: the economics behind a decision, from field data (e.g. operating profit, break-even). H3: operating profit per field and what goes into it. |
 | AUDIENCE | Says it is for farms/farmers. |
+| SCOPE-READING | From Phase A recall 2 ("Who do you think it is for?"). `FIELD-CROP`: only crop/field/arable farms. `FARMS`: farms or farmers generally. `OTHER`: describe. `UNC`: unclear. **Not a kill criterion**, because the cohort is the crop wedge. It measures whether a direction makes PROFIT look field-crop-only, as input to the separate master-brand decision (Blueprint §2.1). |
 | MECHANISM | Connects field/farm data to economic meaning (Y / partial / N). |
 | ECON-RESULT | Recalls an economic result or question, e.g. profit per hectare, €/ha, a weak field. |
 | NEXT-ACTION | Names a plausible next step (join the pilot, see how it works, investigate a field). |
@@ -401,6 +413,7 @@ For each direction, decide **ADVANCE / REWRITE / KILL / NEEDS EVIDENCE**, citing
 - **ADVANCE** only when "most participants can independently paraphrase the intended farmer-economic job, no recurring trust failure appears, and the next action is understood" (Blueprint §17).
 - **REWRITE** when the job lands but specific words fail, e.g. a promise, precision or product-truth reading. A rewrite is a **new hypothesis**. Test it again, at least in a small check, before it counts as surviving.
 - **Product-truth rule (all directions).** If product-truth readings mismatch Blueprint §2.2 as a repeated pattern (≥3 independent participants), the direction is **REWRITE and retest**. That covers OP-READING = `NET`, COMPOSITION-READING = `CAUSE`/`REC`, CAUSAL and PRECISION-SCOPE. Do not rationalise the wording after the fact.
+- **Master-brand rule.** A surviving direction is a **wedge** message. Promoting it, or its eyebrow, into master-brand positioning (Blueprint §3, AGENTS.md §6) needs a separate human decision that keeps PROFIT extensible to crop production, pig production and dairy (Blueprint §2.1). Report SCOPE-READING per direction as input to that decision.
 - **KILL** when the core job itself fails, e.g. farmers do not care about it, or there is repeated misclassification that no wording change would plausibly fix.
 - **NEEDS EVIDENCE** when signals conflict or differences are subtle. Use a larger follow-up "if differences are subtle or the decision becomes costly to reverse" (Blueprint §17).
 - More than one direction may advance. WWW-001 needs **one** controlled message, so the team picks one and records why, or runs a follow-up. Do not hybridize untested wording.
@@ -442,6 +455,7 @@ Remaining uncertainty: ____
 2. Then update `docs/ai/context.yaml` (`hero_validation`) and `docs/ai/IMPLEMENTATION_PLAN.md` (WWW-000 acceptance, exit criteria).
 3. Create an ADR only if the result becomes a durable, cross-cutting decision, e.g. dropping the category label from public positioning (`docs/decisions/README.md`).
 4. WWW-001 starts only with one surviving, controlled message, or with an explicit human decision to accept the risk.
+5. Do not copy a surviving wedge message into the master-brand positioning (Blueprint §3). That is a separate decision under Blueprint §2.1.
 
 ## 15. Reconsider if
 

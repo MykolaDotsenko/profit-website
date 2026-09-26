@@ -21,6 +21,7 @@ Open `index.html` in a current browser. No build step, package manager, framewor
 
 - A **message** test instrument. The three directions differ only in eyebrow, headline, support and proof-card body.
 - **Not an art direction.** It avoids A and B (no photography, no field geometry) and has no brand font, colour semantics or motion. Its neutral numeric card shares part of C's grammar; protocol §3 explains the risk. D8 is approved in principle as one identical documentary field-crop image, but none is added until a licensed/approved asset with provenance is supplied. Never substitute a synthetic image. Do not reuse it as a design base for WWW-001.
+- **Not a master-brand statement.** It tests the Field Profitability wedge. The PROFIT master brand stays extensible to crop production, pig production and dairy (Blueprint §2.1).
 - **Not production code.**
 - **Not evidence of anything yet.** No farmer has seen it.
 

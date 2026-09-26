@@ -37,7 +37,11 @@ These are implementation guardrails, not homepage copy.
 
 - PROFIT is the master brand; Field Profitability is the current wedge/proof hypothesis.
 - Do not let the website architecture, naming or visual system imply that PROFIT is permanently crop-only.
-- Do not depict livestock/other future production domains as shipped capabilities unless current canonical documentation explicitly supports them.
+- Keep the master brand, naming, information architecture, category language and visual system extensible to crop production, pig production and dairy without rebranding.
+  - Field/crop-specific language, imagery and metrics belong at module or wedge level (e.g. Field Profitability).
+  - Before any field/crop-specific element (e.g. field geometry, crop imagery) is promoted to a master-brand code, check that it transfers to pig production and dairy.
+- Wedge tests such as WWW-000 may be Field Profitability-specific. Their results must not redefine PROFIT as a field-crop-only company, and a surviving wedge message is not a master-brand positioning (§3).
+- Do not depict livestock/other future production domains (including pig production and dairy) as shipped capabilities unless current canonical documentation explicitly supports them.
 - The public site is a learning/trust/conversion surface, not the core application.
 - Customer-level evidence outranks global ambition or investor narrative.
 - Never convert internal ambition (leadership, scale, moat, company valuation) into a factual public claim without evidence.
@@ -53,6 +57,8 @@ When that standard cannot be met, label the result as illustrative/modelled rath
 ## 2.2 Field Profitability product-truth boundary (internal)
 
 Use this boundary to check that website copy and proof objects never promise more than has been designed or implemented. It is **internal**, not a public claim: nothing here may be presented as shipped or available until it is shipped and verified.
+
+Scope: this boundary covers the Field Profitability module only. It does not define the scope of the PROFIT master brand (§2.1).
 
 - **Status:** implemented vertical slice. Source: `MykolaDotsenko/PROFIT`, branch `feat/field-profitability` @ `7d07345`. PR #1 was closed without merge. **Unshipped; not production-verified.**
 - **Reference inputs:** field; crop; season; currency; area; yield; price; variable costs; allocated fixed costs.
@@ -158,7 +164,9 @@ Reason: the §2.2 reference exposed scope/semantic conflicts.
 
 The **v2** candidates in each direction below are the WWW-000 test candidates. The v1 assumptions and risks are kept as history; several no longer apply to v2.
 
-The v1 H2 headline and support are the same text as the §3 primary positioning hypothesis, AGENTS.md §6 and `docs/ai/context.yaml` `positioning`. Those entries are unchanged, pending a human decision on whether the positioning hypothesis itself should be restated.
+The v2 field-level scope, including H2 v2's narrowing from "farm data" to field data, is module/wedge-level product truth for this test. It does not narrow the PROFIT master brand or category (§2.1).
+
+The v1 H2 headline and support are the same text as the §3 primary positioning hypothesis, AGENTS.md §6 and `docs/ai/context.yaml` `positioning`. Those entries are unchanged, pending a human decision on whether the positioning hypothesis itself should be restated. Any restatement must keep the master-brand positioning extensible to crop production, pig production and dairy (§2.1). Do not replace it with the wedge-scoped v2 wording.
 
 #### H1 — Economic visibility / farmer job first
 
@@ -726,7 +734,7 @@ If materially different farmer segments are tested, analyse them as separate coh
 
 #### Round 1 — isolate the message
 
-Test the H1/H2/H3 **v2** candidates (§5) on the same neutral/static visual scaffold.
+Test the H1/H2/H3 **v2** candidates (§5) on the same neutral/static visual scaffold. Round 1 tests the Field Profitability wedge message only. It does not validate the master-brand positioning or category scope (§2.1, §3).
 
 Keep constant:
 - typography hierarchy;

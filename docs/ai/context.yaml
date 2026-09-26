@@ -29,10 +29,12 @@ company_context:
     master_brand: "PROFIT"
     current_wedge: "Field Profitability"
     rule: "Do not crop-lock the master brand and do not present future livestock/other production domains as shipped unless explicitly documented."
+    extensibility: "master brand, naming, IA, category language and visual system stay extensible to crop production, pig production and dairy without rebranding; field/crop-specific elements live at module/wedge level; wedge tests (e.g. WWW-000) must not redefine PROFIT as field-crop-only; pig production and dairy are not shipped and must not be presented as available"
   public_claim_rule: "Internal ambition is not public proof."
 
 field_profitability_reference:
   canonical_source: "docs/website-blueprint-v1.md section 2.2 (internal product-truth boundary)"
+  scope: "Field Profitability module only; does not define the PROFIT master-brand scope"
   status: "implemented vertical slice; MykolaDotsenko/PROFIT feat/field-profitability @ 7d07345; PR #1 closed without merge; unshipped; not production-verified"
   use_rule: "internal product-truth checks of website copy and proof objects only; never a public shipped or available claim"
   inputs: ["field", "crop", "season", "currency", "area", "yield", "price", "variable costs", "allocated fixed costs"]
@@ -157,6 +159,7 @@ hero_validation:
   stimulus: "prototypes/hero-message-test/"
   instrument_status: "drafted; test candidates are the v2 set (Blueprint section 5); D1-D4 settled (PT-1 no, PT-2 yes within the saved-snapshots list interpretation); not approved to run: D5-D7 and the D8 asset (approved in principle, blocked until a licensed documentary image exists) required before stimulus freeze"
   candidate_set: "v2 (product-truth-safe, 2026-09-26); v1 superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1"
+  scope: "Field Profitability wedge message only; not a master-brand positioning test; results must not redefine PROFIT as field-crop-only (company_context.scope_boundary.extensibility)"
   product_truth_reference: "field_profitability_reference (Blueprint section 2.2); WWW-000 v2 check in hero-message-test-v1.md section 4.4"
   durable_rules:
     - "Hero comprehension must not depend on understanding the category label."

@@ -62,6 +62,8 @@ Test the three canonical Blueprint directions, using the **v2** candidates in Bl
 - H2 — Decision intelligence / decision-context first (v1: current control)
 - H3 — Field Profitability / product proof first
 
+Scope: the Field Profitability **wedge** message only. Results must not redefine PROFIT as field-crop-only. The master brand stays extensible to crop production, pig production and dairy without rebranding (Blueprint §2.1).
+
 Constraints:
 - same neutral/static scaffold;
 - same CTA architecture;

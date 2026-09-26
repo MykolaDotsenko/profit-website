@@ -67,7 +67,8 @@ Internal operating principle:
 External agents must preserve these boundaries:
 - PROFIT is the master brand; Field Profitability is the current website wedge, not the company boundary.
 - Do not crop-lock the brand architecture.
-- Do not invent or market future livestock/other modules as shipped.
+- Keep the master brand, naming, website architecture and visual system extensible to crop production, pig production and dairy without rebranding. Wedge tests such as WWW-000 may be Field Profitability-specific, but their results must not redefine PROFIT as a field-crop-only company.
+- Do not invent or market future livestock/other modules (including pig production and dairy) as shipped.
 - Customer-level evidence outranks global/leadership/scale ambition.
 - Internal ambitions are not public proof claims.
 - The website is not the core farm-management application.
