@@ -29,6 +29,7 @@ The website must communicate:
 
 - [Website Strategy](docs/website-strategy.md)
 - [Research Findings](docs/research-findings.md)
+- [Masterclasses & Tutorials](docs/masterclasses-and-tutorials.md)
 
 ## Status
 
