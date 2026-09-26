@@ -9,8 +9,8 @@
  *
  * The currency is data carried by the example, not a site default.
  */
-import { assertPublishable, type EvidenceMeta } from '../../domain/evidence';
-import { computeFieldEconomics, roundMoney, type CurrencyCode, type FieldEconomics, type FieldInputs, type Period } from '../../domain/economics';
+import { assertPublishable, type EvidenceMeta } from '../../domain/evidence.ts';
+import { computeFieldEconomics, roundMoney, type CurrencyCode, type FieldEconomics, type FieldInputs, type Period } from '../../domain/economics.ts';
 
 export interface ExampleField {
   id: string;
