@@ -36,6 +36,7 @@ If a material production-platform decision is made, create an ADR.
 Reversible engineering proceeds in parallel with W0: a coded Astro foundation with the seven core routes, reusable sections, evidence/trust components, accessible navigation, a performance baseline and a localization-ready content model ([ADR 0002](../decisions/0002-coded-website-foundation.md)). Hero copy, proof objects, images, art-direction tokens and CTA copy are data or tokens, so W0 results can replace them without layout rewrites.
 
 It does not meet any exit criterion above, decide WWW-005, freeze WWW-000 or start WWW-001. WWW-000 farmer sessions still wait for the recruitment gate and D5–D8.
+- Operational preflight prepared: `docs/experiments/www-000-preflight-pack-v1.md` covers D5 recruitment screening/cohort balance, D6 human economic-scenario review, D7 minimum research-data/consent process, D8 documentary-asset provenance and dry-run/freeze rules. Human gates remain open; this does not approve the test to run.
 
 ### Future gate — master-brand positioning (does not block current work)
 
