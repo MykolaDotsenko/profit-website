@@ -93,18 +93,21 @@ Do not imply partnerships or endorsements merely because a data source, API or i
 
 ## 6. Information architecture
 
-Recommended v1:
+Recommended core launch:
 
 - /
 - /product
 - /farmers
-- /results
+- /trust
 - /company
-- /security
 - /investors
 - /contact
 
-A smaller launch is acceptable if content is weak. Do not create empty pages for perceived completeness.
+Add **/results** only when there is sufficient real pilot/case-study evidence to justify a dedicated page.
+
+Use **/trust** as the initial home for methodology, data ownership, privacy and security. Split out **/security** later only if the depth of operational/security content warrants a separate page.
+
+Do not create empty pages for perceived completeness.
 
 ## 7. Homepage hierarchy
 
