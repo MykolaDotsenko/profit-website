@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentGap from '../components/ContentGap.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ItemList from '../components/ItemList.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import { content } from '../content';
+
+const p = content(Astro.currentLocale).company;
+---
+
+<BaseLayout title={p.meta.title} description={p.meta.description}>
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
+
+  <Section intro={p.building.intro} layout="split">
+    <div class="prose">{p.building.text.map((para) => <p>{para}</p>)}</div>
+  </Section>
+
+  <Section intro={p.why.intro} layout="split">
+    <div class="prose">{p.why.text.map((para) => <p>{para}</p>)}</div>
+  </Section>
+
+  <Section intro={p.principles.intro} layout="split" tone="sunken">
+    <ItemList items={p.principles.items} columns={1} marker="number" />
+  </Section>
+
+  <Section intro={p.stillProven.intro} layout="split">
+    <ItemList items={p.stillProven.items} columns={1} />
+  </Section>
+
+  <Section intro={p.team.intro} layout="split">
+    <ContentGap owner={p.team.gap.owner} text={p.team.gap.text} />
+  </Section>
+
+  <Section intro={p.details.intro} layout="split">
+    <ContentGap owner={p.details.gap.owner} text={p.details.gap.text} />
+  </Section>
+
+  <CtaBand intro={p.cta.intro} stepsTitle={p.cta.stepsTitle} steps={p.cta.steps} review={p.cta.review} primary={p.cta.primary} />
+</BaseLayout>
+
+<style>
+  .prose {
+    max-width: var(--measure-wide);
+    display: grid;
+    gap: var(--space-4);
+    font-size: var(--text-lead);
+    line-height: 1.55;
+  }
+</style>

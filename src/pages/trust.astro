@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConfidenceScale from '../components/ConfidenceScale.astro';
+import ContentGap from '../components/ContentGap.astro';
+import CtaBand from '../components/CtaBand.astro';
+import EvidenceLadder from '../components/EvidenceLadder.astro';
+import ItemList from '../components/ItemList.astro';
+import VerificationChain from '../components/VerificationChain.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import { content } from '../content';
+import { fieldSeasonExample } from '../content/examples/field-season';
+import { PROVENANCE } from '../domain/evidence';
+import { localeInfo, ui } from '../i18n';
+
+const c = content(Astro.currentLocale);
+const t = ui(localeInfo(Astro.currentLocale).code);
+const p = c.trust;
+const e = p.evidence;
+---
+
+<BaseLayout title={p.meta.title} description={p.meta.description}>
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
+    <nav class="on-page" aria-label={p.onPageLabel}>
+      <ul role="list">
+        {
+          [p.evidence.intro, p.calculations.intro, p.data.intro, p.privacy.intro, p.limitations.intro].map((s) => (
+            <li>
+              <a href={`#${s.id}`}>{s.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </PageIntro>
+
+  <Section intro={e.intro}>
+    <div class="evidence stack">
+      <h3 class="block-title">{e.ladderTitle}</h3>
+      <EvidenceLadder current={fieldSeasonExample.meta.evidence} currentLabel={e.currentLabel} />
+      <ContentGap owner={e.review.owner} kind="review" text={e.review.text} />
+    </div>
+
+    <div class="evidence-grid">
+      <div>
+        <h3 class="block-title">{e.confidenceTitle}</h3>
+        <p class="block-text">{e.confidenceText}</p>
+        <ConfidenceScale assessedLabel={e.assessedLabel} notAssessedText={e.notAssessedText} />
+      </div>
+      <div>
+        <h3 class="block-title">{e.chainTitle}</h3>
+        <VerificationChain steps={c.shared.verificationChain} />
+        <p class="block-note">{e.chainNote}</p>
+      </div>
+    </div>
+
+    <div class="provenance">
+      <h3 class="block-title">{e.provenanceTitle}</h3>
+      <p class="block-text">{e.provenanceLead}</p>
+      <ul class="provenance__list" role="list">
+        {PROVENANCE.map((id) => <li>{t.evidence.provenance[id]}</li>)}
+      </ul>
+      <p class="block-text">{e.provenanceNote}</p>
+    </div>
+  </Section>
+
+  <Section intro={p.calculations.intro} layout="split" tone="sunken">
+    <ItemList items={p.calculations.items} columns={1} />
+  </Section>
+
+  <Section intro={p.data.intro} layout="split">
+    <ItemList items={p.data.principles} columns={2} marker="number" />
+    <p class="terms">{p.data.terms}</p>
+    <ContentGap owner={p.data.termsGap.owner} text={p.data.termsGap.text} />
+  </Section>
+
+  <Section intro={p.privacy.intro} layout="split">
+    <ItemList items={p.privacy.items} columns={2} />
+    <p class="block-note">{p.privacy.note}</p>
+    <ContentGap owner={p.privacy.gap.owner} text={p.privacy.gap.text} />
+  </Section>
+
+  <Section intro={p.limitations.intro} layout="split" tone="sunken">
+    <ItemList items={p.limitations.items} columns={1} marker="number" />
+  </Section>
+
+  <CtaBand intro={p.cta.intro} stepsTitle={p.cta.stepsTitle} steps={p.cta.steps} review={p.cta.review} primary={p.cta.primary} />
+</BaseLayout>
+
+<style>
+  .on-page ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    margin-block-start: var(--space-3);
+    font-size: var(--text-small);
+  }
+  .block-title {
+    font-size: var(--text-subsection);
+    margin-block-end: var(--space-4);
+  }
+  .block-text {
+    max-width: var(--measure-wide);
+    color: var(--color-text-secondary);
+    margin-block-end: var(--space-4);
+  }
+  .block-note {
+    margin-block: var(--space-4);
+    font-weight: var(--weight-strong);
+  }
+  .evidence {
+    --stack-space: var(--space-5);
+  }
+  .evidence-grid {
+    display: grid;
+    gap: var(--space-7);
+    margin-block-start: var(--space-8);
+  }
+  @container (min-width: 56rem) {
+    .evidence-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-8);
+    }
+  }
+  .provenance {
+    margin-block-start: var(--space-8);
+  }
+  .provenance__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-block-end: var(--space-4);
+  }
+  .provenance__list li {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--color-evidence-line);
+    border-radius: var(--radius-s);
+    background: var(--color-evidence-bg);
+    font-size: var(--text-caption);
+    font-weight: var(--weight-strong);
+    letter-spacing: 0.04em;
+  }
+  .terms {
+    margin-block: var(--space-5) var(--space-4);
+    max-width: var(--measure-wide);
+    font-weight: var(--weight-strong);
+  }
+</style>

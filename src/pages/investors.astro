@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentGap from '../components/ContentGap.astro';
+import ItemList from '../components/ItemList.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import StatusList from '../components/StatusList.astro';
+import { content } from '../content';
+import { localePath } from '../i18n';
+
+const p = content(Astro.currentLocale).investors;
+---
+
+<BaseLayout title={p.meta.title} description={p.meta.description}>
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
+
+  <Section intro={p.today.intro} layout="split">
+    <StatusList items={p.today.items} statusLabels={p.statusLabels} />
+  </Section>
+
+  <Section intro={p.case.intro} layout="split" tone="sunken">
+    <StatusList items={p.case.items} statusLabels={p.statusLabels} ordered />
+  </Section>
+
+  <Section intro={p.notClaimed.intro} layout="split">
+    <ItemList items={p.notClaimed.items} columns={2} marker="cross" />
+  </Section>
+
+  <Section intro={p.contact.intro} layout="split">
+    <div class="contact stack">
+      <p>{p.contact.text}</p>
+      <p><a class="text-link" href={localePath(Astro.currentLocale, p.contact.link.href)}>{p.contact.link.label}</a></p>
+      <ContentGap owner={p.contact.gap.owner} text={p.contact.gap.text} />
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .contact {
+    max-width: var(--measure-wide);
+    font-size: var(--text-lead);
+  }
+</style>
