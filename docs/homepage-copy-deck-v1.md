@@ -132,7 +132,7 @@ Title:
 
 Lead:
 
-**Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This example is invented to show the method, not a customer result.**
+**Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This is a statistics-calibrated synthetic example, not a customer result.**
 
 Definition:
 
@@ -145,6 +145,10 @@ Decision question:
 Decision note:
 
 **PROFIT shows the economics. The decision stays yours.**
+
+Illustrative source:
+
+**Statistics-calibrated synthetic field records · one season**
 
 ---
 
