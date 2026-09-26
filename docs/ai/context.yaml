@@ -243,23 +243,37 @@ ai_creative_process:
   documentary_rule: "If AI materially adds/removes factual farm-scene content, classify the result as illustration/concept imagery rather than documentary agriculture."
 
 motion:
-  principle: "Make economic causality visible; do not make the site move for its own sake."
-  signature_candidate: "Field → Economics Reveal"
+  principle: "Use motion only if it helps farmers understand information lineage from farm reality to economic meaning faster or more correctly than the best static composition."
+  field_economics_reveal:
+    status: "candidate explanatory motion; not validated signature"
+    experiment_protocol: "docs/experiments/field-economics-motion-test-v1.md"
+    gate: "run only after WWW-002 produces a surviving art-direction base"
+    sequence:
+      - "real farm"
+      - "field scope / geometry"
+      - "operational/data context + provenance"
+      - "economic interpretation"
+      - "evidence/confidence"
+      - "decision question / next action"
+    illustrative_labels:
+      evidence: "HYPOTHETICAL EXAMPLE"
+      confidence: "Not assessed"
+    causal_guardrail: "Visual sequence must not imply causal attribution unless the underlying evidence supports it."
   implementation_order:
-    - "static composition"
-    - "CSS transition/keyframes"
-    - "SVG / clip-path"
-    - "CSS scroll-driven animation"
-    - "View Transitions"
+    - "best static composition"
+    - "SVG"
+    - "native CSS transition/keyframes"
+    - "CSS scroll-driven animation as progressive enhancement"
+    - "View Transitions for state/page continuity, not core internal reveal"
     - "small JavaScript"
-    - "GSAP"
-    - "Canvas/WebGL/Three.js only if uniquely justified"
+    - "GSAP only after validated benefit and native insufficiency"
   requirements:
-    - "meaningful static fallback"
-    - "prefers-reduced-motion support"
-    - "mobile validation"
+    - "static information parity"
+    - "prefers-reduced-motion maps to complete static state"
+    - "mobile validation around 390px"
     - "accessibility validation"
-    - "performance review"
+    - "performance/runtime delta review"
+    - "kill motion if static explains as well or better"
 
 technology:
   platform_state: "open"
