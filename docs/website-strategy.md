@@ -12,6 +12,63 @@ Build a premium, high-trust public website that helps PROFIT:
 
 The website is a presentation and conversion surface, not the core farm-management application.
 
+## 1.1 Internal company context for website decisions
+
+This section is **internal decision context, not default public copy**.
+
+PROFIT's company ambition is broader than the first website wedge:
+
+**Build a global Agricultural Decision Intelligence company by creating, proving and scaling superior Verified Economic Value (VEV) for farmers.**
+
+Operating principle:
+
+**Create Value. Prove It. Scale It.**
+
+Global/company ambition must never outrun customer-level evidence. A premium website is not evidence that PROFIT has achieved market leadership, product-market fit, verified savings, global scale or a defensible moat.
+
+### Product-scope boundary
+
+- PROFIT is the master brand.
+- Field Profitability is the current concrete wedge/proof hypothesis for the first farmer-facing website.
+- Do not turn that wedge into a permanent crop-only company definition.
+- The broader product ambition spans agricultural decision support across production systems; livestock and other farm domains may become relevant, but they are **not launch claims** unless separately validated and documented.
+- Do not create future modules/pages merely to imply platform breadth.
+
+### VEV measurement context
+
+Primary internal value metric:
+
+**Verified Economic Value per Customer**
+
+Where relevant and actually supported by evidence, VEV may also be inspected as:
+- VEV per hectare or relevant production unit;
+- VEV per € paid to PROFIT;
+- share of eligible customers with positive VEV;
+- attribution confidence;
+- defined measurement period and cohort.
+
+Do not invent VEV formulas, thresholds, attribution rules or verification standards that are not documented in the approved VEV methodology.
+
+### Trust/data boundary
+
+Treat farmer trust as a product constraint:
+- farmer control over data must remain explicit;
+- data use must be permissioned and transparent;
+- privacy, security and auditability must not be traded for short-term conversion;
+- do not make legal ownership/sharing claims unless they are documented;
+- do not imply that sensitive farm data must be submitted before trust and purpose are established.
+
+### AI and quantitative truth
+
+AI/LLMs may assist explanation, workflow and analysis, but must not be presented as the sole source of truth for critical quantitative farm/economic outputs when validated calculations, rules, source data or models are required.
+
+Any calculator, economic metric or product mockup must:
+- use validated logic/source data when represented as real;
+- expose material assumptions and uncertainty;
+- remain clearly illustrative/modelled when validation is unavailable.
+
+Confidence/evidence presentation should not exceed the quality of the underlying data. Material data-quality considerations include completeness, consistency, freshness, provenance and representativeness.
+
 ## 2. Primary audience
 
 ### Primary: Farmers and farm businesses
