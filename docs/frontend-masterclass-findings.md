@@ -2,7 +2,7 @@
 
 Research date: 2026-09-26
 
-Update: current framework verification confirms Astro 7.3 and TypeScript 7 are now the appropriate stable baseline.
+Update after triple-check: Astro 7.3.x remains the preferred coded-site framework, but TypeScript 7 is not yet the correct Astro baseline. Microsoft currently recommends Astro/Vue/Svelte/MDX workflows remain on TypeScript 6.0 until TS7 programmatic API support is available.
 
 This document captures the strongest frontend-development findings from current masterclasses, tutorials and official platform documentation that materially improve the PROFIT presentation website.
 
@@ -10,7 +10,7 @@ This document captures the strongest frontend-development findings from current 
 
 For a coded production version, the current preferred architecture is:
 
-**Astro 7.3 + TypeScript 7 + semantic HTML + modern native CSS + minimal client JavaScript**
+**Astro 7.3.x + TypeScript 6.x + semantic HTML + modern native CSS + minimal client JavaScript**
 
 Add framework islands only when an interaction genuinely needs them.
 
