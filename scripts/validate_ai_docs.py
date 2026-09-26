@@ -26,6 +26,8 @@ REQUIRED_FILES = [
     "docs/decisions/README.md",
     "docs/decisions/0000-template.md",
     "docs/decisions/0001-ai-development-documentation-architecture.md",
+    ".github/ISSUE_TEMPLATE/ai-development-task.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
 ]
 
 LOCAL_LINK_ENTRYPOINTS = [
@@ -65,6 +67,17 @@ TEXT_INVARIANTS = {
         "When to create an ADR",
         "When not to create an ADR",
         "Superseded",
+    ],
+    ".github/PULL_REQUEST_TEMPLATE.md": [
+        "Evidence / claim integrity",
+        "Verification actually run",
+        "Material decision",
+    ],
+    ".github/ISSUE_TEMPLATE/ai-development-task.yml": [
+        "LOCKED / FLEXIBLE / OPEN",
+        "Acceptance criteria",
+        "Verification plan",
+        "Integrity gate",
     ],
 }
 
