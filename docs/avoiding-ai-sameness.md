@@ -390,8 +390,9 @@ Use:
 - real economic units;
 - real methodology;
 - real evidence-state system;
-- real team/farm language;
-- approved typography/color/motion tokens.
+- real team/farm language.
+
+Use approved typography/color/motion tokens by default in **convergence and production**. During early brand-defining divergence, do not force preferred aesthetic tokens unless the task is explicitly about extending an already approved system.
 
 Adobe's 2026 brand-AI guidance similarly emphasises curated, high-quality, brand-specific source assets rather than generic model priors.
 
@@ -427,7 +428,9 @@ Examples:
 - generic bento homepage;
 - fake futuristic farm imagery.
 
-AI prompts and human reviews should use this exclusion set.
+Use the exclusion set strongly during collision/convergence and production review.
+
+Do not automatically feed the full exclusion set to every early Explorer branch; that can make all branches avoid the same space in the same way and create negative-form sameness.
 
 ---
 
@@ -1304,8 +1307,8 @@ The team must show that multiple independent territories existed before refineme
 ## Rule E — No aesthetic-only approval
 Every accepted idea must pass the PROFIT Creative Evaluation Compass.
 
-## Rule F — Machine-readable brand context
-Tokens + usage rules + examples + exclusions + audit loop.
+## Rule F — Phase-specific machine-readable context
+Use a thin divergence capsule for independent concept generation, then restore tokens + usage rules + examples + exclusions for convergence/production and audit.
 
 ## Rule G — Fix systems, not recurring outputs
 Repeated AI mistakes indicate missing context/governance.
@@ -1825,8 +1828,8 @@ Internal template sameness / sterile identity.
 7. **Protect human-only zones**
    Empathy, truth, taste, core art direction.
 
-8. **Produce through canonical machine-readable context**
-   Avoid ad-hoc prompts.
+8. **Use phase-specific canonical context**
+   Thin context for independent divergence; full canonical brand context for convergence and production. Avoid ad-hoc prompts in both phases.
 
 9. **Attach creative provenance**
    Make every important AI-assisted asset auditable.
@@ -1885,6 +1888,10 @@ Priority sources:
   https://doi.org/10.1080/0144929X.2026.2726451
 - Wan & Kalman — Diverse AI personas can mitigate the homogenization effect in human-AI collaborative ideation, 2026  
   https://doi.org/10.1016/j.chbah.2026.100289
+- Zhang et al. — Perceived authenticity and evaluative asymmetry in judgments of AI-generated product designs, 2026  
+  https://doi.org/10.1016/j.chb.2026.109153
+- Trattner et al. — C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries, ICWSM 2026  
+  https://doi.org/10.1609/icwsm.v20i1.42749
 - Adobe Research — How AI is redistributing creative work  
   https://www.adobe.com/ai/research/202606/ai-is-redistributing-creative-work.html
 - Adobe Research — Why creative friction can lead to better outcomes  
