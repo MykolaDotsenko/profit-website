@@ -28,9 +28,9 @@ company_context:
   scope_boundary:
     master_brand: "PROFIT"
     current_wedge: "Field Profitability"
-    rule: "Do not crop-lock the master brand and do not present future livestock/other production domains as shipped unless explicitly documented."
-    master_brand_gate: "before master-brand homepage positioning is permanently locked, or before pig production/dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort; WWW-000 cannot close this gate; it does not block Field Profitability wedge learning"
-    extensibility: "master brand, naming, IA, category language and visual system stay extensible to crop production, pig production and dairy without rebranding; field/crop-specific elements live at module/wedge level; wedge tests (e.g. WWW-000) must not redefine PROFIT as field-crop-only; pig production and dairy are not shipped and must not be presented as available"
+    rule: "Do not crop-lock the master brand. Public company scope may name crops, horticulture/orchards/berries, greenhouse/protected cultivation, pigs, dairy and other livestock as direction; none may be presented as shipped unless canonical product truth supports it."
+    master_brand_gate: "before master-brand homepage positioning is permanently locked, or before horticulture/greenhouse/livestock directions become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort; WWW-000 cannot close this gate; it does not block Field Profitability wedge learning"
+    extensibility: "master brand, naming, IA, category language and visual system stay extensible across arable crops; horticulture/orchards/berries; greenhouse/protected cultivation; pig production; dairy; beef/grazing livestock; poultry/eggs; other livestock and mixed farms without rebranding; domain-specific metrics/units remain local; Field Profitability is the current first concrete product focus"
   public_claim_rule: "Internal ambition is not public proof."
 
 field_profitability_reference:
@@ -55,7 +55,7 @@ international_validation:
   cohort_rule: "Do not pool materially different countries/languages/market contexts into one qualitative cohort; analyse replication markets separately before cross-market comparison."
   domain:
     current: "crop / Field Profitability wedge"
-    future_unshipped: ["pig production", "dairy"]
+    future_unshipped: ["horticulture / orchards / berries", "greenhouse / protected cultivation", "pig production", "dairy", "beef / grazing livestock", "poultry / eggs", "other livestock"]
   market_cohort_spec:
     required_fields: ["country", "region", "working language", "production context", "farm-size band", "decision-maker role", "digital maturity", "relevant economic context"]
     rule: "Market A is provisionally Finland subject to recruitment feasibility; D5 defines one coherent Finnish first cohort."
@@ -64,7 +64,7 @@ international_validation:
     I1: "One-market evidence: one defined target-market cohort supports the hypothesis for that market/domain."
     I2: "Cross-market replication: the same core job/mechanism is independently supported in a second market."
     I3: "Cross-market robustness: the hypothesis remains useful across materially different markets, with local adaptations separated from the invariant mechanism."
-    I4: "Cross-domain validation: actual domain evidence supports the master economic/evidence grammar across crop production, pig production and dairy; internal design transfer is insufficient."
+    I4: "Cross-domain validation: actual evidence supports the master economic/evidence grammar across materially different production systems, including crop plus horticulture/greenhouse and livestock contexts; internal design transfer is insufficient."
     I5: "International product evidence: repeatable VEV/customer value, retention and willingness-to-pay evidence exists across multiple markets/domains with explicit cohort/period/attribution."
     rule: "Internal maturity labels only; documenting a level does not achieve it and no global validation claim is allowed without evidence."
   economic_semantics:
@@ -93,6 +93,18 @@ international_validation:
     cross_domain_future: "Denmark"
     other: ["Estonia", "Germany", "France"]
   next_decision: "Confirm Finland recruitment feasibility, then resolve D6-D8 and freeze WWW-000; reopen Market A only if the Finland recruitment gate fails."
+
+decision_intelligence_direction:
+  status: "product-development doctrine; not a claim that current Field Profitability already implements all capabilities"
+  data_collection:
+    principle: "work with the farm that exists"
+    priority: ["reuse existing records", "automate reliable sources when available", "minimise operator input for old/non-connected machinery", "offline-first capture with later sync where required", "preserve provenance and farmer permission"]
+    rule: "new hardware, telemetry and continuous connectivity are not universal prerequisites"
+  forecasting:
+    sequence: ["deterministic economics", "forecast uncertain domain drivers", "scenario comparison vs baseline", "decision", "actual outcome", "attribution/confidence", "VEV"]
+    model_rule: "baseline-first; increase ML complexity only when material out-of-sample gains and operational reliability justify it"
+    uncertainty_rule: "show ranges, assumptions, update date and confidence; do not present one precise-looking black-box profit forecast"
+    truth_rule: "LLM is not the quantitative source of truth; forecast accuracy alone is not Verified Economic Value"
 
 objectives:
   primary:
