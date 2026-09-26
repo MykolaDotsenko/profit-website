@@ -1,0 +1,280 @@
+schema_version: 1
+last_updated: "2026-09-26"
+purpose: "Compact derived context for AI-assisted development of the PROFIT public website."
+authority_note: "If this file conflicts with AGENTS.md or canonical documentation, the higher-priority source wins."
+
+source_priority:
+  - "explicit current user instruction"
+  - "AGENTS.md"
+  - "docs/website-blueprint-v1.md"
+  - "docs/triple-check-audit-2026-09-26.md"
+  - "docs/website-strategy.md"
+  - "docs/ai/context.yaml"
+  - "supporting research"
+
+project:
+  name: "PROFIT Website"
+  repository: "MykolaDotsenko/profit-website"
+  product_role: "Public presentation, trust, learning and qualified-conversion surface; not the core farm-management application."
+  current_stage: "Positioning, information architecture, visual direction and implementation approach are being validated before production build."
+
+objectives:
+  primary:
+    - "Help a farmer understand what PROFIT is."
+    - "Explain the farmer problem and economic relevance."
+    - "Show how farm reality/data becomes economic decision support."
+    - "Expose the evidence level and uncertainty behind claims."
+    - "Make farmer data control and trust explicit."
+    - "Create a clear next action."
+  secondary:
+    - "Give investors/partners a credible evidence-led path without turning the homepage into an investor pitch."
+
+principles:
+  - "Farmer value first."
+  - "Investor narrative second."
+  - "Evidence before hype."
+  - "Simple surface, inspectable depth."
+  - "Make confidence and uncertainty understandable."
+  - "Farmer is the hero; PROFIT is the guide."
+  - "No section exists because modern startup sites usually have it."
+
+positioning:
+  category:
+    value: "Agricultural Decision Intelligence"
+    state: "hypothesis"
+  headline:
+    value: "Turn farm data into more profitable decisions."
+    state: "hypothesis"
+  support:
+    value: "PROFIT connects what happens on the farm with what it means economically."
+    state: "hypothesis"
+  primary_cta:
+    value: "Join the pilot"
+    state: "current recommendation"
+  secondary_cta:
+    value: "See how PROFIT works"
+    state: "current recommendation"
+  first_product_proof:
+    value: "Field Profitability"
+    state: "current wedge hypothesis"
+
+value_logic:
+  narrative:
+    - "Farm reality"
+    - "Data"
+    - "Economic interpretation"
+    - "Decision"
+    - "Action"
+    - "Measured outcome"
+  vev_term: "Verified Economic Value"
+  evidence_states:
+    - "Hypothetical"
+    - "Modelled"
+    - "Observed"
+    - "Attributed"
+    - "Verified"
+  confidence_states:
+    - "High"
+    - "Medium"
+    - "Low"
+    - "Insufficient evidence"
+  locked_rules:
+    - "Never present hypothetical/modelled value as observed, attributed or verified."
+    - "Never use Verified unless the evidence and attribution standard is satisfied."
+    - "Illustrative mockups must be unmistakably illustrative."
+    - "Do not infer causal value from outcome alone."
+    - "Do not fabricate partnerships, testimonials, integrations, savings or social proof."
+
+audiences:
+  primary: "Farmers and farm businesses"
+  secondary:
+    - "Investors"
+    - "Partners"
+    - "Advisors"
+
+routes:
+  core_launch:
+    - "/"
+    - "/farmers"
+    - "/product"
+    - "/trust"
+    - "/company"
+    - "/investors"
+    - "/contact"
+  conditional:
+    results: "Add only when real pilot/case-study evidence supports a dedicated page."
+    security: "Split from /trust only when content depth/customer requirements justify it."
+
+homepage:
+  desired_jobs:
+    - "Immediate orientation"
+    - "Concrete farmer economic questions"
+    - "Explain current fragmentation"
+    - "State PROFIT point of view"
+    - "Show Data → Economics → Decision → Action → Measurement"
+    - "Show Field Profitability as concrete product proof"
+    - "Answer hard buyer questions"
+    - "Expose evidence and confidence"
+    - "Build trust"
+    - "Human/company proof"
+    - "Clear pilot CTA"
+  hard_questions:
+    - "What data do you need?"
+    - "Can this work with old machinery?"
+    - "What if data is incomplete?"
+    - "How accurate are the calculations?"
+    - "Who owns the data?"
+    - "What does verified mean?"
+    - "What happens when confidence is low?"
+    - "What does PROFIT not do?"
+
+brand:
+  doctrine: "Real agriculture. Financial precision. Editorial clarity. Quiet technology."
+  signature_grammar: "real agricultural artifact → precise data/field layer → economic meaning"
+  candidate_codes:
+    - "economic typography"
+    - "field geometry"
+    - "real farm photography"
+    - "evidence states"
+    - "confidence states"
+    - "calm explanatory motion"
+  voice:
+    - "precise"
+    - "grounded"
+    - "calm"
+    - "transparent"
+    - "human"
+    - "economically literate"
+  generic_risk:
+    - "generic green agritech SaaS"
+    - "stock farmer with tablet"
+    - "glowing AI gradients/orbs"
+    - "neural networks/particles"
+    - "generic bento identity"
+    - "decorative WebGL/Three.js"
+    - "AI-powered as primary identity"
+    - "unlock insights / farm smarter / transform agriculture as identity language"
+
+ai_creative_process:
+  required:
+    - "human/problem-led strategic brief"
+    - "3+ independent concept territories for brand-defining work"
+    - "divergence before refinement"
+    - "proprietary/real inputs"
+    - "role-bound AI: Challenger, Explorer, Analyst, Builder, or Simulator"
+    - "human convergence and final approval"
+    - "recognition/confusion testing where practical"
+    - "versioned provenance for brand-critical AI-assisted assets"
+  forbidden_pattern: "one AI loop writes the brief, creates, judges and approves the same brand-defining work"
+
+motion:
+  principle: "Make economic causality visible; do not make the site move for its own sake."
+  signature_candidate: "Field → Economics Reveal"
+  implementation_order:
+    - "static composition"
+    - "CSS transition/keyframes"
+    - "SVG / clip-path"
+    - "CSS scroll-driven animation"
+    - "View Transitions"
+    - "small JavaScript"
+    - "GSAP"
+    - "Canvas/WebGL/Three.js only if uniquely justified"
+  requirements:
+    - "meaningful static fallback"
+    - "prefers-reduced-motion support"
+    - "mobile validation"
+    - "accessibility validation"
+    - "performance review"
+
+technology:
+  platform_state: "open"
+  framer: "Valid when it materially accelerates message/design validation and learning."
+  coded_preference: "Astro if/when fully owned coded production is selected."
+  architecture_order:
+    - "semantic/static HTML"
+    - "modern CSS"
+    - "native browser capability"
+    - "small vanilla JavaScript"
+    - "framework island when justified"
+  react: "Not a default dependency; use for genuinely complex stateful interactions only."
+  dependency_rule: "Verify current official documentation before introducing/upgrading dependencies; research version numbers are dated snapshots."
+
+quality:
+  accessibility_target: "WCAG 2.2 AA"
+  core_web_vitals:
+    lcp: "<= 2.5s"
+    inp: "<= 200ms"
+    cls: "<= 0.1"
+    measurement: "p75, mobile and desktop separately where RUM exists"
+  verification_gate:
+    - "production build"
+    - "type check when applicable"
+    - "critical routes"
+    - "primary CTA/navigation"
+    - "form behavior"
+    - "no console errors"
+    - "no failed critical requests"
+    - "responsive 390/768/1024/1440"
+    - "keyboard"
+    - "reduced motion"
+    - "automated accessibility scan"
+    - "obvious performance/page-weight regression"
+    - "copy/evidence integrity"
+
+state:
+  locked:
+    - "farmer-first priority"
+    - "evidence integrity"
+    - "VEV terminology semantics"
+    - "no fabricated proof"
+    - "farmer control and transparency"
+    - "accessibility and performance as quality requirements"
+    - "AI does not define the brand from generic priors"
+  flexible:
+    - "homepage section composition"
+    - "editorial rhythm"
+    - "component structure"
+    - "motion treatment inside approved principles"
+    - "photography crops and layout"
+  open:
+    - "final category wording"
+    - "final headline"
+    - "final visual direction"
+    - "Framer vs coded production"
+    - "final typeface"
+    - "final palette"
+    - "whether Field Profitability is the strongest proof point for the first target cohort"
+
+validation:
+  farmer_10_second_test:
+    - "What does PROFIT do?"
+    - "Who is it for?"
+    - "What problem does it solve?"
+    - "Why might it matter economically?"
+    - "What would you click next?"
+  deeper_farmer_test:
+    - "What concern would stop you trying it?"
+    - "What data would you expect to provide?"
+    - "Which claim feels least credible?"
+    - "What is missing?"
+  investor_test:
+    - "What is the initial wedge?"
+    - "Where does farmer value come from?"
+    - "What evidence exists?"
+    - "What is still hypothetical?"
+    - "What could become defensible?"
+
+next_high_value_work:
+  - "Run farmer comprehension testing."
+  - "Prototype three genuinely different art directions."
+  - "Test emerging brand-code recognition/confusion."
+  - "Validate the Field → Economics Reveal."
+  - "Choose production platform only after learning needs are clear."
+
+definition_of_done:
+  - "Requested behavior exists."
+  - "Relevant acceptance criteria were actually verified."
+  - "Claim/evidence semantics are correct."
+  - "Responsive and accessibility behavior is acceptable."
+  - "No unnecessary complexity/dependency was introduced."
+  - "Documentation remains consistent with implementation."
