@@ -36,6 +36,12 @@ LOCAL_LINK_ENTRYPOINTS = [
 ]
 
 TEXT_INVARIANTS = {
+    "docs/website-blueprint-v1.md": [
+        "VEV per Customer",
+        "Field Profitability is the current wedge/proof hypothesis",
+        "AI-generated prose or reasoning is not a source of truth for critical economic numbers",
+        "AD-7",
+    ],
     "AGENTS.md": [
         "Authority and precedence",
         "Product, content, design and implementation decisions",
@@ -44,6 +50,9 @@ TEXT_INVARIANTS = {
         "LOCKED",
         "FLEXIBLE",
         "Definition of done",
+        "Create Value. Prove It. Scale It.",
+        "Verified Economic Value per Customer",
+        "AI must not be the sole source of truth for critical quantitative outputs",
     ],
     "docs/ai/context.yaml": [
         'schema_version: 1',
@@ -55,11 +64,17 @@ TEXT_INVARIANTS = {
         'flexible:',
         'open:',
         'definition_of_done:',
+        'company_context:',
+        'vev_measurement:',
+        'trust_guardrails:',
+        'AD-7 brand-system transfer',
     ],
     "docs/ai/IMPLEMENTATION_PLAN.md": [
         "Pre-production validation",
+        "WWW-000",
         "WWW-001",
         "WWW-005",
+        "AD-7 — brand-system transfer",
         "Definition of Ready",
         "Definition of Done",
     ],
