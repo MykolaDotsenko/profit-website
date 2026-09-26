@@ -1211,27 +1211,39 @@ Mandatory workflow for brand-defining work:
 
 1. human-authored strategic brief;
 2. solo human framing before shared references;
-3. 3+ independent concept territories;
-4. AI assigned one role at a time:
+3. 3+ independent **strategic framings** — do not reuse fixed territory names as ritual answers;
+4. **thin-context divergence**:
+   - give each Explorer the farmer/user problem, product truth, evidence constraints, required raw inputs and hard legal/accessibility constraints;
+   - withhold the current leading art direction, other concept outputs, preferred composition, approved execution examples and candidate brand codes as mandatory motifs;
+5. require independent perspective origins inside the Explorer stage; functional roles alone do not count as diversity;
+6. use the sequence **brief → framing → low-fidelity human structure → AI prompt** for brand-defining visual ideation;
+7. quarantine the first acceptable/polished concept until independent territories exist;
+8. restore full brand/category context for collision and convergence;
+9. AI assigned one role at a time:
    - Challenger,
    - Explorer,
    - Analyst,
    - Builder,
    - Simulator;
-5. forced divergence before refinement;
-6. evaluation with the PROFIT Creative Evaluation Compass;
-7. implementation from machine-readable brand context;
-8. human approval;
-9. co-presentation of emerging distinctive assets with the PROFIT name;
-10. periodic drift/recognition audit.
+10. independent concept evaluation before group discussion; randomize order and hide creator/AI origin where practical;
+11. adversarial convergence:
+   - falsify the preferred direction;
+   - steelman the strongest rejected direction;
+12. human approval with written rationale;
+13. implementation from the full machine-readable brand context;
+14. granular provenance for brand-critical assets;
+15. co-presentation of emerging distinctive assets with the PROFIT name;
+16. periodic drift/recognition audit.
 
 Never let one AI loop:
 brief → create → judge → approve its own work.
 
+Functional AI role diversity is not sufficient evidence of conceptual diversity.
+
 ### PROFIT Creative Evaluation Compass
 
 Review major concepts for:
-- Product Truth;
+- Product Truth — including agricultural/data plausibility and documentary authenticity;
 - Farmer Relevance;
 - Distinctiveness Potential;
 - Category Contrast;
@@ -1239,6 +1251,8 @@ Review major concepts for:
 - Comprehension;
 - System Potential;
 - Execution Quality.
+
+Do not let visual novelty substitute for plausibility. A farmer-facing visual that implies impossible operations, unavailable data or unsupported product precision fails Product Truth even if it looks distinctive.
 
 Use PASS / CONCERN / REJECT / NEEDS EVIDENCE rather than pseudo-precise scores.
 
@@ -1373,12 +1387,16 @@ Consistency comes from grammar, not identical templates.
 ### Human-only zones
 
 Final human ownership is required for:
+- strategic framing;
 - farmer empathy;
 - documentary truth;
 - core brand point of view;
 - final art direction;
+- final creative selection/taste judgement;
 - localization/cultural nuance;
 - sensitive evidence framing.
+
+Human ownership does not mean unaccountable taste. Material farmer-facing decisions must still survive evidence, comprehension, accessibility and documentary-truth checks.
 
 ### Creative provenance
 
@@ -1391,7 +1409,15 @@ For every brand-critical AI-assisted asset, retain:
 - source/reference assets and rights;
 - human owner/reviewer;
 - approval decision/date;
-- evidence status if economic claims appear.
+- evidence status if economic claims appear;
+- material transformations when relevant: crop/retouch, generative fill/replacement, synthetic objects/backgrounds, compositing.
+
+For documentary agriculture:
+- retain the original source;
+- do not generatively add/remove factual scene elements and continue to classify the result as documentary;
+- if AI materially changes factual scene content, classify the result as illustration/concept imagery rather than documentary proof.
+
+Use Content Credentials/C2PA when practical; do not introduce it as a mandatory dependency before the workflow benefits justify the cost.
 
 Brand-critical AI workflows must be versioned, auditable, and reversible.
 
@@ -1411,5 +1437,7 @@ Prioritize:
 6. production-platform decision.
 
 Start additional research only to resolve a specific OPEN hypothesis, verify a time-sensitive technical fact, materially challenge an existing decision, or reduce a meaningful risk.
+
+The targeted anti-sameness process audit completed on 2026-09-26 is considered saturated for the current stage. Re-open that research only when a real workflow/test failure is not explained by the current mechanism set.
 
 Repository context should carry persistent project rules; individual prompts should stay narrow and task-focused.
