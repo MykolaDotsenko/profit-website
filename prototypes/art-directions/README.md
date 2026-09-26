@@ -97,3 +97,14 @@ Before human testing, internal red-team questions:
 - Is the strongest memorable device actually distinctive, or just fashionable?
 
 No direction is a winner until evidence supports that decision.
+
+
+## Challenge frames
+
+After the first internal red-team, each direction received one deliberate counter-design:
+
+- A2: `a-evidence-editorial/a2-production-economics-spine.html` — tests whether production→economics lineage can make A more ownable than generic editorial styling.
+- B2: `b-farm-operations-layer/b2-production-unit-grammar.html` — removes field geometry and tests a domain-neutral production-unit grammar.
+- C2: `c-economic-control-room/c2-de-dashboarded.html` — removes most dashboard chrome and tests whether economic-state clarity survives.
+
+These do not replace A/B/C in the first controlled comparison. They are challenge evidence and potential second-iteration material.
