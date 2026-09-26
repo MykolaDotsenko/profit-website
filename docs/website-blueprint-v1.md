@@ -596,3 +596,37 @@ Minimum gate:
 Use Playwright against a production preview where practical.
 
 AI-generated code is not accepted based on visual plausibility alone.
+
+
+## 23. Ownable visual system
+
+The website must avoid AI-era visual sameness.
+
+Primary signature motif:
+
+**Agricultural reality → precise data layer → economic meaning**
+
+Build recognizable brand expression from:
+- real agricultural photography;
+- field geometry;
+- economic typography;
+- evidence/confidence states;
+- restrained explanatory motion.
+
+Do not rely on generic agritech/SaaS styling for differentiation.
+
+## 24. TL;DR and guided wayfinding
+
+Because PROFIT is a complex B2B proposition, provide a fast overview before deeper exploration.
+
+Test a compact **PROFIT in 30 seconds** layer covering:
+- target user;
+- problem;
+- mechanism;
+- first wedge;
+- value standard;
+- next action.
+
+For long desktop pages, test subtle guided wayfinding or section markers.
+
+Do not use scroll hijacking or forced scrollytelling.
