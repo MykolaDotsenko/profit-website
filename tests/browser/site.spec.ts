@@ -108,7 +108,8 @@ test.describe('calibrated synthetic proof', () => {
     await expect(example).toContainText('−€69');
     await expect(example).toContainText('3.7');
     await expect(example).toContainText('€207');
-    await expect(example).toContainText('€835');
+    await expect(example).toContainText('€490');
+    await expect(example).toContainText('€345');
   });
 });
 
