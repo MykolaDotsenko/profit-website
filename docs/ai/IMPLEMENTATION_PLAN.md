@@ -35,6 +35,15 @@ If a material production-platform decision is made, create an ADR.
 
 Before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
 
+### International validation architecture
+
+Principle: **Global by architecture. Local by evidence.**
+
+Use the Blueprint §2.3 `Domain × Market × Evidence` model and I0–I5 maturity ladder. Do not pool materially different markets into one qualitative cohort or treat one-market evidence as international validation.
+
+Current immediate decision before WWW-000 freeze:
+**select Market A**. The selection is a separate decision; no country is chosen by this plan. Evaluate farmer access, problem/economic-value potential, data availability, willingness-to-pay learning potential, competition, regulatory/data friction, localisation cost, speed to first VEV evidence and replication potential.
+
 ---
 
 # Workstreams
@@ -54,7 +63,8 @@ Status:
 - D1–D3 were approved on 2026-09-26: a Phase A → B → C session flow, fixed 10 s exposure, and the counting rules (now in Blueprint §17).
 - D4 is settled. The Field Profitability product-truth boundary (an unmerged, unshipped vertical slice) is now in Blueprint §2.2, and PT-1/PT-2 are resolved.
 - The product-truth gate superseded the v1 candidates before testing. The test candidates are H1/H2/H3 v2.
-- Before the stimulus is frozen: D5–D7 must be settled and the approved D8 documentary image supplied.
+- International validation architecture is defined (Blueprint §2.3), but Market A is not selected.
+- Before the stimulus is frozen: D5 Market Cohort Specification, D6 market-specific scenario validation, D7 research-data/consent process and the approved D8 controlled documentary asset must be resolved.
 
 No acceptance criterion below has been met yet.
 
@@ -66,7 +76,7 @@ Test the three canonical Blueprint directions, using the **v2** candidates in Bl
 - H2 — Decision intelligence / decision-context first (v1: current control)
 - H3 — Field Profitability / product proof first
 
-Scope: the Field Profitability **wedge** message only. Results must not redefine PROFIT as field-crop-only. The master brand stays extensible to crop production, pig production and dairy without rebranding (Blueprint §2.1).
+Scope: the Field Profitability **wedge** message only, for one defined future Market A cohort (Blueprint §2.3). Results must retain market/cohort context, must not be pooled with materially different markets, and must not redefine PROFIT as field-crop-only or globally validated. The master brand stays extensible to crop production, pig production and dairy without rebranding (Blueprint §2.1).
 
 Constraints:
 - same neutral/static scaffold;

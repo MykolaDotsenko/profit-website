@@ -70,6 +70,75 @@ Scope: this boundary covers the Field Profitability module only. It does not def
   - several field records can be listed side by side in a saved-snapshots table. This is a list/presentation pattern, not a separate analytics feature;
   - there is no assumptions model or UI and no assessed confidence attached to calculations. Website evidence/confidence labels (e.g. `Confidence: Not assessed` on illustrative material) are website semantics, not a product capability.
 
+## 2.3 International validation architecture (internal)
+
+Principle:
+
+**Global by architecture. Local by evidence.**
+
+PROFIT may be designed for international scale, but a result from one market, language, production domain or cohort is evidence for that context only. Do not convert local learning into a global claim without replication.
+
+### Domain × Market × Evidence
+
+Evaluate product/brand hypotheses on three explicit dimensions:
+
+- **Domain** — production system being evaluated (current wedge: crop / Field Profitability; pig production and dairy remain future/unshipped domains until separately supported).
+- **Market** — country, region, working language, farm-size band, decision-maker role, digital maturity and relevant economic context.
+- **Evidence** — the actual evidence state, cohort, period and confidence supporting the conclusion.
+
+Rules:
+- one qualitative cohort should be internally coherent enough to interpret; do not mix materially different countries/languages into one pooled WWW-000 cohort;
+- when the same hypothesis is tested in another market, analyse that market separately first, then compare whether the mechanism/result replicates;
+- do not hardcode one country's crop, price, currency, unit, terminology or cost structure as a PROFIT-wide truth;
+- do not hardcode one production domain's variables as master-brand invariants;
+- VEV/effect claims must always retain the relevant domain, market/cohort and measurement period.
+
+### International evidence maturity — I0 to I5
+
+These are **internal evidence/maturity labels, not marketing claims**. A level is achieved only when its evidence exists; documenting the ladder does not achieve a level.
+
+- **I0 — International-ready architecture:** market/domain assumptions are separable; locale, currency, unit and production-domain presentation are not embedded as universal truths.
+- **I1 — One-market evidence:** one defined target-market cohort supports the product/message hypothesis for that market/domain.
+- **I2 — Cross-market replication:** the same core job/mechanism is independently supported in a second market.
+- **I3 — Cross-market robustness:** the hypothesis remains useful across materially different market contexts, with local adaptations explicitly separated from the invariant mechanism.
+- **I4 — Cross-domain validation:** the master economic/evidence grammar is supported by actual domain evidence across crop production, pig production and dairy; internal design transfer alone does not satisfy this level.
+- **I5 — International product evidence:** repeatable customer value/VEV, retention and willingness-to-pay evidence exists across multiple markets/domains with attributable, cohort/period-specific evidence.
+
+Do not describe PROFIT as internationally validated, globally proven or equivalent unless the relevant evidence actually exists.
+
+### Locale-neutral economic semantics
+
+Canonical economic meaning must be independent from presentation.
+
+Conceptually separate:
+- metric identity;
+- metric definition/formula/version;
+- numeric value;
+- currency;
+- production unit;
+- measurement period;
+- provenance/evidence state;
+
+from:
+- locale;
+- translated/display label;
+- number/currency/unit formatting.
+
+For example, `€637/ha` is a presentation of a value, not the metric identity. Likewise, a local display term such as “margin” must not redefine the underlying formula.
+
+This is a product/data semantics rule, not a decision to introduce a particular engineering framework or schema now.
+
+### WWW-000 market-validation boundary
+
+WWW-000 remains a **Field Profitability wedge test for one future Market A cohort**. Market A is not selected by this document.
+
+- **D5 — Market Cohort Specification:** country; region; working language; crop/production context; farm-size band; decision-maker role; digital maturity; relevant economic context. One coherent cohort; other markets are separate replication cohorts.
+- **D6 — Market-Specific Economic Scenario Validation:** after D5, a domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology for that market. Local values remain test inputs, not global PROFIT truths.
+- **D7 — Research Data / Consent Architecture:** global principles are voluntary participation, purpose limitation, data minimisation, anonymised/pseudonymised research handling, no personal data in the public repository, and recording only with explicit consent. Jurisdiction-specific compliance remains OPEN until Market A is chosen; do not invent legal requirements.
+- **D8 — Controlled Documentary Asset:** one identical approved documentary crop image across H1/H2/H3 with source/rights/provenance. It is a WWW-000 Market A test asset, not the global PROFIT hero or master-brand image. No synthetic substitution presented as documentary.
+
+After this architecture pass, the next decision is **Market A selection**, not WWW-001. Select Market A separately using evidence such as farmer access, problem severity/economic value, data availability, willingness-to-pay learning potential, competitive intensity, regulatory/data friction, localisation cost, speed to first VEV evidence and replication potential.
+
 ## 3. Primary positioning hypothesis
 
 Category:
@@ -729,10 +798,11 @@ Do not ask for sensitive or detailed farm data before trust is established.
 ### Hero farmer-test protocol
 
 Primary first-round cohort:
-farm decision-makers who are relevant to the current field/crop profitability wedge.
+farm decision-makers who are relevant to the current field/crop profitability wedge **within one defined Market A context (§2.3)**.
 
 Do not mix investors into the farmer-comprehension sample.
-If materially different farmer segments are tested, analyse them as separate cohorts rather than averaging them together.
+Do not pool materially different countries, languages or market contexts into one WWW-000 cohort. Cross-market replication uses separate cohorts and is analysed market-by-market before any cross-market comparison.
+If materially different farmer segments are tested within one market, analyse them as separate cohorts rather than averaging them together.
 
 #### Round 1 — isolate the message
 

@@ -72,6 +72,8 @@ External agents must preserve these boundaries:
 - Customer-level evidence outranks global/leadership/scale ambition.
 - Internal ambitions are not public proof claims.
 - The website is not the core farm-management application.
+- International rule: **Global by architecture. Local by evidence.** Do not pool materially different countries/languages/market contexts into one qualitative cohort or treat one market's result as global evidence.
+- Keep canonical economic metric identities/definitions separate from local presentation (display label, currency, unit and locale). A display string such as `€637/ha` or a local word such as “margin” is not the underlying economic definition.
 
 Primary internal value metric:
 **Verified Economic Value per Customer**

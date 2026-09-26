@@ -3,7 +3,7 @@
 Status: **Draft — not approved to run.**
 - Test candidates: **H1/H2/H3 v2** (Blueprint §5). The v1 set was superseded before farmer testing by the product-truth gate (§4.1a).
 - D1–D4 are settled, including PT-1/PT-2.
-- Before freeze: D5–D7 and the D8 asset (§2).
+- Before freeze: Market A must be selected; D5 Market Cohort Specification, D6 market-specific scenario validation, D7 research-data/consent process and the D8 controlled documentary asset must be resolved (§2, Blueprint §2.3).
 
 Date: 2026-09-26
 Implementation-plan ID: WWW-000
@@ -52,12 +52,12 @@ AI must not settle the open items.
 | D2 | "Repeated pattern" | **APPROVED** (2026-09-26) | 3 or more independent participants. 2 independent participants = **CONCERN**, not an automatic kill. The count does not apply to critical evidence-integrity failures: a single case that shows a false or unsupported claim is corrected regardless of count. Blueprint §17. | PROFIT team |
 | D3 | Exposure duration | **APPROVED** (2026-09-26) | Fixed **10 seconds** for the entire first round. The stimulus enforces it. | PROFIT team |
 | D4 | Product-truth reference for Field Profitability | **SETTLED** — reference found and PT-1/PT-2 resolved (2026-09-26) | This is an experimental reference: an implemented, **unmerged and unshipped** vertical slice. It is used only to keep stimuli from promising more than has been designed or implemented. **Not production proof.** The boundary is now canonical in Blueprint §2.2. Dispositions and the v2 check are in §4.4. | Product owner |
-| D5 | Cohort language and locale | **OPEN — required before sessions** | The locale follows the farmer cohort that is actually recruited, and a human decides it. Until then the stimulus stays in the English Blueprint text and is not translated. When it is translated, a native speaker who knows farm vocabulary translates all three directions with the same care; someone back-translates them; number/unit/currency formats are localized identically. | Human |
-| D6 | Scenario plausibility | **OPEN — required before sessions** | Happens only after the locale and region are known. Someone with farm-economics knowledge of that country/cohort reviews §4.3: crops, areas, yields, revenue (implied price), operating costs, operating profit, units and currency. Changes are applied identically to all three. Until then the values are AI-drafted illustrative placeholders, **not** regional facts. | Human (domain) |
-| D7 | Consent and data handling | **OPEN — required before sessions** | A human defines this through the team's process. This protocol defines no consent or legal terms. §9 only minimizes what is recorded. | Human |
-| D8 | Farm imagery in the scaffold | **APPROVED in principle** (2026-09-26) — **BLOCKED until an approved asset exists** | One identical, real/documentary field-crop farming image in H1/H2/H3 (requirements in §3). No image is added until the team supplies a licensed or approved asset with source/rights provenance. An AI-generated or synthetic image must not be substituted or presented as documentary. | PROFIT team |
+| D5 | Market Cohort Specification | **OPEN — required before freeze/sessions** | After Market A is selected, define: country, region, working language, crop/production context, farm-size band, decision-maker role, digital maturity and relevant economic context. WWW-000 uses one coherent Market A cohort. Do **not** pool materially different countries/languages/market contexts; later markets are separate replication cohorts analysed separately first. Until D5 is fixed, the stimulus stays in the English Blueprint text. Any translation applies equally to H1/H2/H3 and is back-translated/reviewed by a native speaker who knows farm vocabulary. | Human / research owner |
+| D6 | Market-Specific Economic Scenario Validation | **OPEN — required after D5, before sessions** | A domain expert for Market A validates §4.3: crop, area, yield, implied price, currency, operating costs, operating profit, units and local economic terminology. Changes are applied identically to H1/H2/H3. Local scenario values remain **illustrative Market A test inputs**, not regional facts or global PROFIT truths. | Human (domain) |
+| D7 | Research Data / Consent Architecture | **OPEN — required before sessions** | Global research principles: voluntary participation; purpose limitation; data minimisation; anonymised/pseudonymised handling; no personal data in the public repository; recording only with explicit consent. Jurisdiction-specific compliance is a **local overlay** and remains OPEN until Market A is selected. This protocol does not invent legal advice or jurisdiction-specific requirements. | Human / research owner |
+| D8 | Controlled Documentary Asset | **APPROVED in principle** (2026-09-26) — **BLOCKED until an approved asset exists** | One identical real/documentary field-crop image in H1/H2/H3 (requirements in §3) with source/rights/provenance and identical crop/framing/treatment. It is a **WWW-000 Market A controlled test asset**, not the global PROFIT hero or a master-brand image decision. No AI-generated/synthetic image may be substituted or presented as documentary. | PROFIT team |
 
-Once D5–D7 and the D8 asset are settled:
+Once Market A is selected and D5–D7 plus the D8 asset are settled:
 1. apply the changes identically to all three directions;
 2. re-run the stimulus checks (equal visual weight, card size, first-viewport content);
 3. hold a human visual review;
@@ -95,7 +95,7 @@ Blueprint §17 Round 1 requires the same neutral/static scaffold. It holds const
 - relevant to field-crop farming;
 - clear source, rights and provenance recorded;
 - no farmer-with-tablet cliché;
-- a wedge-test asset only, not a master-brand image choice.
+- a Market A wedge-test asset only, not a global PROFIT hero or master-brand image choice.
 
 After adding it, re-check that H1/H2/H3 still get equal visual weight.
 
@@ -204,7 +204,9 @@ This session could not read the branch. The read-only clone was denied by the se
 
 ## 5. Participants
 
-Target: **9–12 farm decision-makers relevant to the current field/crop profitability wedge** (Blueprint §17). 12 is preferred because it completes the counterbalancing in §6.
+Target: **9–12 farm decision-makers relevant to the current field/crop profitability wedge within one defined Market A context** (Blueprint §2.3, §17). 12 is preferred because it completes the counterbalancing in §6.
+
+Do not create a mixed “international” WWW-000 cohort. If the same hypothesis is later replicated in Market B/C, recruit and analyse those cohorts separately before comparing cross-market patterns.
 
 Include people who decide on field operations, inputs or crop economics, such as an owner, manager or partner.
 

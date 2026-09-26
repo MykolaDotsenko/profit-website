@@ -46,6 +46,35 @@ field_profitability_reference:
   presentation: "several field records can be listed side by side in a saved-snapshots table (list pattern, not an analytics feature)"
   not_in_reference: ["assumptions model or UI", "assessed confidence attached to calculations"]
 
+international_validation:
+  principle: "Global by architecture. Local by evidence."
+  model: "Domain × Market × Evidence"
+  cohort_rule: "Do not pool materially different countries/languages/market contexts into one qualitative cohort; analyse replication markets separately before cross-market comparison."
+  domain:
+    current: "crop / Field Profitability wedge"
+    future_unshipped: ["pig production", "dairy"]
+  market_cohort_spec:
+    required_fields: ["country", "region", "working language", "production context", "farm-size band", "decision-maker role", "digital maturity", "relevant economic context"]
+    rule: "Market A is not selected yet; D5 must define one coherent first cohort."
+  evidence_maturity:
+    I0: "International-ready architecture: market/domain assumptions are separable; locale/currency/unit/domain presentation is not treated as universal truth."
+    I1: "One-market evidence: one defined target-market cohort supports the hypothesis for that market/domain."
+    I2: "Cross-market replication: the same core job/mechanism is independently supported in a second market."
+    I3: "Cross-market robustness: the hypothesis remains useful across materially different markets, with local adaptations separated from the invariant mechanism."
+    I4: "Cross-domain validation: actual domain evidence supports the master economic/evidence grammar across crop production, pig production and dairy; internal design transfer is insufficient."
+    I5: "International product evidence: repeatable VEV/customer value, retention and willingness-to-pay evidence exists across multiple markets/domains with explicit cohort/period/attribution."
+    rule: "Internal maturity labels only; documenting a level does not achieve it and no global validation claim is allowed without evidence."
+  economic_semantics:
+    canonical: ["metric identity", "definition/formula/version", "numeric value", "currency", "production unit", "measurement period", "provenance/evidence state"]
+    presentation: ["locale", "translated/display label", "number/currency/unit formatting"]
+    rule: "Display strings such as €637/ha or local terms such as margin do not define the underlying economic metric."
+  www_000_gates:
+    D5: "Market Cohort Specification: define country, region, working language, crop/production context, farm-size band, decision-maker role, digital maturity and economic context; one coherent Market A cohort."
+    D6: "Market-Specific Economic Scenario Validation after D5: domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology; local values are not global truths."
+    D7: "Research Data / Consent Architecture: global principles = voluntary participation, purpose limitation, data minimisation, anonymised/pseudonymised handling, no personal data in public repo, explicit consent for recording; jurisdiction-specific overlay OPEN until Market A."
+    D8: "Controlled Documentary Asset: one identical approved documentary crop image with source/rights/provenance; Market A test asset only, not global hero/master-brand identity; no synthetic documentary substitution."
+  next_decision: "Select Market A separately before WWW-000 freeze using farmer access, problem/economic value, data availability, willingness-to-pay learning potential, competition, regulatory/data friction, localisation cost, speed to first VEV evidence and replication potential."
+
 objectives:
   primary:
     - "Help a farmer understand what PROFIT is."
@@ -158,7 +187,7 @@ hero_validation:
   status: "open hypothesis; current hero is a control, not a production winner"
   experiment_protocol: "docs/experiments/hero-message-test-v1.md"
   stimulus: "prototypes/hero-message-test/"
-  instrument_status: "drafted; test candidates are the v2 set (Blueprint section 5); D1-D4 settled (PT-1 no, PT-2 yes within the saved-snapshots list interpretation); not approved to run: D5-D7 and the D8 asset (approved in principle, blocked until a licensed documentary image exists) required before stimulus freeze"
+  instrument_status: "drafted; test candidates are the v2 set (Blueprint section 5); D1-D4 settled; international validation architecture defined; Market A not selected; not approved to run/freeze until D5 Market Cohort Specification, D6 market-specific scenario validation, D7 research-data/consent process and D8 controlled documentary asset are resolved"
   candidate_set: "v2 (product-truth-safe, 2026-09-26); v1 superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1"
   scope: "Field Profitability wedge message only; not a master-brand positioning test; results must not redefine PROFIT as field-crop-only (company_context.scope_boundary.extensibility)"
   product_truth_reference: "field_profitability_reference (Blueprint section 2.2); WWW-000 v2 check in hero-message-test-v1.md section 4.4"
