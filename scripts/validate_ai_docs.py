@@ -30,6 +30,7 @@ REQUIRED_FILES = [
     ".github/PULL_REQUEST_TEMPLATE.md",
     "docs/homepage-copy-deck-v1.md",
     "docs/experiments/www-000-preflight-pack-v1.md",
+    "docs/experiments/www-000-statistical-surrogate-v1.md",
     "docs/homepage-content-brief-v1.md",
     "docs/website-trust-professionalism-synthesis-2026-09-27.md",
     "src/config/release.ts",
@@ -108,6 +109,13 @@ TEXT_INVARIANTS = {
         "Acceptance criteria",
         "Verification plan",
         "Integrity gate",
+    ],
+    "docs/experiments/www-000-statistical-surrogate-v1.md": [
+        "does not replace farmer evidence",
+        "statistics-calibrated synthetic",
+        "€207/t",
+        "€835/ha",
+        "No hero winner is selected",
     ],
     "docs/experiments/www-000-preflight-pack-v1.md": [
         "human gates remain open",
