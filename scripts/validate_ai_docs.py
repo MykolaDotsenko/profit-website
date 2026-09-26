@@ -28,6 +28,7 @@ REQUIRED_FILES = [
     "docs/decisions/0001-ai-development-documentation-architecture.md",
     ".github/ISSUE_TEMPLATE/ai-development-task.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    "docs/homepage-content-brief-v1.md",
     "docs/website-trust-professionalism-synthesis-2026-09-27.md",
     "src/config/release.ts",
     "src/domain/economics.ts",
@@ -105,6 +106,13 @@ TEXT_INVARIANTS = {
         "Acceptance criteria",
         "Verification plan",
         "Integrity gate",
+    ],
+    "docs/homepage-content-brief-v1.md": [
+        "The homepage must feel simple before it feels sophisticated.",
+        "Field Profitability",
+        "These production systems describe the direction of the PROFIT master brand.",
+        "work with the farm that exists",
+        "The farmer retains decision authority",
     ],
     "docs/website-trust-professionalism-synthesis-2026-09-27.md": [
         "work with the farm that exists",
