@@ -34,6 +34,7 @@ The website must communicate:
 - [Psychology Bestseller Findings](docs/psychology-bestseller-findings.md)
 - [Masterclasses & Tutorials](docs/masterclasses-and-tutorials.md)
 - [Design Masterclass Findings](docs/design-masterclass-findings.md)
+- [Modern Design Masterclasses Deep Pass 2026](docs/modern-design-masterclasses-deep-pass-2026.md)
 - [Frontend Masterclass Findings](docs/frontend-masterclass-findings.md)
 - [Frontend Masterclasses Deep Pass 2026](docs/frontend-masterclasses-deep-pass-2026.md)
 - [Frontend Technologies & Frameworks](docs/frontend-technologies-frameworks.md)
