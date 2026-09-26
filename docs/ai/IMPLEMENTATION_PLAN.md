@@ -112,6 +112,17 @@ Depends on: none.
 
 ### WWW-001 — Three art-direction prototypes
 
+Status:
+**Internal A/B/C prototype round created; not validated and no winner selected.**
+- A: `prototypes/art-directions/a-evidence-editorial/`
+- B: `prototypes/art-directions/b-farm-operations-layer/`
+- C: `prototypes/art-directions/c-economic-control-room/`
+- Shared control: provisional H3 message + statistics-calibrated synthetic scenario.
+- Internal red-team: `docs/experiments/art-direction-internal-red-team-v1.md`.
+- Current challenge focus: remove B's dependence on field geometry; reduce C's dashboard/ERP maturity signal; challenge A's editorial distinctiveness.
+- D8 documentary asset remains unavailable, so all prototypes reserve explicit asset space rather than presenting synthetic imagery as documentary.
+- This internal work does not satisfy WWW-002 farmer validation.
+
 Outcome:
 Create three genuinely different concept territories:
 
