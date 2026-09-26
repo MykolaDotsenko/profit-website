@@ -577,3 +577,22 @@ Revisit the blueprint if:
 - another visual direction materially improves trust and qualified conversion;
 - the platform choice starts slowing learning or imposing material constraints;
 - new VEV evidence changes the strongest value proposition.
+
+
+## 22. AI-assisted verification gate
+
+Because frontend implementation may be AI-assisted, every material UI change must be independently verified.
+
+Minimum gate:
+- production build passes;
+- TypeScript passes;
+- critical routes load;
+- no console errors;
+- primary CTA/navigation/forms work;
+- responsive screenshots at critical widths;
+- automated accessibility scan on critical states;
+- no obvious page-weight/client-JS/performance regression.
+
+Use Playwright against a production preview where practical.
+
+AI-generated code is not accepted based on visual plausibility alone.
