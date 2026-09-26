@@ -257,6 +257,44 @@ No hero winner is selected by this surrogate audit.
 
 ---
 
+## 5.1 Deterministic sensitivity stress check
+
+To avoid designing around one visually convenient result, the calibrated Field 31 base case is also exercised through a deterministic sensitivity set.
+
+This is **not forecasting**. It changes yield and/or price mechanically while holding the synthetic operating-cost structure constant.
+
+| Scenario | Yield | Price | Operating costs | Operating profit |
+|---|---:|---:|---:|---:|
+| Downside | 3.33 t/ha | €186.30/t | €835/ha | −€214.62/ha |
+| Base | 3.70 t/ha | €207.00/t | €835/ha | −€69.10/ha |
+| Price +10% | 3.70 t/ha | €227.70/t | €835/ha | +€7.49/ha |
+| Yield +10% | 4.07 t/ha | €207.00/t | €835/ha | +€7.49/ha |
+| Yield +10% · Price +10% | 4.07 t/ha | €227.70/t | €835/ha | +€91.74/ha |
+
+At the base synthetic cost structure:
+- break-even price ≈ **€225.68/t**;
+- break-even yield ≈ **4.03 t/ha**.
+
+Purpose:
+- verify formula behavior across negative / near-zero / positive states;
+- ensure the website and future art directions work under bad-news as well as good-news economics;
+- prevent a visually attractive positive result from becoming the implicit product story;
+- make the difference between deterministic sensitivity and forecasting inspectable.
+
+Limitations:
+- costs are deliberately held constant;
+- no agronomic response is modelled;
+- no weather, market, biological or causal model is used;
+- these scenarios are not recommendations, probabilities or forecasts;
+- all values remain Hypothetical with Confidence: Not assessed.
+
+Implementation:
+- `src/content/examples/field-sensitivity.ts`;
+- public trust illustration: `/trust/#stress-check`;
+- domain/browser regressions protect the arithmetic and non-forecast framing.
+
+---
+
 # 6. Development use
 
 Until farmer access becomes possible:
