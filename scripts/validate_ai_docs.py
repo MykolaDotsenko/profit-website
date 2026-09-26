@@ -38,6 +38,13 @@ REQUIRED_FILES = [
     "src/components/Metric.astro",
     "playwright.config.ts",
     "tests/browser/site.spec.ts",
+    "prototypes/art-directions/README.md",
+    "prototypes/art-directions/a-evidence-editorial/index.html",
+    "prototypes/art-directions/a-evidence-editorial/a2-production-economics-spine.html",
+    "prototypes/art-directions/b-farm-operations-layer/index.html",
+    "prototypes/art-directions/b-farm-operations-layer/b2-production-unit-grammar.html",
+    "prototypes/art-directions/c-economic-control-room/index.html",
+    "prototypes/art-directions/c-economic-control-room/c2-de-dashboarded.html",
 ]
 
 LOCAL_LINK_ENTRYPOINTS = [
@@ -222,6 +229,59 @@ def validate_local_markdown_links(errors: list[str]) -> None:
                 fail(f"{rel}: broken local link: {target}", errors)
 
 
+ART_DIRECTION_PROTOTYPES = [
+    "prototypes/art-directions/a-evidence-editorial/index.html",
+    "prototypes/art-directions/b-farm-operations-layer/index.html",
+    "prototypes/art-directions/c-economic-control-room/index.html",
+]
+
+ART_DIRECTION_CHALLENGES = [
+    "prototypes/art-directions/a-evidence-editorial/a2-production-economics-spine.html",
+    "prototypes/art-directions/b-farm-operations-layer/b2-production-unit-grammar.html",
+    "prototypes/art-directions/c-economic-control-room/c2-de-dashboarded.html",
+]
+
+
+def validate_art_direction_prototypes(errors: list[str]) -> None:
+    controlled_needles = [
+        "See operating profit by field — and what goes into it.",
+        "Hypothetical",
+        "Confidence: Not assessed",
+        "−€69",
+        "3.7",
+        "€207",
+    ]
+
+    for rel in ART_DIRECTION_PROTOTYPES:
+        path = ROOT / rel
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for needle in controlled_needles:
+            if needle not in text:
+                fail(f"{rel}: missing controlled WWW-001 content: {needle!r}", errors)
+
+        lower = text.lower()
+        if "ai-powered" in lower:
+            fail(f"{rel}: generic AI-powered language is prohibited", errors)
+        if re.search(r"<script[^>]+src=[\"']https?://", text, re.I):
+            fail(f"{rel}: external script dependency is not allowed in static WWW-001 prototype", errors)
+        if re.search(r"<link[^>]+href=[\"']https?://", text, re.I):
+            fail(f"{rel}: external stylesheet dependency is not allowed in static WWW-001 prototype", errors)
+        if '<meta name="viewport"' not in lower:
+            fail(f"{rel}: missing mobile viewport", errors)
+
+    for rel in ART_DIRECTION_CHALLENGES:
+        path = ROOT / rel
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        if "not product UI" not in text:
+            fail(f"{rel}: challenge frame must state it is not product UI", errors)
+        if "See operating profit by field — and what goes into it." not in text and "Production unit → context → economics → evidence → decision." not in text:
+            fail(f"{rel}: challenge frame lost the controlled decision/economic grammar", errors)
+
+
 def validate_adr_names(errors: list[str]) -> None:
     adr_dir = ROOT / "docs/decisions"
     if not adr_dir.is_dir():
@@ -241,6 +301,7 @@ def main() -> int:
     validate_required_files(errors)
     validate_invariants(errors)
     validate_local_markdown_links(errors)
+    validate_art_direction_prototypes(errors)
     validate_adr_names(errors)
 
     if errors:
