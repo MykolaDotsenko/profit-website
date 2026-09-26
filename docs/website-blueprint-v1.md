@@ -828,8 +828,10 @@ At minimum gate:
 - farm-data terms;
 - pilot-process commitments;
 - legal company/contact details;
+- direct contact path for investors/partners/other enquiries;
 - team proof/consent;
 - approved documentary image/provenance;
+- target-market plausibility review for any public illustrative economic scenario;
 - evidence-definition review.
 
 A configured pilot-form endpoint must fail before the privacy/company/pilot-process gates are ready.
