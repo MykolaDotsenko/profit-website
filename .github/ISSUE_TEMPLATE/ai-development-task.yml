@@ -1,0 +1,133 @@
+name: AI Development Task
+description: Structured implementation, design, validation or research task for the PROFIT website.
+title: "[WWW-XXX] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for material PROFIT website work.
+
+        Before implementation, read `AGENTS.md`, `docs/ai/README.md`, the relevant section of `docs/ai/IMPLEMENTATION_PLAN.md`, and the canonical Blueprint.
+
+        Do not convert hypotheses into facts or illustrative economic values into verified results.
+
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: Use the implementation-plan ID when one exists, e.g. WWW-001.
+      placeholder: WWW-001
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / user
+      description: What user or development problem are we solving?
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What should be observably better after this task?
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Canonical source
+      description: Cite the relevant Blueprint/Strategy/ADR sections or files.
+      placeholder: |
+        - docs/website-blueprint-v1.md §...
+        - docs/decisions/....
+    validations:
+      required: true
+
+  - type: textarea
+    id: state
+    attributes:
+      label: LOCKED / FLEXIBLE / OPEN
+      description: State the constraints and hypotheses that affect this task.
+      placeholder: |
+        LOCKED:
+        -
+        FLEXIBLE:
+        -
+        OPEN:
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Current evidence and assumptions
+      description: Separate known evidence from material assumptions.
+      placeholder: |
+        Evidence:
+        -
+        Assumptions:
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      placeholder: |
+        In:
+        -
+        Out:
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Concrete, testable completion conditions.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Which build/browser/responsive/accessibility/performance/evidence checks apply?
+      placeholder: |
+        - [ ] build/type check
+        - [ ] critical journey
+        - [ ] responsive
+        - [ ] keyboard/reduced motion/accessibility
+        - [ ] evidence/copy integrity
+    validations:
+      required: true
+
+  - type: textarea
+    id: reconsider
+    attributes:
+      label: Reconsider if
+      description: What evidence or result would make us change this approach?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: Integrity gate
+      options:
+        - label: I will not invent customer results, partnerships, integrations, savings, testimonials or social proof.
+          required: true
+        - label: I will preserve Hypothetical / Modelled / Observed / Attributed / Verified semantics.
+          required: true
+        - label: I will not declare the task complete without stating which verification checks actually ran.
+          required: true
