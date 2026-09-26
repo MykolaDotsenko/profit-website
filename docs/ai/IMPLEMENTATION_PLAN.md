@@ -104,11 +104,13 @@ Research state:
 **Broad art-direction research stopped for this cycle.** Resume only if test evidence exposes a specific failure that current evidence cannot explain.
 
 Run the Blueprint experiments:
-- AD-1 — 10-second comprehension + trust;
-- AD-2 — evidence interpretation;
-- AD-3 — product-reality/category-confusion;
-- AD-4 — mobile farmer task;
-- AD-5 — trust under bad news/uncertainty.
+- AD-1 — 10-second farmer comprehension;
+- AD-2 — evidence interpretation / calibrated trust;
+- AD-3 — mechanism reconstruction;
+- AD-4 — category-confusion diagnostic;
+- AD-5 — mobile farmer task;
+- AD-6 — trust under bad news/uncertainty;
+- AD-7 — brand-system transfer.
 
 Primary decision objective:
 **farmer comprehension + calibrated trust**
@@ -119,8 +121,10 @@ Acceptance:
 - [ ] open recall captured before preference;
 - [ ] evidence/confidence interpretation errors recorded;
 - [ ] category misclassification patterns recorded;
+- [ ] farm reality → data/source → economic interpretation → decision mechanism reconstruction recorded;
 - [ ] mobile tested separately;
 - [ ] negative/uncertain scenario tested;
+- [ ] brand grammar tested across multiple surfaces rather than hero only;
 - [ ] direction-specific kill criteria applied;
 - [ ] winner/remaining contenders documented as evidence, not taste;
 - [ ] no statistical-winner claim from an underpowered qualitative sample.
