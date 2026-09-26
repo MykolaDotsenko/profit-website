@@ -141,6 +141,9 @@ routes:
 
 hero_validation:
   status: "open hypothesis; current hero is a control, not a production winner"
+  experiment_protocol: "docs/experiments/hero-message-test-v1.md"
+  stimulus: "prototypes/hero-message-test/"
+  instrument_status: "drafted; not approved to run until the protocol's pre-session items (D1-D7) are settled by a human"
   durable_rules:
     - "Hero comprehension must not depend on understanding the category label."
     - "A static first frame must communicate farmer + economic job + credible proof + next action."

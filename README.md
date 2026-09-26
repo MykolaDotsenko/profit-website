@@ -82,4 +82,5 @@ Repository initialized. Positioning, information architecture, visual direction 
 
 ## Prototypes
 
+- [Hero Message Test Stimulus](prototypes/hero-message-test/README.md) — WWW-000 neutral static scaffold for H1/H2/H3
 - [Signature Effect Prototype](prototypes/field-economics-reveal/README.md) — Field → Economics Reveal

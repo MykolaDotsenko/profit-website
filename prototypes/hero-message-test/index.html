@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>PROFIT — hero message test</title>
+<!--
+  WWW-000 hero message test stimulus. Protocol: docs/experiments/hero-message-test-v1.md
+
+  Deliberately neutral: no photography, no brand font, no colour semantics, no field
+  geometry, no motion, so that H1/H2/H3 differ only in their message variables.
+
+  Every shared element (header, CTA, proof-card frame, evidence/confidence labels,
+  decision question, source line) exists exactly once in this file. Only the elements
+  marked class="v v1|v2|v3" differ between directions.
+
+  Copy: docs/website-blueprint-v1.md §5, verbatim. All numbers are illustrative
+  placeholders and must pass a human plausibility review before any session.
+-->
+<style>
+  :root {
+    color-scheme: light;
+    --canvas: #ffffff;
+    --ink: #1a1a1a;
+    --ink-2: #333333;
+    --muted: #555555;
+    --line: #cfcfcf;
+    --panel: #f5f5f5;
+    --radius: .5rem;
+    --gutter: clamp(1rem, 4vw, 3rem);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--canvas); color: var(--ink); }
+  body { margin: 0; line-height: 1.5; }
+  p, h1, h2, ol { margin: 0; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+  /* Direction selection: #h1 / #h2 / #h3 (CSS only, no JavaScript required).
+     Without a target the moderator view shows; with one, only that direction shows. */
+  .site-header, .hero, .v, .blank { display: none; }
+  #h1:target ~ main .moderator, #h2:target ~ main .moderator, #h3:target ~ main .moderator { display: none; }
+  #h1:target ~ .site-header, #h2:target ~ .site-header, #h3:target ~ .site-header { display: block; }
+  #h1:target ~ main .hero, #h2:target ~ main .hero, #h3:target ~ main .hero { display: grid; }
+  #h1:target ~ main .v1, #h2:target ~ main .v2, #h3:target ~ main .v3 { display: block; }
+
+  /* Hidden screen between timed exposures (enabled by the small script below). */
+  .is-hidden .site-header, .is-hidden .hero { visibility: hidden; }
+  .is-hidden :target ~ main .blank {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    inset: 0;
+    background: var(--canvas);
+    color: var(--muted);
+    font-size: .875rem;
+  }
+
+  /* Moderator view — never shown to participants. */
+  .moderator { max-width: 44rem; margin: 0 auto; padding: 2.5rem var(--gutter); }
+  .moderator h1 { font-size: 1.5rem; line-height: 1.25; }
+  .moderator h2 { margin-top: 2rem; font-size: 1.0625rem; }
+  .moderator p, .moderator ul { margin: .75rem 0 0; }
+  .moderator .warning { font-weight: 650; }
+  .moderator kbd { padding: 0 .3rem; border: 1px solid var(--line); border-radius: .25rem; font: inherit; font-size: .9em; }
+
+  /* Stimulus — neutral scaffold. */
+  .site-header { max-width: 72rem; margin: 0 auto; padding: 1.25rem var(--gutter); }
+  .wordmark { font-weight: 800; font-size: 1.125rem; letter-spacing: .04em; }
+
+  .hero {
+    grid-template-areas: "copy" "proof" "cta";
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1rem var(--gutter) 3rem;
+  }
+  .hero-copy { grid-area: copy; }
+  .proof { grid-area: proof; }
+  .hero-cta { grid-area: cta; }
+
+  @media (min-width: 60rem) {
+    .hero {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: "copy proof" "cta proof";
+      column-gap: clamp(2.5rem, 5vw, 5rem);
+      row-gap: 2rem;
+      align-content: center;
+      min-height: calc(100svh - 4.25rem);
+      padding-block: 1.5rem 3rem;
+    }
+    .hero-copy { align-self: end; }
+    .hero-cta { align-self: start; }
+    .proof { align-self: center; }
+  }
+
+  .eyebrow { font-size: .8125rem; font-weight: 650; letter-spacing: .08em; color: var(--muted); }
+  .headline {
+    margin-top: .75rem;
+    max-width: 20ch;
+    font-size: clamp(2rem, 1.35rem + 2.6vw, 3.25rem);
+    line-height: 1.1;
+    font-weight: 750;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+  }
+  .support { margin-top: 1.25rem; max-width: 46ch; font-size: clamp(1.0625rem, 1rem + .3vw, 1.25rem); color: var(--ink-2); }
+
+  .hero-cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn {
+    display: inline-block;
+    padding: .8rem 1.25rem;
+    border: 1px solid var(--ink);
+    border-radius: .375rem;
+    font-weight: 650;
+    line-height: 1.2;
+    color: var(--ink);
+    text-decoration: none;
+    cursor: default;
+  }
+  .btn-primary { background: var(--ink); color: var(--canvas); }
+
+  /* Proof object: identical frame for every direction. */
+  .proof {
+    width: 100%;
+    max-width: 30rem;
+    padding: 1.25rem clamp(1rem, 3vw, 1.5rem) 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+  }
+  .proof-status { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
+  .badge {
+    padding: .2rem .5rem;
+    border: 1px solid var(--ink);
+    border-radius: .25rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+  }
+  .confidence { font-size: .875rem; color: var(--ink-2); }
+
+  /* Equal proof-card size by construction: all three bodies share one grid cell, so the
+     tallest one sets the height on every device and font; only the selected one is visible. */
+  .proof-body { display: grid; margin-top: 1.25rem; }
+  .proof-body > .v { grid-area: 1 / 1; display: block; visibility: hidden; }
+  #h1:target ~ main .proof-body > .v1,
+  #h2:target ~ main .proof-body > .v2,
+  #h3:target ~ main .proof-body > .v3 { visibility: visible; }
+  .proof-title { font-size: 1rem; font-weight: 650; }
+
+  .rows { width: 100%; margin-top: .5rem; border-collapse: collapse; }
+  .rows th, .rows td { padding: .55rem 0; border-top: 1px solid var(--line); vertical-align: baseline; }
+  .rows th { font-weight: 400; text-align: left; color: var(--ink-2); padding-right: 1rem; }
+  .rows td { text-align: right; }
+  .rows thead th { padding-block: .25rem; border-top: 0; font-size: .75rem; letter-spacing: .06em; color: var(--muted); }
+  .rows thead th:last-child { text-align: right; }
+
+  .value { font-size: 1.25rem; font-weight: 650; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; }
+
+  .steps { list-style: none; margin-top: .5rem; padding: 0; }
+  .step-label { font-size: .75rem; letter-spacing: .06em; color: var(--muted); }
+  .step::after { content: "↓"; content: "↓" / ""; display: block; line-height: 1.1; color: var(--muted); }
+  .step-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 1rem; padding: .55rem 0; border-top: 1px solid var(--line); }
+  .step-row span:first-child { color: var(--ink-2); }
+
+  .decision { margin-top: 1rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+  .decision-label { font-size: .75rem; letter-spacing: .06em; color: var(--muted); }
+  .decision-question { margin-top: .25rem; font-weight: 600; }
+  .source { margin-top: 1rem; font-size: .8125rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<span id="h1" hidden></span><span id="h2" hidden></span><span id="h3" hidden></span>
+
+<header class="site-header">
+  <span class="wordmark">PROFIT</span>
+</header>
+
+<main>
+  <div class="moderator">
+    <h1>PROFIT hero message test (WWW-000) — moderator view</h1>
+    <p class="warning">Do not show this view to participants.</p>
+    <p>Protocol: <code>docs/experiments/hero-message-test-v1.md</code>. Run every session on the same device, browser, window size and 100% zoom, in full-screen mode.</p>
+
+    <h2>Stimuli</h2>
+    <ul>
+      <li><a href="#h1">H1 — Economic visibility / farmer job first</a></li>
+      <li><a href="#h2">H2 — Decision intelligence</a></li>
+      <li><a href="#h3">H3 — Field Profitability / product proof first</a></li>
+    </ul>
+    <p>These links show a stimulus immediately (for team review, or for manual timing without JavaScript).</p>
+
+    <h2>Session keys (needs JavaScript)</h2>
+    <ul>
+      <li><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> — load H1 / H2 / H3 behind a hidden screen.</li>
+      <li><kbd>Space</kbd> — show the loaded stimulus for <strong data-exposure-seconds>10</strong> seconds, then hide it automatically.</li>
+      <li><kbd>B</kbd> — show / hide without a timer (second viewing).</li>
+    </ul>
+    <p>Exposure is set once per round in the address: <code>index.html?t=10</code> (allowed 5–10 seconds; default 10).</p>
+  </div>
+
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="v v1">
+        <p class="eyebrow">FIELD ECONOMICS</p>
+        <h1 class="headline">Know where your farm makes money&nbsp;— and where it doesn't.</h1>
+        <p class="support">PROFIT connects field operations, costs and outcomes so you can see where margin is being created or lost and what to investigate next.</p>
+      </div>
+      <div class="v v2">
+        <p class="eyebrow">AGRICULTURAL DECISION INTELLIGENCE</p>
+        <h1 class="headline">Turn farm data into more profitable decisions.</h1>
+        <p class="support">PROFIT connects what happens on the farm with what it means economically.</p>
+      </div>
+      <div class="v v3">
+        <p class="eyebrow">FIELD PROFITABILITY</p>
+        <h1 class="headline">See margin by field&nbsp;— and what drives it.</h1>
+        <p class="support">PROFIT brings operations, costs and outcomes together into field-level economics, with assumptions and confidence visible when they are assessed.</p>
+      </div>
+    </div>
+
+    <section class="proof" aria-labelledby="proof-status">
+      <p class="proof-status">
+        <span class="badge" id="proof-status">HYPOTHETICAL EXAMPLE</span>
+        <span class="confidence">Confidence: Not assessed</span>
+      </p>
+
+      <div class="proof-body">
+        <div class="v v1">
+          <h2 class="proof-title">Three fields, one farm</h2>
+          <table class="rows">
+            <thead>
+              <tr><th scope="col">FIELD</th><th scope="col">MARGIN</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Field 24 · Wheat · 41.7 ha</th><td class="value">€637/ha</td></tr>
+              <tr><th scope="row">Field 12 · Wheat · 23.0 ha</th><td class="value">€148/ha</td></tr>
+              <tr><th scope="row">Field 31 · Barley · 18.4 ha</th><td class="value">−€96/ha</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="v v2">
+          <h2 class="proof-title">Field 31 · Barley · 18.4 ha</h2>
+          <ol class="steps" role="list">
+            <li class="step">
+              <p class="step-label">FARM DATA</p>
+              <p class="step-row"><span>Yield</span> <span class="value">4.1 t/ha</span></p>
+              <p class="step-row"><span>Costs</span> <span class="value">€834/ha</span></p>
+            </li>
+            <li class="step">
+              <p class="step-label">ECONOMIC INTERPRETATION</p>
+              <p class="step-row"><span>Margin</span> <span class="value">−€96/ha</span></p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="v v3">
+          <h2 class="proof-title">Field 31 · Barley · 18.4 ha</h2>
+          <table class="rows">
+            <tbody>
+              <tr><th scope="row">Yield</th><td class="value">4.1 t/ha</td></tr>
+              <tr><th scope="row">Costs</th><td class="value">€834/ha</td></tr>
+              <tr><th scope="row">Margin</th><td class="value">−€96/ha</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="decision">
+        <p class="decision-label">DECISION QUESTION</p>
+        <p class="decision-question">What would you investigate on Field 31 before changing the plan?</p>
+      </div>
+      <p class="source">Source: farmer-provided field records · one&nbsp;season</p>
+    </section>
+
+    <div class="hero-cta">
+      <!-- Placeholder links (no href): the CTAs are shown but intentionally inactive in this test. -->
+      <a class="btn btn-primary">Join the pilot</a>
+      <a class="btn">See how PROFIT works</a>
+    </div>
+  </div>
+
+  <div class="blank">Screen hidden</div>
+</main>
+
+<script>
+  // Optional timed exposure for consistent sessions. The page works without it.
+  (() => {
+    const root = document.documentElement;
+    const requested = Number(new URLSearchParams(location.search).get("t"));
+    const seconds = Number.isFinite(requested) && requested > 0 ? Math.min(10, Math.max(5, requested)) : 10;
+    const onStimulus = () => /^#h[123]$/.test(location.hash);
+    let timer = 0;
+
+    const setHidden = (hidden) => {
+      clearTimeout(timer);
+      root.classList.toggle("is-hidden", hidden);
+    };
+
+    for (const el of document.querySelectorAll("[data-exposure-seconds]")) el.textContent = String(seconds);
+
+    addEventListener("hashchange", () => { if (!onStimulus()) setHidden(false); });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.repeat) return;
+
+      if (event.key === "1" || event.key === "2" || event.key === "3") {
+        setHidden(true);
+        location.hash = "h" + event.key;
+        return;
+      }
+      if (!onStimulus()) return;
+
+      if (event.key === "b" || event.key === "B") {
+        setHidden(!root.classList.contains("is-hidden"));
+      } else if (event.key === " " && root.classList.contains("is-hidden")) {
+        event.preventDefault();
+        setHidden(false);
+        timer = setTimeout(() => root.classList.add("is-hidden"), seconds * 1000);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

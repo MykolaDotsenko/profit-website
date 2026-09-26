@@ -39,6 +39,15 @@ If a material production-platform decision is made, create an ADR.
 
 ### WWW-000 — Controlled hero message validation
 
+Execution source:
+`docs/experiments/hero-message-test-v1.md`
+
+Stimulus:
+`prototypes/hero-message-test/`
+
+Status:
+**Test instrument drafted — not approved to run.** A human must settle the protocol's pre-session items (§2) before session 1. No acceptance criterion below has been met yet.
+
 Outcome:
 Eliminate weak hero positioning before visual art direction becomes a confounding variable.
 
