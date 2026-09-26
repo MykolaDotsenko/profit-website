@@ -1,0 +1,65 @@
+import type { AreaUnit, MassUnit, MetricId } from '../domain/economics';
+import type { AssessedConfidence, EvidenceState, Provenance } from '../domain/evidence';
+
+export interface UnitStrings {
+  perArea: Record<AreaUnit, string>;
+  perMass: Record<MassUnit, string>;
+  mass: Record<MassUnit, string>;
+  area: Record<AreaUnit, string>;
+  spoken: {
+    perArea: Record<AreaUnit, string>;
+    perMass: Record<MassUnit, string>;
+    mass: Record<MassUnit, string>;
+    area: Record<AreaUnit, string>;
+  };
+}
+
+export interface NavItem {
+  href: string;
+  label: string;
+}
+
+/** Interface strings shared by every page. Page copy lives in src/content/<locale>/. */
+export interface UIStrings {
+  brand: string;
+  skipLink: string;
+  nav: {
+    label: string;
+    menu: string;
+    close: string;
+    items: NavItem[];
+    cta: NavItem;
+  };
+  footer: {
+    label: string;
+    tagline: string;
+    evidenceNote: string;
+    groups: { title: string; items: NavItem[] }[];
+  };
+  status: {
+    previewLabel: string;
+    previewText: string;
+    gapLabel: string;
+    reviewLabel: string;
+    imagePending: string;
+  };
+  evidence: {
+    exampleLabel: string;
+    states: Record<EvidenceState, string>;
+    stateDescriptions: Record<EvidenceState, string>;
+    confidenceLabel: string;
+    confidence: Record<AssessedConfidence | 'not-assessed', string>;
+    provenance: Record<Provenance, string>;
+    illustrativeSource: string;
+    rungOf: (rung: number, total: number) => string;
+  };
+  metrics: Record<MetricId, string>;
+  units: UnitStrings;
+  crops: Record<string, string>;
+  field: (id: string) => string;
+  seasons: (count: number) => string;
+  meta: {
+    defaultDescription: string;
+    titleSuffix: string;
+  };
+}

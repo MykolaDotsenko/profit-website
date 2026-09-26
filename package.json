@@ -1,0 +1,25 @@
+{
+  "name": "profit-website",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "PROFIT public website — Build Pass 01 foundation (Astro, static output).",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "node --experimental-strip-types --test tests/domain.test.ts",
+    "verify": "astro check && npm test && astro build"
+  },
+  "dependencies": {
+    "astro": "7.3.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "6.0.3"
+  }
+}

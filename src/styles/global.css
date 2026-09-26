@@ -1,0 +1,243 @@
+@layer reset, tokens, base, layout, components, utilities;
+
+@import './tokens.css';
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  input,
+  button,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-padding-block-start: var(--space-5);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    min-height: 100dvh;
+    background: var(--color-canvas);
+    color: var(--color-text);
+    font-family: var(--font-text);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-strong);
+    line-height: var(--leading-snug);
+    text-wrap: balance;
+  }
+  h1 {
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-tight);
+  }
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+  a {
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
+    text-decoration-color: currentColor;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: var(--radius-s);
+  }
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+  strong {
+    font-weight: var(--weight-strong);
+  }
+  abbr[title] {
+    text-decoration: none;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-interactive) 22%, transparent);
+  }
+  /* Economic numbers are a typographic role, not an afterthought. */
+  data,
+  .num {
+    font-family: var(--font-numeric);
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+}
+
+@layer layout {
+  .container {
+    width: min(100% - 2 * var(--gutter), var(--container));
+    margin-inline: auto;
+  }
+  .stack > * + * {
+    margin-block-start: var(--stack-space, var(--space-4));
+  }
+  .measure {
+    max-width: var(--measure);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-label);
+    font-size: var(--text-label);
+    font-weight: var(--weight-strong);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+  }
+  .lead {
+    font-size: var(--text-lead);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    max-width: var(--measure-wide);
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 3rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--color-brand);
+    border-radius: var(--radius-m);
+    font-size: var(--text-small);
+    font-weight: var(--weight-strong);
+    line-height: 1.2;
+    text-decoration: none;
+    text-align: center;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard);
+  }
+  .button--primary {
+    background: var(--color-brand);
+    color: var(--color-on-brand);
+  }
+  .button--primary:hover {
+    background: var(--ink-800);
+  }
+  .button--secondary {
+    background: transparent;
+    color: var(--color-text);
+  }
+  .button--secondary:hover {
+    background: color-mix(in srgb, var(--color-brand) 7%, transparent);
+  }
+  .status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    justify-self: start;
+    width: fit-content;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--color-control-border);
+    border-radius: var(--radius-s);
+    font-size: var(--text-caption);
+    font-weight: var(--weight-strong);
+    line-height: 1.3;
+  }
+  .status-chip::before {
+    content: '';
+    flex: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+  }
+  .text-link {
+    font-weight: var(--weight-strong);
+  }
+  .text-link::after {
+    content: ' →';
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+
+/* Continuity between pages; off when motion is reduced (Blueprint §10). */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 160ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

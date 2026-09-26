@@ -1,0 +1,269 @@
+---
+/**
+ * Hero proof object. The frame, evidence label, decision question and source line are shared;
+ * only the body changes with the hero direction, so swapping H1/H2/H3 needs no layout change.
+ */
+import EvidenceLabel from './EvidenceLabel.astro';
+import Metric from './Metric.astro';
+import SourceLine from './SourceLine.astro';
+import { fieldLabel, fieldParts } from './fieldLabel';
+import { focusField, type FieldSeasonExample } from '../content/examples/field-season';
+import type { ProofKind } from '../content/types';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  kind: ProofKind;
+  example: FieldSeasonExample;
+  labels: {
+    list: string;
+    data: string;
+    economics: string;
+    decision: string;
+    question: string;
+    records: string;
+  };
+}
+
+const { kind, example, labels } = Astro.props;
+const locale = localeInfo(Astro.currentLocale);
+const t = ui(locale.code);
+const focus = focusField(example);
+const cur = example.currency;
+const perHa = (metric: 'revenue' | 'operating_costs' | 'operating_profit', amount: number) => ({
+  metric,
+  amount,
+  currency: cur,
+  perArea: 'ha' as const,
+});
+const yieldValue = { metric: 'yield' as const, amount: focus.inputs.yieldPerHa, mass: 't' as const, perArea: 'ha' as const };
+---
+
+<figure class="proof-card">
+  <EvidenceLabel meta={example.meta} />
+
+  <div class="proof-card__body">
+    {
+      kind === 'field-list' && (
+        <table class="proof-table">
+          <caption class="proof-card__title">{labels.list}</caption>
+          <tbody>
+            {example.fields.map((f) => (
+              <tr>
+                <th scope="row">
+                  <span class="field-name">{fieldParts(f, t, locale.intl).name}</span>
+                  <span class="field-detail">{fieldParts(f, t, locale.intl).detail}</span>
+                </th>
+                <td>
+                  <Metric value={perHa('operating_profit', f.operatingProfitPerHa)} size="m" signal />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )
+    }
+
+    {
+      kind === 'field-flow' && (
+        <>
+          <p class="proof-card__title">{fieldLabel(focus, t, locale.intl)}</p>
+          <div class="flow">
+            <div class="flow__step">
+              <p class="flow__label">{labels.data}</p>
+              <dl>
+                <div>
+                  <dt>{t.metrics.yield}</dt>
+                  <dd>
+                    <Metric value={yieldValue} />
+                  </dd>
+                </div>
+                <div>
+                  <dt>{t.metrics.operating_costs}</dt>
+                  <dd>
+                    <Metric value={perHa('operating_costs', focus.economics.operatingCostsPerHa)} />
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <span class="flow__arrow" aria-hidden="true">→</span>
+            <div class="flow__step">
+              <p class="flow__label">{labels.economics}</p>
+              <dl>
+                <div>
+                  <dt>{t.metrics.revenue}</dt>
+                  <dd>
+                    <Metric value={perHa('revenue', focus.economics.revenuePerHa)} />
+                  </dd>
+                </div>
+                <div class="is-result">
+                  <dt>{t.metrics.operating_profit}</dt>
+                  <dd>
+                    <Metric value={perHa('operating_profit', focus.economics.operatingProfitPerHa)} size="m" signal />
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </>
+      )
+    }
+
+    {
+      kind === 'field-composition' && (
+        <table class="proof-table">
+          <caption class="proof-card__title">{fieldLabel(focus, t, locale.intl)}</caption>
+          <tbody>
+            <tr>
+              <th scope="row">{t.metrics.yield}</th>
+              <td>
+                <Metric value={yieldValue} />
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">{t.metrics.revenue}</th>
+              <td>
+                <Metric value={perHa('revenue', focus.economics.revenuePerHa)} />
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">{t.metrics.operating_costs}</th>
+              <td>
+                <Metric value={perHa('operating_costs', focus.economics.operatingCostsPerHa)} />
+              </td>
+            </tr>
+            <tr class="is-result">
+              <th scope="row">{t.metrics.operating_profit}</th>
+              <td>
+                <Metric value={perHa('operating_profit', focus.economics.operatingProfitPerHa)} size="m" signal />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      )
+    }
+  </div>
+
+  <div class="proof-card__decision">
+    <p class="eyebrow">{labels.decision}</p>
+    <p class="proof-card__question">{labels.question}</p>
+  </div>
+
+  <figcaption>
+    <SourceLine meta={example.meta} period={example.period} records={labels.records} />
+  </figcaption>
+</figure>
+
+<style>
+  @layer components {
+    .proof-card {
+      display: grid;
+      gap: var(--space-4);
+      padding: clamp(1.125rem, 0.8rem + 1.2vw, 1.75rem);
+      background: var(--color-surface);
+      border: 1px solid var(--color-line);
+      border-top: 3px solid var(--color-line-strong);
+      box-shadow: 0 1px 0 rgb(21 24 27 / 0.04), 0 18px 40px -28px rgb(21 24 27 / 0.35);
+      container-type: inline-size;
+    }
+    .proof-card__title {
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+      text-align: start;
+      padding-block-end: var(--space-3);
+      border-block-end: 1px solid var(--color-line);
+    }
+    .proof-table {
+      width: 100%;
+    }
+    .proof-table caption {
+      caption-side: top;
+      margin-block-end: var(--space-1);
+    }
+    .proof-table th {
+      padding-block: var(--space-3);
+      padding-inline-end: var(--space-3);
+      font-weight: var(--weight-regular);
+      text-align: start;
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    .field-name {
+      display: block;
+      color: var(--color-text);
+    }
+    .field-detail {
+      display: block;
+      font-size: var(--text-caption);
+    }
+    .proof-table td {
+      text-align: end;
+      padding-block: var(--space-3);
+    }
+    .proof-table tr + tr {
+      border-block-start: 1px solid var(--color-line);
+    }
+    .proof-table tr.is-result {
+      border-block-start: 2px solid var(--color-line-strong);
+    }
+    .proof-table tr.is-result th {
+      color: var(--color-text);
+      font-weight: var(--weight-strong);
+    }
+    /* Data → economics, side by side: the figure sits under its label, so both columns fit a phone. */
+    .flow {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: var(--space-3);
+      align-items: start;
+      margin-block-start: var(--space-3);
+    }
+    .flow__label {
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      padding-block-end: var(--space-2);
+      border-block-end: 1px solid var(--color-line);
+    }
+    .flow__arrow {
+      align-self: center;
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+    }
+    .flow dl > div {
+      display: grid;
+      gap: 0.125rem;
+      padding-block: var(--space-3);
+    }
+    .flow dl > div + div {
+      border-block-start: 1px solid var(--color-line);
+    }
+    .flow dt {
+      font-size: var(--text-caption);
+      color: var(--color-text-secondary);
+    }
+    .flow .is-result dt {
+      color: var(--color-text);
+      font-weight: var(--weight-strong);
+    }
+    @container (max-width: 17.99rem) {
+      .flow {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .flow__arrow {
+        justify-self: start;
+        transform: rotate(90deg);
+      }
+    }
+    .proof-card__decision {
+      padding-block-start: var(--space-4);
+      border-block-start: 1px solid var(--color-line);
+    }
+    .proof-card__question {
+      margin-block-start: var(--space-1);
+      font-weight: var(--weight-strong);
+      line-height: 1.4;
+    }
+  }
+</style>

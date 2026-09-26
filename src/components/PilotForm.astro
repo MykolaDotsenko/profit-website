@@ -1,0 +1,311 @@
+---
+/**
+ * Pilot form: five fields only (Blueprint §16). Works without JavaScript through native
+ * validation; the script adds accessible inline errors, an error summary and status messages.
+ * With no endpoint configured the form sends nothing (method="dialog" is a no-op outside a
+ * dialog), and says so.
+ */
+import ContentGap from './ContentGap.astro';
+import type { PilotFormContent } from '../content/types';
+
+interface Props {
+  content: PilotFormContent;
+  endpoint: string | null;
+}
+
+const { content: c, endpoint } = Astro.props;
+const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefix: c.errorPrefix });
+---
+
+<form
+  class="pilot-form"
+  data-pilot-form
+  data-endpoint={endpoint ?? ''}
+  data-messages={messages}
+  method={endpoint ? 'post' : 'dialog'}
+  action={endpoint ?? undefined}
+  aria-labelledby="pilot-form-title"
+>
+  <h2 id="pilot-form-title" class="pilot-form__title">{c.title}</h2>
+  <p class="pilot-form__required">{c.requiredNote}</p>
+
+  <div class="pilot-form__summary" data-error-summary tabindex="-1" role="alert" hidden>
+    <h3 class="pilot-form__summary-title">{c.summaryTitle}</h3>
+    <ul data-error-list role="list"></ul>
+  </div>
+
+  <div class="field">
+    <label for="pf-name">{c.fields.name.label}</label>
+    <p class="field__error" id="pf-name-error" hidden></p>
+    <input id="pf-name" name="name" type="text" autocomplete="name" required aria-describedby="pf-name-error" />
+  </div>
+
+  <div class="field">
+    <label for="pf-organisation">{c.fields.organisation.label}</label>
+    <p class="field__error" id="pf-organisation-error" hidden></p>
+    <input
+      id="pf-organisation"
+      name="organisation"
+      type="text"
+      autocomplete="organization"
+      required
+      aria-describedby="pf-organisation-error"
+    />
+  </div>
+
+  <div class="field">
+    <label for="pf-country">{c.fields.country.label}</label>
+    <p class="field__error" id="pf-country-error" hidden></p>
+    <input id="pf-country" name="country" type="text" autocomplete="country-name" required aria-describedby="pf-country-error" />
+  </div>
+
+  <div class="field">
+    <label for="pf-email">{c.fields.email.label}</label>
+    <p class="field__hint" id="pf-email-hint">{c.fields.email.hint}</p>
+    <p class="field__error" id="pf-email-error" hidden></p>
+    <input
+      id="pf-email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      spellcheck="false"
+      required
+      aria-describedby="pf-email-hint pf-email-error"
+    />
+  </div>
+
+  <div class="field">
+    <label for="pf-farmType">{c.fields.farmType.label}</label>
+    <p class="field__hint" id="pf-farmType-hint">{c.fields.farmType.hint}</p>
+    <p class="field__error" id="pf-farmType-error" hidden></p>
+    <select id="pf-farmType" name="farmType" required aria-describedby="pf-farmType-hint pf-farmType-error">
+      <option value="">{c.fields.farmType.placeholder}</option>
+      {c.fields.farmType.options.map((o) => <option value={o.value}>{o.label}</option>)}
+    </select>
+  </div>
+
+  <p class="pilot-form__privacy">{c.privacy}</p>
+  <ContentGap owner={c.privacyReview.owner} kind="review" text={c.privacyReview.text} />
+
+  <div class="pilot-form__actions">
+    <button class="button button--primary" type="submit">{c.submit}</button>
+    {!endpoint && <p class="pilot-form__preview">{c.previewNote}</p>}
+  </div>
+  <p class="pilot-form__status" data-form-status role="status"></p>
+</form>
+
+<script>
+  type FieldName = 'name' | 'organisation' | 'country' | 'email' | 'farmType';
+  interface Messages {
+    errorPrefix: string;
+    errors: Record<FieldName, { required: string; format?: string }>;
+    status: { notConnected: string; sending: string; success: string; failure: string };
+  }
+
+  const form = document.querySelector<HTMLFormElement>('[data-pilot-form]');
+  if (form) {
+    const m = JSON.parse(form.dataset.messages ?? '{}') as Messages;
+    const endpoint = form.dataset.endpoint ?? '';
+    const summary = form.querySelector<HTMLElement>('[data-error-summary]');
+    const summaryList = form.querySelector<HTMLUListElement>('[data-error-list]');
+    const status = form.querySelector<HTMLElement>('[data-form-status]');
+    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const controls = Array.from(form.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input, select'));
+
+    // Custom messages replace the browser's, so they can be translated and announced consistently.
+    form.noValidate = true;
+
+    const messageFor = (el: HTMLInputElement | HTMLSelectElement): string => {
+      const text = m.errors[el.name as FieldName];
+      if (!text) return '';
+      if (el.validity.valueMissing) return text.required;
+      if (el.validity.typeMismatch && text.format) return text.format;
+      return '';
+    };
+
+    const showError = (el: HTMLInputElement | HTMLSelectElement, message: string) => {
+      const box = document.getElementById(`${el.id}-error`);
+      if (box) {
+        box.replaceChildren();
+        if (message) {
+          const prefix = document.createElement('span');
+          prefix.className = 'sr-only';
+          prefix.textContent = `${m.errorPrefix} `;
+          box.append(prefix, message);
+        }
+        box.hidden = !message;
+      }
+      if (message) el.setAttribute('aria-invalid', 'true');
+      else el.removeAttribute('aria-invalid');
+      el.closest('.field')?.classList.toggle('field--error', Boolean(message));
+    };
+
+    const setStatus = (text: string) => {
+      if (status) status.textContent = text;
+    };
+
+    controls.forEach((el) =>
+      el.addEventListener(el instanceof HTMLSelectElement ? 'change' : 'input', () => {
+        if (el.hasAttribute('aria-invalid')) showError(el, messageFor(el));
+      }),
+    );
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const errors = controls.map((el) => ({ el, message: messageFor(el) })).filter((e) => e.message);
+      controls.forEach((el) => showError(el, messageFor(el)));
+
+      if (errors.length && summary && summaryList) {
+        summaryList.replaceChildren(
+          ...errors.map(({ el, message }) => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${el.id}`;
+            a.textContent = message;
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
+              el.focus();
+            });
+            li.append(a);
+            return li;
+          }),
+        );
+        summary.hidden = false;
+        setStatus('');
+        summary.focus();
+        return;
+      }
+      if (summary) summary.hidden = true;
+
+      if (!endpoint) {
+        setStatus(m.status.notConnected);
+        return;
+      }
+
+      setStatus(m.status.sending);
+      if (submit) submit.disabled = true;
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error(String(response.status));
+        form.reset();
+        setStatus(m.status.success);
+      } catch {
+        setStatus(m.status.failure);
+      } finally {
+        if (submit) submit.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  @layer components {
+    .pilot-form {
+      display: grid;
+      gap: var(--space-5);
+      max-width: 34rem;
+      padding: clamp(1.25rem, 0.8rem + 2vw, 2.25rem);
+      background: var(--color-surface);
+      border: 1px solid var(--color-line);
+      border-top: 3px solid var(--color-line-strong);
+    }
+    .pilot-form__title {
+      font-size: var(--text-subsection);
+    }
+    .pilot-form__required {
+      margin-block-start: calc(-1 * var(--space-4));
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    .field {
+      display: grid;
+      gap: var(--space-1);
+    }
+    .field label {
+      font-weight: var(--weight-strong);
+    }
+    .field__hint {
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    .field__error {
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+      color: var(--color-value-risk);
+    }
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.625rem 0.75rem;
+      border: 1px solid var(--color-control-border);
+      border-radius: var(--radius-m);
+      background: var(--color-surface);
+    }
+    .field select {
+      appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+      background-position:
+        calc(100% - 1.1rem) 55%,
+        calc(100% - 0.75rem) 55%;
+      background-size: 0.35rem 0.35rem;
+      background-repeat: no-repeat;
+      padding-inline-end: 2.25rem;
+    }
+    .field input:focus-visible,
+    .field select:focus-visible {
+      outline-offset: 1px;
+    }
+    .field--error input,
+    .field--error select {
+      border: 2px solid var(--color-value-risk);
+    }
+    .pilot-form__summary {
+      padding: var(--space-4);
+      border: 2px solid var(--color-value-risk);
+      border-radius: var(--radius-m);
+    }
+    .pilot-form__summary:focus-visible {
+      outline-offset: 2px;
+    }
+    .pilot-form__summary-title {
+      font-size: var(--text-body);
+      margin-block-end: var(--space-2);
+    }
+    .pilot-form__summary a {
+      color: var(--color-value-risk);
+      font-weight: var(--weight-strong);
+    }
+    .pilot-form__privacy {
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    .pilot-form__actions {
+      display: grid;
+      gap: var(--space-3);
+      justify-items: start;
+    }
+    .pilot-form__preview {
+      font-size: var(--text-caption);
+      color: var(--color-text-secondary);
+    }
+    .pilot-form__status {
+      padding: var(--space-3) var(--space-4);
+      border-inline-start: 3px solid var(--color-line-strong);
+      background: var(--color-surface-sunken);
+      font-weight: var(--weight-strong);
+    }
+    /* Kept in the accessibility tree while empty, so the first message is announced. */
+    .pilot-form__status:empty {
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+  }
+</style>

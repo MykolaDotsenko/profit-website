@@ -1,0 +1,63 @@
+---
+/** Blueprint §4: Baseline → Counterfactual → Intervention → Outcome → Effect → Attribution → Confidence. */
+import type { TextItem } from '../content/types';
+
+interface Props {
+  steps: TextItem[];
+}
+
+const { steps } = Astro.props;
+---
+
+<div class="chain-wrap">
+<ol class="chain" role="list">
+  {
+    steps.map((step, i) => (
+      <li>
+        <span class="chain__index num">{i + 1}</span>
+        <span class="chain__name">{step.title}</span>
+        <span class="chain__text">{step.text}</span>
+      </li>
+    ))
+  }
+</ol>
+</div>
+
+<style>
+  @layer components {
+    .chain-wrap {
+      container-type: inline-size;
+    }
+    .chain {
+      border-block-start: 1px solid var(--color-line-strong);
+    }
+    .chain li {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: var(--space-3);
+      padding-block: var(--space-3);
+      border-block-end: 1px solid var(--color-line);
+      font-size: var(--text-small);
+    }
+    .chain__index {
+      color: var(--color-text-secondary);
+    }
+    .chain__name {
+      font-weight: var(--weight-strong);
+    }
+    .chain__text {
+      color: var(--color-text-secondary);
+    }
+    .chain__text {
+      grid-column: 2;
+    }
+    @container (min-width: 26rem) {
+      .chain li {
+        grid-template-columns: 2rem 9.5rem minmax(0, 1fr);
+      }
+      .chain__text {
+        grid-column: auto;
+      }
+    }
+  }
+</style>

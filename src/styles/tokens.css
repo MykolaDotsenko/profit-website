@@ -1,0 +1,112 @@
+/*
+ * Design tokens — Build Pass 01 BASELINE.
+ *
+ * Status: FLEXIBLE placeholder values, not an approved art direction. Final typeface and final
+ * palette are OPEN (docs/ai/context.yaml `state.open`); WWW-001/002 decide them. Components use
+ * the semantic roles below only, so a direction can be applied by changing values here.
+ *
+ * Rules that do not change with the art direction:
+ * - evidence, confidence and value meaning never rely on colour alone (sign, text, position);
+ * - text and UI boundaries meet WCAG 2.2 AA contrast on every surface they are used on;
+ * - no brand identity is built on "green = agriculture".
+ */
+@layer tokens {
+  :root {
+    /* Primitives (replaceable). */
+    --paper-0: #ffffff;
+    --paper-50: #faf9f5;
+    --paper-100: #f4f2ec;
+    --paper-200: #eae7df;
+    --paper-300: #d8d4c9;
+    --ink-950: #15181b;
+    --ink-800: #2b2f34;
+    --ink-600: #545a61;
+    --ink-500: #7a7f86;
+    --ink-300: #b4b9bf;
+    --blue-600: #1f45c7;
+    --blue-200: #a9bcff;
+    --green-700: #1e6b41;
+    --amber-700: #8a5a00;
+    --red-700: #a8391c;
+
+    /* Semantic colour roles (Blueprint §7). */
+    --color-canvas: var(--paper-100);
+    --color-surface: var(--paper-0);
+    --color-surface-sunken: var(--paper-200);
+    --color-text: var(--ink-950);
+    --color-text-secondary: var(--ink-600);
+    --color-line: var(--paper-300);
+    --color-line-strong: var(--ink-950);
+    --color-control-border: var(--ink-500);
+    --color-brand: var(--ink-950);
+    --color-on-brand: var(--paper-50);
+    --color-interactive: var(--blue-600);
+    --color-focus: var(--blue-600);
+    --color-value-positive: var(--green-700);
+    --color-value-attention: var(--amber-700);
+    --color-value-risk: var(--red-700);
+    --color-evidence-text: var(--ink-800);
+    --color-evidence-bg: var(--paper-200);
+    --color-evidence-line: var(--ink-500);
+    --color-inverse-canvas: var(--ink-950);
+    --color-inverse-text: var(--paper-100);
+    --color-inverse-secondary: var(--ink-300);
+    --color-inverse-line: #3a3f45;
+    --color-inverse-focus: var(--blue-200);
+    --color-gap-bg: #fff6d6;
+    --color-gap-line: var(--amber-700);
+
+    /* Typography roles (Blueprint §7): display, section heading, body, caption, metrics, evidence label. */
+    --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    --font-display: var(--font-sans);
+    --font-text: var(--font-sans);
+    --font-numeric: var(--font-sans);
+    --font-label: var(--font-sans);
+
+    --text-display: clamp(2.125rem, 1.5rem + 3.2vw, 4.25rem);
+    --text-page-title: clamp(2.125rem, 1.55rem + 2.6vw, 3.75rem);
+    --text-section: clamp(1.75rem, 1.35rem + 1.8vw, 2.875rem);
+    --text-subsection: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+    --text-question: clamp(1.375rem, 1.1rem + 1.25vw, 2.125rem);
+    --text-lead: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
+    --text-body: 1.0625rem;
+    --text-small: 0.9375rem;
+    --text-caption: 0.8125rem;
+    --text-label: 0.75rem;
+    --text-metric-l: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+    --text-metric-m: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);
+    --text-metric-s: 1.0625rem;
+
+    --leading-tight: 1.06;
+    --leading-snug: 1.25;
+    --leading-body: 1.6;
+    --tracking-display: -0.022em;
+    --tracking-label: 0.09em;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-strong: 650;
+
+    /* Space and layout. */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-section: clamp(4rem, 2.6rem + 6vw, 8rem);
+    --gutter: clamp(1rem, 0.4rem + 2.6vw, 3rem);
+    --container: 78rem;
+    --measure: 36rem;
+    --measure-wide: 46rem;
+    --radius-s: 2px;
+    --radius-m: 4px;
+    --header-height: 4rem;
+
+    /* Motion: feedback and continuity only (Blueprint §10). */
+    --duration-fast: 120ms;
+    --duration-base: 200ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  }
+}

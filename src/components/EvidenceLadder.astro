@@ -1,0 +1,86 @@
+---
+/** The canonical evidence ladder, with where the current material sits. */
+import { EVIDENCE_LADDER, type EvidenceState } from '../domain/evidence';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  /** Marks the rung the site's own material sits on. */
+  current: EvidenceState;
+  currentLabel: string;
+}
+
+const { current, currentLabel } = Astro.props;
+const t = ui(localeInfo(Astro.currentLocale).code);
+---
+
+<ol class="ladder" role="list">
+  {
+    EVIDENCE_LADDER.map((state, i) => (
+      <li class:list={['ladder__rung', { 'is-current': state === current }]}>
+        <p class="ladder__head">
+          <span class="ladder__index num">{i + 1}</span>
+          <span class="ladder__name">{t.evidence.states[state]}</span>
+        </p>
+        <p class="ladder__text">{t.evidence.stateDescriptions[state]}</p>
+        {state === current && <p class="ladder__current">{currentLabel}</p>}
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  @layer components {
+    .ladder {
+      display: grid;
+      gap: 0;
+    }
+    .ladder__rung {
+      display: grid;
+      gap: var(--space-2);
+      align-content: start;
+      padding: var(--space-4) 0 var(--space-5);
+      border-block-start: 1px solid var(--color-line);
+    }
+    .ladder__head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+    }
+    .ladder__index {
+      font-size: var(--text-caption);
+      color: var(--color-text-secondary);
+    }
+    .ladder__name {
+      font-size: var(--text-subsection);
+      font-weight: var(--weight-strong);
+    }
+    .ladder__text {
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    .ladder__rung.is-current {
+      border-block-start: 3px solid var(--color-line-strong);
+    }
+    .ladder__current {
+      justify-self: start;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid currentColor;
+      border-radius: var(--radius-s);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+    @container (min-width: 56rem) {
+      .ladder {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: var(--space-5);
+      }
+      /* Each rung sits a step higher: position carries the order, not colour. */
+      .ladder__rung:nth-child(1) { margin-block-start: 4rem; }
+      .ladder__rung:nth-child(2) { margin-block-start: 3rem; }
+      .ladder__rung:nth-child(3) { margin-block-start: 2rem; }
+      .ladder__rung:nth-child(4) { margin-block-start: 1rem; }
+    }
+  }
+</style>

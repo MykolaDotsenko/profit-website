@@ -1,0 +1,92 @@
+---
+/** Closing call to action that says exactly what happens after the click (Blueprint §5 11). */
+import ContentGap from './ContentGap.astro';
+import Section from './Section.astro';
+import type { ContentGap as Gap, Cta, SectionIntro, TextItem } from '../content/types';
+import { localeInfo, localePath } from '../i18n';
+
+interface Props {
+  intro: SectionIntro;
+  stepsTitle: string;
+  steps: TextItem[];
+  review?: Gap;
+  primary: Cta;
+  secondary?: Cta;
+}
+
+const { intro, stepsTitle, steps, review, primary, secondary } = Astro.props;
+const locale = localeInfo(Astro.currentLocale).code;
+const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(locale, cta.href));
+---
+
+<Section intro={intro} layout="split" class="cta-band">
+  <div class="cta-band__body">
+    <h3 class="cta-band__steps-title">{stepsTitle}</h3>
+    <ol class="cta-band__steps" role="list">
+      {
+        steps.map((step, i) => (
+          <li>
+            <span class="cta-band__index num" aria-hidden="true">
+              {i + 1}
+            </span>
+            <div>
+              <p class="cta-band__step-title">{step.title}</p>
+              <p class="cta-band__step-text">{step.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+    {review && <ContentGap owner={review.owner} kind="review" text={review.text} />}
+    <div class="cta-band__actions">
+      <a class="button button--primary" href={href(primary)}>{primary.label}</a>
+      {secondary && <a class="text-link" href={href(secondary)}>{secondary.label}</a>}
+    </div>
+  </div>
+</Section>
+
+<style>
+  @layer components {
+    .cta-band__body {
+      display: grid;
+      gap: var(--space-5);
+      max-width: var(--measure-wide);
+    }
+    .cta-band__steps-title {
+      font-size: var(--text-label);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+    }
+    .cta-band__steps {
+      display: grid;
+      gap: 0;
+      border-block-start: 1px solid var(--color-line-strong);
+    }
+    .cta-band__steps li {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: var(--space-3);
+      padding-block: var(--space-4);
+      border-block-end: 1px solid var(--color-line);
+    }
+    .cta-band__index {
+      font-weight: var(--weight-strong);
+      font-size: var(--text-lead);
+      line-height: 1.3;
+    }
+    .cta-band__step-title {
+      font-weight: var(--weight-strong);
+    }
+    .cta-band__step-text {
+      color: var(--color-text-secondary);
+      font-size: var(--text-small);
+    }
+    .cta-band__actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-4) var(--space-6);
+    }
+  }
+</style>

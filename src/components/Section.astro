@@ -1,0 +1,97 @@
+---
+/**
+ * Section frame with an editorial heading. Layout and tone vary so the page does not repeat
+ * one "headline + cards" template (Blueprint §7 Layout).
+ */
+import type { SectionIntro } from '../content/types';
+
+interface Props {
+  intro: SectionIntro;
+  /** 'split' puts the heading beside the content on wide screens. */
+  layout?: 'stacked' | 'split';
+  tone?: 'default' | 'sunken' | 'inverse';
+  /** Heading size: 'section' (default) or 'display' for a closing call to action. */
+  scale?: 'section' | 'display';
+  class?: string;
+}
+
+const { intro, layout = 'stacked', tone = 'default', scale = 'section', class: className } = Astro.props;
+const headingId = intro.id ? `${intro.id}-title` : undefined;
+---
+
+<section
+  id={intro.id}
+  class:list={['section', `section--${layout}`, `section--${tone}`, className]}
+  aria-labelledby={headingId}
+>
+  <div class="container section__inner">
+    <header class="section__head">
+      {intro.eyebrow && <p class="eyebrow section__eyebrow">{intro.eyebrow}</p>}
+      <h2 id={headingId} class:list={['section__title', { 'section__title--display': scale === 'display' }]}>{intro.title}</h2>
+      {intro.lead && <p class="lead section__lead">{intro.lead}</p>}
+      <slot name="head" />
+    </header>
+    <div class="section__body">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer layout {
+    /* Containers, so layouts respond to available space in rem: enlarged text collapses columns. */
+    .section {
+      padding-block: var(--space-section);
+      container: section / inline-size;
+    }
+    .section + .section--default,
+    .section--default + .section--default {
+      border-block-start: 1px solid var(--color-line);
+    }
+    .section--sunken {
+      background: var(--color-surface-sunken);
+    }
+    .section--inverse {
+      background: var(--color-inverse-canvas);
+      color: var(--color-inverse-text);
+      --color-text-secondary: var(--color-inverse-secondary);
+      --color-line: var(--color-inverse-line);
+      --color-line-strong: var(--color-inverse-text);
+      --color-focus: var(--color-inverse-focus);
+    }
+    .section__inner {
+      display: grid;
+      gap: var(--space-6);
+    }
+    .section__head {
+      display: grid;
+      gap: var(--space-3);
+      align-content: start;
+    }
+    .section__title {
+      font-size: var(--text-section);
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      max-width: 22ch;
+    }
+    .section__title--display {
+      font-size: var(--text-display);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-display);
+    }
+    .section__body {
+      min-width: 0;
+      container-type: inline-size;
+    }
+    @container section (min-width: 62rem) {
+      .section--split .section__inner {
+        grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+        gap: var(--space-7);
+      }
+      .section--split .section__head {
+        position: sticky;
+        top: var(--space-6);
+      }
+    }
+  }
+</style>

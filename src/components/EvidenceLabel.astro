@@ -1,0 +1,88 @@
+---
+/**
+ * The one standard way to state evidence and confidence (Blueprint §8): same wording, typography,
+ * colour and placement everywhere. Meaning is carried by text and position, never by colour alone.
+ */
+import { EVIDENCE_LADDER, evidenceRung, type EvidenceMeta } from '../domain/evidence';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  meta: EvidenceMeta;
+  tone?: 'default' | 'inverse';
+}
+
+const { meta, tone = 'default' } = Astro.props;
+const t = ui(localeInfo(Astro.currentLocale).code);
+const rung = evidenceRung(meta.evidence);
+const total = EVIDENCE_LADDER.length;
+const stateText = meta.illustrative ? t.evidence.exampleLabel : t.evidence.states[meta.evidence];
+---
+
+<p class:list={['evidence-label', `evidence-label--${tone}`]}>
+  <span class="evidence-label__state">
+    <span class="evidence-label__rungs" aria-hidden="true">
+      {EVIDENCE_LADDER.map((_, i) => <span class:list={['evidence-label__rung', { 'is-filled': i < rung }]} />)}
+    </span>
+    <span>{stateText}</span>
+    <span class="sr-only">({t.evidence.states[meta.evidence]}, {t.evidence.rungOf(rung, total)})</span>
+  </span>
+  <span class="evidence-label__confidence">
+    {t.evidence.confidenceLabel}: {t.evidence.confidence[meta.confidence]}
+  </span>
+</p>
+
+<style>
+  @layer components {
+    .evidence-label {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-2) var(--space-4);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      line-height: 1.4;
+      color: var(--color-evidence-text);
+    }
+    .evidence-label__state {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 0.3rem 0.55rem;
+      border: 1px solid var(--color-evidence-line);
+      border-radius: var(--radius-s);
+      background: var(--color-evidence-bg);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+    .evidence-label__rungs {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 0.75rem;
+    }
+    .evidence-label__rung {
+      width: 3px;
+      border: 1px solid currentColor;
+      border-radius: 1px;
+    }
+    .evidence-label__rung:nth-child(1) { height: 40%; }
+    .evidence-label__rung:nth-child(2) { height: 55%; }
+    .evidence-label__rung:nth-child(3) { height: 70%; }
+    .evidence-label__rung:nth-child(4) { height: 85%; }
+    .evidence-label__rung:nth-child(5) { height: 100%; }
+    .evidence-label__rung.is-filled {
+      background: currentColor;
+    }
+    .evidence-label__confidence {
+      letter-spacing: 0.02em;
+    }
+    .evidence-label--inverse {
+      color: var(--color-inverse-text);
+    }
+    .evidence-label--inverse .evidence-label__state {
+      background: transparent;
+      border-color: var(--color-inverse-secondary);
+    }
+  }
+</style>

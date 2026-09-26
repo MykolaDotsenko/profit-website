@@ -1,0 +1,95 @@
+---
+/** Assessed confidence levels, plus the Not assessed meta-state shown apart from them. */
+import { ASSESSED_CONFIDENCE } from '../domain/evidence';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  assessedLabel: string;
+  notAssessedText: string;
+}
+
+const { assessedLabel, notAssessedText } = Astro.props;
+const t = ui(localeInfo(Astro.currentLocale).code);
+---
+
+<div class="confidence-wrap">
+<div class="confidence">
+  <div>
+    <p class="eyebrow">{assessedLabel}</p>
+    <ul class="confidence__levels" role="list">
+      {
+        ASSESSED_CONFIDENCE.map((level, i) => (
+          <li>
+            <span class="confidence__dots" aria-hidden="true">
+              {[0, 1, 2].map((d) => (
+                <span class:list={['confidence__dot', { 'is-filled': d < 3 - i }]} />
+              ))}
+            </span>
+            {t.evidence.confidence[level]}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="confidence__meta">
+    <p class="confidence__meta-name">{t.evidence.confidence['not-assessed']}</p>
+    <p class="confidence__meta-text">{notAssessedText}</p>
+  </div>
+</div>
+</div>
+
+<style>
+  @layer components {
+    .confidence-wrap {
+      container-type: inline-size;
+    }
+    .confidence {
+      display: grid;
+      gap: var(--space-5);
+    }
+    .confidence__levels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-5);
+      margin-block-start: var(--space-3);
+      font-weight: var(--weight-strong);
+    }
+    .confidence__levels li {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .confidence__dots {
+      display: inline-flex;
+      gap: 3px;
+    }
+    .confidence__dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border: 1.5px solid currentColor;
+      border-radius: 50%;
+    }
+    .confidence__dot.is-filled {
+      background: currentColor;
+    }
+    .confidence__meta {
+      padding: var(--space-4);
+      border: 1px dashed var(--color-line-strong);
+      border-radius: var(--radius-m);
+    }
+    .confidence__meta-name {
+      font-weight: var(--weight-strong);
+    }
+    .confidence__meta-text {
+      margin-block-start: var(--space-1);
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    @container (min-width: 32rem) {
+      .confidence {
+        grid-template-columns: 3fr 2fr;
+        align-items: start;
+      }
+    }
+  }
+</style>
