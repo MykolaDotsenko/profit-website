@@ -9,9 +9,10 @@ Before making a material change, read only the minimum context needed, in this o
 1. `AGENTS.md`
 2. `docs/ai/README.md`
 3. `docs/ai/context.yaml`
-4. `docs/website-blueprint-v1.md` for implementation decisions
-5. `docs/website-strategy.md` only when strategic rationale is needed
-6. topic-specific research from `docs/ai/README.md` only when the task requires it
+4. `docs/ai/IMPLEMENTATION_PLAN.md` when executing or sequencing work
+5. `docs/website-blueprint-v1.md` for implementation decisions
+6. `docs/website-strategy.md` only when strategic rationale is needed
+7. topic-specific research from `docs/ai/README.md` only when the task requires it
 
 Do not load every research file by default.
 
@@ -268,9 +269,12 @@ Do not let one AI loop brief → create → judge → approve its own work.
 When a decision changes materially:
 
 - update the canonical source first;
+- create or supersede an ADR in `docs/decisions/` when the decision is cross-cutting, durable, expensive to reverse, or likely to be rediscovered;
 - then update `docs/ai/context.yaml` if the compact context is affected;
-- add rationale to the appropriate audit/decision record when useful;
+- update `docs/ai/IMPLEMENTATION_PLAN.md` if sequencing/status/dependencies materially change;
 - do not edit many research files just to make them agree retroactively.
+
+Do not create ADRs for routine, easily reversible implementation details.
 
 ## 15. Definition of done
 
