@@ -748,29 +748,278 @@ Do not run statistically weak experiments for appearance of rigor.
 
 Do not use different copy + different art direction + different motion in one early experiment. That produces a polished concept but weak causal learning.
 
-## 19. Three visual directions to prototype
+## 19. Art-direction decision: farmer comprehension + trust
 
-### A — Editorial Intelligence
-- warm/light canvas;
-- strong type;
-- large whitespace;
-- economic metrics;
-- restrained real photography.
+Current leading hypothesis:
 
-### B — Farm Data Layer
-- immersive farm imagery;
-- field geometry;
-- data overlays;
-- maps/layers;
-- subtle explanatory motion.
+**A — Evidence-Led Editorial** is the strongest base direction for PROFIT's first farmer-facing website.
 
-### C — Economic Command
-- graphite/dark neutral sections;
-- bold economics;
-- data fragments;
-- stronger financial/technical character.
+This is **not yet a locked production decision**. It must beat B and C in controlled farmer testing.
 
-These must be genuinely different, not color variants.
+Why it leads:
+- PROFIT needs explanation and trust before spectacle;
+- the farmer must see real agricultural context, not abstract technology;
+- economic typography and evidence/confidence semantics can carry brand distinction;
+- product UI/proof can be integrated without turning the hero into a dashboard;
+- a light/editorial system gives uncertainty, assumptions and provenance enough visual room;
+- it best matches the canonical doctrine: **Real agriculture. Financial precision. Editorial clarity. Quiet technology.**
+
+External 2026 design/masterclass research reinforces, but does not prove, this choice:
+- D&AD brand-identity training emphasizes analysis, core identity components and translating strategy into an identity system;
+- D&AD art-direction training emphasizes visual balance, composition, tone and appropriate execution;
+- D&AD typography training explicitly treats typography as a tool for trust and audience connection;
+- Figma Config 2026 demonstrates a useful tension between structured/programmatic systems and human/idiosyncratic expression;
+- Figma's Spendesk case reports that a photography-based identity was adopted to make the visual tone more authentic/relatable and communicate product value more clearly.
+
+These sources inform the candidate system. **Farmer evidence decides the direction.**
+
+### A — Evidence-Led Editorial — leading hypothesis
+
+Core idea:
+**A serious agricultural-economic publication that happens to contain a real decision product.**
+
+Visual grammar:
+- light/warm neutral canvas;
+- strong editorial hierarchy;
+- large, calm economic numerals;
+- documentary/real farm photography;
+- product UI used as an exhibit rather than a dashboard wall;
+- evidence/confidence/provenance labels visible but secondary;
+- restrained field geometry as a linking device;
+- asymmetry and whitespace used to direct attention;
+- minimal decorative effects.
+
+First-screen behavior:
+- farmer and economic job read before brand/category jargon;
+- one agricultural proof image/artifact;
+- one product/economic proof object;
+- one clear CTA path.
+
+Trust mechanism:
+- documentary truth;
+- visible assumptions/evidence;
+- legible typography;
+- calm visual pacing;
+- product and brand share the same design grammar.
+
+Primary risks:
+- can drift into consultancy/report/magazine aesthetics;
+- too much whitespace can hide product substance;
+- may feel premium but insufficiently operational.
+
+Kill A if:
+- farmers repeatedly classify PROFIT as consulting/research rather than software/decision support;
+- the product proof is not noticed in the first exposure;
+- editorial restraint makes the product feel abstract or unfinished;
+- comprehension is materially weaker than B while trust is not materially stronger.
+
+### B — Farm Operations Layer
+
+Core idea:
+**Start with the real field/farm, then reveal the operational/data/economic layer on top of it.**
+
+Visual grammar:
+- immersive real farm imagery;
+- field boundaries and spatial geometry;
+- restrained overlays tied to real data provenance;
+- maps only where they answer a decision question;
+- progressive reveal from farm reality → data → economics;
+- more spatial composition, less editorial page feeling.
+
+First-screen behavior:
+- real farm reality dominates;
+- data/field layer immediately explains where PROFIT gets context;
+- economics resolves the visual, rather than being the opening aesthetic.
+
+Trust mechanism:
+- concrete agricultural context;
+- visible relationship between field and data;
+- transparency about source/provenance;
+- strong fit with the signature Field → Economics Reveal.
+
+Primary risks:
+- may be misread as satellite/agronomy/precision-ag platform;
+- generic aerial-field + overlay treatment is saturated in agritech;
+- visual complexity can reduce headline/economic comprehension;
+- motion can become a crutch.
+
+Kill B if:
+- farmers repeatedly describe PROFIT as mapping/satellite/agronomy software;
+- overlays attract more recall than the economic job;
+- static comprehension drops materially without motion;
+- provenance/meaning of overlays is unclear;
+- trust falls because the system looks “magical” rather than inspectable.
+
+### C — Economic Control Room
+
+Core idea:
+**Treat the farm as an economic operating system: precise, dense, decision-oriented.**
+
+Visual grammar:
+- graphite/dark neutral environments;
+- strong numeric hierarchy;
+- high-information but disciplined metric clusters;
+- compact operational/economic fragments;
+- minimal photography, used as grounding evidence;
+- strong tabular/data-grid character;
+- product UI and marketing site nearly converge.
+
+First-screen behavior:
+- economics and decision state dominate;
+- product maturity/technical seriousness is immediately signaled;
+- farm context appears as supporting evidence.
+
+Trust mechanism:
+- precision;
+- explicit numbers;
+- visible state/evidence labels;
+- strong product reality;
+- low decorative ambiguity.
+
+Primary risks:
+- can feel like finance/accounting/ERP rather than farmer decision support;
+- may intimidate less digitally confident farmers;
+- dark/dense presentation can reduce warmth and readability;
+- can overstate product maturity or precision.
+
+Kill C if:
+- farmers repeatedly classify PROFIT as accounting/ERP/finance software;
+- task comprehension requires reading dense UI rather than seeing the farmer job;
+- credibility rises only among technical/investor profiles while farmer trust falls;
+- less digitally confident farmers show materially more hesitation/error;
+- dark density obscures evidence/uncertainty rather than clarifying it.
+
+### Keep the three directions independent during testing
+
+Do not create:
+- A with B's hero;
+- B with C's dashboard;
+- C with A's photography;
+
+before the first controlled visual test.
+
+All three directions must use:
+- the same surviving hero message from WWW-000;
+- the same underlying product/economic scenario;
+- the same factual/evidence status;
+- equivalent CTA hierarchy;
+- no essential motion.
+
+After a direction wins on comprehension/trust, selected secondary devices from the other directions may be integrated deliberately.
+
+### Art-direction experiments
+
+#### Experiment AD-1 — 10-second comprehension + trust
+
+Cohort:
+12–18 target farm decision-makers, analysed by meaningful segment if needed.
+
+Method:
+- same message and proof scenario across A/B/C;
+- randomized/counterbalanced first exposure;
+- static only;
+- 5–10 second exposure, then hide;
+- open recall before preference questions.
+
+Primary observations:
+- correct farmer/product classification;
+- correct economic job;
+- correct next action;
+- whether product proof was noticed;
+- repeated misclassification;
+- initial credibility/trust language.
+
+Do not ask “Which is prettiest?” as the decision question.
+
+#### Experiment AD-2 — Evidence interpretation task
+
+Show the same field-economics scenario in A/B/C, including:
+- one economic value;
+- one evidence state;
+- one confidence state;
+- one provenance/source cue;
+- one limitation/assumption.
+
+Ask:
+- What does this number mean?
+- Is it hypothetical/modelled/observed/attributed/verified?
+- How confident should you be?
+- What data/source produced it?
+- What would you do next?
+
+Measure:
+- interpretation errors;
+- time to correct answer;
+- whether uncertainty is noticed;
+- whether the visual creates false precision.
+
+This experiment directly distinguishes **trust through transparency** from visual polish.
+
+#### Experiment AD-3 — Product-reality / category-confusion test
+
+After independent exposure, ask participants to classify the product from a neutral set such as:
+- farm decision-support;
+- accounting/finance;
+- agronomy/satellite/mapping;
+- generic AI/data platform;
+- consulting/reporting.
+
+Then ask what visual cue caused that classification.
+
+This identifies whether:
+- A drifts into consulting/editorial;
+- B drifts into agronomy/satellite;
+- C drifts into accounting/ERP.
+
+#### Experiment AD-4 — Mobile farmer task
+
+Repeat the same core scenario at ~390 px.
+
+Task:
+identify:
+- the key economic issue;
+- the evidence/confidence state;
+- the next action.
+
+Reject any direction that only works through desktop scale, wide overlays or dense dashboards.
+
+#### Experiment AD-5 — Trust under bad news / uncertainty
+
+Use the same negative or low-confidence scenario in all directions:
+- negative margin;
+- incomplete data;
+- Low or Insufficient evidence;
+- visible assumption.
+
+Ask:
+- Does the interface make the bad/uncertain result feel credible?
+- What would you verify before acting?
+- Does anything feel hidden, exaggerated or sales-like?
+
+A trustworthy system must remain convincing when it communicates uncertainty or an unfavorable result, not only when numbers are positive.
+
+### Art-direction selection rule
+
+Primary objective:
+**farmer comprehension + calibrated trust.**
+
+Secondary objectives:
+- product truth;
+- correct category expectation;
+- distinctiveness;
+- scalability into product UI and future modules.
+
+Do not select by:
+- visual novelty alone;
+- investor preference;
+- animation impressiveness;
+- internal taste;
+- generic “premium” appearance.
+
+Leading decision hypothesis:
+**A — Evidence-Led Editorial** should be used as the current control/base for deeper exploration because it best balances comprehension, human agricultural truth, economic precision and inspectable evidence.
+
+Reconsider immediately if B materially improves farmer comprehension without category confusion, or if C materially improves trust/product understanding without accounting/ERP misclassification.
 
 ## 20. Acceptance criteria
 
