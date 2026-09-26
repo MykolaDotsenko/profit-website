@@ -10,6 +10,8 @@ import { computeFieldEconomics, roundMoney } from '../../domain/economics.ts';
 
 const base = focusField(fieldSeasonExample).inputs;
 
+export const fieldSensitivityCurrency = fieldSeasonExample.currency;
+
 export interface SensitivityScenario {
   id: 'downside' | 'base' | 'price-up' | 'yield-up' | 'upside';
   yieldPerHa: number;
