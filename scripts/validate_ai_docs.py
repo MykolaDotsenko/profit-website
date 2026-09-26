@@ -28,6 +28,7 @@ REQUIRED_FILES = [
     "docs/decisions/0001-ai-development-documentation-architecture.md",
     ".github/ISSUE_TEMPLATE/ai-development-task.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    "docs/homepage-copy-deck-v1.md",
     "docs/homepage-content-brief-v1.md",
     "docs/website-trust-professionalism-synthesis-2026-09-27.md",
     "src/config/release.ts",
@@ -106,6 +107,14 @@ TEXT_INVARIANTS = {
         "Acceptance criteria",
         "Verification plan",
         "Integrity gate",
+    ],
+    "docs/homepage-copy-deck-v1.md": [
+        "Different farms. Different production models. The same economic discipline.",
+        "The farmer keeps decision authority.",
+        "A value counts only when the evidence supports it",
+        "The farm stays in control",
+        "Build value. Prove it. Then scale it.",
+        "hero remains under WWW-000 validation",
     ],
     "docs/homepage-content-brief-v1.md": [
         "The homepage must feel simple before it feels sophisticated.",
