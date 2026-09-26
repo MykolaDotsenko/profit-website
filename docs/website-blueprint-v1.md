@@ -403,8 +403,8 @@ Do not approve components with placeholder-only content.
 If coded:
 
 ### Core
-- Astro 6
-- TypeScript
+- Astro 7.3
+- TypeScript 7
 - semantic HTML
 - modern native CSS
 
