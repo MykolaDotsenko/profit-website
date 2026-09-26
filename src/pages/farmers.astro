@@ -14,6 +14,11 @@ const p = c.farmers;
 <BaseLayout title={p.meta.title} description={p.meta.description}>
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
 
+  <Section intro={p.scope.intro} tone="sunken">
+    <ItemList items={p.scope.systems} columns={3} />
+    <p class="scope-note">{p.scope.note}</p>
+  </Section>
+
   <Section intro={p.provide.intro} layout="split">
     <ItemList items={p.provide.items} columns={2} />
   </Section>
@@ -41,6 +46,14 @@ const p = c.farmers;
 </BaseLayout>
 
 <style>
+  .scope-note {
+    margin-block-start: var(--space-6);
+    max-width: var(--measure-wide);
+    padding-inline-start: var(--space-4);
+    border-inline-start: 3px solid var(--color-line-strong);
+    font-size: var(--text-small);
+    font-weight: var(--weight-strong);
+  }
   .ai-note {
     margin-block-start: var(--space-5);
     max-width: var(--measure-wide);
