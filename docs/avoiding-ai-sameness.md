@@ -289,31 +289,14 @@ Ehrenberg-Bass explicitly warns that meaning-based asset selection can reduce di
 
 Before AI generation, create at least three concept territories from different strategic starting points.
 
-For PROFIT:
+Historical PROFIT examples included:
+- Economic Evidence;
+- Farm Reality;
+- Decision Intelligence.
 
-### Territory A — Economic Evidence
-Start from:
-- margin;
-- VEV;
-- confidence;
-- attribution.
+These are **examples, not permanent slots**. Reusing the same three names for every brief is itself a convergence failure.
 
-### Territory B — Farm Reality
-Start from:
-- field;
-- operator;
-- machinery;
-- soil;
-- crop.
-
-### Territory C — Decision Intelligence
-Start from:
-- alternatives;
-- decision;
-- consequence;
-- measured outcome.
-
-These must be different ideas, not color/layout variants.
+For each material brief, generate independent strategic framings from the actual problem. They must differ in underlying problem interpretation and idea, not only color/layout/style.
 
 ## 4.2 No one-shot creative direction
 
@@ -803,7 +786,9 @@ Brand recognition compounds through consistency.
 
 The best defense against AI sameness is not anti-AI.
 
-It is **high-context AI inside a distinctive human-designed system**.
+It is **phase-appropriate AI inside a distinctive human-designed system**:
+- thin, independent context during divergence;
+- full brand context during convergence and production.
 
 For PROFIT:
 
