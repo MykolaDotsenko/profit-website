@@ -21,6 +21,16 @@ project:
   product_role: "Public presentation, trust, learning and qualified-conversion surface; not the core farm-management application."
   current_stage: "Positioning, information architecture, visual direction and implementation approach are being validated before production build."
 
+company_context:
+  internal_mission: "Build a global Agricultural Decision Intelligence company by creating, proving and scaling superior Verified Economic Value for farmers."
+  operating_principle: "Create Value. Prove It. Scale It."
+  evidence_priority: "Customer-level evidence outranks global, leadership, scale, moat or valuation ambition."
+  scope_boundary:
+    master_brand: "PROFIT"
+    current_wedge: "Field Profitability"
+    rule: "Do not crop-lock the master brand and do not present future livestock/other production domains as shipped unless explicitly documented."
+  public_claim_rule: "Internal ambition is not public proof."
+
 objectives:
   primary:
     - "Help a farmer understand what PROFIT is."
@@ -70,6 +80,15 @@ value_logic:
     - "Action"
     - "Measured outcome"
   vev_term: "Verified Economic Value"
+  vev_measurement:
+    primary: "VEV per Customer"
+    supporting_when_evidence_allows:
+      - "VEV per hectare or relevant production unit"
+      - "VEV per € paid to PROFIT"
+      - "share of eligible customers with positive VEV"
+      - "attribution confidence"
+      - "defined measurement period and cohort"
+    rule: "Do not invent missing VEV formulas, thresholds, attribution rules or verification criteria."
   evidence_states:
     - "Hypothetical"
     - "Modelled"
@@ -90,6 +109,15 @@ value_logic:
     - "Illustrative mockups must be unmistakably illustrative."
     - "Do not infer causal value from outcome alone."
     - "Do not fabricate partnerships, testimonials, integrations, savings or social proof."
+
+trust_guardrails:
+  - "Farmer data use must be permissioned and transparent."
+  - "Do not make undocumented legal ownership/sharing claims."
+  - "Privacy, security, auditability and farmer control are non-negotiable."
+  - "Do not require sensitive farm data before trust and purpose are established."
+  - "AI is not the sole source of truth for critical quantitative outputs."
+  - "Real economic values require validated source data/rules/models and visible assumptions/provenance/period/uncertainty."
+  - "Confidence must not exceed underlying data quality; consider completeness, consistency, freshness, provenance and representativeness."
 
 audiences:
   primary: "Farmers and farm businesses"
@@ -147,11 +175,13 @@ art_direction_validation:
     C: "Economic Control Room — dense product/economic precision + supporting farm context"
   controlled_test_rule: "Use the same surviving message, proof scenario, evidence state, CTA hierarchy, no essential motion, and equivalent prototype fidelity across A/B/C. Do not disclose the internal research prior to participants."
   experiments:
-    - "AD-1 10-second comprehension + trust"
-    - "AD-2 evidence interpretation"
-    - "AD-3 product-reality/category-confusion"
-    - "AD-4 mobile farmer task"
-    - "AD-5 trust under bad news/uncertainty"
+    - "AD-1 10-second farmer comprehension"
+    - "AD-2 evidence interpretation / calibrated trust"
+    - "AD-3 mechanism reconstruction"
+    - "AD-4 category-confusion diagnostic"
+    - "AD-5 mobile farmer task"
+    - "AD-6 trust under bad news/uncertainty"
+    - "AD-7 brand-system transfer"
   category_confusion_risks:
     A: "consulting/report/editorial"
     B: "agronomy/satellite/mapping"
@@ -354,11 +384,12 @@ validation:
     - "What could become defensible?"
 
 next_high_value_work:
-  - "Run farmer comprehension testing."
-  - "Prototype three genuinely different art directions."
-  - "Test emerging brand-code recognition/confusion."
-  - "Validate the Field → Economics Reveal."
-  - "Choose production platform only after learning needs are clear."
+  - "WWW-000: validate hero message/positioning on a neutral static scaffold."
+  - "WWW-001: prototype three genuinely different art directions from the surviving message."
+  - "WWW-002: run art-direction farmer comprehension + calibrated-trust testing (AD-1 through AD-7)."
+  - "WWW-003: test emerging brand-code recognition/confusion."
+  - "WWW-004: validate or reject Field → Economics Reveal."
+  - "WWW-005: choose production platform only after learning needs are clear."
 
 governance:
   implementation_plan: "docs/ai/IMPLEMENTATION_PLAN.md"
