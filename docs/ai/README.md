@@ -87,6 +87,7 @@ ADRs preserve rationale for material durable decisions. They do not replace the 
 - `website-trust-professionalism-synthesis-2026-09-27.md`
 - `whole-farm-scope-evidence-2026-09-27.md`
 - `experiments/www-000-preflight-pack-v1.md`
+- `experiments/www-000-statistical-surrogate-v1.md` — official-statistics calibration + proxy message-risk audit; never substitute for farmer comprehension evidence.
 
 These are valuable references but must not silently override the Blueprint.
 
