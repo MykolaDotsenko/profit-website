@@ -19,6 +19,7 @@ export interface ReleaseGate {
     | 'data-terms'
     | 'pilot-process'
     | 'company-details'
+    | 'direct-contact'
     | 'team-proof'
     | 'documentary-image'
     | 'example-plausibility'
@@ -76,6 +77,13 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     owner: 'owner',
     state: 'blocked',
     reason: 'Legal company identity/contact details are not complete for public release.',
+  },
+  {
+    id: 'direct-contact',
+    area: 'content',
+    owner: 'owner',
+    state: 'blocked',
+    reason: 'A direct contact path for investors, partners and other enquiries is not confirmed.',
   },
   {
     id: 'team-proof',
