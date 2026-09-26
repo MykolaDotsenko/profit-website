@@ -77,10 +77,13 @@ value_logic:
     - "Attributed"
     - "Verified"
   confidence_states:
-    - "High"
-    - "Medium"
-    - "Low"
-    - "Insufficient evidence"
+    assessed:
+      - "High"
+      - "Medium"
+      - "Low"
+      - "Insufficient evidence"
+    meta:
+      - "Not assessed"
   locked_rules:
     - "Never present hypothetical/modelled value as observed, attributed or verified."
     - "Never use Verified unless the evidence and attribution standard is satisfied."
@@ -291,3 +294,7 @@ definition_of_done:
   - "Responsive and accessibility behavior is acceptable."
   - "No unnecessary complexity/dependency was introduced."
   - "Documentation remains consistent with implementation."
+
+research_efficiency:
+  prompting: "Prefer one concrete task/decision per prompt; rely on repository context instead of repeating large project summaries."
+  research_stop_rule: "Run new broad research only to resolve a specific open hypothesis, verify a time-sensitive claim, materially challenge a decision, or reduce a meaningful risk. Prefer testing once evidence is sufficient for the next reversible experiment."
