@@ -67,9 +67,11 @@ Canonical evidence ladder:
 
 `Hypothetical → Modelled → Observed → Attributed → Verified`
 
-Canonical confidence states:
+Canonical assessed-confidence states:
 
 `High / Medium / Low / Insufficient evidence`
+
+Use `Not assessed` only when confidence has not actually been evaluated. It is a meta-state, not a confidence level.
 
 Illustrative mockups must use clearly illustrative labels such as:
 
@@ -288,3 +290,30 @@ It is done when:
 - responsive/accessibility behavior is acceptable;
 - no unnecessary complexity was introduced;
 - documentation remains consistent with the implementation.
+
+
+## 16. Prompting and research efficiency
+
+User/task prompts should be narrow and outcome-focused.
+
+Prefer:
+- one concrete decision or artifact per prompt;
+- explicit desired outcome;
+- relevant repo source references;
+- acceptance/verification criteria.
+
+Do not repeatedly paste the entire project history, research archive, or a giant master prompt when repository context already provides it.
+
+For substantial work, use the task template rather than inflating the prompt.
+
+### Research stop rule
+
+Do not run broad additional research merely because more material exists.
+
+Run new research when it:
+- resolves a specific OPEN hypothesis;
+- materially challenges a current decision;
+- verifies a time-sensitive technical claim;
+- reduces a meaningful implementation or trust risk.
+
+Once evidence is sufficient for the next reversible experiment, prefer testing over more general theory.
