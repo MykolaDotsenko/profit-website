@@ -1,7 +1,7 @@
 schema_version: 1
 last_updated: "2026-09-27"
 purpose: "Compact derived context for AI-assisted development of the PROFIT public website."
-task_research_router: "For public website work involving product behavior, data collection, forecasting, DSS logic, trust or brand expression, use docs/website-trust-professionalism-synthesis-2026-09-27.md plus the task-specific canonical sources; do not load the full archive by default."
+task_research_router: "For homepage content/hierarchy use docs/homepage-content-brief-v1.md plus canonical sources. For public website work involving product behavior, data collection, forecasting, DSS logic, trust or brand expression, use docs/website-trust-professionalism-synthesis-2026-09-27.md plus the task-specific canonical sources; do not load the full archive by default."
 authority_note: "This is a derived summary. For product/content/design/implementation decisions, canonical documentation wins. AGENTS.md governs AI workflow/process."
 
 authority:
