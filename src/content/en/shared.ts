@@ -47,6 +47,42 @@ export const heroVariants: Record<HeroVariant['id'], HeroVariant> = {
 
 export const primaryCta = { label: 'Join the pilot', href: '/contact/' };
 
+/**
+ * Master-brand production scope.
+ *
+ * These are company/product-direction contexts, not claims that each domain is a shipped PROFIT
+ * module. Field Profitability remains the only concrete product boundary on this website.
+ */
+export const productionSystems: TextItem[] = [
+  {
+    title: 'Arable & field crops',
+    text: 'Fields, rotations, yield, inputs, machinery and selling conditions — with Field Profitability as the current first concrete product focus.',
+  },
+  {
+    title: 'Horticulture, orchards & berries',
+    text: 'Blocks, varieties, marketable yield, grading, labour, storage, losses and realised price can drive very different economics from field crops.',
+  },
+  {
+    title: 'Vegetables & greenhouse production',
+    text: 'Crop cycles, labour, energy, inputs, yield, quality, timing and price create a production system that needs its own economic model.',
+  },
+  {
+    title: 'Pig production',
+    text: 'Feed, growth, mortality, throughput, batch performance and selling conditions shape the economics of a production cycle.',
+  },
+  {
+    title: 'Dairy',
+    text: 'Milk production, feed, herd health, reproduction, replacement and price/cost context interact economically at cow, group and herd level.',
+  },
+  {
+    title: 'Other livestock & mixed farms',
+    text: 'Beef cattle, poultry, eggs, sheep, goats and mixed farms require domain-specific production units rather than forcing every farm into a per-hectare model.',
+  },
+];
+
+export const productionScopeNote =
+  'These production systems describe the direction of the PROFIT master brand. They are not a claim that every domain is a current product. Field Profitability is the first concrete product focus.';
+
 /** Labels for the illustrative example, shared by the hero proof card and the exhibit. */
 export const exampleRecords = 'farmer-provided field records';
 export const decisionQuestion = 'What would you investigate on Field 31 before changing the plan?';
