@@ -750,11 +750,11 @@ Do not use different copy + different art direction + different motion in one ea
 
 ## 19. Art-direction decision: farmer comprehension + trust
 
-Current leading hypothesis:
+Current research prior:
 
-**A — Evidence-Led Editorial** is the strongest base direction for PROFIT's first farmer-facing website.
+**A — Evidence-Led Editorial** currently has the strongest theoretical fit with PROFIT's doctrine.
 
-This is **not yet a locked production decision**. It must beat B and C in controlled farmer testing.
+This is **not a test winner and not a locked production decision**. During prototype production and farmer testing, A/B/C must receive equivalent fidelity, content completeness and implementation effort. Participants should not be told which direction is the internal research prior.
 
 Why it leads:
 - PROFIT needs explanation and trust before spectacle;
@@ -1001,6 +1001,20 @@ Ask:
 - Does anything feel hidden, exaggerated or sales-like?
 
 A trustworthy system must remain convincing when it communicates uncertainty or an unfavorable result, not only when numbers are positive.
+
+### Bias control for art-direction testing
+
+The current theoretical preference for A must not influence prototype quality or participant exposure.
+
+Required controls:
+- equivalent design fidelity and content completeness across A/B/C;
+- the same factual/evidence scenario and CTA architecture;
+- randomized/counterbalanced exposure order;
+- participants are not told which direction the team currently prefers;
+- scoring/observation criteria are fixed before reviewing results;
+- if possible, the facilitator collecting first-impression responses should not frame one direction as preferred.
+
+A direction does not win because it was easier to polish or more familiar to the team.
 
 ### Art-direction selection rule
 
@@ -1389,11 +1403,12 @@ The general strategy/design/frontend research foundation is now sufficient for p
 Do not continue broad theory collection by default.
 
 Prioritize:
-1. three independent art-direction prototypes;
-2. farmer 10-second comprehension testing;
-3. brand-code recognition/confusion testing;
-4. signature-motion validation only after divergent art directions exist;
-5. production-platform decision.
+1. controlled hero message/positioning validation on a neutral static scaffold;
+2. three independent art-direction prototypes using the surviving message;
+3. art-direction farmer comprehension + calibrated-trust testing;
+4. brand-code recognition/confusion testing;
+5. signature-motion validation only after divergent art directions exist;
+6. production-platform decision.
 
 Start additional research only to resolve a specific OPEN hypothesis, verify a time-sensitive technical fact, materially challenge an existing decision, or reduce a meaningful risk.
 
