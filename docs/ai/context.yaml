@@ -243,7 +243,8 @@ art_direction_validation:
     A: "Evidence-Led Editorial — real farm truth + editorial hierarchy + economic typography + inspectable evidence"
     B: "Farm Operations Layer — farm reality + spatial/data layer + economics"
     C: "Economic Control Room — dense product/economic precision + supporting farm context"
-  controlled_test_rule: "Use the same surviving message, proof scenario, evidence state, CTA hierarchy, no essential motion, and equivalent prototype fidelity across A/B/C. Do not disclose the internal research prior to participants."
+  controlled_test_rule: "Use the same surviving message, proof scenario, evidence state, CTA hierarchy, no essential motion, and equivalent prototype fidelity across A/B/C. Share semantic/domain truth, not a mandatory composition. The current coded Hero/Section/ProofCard/FieldExample structure is an editorial-biased foundation and must not be imposed on all directions. Do not disclose the internal research prior to participants."
+  composition_isolation: "WWW-001 directions own their hierarchy/layout/spatial logic; a tokens-only reskin of the coded foundation is not an independent direction."
   experiments:
     - "AD-1 10-second farmer comprehension"
     - "AD-2 evidence interpretation / calibrated trust"
@@ -402,6 +403,10 @@ quality:
     inp: "<= 200ms"
     cls: "<= 0.1"
     measurement: "p75, mobile and desktop separately where RUM exists"
+  release_hardening:
+    release_gate: "src/config/release.ts blocks SITE_INDEXABLE while public message/design/legal/content/trust gates are open and blocks PILOT_FORM_ENDPOINT until privacy/company/pilot gates are ready."
+    metric_gate: "Every public economic Metric must have a confirmed definition with source provenance; provisional definitions throw before rendering."
+    browser_ci: "Site Verify includes committed Playwright + axe browser regression tests for critical routes, widths, menu, CTA, form, runtime failures and reduced motion."
   verification_gate:
     - "production build"
     - "type check when applicable"
