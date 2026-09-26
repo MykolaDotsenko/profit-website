@@ -29,6 +29,7 @@ The website must communicate:
 
 - [Website Blueprint v1](docs/website-blueprint-v1.md) — operational source of truth for implementation
 - [Website Strategy](docs/website-strategy.md) — strategic source of truth
+- [Triple-Check Audit](docs/triple-check-audit-2026-09-26.md) — verified corrections and remaining uncertainties
 
 ## Research and supporting documentation
 - [Research Findings](docs/research-findings.md)
