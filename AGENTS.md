@@ -67,8 +67,8 @@ Internal operating principle:
 External agents must preserve these boundaries:
 - PROFIT is the master brand; Field Profitability is the current website wedge, not the company boundary.
 - Do not crop-lock the brand architecture.
-- Keep the master brand, naming, website architecture and visual system extensible to crop production, pig production and dairy without rebranding. Wedge tests such as WWW-000 may be Field Profitability-specific, but their results must not redefine PROFIT as a field-crop-only company.
-- Do not invent or market future livestock/other modules (including pig production and dairy) as shipped.
+- Keep the master brand, naming, website architecture and visual system extensible across arable crops; horticulture/orchards/berries; greenhouse/protected cultivation; pig production; dairy; beef/grazing livestock; poultry/eggs; other livestock and mixed farms without rebranding. Wedge tests such as WWW-000 may be Field Profitability-specific, but their results must not redefine PROFIT as a field-crop-only company.
+- Public copy may name those production systems as master-brand direction, but must not invent or market unshipped domain modules/capabilities.
 - Customer-level evidence outranks global/leadership/scale ambition.
 - Internal ambitions are not public proof claims.
 - The website is not the core farm-management application.
@@ -121,7 +121,7 @@ Primary visual grammar (master brand):
 
 **real agricultural/production reality → precise operational/data context → economic meaning → evidence/confidence → decision**
 
-The word "field" is not part of the master-brand grammar. The master brand must work across crop production, pig production and dairy (§3.1).
+The word "field" is not part of the master-brand grammar. The master brand must work across materially different crop, horticulture/greenhouse and livestock production systems (§3.1).
 
 Preferred recurring master-brand codes (candidates, not yet distinctive assets):
 
@@ -148,6 +148,20 @@ Reject generic-by-default output:
 - “AI-powered”, “unlock insights”, “farm smarter” as identity language.
 
 AI may accelerate execution. It must not invent PROFIT's creative point of view from generic model priors.
+
+### Cross-disciplinary trust rule — LOCKED
+
+For public website work that explains product behavior, data, forecasting or decision support, consult `docs/website-trust-professionalism-synthesis-2026-09-27.md`.
+
+Preserve these principles:
+- work with the farm that exists; do not assume perfect digitisation, new machinery or continuous connectivity;
+- minimise manual operator workload; automation/inference must be reliable and provenance-aware;
+- deterministic economics before forecasting;
+- baseline-first model comparison; complexity must earn its place out of sample;
+- show assumptions/ranges/confidence rather than false precision;
+- farmer retains decision authority;
+- forecast/modelled value is not observed or Verified Economic Value;
+- homepage remains a concise presentation surface; methodological depth belongs on deeper trust/company/product content.
 
 ## 6. Current product/message status
 
