@@ -1,0 +1,125 @@
+# AI Development Index
+
+Purpose: give AI agents the smallest reliable context required to work on the PROFIT public website without reading the entire research archive.
+
+## Start here
+
+1. [AGENTS.md](../../AGENTS.md) — mandatory AI development contract
+2. [context.yaml](context.yaml) — compact machine-readable project state
+3. [Website Blueprint v1](../website-blueprint-v1.md) — canonical implementation source
+4. [Triple-Check Audit](../triple-check-audit-2026-09-26.md) — verified corrections / known uncertainty
+5. [Website Strategy](../website-strategy.md) — strategic rationale
+
+## Context-loading rule
+
+**Load only the documents relevant to the current task.**
+
+The research archive is deliberately not the default AI context. This reduces:
+- token waste;
+- contradictory old recommendations;
+- accidental promotion of research ideas into decisions;
+- AI averaging across many overlapping documents.
+
+## Task → documents
+
+| Task | Read |
+|---|---|
+| Homepage structure / content hierarchy | Blueprint → Strategy → Marketing findings if needed |
+| Positioning / headline / CTA | Strategy → Marketing findings → Psychology findings |
+| Farmer trust / evidence / claims | Blueprint → Psychology findings → Triple-check audit |
+| Brand identity / visual direction | Blueprint → Modern Branding → Avoiding AI Sameness |
+| AI-generated visual/design work | Avoiding AI Sameness → Modern Branding |
+| Layout / responsive design | Blueprint → Design Masterclass → Modern Design Deep Pass |
+| Motion / visual effects | Blueprint → Modern Visual Effects → Visual Effects Roadmap |
+| Frontend architecture | Blueprint → Frontend Technologies → Frontend Deep Pass |
+| Accessibility / performance / QA | Blueprint → Frontend Deep Pass → Triple-check audit |
+| Signature prototype | Prototype README → Modern Visual Effects |
+| Strategic rationale | Website Strategy → relevant research only |
+
+## Canonical vs supporting
+
+### Canonical / operational
+- `docs/website-blueprint-v1.md`
+
+### Canonical / strategic
+- `docs/website-strategy.md`
+
+### Correction layer
+- `docs/triple-check-audit-2026-09-26.md`
+
+### Compact AI context
+- `docs/ai/context.yaml`
+
+This file is intentionally concise and derived. If it conflicts with the canonical documents, the canonical documents win.
+
+### Supporting evidence library
+- `research-findings.md`
+- `marketing-bestseller-findings.md`
+- `psychology-bestseller-findings.md`
+- `masterclasses-and-tutorials.md`
+- `design-masterclass-findings.md`
+- `modern-design-masterclasses-deep-pass-2026.md`
+- `modern-branding-masterclasses-deep-pass-2026.md`
+- `avoiding-ai-sameness.md`
+- `modern-visual-effects-deep-pass-2026.md`
+- `visual-effects-learning-roadmap.md`
+- `frontend-masterclass-findings.md`
+- `frontend-masterclasses-deep-pass-2026.md`
+- `frontend-technologies-frameworks.md`
+
+These are valuable references but must not silently override the Blueprint.
+
+## State vocabulary
+
+Use three states when interpreting requirements:
+
+### LOCKED
+Do not change without explicit decision/evidence.
+
+Examples:
+- evidence integrity;
+- farmer-first priority;
+- VEV terminology semantics;
+- accessibility/performance standards;
+- no fabricated proof;
+- farmer control/transparency principles.
+
+### FLEXIBLE
+Strong current direction, but implementation may vary inside the constraints.
+
+Examples:
+- homepage section composition;
+- editorial rhythm;
+- motion treatment;
+- exact component boundaries;
+- crop/photography composition.
+
+### OPEN / HYPOTHESIS
+Requires validation or explicit decision.
+
+Examples:
+- final headline;
+- final category wording;
+- final art direction;
+- Framer vs coded production;
+- exact final typeface/palette;
+- whether Field Profitability remains the strongest proof point for the first cohort.
+
+## AI task handoff
+
+For non-trivial tasks, use [TASK_TEMPLATE.md](TASK_TEMPLATE.md).
+
+The template forces:
+- problem/outcome clarity;
+- source-of-truth references;
+- assumptions;
+- scope boundaries;
+- acceptance criteria;
+- verification;
+- evidence integrity.
+
+## Important rule
+
+Do not ask an AI agent to “make the site modern/premium” without the canonical context.
+
+That instruction alone is considered under-specified and high risk for generic AI/SaaS output.
