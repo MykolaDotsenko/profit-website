@@ -4,7 +4,7 @@
  * ("minus 96 euros per hectare"); the visual form keeps the unit smaller than the figure.
  * Negative values keep their minus sign, so risk never relies on colour alone.
  */
-import type { EconomicValue } from '../domain/economics';
+import { assertMetricPublishable, type EconomicValue } from '../domain/economics';
 import { present, type FormatOptions } from '../domain/format';
 import { localeInfo, ui } from '../i18n';
 
@@ -18,6 +18,7 @@ interface Props {
 
 const { value, size = 's', signal = false, format } = Astro.props;
 const locale = localeInfo(Astro.currentLocale);
+assertMetricPublishable(value.metric, 'Metric.astro');
 const p = present(value, locale.intl, ui(locale.code).units, format);
 ---
 
