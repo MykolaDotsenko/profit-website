@@ -193,18 +193,19 @@ Keep form short.
 
 ## 6. Information architecture
 
-Recommended v1:
+Recommended core launch:
 
 - /
 - /farmers
 - /product
-- /results
 - /trust
 - /company
 - /investors
 - /contact
 
-Add pages only when content is strong enough.
+Add **/results** only when real pilot/case-study evidence is strong enough to support a dedicated page.
+
+Keep security/privacy/methodology under **/trust** initially. Create a separate **/security** page only when content depth or customer requirements justify it.
 
 Do not create empty “SaaS completeness” pages.
 
@@ -277,6 +278,7 @@ Avoid repeating “headline + 3 cards” in every section.
 Standardize these states across the site:
 
 ### Evidence
+- Hypothetical
 - Modelled
 - Observed
 - Attributed
@@ -400,13 +402,22 @@ Do not approve components with placeholder-only content.
 
 ## 13. Frontend implementation direction
 
-If coded:
+### Platform status
 
-### Core
-- Astro 7.3
-- TypeScript 7
+The production platform is **not yet irrevocably locked**.
+
+- Use Framer when it materially accelerates positioning/design validation and farmer learning.
+- If/when PROFIT chooses a fully owned coded production site, the current preferred shell is Astro.
+- Do not add engineering complexity before the platform decision creates real value.
+
+### Coded baseline, if selected
+
+- Astro 7.3.x
+- TypeScript 6.x for the Astro toolchain today
 - semantic HTML
 - modern native CSS
+
+TypeScript 7.0 is stable in general, but Microsoft currently states that Astro/Vue/Svelte/MDX embedded-language workflows should remain on TypeScript 6.0 until TS7 exposes the required stable programmatic APIs. Re-evaluate this when upstream support changes.
 
 ### CSS
 - custom properties;
