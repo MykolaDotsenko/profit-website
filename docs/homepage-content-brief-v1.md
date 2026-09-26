@@ -727,6 +727,9 @@ Do not show:
 Public message:
 **PROFIT supports a decision; the farmer retains authority**
 
+Core invariant:
+**The farmer retains decision authority**
+
 Use:
 - decision questions;
 - alternatives;
