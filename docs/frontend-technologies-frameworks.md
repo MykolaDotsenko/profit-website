@@ -10,7 +10,7 @@ Because frontend framework books age quickly, durable architectural lessons from
 
 For a coded PROFIT presentation website, the strongest current default is:
 
-**Astro 7.3 + TypeScript 7 + semantic HTML + modern CSS + minimal JavaScript**
+**Astro 7.3.x + TypeScript 6.x + semantic HTML + modern CSS + minimal JavaScript**
 
 Use framework islands only for genuinely interactive product experiences.
 
@@ -39,9 +39,12 @@ Astro 7 introduced:
 Astro 7.3 is the current release as of this research date.
 
 ### TypeScript
-Current stable line researched: **TypeScript 7.0**.
+**TypeScript 7.0 is the current stable language release overall**, but it is **not yet the recommended baseline for Astro projects**.
 
-TypeScript 7 is a native Go port with major type-checking and editor performance improvements.
+Microsoft's TypeScript 7.0 release notes state that embedded-language workflows including Astro, Vue, Svelte and MDX should continue using **TypeScript 6.0** for now because TS7 does not yet expose the stable programmatic APIs these tools require.
+
+PROFIT coded-site baseline today:
+**TypeScript 6.x with Astro 7.3.x**, then re-evaluate when Astro/TypeScript tooling explicitly supports TS7 end-to-end.
 
 ### Vite
 Current major line: **Vite 8**.
@@ -157,17 +160,17 @@ We can start very simple and add capability without rebuilding the whole site ar
 
 ---
 
-## 4. TypeScript 7 should replace the previous TypeScript 6 assumption
+## 4. TypeScript 7 is stable, but Astro integration changes the decision
 
-Earlier research referenced TypeScript 6 because it was the stable release at that moment.
+TypeScript 7 became stable in July 2026 and is materially faster.
 
-That is now outdated.
-
-TypeScript 7 became stable in July 2026.
+However, Microsoft explicitly notes that Astro and other embedded-language workflows should remain on TypeScript 6.0 until TS7's programmatic APIs are available to those toolchains.
 
 ### PROFIT decision
 
-Use **TypeScript 7** for the coded website unless an ecosystem compatibility issue is discovered during implementation.
+Use **TypeScript 6.x with Astro today**.
+
+Upgrade to TypeScript 7 only after Astro's editor/type-checking workflow officially supports it and our CI verification passes.
 
 Use strict typing for:
 - content models;
@@ -513,7 +516,7 @@ Use server rendering only for routes/features that genuinely require it.
 
 ## 19. Framework decision matrix
 
-### Astro 7.3
+### Astro 7.3.x
 Best when:
 - marketing/content site;
 - SEO;
@@ -521,7 +524,7 @@ Best when:
 - selective interactivity;
 - custom visual system.
 
-**Current PROFIT default.**
+**Current PROFIT coded-site default, if/when code is selected over Framer for production.**
 
 ### Next.js 16.3
 Best when:
@@ -583,10 +586,10 @@ If the answer is primarily "modern", "popular" or "developers like it", do not a
 ## 21. Updated production stack candidate
 
 ### Framework
-**Astro 7.3**
+**Astro 7.3.x**
 
 ### Language
-**TypeScript 7**
+**TypeScript 6.x (current Astro-compatible baseline)**
 
 ### Build tool
 **Vite 8 / Rolldown through Astro**
