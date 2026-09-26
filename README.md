@@ -39,7 +39,7 @@ The website must communicate:
 - [Visual Effects Learning Roadmap](docs/visual-effects-learning-roadmap.md)
 - [Modern Branding Masterclasses Deep Pass 2026](docs/modern-branding-masterclasses-deep-pass-2026.md)
 - [Avoiding AI Sameness — PROFIT Standard](docs/avoiding-ai-sameness.md)
-  - includes second five-pass research on D&AD/Figma/Adobe creative-process safeguards
+  - includes second and third five-pass research on creative-process, semiotic, flexible-system, human-edge, and provenance safeguards
 - [Frontend Masterclass Findings](docs/frontend-masterclass-findings.md)
 - [Frontend Masterclasses Deep Pass 2026](docs/frontend-masterclasses-deep-pass-2026.md)
 - [Frontend Technologies & Frameworks](docs/frontend-technologies-frameworks.md)
