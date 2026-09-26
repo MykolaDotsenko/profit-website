@@ -1392,3 +1392,470 @@ For PROFIT, the full system is:
 AI should make a distinctive PROFIT system faster to execute.
 
 It should never be allowed to decide what PROFIT's distinctiveness is.
+
+
+# Third five-pass research — Semiotics, flexible systems, human edge, and provenance
+
+Research date: 2026-09-26
+
+This section adds five new passes that do not repeat the earlier D&AD/Figma/Adobe safeguards. The focus is now on:
+- category semiotics;
+- reference discipline;
+- controlled variation;
+- protecting human/authentic inputs;
+- provenance and drift observability.
+
+Key sources reviewed:
+- D&AD — Creating Impactful Brand Identities
+  https://www.dandad.org/learning/masterclasses/creating-impactful-brand-identities
+- D&AD — Art Direction for Advertising Creatives
+  https://www.dandad.org/learning/masterclasses/art-direction-for-advertising-creatives
+- Future London Academy — Branding Now rebrand process
+  https://futurelondonacademy.co.uk/en/articles/br-rebranding-branding-now
+- How To Do Semiotics in Seven Weeks
+  https://www.howsemiotics.com/2026-courses
+- Coding Systems — Transformation-Based Flexible Visual Systems
+  https://codingsystems.info/workshop-transformation-based-flexible-visual-systems/
+- Figma Config 2026 — Designing Brand Intelligence
+  https://config.figma.com/san-francisco/session/b14b91d9-50d9-4081-a943-51f331a2b4b4/
+- Figma — Digital Tools, Human Expression: Config 2026 identity
+  https://www.figma.com/blog/the-visual-identity-behind-config-2026/
+- Adobe — How AI Is Redistributing Creative Work
+  https://www.adobe.com/ai/research/202606/ai-is-redistributing-creative-work.html
+- Adobe — AI Model Registry / Governance
+  https://business.adobe.com/blog/ai-model-registry
+- Canva AI Vision London 2026 — Distinctiveness
+  https://www.canva.com/newsroom/news/ai-vision-uk-2026-distinctiveness-brand/
+
+---
+
+## Pass 11 — Reference discipline: deconstruct first, then create without category anchoring
+
+Future London Academy's published rebrand process contains a useful behavior:
+the team explored multiple directions and, for one route, deliberately avoided outside references so they would not simply repeat existing visual solutions.
+
+This should not be interpreted as "never look at references."
+
+The stronger process is:
+
+### Stage A — Category deconstruction
+Before concepting, study competitors and category conventions on purpose.
+
+Map:
+- color;
+- typography;
+- hero patterns;
+- photography;
+- illustration;
+- UI framing;
+- claims;
+- motion;
+- iconography.
+
+Goal:
+know what the category average looks and sounds like.
+
+### Stage B — Reference blackout
+During first-principles concept generation, stop browsing competitor/category inspiration.
+
+Use:
+- PROFIT strategy;
+- farmer reality;
+- economic model;
+- real product/data;
+- own sketches;
+- adjacent/non-agritech references only when necessary.
+
+Goal:
+avoid visual mimicry and availability bias.
+
+### Stage C — Collision test
+After concepts exist, reintroduce the category.
+
+Ask:
+- What does this accidentally resemble?
+- Which visual decisions are already owned by stronger competitors?
+- Which parts are generic because the category made them feel "correct"?
+
+### Optional AI mirror test
+
+Adobe's 2026 creative-work research reports a practitioner technique:
+humans brainstorm first, then give the same brief to AI; if AI independently produces very similar ideas, they treat that as an originality warning.
+
+For PROFIT, use this only as a **red-team heuristic**, not proof of originality.
+
+If a general model immediately returns our "distinctive" idea from a generic brief, ask whether the concept is merely a category prior.
+
+### New rule
+
+**Study the category before ideation, then temporarily remove it from view while inventing.**
+
+Do not keep competitor moodboards open beside the canvas during divergent concepting.
+
+---
+
+## Pass 12 — Semiotic whitespace: map category membership and category difference separately
+
+Applied brand semiotics teaches that brands need to signal both:
+- enough category membership to be understood;
+- enough difference to be distinctive.
+
+A brand that rejects every category code can become confusing.
+A brand that uses only category codes becomes invisible.
+
+### PROFIT semiotic map — working hypothesis
+
+#### Membership codes
+Useful for saying "agriculture / farm intelligence":
+- real farms;
+- field geometry;
+- agronomic units;
+- machinery;
+- crops/soil;
+- maps when meaningful.
+
+#### Overcrowded category codes
+High-risk:
+- generic green;
+- drone/satellite hero;
+- farmer with tablet;
+- leaf + circuit;
+- glowing AI network;
+- "smart farming";
+- "data-driven";
+- generic dashboard cards.
+
+#### Potential PROFIT difference codes
+To validate:
+- economic typography;
+- €/ha as a dominant visual grammar;
+- baseline / counterfactual;
+- evidence state;
+- attribution;
+- confidence;
+- audit/provenance;
+- ledger-like precision;
+- decision alternatives;
+- measured economic effect.
+
+### Semiotic whitespace rule
+
+Before adding a new brand code, ask:
+
+1. Is this already saturated in agritech?
+2. Does it communicate a real PROFIT truth?
+3. Is it understandable without a long explanation?
+4. Can we repeat it across channels?
+5. Can a competitor adopt it just as credibly tomorrow?
+
+### Important
+
+Do not become "anti-agriculture" in the attempt to be distinctive.
+
+Real agricultural context is necessary for category legibility and trust.
+
+Distinctiveness should come from the **relationship** between agriculture and economics/evidence.
+
+---
+
+## Pass 13 — Flexible visual system: consistency without self-created sameness
+
+A 2026 Coding Systems workshop on flexible visual identities teaches identities as:
+- parameters;
+- rules;
+- ranges;
+- transformations;
+
+so many outputs can vary while still belonging to the same system.
+
+This is highly relevant to generative AI.
+
+### Problem
+
+A rigid brand system can avoid external AI sameness while creating internal sameness:
+every section/page becomes the same composition repeated.
+
+### PROFIT solution
+
+Define:
+
+## Invariants — keep stable
+
+Examples:
+- economic-number typography logic;
+- evidence vocabulary;
+- confidence vocabulary;
+- canonical unit formatting;
+- field/data geometry principles;
+- photography truthfulness;
+- motion personality;
+- core color semantics.
+
+## Variables — allow controlled variation
+
+Examples:
+- crop;
+- photographic subject;
+- field shape;
+- section density;
+- image scale;
+- grid split;
+- data-overlay position;
+- crop and framing;
+- narrative rhythm;
+- amount of whitespace.
+
+## Ranges — constrain variation
+
+Example:
+- metric can occupy 30–65% of visual emphasis, not any arbitrary size;
+- overlay density can be low/medium, never full dashboard clutter;
+- motion can be M0–M3 under the existing motion scale;
+- field geometry can be literal or abstracted, but not replaced by generic blobs.
+
+### AI prompting implication
+
+Do not ask AI for a fixed template.
+
+Provide:
+- invariants;
+- variable dimensions;
+- allowed ranges.
+
+Then request multiple lawful combinations.
+
+### New rule
+
+**PROFIT consistency comes from grammar, not identical layouts.**
+
+---
+
+## Pass 14 — Protect the human edge: define no-automation creative zones
+
+Figma Config 2026 repeatedly frames craft, feeling, taste, and human judgment as the differentiator in AI-mediated design.
+
+Figma's Config identity deliberately combined:
+- structured/programmatic systems;
+with
+- idiosyncratic, imperfect, human-feeling forms.
+
+Adobe's 2026 creative-work research likewise found working creatives drawing boundaries around tasks tied to:
+- authenticity;
+- artistic integrity;
+- ownership;
+- emotional impact;
+- empathy.
+
+Canva's AI Vision London 2026 similarly argues that as execution becomes cheap, judgment/taste becomes the scarce skill.
+
+### PROFIT human-only zones
+
+AI may assist, but cannot own final decisions for:
+
+#### 1. Farmer empathy
+What actually feels credible, respectful, or patronizing.
+
+#### 2. Documentary truth
+Selection of real farm imagery and whether it honestly represents operations.
+
+#### 3. Core brand point of view
+What PROFIT chooses to stand for and against.
+
+#### 4. Final art direction
+The point where "technically on-brand" becomes "this feels like PROFIT."
+
+#### 5. Cultural/local nuance
+Especially as the site localizes across countries.
+
+#### 6. Sensitive evidence framing
+How uncertainty, losses, farmer data, and causal claims are presented.
+
+### Deliberate idiosyncrasy
+
+Not every element should be optimized toward the statistical median.
+
+Allow controlled human irregularity:
+- unusual crop;
+- asymmetric editorial composition;
+- real imperfect texture;
+- specific agricultural artifact;
+- unexpected but meaningful typographic relationship.
+
+### Guardrail
+
+"Human" does not mean random, messy, or inaccessible.
+
+The irregularity must have art direction.
+
+### New rule
+
+**Do not automate away the parts of the brand whose value comes from judgment, empathy, truth, or taste.**
+
+---
+
+## Pass 15 — Creative provenance: make AI drift observable and reversible
+
+Adobe's 2026 AI governance material highlights a practical scaling problem:
+different teams can use different model versions, retrain without approval, or lose track of which system generated an asset.
+
+This creates:
+- inconsistent outputs;
+- unclear ownership;
+- weak auditability;
+- brand drift that cannot easily be traced.
+
+### PROFIT Creative Provenance Record
+
+For every brand-critical AI-assisted asset, record:
+
+#### Asset
+- asset ID/path;
+- purpose;
+- channel/page;
+- status.
+
+#### Context
+- brand-system version;
+- design-token version;
+- voice/content-system version;
+- NOT-PROFIT exclusion-set version.
+
+#### AI
+- tool/model family;
+- model/version when available;
+- workflow role (Explorer / Builder / etc.);
+- high-level prompt intent;
+- generation date.
+
+#### Inputs
+- source/reference assets;
+- ownership/licensing status;
+- farm/documentary provenance where relevant.
+
+#### Human review
+- creative owner;
+- reviewer;
+- approval date;
+- exceptions;
+- reason for acceptance/rejection.
+
+#### Evidence
+If the asset contains economic/evidence claims:
+- evidence state;
+- source;
+- confidence semantics;
+- whether values are illustrative or real.
+
+### Version control
+
+Brand-critical generation systems should support:
+- named versions;
+- change log;
+- rollback;
+- access control;
+- deprecation of obsolete contexts/models.
+
+### Drift audit
+
+On a recurring basis:
+1. sample recent assets;
+2. compare with canonical system;
+3. identify new unapproved patterns;
+4. find their source context/model/workflow;
+5. either reject drift or consciously promote it into the system.
+
+### New rule
+
+**If you cannot explain which rules, sources, and human decisions produced an AI-assisted brand asset, it is not production-ready.**
+
+---
+
+# Consistency vs sameness — explicit doctrine
+
+Consistency is not:
+- the same layout;
+- the same image treatment;
+- the same composition;
+- the same animation;
+- the same phrase;
+
+repeated everywhere.
+
+Consistency is:
+- stable meaning;
+- recognizable codes;
+- predictable evidence semantics;
+- coherent voice;
+- controlled variation.
+
+### Formula
+
+**Stable brand grammar + meaningful variation = recognisable without becoming repetitive**
+
+Avoid both extremes:
+
+### Too little control
+AI drift / generic inconsistency.
+
+### Too much control
+Internal template sameness / sterile identity.
+
+---
+
+# Updated anti-sameness operating model
+
+1. **Map the category**
+   Know the clichés and required membership signals.
+
+2. **Black out category references during first ideation**
+   Create from PROFIT truth.
+
+3. **Generate independent concepts**
+   Human-first, then role-bound AI.
+
+4. **Run AI mirror test**
+   Use similarity with generic AI output as an originality warning.
+
+5. **Evaluate semiotic whitespace**
+   Belong enough to be understood; differ enough to be remembered.
+
+6. **Encode invariants + variables + ranges**
+   Build a flexible visual grammar.
+
+7. **Protect human-only zones**
+   Empathy, truth, taste, core art direction.
+
+8. **Produce through canonical machine-readable context**
+   Avoid ad-hoc prompts.
+
+9. **Attach creative provenance**
+   Make every important AI-assisted asset auditable.
+
+10. **Audit drift and memory**
+    Promote intentional evolution; reject accidental convergence.
+
+---
+
+# Updated strongest conclusion
+
+The third five-pass review adds an important correction:
+
+**Avoiding AI sameness does not mean maximizing novelty.**
+
+For PROFIT the target is:
+
+**recognisable category membership**
++
+**ownable economic/evidence codes**
++
+**human taste**
++
+**controlled system variation**
++
+**traceable AI execution**
+
+The goal is not "no one has ever seen anything like this."
+
+The goal is:
+
+**A farmer immediately understands that this is serious agricultural technology — and, after repeated exposure, increasingly recognises that this particular combination of agriculture, economics, evidence, and motion is PROFIT.**
