@@ -111,6 +111,30 @@ routes:
     results: "Add only when real pilot/case-study evidence supports a dedicated page."
     security: "Split from /trust only when content depth/customer requirements justify it."
 
+hero_validation:
+  status: "open hypothesis; current hero is a control, not a production winner"
+  durable_rules:
+    - "Hero comprehension must not depend on understanding the category label."
+    - "A static first frame must communicate farmer + economic job + credible proof + next action."
+    - "Hero visual is a proof object, not decorative agriculture."
+    - "Test message independently from art direction before combined validation."
+    - "Do not choose a hero by team preference or visual appeal."
+  directions:
+    H1: "Economic visibility / farmer job first"
+    H2: "Decision intelligence / current control"
+    H3: "Field Profitability / product proof first"
+  first_test:
+    cohort: "9-12 target field/crop farm decision-makers for qualitative elimination; no statistical-winner claim"
+    method: "same neutral static scaffold; randomized first exposure; open recall before comparison"
+  kill_patterns:
+    - "material farmer-economic job is not understood"
+    - "recurring misclassification"
+    - "recurring guaranteed-profit interpretation"
+    - "unsupported precision or scope"
+    - "proof requires verbal explanation"
+    - "hero depends on animation"
+    - "CTA/next step is unclear"
+
 homepage:
   desired_jobs:
     - "Immediate orientation"
