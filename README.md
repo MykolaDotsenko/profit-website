@@ -76,6 +76,7 @@ These files are an evidence library. They support decisions but do not silently 
 - [Frontend Masterclasses Deep Pass 2026](docs/frontend-masterclasses-deep-pass-2026.md)
 - [Frontend Technologies & Frameworks](docs/frontend-technologies-frameworks.md)
 - [Whole-Farm Scope, Data Collection & Forecasting Evidence](docs/whole-farm-scope-evidence-2026-09-27.md)
+- [Website Trust & Professionalism Synthesis](docs/website-trust-professionalism-synthesis-2026-09-27.md) — cross-disciplinary bridge from website/brand/AI-sameness research and project work on human factors, data collection, forecasting and decision-support systems.
 
 ## Status
 
