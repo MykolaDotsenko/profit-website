@@ -49,6 +49,34 @@ for (const viewport of viewports) {
   });
 }
 
+test.describe('master-brand scope', () => {
+  test('homepage shows whole-farm direction while keeping current product truth explicit', async ({ page }) => {
+    await page.goto('/');
+
+    const scope = page.locator('#production-systems');
+    await expect(scope).toBeVisible();
+    await expect(scope).toContainText('Horticulture, orchards & berries');
+    await expect(scope).toContainText('Vegetables & greenhouse production');
+    await expect(scope).toContainText('Pig production');
+    await expect(scope).toContainText('Dairy');
+    await expect(scope).toContainText('Other livestock & mixed farms');
+    await expect(scope).toContainText('Field Profitability is the first concrete product focus');
+  });
+
+  test('pilot farm-type choices capture broad production context without adding fields', async ({ page }) => {
+    await page.goto('/contact/');
+
+    const select = page.locator('#pf-farmType');
+    await expect(select).toContainText('Horticulture / orchards / berries');
+    await expect(select).toContainText('Greenhouse / protected cultivation');
+    await expect(select).toContainText('Pig production');
+    await expect(select).toContainText('Dairy');
+    await expect(select).toContainText('Poultry / eggs');
+
+    await expect(page.locator('[data-pilot-form] input, [data-pilot-form] select')).toHaveCount(5);
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
