@@ -434,6 +434,8 @@ Record results in `docs/experiments/hero-message-test-v1-results.md`. Keep them 
 
 ```text
 Candidate set: v2 (Blueprint §5). v1 superseded pre-test by the product-truth gate — no farmer evidence for v1.
+Market cell (Blueprint §2.3): domain Crop / Field Profitability × Market A ____ (country / region / working language, D5)
+  Evidence level: I1 at most. Results apply to this cell only; never pooled with another market.
 Cohort: n = __, segments: ____, first positions per direction: H1 __ / H2 __ / H3 __
 Decisions: D1–D3 approved 2026-09-26; D4 settled (Blueprint §2.2; PT-1 no, PT-2 yes within the list interpretation);
   D5 locale: ____; D6 reviewer/date: ____; D7 process: ____; D8 asset + provenance: ____

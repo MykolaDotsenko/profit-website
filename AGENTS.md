@@ -78,7 +78,7 @@ External agents must preserve these boundaries:
 Primary internal value metric:
 **Verified Economic Value per Customer**
 
-Where evidence supports it, VEV may also be represented per hectare/production unit, per € paid to PROFIT, as share of eligible customers with positive VEV, and with attribution confidence for a defined period/cohort.
+Where evidence supports it, VEV may also be represented per hectare/production unit, per unit of currency paid to PROFIT (e.g. per € in a euro market), as share of eligible customers with positive VEV, and with attribution confidence for a defined period/cohort.
 
 Do not invent missing VEV formulas or verification thresholds.
 

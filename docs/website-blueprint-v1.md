@@ -228,7 +228,7 @@ Primary internal value metric:
 
 Where relevant and evidence permits, supporting views may include:
 - VEV per hectare or relevant production unit;
-- VEV per € paid to PROFIT;
+- VEV per unit of currency paid to PROFIT (e.g. per € in a euro market);
 - share of eligible customers with positive VEV;
 - attribution confidence;
 - explicit period and cohort.

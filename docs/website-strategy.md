@@ -56,7 +56,7 @@ Primary internal value metric:
 
 Where relevant and actually supported by evidence, VEV may also be inspected as:
 - VEV per hectare or relevant production unit;
-- VEV per € paid to PROFIT;
+- VEV per unit of currency paid to PROFIT (e.g. per € in a euro market);
 - share of eligible customers with positive VEV;
 - attribution confidence;
 - defined measurement period and cohort.

@@ -147,7 +147,7 @@ value_logic:
     primary: "VEV per Customer"
     supporting_when_evidence_allows:
       - "VEV per hectare or relevant production unit"
-      - "VEV per € paid to PROFIT"
+      - "VEV per unit of currency paid to PROFIT (e.g. per € in a euro market)"
       - "share of eligible customers with positive VEV"
       - "attribution confidence"
       - "defined measurement period and cohort"
@@ -221,7 +221,7 @@ hero_validation:
     H2: "Decision intelligence / decision-context first (v2; v1 was the current control)"
     H3: "Field Profitability / product proof first"
   first_test:
-    cohort: "9-12 target field/crop farm decision-makers for qualitative elimination; no statistical-winner claim"
+    cohort: "9-12 crop decision-makers from one Market A cohort (provisionally Finland, Southwest Finland, Finnish; international_validation.market_A); not pooled with other markets; qualitative elimination; no statistical-winner claim"
     method: "same neutral static scaffold; every participant evaluates H1/H2/H3 in counterbalanced order; Phase A: fixed 10 s exposure + open recall only, for all three; Phase B: second viewing + probes in the same order; Phase C: comparison"
     counting: "kill criteria counted across all participants per direction; first-position recall reported separately; repeated pattern = 3+ independent participants, 2 = concern; evidence-integrity failures corrected regardless of count"
   kill_patterns:
