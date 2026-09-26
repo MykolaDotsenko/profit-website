@@ -4,11 +4,21 @@
  * Field Profitability → trust/farmer control → company → pilot CTA.
  */
 import type { ContentGap, SectionIntro, Step, TextItem } from '../types';
-import { decisionQuestion, exampleRecords, fieldProfitability, moduleStatus, pilotSteps, pilotStepsReview, primaryCta } from './shared';
+import {
+  decisionQuestion,
+  exampleRecords,
+  fieldProfitability,
+  moduleStatus,
+  pilotSteps,
+  pilotStepsReview,
+  primaryCta,
+  productionScopeNote,
+  productionSystems,
+} from './shared';
 
 export const home = {
   meta: {
-    description: 'PROFIT connects what happens on the farm with what it means economically. Its first module, Field Profitability, is in development.',
+    description: 'PROFIT connects agricultural production reality with economic decision-making across crop, horticulture and livestock systems. Field Profitability is the first concrete product focus.',
   },
   hero: {
     primary: primaryCta,
@@ -29,13 +39,36 @@ export const home = {
   thirtySeconds: {
     title: 'PROFIT in 30 seconds',
     items: [
-      { title: 'For', text: 'Farmers and farm businesses making production and cost decisions.' },
+      { title: 'For', text: 'Farmers and farm businesses across crop, horticulture and livestock production.' },
       { title: 'The problem', text: 'The numbers behind a farm decision sit in different places, so its economics are hard to see before deciding.' },
       { title: 'What PROFIT does', text: 'Connects what happens on the farm with what it means economically.' },
       { title: 'First module', text: 'Field Profitability: operating profit, field by field. In development.' },
       { title: 'The standard', text: 'Verified Economic Value: a value counts only when it can be evidenced.' },
       { title: 'Next step', text: 'Join the pilot: five details, then a conversation.' },
     ] satisfies TextItem[],
+  },
+  scope: {
+    intro: {
+      id: 'production-systems',
+      eyebrow: 'One company · different production systems',
+      title: 'Built around the economics of real agriculture',
+      lead:
+        'A field, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd do not share the same operating model. PROFIT is being built to keep the production reality specific while keeping the economic discipline consistent.',
+    } satisfies SectionIntro,
+    systems: productionSystems,
+    note: productionScopeNote,
+    statsTitle: 'Why the scope matters',
+    stats: [
+      { title: '€531.9B', text: 'EU agricultural output in 2024.' },
+      { title: '€267.7B', text: 'Crop output in the EU in 2024.' },
+      { title: '€218.8B', text: 'Animals and animal products output in the EU in 2024.' },
+    ] satisfies TextItem[],
+    categoryNote:
+      'Among the largest 2024 EU output categories were milk (€78.6B), vegetables and horticultural products (€72.0B), pigs (€46.8B), fruits (€39.5B) and cattle (€38.4B). These are gross output values, not farm profit.',
+    source: {
+      label: 'Eurostat · Key figures on the European food chain 2025',
+      href: 'https://ec.europa.eu/eurostat/en/web/products-key-figures/w/ks-01-25-049',
+    },
   },
   example: {
     intro: {
@@ -130,6 +163,66 @@ export const home = {
       },
     ] satisfies Step[],
     note: 'An outcome on its own does not show that a decision caused it. The evidence ladder below says what it takes.',
+    dataPrinciplesTitle: 'Data should fit the farm',
+    dataPrinciples: [
+      {
+        title: 'Use existing records first',
+        text: 'Start with the production, sales, cost and operational records a farm already has before asking for new hardware or more manual work.',
+      },
+      {
+        title: 'Automate where the source is reliable',
+        text: 'Machine, sensor, positioning and external data can reduce manual entry when they are available and trustworthy; they are not prerequisites for every farm.',
+      },
+      {
+        title: 'Make older equipment workable',
+        text: 'Future capture workflows should minimise operator input and use context such as time and location where appropriate, rather than assuming every machine is digitally connected.',
+      },
+      {
+        title: 'Work offline when the farm needs it',
+        text: 'Field and farm work must not stop because coverage disappears. Capture locally and synchronise later where workflows require connectivity.',
+      },
+    ] satisfies TextItem[],
+    dataEvidence:
+      'Eurostat reported that about 11% of EU farms used a farm management information system in 2023, while around 18% of farms with utilised agricultural area used some precision-farming technology or practice.',
+    dataSource: {
+      label: 'Eurostat · Digitalisation in EU agriculture, 2023 data',
+      href: 'https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260724-1',
+    },
+    offlineSource: {
+      label: 'European Commission · Future connectivity needs for precision farming, 2026',
+      href: 'https://digital-strategy.ec.europa.eu/en/library/assessment-future-connectivity-needs-precision-farming-adoption',
+    },
+    forecastingTitle: 'Forecast uncertainty — not a magic profit number',
+    forecastingLead:
+      'The PROFIT direction is to keep known economics deterministic, forecast uncertain production or market drivers only when the data supports it, compare scenarios, and show the range and confidence behind the result.',
+    forecastingPrinciples: [
+      {
+        title: 'Known economics first',
+        text: 'Definitions and arithmetic stay explicit. An AI model is not the source of truth for revenue, cost or profit calculations.',
+      },
+      {
+        title: 'Forecast the uncertain drivers',
+        text: 'Yield, production, price, feed, energy or other domain-specific drivers should be forecast separately where useful, then combined through the economic model.',
+      },
+      {
+        title: 'Compare scenarios',
+        text: 'A useful decision view compares alternatives and a do-nothing baseline, rather than presenting one unexplained future-profit number.',
+      },
+      {
+        title: 'Earn model complexity',
+        text: 'Start with simple baselines and only use more complex models when they materially improve out-of-sample performance and remain operationally reliable.',
+      },
+      {
+        title: 'Show uncertainty',
+        text: 'Ranges, assumptions, update dates and confidence matter more than false precision.',
+      },
+      {
+        title: 'Measure what happened',
+        text: 'Forecast quality is not Verified Economic Value. The actual outcome, counterfactual, attribution and confidence still have to be assessed after the decision.',
+      },
+    ] satisfies TextItem[],
+    forecastingNote:
+      'This is the PROFIT development standard, not a claim that the current Field Profitability build performs forecasting, optimisation or scenario simulation.',
   },
   value: {
     intro: {
@@ -188,8 +281,8 @@ export const home = {
       title: 'Who is building PROFIT',
     } satisfies SectionIntro,
     text: [
-      'PROFIT is building decision support that connects farm reality with its economics, and holds itself to evidence of value.',
-      'It starts with one module, Field Profitability, and labels what is not yet proven.',
+      'PROFIT is building decision support for agricultural production systems — crops, horticulture, greenhouses and livestock — around one economic discipline.',
+      'It starts concrete with Field Profitability and labels what is a current product, what is still a direction, and what is not yet proven.',
     ],
     stillProvenTitle: 'Still being proven',
     stillProven: [
