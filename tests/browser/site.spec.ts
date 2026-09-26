@@ -106,20 +106,17 @@ test.describe('critical interactions', () => {
     await expect(form.locator('[data-form-status]')).not.toHaveText('');
   });
 
-  test('pilot form remains a no-op without JavaScript when no endpoint exists', async ({ browser }) => {
+  test('pilot form cannot submit without JavaScript when no endpoint exists', async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     const page = await context.newPage();
     await page.goto('/contact/');
 
     const form = page.locator('[data-pilot-form]');
-    await form.locator('#pf-name').fill('Test Farmer');
-    await form.locator('#pf-organisation').fill('Test Farm');
-    await form.locator('#pf-country').fill('Finland');
-    await form.locator('#pf-email').fill('farmer@example.test');
-    await form.locator('#pf-farmType').selectOption({ index: 1 });
-    await form.getByRole('button', { name: /join|submit|send/i }).click();
+    const control = form.locator('[data-submit]');
 
-    await expect(page).toHaveURL(/\/contact\/?$/);
+    await expect(form).not.toHaveAttribute('action', /.+/);
+    await expect(control).toHaveAttribute('type', 'button');
+
     await context.close();
   });
 
