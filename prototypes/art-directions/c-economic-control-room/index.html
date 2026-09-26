@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WWW-001 C · Economic Control Room</title>
+  <style>
+    :root{
+      --bg:#e9e7e0;--panel:#f3f1eb;--ink:#111311;--muted:#666962;--line:#969a92;--risk:#862f28;--positive:#31583b;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"SFMono-Regular",Consolas,monospace;
+    }
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans)}
+    a{color:inherit}.flag{padding:.55rem 1rem;border-bottom:1px solid var(--ink);font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+    .app{max-width:1500px;margin:auto;padding:1rem 1rem 5rem}.header{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;padding:.8rem 0 1rem}
+    .brand{font-weight:900;letter-spacing:.16em}.header-center{font:11px var(--mono);color:var(--muted);text-align:center}.status{font:11px var(--mono);border:1px solid var(--ink);padding:.35rem .5rem}
+    .hero{border:1px solid var(--ink);background:var(--panel);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(22rem,.9fr)}
+    .hero-copy{padding:clamp(1.4rem,4vw,4rem);border-right:1px solid var(--ink);display:flex;flex-direction:column;justify-content:space-between;min-height:620px}
+    .eyebrow{font:11px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}h1{font-size:clamp(3.4rem,6.5vw,7rem);line-height:.92;letter-spacing:-.06em;margin:.8rem 0 1.4rem;max-width:11ch}
+    .lede{max-width:42rem;font-size:1.1rem;line-height:1.55;color:var(--muted)}.actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.5rem}.button{padding:.8rem 1rem;border:1px solid var(--ink);text-decoration:none;font-weight:800;background:transparent}.button.primary{background:var(--ink);color:var(--panel)}
+    .hero-state{display:grid;grid-template-rows:auto 1fr auto}.state-head{display:flex;justify-content:space-between;gap:1rem;padding:1rem;border-bottom:1px solid var(--ink);font:11px var(--mono);text-transform:uppercase}
+    .state-core{padding:clamp(1.2rem,3vw,2.5rem);display:flex;flex-direction:column;justify-content:center}
+    .state-label{font:11px var(--mono);text-transform:uppercase;color:var(--muted)}.state-value{font:700 clamp(4.2rem,9vw,9rem)/.9 var(--mono);letter-spacing:-.08em;color:var(--risk);margin:.55rem 0}.state-unit{font:12px var(--mono);color:var(--muted)}
+    .state-question{margin:2rem 0 0;font-size:clamp(1.4rem,2.5vw,2.3rem);line-height:1.12;letter-spacing:-.03em}.state-foot{padding:1rem;border-top:1px solid var(--ink);font:11px/1.5 var(--mono);color:var(--muted)}
+    .decision-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;margin-top:1rem}.panel{background:var(--panel);border:1px solid var(--ink);padding:1.2rem}
+    .panel-title{display:flex;justify-content:space-between;gap:1rem;align-items:end;border-bottom:1px solid var(--line);padding-bottom:.7rem}.panel-title h2{font-size:1.1rem;margin:0}.panel-title span{font:11px var(--mono);color:var(--muted)}
+    .economics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:1rem;border:1px solid var(--line)}.cell{background:var(--panel);padding:1rem;min-height:8.5rem}.cell .label{font:10px var(--mono);text-transform:uppercase;color:var(--muted)}.cell .value{font:700 1.8rem var(--mono);margin-top:.6rem;letter-spacing:-.04em}.cell .note{font-size:.75rem;color:var(--muted);margin-top:.45rem;line-height:1.45}
+    .sensitivity{display:grid;grid-template-columns:1fr auto;gap:0;border-top:1px solid var(--line);margin-top:1rem}.sensitivity div{padding:.68rem 0;border-bottom:1px solid var(--line)}.sensitivity div:nth-child(even){font:700 13px var(--mono);text-align:right}.risk{color:var(--risk)}.positive{color:var(--positive)}
+    .evidence-box{border:1px solid var(--ink);padding:1rem;margin-top:1rem;background:var(--bg)}.evidence-box strong{font:700 12px var(--mono);text-transform:uppercase}.evidence-box p{margin:.55rem 0 0;color:var(--muted);font-size:.82rem;line-height:1.5}
+    .method{margin-top:1rem;border:1px solid var(--ink);background:var(--panel);display:grid;grid-template-columns:repeat(5,1fr)}.method div{padding:1rem;border-right:1px solid var(--line)}.method div:last-child{border-right:0}.method b{font:700 11px var(--mono);display:block;margin-bottom:.5rem}.method span{font-size:.78rem;line-height:1.45;color:var(--muted)}
+    .transfer{margin-top:1rem;display:grid;grid-template-columns:18rem 1fr;border:1px solid var(--ink);background:var(--panel)}.transfer-head{padding:1rem;border-right:1px solid var(--ink)}.transfer-head h2{font-size:1.6rem;line-height:1.05;margin:.6rem 0}.transfer-head p{font-size:.8rem;color:var(--muted);line-height:1.5}
+    .transfer-grid{display:grid;grid-template-columns:repeat(4,1fr)}.transfer-card{padding:1rem;border-right:1px solid var(--line)}.transfer-card:last-child{border-right:0}.transfer-card b{font-size:.9rem}.transfer-card p{font:11px/1.55 var(--mono);color:var(--muted)}
+    .asset{margin-top:1rem;border:1px dashed var(--ink);padding:1rem;display:flex;justify-content:space-between;gap:2rem;align-items:center}.asset b{font-size:.9rem}.asset span{font-size:.78rem;color:var(--muted)}
+    .footer{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;font:11px var(--mono);color:var(--muted)}
+    @media(max-width:940px){
+      .hero,.decision-grid{grid-template-columns:1fr}.hero-copy{border-right:0;border-bottom:1px solid var(--ink);min-height:520px}.economics{grid-template-columns:1fr 1fr}.method{grid-template-columns:1fr}.method div{border-right:0;border-bottom:1px solid var(--line)}.method div:last-child{border-bottom:0}.transfer{grid-template-columns:1fr}.transfer-head{border-right:0;border-bottom:1px solid var(--ink)}.transfer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){.app{padding:.5rem .5rem 3rem}.header{grid-template-columns:1fr auto}.header-center{display:none}h1{font-size:3.5rem}.economics,.transfer-grid{grid-template-columns:1fr}.transfer-card{border-right:0;border-bottom:1px solid var(--line)}.transfer-card:last-child{border-bottom:0}.asset{align-items:flex-start;flex-direction:column}.state-value{font-size:4.8rem}}
+  </style>
+</head>
+<body>
+  <div class="flag">Internal prototype · C — Economic Control Room · not product UI</div>
+  <main class="app">
+    <header class="header"><div class="brand">PROFIT</div><div class="header-center">DECISION STATE · ECONOMICS · EVIDENCE</div><div class="status">IN DEVELOPMENT</div></header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div>
+          <div class="eyebrow">H3 · provisional message · Field Profitability</div>
+          <h1>See operating profit by field — and what goes into it.</h1>
+          <p class="lede">This direction treats the homepage as a calm decision-state surface: the economic state is immediate, while assumptions, definitions and evidence remain inspectable.</p>
+          <div class="actions"><a class="button primary" href="#pilot">Join the pilot</a><a class="button" href="#economics">Inspect the economics</a></div>
+        </div>
+        <div class="asset"><b>Documentary production image slot</b><span>D8-approved real agricultural asset pending. No synthetic image presented as documentary.</span></div>
+      </div>
+
+      <aside class="hero-state">
+        <div class="state-head"><span>Field 31 · Wheat · 18.4 ha</span><span>Hypothetical</span></div>
+        <div class="state-core">
+          <span class="state-label">Operating profit · one season</span>
+          <div class="state-value">−€69</div>
+          <span class="state-unit">per hectare · Confidence: Not assessed</span>
+          <p class="state-question">What would you investigate before changing the plan?</p>
+        </div>
+        <div class="state-foot">Statistics-calibrated synthetic field records · not a customer result · not a recommendation</div>
+      </aside>
+    </section>
+
+    <section class="decision-grid" id="economics">
+      <div class="panel">
+        <div class="panel-title"><h2>Economic state · Field 31</h2><span>FIXED DEFINITIONS</span></div>
+        <div class="economics">
+          <div class="cell"><span class="label">Yield</span><div class="value">3.7 t/ha</div><div class="note">Synthetic field record</div></div>
+          <div class="cell"><span class="label">Price</span><div class="value">€207/t</div><div class="note">Calibrated to Finnish official annual price reference</div></div>
+          <div class="cell"><span class="label">Revenue</span><div class="value">€766/ha</div><div class="note">Yield × price</div></div>
+          <div class="cell"><span class="label">Variable costs</span><div class="value">€490/ha</div><div class="note">Synthetic allocation</div></div>
+          <div class="cell"><span class="label">Allocated fixed costs</span><div class="value">€345/ha</div><div class="note">Synthetic allocation</div></div>
+          <div class="cell"><span class="label">Break-even</span><div class="value">€225.68/t</div><div class="note">or 4.03 t/ha at the recorded price</div></div>
+        </div>
+        <div class="evidence-box"><strong>Metric definition</strong><p>Operating profit = revenue − variable costs − allocated fixed costs. It is not gross margin and not statutory net profit.</p></div>
+      </div>
+
+      <aside class="panel">
+        <div class="panel-title"><h2>Stress the arithmetic</h2><span>NOT A FORECAST</span></div>
+        <div class="sensitivity">
+          <div>Yield −10% · Price −10%</div><div class="risk">−€214.62/ha</div>
+          <div>Base synthetic case</div><div class="risk">−€69.10/ha</div>
+          <div>Price +10%</div><div class="positive">+€7.49/ha</div>
+          <div>Yield +10%</div><div class="positive">+€7.49/ha</div>
+          <div>Yield +10% · Price +10%</div><div class="positive">+€91.74/ha</div>
+        </div>
+        <div class="evidence-box"><strong>Boundary</strong><p>Costs are deliberately held constant. These are deterministic sensitivity cases, not predictions, probabilities, optimisation or recommendations.</p></div>
+      </aside>
+    </section>
+
+    <section class="method">
+      <div><b>01 · REALITY</b><span>Production unit and recorded context.</span></div>
+      <div><b>02 · DATA</b><span>Inputs with source/provenance semantics.</span></div>
+      <div><b>03 · ECONOMICS</b><span>Explicit formulas, not LLM arithmetic.</span></div>
+      <div><b>04 · EVIDENCE</b><span>State and confidence remain visible.</span></div>
+      <div><b>05 · DECISION</b><span>Farmer keeps authority.</span></div>
+    </section>
+
+    <section class="transfer">
+      <div class="transfer-head"><div class="eyebrow">Internal transfer diagnostic</div><h2>Economic state without crop-lock.</h2><p>No fabricated future-domain metrics. Only the grammar is transferred.</p></div>
+      <div class="transfer-grid">
+        <div class="transfer-card"><b>Crop</b><p>FIELD / SEASON<br>STATE → ECONOMICS → EVIDENCE → DECISION</p></div>
+        <div class="transfer-card"><b>Horticulture / greenhouse</b><p>BLOCK / CYCLE<br>STATE → ECONOMICS → EVIDENCE → DECISION</p></div>
+        <div class="transfer-card"><b>Pig production</b><p>BATCH / CYCLE<br>STATE → ECONOMICS → EVIDENCE → DECISION</p></div>
+        <div class="transfer-card"><b>Dairy / livestock</b><p>HERD UNIT / PERIOD<br>STATE → ECONOMICS → EVIDENCE → DECISION</p></div>
+      </div>
+    </section>
+
+    <section class="panel" id="pilot" style="margin-top:1rem">
+      <div class="eyebrow">Next step</div>
+      <h2 style="font-size:clamp(2rem,4vw,4rem);margin:.6rem 0">Join the pilot.</h2>
+      <p class="lede">Five details. No farm records. Then a conversation about whether the first pilot fits your farm.</p>
+      <a class="button primary" href="#">Join the pilot</a>
+    </section>
+
+    <footer class="footer"><span>C — Economic Control Room</span><span>Primary risk: ERP / accounting / overbuilt-product misclassification</span></footer>
+  </main>
+</body>
+</html>
