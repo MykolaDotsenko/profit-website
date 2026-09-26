@@ -95,6 +95,23 @@ test.describe('homepage copy deck', () => {
   });
 });
 
+test.describe('calibrated synthetic proof', () => {
+  test('statistics-calibrated synthetic example remains visibly hypothetical', async ({ page }) => {
+    await page.goto('/');
+
+    const example = page.locator('#example');
+    await expect(example).toBeVisible();
+    await expect(example).toContainText('Hypothetical example');
+    await expect(example).toContainText('statistics-calibrated synthetic field records');
+    await expect(example).toContainText('€221');
+    await expect(example).toContainText('€49');
+    await expect(example).toContainText('−€69');
+    await expect(example).toContainText('3.7');
+    await expect(example).toContainText('€207');
+    await expect(example).toContainText('€835');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
