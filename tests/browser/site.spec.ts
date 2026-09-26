@@ -77,6 +77,24 @@ test.describe('master-brand scope', () => {
   });
 });
 
+test.describe('homepage copy deck', () => {
+  test('homepage preserves farmer-first trust and product-boundary messages', async ({ page }) => {
+    await page.goto('/');
+
+    const main = page.locator('main');
+    await expect(main).toContainText('Different farms. Different production models. The same economic discipline.');
+    await expect(main).toContainText('The hard part is rarely one missing number');
+    await expect(main).toContainText('Known economics stay explicit. The farmer keeps decision authority.');
+    await expect(main).toContainText('A value counts only when the evidence supports it');
+    await expect(main).toContainText('The farm stays in control');
+    await expect(main).toContainText('Build value. Prove it. Then scale it.');
+    await expect(main).toContainText('In development — not yet available');
+
+    await expect(main).not.toContainText('AI-powered');
+    await expect(main).not.toContainText('guaranteed profit');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
