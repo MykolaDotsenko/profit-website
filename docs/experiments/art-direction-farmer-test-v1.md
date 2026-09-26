@@ -83,7 +83,7 @@ Not allowed in first test:
 - different proof quality;
 - different levels of evidence disclosure.
 
-For AD-7, prepare the same four surfaces for each direction (homepage hero; Field Profitability product exhibit; evidence/trust panel; farmer PDF/report or summary card) with equivalent design/prototyping effort and mobile fidelity (Blueprint §19).
+For AD-7, prepare the same four surfaces for each direction (homepage hero; Field Profitability product exhibit; evidence/trust panel; farmer PDF/report or summary card) with equivalent design/prototyping effort and mobile fidelity (Blueprint §19). For the AD-7 domain transfer, the team also expresses each direction's grammar in three production contexts: crop production, pig production and dairy. This is an internal diagnostic; see §12.
 
 ## 4. Test cohort
 
@@ -117,7 +117,7 @@ For each participant:
 9. Repeat with remaining directions.
 10. Only after all independent tasks, ask comparative preference and why.
 11. Run the AD-5 mobile task on the same direction set or a balanced subset.
-12. Run AD-6 (bad news / uncertainty) and AD-7 (brand-system transfer) as separate tasks, in counterbalanced direction order.
+12. Run AD-6 (bad news / uncertainty) and the AD-7 surface transfer as separate tasks, in counterbalanced direction order. The AD-7 domain transfer (crop/pig/dairy) is an internal team diagnostic and is not shown to participants.
 
 Do not disclose the internal research prior (§2) to participants.
 
@@ -258,7 +258,9 @@ This is a critical test because PROFIT must earn trust when the system reports b
 
 ## 12. AD-7 — Brand-system transfer test
 
-Apply A/B/C to the same four surfaces:
+Two dimensions (Blueprint §19). Surface transfer uses the current crop cohort and team review. Domain transfer is an internal team diagnostic and is not shown to participants.
+
+**Surface transfer.** Apply A/B/C to the same four surfaces:
 1. homepage hero;
 2. Field Profitability product exhibit;
 3. evidence/trust panel;
@@ -266,12 +268,31 @@ Apply A/B/C to the same four surfaces:
 
 Do not redesign each surface from scratch.
 
+**Domain transfer — internal diagnostic.** Express the same A/B/C grammar in three production contexts:
+1. crop production;
+2. pig production;
+3. dairy.
+
+This is an internal design-system diagnostic, not a product or a public page:
+- use only documentary/category-level agricultural reality and generic operational/economic context;
+- no fake product UI;
+- no fabricated pig/dairy metrics or results;
+- never show pig/dairy capabilities as shipped.
+
 Evaluate:
-- does one grammar remain coherent across all four?
+- does one grammar remain coherent across all four surfaces?
 - which constants survive?
 - which variables can change?
 - does the system become repetitive?
 - does recognition depend only on logo/color?
+- is the PROFIT grammar still recognisable without field geometry?
+- which elements are truly invariant, and which must be domain variables?
+- does the direction fall apart without a field/map/parcel visual?
+- does it still look like PROFIT rather than generic livestock software?
+
+If a direction needs field geometry for its identity, that is a **master-brand scalability concern**, even if the direction is strong for Field Profitability. It is not an automatic kill. The direction may remain a crop-module expression, but not the master-brand system.
+
+The farmer-facing WWW-002 test stays with the current crop cohort. Domain transfer at this stage is an internal design-system test, not evidence of farmer comprehension in pig or dairy cohorts.
 
 This tests long-term brand distinctiveness potential better than a single hero comparison.
 
@@ -332,7 +353,8 @@ For each direction record:
 | Mobile task success | | | |
 | Category-confusion pattern | | | |
 | Trust under bad news | | | |
-| Brand-system transfer | | | |
+| Brand-system transfer — surfaces | | | |
+| Master-brand domain transfer (internal: crop/pig/dairy) | | | |
 | Qualitative farmer preference | | | |
 
 Use:

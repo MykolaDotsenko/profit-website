@@ -115,17 +115,25 @@ Working doctrine:
 
 **Real agriculture. Financial precision. Editorial clarity. Quiet technology.**
 
-Primary visual grammar:
+Primary visual grammar (master brand):
 
-**real agricultural reality → precise data/field layer → economic meaning**
+**real agricultural/production reality → precise operational/data context → economic meaning → evidence/confidence → decision**
 
-Preferred recurring brand codes:
+The word "field" is not part of the master-brand grammar. The master brand must work across crop production, pig production and dairy (§3.1).
 
-- real farm photography;
-- field geometry;
+Preferred recurring master-brand codes (candidates, not yet distinctive assets):
+
+- real/documentary agricultural reality;
 - economic typography and units;
-- evidence/confidence language;
-- calm explanatory motion.
+- evidence/confidence/provenance language;
+- agriculture/production → data/context → economics composition;
+- calm explanatory motion;
+- future signature symbol/device — open hypothesis.
+
+Domain-specific variable codes:
+
+- field geometry — crop / Field Profitability domain code; a candidate, not a master-brand invariant. Use it actively in Field Profitability; never require it for pig production or dairy expression.
+- other production domains: domain-specific operational structure/context — OPEN until product/domain evidence exists.
 
 Reject generic-by-default output:
 
@@ -221,7 +229,7 @@ Preferred implementation order:
 7. GSAP
 8. Canvas/WebGL/Three.js only with exceptional justification
 
-Candidate signature effect:
+Candidate signature effect for the Field Profitability (crop) domain — not a master-brand invariant:
 
 **Field → Economics Reveal**
 

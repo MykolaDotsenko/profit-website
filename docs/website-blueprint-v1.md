@@ -84,6 +84,8 @@ Supporting line:
 Important:
 These are hypotheses. Validate with real farmers before treating them as fixed brand language.
 
+Master-brand gate: before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
+
 ## 4. Core narrative
 
 The website should explain:
@@ -1113,7 +1115,7 @@ This may outperform A when the farmer needs to understand *where the number came
 
 Mixed.
 
-Field geometry can support a recognisable PROFIT system, but:
+Field geometry can support a recognisable PROFIT expression in the crop/Field Profitability domain. It is a domain code, not a master-brand invariant (§2.1, §25). Even there:
 - aerial imagery;
 - parcel outlines;
 - satellite overlays;
@@ -1415,7 +1417,9 @@ A trusted visual system must remain credible when the information is inconvenien
 
 #### AD-7 — Brand-system transfer test
 
-Apply A/B/C to the same four surfaces:
+Two dimensions.
+
+**Surface transfer.** Apply A/B/C to the same four surfaces:
 1. homepage hero;
 2. Field Profitability product exhibit;
 3. evidence/trust panel;
@@ -1423,12 +1427,31 @@ Apply A/B/C to the same four surfaces:
 
 Do not redesign each surface from scratch.
 
+**Domain transfer — internal diagnostic.** Express the same A/B/C grammar in three production contexts:
+1. crop production;
+2. pig production;
+3. dairy.
+
+This is an internal design-system diagnostic, not a product or a public page:
+- use only documentary/category-level agricultural reality and generic operational/economic context;
+- no fake product UI;
+- no fabricated pig/dairy metrics or results;
+- never show pig/dairy capabilities as shipped.
+
 Evaluate:
-- does one grammar remain coherent across all four?
+- does one grammar remain coherent across all four surfaces?
 - which constants survive?
 - which variables can change?
 - does the system become repetitive?
 - does recognition depend only on logo/color?
+- is the PROFIT grammar still recognisable without field geometry?
+- which elements are truly invariant, and which must be domain variables?
+- does the direction fall apart without a field/map/parcel visual?
+- does it still look like PROFIT rather than generic livestock software?
+
+If a direction needs field geometry for its identity, that is a **master-brand scalability concern**, even if the direction is strong for Field Profitability. It is not an automatic kill. The direction may remain a crop-module expression, but not the master-brand system.
+
+The farmer-facing WWW-002 test stays with the current crop cohort. Domain transfer at this stage is an internal design-system test, not evidence of farmer comprehension in pig or dairy cohorts.
 
 This tests long-term brand distinctiveness potential better than a single hero comparison.
 
@@ -1449,9 +1472,9 @@ Not distinctive by itself.
 Requirement:
 real, specific, operational agriculture; not stock "farmer with tablet."
 
-#### 2. Field geometry
+#### 2. Field geometry — crop / Field Profitability domain code
 Role:
-**spatial/context bridge**
+**spatial/context bridge** for the crop / Field Profitability domain. It is a candidate domain code, **not a master-brand invariant**.
 
 It connects:
 physical farm → operational/data context.
@@ -1459,6 +1482,10 @@ physical farm → operational/data context.
 Not distinctive by itself because field geometry is common in agritech.
 
 Its value increases only when consistently linked to economic interpretation.
+
+Use it actively in Field Profitability, but never require it for pig production or dairy expression.
+- Other production domains use domain-specific operational structure/context, which stays OPEN until product/domain evidence exists.
+- Do not invent fixed "pig geometry" or "dairy geometry" codes.
 
 #### 3. Economic typography
 Role:
@@ -1481,7 +1508,7 @@ This is primarily a product/trust system, not decoration.
 
 It becomes a brand code only if repeated consistently and remembered by users.
 
-#### 5. Agriculture → data → economics composition
+#### 5. Agriculture/production → data/context → economics composition
 Role:
 **core compositional grammar**
 
@@ -1522,7 +1549,7 @@ System logic:
 **real agriculture**
 → establishes category/reality
 
-**field/data geometry**
+**operational/data context** (domain-specific structure; field geometry in crop / Field Profitability)
 → establishes source/context
 
 **economic typography**
@@ -1681,7 +1708,7 @@ Primary signature motif:
 
 Build recognizable brand expression from:
 - real agricultural photography;
-- field geometry;
+- precise operational/data context (domain-specific structure; field geometry in crop / Field Profitability only);
 - economic typography;
 - evidence/confidence states;
 - restrained explanatory motion.
@@ -1721,18 +1748,21 @@ Working brand architecture:
 
 Do not call a visual element a distinctive asset until recognition/uniqueness evidence exists.
 
-Current candidate code roles:
-- real agricultural photography — category membership + documentary trust;
-- field geometry — spatial/data context bridge;
-- economic typography — economic salience + candidate memory code;
-- evidence/confidence language — trust semantics;
-- agriculture → data → economics — compositional grammar;
+Current master-brand candidate code roles (they must work across crop production, pig production and dairy — §2.1):
+- real/documentary agricultural reality — category membership + documentary trust;
+- economic typography and units — economic salience + candidate memory code;
+- evidence/confidence/provenance language — trust semantics;
+- agriculture/production → data/context → economics — compositional grammar;
 - calm explanatory motion — temporal grammar;
 - future signature symbol/device — open hypothesis.
 
+Domain-specific variable codes:
+- field geometry — spatial/data context bridge for crop / Field Profitability; a candidate domain code, not a master-brand invariant;
+- other production domains (pig production, dairy): domain-specific operational structure/context — OPEN until product/domain evidence exists.
+
 The strongest current system hypothesis is not any single cue. It is the **relationship**:
 
-**real agricultural reality → precise data/context → economic meaning → evidence/confidence → decision**
+**real agricultural/production reality → precise operational/data context → economic meaning → evidence/confidence → decision**
 
 Test candidate recognition at the system level and component level.
 
@@ -1779,7 +1809,7 @@ Required process:
 
 Working anti-sameness system hypothesis:
 
-**real agriculture → precise field/data context → economic meaning → evidence/confidence → measured explanatory motion when useful**
+**real agricultural/production reality → precise operational/data context → economic meaning → evidence/confidence → measured explanatory motion when useful**
 
 Do not call this a distinctive signature until recognition/uniqueness evidence exists.
 
@@ -2269,7 +2299,7 @@ Keep **invariants** stable:
 - economic typography logic;
 - evidence/confidence semantics;
 - unit formatting;
-- field/data geometry principles;
+- operational/data-context principles: source context is shown precisely and linked to economic meaning, whatever the production domain;
 - photography truthfulness;
 - motion personality.
 
@@ -2278,7 +2308,7 @@ Allow **variables** within defined ranges:
 - image crops;
 - section rhythm;
 - grid splits;
-- field shapes;
+- domain-specific operational structure (field geometry and field shapes in crop / Field Profitability; pig/dairy structure OPEN until product/domain evidence exists);
 - overlay placement;
 - density;
 - scale;

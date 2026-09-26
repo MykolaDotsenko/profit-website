@@ -29,6 +29,7 @@ company_context:
     master_brand: "PROFIT"
     current_wedge: "Field Profitability"
     rule: "Do not crop-lock the master brand and do not present future livestock/other production domains as shipped unless explicitly documented."
+    master_brand_gate: "before master-brand homepage positioning is permanently locked, or before pig production/dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort; WWW-000 cannot close this gate; it does not block Field Profitability wedge learning"
     extensibility: "master brand, naming, IA, category language and visual system stay extensible to crop production, pig production and dairy without rebranding; field/crop-specific elements live at module/wedge level; wedge tests (e.g. WWW-000) must not redefine PROFIT as field-crop-only; pig production and dairy are not shipped and must not be presented as available"
   public_claim_rule: "Internal ambition is not public proof."
 
@@ -202,7 +203,8 @@ art_direction_validation:
     - "AD-4 category-confusion diagnostic"
     - "AD-5 mobile farmer task"
     - "AD-6 trust under bad news/uncertainty"
-    - "AD-7 brand-system transfer"
+    - "AD-7 brand-system transfer (surface transfer + internal crop/pig/dairy domain diagnostic)"
+  master_brand_transfer_rule: "each direction is checked internally in crop production, pig production and dairy contexts with no fake product UI, no fabricated pig/dairy metrics and no shipped claims; a direction that needs field geometry for its identity is a master-brand scalability concern (it may remain a crop-module expression, not the master-brand system); domain transfer is not evidence of farmer comprehension in pig/dairy cohorts"
   category_confusion_risks:
     A: "consulting/report/editorial"
     B: "agronomy/satellite/mapping"
@@ -234,14 +236,18 @@ homepage:
 
 brand:
   doctrine: "Real agriculture. Financial precision. Editorial clarity. Quiet technology."
-  signature_grammar: "real agricultural artifact → precise data/field layer → economic meaning"
+  signature_grammar: "real agricultural/production reality → precise operational/data context → economic meaning → evidence/confidence → decision"
+  grammar_rule: "the master-brand grammar contains no field-specific term; it must work across crop production, pig production and dairy"
   candidate_codes:
-    - "economic typography"
-    - "field geometry"
-    - "real farm photography"
-    - "evidence states"
-    - "confidence states"
+    - "real/documentary agricultural reality"
+    - "economic typography and units"
+    - "evidence/confidence/provenance language"
+    - "agriculture/production → data/context → economics composition"
     - "calm explanatory motion"
+    - "future signature symbol/device (open hypothesis)"
+  domain_variable_codes:
+    field_geometry: "crop / Field Profitability domain code; candidate, not a master-brand invariant; not required for pig or dairy expression"
+    other_production_domains: "domain-specific operational structure/context; OPEN until product/domain evidence exists"
   voice:
     - "precise"
     - "grounded"
@@ -297,6 +303,7 @@ motion:
   principle: "Use motion only if it helps farmers understand information lineage from farm reality to economic meaning faster or more correctly than the best static composition."
   field_economics_reveal:
     status: "candidate explanatory motion; not validated signature"
+    domain: "Field Profitability (crop) expression; not a master-brand invariant"
     experiment_protocol: "docs/experiments/field-economics-motion-test-v1.md"
     gate: "run only after WWW-002 produces a surviving art-direction base"
     sequence:
@@ -406,7 +413,7 @@ validation:
 
 next_high_value_work:
   - "WWW-000: validate hero message/positioning on a neutral static scaffold."
-  - "WWW-001: prototype three genuinely different art directions from the surviving message."
+  - "WWW-001: prototype three genuinely different art directions from the surviving message, including the internal crop/pig/dairy master-brand transfer check (AD-7)."
   - "WWW-002: run art-direction farmer comprehension + calibrated-trust testing (AD-1 through AD-7)."
   - "WWW-003: test emerging brand-code recognition/confusion."
   - "WWW-004: validate or reject Field → Economics Reveal."

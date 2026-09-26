@@ -31,6 +31,10 @@ Do not lock the full production platform or build a large page system before the
 
 If a material production-platform decision is made, create an ADR.
 
+### Future gate — master-brand positioning (does not block current work)
+
+Before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
+
 ---
 
 # Workstreams
@@ -108,7 +112,18 @@ Acceptance:
 - [ ] same information hierarchy can be compared across variants;
 - [ ] generic AI/SaaS similarity is red-teamed;
 - [ ] each works statically;
-- [ ] each can be tested without explaining the concept first.
+- [ ] each can be tested without explaining the concept first;
+- [ ] each direction passes an internal master-brand transfer stress test (Blueprint §19 AD-7, domain transfer). The same visual grammar is expressed in three production contexts: crop production, pig production and dairy. This is an internal design-system diagnostic, not products or public pages. Rules:
+  - documentary/category-level agricultural reality and generic operational/economic context only;
+  - no fake product UI;
+  - no fabricated pig/dairy metrics or results;
+  - no pig/dairy capability shown as shipped.
+  Record, per direction:
+  - whether the PROFIT grammar survives without field geometry;
+  - which elements are invariant and which are domain variables;
+  - whether it falls apart without a field/map/parcel visual;
+  - whether it still looks like PROFIT rather than generic livestock software.
+  A direction that needs field geometry for its identity is flagged as a master-brand scalability concern. That is not an automatic kill: it may remain a crop-module expression, but not the master-brand system.
 
 Depends on: WWW-000.
 
@@ -127,7 +142,7 @@ Run the Blueprint experiments:
 - AD-4 — category-confusion diagnostic;
 - AD-5 — mobile farmer task;
 - AD-6 — trust under bad news/uncertainty;
-- AD-7 — brand-system transfer.
+- AD-7 — brand-system transfer (surface transfer + internal crop/pig/dairy domain diagnostic).
 
 Primary decision objective:
 **farmer comprehension + calibrated trust**
