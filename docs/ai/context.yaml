@@ -274,6 +274,16 @@ next_high_value_work:
   - "Validate the Field → Economics Reveal."
   - "Choose production platform only after learning needs are clear."
 
+governance:
+  implementation_plan: "docs/ai/IMPLEMENTATION_PLAN.md"
+  task_template: "docs/ai/TASK_TEMPLATE.md"
+  github_issue_form: ".github/ISSUE_TEMPLATE/ai-development-task.yml"
+  github_pr_template: ".github/PULL_REQUEST_TEMPLATE.md"
+  decision_records: "docs/decisions/"
+  docs_contract: "scripts/validate_ai_docs.py"
+  docs_contract_workflow: ".github/workflows/docs-contract.yml"
+  adr_rule: "Create an ADR only for material, durable, cross-cutting or costly-to-reverse decisions."
+
 definition_of_done:
   - "Requested behavior exists."
   - "Relevant acceptance criteria were actually verified."
