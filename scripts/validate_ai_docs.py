@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     ".github/ISSUE_TEMPLATE/ai-development-task.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
     "docs/homepage-copy-deck-v1.md",
+    "docs/experiments/www-000-preflight-pack-v1.md",
     "docs/homepage-content-brief-v1.md",
     "docs/website-trust-professionalism-synthesis-2026-09-27.md",
     "src/config/release.ts",
@@ -107,6 +108,13 @@ TEXT_INVARIANTS = {
         "Acceptance criteria",
         "Verification plan",
         "Integrity gate",
+    ],
+    "docs/experiments/www-000-preflight-pack-v1.md": [
+        "human gates remain open",
+        "9–12 eligible farmers",
+        "do not record sessions",
+        "same asset",
+        "do not edit the stimulus during the round",
     ],
     "docs/homepage-copy-deck-v1.md": [
         "Different farms. Different production models. The same economic discipline.",
