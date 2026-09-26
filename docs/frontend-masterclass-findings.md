@@ -2,13 +2,15 @@
 
 Research date: 2026-09-26
 
+Update: current framework verification confirms Astro 7.3 and TypeScript 7 are now the appropriate stable baseline.
+
 This document captures the strongest frontend-development findings from current masterclasses, tutorials and official platform documentation that materially improve the PROFIT presentation website.
 
 ## Executive recommendation
 
 For a coded production version, the current preferred architecture is:
 
-**Astro 6 + TypeScript + semantic HTML + modern native CSS + minimal client JavaScript**
+**Astro 7.3 + TypeScript 7 + semantic HTML + modern native CSS + minimal client JavaScript**
 
 Add framework islands only when an interaction genuinely needs them.
 
@@ -223,7 +225,7 @@ Some imagery should use genuinely different crops/assets on mobile rather than m
 
 ## 8. Fonts require a performance budget too
 
-Astro 6 provides a Fonts API with:
+Astro 7.3 provides a Fonts API with:
 - local/provider font loading;
 - local caching/serving;
 - optimized fallbacks;
@@ -523,7 +525,7 @@ Do not gate core information behind a newly available feature.
 If PROFIT chooses custom code rather than Framer:
 
 ### Core
-- Astro 6
+- Astro 7.3
 - TypeScript
 - semantic HTML
 - native modern CSS
