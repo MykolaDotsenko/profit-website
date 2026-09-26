@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WWW-001 B2 · Production Unit Grammar</title>
+<style>
+:root{--bg:#eef0eb;--paper:#fafaf6;--ink:#17201a;--muted:#697169;--line:#aab2aa;--risk:#7d3028;--mono:"SFMono-Regular",Consolas,monospace;--sans:Inter,ui-sans-serif,system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans)}.flag{padding:.55rem 1rem;background:var(--ink);color:var(--paper);font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+main{max-width:1420px;margin:auto;padding:1rem 1rem 5rem}.head{display:flex;justify-content:space-between;gap:2rem;align-items:end;padding:1rem 0 2rem;border-bottom:1px solid var(--ink)}
+h1{font-size:clamp(2.8rem,6vw,6rem);line-height:.94;letter-spacing:-.055em;max-width:12ch;margin:.5rem 0}.eyebrow{font:11px var(--mono);text-transform:uppercase;color:var(--muted);letter-spacing:.09em}.lead{max-width:44rem;color:var(--muted);line-height:1.55}
+.grammar{display:grid;gap:1rem;margin-top:1rem}.unit{background:var(--paper);border:1px solid var(--ink);display:grid;grid-template-columns:14rem 1fr 17rem}
+.unit-id{padding:1rem;border-right:1px solid var(--ink);display:flex;flex-direction:column;justify-content:space-between;min-height:14rem}.unit-id b{font-size:1.2rem}.unit-id span{font:11px/1.5 var(--mono);color:var(--muted)}
+.context{padding:1rem;border-right:1px solid var(--line)}.context h2{font-size:1rem;margin:0 0 1rem}.context-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.context-item{border:1px solid var(--line);padding:.8rem;min-height:6rem}.context-item small{display:block;font:10px var(--mono);text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}.context-item strong{font-size:1rem}
+.econ{padding:1rem;display:flex;flex-direction:column;justify-content:space-between}.econ small{font:10px var(--mono);text-transform:uppercase;color:var(--muted)}.value{font:700 2.3rem var(--mono);letter-spacing:-.05em}.risk{color:var(--risk)}.boundary{font-size:.76rem;color:var(--muted);line-height:1.45}
+.decision{grid-column:1/-1;border-top:1px solid var(--ink);display:grid;grid-template-columns:14rem 1fr 17rem}.decision>*{padding:.8rem 1rem}.decision .label{font:11px var(--mono);text-transform:uppercase;color:var(--muted);border-right:1px solid var(--ink)}.decision .q{font-weight:800;border-right:1px solid var(--line)}.decision .evidence{font:11px/1.4 var(--mono);color:var(--muted)}
+.no-metric{font:700 1rem/1.3 var(--sans);max-width:13rem}.schema{margin-top:2rem;border:1px solid var(--ink);background:var(--paper);padding:1rem;display:grid;grid-template-columns:repeat(5,1fr)}.schema div{padding:.8rem;border-right:1px solid var(--line);font:11px/1.5 var(--mono)}.schema div:last-child{border-right:0}.footer{display:flex;justify-content:space-between;gap:2rem;padding-top:1rem;font:11px var(--mono);color:var(--muted)}
+@media(max-width:900px){.head{display:block}.unit{grid-template-columns:1fr}.unit-id,.context{border-right:0;border-bottom:1px solid var(--ink);min-height:auto}.context-grid{grid-template-columns:1fr 1fr}.decision{grid-template-columns:1fr}.decision .label,.decision .q{border-right:0;border-bottom:1px solid var(--line)}.schema{grid-template-columns:1fr}.schema div{border-right:0;border-bottom:1px solid var(--line)}}
+@media(max-width:520px){main{padding:.5rem .5rem 3rem}.context-grid{grid-template-columns:1fr}h1{font-size:3.25rem}}
+</style>
+</head>
+<body>
+<div class="flag">Internal challenge frame · B2 — production-unit grammar · not product UI</div>
+<main>
+  <header class="head">
+    <div><div class="eyebrow">Challenge: can B survive without field geometry?</div><h1>Production unit → context → economics → evidence → decision.</h1></div>
+    <p class="lead">B2 removes the field polygon as the identity. The visual invariant is an operational unit with attached context, explicit economics and a farmer-owned decision. Only the crop row contains current synthetic economics; future domains deliberately contain no fabricated metrics.</p>
+  </header>
+
+  <div class="grammar">
+    <section class="unit">
+      <div class="unit-id"><div><span>CURRENT WEDGE</span><b>Crop · Field 31</b></div><span>Wheat · 18.4 ha · one season</span></div>
+      <div class="context"><h2>Recorded context</h2><div class="context-grid">
+        <div class="context-item"><small>Yield</small><strong>3.7 t/ha</strong></div>
+        <div class="context-item"><small>Price</small><strong>€207/t</strong></div>
+        <div class="context-item"><small>Costs</small><strong>€835/ha</strong></div>
+      </div></div>
+      <div class="econ"><div><small>Operating profit</small><div class="value risk">−€69/ha</div></div><div class="boundary">Hypothetical · Confidence: Not assessed</div></div>
+      <div class="decision"><div class="label">Decision question</div><div class="q">What would you investigate before changing the plan?</div><div class="evidence">Statistics-calibrated synthetic records</div></div>
+    </section>
+
+    <section class="unit">
+      <div class="unit-id"><div><span>TRANSFER ONLY</span><b>Horticulture / greenhouse</b></div><span>Production unit: block or crop cycle</span></div>
+      <div class="context"><h2>Domain context</h2><div class="context-grid">
+        <div class="context-item"><small>Production</small><strong>Domain-specific records</strong></div>
+        <div class="context-item"><small>Commercial</small><strong>Quality / timing / realised price context</strong></div>
+        <div class="context-item"><small>Costs</small><strong>Labour / energy / inputs as applicable</strong></div>
+      </div></div>
+      <div class="econ"><div><small>Economics</small><div class="no-metric">No shipped PROFIT domain model yet.</div></div><div class="boundary">No fabricated output metric</div></div>
+      <div class="decision"><div class="label">Decision logic</div><div class="q">Production context → domain economics → evidence → farmer decision</div><div class="evidence">Master-brand transfer diagnostic only</div></div>
+    </section>
+
+    <section class="unit">
+      <div class="unit-id"><div><span>TRANSFER ONLY</span><b>Pig production</b></div><span>Production unit: batch or production cycle</span></div>
+      <div class="context"><h2>Domain context</h2><div class="context-grid">
+        <div class="context-item"><small>Production</small><strong>Feed / growth / mortality context</strong></div>
+        <div class="context-item"><small>Flow</small><strong>Throughput / cycle context</strong></div>
+        <div class="context-item"><small>Commercial</small><strong>Selling-condition context</strong></div>
+      </div></div>
+      <div class="econ"><div><small>Economics</small><div class="no-metric">No shipped PROFIT domain model yet.</div></div><div class="boundary">No fabricated output metric</div></div>
+      <div class="decision"><div class="label">Decision logic</div><div class="q">Production context → domain economics → evidence → farmer decision</div><div class="evidence">Master-brand transfer diagnostic only</div></div>
+    </section>
+
+    <section class="unit">
+      <div class="unit-id"><div><span>TRANSFER ONLY</span><b>Dairy / other livestock</b></div><span>Production unit: cow, group, herd or period</span></div>
+      <div class="context"><h2>Domain context</h2><div class="context-grid">
+        <div class="context-item"><small>Production</small><strong>Output / feed context</strong></div>
+        <div class="context-item"><small>Biology</small><strong>Health / reproduction context</strong></div>
+        <div class="context-item"><small>Commercial</small><strong>Price / cost context</strong></div>
+      </div></div>
+      <div class="econ"><div><small>Economics</small><div class="no-metric">No shipped PROFIT domain model yet.</div></div><div class="boundary">No fabricated output metric</div></div>
+      <div class="decision"><div class="label">Decision logic</div><div class="q">Production context → domain economics → evidence → farmer decision</div><div class="evidence">Master-brand transfer diagnostic only</div></div>
+    </section>
+  </div>
+
+  <div class="schema">
+    <div>01<br><b>PRODUCTION UNIT</b></div><div>02<br><b>CONTEXT / RECORDS</b></div><div>03<br><b>DOMAIN ECONOMICS</b></div><div>04<br><b>EVIDENCE / CONFIDENCE</b></div><div>05<br><b>FARMER DECISION</b></div>
+  </div>
+  <footer class="footer"><span>B2 question: does this still feel operational without maps?</span><span>Kill B as master brand if answer is no.</span></footer>
+</main>
+</body>
+</html>
