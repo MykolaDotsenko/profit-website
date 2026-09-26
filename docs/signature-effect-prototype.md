@@ -47,8 +47,8 @@ Wheat · 41.7 ha
 **€637 / ha**
 Margin
 
-**OBSERVED**
-Confidence: High
+**HYPOTHETICAL EXAMPLE**
+Confidence: Not assessed
 
 ## Implementation strategy
 
@@ -64,7 +64,7 @@ Production implementation should preserve this ordering unless a specific limita
 
 ## Important prototype limitation
 
-The prototype intentionally uses an abstract agricultural placeholder rather than fabricated documentary photography.
+The prototype intentionally uses an abstract agricultural placeholder and fully illustrative economic values rather than fabricated documentary or observed evidence.
 
 Production must replace it with:
 - approved real farm photography; or
