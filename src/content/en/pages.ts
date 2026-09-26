@@ -97,7 +97,8 @@ export const product = {
       id: 'example',
       eyebrow: 'Hypothetical example',
       title: 'What it is designed to show',
-      lead: 'Fields side by side, and what goes into one field’s operating profit. The farm, the fields and the numbers are invented.',
+      lead:
+        'Fields side by side, and what goes into one field’s operating profit. The farm and field records are synthetic; the current example is calibrated to Finnish official statistics for plausibility and is not a customer result.',
     } satisfies SectionIntro,
     labels: exampleLabels,
   },
