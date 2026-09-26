@@ -95,6 +95,12 @@ Depends on: WWW-000.
 
 ### WWW-002 — Art-direction farmer comprehension + trust test
 
+Execution source:
+`docs/experiments/art-direction-farmer-test-v1.md`
+
+Research state:
+**Broad art-direction research stopped for this cycle.** Resume only if test evidence exposes a specific failure that current evidence cannot explain.
+
 Run the Blueprint experiments:
 - AD-1 — 10-second comprehension + trust;
 - AD-2 — evidence interpretation;
