@@ -1,9 +1,9 @@
 ---
 /**
- * Pilot form: five fields only (Blueprint §16). Works without JavaScript through native
- * validation; the script adds accessible inline errors, an error summary and status messages.
- * With no endpoint configured the form sends nothing (method="dialog" is a no-op outside a
- * dialog), and says so.
+ * Pilot form: five fields only (Blueprint §16).
+ * - With a configured endpoint, native HTML validation/submission remains the no-JS fallback.
+ * - With no endpoint, the control is deliberately non-submitting even without JavaScript.
+ * The script adds translated accessible errors, an error summary and preview/status messages.
  */
 import ContentGap from './ContentGap.astro';
 import type { PilotFormContent } from '../content/types';
@@ -22,7 +22,7 @@ const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefi
   data-pilot-form
   data-endpoint={endpoint ?? ''}
   data-messages={messages}
-  method={endpoint ? 'post' : 'dialog'}
+  method={endpoint ? 'post' : undefined}
   action={endpoint ?? undefined}
   aria-labelledby="pilot-form-title"
 >
@@ -88,7 +88,7 @@ const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefi
   <ContentGap owner={c.privacyReview.owner} kind="review" text={c.privacyReview.text} />
 
   <div class="pilot-form__actions">
-    <button class="button button--primary" type="submit">{c.submit}</button>
+    <button class="button button--primary" type={endpoint ? 'submit' : 'button'} data-submit>{c.submit}</button>
     {!endpoint && <p class="pilot-form__preview">{c.previewNote}</p>}
   </div>
   <p class="pilot-form__status" data-form-status role="status"></p>
@@ -109,7 +109,7 @@ const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefi
     const summary = form.querySelector<HTMLElement>('[data-error-summary]');
     const summaryList = form.querySelector<HTMLUListElement>('[data-error-list]');
     const status = form.querySelector<HTMLElement>('[data-form-status]');
-    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const submit = form.querySelector<HTMLButtonElement>('[data-submit]');
     const controls = Array.from(form.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input, select'));
 
     // Custom messages replace the browser's, so they can be translated and announced consistently.
@@ -150,7 +150,7 @@ const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefi
       }),
     );
 
-    form.addEventListener('submit', async (event) => {
+    const attemptSubmit = async (event: Event) => {
       event.preventDefault();
       const errors = controls.map((el) => ({ el, message: messageFor(el) })).filter((e) => e.message);
       controls.forEach((el) => showError(el, messageFor(el)));
@@ -198,7 +198,10 @@ const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefi
       } finally {
         if (submit) submit.disabled = false;
       }
-    });
+    };
+
+    form.addEventListener('submit', attemptSubmit);
+    if (!endpoint) submit?.addEventListener('click', attemptSubmit);
   }
 </script>
 
