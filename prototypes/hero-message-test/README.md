@@ -2,7 +2,7 @@
 
 Neutral static scaffold for the controlled H1/H2/H3 hero-message test.
 
-Protocol and status: [`docs/experiments/hero-message-test-v1.md`](../../docs/experiments/hero-message-test-v1.md). **Draft, not approved to run.** D1–D3 are approved and a D4 reference has been found (unmerged, unshipped). D8 is approved in principle but blocked until an asset exists. D5–D7 and the §4.4 product-truth questions are open (protocol §2).
+Protocol and status: [`docs/experiments/hero-message-test-v1.md`](../../docs/experiments/hero-message-test-v1.md). **Draft, not approved to run.** The test candidates are H1/H2/H3 **v2**; v1 was superseded before farmer testing by the product-truth gate. D1–D4 are settled. D5–D7 are open, and D8 is approved in principle but blocked until an asset exists (protocol §2).
 
 ## Open
 
@@ -35,11 +35,11 @@ Open `index.html` in a current browser. No build step, package manager, framewor
 
 | Content | Source | Review needed |
 |---|---|---|
-| Eyebrows, headlines, supports, CTAs | `docs/website-blueprint-v1.md` §5, verbatim | re-check if the Blueprint changes |
-| Evidence/confidence labels | AGENTS.md §4 / Blueprint §8 canonical labels | — |
+| Eyebrows, headlines, supports, CTAs | `docs/website-blueprint-v1.md` §5 **v2** candidates, verbatim (v1 superseded pre-test by the product-truth gate) | re-check if the Blueprint changes |
+| Evidence/confidence labels | AGENTS.md §4 / Blueprint §8 canonical labels. These are website evidence semantics for illustrative material, not a claim that Field Profitability assesses confidence. | — |
 | Decision question | adapted from `docs/experiments/field-economics-motion-test-v1.md` | human |
 | Field names, crops, areas, yields, revenue, operating costs, operating profit | illustrative placeholders; Field 24's value reuses the motion-protocol scenario, the rest are AI-drafted for internal consistency only | **human plausibility review (protocol D6), after the locale is known** |
-| Metric names (operating profit = revenue − operating costs; not gross margin or net profit) | D4 product-truth reference, an unmerged and unshipped vertical slice (protocol §4.4) | re-check if the reference changes |
+| Metric names (operating profit = revenue − variable costs − allocated fixed costs; not gross margin or net profit) | Field Profitability product-truth boundary, Blueprint §2.2 (unmerged, unshipped vertical slice) | re-check if the boundary changes |
 | Source line | "Illustrative source: farmer-provided field records · one season" (Blueprint §8 provenance category); labelled illustrative because the numbers come from no records | — |
 | Layout and styling | AI-drafted neutral scaffold (Builder role) | human review (an AI review does not replace it) |
 

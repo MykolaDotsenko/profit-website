@@ -50,6 +50,20 @@ When real economic outputs are shown, derive them from validated data/rules/mode
 
 When that standard cannot be met, label the result as illustrative/modelled rather than real/verified.
 
+## 2.2 Field Profitability product-truth boundary (internal)
+
+Use this boundary to check that website copy and proof objects never promise more than has been designed or implemented. It is **internal**, not a public claim: nothing here may be presented as shipped or available until it is shipped and verified.
+
+- **Status:** implemented vertical slice. Source: `MykolaDotsenko/PROFIT`, branch `feat/field-profitability` @ `7d07345`. PR #1 was closed without merge. **Unshipped; not production-verified.**
+- **Reference inputs:** field; crop; season; currency; area; yield; price; variable costs; allocated fixed costs.
+- **Reference calculations:** revenue; variable costs; allocated fixed costs; operating costs; gross margin; operating profit; revenue / ha; cost / ha; operating profit / ha; operating margin %; ROI on allocated costs; break-even price; break-even yield.
+- **Definition:** **Operating profit = revenue − variable costs − allocated fixed costs.** It is not statutory net profit, and not gross margin (revenue − variable costs).
+- **Reference exclusions:** whole-farm P&L; financing; tax; depreciation policy; inventory accounting; GIS; scenario optimisation; external telemetry; ERP integrations.
+- **AI explanation:** may explain stored deterministic metrics; does not calculate financial truth.
+- **Established by the 2026-09-26 product-truth review:**
+  - several field records can be listed side by side in a saved-snapshots table. This is a list/presentation pattern, not a separate analytics feature;
+  - there is no assumptions model or UI and no assessed confidence attached to calculations. Website evidence/confidence labels (e.g. `Confidence: Not assessed` on illustrative material) are website semantics, not a product capability.
+
 ## 3. Primary positioning hypothesis
 
 Category:
@@ -133,16 +147,43 @@ Current CTA control:
 
 The current hero copy is a test control, not a locked production winner.
 
+#### Product-truth gate — v1 superseded before farmer testing (2026-09-26)
+
+The H1/H2/H3 **v1** copy below was written before the Field Profitability product-truth boundary (§2.2) existed. On 2026-09-26, **before any farmer session**, a product-truth review superseded all three v1 candidates. **No farmer evidence exists for v1.** They are not farmer-test losers, and the rewrite is not a test result.
+
+Reason: the §2.2 reference exposed scope/semantic conflicts.
+- **H1 v1:** whole-farm framing; "field operations" ingestion and a "what to investigate next" capability that the reference does not have.
+- **H2 v1:** an implied guarantee in "more profitable decisions"; generic "farm data" beyond the inputs the reference accepts.
+- **H3 v1:** "with assumptions and confidence visible when they are assessed" is a known unsupported capability claim. Generic "margin" and causal "what drives it" conflict with the reference semantics.
+
+The **v2** candidates in each direction below are the WWW-000 test candidates. The v1 assumptions and risks are kept as history; several no longer apply to v2.
+
+The v1 H2 headline and support are the same text as the §3 primary positioning hypothesis, AGENTS.md §6 and `docs/ai/context.yaml` `positioning`. Those entries are unchanged, pending a human decision on whether the positioning hypothesis itself should be restated.
+
 #### H1 — Economic visibility / farmer job first
 
-Eyebrow:
+Eyebrow (v1 and v2):
 **FIELD ECONOMICS**
 
-Headline candidate:
+v1 headline (superseded before farmer testing):
 **Know where your farm makes money — and where it doesn't.**
 
-Support candidate:
+v1 support (superseded):
 **PROFIT connects field operations, costs and outcomes so you can see where margin is being created or lost and what to investigate next.**
+
+**v2 — WWW-000 test candidate:**
+
+Headline:
+**See which fields make money — and which don't.**
+
+Support:
+**PROFIT compares each field's revenue with the costs allocated to it, so you can see operating profitability field by field.**
+
+Why v2:
+- keeps the economic-visibility job;
+- removes the whole-farm P&L implication;
+- removes unsupported "field operations" ingestion and the unsupported "what to investigate next" capability;
+- multi-field visibility is supported by the §2.2 saved-snapshots presentation.
 
 Proof object:
 a field/farm view showing a small number of contrasting field economics with clear provenance/illustrative labeling.
@@ -158,16 +199,30 @@ Main risks:
 - sounds like accounting software;
 - “makes money” may be read as a guaranteed outcome rather than visibility.
 
-#### H2 — Decision intelligence / current control
+#### H2 — Decision intelligence (v1: current control · v2: decision-context first)
 
-Eyebrow:
+Eyebrow (v1 and v2):
 **AGRICULTURAL DECISION INTELLIGENCE**
 
-Headline:
+v1 headline (superseded before farmer testing):
 **Turn farm data into more profitable decisions.**
 
-Support:
+v1 support (superseded):
 **PROFIT connects what happens on the farm with what it means economically.**
+
+**v2 — WWW-000 test candidate:**
+
+Headline:
+**Connect field data to the economics behind your decisions.**
+
+Support:
+**PROFIT turns yield, price and allocated-cost data into operating-profit and break-even metrics you can inspect before deciding what to do next.**
+
+Why v2:
+- keeps the Decision Intelligence hypothesis;
+- removes the implied guarantee in "more profitable decisions";
+- narrows generic "farm data" to data the §2.2 reference actually accepts;
+- claims no optimisation or recommendations.
 
 Proof object:
 a real-farm artifact moving conceptually from farm data → economic interpretation → decision, with one concrete metric/question.
@@ -184,14 +239,28 @@ Main risks:
 
 #### H3 — Field Profitability / product proof first
 
-Eyebrow:
+Eyebrow (v1 and v2):
 **FIELD PROFITABILITY**
 
-Headline candidate:
+v1 headline (superseded before farmer testing):
 **See margin by field — and what drives it.**
 
-Support candidate:
+v1 support (superseded; contains a known unsupported capability claim):
 **PROFIT brings operations, costs and outcomes together into field-level economics, with assumptions and confidence visible when they are assessed.**
+
+**v2 — WWW-000 test candidate:**
+
+Headline:
+**See operating profit by field — and what goes into it.**
+
+Support:
+**PROFIT brings yield, price, variable costs and allocated fixed costs together into field-level operating economics, including break-even price and yield.**
+
+Why v2:
+- matches the §2.2 metric semantics;
+- removes the unsupported assumptions/confidence capability;
+- replaces causal "what drives it" with compositional "what goes into it";
+- does not confuse operating profit with gross margin or statutory net profit.
 
 Proof object:
 real Field Profitability UI when available; otherwise an explicitly **HYPOTHETICAL EXAMPLE** showing field-level economics, source context and `Confidence: Not assessed`.
@@ -657,7 +726,7 @@ If materially different farmer segments are tested, analyse them as separate coh
 
 #### Round 1 — isolate the message
 
-Test H1/H2/H3 on the same neutral/static visual scaffold.
+Test the H1/H2/H3 **v2** candidates (§5) on the same neutral/static visual scaffold.
 
 Keep constant:
 - typography hierarchy;
@@ -736,6 +805,8 @@ Kill or materially rewrite a hero direction when any of the following appears as
 - mobile requires removing the product/economic proof to fit the composition.
 
 Variant-specific kill signals:
+
+These were written for the v1 wording. For the v2 candidates, apply them by meaning: H2's promised-outcome signal applies to any promised financial outcome, and H3's “margin” signals apply to “operating profit by field”.
 
 **H1 — Economic visibility**
 - repeated classification as accounting/bookkeeping;

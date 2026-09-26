@@ -1,14 +1,24 @@
 # PROFIT Hero Message Test v1 — WWW-000
 
-Status: **Draft — not approved to run.** D1–D3 are approved and a D4 reference has been found. D8 is approved in principle but blocked until an asset exists. D5–D7, D8's asset and the §4.4 product-truth questions must be settled before the stimulus is frozen (§2).
+Status: **Draft — not approved to run.**
+- Test candidates: **H1/H2/H3 v2** (Blueprint §5). The v1 set was superseded before farmer testing by the product-truth gate (§4.1a).
+- D1–D4 are settled, including PT-1/PT-2.
+- Before freeze: D5–D7 and the D8 asset (§2).
+
 Date: 2026-09-26
 Implementation-plan ID: WWW-000
 Stimulus: `prototypes/hero-message-test/`
 
 Canonical basis:
-- `docs/website-blueprint-v1.md`: §5 (01 Hero: durable rules, H1/H2/H3, hero decision rule), §8, §11, §17 (hero farmer-test protocol: Round 1 phases, hero kill criteria and counting rules), §18
+- `docs/website-blueprint-v1.md`:
+  - §2.2 Field Profitability product-truth boundary;
+  - §5 01 Hero: durable rules, product-truth gate, H1/H2/H3 v1 history and v2 candidates, hero decision rule;
+  - §8;
+  - §11;
+  - §17 hero farmer-test protocol: Round 1 phases, hero kill criteria and counting rules;
+  - §18.
 - `docs/ai/IMPLEMENTATION_PLAN.md` — WWW-000
-- `docs/ai/context.yaml` — `hero_validation`
+- `docs/ai/context.yaml` — `hero_validation`, `field_profitability_reference`
 
 If this protocol and the Blueprint disagree, the Blueprint wins. Record the disagreement instead of working around it.
 
@@ -16,9 +26,11 @@ If this protocol and the Blueprint disagree, the Blueprint wins. Record the disa
 
 Which hero **message** directions survive, which need rewriting and which should be killed? The measure is how well target farmers understand each one, not which one they prefer.
 
-- **H1** — Economic visibility / farmer job first
-- **H2** — Decision intelligence / current control
-- **H3** — Field Profitability / product proof first
+- **H1 v2** — Economic visibility / farmer job first
+- **H2 v2** — Decision intelligence / decision-context first
+- **H3 v2** — Field Profitability / product proof first
+
+The v1 candidates were superseded **before any farmer session** by the product-truth gate (§4.1a). No farmer evidence exists for them, and the rewrite is not a test result.
 
 This test does **not** decide the art direction, final headline wording, the category label as brand language, the platform or motion. It produces no statistical winner.
 
@@ -30,20 +42,21 @@ AI must not settle the open items.
 
 | # | Item | Status | Decision / requirement | Owner |
 |---|---|---|---|---|
-| D1 | Exposure design and counting rule | **APPROVED** (2026-09-26); session flow updated per F1 | Every participant evaluates all three directions in counterbalanced order, in three phases (§8): **A** timed exposure + open recall only, for all three; **B** second viewing + probes; **C** comparison. Kill criteria are counted across all participants who evaluated a direction. First-position recall is reported separately as the least-contaminated signal. Blueprint §17. | PROFIT team |
+| D1 | Exposure design and counting rule | **APPROVED** (2026-09-26) | Every participant evaluates all three directions in counterbalanced order, in three phases (§8): **A** timed exposure + open recall only, for all three; **B** second viewing + probes; **C** comparison. Kill criteria are counted across all participants who evaluated a direction. First-position recall is reported separately as the least-contaminated signal. Blueprint §17. | PROFIT team |
 | D2 | "Repeated pattern" | **APPROVED** (2026-09-26) | 3 or more independent participants. 2 independent participants = **CONCERN**, not an automatic kill. The count does not apply to critical evidence-integrity failures: a single case that shows a false or unsupported claim is corrected regardless of count. Blueprint §17. | PROFIT team |
 | D3 | Exposure duration | **APPROVED** (2026-09-26) | Fixed **10 seconds** for the entire first round. The stimulus enforces it. | PROFIT team |
-| D4 | Product-truth reference for Field Profitability | **REFERENCE FOUND** — approved for WWW-000 product-truth checking only; **not production proof** | An experimental reference: an implemented vertical slice that is **unmerged and unshipped** (§4.4). It is used only to check that no hero or proof object promises more than has actually been designed or implemented. It is never used as current production capability or public proof. Two product-owner confirmations remain open (§4.4). | Product owner |
+| D4 | Product-truth reference for Field Profitability | **SETTLED** — reference found and PT-1/PT-2 resolved (2026-09-26) | This is an experimental reference: an implemented, **unmerged and unshipped** vertical slice. It is used only to keep stimuli from promising more than has been designed or implemented. **Not production proof.** The boundary is now canonical in Blueprint §2.2. Dispositions and the v2 check are in §4.4. | Product owner |
 | D5 | Cohort language and locale | **OPEN — required before sessions** | The locale follows the farmer cohort that is actually recruited, and a human decides it. Until then the stimulus stays in the English Blueprint text and is not translated. When it is translated, a native speaker who knows farm vocabulary translates all three directions with the same care; someone back-translates them; number/unit/currency formats are localized identically. | Human |
 | D6 | Scenario plausibility | **OPEN — required before sessions** | Happens only after the locale and region are known. Someone with farm-economics knowledge of that country/cohort reviews §4.3: crops, areas, yields, revenue (implied price), operating costs, operating profit, units and currency. Changes are applied identically to all three. Until then the values are AI-drafted illustrative placeholders, **not** regional facts. | Human (domain) |
 | D7 | Consent and data handling | **OPEN — required before sessions** | A human defines this through the team's process. This protocol defines no consent or legal terms. §9 only minimizes what is recorded. | Human |
 | D8 | Farm imagery in the scaffold | **APPROVED in principle** (2026-09-26) — **BLOCKED until an approved asset exists** | One identical, real/documentary field-crop farming image in H1/H2/H3 (requirements in §3). No image is added until the team supplies a licensed or approved asset with source/rights provenance. An AI-generated or synthetic image must not be substituted or presented as documentary. | PROFIT team |
 
-Once D5–D7, the D8 asset and the §4.4 questions are settled:
+Once D5–D7 and the D8 asset are settled:
 1. apply the changes identically to all three directions;
 2. re-run the stimulus checks (equal visual weight, card size, first-viewport content);
-3. hold one dry run (§8);
-4. freeze the stimulus, record its git commit hash and do not edit it during the round.
+3. hold a human visual review;
+4. hold one dry run (§8);
+5. freeze the stimulus, record its git commit hash and do not edit it during the round.
 
 ## 3. What is held constant and what varies
 
@@ -63,8 +76,10 @@ Blueprint §17 Round 1 requires the same neutral/static scaffold. It holds const
 | Proof card frame, size (equal by construction) and fidelity; `HYPOTHETICAL EXAMPLE`; `Confidence: Not assessed` | identical |
 | Decision question, illustrative source line | identical |
 | Underlying scenario and metric names (§4.3) | identical |
-| **Eyebrow, headline, support** | **varies** — Blueprint §5 verbatim |
+| **Eyebrow, headline, support** | **varies** — Blueprint §5 v2, verbatim |
 | **Proof-card body** | **varies** — each follows its Blueprint §5 proof-object definition and uses the same scenario |
+
+**Evidence labels are website semantics, not a product claim.** `HYPOTHETICAL EXAMPLE` and `Confidence: Not assessed` are the website's evidence/meta labels for an illustrative stimulus (AGENTS.md §4, Blueprint §8). `Confidence: Not assessed` does **not** claim that the current Field Profitability reference implements confidence assessment. It does not: PT-1, Blueprint §2.2.
 
 **D8 image requirements.** When the asset is supplied:
 - exactly the same image, crop and treatment for all three directions;
@@ -81,7 +96,7 @@ After adding it, re-check that H1/H2/H3 still get equal visual weight.
 
 C's category-confusion risk is accounting/ERP/finance. That is also H1's own kill signal. So if `ACC`/`FIN` misreadings recur in **all three** directions, treat them first as a scaffold signal (§12), not as evidence against one message. Art direction is tested separately in WWW-001/002.
 
-**D4 implication.** A coded Field Profitability UI exists only in the unmerged branch (§4.4). It is **not** used as a higher-fidelity H3 proof object in Round 1, because that would break equal-fidelity message isolation. The neutral proof card stays for all three.
+**D4 implication.** A coded Field Profitability UI exists only in the unmerged branch (Blueprint §2.2). It is **not** used as a higher-fidelity H3 proof object in Round 1, because that would break equal-fidelity message isolation. The neutral proof card stays for all three.
 
 **Known by-products (not message differences).**
 - Equal card size by construction leaves unequal empty space inside the card.
@@ -90,17 +105,25 @@ C's category-confusion risk is accounting/ERP/finance. That is also H1's own kil
 
 ## 4. Stimulus content
 
-### 4.1 Messages (Blueprint §5, verbatim)
+### 4.1 Test candidates — v2 (Blueprint §5, verbatim)
 
 | | Eyebrow | Headline | Support |
 |---|---|---|---|
-| H1 | FIELD ECONOMICS | Know where your farm makes money — and where it doesn't. | PROFIT connects field operations, costs and outcomes so you can see where margin is being created or lost and what to investigate next. |
-| H2 | AGRICULTURAL DECISION INTELLIGENCE | Turn farm data into more profitable decisions. | PROFIT connects what happens on the farm with what it means economically. |
-| H3 | FIELD PROFITABILITY | See margin by field — and what drives it. | PROFIT brings operations, costs and outcomes together into field-level economics, with assumptions and confidence visible when they are assessed. |
+| H1 v2 | FIELD ECONOMICS | See which fields make money — and which don't. | PROFIT compares each field's revenue with the costs allocated to it, so you can see operating profitability field by field. |
+| H2 v2 | AGRICULTURAL DECISION INTELLIGENCE | Connect field data to the economics behind your decisions. | PROFIT turns yield, price and allocated-cost data into operating-profit and break-even metrics you can inspect before deciding what to do next. |
+| H3 v2 | FIELD PROFITABILITY | See operating profit by field — and what goes into it. | PROFIT brings yield, price, variable costs and allocated fixed costs together into field-level operating economics, including break-even price and yield. |
 
 Rendering-only details: a non-breaking space before each em dash, and balanced line wrapping. The words are unchanged.
 
-The H1 support and H3 headline say "margin". The proof cards use the D4 metric names (§4.3). The copy is deliberately left verbatim, because it is what is being tested. How participants read the copy is captured in Phase B (§8).
+### 4.1a v1 history — superseded before farmer testing (not tested)
+
+| | Headline (v1) | Support (v1) | Superseded because (D4 product-truth gate, 2026-09-26) |
+|---|---|---|---|
+| H1 v1 | Know where your farm makes money — and where it doesn't. | PROFIT connects field operations, costs and outcomes so you can see where margin is being created or lost and what to investigate next. | whole-farm framing; "field operations" ingestion and "what to investigate next" capability not in the reference; generic "margin" |
+| H2 v1 | Turn farm data into more profitable decisions. | PROFIT connects what happens on the farm with what it means economically. | implied guarantee in "more profitable decisions"; generic "farm data" beyond the accepted inputs |
+| H3 v1 | See margin by field — and what drives it. | PROFIT brings operations, costs and outcomes together into field-level economics, with assumptions and confidence visible when they are assessed. | known unsupported capability claim (assumptions/confidence, PT-1); generic "margin"; causal "what drives it" |
+
+No farmer saw v1. The supersession is a pre-test product-truth decision, not evidence about farmer comprehension, and must never be reported as a test result.
 
 ### 4.2 Proof-card body per direction
 
@@ -112,7 +135,7 @@ The H1 support and H3 headline say "margin". The proof cards use the D4 metric n
 
 Label convention, identical in all three: the metric name is the label and the per-hectare unit is on every value. So no per-hectare figure can be read as a field total at a 10-second glance.
 
-The H3 headline promises "what drives it". The stimulus shows only the parts that make up operating profit. It does not show causal drivers, because nothing establishes a causal claim, and the D4 reference provides no driver/causal analysis (§4.4).
+The H2 v2 and H3 v2 supports name break-even metrics. No card shows them, which keeps proof complexity equal across directions. Record whether participants expect break-even in the panel (§8 probe b, UNCLEAR WORDS).
 
 ### 4.3 Shared scenario — HYPOTHETICAL EXAMPLE
 
@@ -122,60 +145,52 @@ The H3 headline promises "what drives it". The stimulus shows only the parts tha
 | Field 12 | Wheat | 23.0 ha | — | — | — | €148/ha |
 | Field 31 | Barley | 18.4 ha | 4.1 t/ha | €738/ha | €834/ha | −€96/ha |
 
-- Metric semantics follow the D4 reference (§4.4). Revenue = area × yield × price (shown per ha). Operating costs = variable + allocated fixed costs. Operating profit = revenue − operating costs. Operating profit is **not** gross margin (revenue − variable costs) and **not** statutory net profit.
-- Evidence: **HYPOTHETICAL EXAMPLE** · Confidence: **Not assessed**
-- Decision question: **What would you investigate on Field 31 before changing the plan?** A question, not a recommendation; adapted from `docs/experiments/field-economics-motion-test-v1.md`.
-- Source line: **Illustrative source: farmer-provided field records · one season**. This uses the Blueprint §8 provenance category "Farmer-provided", matching user-entered inputs in the D4 reference. It implies no machinery or other integrations, and it is labelled illustrative because the numbers come from no records.
-- Provenance of the numbers:
-  - Field 24's value reuses the motion-protocol scenario figure; that protocol labels it "Margin".
-  - The rest are AI-drafted placeholders, chosen only to be internally consistent: €738/ha at 4.1 t/ha implies about €180/t barley.
-  - They are **not** regional facts, customer data or PROFIT outputs, and they need D6 review.
-- Values that appear more than once must be edited together: `Field 31 · Barley · 18.4 ha` and `−€96/ha` (H1/H2/H3); `4.1 t/ha`, `€738/ha` and `€834/ha` (H2/H3).
+- **Metric semantics** follow Blueprint §2.2:
+  - revenue = area × yield × price (shown per ha);
+  - operating costs = variable + allocated fixed costs;
+  - operating profit = revenue − variable costs − allocated fixed costs.
 
-### 4.4 D4 product-truth reference (experimental, unmerged, unshipped)
+  Operating profit is **not** gross margin and **not** statutory net profit.
+- **Evidence:** **HYPOTHETICAL EXAMPLE** · Confidence: **Not assessed**. These are website evidence/meta labels, not product capabilities (§3).
+- **Decision question:** **What would you investigate on Field 31 before changing the plan?** It is a question to the farmer, not a PROFIT recommendation; the reference has no recommendation feature. Adapted from `docs/experiments/field-economics-motion-test-v1.md`.
+- **Source line:** **Illustrative source: farmer-provided field records · one season**. This uses the Blueprint §8 provenance category "Farmer-provided", matching user-entered inputs in the reference. It implies no machinery or other integrations, and it is labelled illustrative because the numbers come from no records.
+- **Provenance of the numbers:**
+  - All values are AI-drafted placeholders, chosen only to be internally consistent: €738/ha at 4.1 t/ha implies about €180/t barley.
+  - They are **not** regional facts, customer data or PROFIT outputs, and they need D6 review.
+  - In WWW-000 every value is *defined* as operating profit per ha. Field 24's €637/ha reuses the motion-protocol number only as a number. That does **not** establish what the motion protocol's "Margin €637/ha" represents; WWW-004 must revalidate it (see that protocol).
+- **Linked values:** these appear more than once and must be edited together: `Field 31 · Barley · 18.4 ha` and `−€96/ha` (H1/H2/H3); `4.1 t/ha`, `€738/ha` and `€834/ha` (H2/H3).
+
+### 4.4 D4 product-truth reference and v2 check
+
+**Reference.** The boundary is canonical in **Blueprint §2.2**: status, inputs, calculations, definition, exclusions and AI role.
 
 **Source.** `MykolaDotsenko/PROFIT`, branch `feat/field-profitability`, HEAD `7d07345ee077bb01e755ae89fcceebca18e1f3d8`. PR #1 is titled "Field Profitability v1 — production-ready vertical slice"; the title is quoted, not endorsed. It was **closed without merge**.
 
 The PR itself lists environment gates that remained open: fresh Supabase setup, migration/security verification, browser E2E and deployment.
 
-This session could not read the branch directly. The read-only clone was denied by the session permission policy, and the GitHub tools do not cover that repository. The content below is the PROFIT team's verified summary of 2026-09-26.
+This session could not read the branch. The read-only clone was denied by the session permission policy, and the GitHub tools do not cover that repository. The content comes from the PROFIT team's verified summaries and read-only checks of 2026-09-26.
 
-**Status boundary.** This is an *implemented, unmerged vertical slice*. It is **not** shipped, production-verified or public proof. Use it only to check that WWW-000 stimuli do not promise more than has been designed or implemented.
+**Status boundary.** This is an *implemented, unmerged vertical slice*. It is not shipped, production-verified or public proof.
 
-| Area | Reference content |
-|---|---|
-| Inputs | organization; field; crop; season; currency; area (ha); yield (t/ha); price/t; itemised costs |
-| Cost types | variable; allocated fixed |
-| Calculations | revenue = area × yield × price; variable costs; allocated fixed costs; operating costs = variable + allocated fixed; gross margin = revenue − variable costs; operating profit = revenue − operating costs; operating margin % = operating profit / revenue × 100; ROI on allocated cost %; revenue/ha; cost/ha; operating profit/ha; break-even price; break-even yield |
-| Semantic caveat | "Operating profit" is deliberately not statutory net profit. Unallocated whole-farm overhead, financing, tax and owner-specific accounting items are excluded unless explicitly allocated to the field. |
-| UI (branch only) | field-profitability input; live deterministic preview; saved snapshots/history; economic metrics; optional AI explanation |
-| AI role | explains the supplied deterministic metrics; does **not** calculate the financial results |
-| Explicit v1 exclusions | whole-farm P&L; tax; financing; depreciation policy; inventory accounting; GIS; scenario optimisation; external telemetry; ERP integrations; asynchronous event infrastructure |
+**Dispositions**
+- **PT-1 — RESOLVED NO.** The branch has no product model or UI for assumptions, and no assessed confidence attached to calculations. The AI explanation endpoint does not add them. The H3 v1 support line was therefore a known unsupported capability claim. It is removed in v2 and is **not** tested as a candidate production message.
+- **PT-2 — SUPPORTED BY D4 REFERENCE, within the limited saved-snapshots/list interpretation.** `app/page.tsx` in the branch shows a saved-snapshots table with several field records at once: Field, Crop, Season, Area, Operating profit, Profit / ha, Operating margin. This is a presentation pattern, not a separate comparison/analytics feature, and not a shipped capability. The H1 multi-field proof object does not contradict the reference.
 
-**Product-truth check of the stimulus against the reference**
+**Product-truth check of the v2 stimulus** (no conflict with a verified implementation fact found)
 
-| Element (direction) | Reference | Assessment |
+| Element (direction) | Blueprint §2.2 | Assessment |
 |---|---|---|
-| Proof metrics: yield, revenue, operating costs, operating profit per ha (all) | all defined | **CONSISTENT** now that "margin" labels are corrected |
-| "Operating profit" in every proof card (all) | not statutory net profit; excludes unallocated overhead, financing, tax | **RISK** — may be read as net or whole-farm profit; captured as OP-READING |
-| "margin" in the H1 support and H3 headline | gross margin, operating profit and operating margin % are separate metrics | **RISK** — may be read differently from the defined economics; captured as MARGIN-READING |
-| "what drives it" (H3) | decomposition (revenue; variable/allocated/itemised costs), break-even price/yield, AI explanation of metrics; no driver/causal analysis | **RISK** — may imply causal/driver analysis beyond the slice; captured as DRIVES-READING and CAUSAL |
-| "with assumptions and confidence visible when they are assessed" (H3 support) | no confidence or assumption display is listed | **UNVERIFIED** — a possible unsupported capability claim in the tested copy; open question PT-1 |
-| three-field comparison (H1 proof object) | per-field input, preview and snapshots/history; a multi-field comparison view is not listed | **UNVERIFIED** — open question PT-2 |
-| "your farm makes money", whole-farm framing (H1) | field-level only; whole-farm P&L excluded | **RISK** — matches H1's kill signal "wording implies whole-farm coverage beyond the actual wedge" |
-| "field operations" (H1), "operations" (H3), "farm data" / "what happens on the farm" (H2) | manually entered inputs; external telemetry and ERP integrations excluded | **RISK** — may imply automatic operational/telemetry data or integrations; captured as PRECISION-SCOPE |
-| "Agricultural Decision Intelligence", "more profitable decisions" (H2) | deterministic metrics and break-evens; scenario optimisation excluded; AI does not calculate | **RISK** — may imply recommendations/optimisation or AI-computed results; captured as AIC/PRECISION-SCOPE/PROMISE |
-| "what to investigate next" (H1 support) | no recommendation feature; the farmer's own reading of the metrics, with optional AI explanation | **RISK (low)** — may imply that PROFIT recommends what to investigate |
-| Source line, decision question (all) | user-entered inputs incl. season; no recommendations | **CONSISTENT** |
-
-**Open product-truth questions** (product owner, before freeze):
-- **PT-1.** Does the reference show assumptions and/or confidence anywhere?
-  - If not, the H3 support line claims a capability that is not built.
-  - A human then decides: test the Blueprint copy as-is, recorded as an unbuilt-capability claim; or rewrite H3 before Round 1, which is a Blueprint change.
-  - This falls under D2's evidence-integrity exception.
-- **PT-2.** Does the reference support viewing several fields' operating profit/ha side by side?
-  - If not, the H1 proof object implies a capability the slice lacks.
-  - A human then decides whether it stays as the Blueprint H1 proof object for Round 1.
+| "See which fields make money — and which don't." (H1) | per-field operating profit; multi-field saved-snapshots list | **CONSISTENT** within the limited list interpretation; "make money" may be read as net profit → OP-READING |
+| "compares each field's revenue with the costs allocated to it … operating profitability field by field" (H1) | revenue = area × yield × price; operating costs = variable + allocated fixed | **CONSISTENT**. *Watch:* in the reference, "allocated" names the fixed-cost type. The plain reading (all costs assigned to the field) matches operating profit; record readings that it means fixed costs only. |
+| "Connect field data to the economics behind your decisions." (H2) | field-level inputs; no recommendations | **CONSISTENT**. The category label remains a hypothesis (CATEGORY-WITHOUT-JOB, `AIC`). |
+| "turns yield, price and allocated-cost data into operating-profit and break-even metrics you can inspect before deciding what to do next" (H2) | yield/price/cost inputs; operating profit; break-even price/yield; no optimisation or recommendations | **CONSISTENT**. *Watch:* variable costs are not named ("allocated-cost data"), and break-even is named but not shown in any card. |
+| "See operating profit by field — and what goes into it." (H3) | operating profit per field; composition = revenue, variable costs, allocated fixed costs | **CONSISTENT**. COMPOSITION-READING captures causal or recommendation readings. |
+| "brings yield, price, variable costs and allocated fixed costs together into field-level operating economics, including break-even price and yield" (H3) | exactly the reference inputs and calculations | **CONSISTENT**. *Watch:* break-even is named but not shown in any card. |
+| Proof metrics: yield, revenue, operating costs, operating profit per ha (all) | defined | **CONSISTENT** |
+| "Operating profit" in every card (all) | not statutory net profit | **RISK** → OP-READING |
+| `HYPOTHETICAL EXAMPLE`, `Confidence: Not assessed` (all) | no confidence model (PT-1) | website evidence/meta labels, not a product capability claim (§3) |
+| Decision question (all) | no recommendation feature | **CONSISTENT** as a question to the farmer. *Watch:* record readings that PROFIT recommends what to investigate (PRECISION-SCOPE). |
+| Source line (all) | user-entered inputs incl. season | **CONSISTENT** |
 
 ## 5. Participants
 
@@ -253,7 +268,7 @@ For each direction, in the assigned order:
    4. What economic result/question do you think you would see?
    5. What would you expect to click or do next?
 
-No credibility, data, margin or guaranteed-profit questions, and no comparison, until Phase A is complete for all three.
+No credibility, data, product-truth or guaranteed-profit questions, and no comparison, until Phase A is complete for all three.
 
 ### Phase B — second viewing + probes (same assigned order)
 
@@ -266,8 +281,7 @@ For each direction, show it again untimed (its number key, then <kbd>B</kbd>) an
 - c. What sounds least credible? *(Blueprint)*
 - d. What data would you expect PROFIT to need? *(Blueprint)*
 - e. What do you think "operating profit" in the panel includes? *(added — OP-READING; all three)*
-  - H1 and H3 only, where the copy says "margin": What do you think "margin" means here? *(added — MARGIN-READING)*
-  - H3 only: What do you think "what drives it" means — what would PROFIT show you? *(added — DRIVES-READING)*
+  - H3 only: What do you think "what goes into it" means — what would PROFIT show you? *(added — COMPOSITION-READING)*
 - f. Does anything sound like a promise of guaranteed profit? *(Blueprint; leading, so ask it last)*
 
 After the first direction's Phase B probes only (once per participant):
@@ -275,7 +289,7 @@ After the first direction's Phase B probes only (once per participant):
 - What do you think happens after "Join the pilot"? *(added)*
 - What would stop you from joining a pilot? *(Blueprint)*
 
-The margin and drives questions are asked only where the copy uses those words. That asymmetry follows from the copy and is intended.
+The composition question is asked only for H3, because only H3's copy contains "what goes into it". That asymmetry follows from the copy and is intended.
 
 ### Phase C — comparison (only after Phases A and B)
 
@@ -312,15 +326,14 @@ PHASE A — position _ of 3 — H_   (position 1 = first-position recall)
 
 PHASE B — H_
  a panel: ____  b unclear: ____  c least credible: ____  d data: ____
- e operating profit: ____   margin (H1/H3): ____   what drives it (H3): ____
+ e operating profit: ____   what goes into it (H3): ____
  f guaranteed profit: ____
  First Phase-B direction only: numbers from: ____  after "Join the pilot": ____  pilot barriers: ____
 
 CODES per direction (§10): JOB-CONCRETE P/PA/F  JOB-INTENDED Y/N  AUDIENCE Y/N  MECHANISM Y/P/N
   ECON-RESULT Y/N  NEXT-ACTION Y/N  CATEGORY-WITHOUT-JOB Y/N  MISCLASS: ____
   PROMISE spontaneous / prompted-only / none  PRECISION-SCOPE Y/N  CAUSAL Y/N
-  OP-READING FIELD-OP / NET / GM / UNC  MARGIN-READING (H1/H3) GM / OP / NET / REV / UNC
-  DRIVES-READING (H3) COMP / CAUSE / REC / UNC
+  OP-READING FIELD-OP / NET / GM / UNC  COMPOSITION-READING (H3) COMP / CAUSE / REC / UNC
   PROOF-UNAIDED Y/P/N  NUMBERS-READ-AS-REAL Y/N  LABEL-ECHO Y/N  UNCLEAR WORDS: ____
 
 PHASE C (verbatim): clearest: ____  least trusted: ____  over-promise: ____  keep sentence: ____
@@ -333,19 +346,18 @@ Two people should code the answers independently where possible, then settle dis
 | Code | Definition |
 |---|---|
 | JOB-CONCRETE | Coded from **Phase A** recall. **PASS (P):** names a concrete economic job for a farm, e.g. "shows which fields make or lose money", "works out profit per hectare by field", "shows where costs eat the profit". **PARTIAL (PA):** farm plus generic data/decisions/profit with no concrete job, e.g. "farm data software", "helps farmers decide better". **FAIL (F):** no farm-economic job, or a misclassification. For K1, PA and F both count as "cannot state a concrete farmer-economic job"; report them separately. |
-| JOB-INTENDED | Coded from Phase A. Matches this direction's intended job. H1: where the farm/fields make or lose money and what to investigate. H2: what farm data means economically, for a decision. H3: margin/profitability per field and what makes it up. |
+| JOB-INTENDED | Coded from Phase A. Matches this direction's intended v2 job. H1: which fields make money and which don't (operating profitability field by field). H2: the economics behind a decision, from field data (e.g. operating profit, break-even). H3: operating profit per field and what goes into it. |
 | AUDIENCE | Says it is for farms/farmers. |
-| MECHANISM | Connects farm data/operations to economic meaning (Y / partial / N). |
+| MECHANISM | Connects field/farm data to economic meaning (Y / partial / N). |
 | ECON-RESULT | Recalls an economic result or question, e.g. profit per hectare, €/ha, a weak field. |
 | NEXT-ACTION | Names a plausible next step (join the pilot, see how it works, investigate a field). |
 | CATEGORY-WITHOUT-JOB | Recalls category/technology words (e.g. "decision intelligence", "AI", "data") but not the job (K4). |
 | MISCLASS | `ACC` accounting/bookkeeping/tax · `LAND` land valuation/real estate · `AIC` generic AI/data consultancy or platform · `MKT` marketplace/trading/input buying · `AGRO` agronomy advice/satellite/mapping · `FIN` loans/insurance/banking · `REP` consulting/reporting service · `OTH` other (describe). If `ACC`/`FIN` recur across all three directions, check for a scaffold signal first (§3). |
 | PROMISE | Reads it as guaranteed higher profit, savings or verified results. **Spontaneous** if it appears in Phase A recall (any direction) or in Phase B before the participant's first probe f; **prompted-only** otherwise. Spontaneous is stronger evidence. |
-| PRECISION-SCOPE | Expects precision, automation, integrations or coverage the D4 reference (§4.4) does not support. Examples: "it pulls data from my machinery", "it does my whole-farm accounts", "it covers tax", "it optimises my plan". |
-| CAUSAL | Expects PROFIT to establish why, e.g. "it tells me why the field loses money". The D4 reference provides no causal/driver analysis. This is an evidence-integrity risk, especially for H3's "what drives it". |
-| OP-READING | What "operating profit" in the panel is taken to include. `FIELD-OP`: a field-level result after the field's costs, consistent with D4. `NET`: final/net or whole-farm profit, after tax/financing/everything. `GM`: gross margin. `UNC`: unclear. |
-| MARGIN-READING | H1/H3 only: what "margin" in the copy is taken to mean. `GM` gross margin · `OP` operating profit · `NET` net/whole-farm profit · `REV` revenue · `UNC` unclear. Compare with D4: separate gross margin, operating profit and operating margin %. |
-| DRIVES-READING | H3 only: what "what drives it" is taken to mean. `COMP`: what the result is made of (costs, revenue); supported by D4. `CAUSE`: why it happened, e.g. weather, soil, practices; not supported. `REC`: what to change or optimise; not supported. `UNC`: unclear. |
+| PRECISION-SCOPE | Expects precision, automation, integrations, coverage or recommendations beyond Blueprint §2.2. Examples: "it pulls data from my machinery", "it does my whole-farm accounts", "it covers tax", "it optimises my plan", "it tells me which field to fix". |
+| CAUSAL | Expects PROFIT to establish why, e.g. "it tells me why the field loses money". The reference provides no causal/driver analysis. |
+| OP-READING | What "operating profit" is taken to include. `FIELD-OP`: a field-level result after the field's variable and allocated fixed costs, consistent with §2.2. `NET`: final/net or whole-farm profit, after tax/financing/everything. `GM`: gross margin. `UNC`: unclear. |
+| COMPOSITION-READING | H3 only: what "what goes into it" is taken to mean. `COMP`: the parts the result is made of (revenue, variable and allocated fixed costs); consistent with §2.2. `CAUSE`: why it happened, e.g. weather, soil, practices; not supported. `REC`: what to change or optimise; not supported. `UNC`: unclear. |
 | PROOF-UNAIDED | Probe a is answered correctly without explanation: a field-level economic result derived from farm information. Y / partial / N (K5). |
 | NUMBERS-READ-AS-REAL | Believes the numbers are real customer, farm or verified results despite `HYPOTHETICAL EXAMPLE` and the illustrative source line. This is a **scaffold** signal: if it repeats, fix the labelling for all three directions and do not blame one message. |
 | LABEL-ECHO | The answer to "Where do you think these numbers come from?" only repeats the source label. Code it separately so it is not mistaken for comprehension. |
@@ -367,18 +379,18 @@ Use one of: TRIGGERED / CONCERN / NOT TRIGGERED / N/A. Fill in each cell as "all
 | K3 | participants repeatedly interpret the copy as a guarantee of higher profit or verified savings | | | |
 | K4 | the category/technology wording is remembered, but the product job is not | | | |
 | K5 | the proof object needs verbal explanation to connect farm reality with economic meaning | | | |
-| K6 | the direction implies precision/data coverage that the current product cannot support (judged against the D4 reference, §4.4) | | | |
+| K6 | the direction implies precision/data coverage that the current product cannot support (judged against Blueprint §2.2) | | | |
 | K7 | the CTA or next step is materially unclear | | | |
 | K8 | the hero only works when animation is enabled | N/A — no motion | N/A | N/A |
 | K9 | mobile requires removing the product/economic proof to fit the composition | N/A — shared scaffold keeps the proof card on mobile (§7) | N/A | N/A |
 
-For K6, read "current product" as the D4 reference: an unmerged, unshipped vertical slice. Anything beyond it also exceeds shipped capability.
+For K6, read "current product" as the §2.2 reference: an unmerged, unshipped vertical slice. Anything beyond it also exceeds shipped capability.
 
-Variant-specific kill signals (Blueprint §17):
+Variant-specific kill signals (Blueprint §17). They were written for the v1 wording; apply them to v2 by meaning.
 
 - **H1:** repeated classification as accounting/bookkeeping; wording implies whole-farm coverage beyond the actual wedge; negative "made/lost" framing reduces trust or willingness to continue.
-- **H2:** farmers paraphrase it only as generic "AI/data for better decisions"; `Agricultural Decision Intelligence` creates confusion or adds no useful meaning; "more profitable decisions" is interpreted as a promised financial outcome.
-- **H3:** target farmers do not care enough about field-level margin to make it a first-screen job; "margin by field" implies unsupported precision or unavailable data; the product proof is not mature/credible enough to substantiate the headline (judged against the D4 reference, which is unmerged and unshipped).
+- **H2:** farmers paraphrase it only as generic "AI/data for better decisions"; `Agricultural Decision Intelligence` creates confusion or adds no useful meaning; "more profitable decisions" is interpreted as a promised financial outcome. For v2, apply this last signal to any promised financial outcome.
+- **H3:** target farmers do not care enough about field-level margin to make it a first-screen job; "margin by field" implies unsupported precision or unavailable data; the product proof is not mature/credible enough to substantiate the headline. For v2, read "margin" as "operating profit by field". Judge against the §2.2 reference, which is unmerged and unshipped.
 
 A TRIGGERED or CONCERN status follows the all-participant count. If first-position recall diverges materially from it, state the divergence explicitly in the decision rationale (§12). The divergence does not override the approved count.
 
@@ -388,7 +400,7 @@ For each direction, decide **ADVANCE / REWRITE / KILL / NEEDS EVIDENCE**, citing
 
 - **ADVANCE** only when "most participants can independently paraphrase the intended farmer-economic job, no recurring trust failure appears, and the next action is understood" (Blueprint §17).
 - **REWRITE** when the job lands but specific words fail, e.g. a promise, precision or product-truth reading. A rewrite is a **new hypothesis**. Test it again, at least in a small check, before it counts as surviving.
-- **H3 product-truth rule.** If MARGIN-READING or DRIVES-READING mismatches against the D4 reference form a repeated pattern (≥3 independent participants), H3 is **REWRITE and retest**. Do not rationalise the wording after the fact. The same readings for H1's "margin" count as a wording failure under the general REWRITE rule.
+- **Product-truth rule (all directions).** If product-truth readings mismatch Blueprint §2.2 as a repeated pattern (≥3 independent participants), the direction is **REWRITE and retest**. That covers OP-READING = `NET`, COMPOSITION-READING = `CAUSE`/`REC`, CAUSAL and PRECISION-SCOPE. Do not rationalise the wording after the fact.
 - **KILL** when the core job itself fails, e.g. farmers do not care about it, or there is repeated misclassification that no wording change would plausibly fix.
 - **NEEDS EVIDENCE** when signals conflict or differences are subtle. Use a larger follow-up "if differences are subtle or the decision becomes costly to reverse" (Blueprint §17).
 - More than one direction may advance. WWW-001 needs **one** controlled message, so the team picks one and records why, or runs a follow-up. Do not hybridize untested wording.
@@ -399,23 +411,24 @@ For each direction, decide **ADVANCE / REWRITE / KILL / NEEDS EVIDENCE**, citing
   - unnoticed labels.
 
   Fix the scaffold identically for all three and retest. Adding other candidates, such as the alternatives in `docs/website-strategy.md` §3, needs a human decision.
-- Never report "H_ won". Report the sample size, segments, order balance and remaining uncertainty.
+- Never report "H_ won". Never report v1 as tested. Report the sample size, segments, order balance and remaining uncertainty.
 
 ## 13. Result template
 
 Record results in `docs/experiments/hero-message-test-v1-results.md`. Keep them anonymized and segment-level only (§9), with no personal data.
 
 ```text
+Candidate set: v2 (Blueprint §5). v1 superseded pre-test by the product-truth gate — no farmer evidence for v1.
 Cohort: n = __, segments: ____, first positions per direction: H1 __ / H2 __ / H3 __
-Decisions: D1–D3 approved 2026-09-26; D4 reference: feat/field-profitability @ 7d07345 (unmerged, unshipped);
-  PT-1: ____; PT-2: ____; D5 locale: ____; D6 reviewer/date: ____; D7 process: ____; D8 asset + provenance: ____
+Decisions: D1–D3 approved 2026-09-26; D4 settled (Blueprint §2.2; PT-1 no, PT-2 yes within the list interpretation);
+  D5 locale: ____; D6 reviewer/date: ____; D7 process: ____; D8 asset + provenance: ____
 Stimulus commit: ____   Exposure: 10 s (timed / manual sessions: __)
 
-H1 — evidence: ____   failure patterns: ____   kill table (all / first-position): ____   decision: ADVANCE / REWRITE / KILL / NEEDS EVIDENCE
-H2 — evidence: ____   failure patterns: ____   kill table (all / first-position): ____   decision: ...
-H3 — evidence: ____   failure patterns: ____   kill table (all / first-position): ____   decision: ...
+H1 v2 — evidence: ____   failure patterns: ____   kill table (all / first-position): ____   decision: ADVANCE / REWRITE / KILL / NEEDS EVIDENCE
+H2 v2 — evidence: ____   failure patterns: ____   kill table (all / first-position): ____   decision: ...
+H3 v2 — evidence: ____   failure patterns: ____   kill table (all / first-position): ____   decision: ...
 
-Product-truth readings (OP / MARGIN / DRIVES / CAUSAL / PRECISION-SCOPE) vs D4: ____
+Product-truth readings (OP / COMPOSITION / CAUSAL / PRECISION-SCOPE) vs Blueprint §2.2: ____
 Evidence-integrity cases (any count): ____
 Scaffold signals (NUMBERS-READ-AS-REAL, cross-direction ACC/FIN, shared unclear words): ____
 Message selected for WWW-001, and why: ____
@@ -435,6 +448,6 @@ Remaining uncertainty: ____
 - recall is driven by the proof-card body rather than the copy. Then run a copy-only check with one identical proof body for all three;
 - the neutral scaffold itself causes a systematic failure (e.g. "looks unfinished", "accounting software" or "not trustworthy") across all directions;
 - the recruited cohort does not match the Field Profitability wedge;
-- the D4 reference changes (merged, shipped, redefined metrics), or PT-1/PT-2 contradict what the copy or proof cards imply;
+- the Blueprint §2.2 boundary changes (merged, shipped, redefined metrics). Then re-run the §4.4 check;
 - the D8 image is added. Then re-verify that it is identical across all three and that equal visual weight, card size, layout and first-viewport content still hold;
 - the Blueprint's hero candidates, CTA or evidence semantics change before the round is run.

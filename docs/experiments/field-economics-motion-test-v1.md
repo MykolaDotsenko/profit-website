@@ -54,6 +54,8 @@ Do **not** imply that any one of these factors caused the economic result.
 **€637 / ha**  
 **Margin**
 
+> **Revalidation required before WWW-004 starts (recorded 2026-09-26):** "Margin" is generic. Revalidate this value against the Field Profitability product-truth boundary (Blueprint §2.2), where gross margin, operating profit / ha and operating margin % are distinct metrics. Relabel it only once the number's calculation provenance establishes what it represents. Do not relabel it silently.
+
 ### Evidence
 
 **HYPOTHETICAL EXAMPLE**

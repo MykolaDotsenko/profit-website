@@ -48,17 +48,18 @@ Stimulus:
 Status:
 **Test instrument drafted — not approved to run.**
 - D1–D3 were approved on 2026-09-26: a Phase A → B → C session flow, fixed 10 s exposure, and the counting rules (now in Blueprint §17).
-- A D4 product-truth reference has been found. It is an implemented but unmerged and unshipped Field Profitability vertical slice, used only for product-truth checking and not as production proof.
-- Before the stimulus is frozen: D5–D7 must be settled, the approved D8 documentary image supplied, and the protocol's PT-1/PT-2 questions answered.
+- D4 is settled. The Field Profitability product-truth boundary (an unmerged, unshipped vertical slice) is now in Blueprint §2.2, and PT-1/PT-2 are resolved.
+- The product-truth gate superseded the v1 candidates before testing. The test candidates are H1/H2/H3 v2.
+- Before the stimulus is frozen: D5–D7 must be settled and the approved D8 documentary image supplied.
 
 No acceptance criterion below has been met yet.
 
 Outcome:
 Eliminate weak hero positioning before visual art direction becomes a confounding variable.
 
-Test the three canonical Blueprint directions:
+Test the three canonical Blueprint directions, using the **v2** candidates in Blueprint §5. The v1 wording was superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1.
 - H1 — Economic visibility / farmer job first
-- H2 — Decision intelligence / current control
+- H2 — Decision intelligence / decision-context first (v1: current control)
 - H3 — Field Profitability / product proof first
 
 Constraints:
@@ -168,6 +169,8 @@ Execution source:
 
 Status:
 **BLOCKED until WWW-002 produces a surviving art-direction base or sufficiently narrow survivor set.**
+
+Before start: the scenario's generic "Margin €637/ha" must be revalidated against the Field Profitability product-truth boundary (Blueprint §2.2). Relabel it only once its calculation provenance establishes what the number represents (see the execution source, §3).
 
 Do not use the existing motion prototype as evidence that motion is valuable. It is implementation-feasibility evidence only.
 

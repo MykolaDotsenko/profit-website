@@ -31,6 +31,18 @@ company_context:
     rule: "Do not crop-lock the master brand and do not present future livestock/other production domains as shipped unless explicitly documented."
   public_claim_rule: "Internal ambition is not public proof."
 
+field_profitability_reference:
+  canonical_source: "docs/website-blueprint-v1.md section 2.2 (internal product-truth boundary)"
+  status: "implemented vertical slice; MykolaDotsenko/PROFIT feat/field-profitability @ 7d07345; PR #1 closed without merge; unshipped; not production-verified"
+  use_rule: "internal product-truth checks of website copy and proof objects only; never a public shipped or available claim"
+  inputs: ["field", "crop", "season", "currency", "area", "yield", "price", "variable costs", "allocated fixed costs"]
+  calculations: ["revenue", "variable costs", "allocated fixed costs", "operating costs", "gross margin", "operating profit", "revenue / ha", "cost / ha", "operating profit / ha", "operating margin %", "ROI on allocated costs", "break-even price", "break-even yield"]
+  operating_profit: "revenue - variable costs - allocated fixed costs; not statutory net profit; not gross margin"
+  exclusions: ["whole-farm P&L", "financing", "tax", "depreciation policy", "inventory accounting", "GIS", "scenario optimisation", "external telemetry", "ERP integrations"]
+  ai_explanation: "may explain stored deterministic metrics; does not calculate financial truth"
+  presentation: "several field records can be listed side by side in a saved-snapshots table (list pattern, not an analytics feature)"
+  not_in_reference: ["assumptions model or UI", "assessed confidence attached to calculations"]
+
 objectives:
   primary:
     - "Help a farmer understand what PROFIT is."
@@ -143,8 +155,9 @@ hero_validation:
   status: "open hypothesis; current hero is a control, not a production winner"
   experiment_protocol: "docs/experiments/hero-message-test-v1.md"
   stimulus: "prototypes/hero-message-test/"
-  instrument_status: "drafted; D1-D3 approved 2026-09-26; D4 reference found; not approved to run: D5-D7, D8 asset (approved in principle, blocked until a licensed documentary image exists) and product-truth questions PT-1/PT-2 required before stimulus freeze"
-  product_truth_reference: "MykolaDotsenko/PROFIT branch feat/field-profitability @ 7d07345 (PR #1 closed without merge): implemented vertical slice, not shipped or production-verified; use only to check that WWW-000 stimuli do not over-promise; never public proof (details: hero-message-test-v1.md section 4.4)"
+  instrument_status: "drafted; test candidates are the v2 set (Blueprint section 5); D1-D4 settled (PT-1 no, PT-2 yes within the saved-snapshots list interpretation); not approved to run: D5-D7 and the D8 asset (approved in principle, blocked until a licensed documentary image exists) required before stimulus freeze"
+  candidate_set: "v2 (product-truth-safe, 2026-09-26); v1 superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1"
+  product_truth_reference: "field_profitability_reference (Blueprint section 2.2); WWW-000 v2 check in hero-message-test-v1.md section 4.4"
   durable_rules:
     - "Hero comprehension must not depend on understanding the category label."
     - "A static first frame must communicate farmer + economic job + credible proof + next action."
@@ -153,7 +166,7 @@ hero_validation:
     - "Do not choose a hero by team preference or visual appeal."
   directions:
     H1: "Economic visibility / farmer job first"
-    H2: "Decision intelligence / current control"
+    H2: "Decision intelligence / decision-context first (v2; v1 was the current control)"
     H3: "Field Profitability / product proof first"
   first_test:
     cohort: "9-12 target field/crop farm decision-makers for qualitative elimination; no statistical-winner claim"
