@@ -156,11 +156,13 @@ The H2 v2 and H3 v2 supports name break-even metrics. No card shows them, which 
 
 ### 4.3 Shared scenario — HYPOTHETICAL EXAMPLE
 
+The current shared scenario is **statistics-calibrated synthetic data**. Calibration sources and calculations are documented in `docs/experiments/www-000-statistical-surrogate-v1.md`.
+
 | Field | Crop | Area | Yield | Revenue | Operating costs | Operating profit |
 |---|---|---|---|---|---|---|
-| Field 24 | Wheat | 41.7 ha | — | — | — | €637/ha |
-| Field 12 | Wheat | 23.0 ha | — | — | — | €148/ha |
-| Field 31 | Barley | 18.4 ha | 4.1 t/ha | €738/ha | €834/ha | −€96/ha |
+| Field 24 | Wheat | 41.7 ha | — | — | — | €221/ha |
+| Field 12 | Wheat | 23.0 ha | — | — | — | €49/ha |
+| Field 31 | Wheat | 18.4 ha | 3.7 t/ha | €766/ha | €835/ha | −€69/ha |
 
 - **Metric semantics** follow Blueprint §2.2:
   - revenue = area × yield × price (shown per ha);
@@ -169,13 +171,13 @@ The H2 v2 and H3 v2 supports name break-even metrics. No card shows them, which 
 
   Operating profit is **not** gross margin and **not** statutory net profit.
 - **Evidence:** **HYPOTHETICAL EXAMPLE** · Confidence: **Not assessed**. These are website evidence/meta labels, not product capabilities (§3).
-- **Decision question:** **What would you investigate on Field 31 before changing the plan?** It is a question to the farmer, not a PROFIT recommendation; the reference has no recommendation feature. Adapted from `docs/experiments/field-economics-motion-test-v1.md`.
-- **Source line:** **Illustrative source: farmer-provided field records · one season**. This uses the Blueprint §8 provenance category "Farmer-provided", matching user-entered inputs in the reference. It implies no machinery or other integrations, and it is labelled illustrative because the numbers come from no records.
-- **Provenance of the numbers:**
-  - All values are AI-drafted placeholders, chosen only to be internally consistent: €738/ha at 4.1 t/ha implies about €180/t barley.
-  - They are **not** regional facts, customer data or PROFIT outputs, and they need D6 review.
-  - In WWW-000 every value is *defined* as operating profit per ha. Field 24's €637/ha reuses the motion-protocol number only as a number. That does **not** establish what the motion protocol's "Margin €637/ha" represents; WWW-004 must revalidate it (see that protocol).
-- **Linked values:** these appear more than once and must be edited together: `Field 31 · Barley · 18.4 ha` and `−€96/ha` (H1/H2/H3); `4.1 t/ha`, `€738/ha` and `€834/ha` (H2/H3).
+- **Decision question:** **What would you investigate on Field 31 before changing the plan?** It is a question to the farmer, not a PROFIT recommendation; the reference has no recommendation feature.
+- **Source line:** **Illustrative source: statistics-calibrated synthetic field records · one season**.
+- **Calibration:** the scenario uses Finnish official-statistics anchors for 2025 wheat yields and producer price plus a broad 2024 cereal-farm cost-scale check. These sources calibrate plausibility only; they do not make the synthetic field records observed farm data.
+- **Field 31 synthetic formula inputs:** 3.7 t/ha × €207/t = €765.90/ha revenue; €490/ha synthetic variable costs + €345/ha synthetic allocated fixed costs = €835/ha operating costs; operating profit = −€69.10/ha.
+- **Field 24 and Field 12:** only operating-profit summary values are shown in the controlled stimulus. Their calibration logic is documented in the surrogate-validation note.
+- **Human validation remains open:** statistical calibration reduces plausibility risk but does not close D6 terminology/domain review or any farmer-comprehension gate.
+- **Linked values:** these appear more than once and must be edited together: `Field 31 · Wheat · 18.4 ha` and `−€69/ha` (H1/H2/H3); `3.7 t/ha`, `€766/ha` and `€835/ha` (H2/H3).
 
 ### 4.4 D4 product-truth reference and v2 check
 
