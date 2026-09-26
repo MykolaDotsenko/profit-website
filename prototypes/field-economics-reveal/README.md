@@ -16,6 +16,8 @@ Do not use this prototype as evidence that motion improves comprehension. The ca
 
 The prototype intentionally uses an abstract agricultural placeholder. Production must use approved real farm photography or clearly illustrative material.
 
+The displayed economic value is a statistics-calibrated synthetic example, not customer data. Calibration and limitations are documented in `docs/experiments/www-000-statistical-surrogate-v1.md`.
+
 ## What to evaluate
 
 - Does the sequence communicate farm → data → economics?
