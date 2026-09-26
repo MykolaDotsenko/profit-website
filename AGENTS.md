@@ -15,17 +15,23 @@ Before making a material change, read only the minimum context needed, in this o
 
 Do not load every research file by default.
 
-## 2. Source precedence
+## 2. Authority and precedence
 
-If documents disagree, use this order:
+Use authority by topic rather than treating every file as one flat hierarchy.
 
+### AI workflow / process rules
 1. explicit current user instruction
 2. `AGENTS.md`
-3. `docs/website-blueprint-v1.md`
-4. `docs/triple-check-audit-2026-09-26.md`
-5. `docs/website-strategy.md`
-6. `docs/ai/context.yaml` as a compact derived summary
-7. research/supporting documents
+
+### Product, content, design and implementation decisions
+1. explicit current user instruction
+2. `docs/website-blueprint-v1.md`
+3. `docs/triple-check-audit-2026-09-26.md` for verified corrections not yet reflected elsewhere
+4. `docs/website-strategy.md`
+5. `docs/ai/context.yaml` as a compact derived summary
+6. research/supporting documents
+
+The product/design summaries inside `AGENTS.md` exist to help agents work safely; they are derived constraints, not a replacement for the Blueprint. If a material product decision in `AGENTS.md` becomes stale, the canonical Blueprint wins and `AGENTS.md` should be updated.
 
 Research files provide evidence and rationale. They do not silently override canonical implementation decisions.
 
