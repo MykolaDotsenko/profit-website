@@ -7,10 +7,14 @@ import type { HeroVariantId } from '../content/types';
 import { assertReleaseConfiguration } from './release';
 
 /**
- * Default hero: H2 v2, the control direction in its product-truth-safe form. It is shown for
- * development only and is not a test winner. WWW-000 decides; see docs/experiments/hero-message-test-v1.md.
+ * Provisional development default: H3 v2.
+ *
+ * A statistics/product-truth surrogate audit found H3 has the lowest current claim-risk and the
+ * strongest semantic alignment with the documented Field Profitability boundary. This is NOT
+ * farmer evidence and NOT a test winner. H1/H2/H3 remain WWW-000 hypotheses.
+ * See docs/experiments/www-000-statistical-surrogate-v1.md.
  */
-const DEFAULT_HERO: HeroVariantId = 'h2';
+const DEFAULT_HERO: HeroVariantId = 'h3';
 const pilotFormEndpoint = PILOT_FORM_ENDPOINT ?? null;
 
 assertReleaseConfiguration({
