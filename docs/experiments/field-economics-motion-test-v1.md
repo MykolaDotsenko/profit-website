@@ -45,16 +45,16 @@ Use only as contextual/source information:
 
 - Nitrogen: **164 kg/ha**
 - Rainfall: **421 mm**
-- Yield: **6.4 t/ha**
+- Yield: **5.1 t/ha**
 
 Do **not** imply that any one of these factors caused the economic result.
 
 ### Economic interpretation
 
-**€637 / ha**  
-**Margin**
+**€221 / ha**  
+**Operating profit**
 
-> **Revalidation required before WWW-004 starts (recorded 2026-09-26):** "Margin" is generic. Revalidate this value against the Field Profitability product-truth boundary (Blueprint §2.2), where gross margin, operating profit / ha and operating margin % are distinct metrics. Relabel it only once the number's calculation provenance establishes what it represents. Do not relabel it silently.
+This is a **statistics-calibrated synthetic value**, aligned with the current Field Profitability metric definition. Its calibration is documented in `docs/experiments/www-000-statistical-surrogate-v1.md`. It remains hypothetical and is not customer evidence.
 
 ### Evidence
 
@@ -98,7 +98,7 @@ A participant should be able to identify without animation:
 
 - which field/context is being discussed;
 - what the operational/data values represent;
-- what €637/ha means;
+- what €221/ha means;
 - that the example is hypothetical;
 - that confidence has not been assessed;
 - what they would investigate/do next.
@@ -218,7 +218,7 @@ For Motion B:
 ### Primary questions
 
 1. **What is this showing you?**
-2. **What does €637/ha mean?**
+2. **What does €221/ha mean?**
 3. **What do the nitrogen, rainfall and yield values represent?**
 4. **How certain should you be about this result?**
 5. **Is this real observed/verified customer value or something else?**
@@ -272,7 +272,7 @@ Motion that forces the user to wait for meaning has a cost.
 
 Participant can explain substantially:
 
-**This is a specific field/context. PROFIT is showing source/context data, an economic interpretation of €637/ha margin, that it is only a hypothetical example with confidence not assessed, and that I should investigate/review before changing a decision.**
+**This is a specific field/context. PROFIT is showing source/context data, an economic interpretation of €221/ha margin, that it is only a hypothetical example with confidence not assessed, and that I should investigate/review before changing a decision.**
 
 ### CONCERN
 
@@ -286,7 +286,7 @@ Participant understands economics but:
 
 Participant concludes:
 - one displayed factor definitely caused the margin;
-- €637/ha is observed/verified customer value;
+- €221/ha is observed/verified customer value;
 - the animation itself is the main takeaway;
 - this is primarily a satellite/visualization demo rather than decision support.
 
@@ -395,7 +395,7 @@ Kill Motion B or reduce it to a simpler cue if any material pattern occurs:
 - users remember movement more strongly than economic meaning;
 - motion increases unsupported causal interpretation;
 - evidence/confidence recall is worse;
-- users read €637/ha before understanding HYPOTHETICAL EXAMPLE / Confidence: Not assessed;
+- users read €221/ha before understanding HYPOTHETICAL EXAMPLE / Confidence: Not assessed;
 - mobile is materially weaker;
 - reduced-motion loses information;
 - motion delays access to the decision/CTA;
