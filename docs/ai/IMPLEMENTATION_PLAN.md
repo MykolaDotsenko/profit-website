@@ -143,18 +143,46 @@ Acceptance:
 
 Depends on: WWW-001.
 
-### WWW-004 — Signature motion validation
+### WWW-004 — Field → Economics Static vs Motion validation
 
-Use the existing Field → Economics Reveal prototype **only after independent art-direction divergence exists**, so the current prototype does not become the default visual anchor prematurely.
+Execution source:
+`docs/experiments/field-economics-motion-test-v1.md`
+
+Status:
+**BLOCKED until WWW-002 produces a surviving art-direction base or sufficiently narrow survivor set.**
+
+Do not use the existing motion prototype as evidence that motion is valuable. It is implementation-feasibility evidence only.
+
+Compare:
+
+- Variant A — best complete static composition;
+- Variant B — the same composition with minimal explanatory motion.
+
+Required controlled content:
+- same farm image/context;
+- same field geometry;
+- same operational/data values;
+- same economic result;
+- **HYPOTHETICAL EXAMPLE**;
+- **Confidence: Not assessed**;
+- same decision question / CTA;
+- same art direction.
 
 Acceptance:
-- [ ] causal sequence is understandable;
+- [ ] static composition passes on its own before motion is tested;
+- [ ] information lineage is understandable;
+- [ ] no unsupported causal attribution is introduced by sequencing;
 - [ ] economic meaning remains dominant over the effect;
-- [ ] mobile composition is valid;
-- [ ] reduced-motion state is complete;
-- [ ] effect is removed/simplified if it does not improve comprehension enough to justify cost.
+- [ ] evidence/confidence are not delayed behind the number;
+- [ ] time-to-understanding is recorded;
+- [ ] recall and distraction are recorded;
+- [ ] ~390 px mobile task is valid;
+- [ ] reduced-motion state equals the complete static information state;
+- [ ] performance/runtime delta is documented;
+- [ ] no GSAP/runtime dependency in the first experiment;
+- [ ] effect is removed/simplified if it does not improve comprehension/recall enough to justify cost.
 
-Depends on: WWW-001.
+Depends on: WWW-002.
 
 ### WWW-005 — Production platform decision
 
