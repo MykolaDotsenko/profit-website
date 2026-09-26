@@ -246,7 +246,6 @@ def validate_art_direction_prototypes(errors: list[str]) -> None:
     controlled_needles = [
         "See operating profit by field — and what goes into it.",
         "Hypothetical",
-        "Confidence: Not assessed",
         "−€69",
         "3.7",
         "€207",
@@ -260,6 +259,9 @@ def validate_art_direction_prototypes(errors: list[str]) -> None:
         for needle in controlled_needles:
             if needle not in text:
                 fail(f"{rel}: missing controlled WWW-001 content: {needle!r}", errors)
+
+        if "Confidence" not in text or "Not assessed" not in text:
+            fail(f"{rel}: missing Confidence: Not assessed semantics", errors)
 
         lower = text.lower()
         if "ai-powered" in lower:
