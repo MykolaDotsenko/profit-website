@@ -1,7 +1,9 @@
 /**
- * Homepage copy. Section order follows the Build Pass 01 brief and Blueprint §5:
- * hero → product/economic proof → farmer problem → how it works → economic value/evidence →
- * Field Profitability → trust/farmer control → company → pilot CTA.
+ * Homepage copy. Section order follows docs/homepage-content-brief-v1.md and
+ * docs/homepage-copy-deck-v1.md:
+ * hero → 30-second summary → whole-farm scope → concrete proof → farmer problem →
+ * how it works → economic value/evidence → Field Profitability → trust → company → pilot CTA.
+ * Hero variants remain WWW-000 hypotheses and are intentionally not rewritten here.
  */
 import type { ContentGap, SectionIntro, Step, TextItem } from '../types';
 import {
@@ -18,7 +20,7 @@ import {
 
 export const home = {
   meta: {
-    description: 'PROFIT connects agricultural production reality with economic decision-making across crop, horticulture and livestock systems. Field Profitability is the first concrete product focus.',
+    description: 'PROFIT is being built to connect real agricultural production with the economics behind decisions — across crops, horticulture and livestock. Field Profitability is the first concrete product focus.',
   },
   hero: {
     primary: primaryCta,
@@ -39,21 +41,21 @@ export const home = {
   thirtySeconds: {
     title: 'PROFIT in 30 seconds',
     items: [
-      { title: 'For', text: 'Farmers and farm businesses across crop, horticulture and livestock production.' },
-      { title: 'The problem', text: 'The numbers behind a farm decision sit in different places, so its economics are hard to see before deciding.' },
-      { title: 'What PROFIT does', text: 'Connects what happens on the farm with what it means economically.' },
-      { title: 'First module', text: 'Field Profitability: operating profit, field by field. In development.' },
-      { title: 'The standard', text: 'Verified Economic Value: a value counts only when it can be evidenced.' },
-      { title: 'Next step', text: 'Join the pilot: five details, then a conversation.' },
+      { title: 'For', text: 'Farmers and farm businesses making production and cost decisions across crops, horticulture and livestock.' },
+      { title: 'The problem', text: 'Production, sales and cost records are fragmented. The economics behind a decision are often hard to see before acting.' },
+      { title: 'What PROFIT does', text: 'Turns recorded farm reality into explicit economic meaning — without taking the decision away from the farmer.' },
+      { title: 'First concrete focus', text: 'Field Profitability: operating economics, field by field. In development.' },
+      { title: 'The standard', text: 'Hypothetical is labelled hypothetical. Verified is reserved for value that meets the evidence and attribution standard.' },
+      { title: 'Next step', text: 'Join the pilot: five details, no farm records, then a conversation.' },
     ] satisfies TextItem[],
   },
   scope: {
     intro: {
       id: 'production-systems',
-      eyebrow: 'One company · different production systems',
-      title: 'Built around the economics of real agriculture',
+      eyebrow: 'One economic discipline · different production systems',
+      title: 'Different farms. Different production models. The same economic discipline.',
       lead:
-        'A field, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd do not share the same operating model. PROFIT is being built to keep the production reality specific while keeping the economic discipline consistent.',
+        'A hectare, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd are not interchangeable. PROFIT is being built to keep each production reality specific while making its economics explicit.',
     } satisfies SectionIntro,
     systems: productionSystems,
     note: productionScopeNote,
@@ -71,9 +73,9 @@ export const home = {
   example: {
     intro: {
       id: 'example',
-      eyebrow: 'Field Profitability · hypothetical example',
-      title: 'What field-level economics look like',
-      lead: 'An illustration of the view Field Profitability is designed to produce: each field’s revenue set against the costs allocated to it. The farm, the fields and the numbers are invented.',
+      eyebrow: 'Current first focus · hypothetical example',
+      title: 'See the economics behind a field — not just the result',
+      lead: 'Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This example is invented to show the method, not a customer result.',
     } satisfies SectionIntro,
     labels: {
       notScreenshot: 'Illustration, not a product screenshot.',
@@ -94,26 +96,27 @@ export const home = {
   problem: {
     intro: {
       id: 'questions',
-      eyebrow: 'The farmer’s questions',
-      title: 'The questions behind a season',
+      eyebrow: 'Start with the decision',
+      title: 'The hard part is rarely one missing number',
+      lead: 'A farm decision can depend on records created in different places, at different times and for different purposes.',
     } satisfies SectionIntro,
     questions: [
-      { question: 'Which fields actually make money?', answer: 'Field Profitability is designed to answer this.', covered: true },
+      { question: 'Which fields actually make money?', answer: 'Bring revenue and allocated costs into the same operating-profit view.', covered: true },
       {
         question: 'What does each field really cost once shared costs are allocated?',
-        answer: 'Field Profitability is designed to answer this.',
+        answer: 'Make variable and allocated fixed costs visible in the same definition.',
         covered: true,
       },
-      { question: 'At what price, or what yield, would a field break even?', answer: 'Field Profitability is designed to answer this.', covered: true },
+      { question: 'At what price, or what yield, would a field break even?', answer: 'Show the break-even point from the recorded economics.', covered: true },
       {
         question: 'What should change next season?',
-        answer: 'Your call. PROFIT shows the economics behind it; it does not decide for you.',
+        answer: 'That remains your call. PROFIT should make the economics and uncertainty easier to inspect before you decide.',
         covered: false,
       },
     ],
     hard: {
-      title: 'Why the answers are hard to see',
-      lead: 'The numbers behind one field’s economics are recorded in different places, at different times.',
+      title: 'Why the answer is hard to see',
+      lead: 'The records behind one economic question are often created for different purposes.',
       sources: [
         { title: 'Production', text: 'Yields and harvest records' },
         { title: 'Sales', text: 'Prices, contracts and invoices' },
@@ -122,7 +125,7 @@ export const home = {
         { title: 'Outside factors', text: 'Weather and markets' },
       ] satisfies TextItem[],
       conclusion:
-        'Bringing them together for one field means collecting, allocating and calculating before anything can be compared. Field Profitability starts with what sets a field’s operating economics: yield, price and the costs allocated to it.',
+        'The work is not collecting data for its own sake. It is bringing the right records together so the economic question can be inspected consistently.',
     },
   },
   how: {
@@ -130,7 +133,7 @@ export const home = {
       id: 'how-it-works',
       eyebrow: 'How PROFIT works',
       title: 'From farm records to an economic decision',
-      lead: 'Five steps. PROFIT does the arithmetic; the decision stays with you.',
+      lead: 'Five steps. Known economics stay explicit. The farmer keeps decision authority.',
     } satisfies SectionIntro,
     moduleLabel: 'In Field Profitability',
     steps: [
@@ -143,24 +146,24 @@ export const home = {
       {
         title: 'Economics',
         actor: 'profit',
-        text: 'Turn the records into economic meaning with fixed, repeatable formulas.',
+        text: 'Apply explicit definitions and repeatable formulas to turn records into economic meaning.',
         module: 'Revenue, operating costs, operating profit, per-hectare figures, break-even price and yield.',
       },
       {
         title: 'Decision',
         actor: 'you',
-        text: 'Decide with the economics in view. PROFIT does not make the call.',
+        text: 'Inspect the economics, assumptions and available evidence before deciding what to do.',
         module: 'Compare saved fields side by side before changing the plan.',
       },
       { title: 'Action', actor: 'you', text: 'The action happens on the farm, not in software.' },
       {
         title: 'Measurement',
         actor: 'both',
-        text: 'Record the outcome in the same terms, so the economic effect of a decision can be checked rather than assumed.',
+        text: 'Record the outcome in comparable terms so the economic effect can be checked rather than assumed.',
         module: 'The next season is recorded with the same definitions.',
       },
     ] satisfies Step[],
-    note: 'An outcome on its own does not show that a decision caused it. The evidence ladder below says what it takes.',
+    note: 'An outcome on its own does not prove that a decision caused it.',
     operatingPrinciplesTitle: 'Two rules behind the system',
     operatingPrinciples: [
       {
@@ -179,9 +182,9 @@ export const home = {
   value: {
     intro: {
       id: 'evidence',
-      eyebrow: 'Economic value and evidence',
-      title: 'A value counts only when it can be evidenced',
-      lead: 'Verified Economic Value (VEV) is the standard PROFIT holds itself to: the economic effect of a decision, shown with its evidence. We call a value verified only when the evidence and attribution standard is met.',
+      eyebrow: 'Economic value · evidence',
+      title: 'A value counts only when the evidence supports it',
+      lead: 'PROFIT separates what is hypothetical, modelled, observed, attributed and verified. The label should never outrun the evidence.',
     } satisfies SectionIntro,
     ladderTitle: 'The evidence ladder',
     currentLabel: 'This site today',
@@ -189,15 +192,16 @@ export const home = {
     confidenceText:
       'Assessed confidence reflects the data behind a value: how complete, consistent, fresh, traceable and representative it is.',
     assessedLabel: 'Assessed confidence',
-    notAssessedText: 'No assessment was made. It is not a confidence level. Every example on this site carries it.',
+    notAssessedText: 'No assessment was made. “Not assessed” is not a confidence level.',
     chainTitle: 'What a verified value has to show',
-    chainNote: 'Nothing on this site is labelled Verified.',
+    chainNote:
+      'PROFIT does not treat a forecast as a fact, a modelled benefit as an outcome, or an outcome as proof that PROFIT caused it. Nothing on this site is labelled Verified.',
     link: { label: 'Read the methodology', href: '/trust/#evidence' },
   },
   wedge: {
     intro: {
       id: 'field-profitability',
-      eyebrow: 'The first module',
+      eyebrow: 'Current first product',
       title: fieldProfitability.name,
       lead: `${fieldProfitability.summary} It is where PROFIT starts.`,
     } satisfies SectionIntro,
@@ -210,14 +214,14 @@ export const home = {
   control: {
     intro: {
       id: 'control',
-      eyebrow: 'Trust and farmer control',
-      title: 'What stays in your control',
+      eyebrow: 'Trust · farmer control',
+      title: 'The farm stays in control',
     } satisfies SectionIntro,
     principles: [
-      { title: 'Your permission, a stated purpose', text: 'Farm data is used only with your permission and for a purpose you can see.' },
-      { title: 'Your decision', text: 'PROFIT explains the numbers behind a decision. It does not make the decision.' },
-      { title: 'Labelled evidence', text: 'Every figure PROFIT publishes carries its evidence state. Low confidence is shown as low.' },
-      { title: 'No farm records to start', text: 'The pilot form asks for five details, and nothing about your yields, prices or costs.' },
+      { title: 'Permission + purpose', text: 'Farm data is used only with your permission and for a purpose you can see.' },
+      { title: 'Your decision', text: 'PROFIT explains the economics behind a decision. It does not make the decision for you.' },
+      { title: 'Evidence stays labelled', text: 'A weak evidence state or low confidence is not rounded up into certainty.' },
+      { title: 'No farm records to start', text: 'The pilot form asks for five contact/context details — not yields, prices or cost records.' },
     ] satisfies TextItem[],
     questionsTitle: 'Questions farmers ask first',
     questionIds: ['data-needed', 'accuracy', 'ownership', 'low-confidence'],
@@ -230,17 +234,17 @@ export const home = {
     intro: {
       id: 'company',
       eyebrow: 'Company',
-      title: 'Who is building PROFIT',
+      title: 'Build value. Prove it. Then scale it.',
     } satisfies SectionIntro,
     text: [
-      'PROFIT is building decision support for agricultural production systems — crops, horticulture, greenhouses and livestock — around one economic discipline.',
-      'It starts concrete with Field Profitability and labels what is a current product, what is still a direction, and what is not yet proven.',
+      'PROFIT is being built for agricultural production systems — crops, horticulture, greenhouses and livestock — around one economic discipline: make the economics explicit, keep uncertainty visible and measure what happened afterwards.',
+      'We start with one concrete product focus, Field Profitability, and separate what exists today from what is still a direction or hypothesis.',
     ],
     stillProvenTitle: 'Still being proven',
     stillProven: [
-      'That field-level operating economics help farmers make better-informed decisions.',
-      'That PROFIT can show economic value to the standard it sets itself.',
-      'What farmers need from a pilot to trust the numbers.',
+      'Decision value — whether field-level operating economics materially improve farmer decision-making.',
+      'Measurable value — whether PROFIT can demonstrate economic value to the evidence standard it sets itself.',
+      'Pilot fit — what farmers need from the process, data and explanations to trust the numbers.',
     ],
     teamGap: { owner: 'owner', text: 'Team: who is building PROFIT, their roles and relevant expertise.' } satisfies ContentGap,
     link: { label: 'About the company', href: '/company/' },
@@ -250,7 +254,7 @@ export const home = {
       id: 'join',
       eyebrow: 'Next step',
       title: 'Join the pilot',
-      lead: 'A short form, then a conversation. No farm records.',
+      lead: 'Five details. No farm records. Then a conversation about whether the first pilot fits your farm.',
     } satisfies SectionIntro,
     stepsTitle: 'What happens after you click',
     steps: pilotSteps,
