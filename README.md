@@ -28,6 +28,7 @@ The website must communicate:
 ## Documentation
 
 - [Website Strategy](docs/website-strategy.md)
+- [Website Blueprint v1](docs/website-blueprint-v1.md)
 - [Research Findings](docs/research-findings.md)
 - [Marketing Bestseller Findings](docs/marketing-bestseller-findings.md)
 - [Psychology Bestseller Findings](docs/psychology-bestseller-findings.md)
