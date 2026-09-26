@@ -2,7 +2,13 @@
 // and type stripping (no dependencies): `npm test`.
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { computeFieldEconomics, METRICS, roundMoney } from '../src/domain/economics.ts';
+import {
+  assertMetricDefinitionPublishable,
+  computeFieldEconomics,
+  METRICS,
+  roundMoney,
+} from '../src/domain/economics.ts';
+import { assertReleaseConfiguration } from '../src/config/release.ts';
 import { assertPublishable } from '../src/domain/evidence.ts';
 import { present } from '../src/domain/format.ts';
 
@@ -62,4 +68,32 @@ test('illustrative material can only be Hypothetical with Confidence: Not assess
   assert.throws(() => assertPublishable({ ...ok, evidence: 'verified' }, 't'));
   assert.throws(() => assertPublishable({ ...ok, confidence: 'high' }, 't'));
   assert.throws(() => assertPublishable({ ...ok, illustrative: false }, 't'));
+});
+
+
+test('public metric definitions must be explicitly confirmed', () => {
+  assert.equal(METRICS.break_even_price.status, 'confirmed');
+  assert.match(METRICS.break_even_price.source, /7d07345/);
+
+  const provisional = {
+    ...METRICS.break_even_price,
+    status: 'provisional' as const,
+    reviewNote: 'Needs product-owner confirmation.',
+  };
+  assert.throws(
+    () => assertMetricDefinitionPublishable(provisional, 'test'),
+    /provisional definition/,
+  );
+});
+
+test('release gate blocks indexable builds and form endpoints while launch blockers remain open', () => {
+  assert.doesNotThrow(() => assertReleaseConfiguration({ indexable: false, pilotFormEndpoint: null }));
+  assert.throws(
+    () => assertReleaseConfiguration({ indexable: true, pilotFormEndpoint: null }),
+    /Public release blocked/,
+  );
+  assert.throws(
+    () => assertReleaseConfiguration({ indexable: false, pilotFormEndpoint: 'https://example.test/pilot' }),
+    /Pilot form endpoint blocked/,
+  );
 });
