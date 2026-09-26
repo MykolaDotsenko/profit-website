@@ -28,6 +28,9 @@ REQUIRED_FILES = [
     "docs/decisions/0001-ai-development-documentation-architecture.md",
     ".github/ISSUE_TEMPLATE/ai-development-task.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    "src/config/release.ts",
+    "playwright.config.ts",
+    "tests/browser/site.spec.ts",
 ]
 
 LOCAL_LINK_ENTRYPOINTS = [
@@ -99,6 +102,17 @@ TEXT_INVARIANTS = {
         "Acceptance criteria",
         "Verification plan",
         "Integrity gate",
+    ],
+    "src/config/release.ts": [
+        "Public release blocked",
+        "Pilot form endpoint blocked",
+        "RELEASE_GATES",
+    ],
+    "tests/browser/site.spec.ts": [
+        "wcag22aa",
+        "390",
+        "1440",
+        "reduced-motion",
     ],
 }
 
