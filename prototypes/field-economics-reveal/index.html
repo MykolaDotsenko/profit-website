@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PROFIT — Field → Economics Reveal Prototype</title>
+<style>
+  :root {
+    color-scheme: light;
+    --canvas: #f2efe7;
+    --ink: #171914;
+    --muted: #65695f;
+    --line: color-mix(in srgb, var(--ink) 22%, transparent);
+    --panel: color-mix(in srgb, white 72%, var(--canvas));
+    --radius: 1.25rem;
+    --max: 76rem;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--canvas); color: var(--ink); }
+  body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { min-height: 100vh; }
+  .intro, .outro { max-width: var(--max); margin: 0 auto; padding: clamp(5rem, 10vw, 10rem) clamp(1rem, 4vw, 3rem); }
+  .eyebrow { letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; font-weight: 700; }
+  h1 { max-width: 13ch; margin: .65rem 0 1.2rem; font-size: clamp(3rem, 8vw, 7.5rem); line-height: .9; letter-spacing: -.055em; }
+  .intro p, .outro p { max-width: 54ch; font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.55; color: var(--muted); }
+
+  .story {
+    min-height: 230vh;
+    position: relative;
+  }
+
+  .stage {
+    position: sticky;
+    top: 0;
+    min-height: 100svh;
+    display: grid;
+    align-items: center;
+    overflow: clip;
+    padding: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .frame {
+    width: min(100%, var(--max));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(18rem, .75fr);
+    gap: clamp(1rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .farm {
+    position: relative;
+    min-height: min(72svh, 48rem);
+    border-radius: var(--radius);
+    overflow: clip;
+    background:
+      linear-gradient(115deg, rgba(255,255,255,.08), transparent 45%),
+      linear-gradient(160deg, #6c7956 0 18%, #899169 18% 36%, #535f43 36% 53%, #a19a68 53% 70%, #64704e 70%);
+    box-shadow: 0 1.5rem 4rem rgba(42, 46, 35, .12);
+  }
+
+  .farm::before,
+  .farm::after {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    opacity: .42;
+    transform: rotate(-14deg);
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0 34px,
+      rgba(245,241,221,.26) 34px 36px
+    );
+  }
+
+  .farm::after {
+    inset: 42% -10% -10% 25%;
+    opacity: .23;
+    transform: rotate(19deg);
+  }
+
+  .prototype-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 5;
+    padding: .45rem .65rem;
+    border: 1px solid rgba(255,255,255,.42);
+    border-radius: 999px;
+    background: rgba(23,25,20,.48);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: .66rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .field-svg { position: absolute; inset: 8%; width: 84%; height: 84%; z-index: 2; }
+  .field-path {
+    fill: rgba(242,239,231,.06);
+    stroke: rgba(255,255,255,.94);
+    stroke-width: 5;
+    vector-effect: non-scaling-stroke;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .data-point { opacity: 1; }
+  .data-point circle { fill: var(--canvas); stroke: var(--ink); stroke-width: 2; }
+  .data-point text {
+    fill: var(--canvas);
+    paint-order: stroke;
+    stroke: rgba(23,25,20,.72);
+    stroke-width: 5px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .metric-panel {
+    position: relative;
+    z-index: 4;
+    padding: clamp(1.4rem, 3vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+  }
+
+  .field-id { font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 750; }
+  .field-context { margin-top: .4rem; color: var(--muted); }
+  .metric { margin-top: clamp(3rem, 8vh, 7rem); }
+  .metric-value {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-size: clamp(3.7rem, 7.4vw, 7.8rem);
+    line-height: .82;
+    letter-spacing: -.065em;
+    white-space: nowrap;
+  }
+  .metric-unit { font-size: .22em; letter-spacing: -.01em; vertical-align: .1em; }
+  .metric-label { margin-top: .65rem; font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 650; }
+
+  .evidence {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .7rem;
+    margin-top: clamp(2rem, 6vh, 5rem);
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--line);
+  }
+  .evidence dt { color: var(--muted); font-size: .69rem; letter-spacing: .1em; text-transform: uppercase; }
+  .evidence dd { margin: .35rem 0 0; font-weight: 750; }
+  .note { margin-top: 1rem; font-size: .75rem; line-height: 1.45; color: var(--muted); }
+
+  @supports (animation-timeline: scroll()) {
+    .story { view-timeline-name: --profit-story; view-timeline-axis: block; }
+
+    .field-path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-field 1s linear both;
+      animation-timeline: --profit-story;
+      animation-range: entry 22% exit 54%;
+    }
+
+    .data-point {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: reveal-point 1s ease-out both;
+      animation-timeline: --profit-story;
+      animation-range: entry 44% exit 64%;
+    }
+
+    .metric-value,
+    .metric-label {
+      opacity: .34;
+      transform: translateY(.75rem);
+      animation: resolve-metric 1s cubic-bezier(.2,.8,.2,1) both;
+      animation-timeline: --profit-story;
+      animation-range: entry 56% exit 76%;
+    }
+
+    .evidence {
+      opacity: .22;
+      transform: translateY(.55rem);
+      animation: reveal-evidence 1s ease-out both;
+      animation-timeline: --profit-story;
+      animation-range: entry 70% exit 88%;
+    }
+
+    .farm {
+      animation: quiet-farm 1s linear both;
+      animation-timeline: --profit-story;
+      animation-range: entry 55% exit 92%;
+    }
+  }
+
+  @keyframes draw-field { to { stroke-dashoffset: 0; } }
+  @keyframes reveal-point { to { opacity: 1; transform: scale(1); } from { opacity: 0; transform: scale(.78); } }
+  @keyframes resolve-metric { to { opacity: 1; transform: translateY(0); } }
+  @keyframes reveal-evidence { to { opacity: 1; transform: translateY(0); } }
+  @keyframes quiet-farm { to { filter: saturate(.72) brightness(.82); } }
+
+  @media (max-width: 760px) {
+    .story { min-height: 190vh; }
+    .stage { align-items: start; padding-top: .8rem; }
+    .frame { grid-template-columns: 1fr; gap: .75rem; }
+    .farm { min-height: 52svh; }
+    .metric-panel { margin-top: -4.25rem; margin-inline: .65rem; }
+    .metric { margin-top: 2rem; }
+    .metric-value { font-size: clamp(3.5rem, 17vw, 6rem); }
+    .evidence { margin-top: 2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+    .field-path { stroke-dashoffset: 0 !important; }
+    .data-point, .metric-value, .metric-label, .evidence { opacity: 1 !important; transform: none !important; }
+    .farm { filter: none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="intro" aria-labelledby="prototype-title">
+    <div class="eyebrow">PROFIT · Motion prototype</div>
+    <h1 id="prototype-title">Field → Economics Reveal</h1>
+    <p>Scroll normally. This prototype tests whether field geometry, farm reality, economic typography and evidence language can become one recognisable PROFIT motion system.</p>
+  </section>
+
+  <section class="story" aria-label="Field economics transformation prototype">
+    <div class="stage">
+      <div class="frame">
+        <figure class="farm" aria-label="Illustrative agricultural field placeholder with field boundary and data points">
+          <div class="prototype-label">Prototype visual · replace with approved farm photography</div>
+          <svg class="field-svg" viewBox="0 0 1000 720" role="img" aria-labelledby="field-title field-desc">
+            <title id="field-title">Field 24 boundary and operational markers</title>
+            <desc id="field-desc">An illustrative field boundary with fertilizer, rainfall and yield markers.</desc>
+            <path class="field-path" pathLength="1" d="M180 132 L716 86 L864 244 L806 548 L548 650 L248 564 L112 350 Z" />
+            <g class="data-point" transform="translate(282 265)">
+              <circle r="15"></circle><text x="27" y="8">N 164 kg/ha</text>
+            </g>
+            <g class="data-point" transform="translate(612 198)">
+              <circle r="15"></circle><text x="27" y="8">Rain 421 mm</text>
+            </g>
+            <g class="data-point" transform="translate(560 474)">
+              <circle r="15"></circle><text x="27" y="8">Yield 6.4 t/ha</text>
+            </g>
+          </svg>
+        </figure>
+
+        <aside class="metric-panel" aria-label="Illustrative field economics">
+          <div class="field-id">Field 24</div>
+          <div class="field-context">Wheat · 41.7 ha</div>
+
+          <div class="metric">
+            <div class="metric-value">€637<span class="metric-unit"> / ha</span></div>
+            <div class="metric-label">Margin</div>
+          </div>
+
+          <dl class="evidence">
+            <div>
+              <dt>Evidence</dt>
+              <dd>Observed</dd>
+            </div>
+            <div>
+              <dt>Confidence</dt>
+              <dd>High</dd>
+            </div>
+          </dl>
+          <div class="note">Illustrative prototype data only. This is not verified PROFIT customer value.</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="outro">
+    <div class="eyebrow">Prototype acceptance question</div>
+    <p>Does the motion make the economic transformation easier to understand — and does it feel specific to PROFIT rather than like a generic technology effect?</p>
+  </section>
+</main>
+</body>
+</html>
