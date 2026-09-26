@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WWW-001 A · Evidence-Led Editorial</title>
+  <style>
+    :root{
+      --paper:#f5f2ea;--ink:#171714;--muted:#6b675e;--line:#bbb4a6;--risk:#7a231c;--ok:#2f5a3b;
+      --serif:Georgia,"Times New Roman",serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}
+    a{color:inherit}.prototype-flag{padding:.55rem 1rem;border-bottom:1px solid var(--line);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+    .shell{max-width:1440px;margin:auto;padding:0 4vw 6rem}
+    .masthead{display:grid;grid-template-columns:1fr auto;align-items:end;padding:1.25rem 0;border-bottom:1px solid var(--ink)}
+    .brand{font:bold 1.05rem var(--sans);letter-spacing:.18em}.status{font-size:.82rem;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(20rem,.85fr);gap:5vw;padding:5.5rem 0 3rem;border-bottom:1px solid var(--ink)}
+    .kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 1.1rem}
+    h1{font:400 clamp(3.4rem,7vw,7.4rem)/.92 var(--serif);letter-spacing:-.055em;max-width:12ch;margin:0}
+    .lede{font:400 clamp(1.1rem,1.7vw,1.5rem)/1.45 var(--serif);max-width:39rem;margin:2rem 0}
+    .actions{display:flex;gap:.8rem;flex-wrap:wrap}.button{display:inline-block;padding:.85rem 1.1rem;border:1px solid var(--ink);text-decoration:none;font-weight:700}
+    .button.primary{background:var(--ink);color:var(--paper)}
+    .proof{border-left:1px solid var(--ink);padding-left:2rem;align-self:end}
+    .proof-head{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.65rem;margin-bottom:1rem}
+    .proof-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}.evidence{font-size:.72rem;color:var(--muted)}
+    .metric-list{list-style:none;padding:0;margin:0}.metric-row{display:grid;grid-template-columns:1fr auto;padding:1rem 0;border-bottom:1px solid var(--line);align-items:end}
+    .field small{display:block;color:var(--muted);margin-top:.2rem}.metric{font:400 2.5rem/1 var(--serif);font-variant-numeric:tabular-nums}.negative{color:var(--risk)}
+    .detail{display:grid;grid-template-columns:1fr 1fr;gap:5vw;padding:3.5rem 0;border-bottom:1px solid var(--ink)}
+    .detail h2,.section h2{font:400 clamp(2.1rem,4vw,4rem)/1 var(--serif);letter-spacing:-.04em;margin:0 0 1.2rem}
+    .definition{font:400 1.35rem/1.5 var(--serif);max-width:38rem}.ledger{margin:0;border-top:1px solid var(--ink)}
+    .ledger-row{display:grid;grid-template-columns:1.2fr .8fr;padding:.75rem 0;border-bottom:1px solid var(--line);font-size:.94rem}.ledger-row span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+    .documentary{min-height:24rem;border:1px solid var(--ink);display:grid;place-items:center;padding:2rem;background:linear-gradient(135deg,rgba(0,0,0,.025),rgba(0,0,0,.07))}
+    .documentary div{max-width:24rem;text-align:center}.documentary strong{display:block;font:400 2rem var(--serif);margin-bottom:.7rem}.documentary p{color:var(--muted);line-height:1.5}
+    .section{padding:3.5rem 0;border-bottom:1px solid var(--ink)}.section-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:5vw}
+    .question{font:400 clamp(1.9rem,3vw,3rem)/1.08 var(--serif);max-width:25ch;margin:.2rem 0 1.2rem}
+    .answer{max-width:42rem;color:var(--muted);line-height:1.6}.note{border-left:3px solid var(--ink);padding-left:1rem;margin-top:1.5rem;font-weight:700;max-width:42rem}
+    .lineage{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--ink);margin-top:2rem}.lineage div{padding:1.1rem;border-right:1px solid var(--line);min-height:7rem}.lineage div:last-child{border-right:0}.lineage b{display:block;margin-bottom:.6rem}.lineage span{font-size:.82rem;color:var(--muted);line-height:1.4}
+    .transfer{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink);margin-top:2rem}.transfer article{background:var(--paper);padding:1.2rem;min-height:10rem}.transfer h3{font:400 1.4rem var(--serif);margin:0 0 .8rem}.transfer p{font-size:.83rem;color:var(--muted);line-height:1.5;margin:0}
+    .footer{display:grid;grid-template-columns:1fr auto;gap:2rem;padding-top:2rem;color:var(--muted);font-size:.82rem}
+    @media(max-width:850px){
+      .shell{padding-inline:1rem}.hero,.detail,.section-grid{grid-template-columns:1fr}.hero{padding-top:3rem}.proof{border-left:0;border-top:1px solid var(--ink);padding:1.5rem 0 0}
+      .lineage{grid-template-columns:1fr}.lineage div{border-right:0;border-bottom:1px solid var(--line);min-height:auto}.lineage div:last-child{border-bottom:0}
+      .transfer{grid-template-columns:1fr 1fr}.footer{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){.transfer{grid-template-columns:1fr}h1{font-size:3.6rem}.metric{font-size:2rem}}
+  </style>
+</head>
+<body>
+  <div class="prototype-flag">Internal prototype · A — Evidence-Led Editorial · not product UI</div>
+  <main class="shell">
+    <header class="masthead">
+      <div class="brand">PROFIT</div>
+      <div class="status">Field Profitability · In development</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="kicker">H3 · provisional message · statistics-calibrated synthetic proof</p>
+        <h1>See operating profit by field — and what goes into it.</h1>
+        <p class="lede">PROFIT is being built to connect recorded farm reality with explicit economics, so the decision stays with the farmer and the assumptions stay visible.</p>
+        <div class="actions">
+          <a class="button primary" href="#pilot">Join the pilot</a>
+          <a class="button" href="#method">See the method</a>
+        </div>
+      </div>
+      <aside class="proof" aria-label="Hypothetical field economics">
+        <div class="proof-head">
+          <span class="proof-label">Hypothetical example</span>
+          <span class="evidence">Confidence: Not assessed</span>
+        </div>
+        <ul class="metric-list">
+          <li class="metric-row"><span class="field">Field 24<small>Wheat · 41.7 ha</small></span><span class="metric">€221/ha</span></li>
+          <li class="metric-row"><span class="field">Field 12<small>Wheat · 23.0 ha</small></span><span class="metric">€49/ha</span></li>
+          <li class="metric-row"><span class="field">Field 31<small>Wheat · 18.4 ha</small></span><span class="metric negative">−€69/ha</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="detail" id="method">
+      <div>
+        <p class="kicker">Economic definition before visual drama</p>
+        <h2>One field. One definition.</h2>
+        <p class="definition">Operating profit = revenue − variable costs − allocated fixed costs.</p>
+        <p class="answer">It is not gross margin and not statutory net profit. The example is synthetic, calibrated to Finnish official statistics for plausibility, and remains Hypothetical.</p>
+      </div>
+      <div class="ledger" aria-label="Field 31 economics">
+        <div class="ledger-row"><span>Yield</span><span>3.7 t/ha</span></div>
+        <div class="ledger-row"><span>Price</span><span>€207/t</span></div>
+        <div class="ledger-row"><span>Revenue</span><span>€766/ha</span></div>
+        <div class="ledger-row"><span>Variable costs</span><span>€490/ha</span></div>
+        <div class="ledger-row"><span>Allocated fixed costs</span><span>€345/ha</span></div>
+        <div class="ledger-row"><strong>Operating profit</strong><strong>−€69/ha</strong></div>
+        <div class="ledger-row"><span>Break-even price</span><span>€225.68/t</span></div>
+        <div class="ledger-row"><span>Break-even yield</span><span>4.03 t/ha</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div class="documentary">
+          <div>
+            <strong>Documentary farm image</strong>
+            <p>Controlled D8 asset pending. This placeholder reserves photographic weight without presenting generated imagery as documentary evidence.</p>
+          </div>
+        </div>
+        <div>
+          <p class="kicker">Decision ownership</p>
+          <h2>The economics are evidence. The decision is yours.</h2>
+          <p class="question">What would you investigate on Field 31 before changing the plan?</p>
+          <p class="answer">The visual hierarchy makes the negative result visible without turning it into a software recommendation. PROFIT should expose what drives the result, what is uncertain and what remains outside the current model.</p>
+          <p class="note">Nothing here is a customer result. Nothing is labelled Verified.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="kicker">Information lineage</p>
+      <h2>From recorded reality to an inspectable decision.</h2>
+      <div class="lineage">
+        <div><b>Production reality</b><span>Field, crop, season, actual records.</span></div>
+        <div><b>Data context</b><span>Yield, price and cost inputs with provenance.</span></div>
+        <div><b>Economics</b><span>Fixed formulas and explicit definitions.</span></div>
+        <div><b>Evidence</b><span>Hypothetical / modelled / observed / attributed / verified.</span></div>
+        <div><b>Decision</b><span>Farmer interprets and decides.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="kicker">Internal master-brand transfer diagnostic</p>
+      <h2>Same discipline. Different production unit.</h2>
+      <div class="transfer">
+        <article><h3>Crop</h3><p>Field / season → recorded inputs → field economics → evidence → decision.</p></article>
+        <article><h3>Horticulture / greenhouse</h3><p>Block or crop cycle → production context → domain economics → evidence → decision.</p></article>
+        <article><h3>Pig production</h3><p>Batch / production cycle → operational context → domain economics → evidence → decision.</p></article>
+        <article><h3>Dairy / livestock</h3><p>Cow, group or herd period → production context → domain economics → evidence → decision.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="pilot">
+      <p class="kicker">Next step</p>
+      <h2>Join the pilot.</h2>
+      <p class="lede">Five details. No farm records. Then a conversation about whether the first pilot fits your farm.</p>
+      <a class="button primary" href="#">Join the pilot</a>
+    </section>
+
+    <footer class="footer">
+      <span>A — Evidence-Led Editorial</span>
+      <span>Primary risk: report / consultancy / finance misclassification</span>
+    </footer>
+  </main>
+</body>
+</html>
