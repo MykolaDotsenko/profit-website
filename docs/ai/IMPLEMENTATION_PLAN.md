@@ -36,6 +36,34 @@ If a material production-platform decision is made, create an ADR.
 
 ## W0 — Validation and decision evidence
 
+### WWW-000 — Controlled hero message validation
+
+Outcome:
+Eliminate weak hero positioning before visual art direction becomes a confounding variable.
+
+Test the three canonical Blueprint directions:
+- H1 — Economic visibility / farmer job first
+- H2 — Decision intelligence / current control
+- H3 — Field Profitability / product proof first
+
+Constraints:
+- same neutral/static scaffold;
+- same CTA architecture;
+- equivalent proof-object weight;
+- no motion;
+- no different art direction per copy variant;
+- target the current field/crop profitability farmer cohort.
+
+Acceptance:
+- [ ] 9–12 target-farmer first round completed or a documented reason for a smaller exploratory round;
+- [ ] open recall captured before comparison/preference questions;
+- [ ] material misclassifications and trust failures recorded;
+- [ ] Blueprint kill criteria applied;
+- [ ] surviving direction(s) and remaining uncertainty documented;
+- [ ] no statistical-winner claim from a small qualitative sample.
+
+Depends on: none.
+
 ### WWW-001 — Three art-direction prototypes
 
 Outcome:
@@ -48,7 +76,8 @@ Create three genuinely different concept territories:
 Constraints:
 - not color variants;
 - must work without motion;
-- use the same core message/proof so visual direction can be compared;
+- use the same surviving/controlled hero message and proof content across all visual directions so art direction can be compared;
+- do not combine H1/H2/H3 with A/B/C as nine uncontrolled concepts;
 - illustrative values must be labelled correctly.
 
 Acceptance:
