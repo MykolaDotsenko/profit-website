@@ -748,296 +748,764 @@ Do not run statistically weak experiments for appearance of rigor.
 
 Do not use different copy + different art direction + different motion in one early experiment. That produces a polished concept but weak causal learning.
 
-## 19. Art-direction decision: farmer comprehension + trust
+## 19. Art-direction decision: farmer comprehension, calibrated trust + long-term distinctiveness
+
+### Decision status
+
+No production winner is selected.
 
 Current research prior:
 
-**A — Evidence-Led Editorial** currently has the strongest theoretical fit with PROFIT's doctrine.
+- **A — Evidence-Led Editorial** currently has the strongest theoretical fit with farmer comprehension + calibrated trust.
+- **B — Farm Operations Layer** is the strongest challenger because it may explain the farm → data mechanism more immediately.
+- **C — Economic Control Room** remains a useful counterfactual because it may communicate product seriousness, but carries the highest accounting/ERP confusion risk.
 
-This is **not a test winner and not a locked production decision**. During prototype production and farmer testing, A/B/C must receive equivalent fidelity, content completeness and implementation effort. Participants should not be told which direction is the internal research prior.
+This ordering is **not farmer evidence** and must not affect prototype fidelity, participant framing or test effort.
 
-Why it leads:
-- PROFIT needs explanation and trust before spectacle;
-- the farmer must see real agricultural context, not abstract technology;
-- economic typography and evidence/confidence semantics can carry brand distinction;
-- product UI/proof can be integrated without turning the hero into a dashboard;
-- a light/editorial system gives uncertainty, assumptions and provenance enough visual room;
-- it best matches the canonical doctrine: **Real agriculture. Financial precision. Editorial clarity. Quiet technology.**
+### What current external research materially changes
 
-External 2026 design/masterclass research reinforces, but does not prove, this choice:
-- D&AD brand-identity training emphasizes analysis, core identity components and translating strategy into an identity system;
-- D&AD art-direction training emphasizes visual balance, composition, tone and appropriate execution;
-- D&AD typography training explicitly treats typography as a tool for trust and audience connection;
-- Figma Config 2026 demonstrates a useful tension between structured/programmatic systems and human/idiosyncratic expression;
-- Figma's Spendesk case reports that a photography-based identity was adopted to make the visual tone more authentic/relatable and communicate product value more clearly.
+Relevant current material converges on five durable implications:
 
-These sources inform the candidate system. **Farmer evidence decides the direction.**
+1. **Identity is a system, not one hero composition.**  
+   D&AD's brand-identity material emphasises breaking identity into core components and making strategy real through an identity system.
 
-**Research stop — 2026-09-26:** broad art-direction research is closed for this decision cycle because additional sources are no longer materially changing the candidate set, leading hypothesis, or identified failure modes. The next source of evidence is the controlled farmer experiment in `docs/experiments/art-direction-farmer-test-v1.md`.
+2. **Art direction is judged through balance, composition, tone and appropriate execution.**  
+   This means A/B/C must be compared as coherent visual grammars, not moodboards.
 
-Re-open external research only to explain a specific observed failure, resolve a material open hypothesis, or verify a time-sensitive constraint.
+3. **Human irregularity can coexist with programmatic structure.**  
+   Figma Config 2026 is a useful example of a finite, structured system producing varied, recognisable outputs while deliberately retaining imperfect/idiosyncratic expression.
 
-### A — Evidence-Led Editorial — leading hypothesis
+4. **Flexible identity requires constants + variables, not one repeated template.**  
+   Current flexible-visual-system material reinforces parameters, rules and ranges: outputs may differ substantially while staying recognisable.
 
-Core idea:
-**A serious agricultural-economic publication that happens to contain a real decision product.**
+5. **Category membership and distinctiveness are separate jobs.**  
+   Brand-semiotics practice treats brands as bundles of signs/codes. PROFIT must show enough agriculture to be understood while building difference through the relationship between agriculture, economics, evidence and decision support.
 
-Visual grammar:
+Future London Academy's documented Branding Now rebrand adds one process safeguard that is directly relevant:
+- create genuinely different concepts first;
+- temporarily reduce outside-reference influence during exploration;
+- deconstruct each surviving direction into typography, colour, graphics and other components;
+- then test the system across assets/media.
+
+These sources refine the experiments below. They do not select the winner.
+
+**Research stop — 2026-09-26:** broad art-direction research is closed for this decision cycle. Re-open only if controlled farmer testing exposes a failure not explained by the current model.
+
+---
+
+### Controlled comparison requirements
+
+A/B/C must receive:
+
+- the same surviving hero message from WWW-000;
+- the same underlying economic scenario;
+- the same economic values;
+- identical evidence/confidence semantics;
+- identical provenance/assumption information;
+- equivalent CTA hierarchy;
+- equivalent content completeness;
+- equivalent design/prototyping effort;
+- static-first implementation;
+- equivalent mobile fidelity.
+
+Do not let:
+- A receive better photography;
+- B receive stronger motion;
+- C receive more complete product UI;
+- one direction receive more time/polish.
+
+The test is invalid if execution quality becomes the main difference.
+
+---
+
+### A — Evidence-Led Editorial
+
+#### Core visual idea
+
+**A farmer-facing economic evidence system with editorial clarity.**
+
+Not:
+"a magazine that happens to mention software."
+
+The editorial grammar exists to make:
+- farmer problem;
+- economic meaning;
+- evidence;
+- uncertainty;
+- product action;
+
+easy to scan and inspect.
+
+#### Visual grammar
+
 - light/warm neutral canvas;
-- strong editorial hierarchy;
-- large, calm economic numerals;
-- documentary/real farm photography;
-- product UI used as an exhibit rather than a dashboard wall;
-- evidence/confidence/provenance labels visible but secondary;
-- restrained field geometry as a linking device;
+- strong typographic hierarchy;
+- economic numerals used as anchors, not decoration;
+- real/documentary agricultural photography;
+- one clear product/economic proof object at a time;
+- restrained field geometry linking physical context to data;
+- evidence/confidence/provenance labels integrated into the information hierarchy;
 - asymmetry and whitespace used to direct attention;
-- minimal decorative effects.
+- controlled human texture/imperfection where it comes from real photography/materials, not fake "handmade" decoration;
+- minimal decorative motion.
 
-First-screen behavior:
-- farmer and economic job read before brand/category jargon;
-- one agricultural proof image/artifact;
-- one product/economic proof object;
-- one clear CTA path.
+#### Farmer comprehension mechanism
 
-Trust mechanism:
-- documentary truth;
-- visible assumptions/evidence;
-- legible typography;
-- calm visual pacing;
-- product and brand share the same design grammar.
+**Editorial hierarchy reduces decoding cost.**
 
-Primary risks:
-- can drift into consultancy/report/magazine aesthetics;
-- too much whitespace can hide product substance;
-- may feel premium but insufficiently operational.
+Desired scan path:
 
-Kill A if:
-- farmers repeatedly classify PROFIT as consulting/research rather than software/decision support;
-- the product proof is not noticed in the first exposure;
-- editorial restraint makes the product feel abstract or unfinished;
-- comprehension is materially weaker than B while trust is not materially stronger.
+**farm context → economic question/result → evidence/confidence → next action**
+
+The farmer should not need to parse a dashboard before understanding the point.
+
+#### Trust mechanism
+
+- documentary agricultural truth;
+- calm typography;
+- visible assumptions;
+- inspectable evidence/confidence;
+- negative/uncertain values receive the same visual dignity as positive ones;
+- product proof is shown without overclaiming maturity.
+
+#### Distinctive potential
+
+Potentially strong because the combination of:
+- agriculture;
+- economic typography;
+- evidence semantics;
+- calm editorial composition;
+
+is more ownable than any one cue alone.
+
+Risk:
+editorial layouts themselves are common and therefore not distinctive.
+
+A only builds long-term distinctiveness if the **same underlying grammar** appears in product UI, reports, trust surfaces and future modules.
+
+#### Category-confusion risk
+
+- consulting;
+- research/reporting;
+- agricultural publication;
+- premium corporate storytelling with insufficient product substance.
+
+#### AI-sameness risk
+
+Medium.
+
+AI can easily generate:
+- generic "premium editorial SaaS";
+- oversized serif/sans headlines;
+- lots of whitespace;
+- polished stock agriculture.
+
+Anti-sameness safeguard:
+real farm material + real product proof + evidence grammar must determine the composition.
+
+#### Mobile behavior
+
+Potentially strongest of the three if hierarchy is genuine.
+
+At ~390 px, preserve:
+1. economic job;
+2. one metric/result;
+3. evidence/confidence;
+4. product proof;
+5. CTA.
+
+Do not preserve desktop whitespace ratios mechanically.
+
+#### Evidence-display quality
+
+Research prior:
+**high potential**.
+
+A gives evidence, confidence, assumptions and provenance explicit visual space without requiring dense UI.
+
+Risk:
+labels may become elegant but visually subordinate enough to be missed.
+
+#### Failure mode
+
+**Beautiful but abstract.**
+
+The site feels intelligent/credible, but the farmer cannot explain:
+- what the software actually does;
+- what input/output relationship exists;
+- what happens after clicking.
+
+#### Farmer-test focus
+
+Ask specifically:
+- Is this software, consulting or reporting?
+- What exact economic decision could you make?
+- What product evidence did you notice?
+- Which evidence/confidence cue changed your trust?
+- What data do you think PROFIT used?
+
+#### Kill criteria
+
+Kill or materially redesign A if:
+- consulting/report/publication classification repeats;
+- product proof is not noticed;
+- farmers understand the business idea but not the product mechanism;
+- evidence labels are aesthetically present but functionally missed;
+- B materially improves correct product comprehension without a calibrated-trust penalty.
+
+---
 
 ### B — Farm Operations Layer
 
-Core idea:
-**Start with the real field/farm, then reveal the operational/data/economic layer on top of it.**
+#### Core visual idea
 
-Visual grammar:
-- immersive real farm imagery;
-- field boundaries and spatial geometry;
-- restrained overlays tied to real data provenance;
-- maps only where they answer a decision question;
-- progressive reveal from farm reality → data → economics;
-- more spatial composition, less editorial page feeling.
+**Start from physical farm reality, reveal the operational/data layer, then resolve into economics.**
 
-First-screen behavior:
-- real farm reality dominates;
-- data/field layer immediately explains where PROFIT gets context;
-- economics resolves the visual, rather than being the opening aesthetic.
+The farm is not a background.
+It is the source context for the economic interpretation.
 
-Trust mechanism:
-- concrete agricultural context;
-- visible relationship between field and data;
-- transparency about source/provenance;
-- strong fit with the signature Field → Economics Reveal.
+#### Visual grammar
 
-Primary risks:
-- may be misread as satellite/agronomy/precision-ag platform;
-- generic aerial-field + overlay treatment is saturated in agritech;
-- visual complexity can reduce headline/economic comprehension;
-- motion can become a crutch.
+- immersive but truthful agricultural photography;
+- real field/parcel geometry;
+- boundaries, routes or zones only when meaningful;
+- data overlays linked to provenance;
+- economic result visually resolves the composition;
+- spatial relationships carry more meaning than editorial text blocks;
+- minimal generic maps/heatmaps;
+- motion optional and secondary to static comprehension.
 
-Kill B if:
-- farmers repeatedly describe PROFIT as mapping/satellite/agronomy software;
-- overlays attract more recall than the economic job;
-- static comprehension drops materially without motion;
-- provenance/meaning of overlays is unclear;
-- trust falls because the system looks “magical” rather than inspectable.
+#### Farmer comprehension mechanism
+
+**Concrete physical context reduces abstraction.**
+
+Desired scan path:
+
+**this field/operation → this data/source → this economic meaning → this decision**
+
+This may outperform A when the farmer needs to understand *where the number came from*.
+
+#### Trust mechanism
+
+- visible connection between real field and source data;
+- provenance embedded spatially;
+- fewer unexplained "AI magic" transitions;
+- farm detail acts as reality anchor.
+
+#### Distinctive potential
+
+Mixed.
+
+Field geometry can support a recognisable PROFIT system, but:
+- aerial imagery;
+- parcel outlines;
+- satellite overlays;
+- maps;
+
+are strong **category-membership codes**, not automatically distinctive assets.
+
+Distinctiveness must come from what the geometry *does*:
+**connecting farm operation to economic interpretation/evidence**.
+
+#### Category-confusion risk
+
+Highest risk:
+- satellite platform;
+- mapping;
+- agronomy;
+- crop-monitoring;
+- precision-ag tool.
+
+#### AI-sameness risk
+
+High.
+
+Generic agritech models naturally converge on:
+- drone/aerial field;
+- green overlays;
+- heatmaps;
+- glowing boundaries.
+
+B therefore requires the strictest category-collision test.
+
+#### Mobile behavior
+
+Riskier than A.
+
+Spatial relationships may collapse at narrow widths.
+
+Mobile must simplify:
+- one field/operation;
+- one data/provenance layer;
+- one economic result;
+- one action.
+
+Do not miniaturise a desktop map.
+
+#### Evidence-display quality
+
+Potentially strong for provenance:
+**where did this number come from?**
+
+Potentially weaker for:
+- uncertainty;
+- assumptions;
+- evidence-state semantics;
+
+if overlays dominate attention.
+
+#### Failure mode
+
+**Mechanism understood, category misunderstood.**
+
+Farmer sees:
+"this is about fields/data/maps"
+but does not understand that PROFIT's core job is economic decision support.
+
+#### Farmer-test focus
+
+Ask:
+- What kind of product is this?
+- What do the overlays mean?
+- Where did the economic number come from?
+- What decision would you make?
+- Is this mainly agronomy/mapping or economics? Why?
+
+#### Kill criteria
+
+Kill or materially redesign B if:
+- satellite/agronomy/mapping classification repeats;
+- overlays are recalled more strongly than economic meaning;
+- participants cannot explain provenance correctly;
+- static version fails without animation;
+- mobile loses the causal sequence;
+- A achieves similar mechanism comprehension with materially less category confusion.
+
+---
 
 ### C — Economic Control Room
 
-Core idea:
-**Treat the farm as an economic operating system: precise, dense, decision-oriented.**
+#### Core visual idea
 
-Visual grammar:
-- graphite/dark neutral environments;
-- strong numeric hierarchy;
-- high-information but disciplined metric clusters;
-- compact operational/economic fragments;
-- minimal photography, used as grounding evidence;
-- strong tabular/data-grid character;
-- product UI and marketing site nearly converge.
+**The farm as an economic operating system.**
 
-First-screen behavior:
-- economics and decision state dominate;
-- product maturity/technical seriousness is immediately signaled;
-- farm context appears as supporting evidence.
+The visual language prioritises:
+- current state;
+- variance;
+- economics;
+- evidence;
+- action.
 
-Trust mechanism:
-- precision;
+#### Visual grammar
+
+- graphite/dark or highly neutral product-like surfaces;
+- strong tabular numeric hierarchy;
+- compact metric clusters;
+- economic states and comparisons;
+- explicit evidence/confidence;
+- real farm photography as grounding context rather than hero material;
+- product UI and marketing visual language closely aligned.
+
+#### Farmer comprehension mechanism
+
+**Precision and product concreteness signal operational utility.**
+
+Desired scan path:
+
+**economic state → driver/context → evidence → decision**
+
+This direction assumes the farmer is willing to enter a higher-information-density interface immediately.
+
+#### Trust mechanism
+
 - explicit numbers;
-- visible state/evidence labels;
-- strong product reality;
-- low decorative ambiguity.
+- product-like specificity;
+- stable state labels;
+- low decorative ambiguity;
+- visible evidence and assumptions.
 
-Primary risks:
-- can feel like finance/accounting/ERP rather than farmer decision support;
-- may intimidate less digitally confident farmers;
-- dark/dense presentation can reduce warmth and readability;
-- can overstate product maturity or precision.
+#### Distinctive potential
 
-Kill C if:
-- farmers repeatedly classify PROFIT as accounting/ERP/finance software;
-- task comprehension requires reading dense UI rather than seeing the farmer job;
-- credibility rises only among technical/investor profiles while farmer trust falls;
-- less digitally confident farmers show materially more hesitation/error;
-- dark density obscures evidence/uncertainty rather than clarifying it.
+Potentially strong inside the product if the economic grammar becomes recognisable.
 
-### Keep the three directions independent during testing
+But dark control-room aesthetics are common across:
+- fintech;
+- analytics;
+- logistics;
+- enterprise software.
 
-Do not create:
-- A with B's hero;
-- B with C's dashboard;
-- C with A's photography;
+Therefore dark density itself has almost no distinctive value.
 
-before the first controlled visual test.
+#### Category-confusion risk
 
-All three directions must use:
-- the same surviving hero message from WWW-000;
-- the same underlying product/economic scenario;
-- the same factual/evidence status;
-- equivalent CTA hierarchy;
-- no essential motion.
+- farm accounting;
+- ERP;
+- finance;
+- BI dashboard.
 
-After a direction wins on comprehension/trust, selected secondary devices from the other directions may be integrated deliberately.
+#### AI-sameness risk
 
-### Art-direction experiments
+High.
 
-#### Experiment AD-1 — 10-second comprehension + trust
+AI strongly defaults to:
+- dark dashboards;
+- glowing metrics;
+- dense cards;
+- "command center" aesthetics.
 
-Cohort:
-12–18 target farm decision-makers, analysed by meaningful segment if needed.
+C must avoid visual shorthand that communicates generic enterprise analytics instead of farm economics.
 
-Method:
-- same message and proof scenario across A/B/C;
-- randomized/counterbalanced first exposure;
-- static only;
-- 5–10 second exposure, then hide;
-- open recall before preference questions.
+#### Mobile behavior
 
-Primary observations:
-- correct farmer/product classification;
-- correct economic job;
-- correct next action;
-- whether product proof was noticed;
-- repeated misclassification;
-- initial credibility/trust language.
+Highest risk of the three.
 
-Do not ask “Which is prettiest?” as the decision question.
+Dense clusters must collapse into:
+- one question;
+- one dominant economic state;
+- one driver;
+- one evidence/confidence state;
+- one action.
 
-#### Experiment AD-2 — Evidence interpretation task
+If density is the identity, mobile will expose the weakness quickly.
 
-Show the same field-economics scenario in A/B/C, including:
-- one economic value;
-- one evidence state;
-- one confidence state;
-- one provenance/source cue;
-- one limitation/assumption.
+#### Evidence-display quality
+
+Potentially high when:
+- evidence/confidence are treated as first-class product states.
+
+Risk:
+precision aesthetics may make uncertain/modelled values feel more certain than they are.
+
+#### Failure mode
+
+**Looks operationally serious but becomes accounting/ERP and overstates certainty.**
+
+#### Farmer-test focus
 
 Ask:
-- What does this number mean?
-- Is it hypothetical/modelled/observed/attributed/verified?
-- How confident should you be?
-- What data/source produced it?
+- Is this farm decision support, accounting or ERP?
+- Which number matters and why?
+- How certain is it?
 - What would you do next?
+- Did the interface make you trust the number more than the evidence justified?
 
-Measure:
-- interpretation errors;
-- time to correct answer;
-- whether uncertainty is noticed;
-- whether the visual creates false precision.
+#### Kill criteria
 
-This experiment directly distinguishes **trust through transparency** from visual polish.
+Kill or materially redesign C if:
+- accounting/ERP/finance classification repeats;
+- participants need to read dense UI before understanding the farmer job;
+- less digitally confident farmers show materially more hesitation;
+- uncertain data feels falsely precise;
+- mobile task completion is materially worse than A/B;
+- product seriousness improves but farmer comprehension/trust does not.
 
-#### Experiment AD-3 — Product-reality / category-confusion test
+---
 
-After independent exposure, ask participants to classify the product from a neutral set such as:
+### Art-direction experiments that distinguish A/B/C
+
+#### AD-1 — 10-second farmer comprehension
+
+Cohort:
+12–18 target farm decision-makers.
+
+Static only.
+Randomized/counterbalanced order.
+
+After exposure, ask:
+1. What does PROFIT do?
+2. What farm/economic problem does it help with?
+3. What did you notice first?
+4. What would you do next?
+5. What kind of software is this?
+
+Primary evidence:
+- correct farmer-economic job;
+- correct category classification;
+- product proof recall;
+- CTA comprehension.
+
+#### AD-2 — Evidence interpretation / calibrated trust
+
+Same scenario in A/B/C:
+- one economic metric;
+- evidence state;
+- confidence state;
+- source/provenance;
+- assumption/limitation.
+
+Ask:
+- What exactly does this number mean?
+- Where did it come from?
+- How certain should you be?
+- What would you verify before acting?
+
+Primary evidence:
+- interpretation accuracy;
+- uncertainty noticed;
+- false-precision errors;
+- time to answer.
+
+#### AD-3 — Mechanism reconstruction
+
+Without showing the screen again, ask participant to reconstruct:
+
+**farm reality → data/source → economic interpretation → decision**
+
+This is the most direct test of whether the visual grammar explains PROFIT rather than merely looking credible.
+
+Expected strengths:
+- A: hierarchy/meaning;
+- B: physical-data causality;
+- C: economic state/action.
+
+#### AD-4 — Category-confusion diagnostic
+
+Neutral classifications:
 - farm decision-support;
 - accounting/finance;
 - agronomy/satellite/mapping;
-- generic AI/data platform;
-- consulting/reporting.
+- generic analytics/AI;
+- consulting/reporting;
+- other.
 
-Then ask what visual cue caused that classification.
+Then ask:
+**Which visual cue caused that classification?**
 
-This identifies whether:
-- A drifts into consulting/editorial;
-- B drifts into agronomy/satellite;
-- C drifts into accounting/ERP.
+Expected risks:
+- A → consulting/reporting;
+- B → agronomy/mapping;
+- C → accounting/ERP.
 
-#### Experiment AD-4 — Mobile farmer task
+#### AD-5 — Mobile task
 
-Repeat the same core scenario at ~390 px.
+At ~390 px identify:
+- key economic issue;
+- source/context;
+- evidence/confidence;
+- next action.
 
-Task:
-identify:
-- the key economic issue;
-- the evidence/confidence state;
-- the next action.
+Reject any grammar that depends on desktop space.
 
-Reject any direction that only works through desktop scale, wide overlays or dense dashboards.
+#### AD-6 — Bad-news / uncertainty trust
 
-#### Experiment AD-5 — Trust under bad news / uncertainty
-
-Use the same negative or low-confidence scenario in all directions:
+Use:
 - negative margin;
 - incomplete data;
-- Low or Insufficient evidence;
-- visible assumption.
+- Low / Insufficient evidence;
+- explicit assumption.
 
-Ask:
-- Does the interface make the bad/uncertain result feel credible?
-- What would you verify before acting?
-- Does anything feel hidden, exaggerated or sales-like?
+A trusted visual system must remain credible when the information is inconvenient or uncertain.
 
-A trustworthy system must remain convincing when it communicates uncertainty or an unfavorable result, not only when numbers are positive.
+#### AD-7 — Brand-system transfer test
 
-### Bias control for art-direction testing
+Apply A/B/C to the same four surfaces:
+1. homepage hero;
+2. Field Profitability product exhibit;
+3. evidence/trust panel;
+4. farmer PDF/report or summary card.
 
-The current theoretical preference for A must not influence prototype quality or participant exposure.
+Do not redesign each surface from scratch.
 
-Required controls:
-- equivalent design fidelity and content completeness across A/B/C;
-- the same factual/evidence scenario and CTA architecture;
-- randomized/counterbalanced exposure order;
-- participants are not told which direction the team currently prefers;
-- scoring/observation criteria are fixed before reviewing results;
-- if possible, the facilitator collecting first-impression responses should not frame one direction as preferred.
+Evaluate:
+- does one grammar remain coherent across all four?
+- which constants survive?
+- which variables can change?
+- does the system become repetitive?
+- does recognition depend only on logo/color?
 
-A direction does not win because it was easier to polish or more familiar to the team.
+This tests long-term brand distinctiveness potential better than a single hero comparison.
 
-### Art-direction selection rule
+---
 
-Primary objective:
-**farmer comprehension + calibrated trust.**
+### Candidate brand-code architecture
 
-Secondary objectives:
-- product truth;
-- correct category expectation;
-- distinctiveness;
-- scalability into product UI and future modules.
+Do not treat all candidate codes as equivalent "distinctive assets."
 
-Do not select by:
-- visual novelty alone;
-- investor preference;
-- animation impressiveness;
-- internal taste;
-- generic “premium” appearance.
+Current roles:
 
-Leading decision hypothesis:
-**A — Evidence-Led Editorial** should be used as the current control/base for deeper exploration because it best balances comprehension, human agricultural truth, economic precision and inspectable evidence.
+#### 1. Real agricultural photography
+Role:
+**category membership + documentary trust**
 
-Reconsider immediately if B materially improves farmer comprehension without category confusion, or if C materially improves trust/product understanding without accounting/ERP misclassification.
+Not distinctive by itself.
+
+Requirement:
+real, specific, operational agriculture; not stock "farmer with tablet."
+
+#### 2. Field geometry
+Role:
+**spatial/context bridge**
+
+It connects:
+physical farm → operational/data context.
+
+Not distinctive by itself because field geometry is common in agritech.
+
+Its value increases only when consistently linked to economic interpretation.
+
+#### 3. Economic typography
+Role:
+**economic salience + candidate memory code**
+
+Examples:
+- €/ha;
+- margin;
+- cost;
+- revenue;
+- delta.
+
+Potentially more ownable, but still requires recognition evidence.
+
+#### 4. Evidence / confidence language
+Role:
+**trust semantics**
+
+This is primarily a product/trust system, not decoration.
+
+It becomes a brand code only if repeated consistently and remembered by users.
+
+#### 5. Agriculture → data → economics composition
+Role:
+**core compositional grammar**
+
+This is not a single asset.
+
+It is the relationship that can unify:
+- photography;
+- geometry;
+- product UI;
+- numbers;
+- evidence.
+
+This currently has the strongest potential to become PROFIT's system-level signature because it expresses product truth rather than style alone.
+
+#### 6. Calm explanatory motion
+Role:
+**temporal grammar**
+
+Motion should reveal:
+cause;
+source;
+state change;
+decision consequence.
+
+It is supportive, not required for recognition.
+
+Static composition must work first.
+
+---
+
+### Do these codes form one coherent system?
+
+Current hypothesis:
+**yes, if organised by function rather than used all at once.**
+
+System logic:
+
+**real agriculture**
+→ establishes category/reality
+
+**field/data geometry**
+→ establishes source/context
+
+**economic typography**
+→ establishes economic meaning
+
+**evidence/confidence language**
+→ calibrates trust
+
+**composition**
+→ connects the above into one causal story
+
+**motion**
+→ reveals the causal relationship over time when useful
+
+This is stronger than treating all six as decorative motifs.
+
+### Flexible identity rule
+
+Use:
+
+**stable grammar + controlled variables**
+
+Stable/invariant:
+- agriculture → data → economics relationship;
+- economic-unit formatting;
+- evidence/confidence semantics;
+- documentary-truth rules;
+- typographic metric logic;
+- motion personality.
+
+Variable:
+- crop;
+- geography;
+- subject;
+- image scale;
+- field shape;
+- layout split;
+- density;
+- overlay position;
+- amount of whitespace;
+- light/dark surface within approved range.
+
+Do not standardise one fixed section template.
+
+Figma Config 2026 is useful here as a process reference:
+a finite visual vocabulary can generate many compositions when relationships and rules are stable.
+
+Flexible-system research adds the same durable principle:
+**constants preserve coherence; variables preserve adaptability.**
+
+---
+
+### Distinctiveness evidence rule
+
+Until recognition evidence exists, use the language:
+
+- candidate brand code;
+- candidate recognition cue;
+- system hypothesis;
+
+not:
+- distinctive asset;
+- owned visual code;
+- recognisable PROFIT signature.
+
+Recognition testing should ask:
+- can target users associate the code/system with PROFIT after repeated exposure?
+- is the cue unique versus category competitors?
+- does removal of the logo destroy recognition?
+- does the cue still work when content/crop/layout changes?
+
+Logo-off testing is diagnostic only.
+For a young brand, candidate codes should normally be co-presented with the PROFIT name while memory is being built.
+
+---
+
+### Current research decision
+
+**A remains the strongest research prior, not the production winner.**
+
+Why:
+- lowest expected comprehension cost;
+- strongest space for explicit evidence/uncertainty;
+- best mobile adaptability;
+- lower category-confusion risk than B/C;
+- easiest foundation for a flexible cross-surface brand grammar.
+
+However:
+
+**B is the strongest mechanism-comprehension challenger.**
+
+If farmer testing shows that B materially improves reconstruction of:
+**farm reality → data → economics**
+without pushing users into satellite/agronomy classification, B should replace A.
+
+**C is the highest-risk comparator.**
+
+It should advance only if its product seriousness produces materially better calibrated trust and action understanding without accounting/ERP confusion or false precision.
+
+Production selection requires farmer evidence from AD-1…AD-7.
 
 ## 20. Acceptance criteria
 
@@ -1120,7 +1588,7 @@ For long desktop pages, test subtle guided wayfinding or section markers.
 Do not use scroll hijacking or forced scrollytelling.
 
 
-## 25. Brand system and distinctive assets
+## 25. Brand system and candidate recognition codes
 
 The website must operate as the first full expression of a reusable PROFIT brand system.
 
@@ -1134,19 +1602,24 @@ Working brand architecture:
 - Field Profitability — module/product;
 - Verified Economic Value — value measurement standard.
 
-Candidate distinctive brand codes:
-- economic typography;
-- field geometry;
-- real-farm + data-overlay composition;
-- evidence states;
-- confidence states;
-- photography treatment;
-- calm explanatory motion;
-- future signature symbol/device.
+Do not call a visual element a distinctive asset until recognition/uniqueness evidence exists.
 
-Test distinctiveness with logo/name removed.
+Current candidate code roles:
+- real agricultural photography — category membership + documentary trust;
+- field geometry — spatial/data context bridge;
+- economic typography — economic salience + candidate memory code;
+- evidence/confidence language — trust semantics;
+- agriculture → data → economics — compositional grammar;
+- calm explanatory motion — temporal grammar;
+- future signature symbol/device — open hypothesis.
 
-The product UI and marketing site should share the same brand DNA rather than becoming visually unrelated systems.
+The strongest current system hypothesis is not any single cue. It is the **relationship**:
+
+**real agricultural reality → precise data/context → economic meaning → evidence/confidence → decision**
+
+Test candidate recognition at the system level and component level.
+
+The product UI and marketing site should share the same underlying grammar rather than becoming visually unrelated systems.
 
 ## 26. Verbal identity
 
@@ -1364,8 +1837,11 @@ Use generic-AI similarity only as an originality warning, not as proof.
 
 ### Brand grammar
 
+Use a flexible-system model: **constants preserve recognition; variables preserve adaptability.**
+
 Keep **invariants** stable:
-- economic typography;
+- agriculture → data → economics causal relationship;
+- economic typography logic;
 - evidence/confidence semantics;
 - unit formatting;
 - field/data geometry principles;
@@ -1380,9 +1856,17 @@ Allow **variables** within defined ranges:
 - field shapes;
 - overlay placement;
 - density;
-- scale.
+- scale;
+- light/dark surface within approved ranges.
 
 Consistency comes from grammar, not identical templates.
+
+A flexible identity fails if:
+- every output looks like the same template with changed content;
+- every output varies so much that only the logo connects them;
+- decorative variation overwhelms evidence/product meaning.
+
+Periodically test the system across unrelated surfaces and content conditions, not only the homepage.
 
 ### Human-only zones
 
