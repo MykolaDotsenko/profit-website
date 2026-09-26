@@ -317,6 +317,7 @@ For PROFIT economic visuals, avoid visual noise such as:
 Revenue: €2,084/ha  
 Cost: €1,447/ha  
 Margin: €637/ha  
+*(illustrative formatting example only)*  
 *(illustrative formatting example only)*
 
 when stronger hierarchy can communicate:
