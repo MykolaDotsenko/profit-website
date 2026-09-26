@@ -101,6 +101,8 @@ The strongest farm-data direction from project research is:
 
 **capture automatically where reliable → infer cautiously → ask only when necessary → preserve farmer control**
 
+Core rule: **work with the farm that exists**.
+
 The product should work with:
 - existing records;
 - modern connected machinery;
@@ -402,7 +404,7 @@ If AI materially changes factual scene content, classify the result as illustrat
 
 # 10. Homepage density rule
 
-The homepage should **not** become a white paper.
+Core density rule: **homepage should not become a white paper**.
 
 Technical depth from data collection, forecasting and DSS research should affect:
 - message quality;
