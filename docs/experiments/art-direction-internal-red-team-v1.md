@@ -295,3 +295,97 @@ Next reconsider point:
 after B2/C2/A distinctiveness challenge and/or real target-user evidence.
 
 Human evidence outranks these scores.
+
+
+---
+
+# Challenge-frame follow-up
+
+Implemented after the first red-team:
+
+- **A2 — Production → Economics Spine**  
+  `prototypes/art-directions/a-evidence-editorial/a2-production-economics-spine.html`
+
+- **B2 — Production Unit Grammar**  
+  `prototypes/art-directions/b-farm-operations-layer/b2-production-unit-grammar.html`
+
+- **C2 — De-dashboarded Economic State**  
+  `prototypes/art-directions/c-economic-control-room/c2-de-dashboarded.html`
+
+## A2 result
+
+The challenge makes the recurring device **information lineage from production reality to economics**, rather than serif/editorial styling alone.
+
+Risk reduced:
+- generic report/consultancy feel.
+
+Risk still open:
+- a vertical "spine" itself is not yet proven distinctive;
+- documentary context is still a placeholder;
+- recognition without the PROFIT name remains unknown.
+
+Disposition:
+**KEEP A alive. Distinctiveness still needs logo-off/recognition evidence.**
+
+## B2 result
+
+B2 removes field geometry as the master identity.
+
+The invariant becomes:
+
+**production unit → context/records → domain economics → evidence/confidence → farmer decision**
+
+The production unit can become:
+- field/season;
+- horticulture block/cycle;
+- greenhouse crop cycle;
+- pig batch/cycle;
+- dairy cow/group/herd period.
+
+Risk materially reduced:
+- crop lock;
+- GIS/map dependence.
+
+Risk still open:
+- operational/context framing may still imply integrations or telemetry if visuals become too data-heavy;
+- without documentary production assets it can become an abstract operations diagram.
+
+Disposition:
+**KEEP B alive. It now passes the internal master-brand-transfer bar more convincingly than B1.**
+
+## C2 result
+
+C2 removes most dashboard chrome and keeps:
+- one economic state;
+- one explicit definition;
+- one evidence state;
+- one decision question;
+- one lightweight deterministic sensitivity band.
+
+Risk materially reduced:
+- ERP/dashboard sameness;
+- false impression of a fully shipped control platform.
+
+Risk still open:
+- a giant economic number can dominate agricultural context;
+- it can still read as financial/accounting software if documentary production context is weak.
+
+Disposition:
+**KEEP C alive. The economic-state concept survives de-dashboarding and remains a strong challenger.**
+
+## Post-challenge decision
+
+**Still no winner.**
+
+The challenge round improved all three enough that none should be killed from internal evidence alone.
+
+Most important remaining discriminator:
+**real documentary production context + target-user comprehension/category interpretation.**
+
+Current internal learning:
+- A2: strongest evidence/editorial discipline;
+- B2: strongest production→economics mechanism;
+- C2: strongest economic-state/downside clarity.
+
+Do not merge these strengths into one hybrid before the first controlled comparative test. Otherwise the experiment loses its independent variables.
+
