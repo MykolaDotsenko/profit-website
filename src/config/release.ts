@@ -21,6 +21,7 @@ export interface ReleaseGate {
     | 'company-details'
     | 'team-proof'
     | 'documentary-image'
+    | 'example-plausibility'
     | 'evidence-definitions';
   area: ReleaseGateArea;
   owner: ReleaseGateOwner;
@@ -89,6 +90,13 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     owner: 'owner',
     state: 'blocked',
     reason: 'An approved documentary agricultural asset with rights/provenance is not supplied.',
+  },
+  {
+    id: 'example-plausibility',
+    area: 'trust',
+    owner: 'domain',
+    state: 'blocked',
+    reason: 'The illustrative Field 31 scenario still needs target-market plausibility review (D6).',
   },
   {
     id: 'evidence-definitions',
