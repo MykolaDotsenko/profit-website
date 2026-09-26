@@ -106,23 +106,12 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
     <p class="how-note">{h.how.note}</p>
 
     <div class="how-cluster">
-      <div>
-        <h3 class="how-cluster__title">{h.how.dataPrinciplesTitle}</h3>
-        <ItemList items={h.how.dataPrinciples} columns={2} />
-        <p class="how-cluster__evidence">{h.how.dataEvidence}</p>
-        <p class="source-note">
-          <a class="text-link" href={h.how.dataSource.href}>{h.how.dataSource.label}</a>
-          <span aria-hidden="true"> · </span>
-          <a class="text-link" href={h.how.offlineSource.href}>{h.how.offlineSource.label}</a>
-        </p>
-      </div>
-
-      <div>
-        <h3 class="how-cluster__title">{h.how.forecastingTitle}</h3>
-        <p class="how-cluster__lead">{h.how.forecastingLead}</p>
-        <ItemList items={h.how.forecastingPrinciples} columns={2} />
-        <p class="how-cluster__note">{h.how.forecastingNote}</p>
-      </div>
+      <h3 class="how-cluster__title">{h.how.operatingPrinciplesTitle}</h3>
+      <ItemList items={h.how.operatingPrinciples} columns={2} />
+      <p class="how-cluster__note">{h.how.operatingPrinciplesNote}</p>
+      <p class="source-note">
+        <a class="text-link" href={link(h.how.operatingPrinciplesLink.href)}>{h.how.operatingPrinciplesLink.label}</a>
+      </p>
     </div>
   </Section>
 
@@ -262,8 +251,6 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
     }
     .scope-proof__note,
     .scope-note,
-    .how-cluster__lead,
-    .how-cluster__evidence,
     .how-cluster__note,
     .source-note {
       max-width: var(--measure-wide);
@@ -271,7 +258,6 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
       font-size: var(--text-small);
     }
     .scope-proof__note,
-    .how-cluster__evidence,
     .how-cluster__note {
       margin-block-start: var(--space-4);
     }
@@ -292,10 +278,6 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
       padding-block-start: var(--space-6);
       border-block-start: 1px solid var(--color-line-strong);
     }
-    .how-cluster__lead {
-      margin-block-end: var(--space-4);
-    }
-
     .farmer-questions {
       border-block-start: 1px solid var(--color-line-strong);
     }
