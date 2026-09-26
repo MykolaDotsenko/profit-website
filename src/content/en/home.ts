@@ -75,7 +75,7 @@ export const home = {
       id: 'example',
       eyebrow: 'Current first focus · hypothetical example',
       title: 'See the economics behind a field — not just the result',
-      lead: 'Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This example is invented to show the method, not a customer result.',
+      lead: 'Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This is a statistics-calibrated synthetic example, not a customer result.',
     } satisfies SectionIntro,
     labels: {
       notScreenshot: 'Illustration, not a product screenshot.',
