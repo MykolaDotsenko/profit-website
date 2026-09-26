@@ -81,6 +81,25 @@ Luke's accounting categories are **not declared equivalent** to PROFIT's Field P
 
 Do not publish it as a Field Profitability benchmark.
 
+## 1.5 Reference-period choice
+
+The scenario intentionally uses a **completed 2025 annual production/price reference** plus the latest complete 2024 EconomyDoctor cereal-farm accounting scale used in the original calibration.
+
+As of 2026-09-27, Luke also publishes:
+- provisional monthly 2026 producer-price releases;
+- 2026 advance harvest estimates / experimental yield forecasts.
+
+Those are valuable for current monitoring, but they are not silently mixed into this one-season illustrative baseline.
+
+Reason:
+- keep the synthetic scenario reproducible;
+- avoid combining final annual values with moving provisional values without an explicit scenario purpose;
+- preserve a clear reference period.
+
+Future 2026 data may be used as a **separate sensitivity/reference scenario**, not as retroactive evidence that the 2025 synthetic field result was observed.
+
+---
+
 ## 1.4 Profitability context
 
 Luke EconomyDoctor reports weak recent profitability for cereal/oilseed/protein-crop farms:
