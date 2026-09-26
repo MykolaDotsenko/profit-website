@@ -1,10 +1,12 @@
 ---
 import type { SensitivityScenario } from '../content/examples/field-sensitivity';
 import { present } from '../domain/format';
+import type { CurrencyCode } from '../domain/economics';
 import { localeInfo, ui } from '../i18n';
 
 interface Props {
   scenarios: readonly SensitivityScenario[];
+  currency: CurrencyCode;
   labels: {
     caption: string;
     scenario: string;
@@ -16,13 +18,13 @@ interface Props {
   };
 }
 
-const { scenarios, labels } = Astro.props;
+const { scenarios, currency, labels } = Astro.props;
 const locale = localeInfo(Astro.currentLocale);
 const t = ui(locale.code);
 const money = (amount: number) =>
-  present({ metric: 'operating_profit', amount, currency: 'EUR', perArea: 'ha' }, locale.intl, t.units);
+  present({ metric: 'operating_profit', amount, currency, perArea: 'ha' }, locale.intl, t.units);
 const price = (amount: number) =>
-  present({ metric: 'price', amount, currency: 'EUR', perMass: 't' }, locale.intl, t.units);
+  present({ metric: 'price', amount, currency, perMass: 't' }, locale.intl, t.units);
 const yieldValue = (amount: number) =>
   present({ metric: 'yield', amount, mass: 't', perArea: 'ha' }, locale.intl, t.units);
 ---
