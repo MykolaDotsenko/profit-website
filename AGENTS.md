@@ -151,6 +151,8 @@ AI may accelerate execution. It must not invent PROFIT's creative point of view 
 
 ### Cross-disciplinary trust rule — LOCKED
 
+For homepage content hierarchy, section purpose, claim boundaries and visual-content intent, consult `docs/homepage-content-brief-v1.md` alongside the canonical Blueprint.
+
 For public website work that explains product behavior, data, forecasting or decision support, consult `docs/website-trust-professionalism-synthesis-2026-09-27.md`.
 
 Preserve these principles:
