@@ -1418,7 +1418,7 @@ System logic:
 → connects the above into one causal story
 
 **motion**
-→ reveals the causal relationship over time when useful
+→ reveals the information relationship over time when useful; it must not manufacture causal attribution
 
 This is stronger than treating all six as decorative motifs.
 
@@ -1662,7 +1662,7 @@ Required process:
 
 Working anti-sameness system hypothesis:
 
-**real agriculture → precise field/data context → economic meaning → evidence/confidence → measured causal motion when useful**
+**real agriculture → precise field/data context → economic meaning → evidence/confidence → measured explanatory motion when useful**
 
 Do not call this a distinctive signature until recognition/uniqueness evidence exists.
 
@@ -1754,58 +1754,363 @@ For a young brand, emerging distinctive assets should normally be repeatedly co-
 
 ## 29. Visual effects strategy
 
-Visual effects exist to explain hierarchy, causality, state change, or brand meaning.
+Visual effects exist to explain:
+- hierarchy;
+- information lineage;
+- state change;
+- spatial continuity;
+- decision flow.
+
+Do not use motion to imply causal attribution that the evidence does not support.
 
 Core rule:
 
-**Make economic causality visible. Do not make the website move for its own sake.**
+**Make the path from farm reality to economic meaning easier to understand. Do not make the website move for its own sake.**
 
-Preferred implementation ladder:
-1. static composition;
-2. CSS microinteraction;
-3. clip-path / SVG;
-4. CSS scroll-driven animation;
-5. native View Transitions;
-6. small JavaScript;
-7. GSAP;
-8. Canvas/WebGL/Three.js only when uniquely justified.
+### Field → Economics Reveal status
 
-### Recommended signature effect
+**Candidate explanatory motion — not a validated signature and not a production requirement.**
 
-**Field → Economics Reveal**
+The existing prototype is evidence that the idea can be implemented lightly. It is not evidence that motion improves farmer comprehension.
 
-Real farm image
-→ field boundary SVG draw
-→ operational/data layer
-→ dominant €/ha economic result
-→ evidence/confidence state.
+Do not promote it to a signature effect until:
+- a surviving art direction exists;
+- its static composition works;
+- static-vs-motion farmer testing shows a material comprehension/recall benefit without a trust/distraction penalty;
+- mobile and reduced-motion versions remain complete;
+- implementation cost is proportionate.
 
-Prototype with CSS/SVG/scroll-driven CSS first.
+### Information sequence to test
+
+Use:
+
+**Real farm**
+→ **field scope / geometry**
+→ **operational/data context + provenance**
+→ **economic interpretation**
+→ **evidence/confidence**
+→ **decision question / next action**
+
+Important:
+this is an **information-transformation sequence**, not automatically a causal attribution sequence.
+
+For example, visually placing fertilizer, rainfall and yield before margin must not imply that PROFIT has proven those factors caused the margin unless the underlying model/evidence supports that attribution.
+
+### Best static composition — Variant A
+
+Build this before any motion.
+
+All essential information is visible at once:
+
+1. **Farm reality**
+   - real/approved agricultural image or clearly illustrative material;
+   - field/operation identity.
+
+2. **Field scope**
+   - field boundary visible as a static SVG;
+   - geometry establishes which physical unit is being discussed.
+
+3. **Operational/data context**
+   - a small number of source/data markers;
+   - provenance is explicit;
+   - markers are context, not automatically causal drivers.
+
+4. **Economic interpretation**
+   - one dominant economic state, for example:
+     **€637 / ha — Margin**
+
+5. **Evidence + confidence**
+   - immediately adjacent to the economic state:
+     **HYPOTHETICAL EXAMPLE**
+     **Confidence: Not assessed**
+
+6. **Decision**
+   - one decision question or next investigative action;
+   - do not fabricate an agronomic/economic recommendation.
+
+The static composition must make this path understandable without animation, pinning or interaction.
+
+### Motion composition — Variant B
+
+Use exactly the same content, layout logic, economic scenario, labels and CTA as Variant A.
+
+Motion may only control attention/order.
+
+Recommended sequence:
+
+1. farm reality is already visible;
+2. SVG boundary draws to establish scope;
+3. operational/data context appears in one restrained step or a very small number of meaningful groups;
+4. economic interpretation receives emphasis;
+5. evidence/confidence is visible **with the economic number**, not as a delayed disclaimer;
+6. decision question / next action resolves last.
+
+Do not:
+- count the financial number up theatrically;
+- bounce/pop data points;
+- use decorative parallax;
+- dim/blur the farm merely for cinematic effect;
+- make the user wait for the economic value to become readable;
+- hide evidence/confidence during a period in which the number looks authoritative.
+
+The current prototype's farm-dimming treatment is **not assumed to add information** and should be removed from the controlled test unless independently justified.
+
+### Motion-element interrogation
+
+For every animated element ask:
+
+1. What information does this movement explain?
+2. What does the farmer lose if it is static?
+3. Can the same meaning be achieved more simply?
+4. Does it work at ~390 px without miniature desktop choreography?
+5. Is the reduced-motion version fully meaningful?
+6. Does it delay comprehension or the next action?
+7. Could the same motion advertise a generic AI/crypto/design-agency site unchanged?
+
+Default decisions:
+
+| Motion element | Information purpose | Simpler/static alternative | Default test status |
+|---|---|---|---|
+| SVG boundary draw | Establish field scope | Boundary already visible | TEST |
+| Data/context reveal | Establish source/provenance order | All context visible statically | TEST |
+| Economic metric emphasis | Shift attention to economic meaning | Typographic hierarchy | TEST, no count-up |
+| Evidence/confidence reveal | Calibrate interpretation | Always-visible labels | REQUIRED SEMANTICS; motion optional |
+| Decision-state reveal | Complete action path | Always-visible decision question | TEST |
+| Farm dim/blur | None proven | Static contrast/layout | REMOVE by default |
+| Decorative parallax | None proven | Static depth/composition | REMOVE by default |
+| Long sticky/pinned scrollytelling | Controls pacing, not meaning | Normal document flow | AVOID unless test proves benefit |
+
+### Implementation ladder
+
+Choose the first level that communicates the tested benefit.
+
+0. **Static composition**
+   - must pass first.
+
+1. **SVG**
+   - static field geometry first;
+   - if motion survives, stroke/path reveal may establish scope;
+   - use real/meaningful geometry where available.
+
+2. **Native CSS**
+   - opacity;
+   - small translate;
+   - transition/keyframes;
+   - restrained easing;
+   - no runtime library.
+
+3. **CSS scroll-driven animation**
+   - use only as progressive enhancement;
+   - scroll/view timelines may map sequence progress to normal user scrolling;
+   - essential content must remain correct when unsupported.
+
+4. **View Transition API**
+   - use for continuity between product/view states or routes;
+   - not the default orchestration mechanism for the internal Field → Economics sequence.
+
+5. **Small JavaScript**
+   - only if validated motion needs broader orchestration/support than native CSS can reliably provide;
+   - prefer a small targeted mechanism over a general animation runtime.
+
+6. **GSAP**
+   - only if farmer evidence says the motion is valuable **and** the required multi-element choreography cannot be implemented clearly/reliably with the previous levels;
+   - no GSAP dependency for the first static-vs-motion experiment.
+
+7. **Canvas/WebGL/Three.js**
+   - not justified for this effect.
+
+### Technical research conclusion
+
+Current relevant platform guidance is sufficient for the experiment:
+
+- Framer vector effects can animate path stroke/offset while keeping the asset editable;
+- Framer scroll transforms support gradual position/scale/opacity changes tied to scroll;
+- Framer scroll-trigger guidance explicitly recommends building the static composition first and ensuring content does not depend on animation completing;
+- Framer easing guidance says timing should be judged in the final layout and related motion should remain responsive/consistent;
+- CSS scroll-driven animations can express scroll/view-linked progress natively, but current browser support is not universal, so treat them as enhancement;
+- View Transitions are useful for preserving context between DOM/page states;
+- `prefers-reduced-motion` is widely available and must produce an equivalent information experience.
+
+No GSAP research/implementation is required before the first A/B test because native techniques are already sufficient to test the communication hypothesis.
+
+### Static-vs-motion farmer experiment
+
+Run only **after the art-direction stage produces a surviving visual base**.
+
+Do not compare:
+- Static A in one art direction;
+- Motion B in another.
+
+That would confound visual grammar and motion.
+
+Use one surviving art direction and duplicate it exactly:
+
+#### Variant A — Static
+Best static composition above.
+
+#### Variant B — Motion
+Same composition/content with the minimal tested motion sequence.
+
+Keep identical:
+- surviving hero/message context;
+- farm image;
+- field geometry;
+- operational/data values;
+- economic value;
+- evidence/confidence;
+- decision question;
+- typography;
+- colors;
+- CTA;
+- viewport;
+- total information.
+
+For all illustrative economic values use only:
+
+**HYPOTHETICAL EXAMPLE**  
+**Confidence: Not assessed**
+
+### Primary test design
+
+To avoid learning contamination in time/comprehension measures:
+- randomize participants to see Static or Motion first;
+- collect first-exposure measures before showing the alternative;
+- only then allow a crossover comparison for distraction/preference feedback.
+
+Suggested exploratory cohort:
+- 12–18 target farmers for directional qualitative evidence;
+- use a larger follow-up if the observed difference is subtle and the production decision becomes costly to reverse.
+
+Measure:
+
+#### Comprehension
+- What is happening?
+- What does the economic number mean?
+- What would you do next?
+
+#### Recall
+After hiding the composition:
+- field/context remembered;
+- economic value/job remembered;
+- evidence/confidence remembered;
+- decision remembered;
+- animation itself remembered.
+
+#### Correct interpretation
+Ask participant to reconstruct:
+
+**farm/context → data/source → economic interpretation → evidence/confidence → decision**
+
+Also ask:
+**Did anything on the screen imply that a specific factor caused the margin?**
+
+Unverified causal inference is a failure.
+
+#### Time to understand
+Measure time until the participant can correctly explain:
+- the economic meaning;
+- evidence/confidence;
+- next decision/action.
+
+Motion that requires more waiting is not automatically better because it is clearer eventually.
+
+#### Trust
+Ask:
+- How certain should you be about this result?
+- What would you verify?
+- Did the presentation feel transparent or theatrical?
+
+#### Distraction
+Ask:
+- What did you notice first?
+- What do you remember most?
+- Did any movement make reading harder?
+
+### Mobile test
+
+Repeat core task at ~390 px.
+
+Motion must:
+- simplify cleanly;
+- avoid large panning/scaling;
+- preserve economic state + evidence/confidence + decision;
+- avoid forcing a long sticky scroll sequence.
+
+### Reduced-motion test
+
+Reduced motion is not a separate lower-information design.
+
+It should resolve to the **best static composition**:
+- boundary visible;
+- data context visible;
+- economic interpretation visible;
+- evidence/confidence visible;
+- decision visible.
+
+Do not rely on an animation's final frame if the static layout itself is poorly composed.
+
+### Performance test
+
+Compare Static vs Motion:
+- added client JS;
+- added asset weight;
+- main-thread/CPU behavior;
+- LCP/INP/CLS risk;
+- mobile smoothness.
+
+A single explanatory effect does not justify a large runtime by default.
+
+### Motion kill criteria
+
+Kill the motion or reduce it to a simpler element if:
+
+- Static explains the sequence as well or better;
+- comprehension/recall does not materially improve;
+- time to correct understanding worsens;
+- users remember the effect more than the economic meaning;
+- motion increases unverified causal interpretation;
+- evidence/confidence is recalled less accurately;
+- mobile is materially weaker;
+- reduced-motion loses meaning;
+- motion delays reading/CTA access;
+- performance/runtime cost is disproportionate;
+- effect can be transplanted unchanged to a generic AI/crypto/design-agency website;
+- the same benefit can be achieved with a single SVG or simple CSS emphasis.
+
+### Promotion rule
+
+Only after the experiment may the terminology change from:
+
+**candidate explanatory motion**
+
+to:
+
+**validated PROFIT motion pattern**
+
+A stronger claim such as **signature motion** additionally requires repeated brand-recognition evidence across surfaces, not one successful comprehension test.
 
 ### Effect budget
 
-Homepage:
-- maximum 2 signature storytelling effects;
+Until validation:
+- zero required storytelling effects;
+- one candidate Field → Economics test;
+- normal interaction feedback only.
+
+After validation:
+- maximum 1–2 focal storytelling effects on the homepage;
 - one focal motion event per viewport/section;
-- supporting motion limited to reveals, navigation progress, and interaction feedback.
+- supporting motion limited to hierarchy, continuity and interaction feedback.
 
-### Recommended
-- field-boundary SVG animation;
-- clip-path farm-image reveals;
-- scroll-linked farm → data → economics transformation;
-- native View Transitions;
-- subtle image hover;
-- calm hover/focus states;
-- guided section progress.
+### Recommended secondary motion
 
-### Prototype first
-- text line reveal;
-- mild parallax;
-- GSAP choreography;
-- field-shape morphing;
-- controlled video-on-scroll.
+Independent of Field → Economics validation:
+- calm hover/focus feedback;
+- short section reveals where they do not delay reading;
+- View Transitions for meaningful product/detail continuity;
+- guided progress only if it improves wayfinding.
 
 ### Not v1 by default
+
 - decorative WebGL/Three.js hero;
 - shader/noise backgrounds;
 - particles;
@@ -1814,16 +2119,17 @@ Homepage:
 - scroll hijacking;
 - long loader intros;
 - autoplay hero video;
-- excessive kinetic typography.
+- excessive kinetic typography;
+- dramatic count-ups;
+- generic "data flying into dashboard" animation.
 
-Every effect requires:
-- meaningful static fallback;
-- reduced-motion behavior;
+Every shipped effect requires:
+- static information parity;
+- reduced-motion parity;
 - mobile validation;
 - accessibility validation;
 - performance review;
-- brand/distinctiveness rationale.
-
+- farmer-comprehension rationale.
 
 ## 30. Semiotic and flexible-system safeguards
 
@@ -1842,7 +2148,7 @@ Use generic-AI similarity only as an originality warning, not as proof.
 Use a flexible-system model: **constants preserve recognition; variables preserve adaptability.**
 
 Keep **invariants** stable:
-- agriculture → data → economics causal relationship;
+- agriculture → data → economics information lineage; show causal attribution only when evidence supports it;
 - economic typography logic;
 - evidence/confidence semantics;
 - unit formatting;
