@@ -70,41 +70,54 @@ Depends on: none.
 Outcome:
 Create three genuinely different concept territories:
 
-- Editorial Intelligence
-- Farm Data Layer
-- Economic Command
+- A — Evidence-Led Editorial (current leading hypothesis)
+- B — Farm Operations Layer
+- C — Economic Control Room
 
 Constraints:
 - not color variants;
 - must work without motion;
-- use the same surviving/controlled hero message and proof content across all visual directions so art direction can be compared;
+- use the same surviving/controlled hero message and underlying economic proof scenario across all directions;
+- keep evidence/confidence/provenance semantics identical across variants;
 - do not combine H1/H2/H3 with A/B/C as nine uncontrolled concepts;
+- do not hybridize A/B/C before the first visual test;
 - illustrative values must be labelled correctly.
 
 Acceptance:
-- [ ] desktop and mobile key frames for all three;
-- [ ] each direction states its own visual idea;
+- [ ] desktop and ~390 px mobile key frames for all three;
+- [ ] each direction has a distinct core visual idea and distinct category-confusion risk;
+- [ ] same information hierarchy can be compared across variants;
 - [ ] generic AI/SaaS similarity is red-teamed;
+- [ ] each works statically;
 - [ ] each can be tested without explaining the concept first.
 
 Depends on: WWW-000.
 
-### WWW-002 — Farmer 10-second comprehension test
+### WWW-002 — Art-direction farmer comprehension + trust test
 
-Measure:
-- what PROFIT does;
-- who it is for;
-- problem solved;
-- economic relevance;
-- expected next action.
+Run the Blueprint experiments:
+- AD-1 — 10-second comprehension + trust;
+- AD-2 — evidence interpretation;
+- AD-3 — product-reality/category-confusion;
+- AD-4 — mobile farmer task;
+- AD-5 — trust under bad news/uncertainty.
+
+Primary decision objective:
+**farmer comprehension + calibrated trust**
 
 Acceptance:
-- [ ] test protocol fixed before sessions;
-- [ ] responses recorded without coaching;
-- [ ] misunderstandings grouped by pattern;
-- [ ] outcome updates positioning hypotheses rather than designer preference.
+- [ ] same message/scenario/content used across A/B/C;
+- [ ] order randomized/counterbalanced;
+- [ ] open recall captured before preference;
+- [ ] evidence/confidence interpretation errors recorded;
+- [ ] category misclassification patterns recorded;
+- [ ] mobile tested separately;
+- [ ] negative/uncertain scenario tested;
+- [ ] direction-specific kill criteria applied;
+- [ ] winner/remaining contenders documented as evidence, not taste;
+- [ ] no statistical-winner claim from an underpowered qualitative sample.
 
-Depends on: WWW-001 or a sufficiently concrete baseline prototype.
+Depends on: WWW-001.
 
 ### WWW-003 — Brand-code recognition/confusion test
 
