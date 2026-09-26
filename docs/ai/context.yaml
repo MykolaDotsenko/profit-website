@@ -71,7 +71,7 @@ international_validation:
   economic_semantics:
     canonical: ["metric identity", "definition/formula/version", "numeric value", "currency", "production unit", "measurement period", "provenance/evidence state"]
     presentation: ["locale", "translated/display label", "number/currency/unit formatting"]
-    rule: "Display strings such as €637/ha or local terms such as margin do not define the underlying economic metric."
+    rule: "Display strings such as €221/ha or local terms such as margin do not define the underlying economic metric."
   www_000_gates:
     D5: "Market Cohort Specification: define country, region, working language, crop/production context, farm-size band, decision-maker role, digital maturity and economic context; one coherent Market A cohort."
     D6: "Market-Specific Economic Scenario Validation after D5: domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology; local values are not global truths."
@@ -93,7 +93,7 @@ international_validation:
     high_contrast: "Poland"
     cross_domain_future: "Denmark"
     other: ["Estonia", "Germany", "France"]
-  next_decision: "Confirm Finland recruitment feasibility, then resolve D6-D8 and freeze WWW-000; reopen Market A only if the Finland recruitment gate fails."
+  next_decision: "While farmer access is unavailable, use the statistics-calibrated surrogate scenario and provisional H3 development default without claiming validation. Reopen human WWW-000 when recruitment becomes possible."
 
 decision_intelligence_direction:
   status: "product-development doctrine; not a claim that current Field Profitability already implements all capabilities"
@@ -216,11 +216,17 @@ routes:
     security: "Split from /trust only when content depth/customer requirements justify it."
 
 hero_validation:
-  status: "open hypothesis; current hero is a control, not a production winner"
+  status: "open human-validation hypothesis; H3 is the provisional development default from a statistical/product-truth surrogate audit, not a production winner"
   experiment_protocol: "docs/experiments/hero-message-test-v1.md"
   stimulus: "prototypes/hero-message-test/"
-  instrument_status: "drafted; test candidates are v2; D1-D4 settled; EU-first international architecture defined; Market A provisionally Finland under a recruitment gate; not approved to run/freeze until D5 cohort feasibility is confirmed and D6 scenario, D7 research-data/consent and D8 documentary asset are resolved"
+  instrument_status: "drafted; test candidates are v2; D1-D4 settled; a Finnish statistical surrogate has calibrated the scenario and resolved placeholder plausibility; H3 is a provisional development default only; human cohort/comprehension validation remains open and the controlled test is not approved to run/freeze until the human/research/asset gates are available"
   candidate_set: "v2 (product-truth-safe, 2026-09-26); v1 superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1"
+  surrogate_validation:
+    source: "docs/experiments/www-000-statistical-surrogate-v1.md"
+    status: "completed as risk-reduction evidence; not farmer evidence"
+    calibrated_example: "Finnish Luke 2025 crop production/area + 2025 producer price + 2024 EconomyDoctor cereal-farm cost scale"
+    provisional_default: "H3 v2 — selected for development because it has the lowest current claim-risk and strongest Field Profitability semantic alignment; no comprehension winner claim"
+    remaining_open: ["farmer 10-second comprehension", "category interpretation", "trust response", "Finnish language nuance", "CTA relevance", "documentary-asset response"]
   scope: "Field Profitability wedge message only; not a master-brand positioning test; results must not redefine PROFIT as field-crop-only (company_context.scope_boundary.extensibility)"
   product_truth_reference: "field_profitability_reference (Blueprint section 2.2); WWW-000 v2 check in hero-message-test-v1.md section 4.4"
   durable_rules:
@@ -378,6 +384,7 @@ motion:
     illustrative_labels:
       evidence: "HYPOTHETICAL EXAMPLE"
       confidence: "Not assessed"
+    calibrated_synthetic_metric: "€221/ha operating profit in the blocked motion prototype; statistics-calibrated, not customer evidence"
     causal_guardrail: "Visual sequence must not imply causal attribution unless the underlying evidence supports it."
   implementation_order:
     - "best static composition"
