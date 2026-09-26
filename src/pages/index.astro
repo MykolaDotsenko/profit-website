@@ -51,14 +51,14 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   <!-- 2 · Master-brand production scope: direction, not a claim of shipped modules. -->
   <Section intro={h.scope.intro} tone="sunken">
     <ItemList items={h.scope.systems} columns={3} />
-    <div class="scope-proof">
-      <h3 class="scope-proof__title">{h.scope.statsTitle}</h3>
-      <ItemList items={h.scope.stats} columns={3} />
-      <p class="scope-proof__note">{h.scope.categoryNote}</p>
+    <aside class="scope-proof" aria-label="EU agriculture context">
+      <p class="scope-proof__value num">{h.scope.contextStat.value}</p>
+      <p class="scope-proof__label">{h.scope.contextStat.label}</p>
+      <p class="scope-proof__note">{h.scope.contextStat.detail}</p>
       <p class="source-note">
         <a class="text-link" href={h.scope.source.href}>{h.scope.source.label}</a>
       </p>
-    </div>
+    </aside>
     <p class="scope-note">{h.scope.note}</p>
   </Section>
 
@@ -244,10 +244,19 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
       padding-block-start: var(--space-5);
       border-block-start: 1px solid var(--color-line-strong);
     }
-    .scope-proof__title,
     .how-cluster__title {
       font-size: var(--text-subsection);
       margin-block-end: var(--space-4);
+    }
+    .scope-proof__value {
+      font-size: clamp(2.2rem, 6vw, 4.75rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: var(--weight-strong);
+    }
+    .scope-proof__label {
+      margin-block-start: var(--space-2);
+      font-weight: var(--weight-strong);
     }
     .scope-proof__note,
     .scope-note,
