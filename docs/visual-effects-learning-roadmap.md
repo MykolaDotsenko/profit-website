@@ -16,8 +16,8 @@ Purpose: prioritize tutorials, masterclasses and workshops that are most useful 
 | NOW | Webflow University — When to Use Interactions | Motion intent, restraint, accessibility | Motion governance |
 | NOW | Webflow University — Interactions & Animations | Easing, timing, sequencing, GSAP-powered timelines | Motion system fundamentals |
 | NEXT | SmashingConf 2026 — Web Animation, Cassie Evans | Motion principles, tool choice, SVG/Canvas/GSAP, debugging | Signature storytelling |
-| NEXT | GSAP — ScrollTrigger docs | scrub, pin, snap, timelines | Complex multi-step narrative only if CSS is insufficient |
-| NEXT | GSAP — SplitText docs | line/word masking and responsive text splitting | One restrained text reveal |
+| CONDITIONAL | GSAP — ScrollTrigger docs | scrub, pin, snap, timelines | Study only if validated motion cannot be expressed reliably with native techniques |
+| DEFER | GSAP — SplitText docs | line/word masking and responsive text splitting | Not on the Field → Economics critical path |
 | NEXT | Frontend Masters — CSS Animations & Transitions | choreography, animation states, custom properties | Strong CSS motion foundations |
 | NEXT | Smashing — SVG Animation Masterclass | SVG optimization, clipping/masking, stroke/morphing, GSAP | Field geometry system |
 | LATER | Frontend Masters — Award-Winning Marketing Websites | high-end marketing motion, GSAP/3D workflows | Creative reference / advanced prototype |
@@ -26,15 +26,16 @@ Purpose: prioritize tutorials, masterclasses and workshops that are most useful 
 
 ## Study order
 
-### Phase 1 — Native motion
-1. Framer Animate Vectors
-2. Framer Scroll Transforms
-3. MDN Scroll-Driven Animations
-4. MDN View Transition API
-5. reduced-motion and responsive testing
+### Phase 1 — Static control + native motion
+1. Build the best complete static Field → Economics composition.
+2. Framer Animate Vectors — only for field-scope attention.
+3. Framer Scroll Transforms / Trigger on Scroll — minimal sequence.
+4. MDN Scroll-Driven Animations — progressive enhancement only.
+5. reduced-motion and responsive testing.
+6. Static vs Motion farmer experiment.
 
 Goal:
-build the signature motion without a runtime animation library.
+determine whether motion improves comprehension before treating the effect as a brand pattern.
 
 ### Phase 2 — Motion craft
 1. Webflow: When to Use Interactions
@@ -45,13 +46,16 @@ build the signature motion without a runtime animation library.
 Goal:
 improve timing, easing, hierarchy and choreography without increasing spectacle.
 
-### Phase 3 — Advanced orchestration
-1. GSAP ScrollTrigger
-2. GSAP SplitText
-3. SVG clipping/masking/morphing
+### Phase 3 — Conditional advanced orchestration
+
+Do not begin by default.
+
+Only if the farmer test validates the motion benefit and native implementation is objectively insufficient:
+1. GSAP ScrollTrigger;
+2. targeted SVG clipping/masking/morphing where needed.
 
 Goal:
-use GSAP only where native CSS cannot clearly express the intended causal sequence.
+solve a validated orchestration problem, not add polish.
 
 ### Phase 4 — Experimental reserve
 1. Award-Winning Marketing Websites
@@ -90,6 +94,8 @@ Implementation:
 - field card → detailed analysis
 - metric → methodology/evidence
 
+Do not use View Transitions as the core internal Field → Economics sequence; their strongest role here is continuity between states/views.
+
 ### Text
 Study:
 - GSAP SplitText only if required
@@ -100,10 +106,10 @@ Implementation:
 
 ### Complex sequence
 Study:
-- ScrollTrigger only after native prototype is evaluated
+- ScrollTrigger only if a validated motion benefit cannot be implemented reliably with the native ladder
 
 Implementation:
-- one flagship causal sequence
+- only the minimum required orchestration
 - no generic decorative timelines
 
 ## Decision rule
@@ -120,8 +126,20 @@ Adopt it only if:
 
 ## Current recommendation
 
-For the next prototype iteration, focus only on:
+Broad motion research is stopped.
 
-**SVG path animation + CSS scroll-driven animations + View Transitions + motion timing/easing.**
+The next work is:
 
-Do not study WebGL/Three.js deeply yet. It is not on the critical path.
+1. build the best static composition;
+2. create the minimal motion variant using SVG + native CSS;
+3. use CSS scroll-driven animation only as progressive enhancement where useful;
+4. keep View Transitions for product/state continuity, not the core reveal;
+5. run Static vs Motion farmer testing;
+6. kill or simplify motion unless it materially improves comprehension/recall without trust, mobile, accessibility or performance penalties.
+
+Do not study GSAP, WebGL or Three.js now. They are not on the critical path.
+
+For every illustrative number use only:
+
+**HYPOTHETICAL EXAMPLE**  
+**Confidence: Not assessed**
