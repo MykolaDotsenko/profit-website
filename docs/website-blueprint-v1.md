@@ -773,6 +773,10 @@ External 2026 design/masterclass research reinforces, but does not prove, this c
 
 These sources inform the candidate system. **Farmer evidence decides the direction.**
 
+**Research stop — 2026-09-26:** broad art-direction research is closed for this decision cycle because additional sources are no longer materially changing the candidate set, leading hypothesis, or identified failure modes. The next source of evidence is the controlled farmer experiment in `docs/experiments/art-direction-farmer-test-v1.md`.
+
+Re-open external research only to explain a specific observed failure, resolve a material open hypothesis, or verify a time-sensitive constraint.
+
 ### A — Evidence-Led Editorial — leading hypothesis
 
 Core idea:
