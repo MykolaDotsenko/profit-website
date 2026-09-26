@@ -29,6 +29,7 @@ The website must communicate:
 
 - [Website Strategy](docs/website-strategy.md)
 - [Research Findings](docs/research-findings.md)
+- [Marketing Bestseller Findings](docs/marketing-bestseller-findings.md)
 - [Masterclasses & Tutorials](docs/masterclasses-and-tutorials.md)
 - [Design Masterclass Findings](docs/design-masterclass-findings.md)
 - [Frontend Masterclass Findings](docs/frontend-masterclass-findings.md)
