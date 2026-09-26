@@ -25,6 +25,8 @@ The website must communicate:
 
 “Verified” must only be used when the evidence and attribution standard is actually satisfied.
 
+Field Profitability is the current public wedge, not the boundary of the PROFIT master brand. The website must not accidentally position PROFIT as crop-only or present future production domains as already shipped.
+
 ## AI-assisted development
 
 AI coding/design agents must start with:
