@@ -55,7 +55,6 @@ export const farmers = {
   getBack: {
     intro: { id: 'what-you-get', eyebrow: 'Outputs', title: 'What you get back' } satisfies SectionIntro,
     items: fieldProfitability.outputs,
-    review: fieldProfitability.review,
   },
   notDo: {
     intro: { id: 'what-it-does-not-do', eyebrow: 'Limits', title: 'What it does not do' } satisfies SectionIntro,
@@ -96,7 +95,6 @@ export const product = {
       lead: 'Definitions come first, so a local word such as “margin” never changes the formula behind it.',
     } satisfies SectionIntro,
     items: fieldProfitability.outputs,
-    review: fieldProfitability.review,
   },
   inputs: {
     intro: { id: 'inputs', eyebrow: 'Inputs', title: 'What goes in', lead: 'For each field and season.' } satisfies SectionIntro,
