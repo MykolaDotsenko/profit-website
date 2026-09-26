@@ -103,8 +103,10 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     id: 'example-plausibility',
     area: 'trust',
     owner: 'domain',
-    state: 'blocked',
-    reason: 'The illustrative Field 31 scenario still needs target-market plausibility review (D6).',
+    state: 'ready',
+    reason:
+      'Illustrative field economics are statistics-calibrated against current Finnish Luke yield, producer-price and broad cereal-farm cost-scale references. This resolves placeholder plausibility only; it is not farmer validation.',
+    evidence: 'docs/experiments/www-000-statistical-surrogate-v1.md',
   },
   {
     id: 'evidence-definitions',
