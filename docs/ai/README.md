@@ -6,9 +6,11 @@ Purpose: give AI agents the smallest reliable context required to work on the PR
 
 1. [AGENTS.md](../../AGENTS.md) — mandatory AI development contract
 2. [context.yaml](context.yaml) — compact machine-readable project state
-3. [Website Blueprint v1](../website-blueprint-v1.md) — canonical implementation source
-4. [Triple-Check Audit](../triple-check-audit-2026-09-26.md) — verified corrections / known uncertainty
-5. [Website Strategy](../website-strategy.md) — strategic rationale
+3. [Implementation Plan](IMPLEMENTATION_PLAN.md) — issue-ready sequencing, dependencies and gates
+4. [Website Blueprint v1](../website-blueprint-v1.md) — canonical implementation source
+5. [Triple-Check Audit](../triple-check-audit-2026-09-26.md) — verified corrections / known uncertainty
+6. [Website Strategy](../website-strategy.md) — strategic rationale
+7. [Decision Records](../decisions/README.md) — durable rationale for material decisions
 
 ## Context-loading rule
 
@@ -35,6 +37,8 @@ The research archive is deliberately not the default AI context. This reduces:
 | Accessibility / performance / QA | Blueprint → Frontend Deep Pass → Triple-check audit |
 | Signature prototype | Prototype README → Modern Visual Effects |
 | Strategic rationale | Website Strategy → relevant research only |
+| Task sequencing / dependencies | Implementation Plan → Blueprint |
+| Material architecture/product decision | Decision Records policy → Blueprint/Strategy → relevant evidence |
 
 ## Canonical vs supporting
 
@@ -51,6 +55,16 @@ The research archive is deliberately not the default AI context. This reduces:
 - `docs/ai/context.yaml`
 
 This file is intentionally concise and derived. If it conflicts with the canonical documents, the canonical documents win.
+
+### Execution plan
+- `docs/ai/IMPLEMENTATION_PLAN.md`
+
+This translates the Blueprint into task-sized work. It controls sequencing, not product truth.
+
+### Decision records
+- `docs/decisions/`
+
+ADRs preserve rationale for material durable decisions. They do not replace the canonical Blueprint.
 
 ### Supporting evidence library
 - `research-findings.md`
