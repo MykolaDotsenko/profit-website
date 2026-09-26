@@ -176,18 +176,18 @@ Framer Academy explicitly teaches vector path/stroke animation, while Frontend M
 
 This is unusually relevant because field boundaries are naturally vector geometry.
 
-Possible signature motion:
+Possible explanatory motion to test:
 
-1. real/aerial field appears;
-2. field boundary draws itself;
-3. operational/data marks appear;
-4. economic metric resolves.
+1. real/aerial field is already understandable;
+2. field boundary draws to establish scope;
+3. operational/data context appears;
+4. economic interpretation resolves together with its evidence/confidence context.
 
 ### Strong use cases
 
 - field perimeter;
 - route/operation path;
-- causal flow diagram;
+- information-flow diagram; use causal framing only when attribution evidence supports it;
 - data-source connection;
 - evidence process.
 
@@ -666,10 +666,12 @@ Treat effects as a scarce design resource.
 
 Recommended v1 homepage:
 
-## Signature effects — maximum 2
-Examples:
+## Storytelling effects — maximum 2 after validation
+Examples to test:
 1. field-boundary/data/economic transformation;
 2. one View Transition/product exhibit transformation.
+
+Before validation, neither is required.
 
 ## Supporting effects
 - subtle image reveal;
@@ -719,7 +721,7 @@ For:
 
 ## M3 — Storytelling
 For:
-- signature farm → data → economics transformation.
+- a validated farm → data → economics transformation.
 
 Use M3 rarely.
 
