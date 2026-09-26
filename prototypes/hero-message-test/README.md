@@ -39,17 +39,17 @@ Open `index.html` in a current browser. No build step, package manager, framewor
 | Eyebrows, headlines, supports, CTAs | `docs/website-blueprint-v1.md` §5 **v2** candidates, verbatim (v1 superseded pre-test by the product-truth gate) | re-check if the Blueprint changes |
 | Evidence/confidence labels | AGENTS.md §4 / Blueprint §8 canonical labels. These are website evidence semantics for illustrative material, not a claim that Field Profitability assesses confidence. | — |
 | Decision question | adapted from `docs/experiments/field-economics-motion-test-v1.md` | human |
-| Field names, crops, areas, yields, revenue, operating costs, operating profit | illustrative placeholders; Field 24's value reuses the motion-protocol scenario, the rest are AI-drafted for internal consistency only | **human plausibility review (protocol D6), after the locale is known** |
+| Field names, areas and field-level economics | statistics-calibrated synthetic scenario; calibration uses current Finnish Luke crop/price/cost-scale references documented in `docs/experiments/www-000-statistical-surrogate-v1.md` | **human terminology/domain review still required when possible; statistics do not replace farmer evidence** |
 | Metric names (operating profit = revenue − variable costs − allocated fixed costs; not gross margin or net profit) | Field Profitability product-truth boundary, Blueprint §2.2 (unmerged, unshipped vertical slice) | re-check if the boundary changes |
 | Source line | "Illustrative source: farmer-provided field records · one season" (Blueprint §8 provenance category); labelled illustrative because the numbers come from no records | — |
 | Layout and styling | AI-drafted neutral scaffold (Builder role) | human review (an AI review does not replace it) |
 
-The numbers are not customer data, regional facts or PROFIT outputs.
+The field records are synthetic and are not customer data or PROFIT outputs. Official statistics are used only to calibrate plausible ranges; see the surrogate-validation note.
 
 ## Editing or localizing
 
 - Change shared strings in their single location.
-- These values appear more than once and must be changed together: `Field 31 · Barley · 18.4 ha` and `−€96/ha` (H1/H2/H3); `4.1 t/ha`, `€738/ha` and `€834/ha` (H2/H3).
+- These values appear more than once and must be changed together: `Field 31 · Wheat · 18.4 ha` and `−€69/ha` (H1/H2/H3); `3.7 t/ha`, `€766/ha` and `€835/ha` (H2/H3).
 - Do not localize before the recruited cohort's language is decided (protocol D5). When translating, set `<html lang>`, translate and format all three directions with the same care, and back-translate.
 - Freeze the file before the round and record its git commit hash with every session.
 
