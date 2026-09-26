@@ -75,6 +75,7 @@ These files are an evidence library. They support decisions but do not silently 
 - [Frontend Masterclass Findings](docs/frontend-masterclass-findings.md)
 - [Frontend Masterclasses Deep Pass 2026](docs/frontend-masterclasses-deep-pass-2026.md)
 - [Frontend Technologies & Frameworks](docs/frontend-technologies-frameworks.md)
+- [Whole-Farm Scope, Data Collection & Forecasting Evidence](docs/whole-farm-scope-evidence-2026-09-27.md)
 
 ## Status
 
