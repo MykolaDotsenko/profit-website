@@ -28,7 +28,7 @@ This decision does **not**:
 
 - **Fact:** the owner instructed Build Pass 01 on 2026-09-26 and stated that D5–D8 block only the WWW-000 freeze and farmer sessions, not reversible engineering.
 - **Fact:** Blueprint §13 and AGENTS.md §8 name Astro as the preferred shell if a coded site is chosen. The npm registry showed Astro 7.3.5 as latest on 2026-09-26, and `@astrojs/check` 0.9.10 supports TypeScript ≤ 6, matching the Blueprint baseline. The official documentation site could not be reached from the build environment.
-- **Inference:** architecture, routes, layout, accessibility and performance work are unaffected by which hero or art direction wins, because those arrive as data and tokens.
+- **Inference (partially revised 2026-09-27):** routes, domain/content semantics, accessibility and performance work remain reusable. The current composition is not fully art-direction-neutral: its editorial Hero/Section/ProofCard structure is closer to Direction A than to B/C. WWW-001 must therefore share semantic/domain truth without forcing this DOM/layout onto all directions.
 
 ## Alternatives considered
 
@@ -50,10 +50,12 @@ The owner decided it, and the work is reversible: no dependency beyond Astro and
 
 ### Positive
 - A working multi-page site for internal review at 390/768/1024/1440.
-- Farmer evidence can change hero copy, proof objects, images, tokens and CTA copy without layout rewrites.
+- Farmer evidence can change hero copy, data, evidence semantics, images, tokens and CTA copy without changing the domain/content layer.
+- Art-direction testing may require independent composition/layouts; the coded foundation is not evidence that a tokens-only swap is sufficient.
 
 ### Negative / trade-offs
-- A polished shell can be mistaken for validated positioning. Mitigation: a preview banner, `noindex` by default, and visible content-gap notes.
+- A polished shell can be mistaken for validated positioning. Mitigation: a preview banner, `noindex` by default, visible content-gap notes, and a build-time release gate.
+- The foundation's editorial composition can create premature convergence toward Direction A. Mitigation: composition isolation in WWW-001; share semantic/domain primitives, not a mandatory Hero/Section/ProofCard scaffold.
 - If WWW-005 selects Framer, this code becomes a reference, not the production site.
 
 ### New dependencies
