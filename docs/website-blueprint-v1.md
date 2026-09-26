@@ -713,3 +713,63 @@ Treat generic cues as high-risk by default:
 - "AI-powered / smarter / optimize / unlock insights" as identity language.
 
 A design is not considered brand-distinctive until target users can begin to recognise PROFIT codes without relying on the logo/name.
+
+
+## 28. AI creative-process architecture
+
+Avoiding AI sameness requires process controls, not prompt cleverness.
+
+Mandatory workflow for brand-defining work:
+
+1. human-authored strategic brief;
+2. solo human framing before shared references;
+3. 3+ independent concept territories;
+4. AI assigned one role at a time:
+   - Challenger,
+   - Explorer,
+   - Analyst,
+   - Builder,
+   - Simulator;
+5. forced divergence before refinement;
+6. evaluation with the PROFIT Creative Evaluation Compass;
+7. implementation from machine-readable brand context;
+8. human approval;
+9. co-presentation of emerging distinctive assets with the PROFIT name;
+10. periodic drift/recognition audit.
+
+Never let one AI loop:
+brief → create → judge → approve its own work.
+
+### PROFIT Creative Evaluation Compass
+
+Review major concepts for:
+- Product Truth;
+- Farmer Relevance;
+- Distinctiveness Potential;
+- Category Contrast;
+- Evidence Integrity;
+- Comprehension;
+- System Potential;
+- Execution Quality.
+
+Use PASS / CONCERN / REJECT / NEEDS EVIDENCE rather than pseudo-precise scores.
+
+### AI-readable brand system
+
+Encode:
+- tokens;
+- component usage rules;
+- voice/terminology;
+- evidence rules;
+- approved examples;
+- rejected examples;
+- explicit exclusions;
+- LOCKED / FLEXIBLE / OPEN exploration zones.
+
+Repeated AI errors should trigger a system/context correction, not endless output patching.
+
+### Distinctive-asset memory rule
+
+Logo-off testing is diagnostic only.
+
+For a young brand, emerging distinctive assets should normally be repeatedly co-presented with the PROFIT name/logo so users can learn the association.
