@@ -78,6 +78,57 @@ Principle:
 
 PROFIT may be designed for international scale, but a result from one market, language, production domain or cohort is evidence for that context only. Do not convert local learning into a global claim without replication.
 
+### EU-first operating focus and Market A decision
+
+Near-term operating theatre:
+
+**EU-first, Europe-expandable.**
+
+The product architecture remains global-capable, while current validation, localisation and data/economic assumptions are optimised first for EU markets. EU evidence must still remain country/cohort-specific; “European farmer” is not a valid pooled research cohort.
+
+**Market A — provisional decision: Finland.**
+
+Purpose:
+choose the fastest credible learning market for Field Profitability, not the largest total addressable market.
+
+Current rationale:
+- Finland combines modern agricultural technology use with significant profitability pressure;
+- official farm-economics and crop statistics are unusually accessible through Luke/Economydoctor;
+- the crop wedge is large enough to recruit a coherent first cohort;
+- the market is operationally manageable for a first localisation/VEV-learning cycle;
+- existing Finnish tools already cover crop planning/economics, which makes differentiation pressure useful: PROFIT must prove economic decision value rather than win by basic digitisation.
+
+**Recruitment gate:** Finland becomes the frozen Market A only if the team can recruit 9–12 eligible crop decision-makers without obvious convenience/sample bias. If this fails, reopen Market A rather than weakening the cohort.
+
+First-cohort specification (D5):
+- country: **Finland**;
+- initial region: **Southwest Finland (Varsinais-Suomi)**;
+- working language: **Finnish**;
+- production context: cereal/oilseed/protein-crop / arable farms relevant to Field Profitability;
+- farm-size band: target **50–200 ha** for the first round, with justified exceptions; hectare band is a research-control choice, not a market-definition claim;
+- decision-maker: owner, manager or partner responsible for field-level crop/economic decisions;
+- digital maturity: mixed; record current tools and avoid recruiting a cohort dominated by one software product or one maturity level;
+- economic context: field-level revenue/cost/profitability decisions under current Finnish crop-farm profitability pressure.
+
+Why Southwest Finland:
+official 2025 Luke structural data lists about 2,194 cereal-production enterprises in Southwest Finland, providing a sufficiently deep, concentrated recruitment pool for a 9–12 person qualitative test.
+
+Reconsider Market A if:
+- the recruitment gate fails;
+- the cohort becomes dominated by one vendor/tool or unusually advanced users;
+- Market-A localisation materially changes the product truth rather than presentation;
+- D6 cannot produce a credible, auditable Finnish scenario;
+- stronger access/evidence makes another EU market materially faster for first VEV learning.
+
+Runner-up/future roles:
+- **Sweden** — strong adjacent Nordic replication candidate;
+- **Poland** — high-contrast EU replication/robustness candidate with much larger and more heterogeneous farm structure;
+- **Denmark** — strategically useful later for cross-domain pig/dairy transfer, but a stronger incumbent digital ecosystem raises the bar for a first crop-wedge entry;
+- **Estonia** — digitally innovative and structurally attractive, but small and already served by a strong local-origin FMS competitor;
+- **Germany/France** — scale markets after the wedge and onboarding/evidence model are better proven.
+
+This ordering is an internal learning strategy, not a public market-priority claim.
+
 ### Domain × Market × Evidence
 
 Evaluate product/brand hypotheses on three explicit dimensions:
@@ -130,14 +181,14 @@ This is a product/data semantics rule, not a decision to introduce a particular 
 
 ### WWW-000 market-validation boundary
 
-WWW-000 remains a **Field Profitability wedge test for one future Market A cohort**. Market A is not selected by this document.
+WWW-000 remains a **Field Profitability wedge test for Market A**. Market A is provisionally Finland under the recruitment gate above; D5 defines the first coherent Finnish cohort.
 
 - **D5 — Market Cohort Specification:** country; region; working language; crop/production context; farm-size band; decision-maker role; digital maturity; relevant economic context. One coherent cohort; other markets are separate replication cohorts.
 - **D6 — Market-Specific Economic Scenario Validation:** after D5, a domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology for that market. Local values remain test inputs, not global PROFIT truths.
 - **D7 — Research Data / Consent Architecture:** global principles are voluntary participation, purpose limitation, data minimisation, anonymised/pseudonymised research handling, no personal data in the public repository, and recording only with explicit consent. Jurisdiction-specific compliance remains OPEN until Market A is chosen; do not invent legal requirements.
 - **D8 — Controlled Documentary Asset:** one identical approved documentary crop image across H1/H2/H3 with source/rights/provenance. It is a WWW-000 Market A test asset, not the global PROFIT hero or master-brand image. No synthetic substitution presented as documentary.
 
-After this architecture pass, the next decision is **Market A selection**, not WWW-001. Select Market A separately using evidence such as farmer access, problem severity/economic value, data availability, willingness-to-pay learning potential, competitive intensity, regulatory/data friction, localisation cost, speed to first VEV evidence and replication potential.
+After this architecture pass, the next action is to satisfy the **Finland recruitment gate and finish D5–D8**, not WWW-001. If Finland fails the recruitment gate, reopen Market A using farmer access, problem severity/economic value, data availability, willingness-to-pay learning potential, competitive intensity, regulatory/data friction, localisation cost, speed to first VEV evidence and replication potential.
 
 ## 3. Primary positioning hypothesis
 

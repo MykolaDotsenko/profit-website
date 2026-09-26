@@ -26,6 +26,20 @@ Operating principle:
 
 Global/company ambition must never outrun customer-level evidence. A premium website is not evidence that PROFIT has achieved market leadership, product-market fit, verified savings, global scale or a defensible moat.
 
+### Geographic execution focus — EU-first, Europe-expandable
+
+Long-term architecture remains global-capable, but the first operational theatre is the **EU market**.
+
+Execution rule:
+
+**Global-capable architecture. EU-first execution. Country-level evidence.**
+
+- Do not treat “Europe” or the EU as one homogeneous farmer market.
+- Validate product/message hypotheses country by country and, when needed, region by region.
+- EU-wide regulation/data infrastructure can be shared, but farm economics, language, terminology, crop mix, cost structures and farmer workflows remain local evidence questions.
+- Non-EU European expansion (for example the UK, Norway, Switzerland or Ukraine) is a later market layer with its own regulatory/economic validation; do not silently treat it as EU evidence.
+- The first recommended proof market for Field Profitability is **Finland**, subject to a recruitment-feasibility gate; this is a learning-market decision, not a claim that Finland is the largest European opportunity.
+
 ### Product-scope boundary
 
 - PROFIT is the master brand.

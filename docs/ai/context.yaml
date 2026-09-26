@@ -48,6 +48,9 @@ field_profitability_reference:
 
 international_validation:
   principle: "Global by architecture. Local by evidence."
+  operating_theatre: "EU-first, Europe-expandable"
+  execution_rule: "Global-capable architecture; EU-first execution; country-level evidence."
+  eu_rule: "EU is a shared regulatory/data theatre, not one pooled farmer cohort; validate country/region contexts independently."
   model: "Domain × Market × Evidence"
   cohort_rule: "Do not pool materially different countries/languages/market contexts into one qualitative cohort; analyse replication markets separately before cross-market comparison."
   domain:
@@ -55,7 +58,7 @@ international_validation:
     future_unshipped: ["pig production", "dairy"]
   market_cohort_spec:
     required_fields: ["country", "region", "working language", "production context", "farm-size band", "decision-maker role", "digital maturity", "relevant economic context"]
-    rule: "Market A is not selected yet; D5 must define one coherent first cohort."
+    rule: "Market A is provisionally Finland subject to recruitment feasibility; D5 defines one coherent Finnish first cohort."
   evidence_maturity:
     I0: "International-ready architecture: market/domain assumptions are separable; locale/currency/unit/domain presentation is not treated as universal truth."
     I1: "One-market evidence: one defined target-market cohort supports the hypothesis for that market/domain."
@@ -73,7 +76,23 @@ international_validation:
     D6: "Market-Specific Economic Scenario Validation after D5: domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology; local values are not global truths."
     D7: "Research Data / Consent Architecture: global principles = voluntary participation, purpose limitation, data minimisation, anonymised/pseudonymised handling, no personal data in public repo, explicit consent for recording; jurisdiction-specific overlay OPEN until Market A."
     D8: "Controlled Documentary Asset: one identical approved documentary crop image with source/rights/provenance; Market A test asset only, not global hero/master-brand identity; no synthetic documentary substitution."
-  next_decision: "Select Market A separately before WWW-000 freeze using farmer access, problem/economic value, data availability, willingness-to-pay learning potential, competition, regulatory/data friction, localisation cost, speed to first VEV evidence and replication potential."
+  market_A:
+    country: "Finland"
+    status: "provisional; freeze only if recruitment gate succeeds"
+    initial_region: "Southwest Finland (Varsinais-Suomi)"
+    working_language: "Finnish"
+    production_context: "cereal/oilseed/protein crop and arable farms relevant to Field Profitability"
+    farm_size_band: "target 50-200 ha with justified exceptions; research-control choice, not a market-definition claim"
+    decision_maker: "owner, manager or partner responsible for field-level crop/economic decisions"
+    digital_maturity: "mixed; record current tools and avoid one-vendor/maturity dominance"
+    recruitment_gate: "9-12 eligible crop decision-makers without obvious convenience/sample bias"
+    evidence_note: "Luke 2025 structural data reports about 2,194 cereal-production enterprises in Southwest Finland; Finland has strong official farm-economics/crop data and documented profitability pressure."
+  replication_candidates:
+    adjacent: "Sweden"
+    high_contrast: "Poland"
+    cross_domain_future: "Denmark"
+    other: ["Estonia", "Germany", "France"]
+  next_decision: "Confirm Finland recruitment feasibility, then resolve D6-D8 and freeze WWW-000; reopen Market A only if the Finland recruitment gate fails."
 
 objectives:
   primary:
@@ -187,7 +206,7 @@ hero_validation:
   status: "open hypothesis; current hero is a control, not a production winner"
   experiment_protocol: "docs/experiments/hero-message-test-v1.md"
   stimulus: "prototypes/hero-message-test/"
-  instrument_status: "drafted; test candidates are the v2 set (Blueprint section 5); D1-D4 settled; international validation architecture defined; Market A not selected; not approved to run/freeze until D5 Market Cohort Specification, D6 market-specific scenario validation, D7 research-data/consent process and D8 controlled documentary asset are resolved"
+  instrument_status: "drafted; test candidates are v2; D1-D4 settled; EU-first international architecture defined; Market A provisionally Finland under a recruitment gate; not approved to run/freeze until D5 cohort feasibility is confirmed and D6 scenario, D7 research-data/consent and D8 documentary asset are resolved"
   candidate_set: "v2 (product-truth-safe, 2026-09-26); v1 superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1"
   scope: "Field Profitability wedge message only; not a master-brand positioning test; results must not redefine PROFIT as field-crop-only (company_context.scope_boundary.extensibility)"
   product_truth_reference: "field_profitability_reference (Blueprint section 2.2); WWW-000 v2 check in hero-message-test-v1.md section 4.4"

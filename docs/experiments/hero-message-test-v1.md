@@ -3,7 +3,7 @@
 Status: **Draft — not approved to run.**
 - Test candidates: **H1/H2/H3 v2** (Blueprint §5). The v1 set was superseded before farmer testing by the product-truth gate (§4.1a).
 - D1–D4 are settled, including PT-1/PT-2.
-- Before freeze: Market A must be selected; D5 Market Cohort Specification, D6 market-specific scenario validation, D7 research-data/consent process and the D8 controlled documentary asset must be resolved (§2, Blueprint §2.3).
+- Before freeze: Finland's recruitment gate must pass; D5 Market Cohort Specification must be confirmed, then D6 market-specific scenario validation, D7 research-data/consent process and the D8 controlled documentary asset must be resolved (§2, Blueprint §2.3).
 
 Date: 2026-09-26
 Implementation-plan ID: WWW-000
@@ -52,12 +52,12 @@ AI must not settle the open items.
 | D2 | "Repeated pattern" | **APPROVED** (2026-09-26) | 3 or more independent participants. 2 independent participants = **CONCERN**, not an automatic kill. The count does not apply to critical evidence-integrity failures: a single case that shows a false or unsupported claim is corrected regardless of count. Blueprint §17. | PROFIT team |
 | D3 | Exposure duration | **APPROVED** (2026-09-26) | Fixed **10 seconds** for the entire first round. The stimulus enforces it. | PROFIT team |
 | D4 | Product-truth reference for Field Profitability | **SETTLED** — reference found and PT-1/PT-2 resolved (2026-09-26) | This is an experimental reference: an implemented, **unmerged and unshipped** vertical slice. It is used only to keep stimuli from promising more than has been designed or implemented. **Not production proof.** The boundary is now canonical in Blueprint §2.2. Dispositions and the v2 check are in §4.4. | Product owner |
-| D5 | Market Cohort Specification | **OPEN — required before freeze/sessions** | After Market A is selected, define: country, region, working language, crop/production context, farm-size band, decision-maker role, digital maturity and relevant economic context. WWW-000 uses one coherent Market A cohort. Do **not** pool materially different countries/languages/market contexts; later markets are separate replication cohorts analysed separately first. Until D5 is fixed, the stimulus stays in the English Blueprint text. Any translation applies equally to H1/H2/H3 and is back-translated/reviewed by a native speaker who knows farm vocabulary. | Human / research owner |
+| D5 | Market Cohort Specification | **PROVISIONAL — Finland selected; recruitment gate required before freeze** | Country **Finland**; initial region **Southwest Finland (Varsinais-Suomi)**; working language **Finnish**; cereal/oilseed/protein-crop/arable context; target 50–200 ha with justified exceptions; owner/manager/partner responsible for field-level crop/economic decisions; mixed digital maturity and no one-vendor-dominated cohort. Recruitment gate: confirm 9–12 eligible farmers without obvious convenience/sample bias. If the gate fails, reopen Market A rather than broadening/mixing the cohort. | Human / research owner |
 | D6 | Market-Specific Economic Scenario Validation | **OPEN — required after D5, before sessions** | A domain expert for Market A validates §4.3: crop, area, yield, implied price, currency, operating costs, operating profit, units and local economic terminology. Changes are applied identically to H1/H2/H3. Local scenario values remain **illustrative Market A test inputs**, not regional facts or global PROFIT truths. | Human (domain) |
 | D7 | Research Data / Consent Architecture | **OPEN — required before sessions** | Global research principles: voluntary participation; purpose limitation; data minimisation; anonymised/pseudonymised handling; no personal data in the public repository; recording only with explicit consent. Jurisdiction-specific compliance is a **local overlay** and remains OPEN until Market A is selected. This protocol does not invent legal advice or jurisdiction-specific requirements. | Human / research owner |
 | D8 | Controlled Documentary Asset | **APPROVED in principle** (2026-09-26) — **BLOCKED until an approved asset exists** | One identical real/documentary field-crop image in H1/H2/H3 (requirements in §3) with source/rights/provenance and identical crop/framing/treatment. It is a **WWW-000 Market A controlled test asset**, not the global PROFIT hero or a master-brand image decision. No AI-generated/synthetic image may be substituted or presented as documentary. | PROFIT team |
 
-Once Market A is selected and D5–D7 plus the D8 asset are settled:
+Once the Finland recruitment gate passes and D5–D7 plus the D8 asset are settled:
 1. apply the changes identically to all three directions;
 2. re-run the stimulus checks (equal visual weight, card size, first-viewport content);
 3. hold a human visual review;
@@ -204,9 +204,9 @@ This session could not read the branch. The read-only clone was denied by the se
 
 ## 5. Participants
 
-Target: **9–12 farm decision-makers relevant to the current field/crop profitability wedge within one defined Market A context** (Blueprint §2.3, §17). 12 is preferred because it completes the counterbalancing in §6.
+Target: **9–12 Finnish-speaking crop decision-makers in the provisional Finland Market A cohort, initially Southwest Finland** (Blueprint §2.3, §17). 12 is preferred because it completes the counterbalancing in §6.
 
-Do not create a mixed “international” WWW-000 cohort. If the same hypothesis is later replicated in Market B/C, recruit and analyse those cohorts separately before comparing cross-market patterns.
+Do not create a mixed “international” WWW-000 cohort. Keep the first round within the approved Finnish Market A specification. If the same hypothesis is later replicated in Sweden, Poland or another Market B/C, recruit and analyse those cohorts separately before comparing cross-market patterns.
 
 Include people who decide on field operations, inputs or crop economics, such as an owner, manager or partner.
 
