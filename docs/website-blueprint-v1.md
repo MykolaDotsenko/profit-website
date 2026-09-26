@@ -31,6 +31,25 @@ give investors a credible, evidence-led view of the problem, wedge, value creati
 9. **No section exists because “modern startup sites usually have it.”**
 10. **Every visual and technical choice must improve clarity, trust, differentiation or qualified conversion.**
 
+## 2.1 Product/company boundary for implementation
+
+These are implementation guardrails, not homepage copy.
+
+- PROFIT is the master brand; Field Profitability is the current wedge/proof hypothesis.
+- Do not let the website architecture, naming or visual system imply that PROFIT is permanently crop-only.
+- Do not depict livestock/other future production domains as shipped capabilities unless current canonical documentation explicitly supports them.
+- The public site is a learning/trust/conversion surface, not the core application.
+- Customer-level evidence outranks global ambition or investor narrative.
+- Never convert internal ambition (leadership, scale, moat, company valuation) into a factual public claim without evidence.
+
+### Quantitative/economic guardrail
+
+AI-generated prose or reasoning is not a source of truth for critical economic numbers.
+
+When real economic outputs are shown, derive them from validated data/rules/models and expose material assumptions, period, provenance and uncertainty.
+
+When that standard cannot be met, label the result as illustrative/modelled rather than real/verified.
+
 ## 3. Primary positioning hypothesis
 
 Category:
@@ -59,6 +78,20 @@ Canonical value term:
 **Verified Economic Value (VEV)**
 
 Do not use “verified” unless the evidence standard is actually met.
+
+### VEV measurement dimensions
+
+Primary internal value metric:
+**VEV per Customer**
+
+Where relevant and evidence permits, supporting views may include:
+- VEV per hectare or relevant production unit;
+- VEV per € paid to PROFIT;
+- share of eligible customers with positive VEV;
+- attribution confidence;
+- explicit period and cohort.
+
+Do not invent missing VEV formulas, thresholds or verification criteria.
 
 ## 5. Homepage architecture
 
