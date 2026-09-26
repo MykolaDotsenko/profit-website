@@ -37,11 +37,12 @@ These are implementation guardrails, not homepage copy.
 
 - PROFIT is the master brand; Field Profitability is the current wedge/proof hypothesis.
 - Do not let the website architecture, naming or visual system imply that PROFIT is permanently crop-only.
-- Keep the master brand, naming, information architecture, category language and visual system extensible to crop production, pig production and dairy without rebranding.
+- Keep the master brand, naming, information architecture, category language and visual system extensible across arable/field crops; horticulture, orchards and berries; vegetables and greenhouse/protected cultivation; pig production; dairy; beef/grazing livestock; poultry/eggs; other livestock and mixed farms without rebranding.
   - Field/crop-specific language, imagery and metrics belong at module or wedge level (e.g. Field Profitability).
-  - Before any field/crop-specific element (e.g. field geometry, crop imagery) is promoted to a master-brand code, check that it transfers to pig production and dairy.
+  - Horticulture, greenhouse and livestock need their own production units, operational structure and economics; do not force them into per-hectare semantics.
+  - Before any field/crop-specific element (e.g. field geometry, crop imagery) is promoted to a master-brand code, check that the grammar survives across horticulture/greenhouse and livestock contexts.
 - Wedge tests such as WWW-000 may be Field Profitability-specific. Their results must not redefine PROFIT as a field-crop-only company, and a surviving wedge message is not a master-brand positioning (§3).
-- Do not depict livestock/other future production domains (including pig production and dairy) as shipped capabilities unless current canonical documentation explicitly supports them.
+- The public company scope may name crops, horticulture/orchards/berries, greenhouse production, pigs, dairy and other livestock as master-brand direction. Do not depict any non-Field-Profitability domain as a shipped capability unless current canonical product documentation explicitly supports it.
 - The public site is a learning/trust/conversion surface, not the core application.
 - Customer-level evidence outranks global ambition or investor narrative.
 - Never convert internal ambition (leadership, scale, moat, company valuation) into a factual public claim without evidence.
@@ -53,6 +54,30 @@ AI-generated prose or reasoning is not a source of truth for critical economic n
 When real economic outputs are shown, derive them from validated data/rules/models and expose material assumptions, period, provenance and uncertainty.
 
 When that standard cannot be met, label the result as illustrative/modelled rather than real/verified.
+
+### Data-collection and forecasting direction
+
+Master-brand product direction:
+
+**work with the farm that exists → minimise manual capture → calculate known economics deterministically → forecast uncertain drivers only where evidence supports it → compare scenarios → measure actual outcome → attribution/confidence → VEV**
+
+Data rules:
+- reuse existing farm records before requiring new hardware or duplicate manual entry;
+- machine/sensor/positioning/external data are optional sources when reliable and useful, not universal prerequisites;
+- old/non-connected machinery must remain supportable through low-friction operator/context capture patterns;
+- offline-first capture + later synchronisation is the preferred pattern where connectivity can interrupt operations;
+- preserve provenance and distinguish recorded, inferred and modelled data.
+
+Forecasting rules:
+- deterministic formulas remain the economic source of truth for known arithmetic;
+- use simple/historical/statistical baselines before more complex ML;
+- increase model complexity only when it materially improves out-of-sample performance and reliability;
+- forecast domain-specific uncertain drivers separately where practical, then pass them through explicit economic logic;
+- compare scenarios against a defensible current-practice/do-nothing baseline;
+- expose ranges, assumptions, update date and confidence;
+- forecast accuracy is not VEV; verified value still requires observed outcome and attribution evidence.
+
+These are product-development principles, not claims that Field Profitability currently provides telemetry, forecasting, optimisation or scenario simulation.
 
 ## 2.2 Field Profitability product-truth boundary (internal)
 
@@ -133,7 +158,7 @@ This ordering is an internal learning strategy, not a public market-priority cla
 
 Evaluate product/brand hypotheses on three explicit dimensions:
 
-- **Domain** — production system being evaluated (current wedge: crop / Field Profitability; pig production and dairy remain future/unshipped domains until separately supported).
+- **Domain** — production system being evaluated (current wedge: crop / Field Profitability; horticulture/orchards/berries, greenhouse/protected cultivation, pig production, dairy and other livestock remain master-brand directions/unshipped product domains until separately supported).
 - **Market** — country, region, working language, farm-size band, decision-maker role, digital maturity and relevant economic context.
 - **Evidence** — the actual evidence state, cohort, period and confidence supporting the conclusion.
 
@@ -152,7 +177,7 @@ These are **internal evidence/maturity labels, not marketing claims**. A level i
 - **I1 — One-market evidence:** one defined target-market cohort supports the product/message hypothesis for that market/domain.
 - **I2 — Cross-market replication:** the same core job/mechanism is independently supported in a second market.
 - **I3 — Cross-market robustness:** the hypothesis remains useful across materially different market contexts, with local adaptations explicitly separated from the invariant mechanism.
-- **I4 — Cross-domain validation:** the master economic/evidence grammar is supported by actual domain evidence across crop production, pig production and dairy; internal design transfer alone does not satisfy this level.
+- **I4 — Cross-domain validation:** the master economic/evidence grammar is supported by actual domain evidence across materially different production systems (at minimum crop plus horticulture/greenhouse and livestock contexts); internal design transfer alone does not satisfy this level.
 - **I5 — International product evidence:** repeatable customer value/VEV, retention and willingness-to-pay evidence exists across multiple markets/domains with attributable, cohort/period-specific evidence.
 
 Do not describe PROFIT as internationally validated, globally proven or equivalent unless the relevant evidence actually exists.
@@ -204,7 +229,7 @@ Supporting line:
 Important:
 These are hypotheses. Validate with real farmers before treating them as fixed brand language.
 
-Master-brand gate: before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
+Master-brand gate: before the master-brand homepage positioning is permanently locked, or before horticulture/greenhouse/livestock directions become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
 
 ## 4. Core narrative
 
@@ -288,7 +313,7 @@ The **v2** candidates in each direction below are the WWW-000 test candidates. T
 
 The v2 field-level scope, including H2 v2's narrowing from "farm data" to field data, is module/wedge-level product truth for this test. It does not narrow the PROFIT master brand or category (§2.1).
 
-The v1 H2 headline and support are the same text as the §3 primary positioning hypothesis, AGENTS.md §6 and `docs/ai/context.yaml` `positioning`. Those entries are unchanged, pending a human decision on whether the positioning hypothesis itself should be restated. Any restatement must keep the master-brand positioning extensible to crop production, pig production and dairy (§2.1). Do not replace it with the wedge-scoped v2 wording.
+The v1 H2 headline and support are the same text as the §3 primary positioning hypothesis, AGENTS.md §6 and `docs/ai/context.yaml` `positioning`. Those entries are unchanged, pending a human decision on whether the positioning hypothesis itself should be restated. Any restatement must keep the master-brand positioning extensible to crop production, horticulture/greenhouse production, pig production and dairy/other livestock (§2.1). Do not replace it with the wedge-scoped v2 wording.
 
 #### H1 — Economic visibility / farmer job first
 
@@ -1893,7 +1918,7 @@ Working brand architecture:
 
 Do not call a visual element a distinctive asset until recognition/uniqueness evidence exists.
 
-Current master-brand candidate code roles (they must work across crop production, pig production and dairy — §2.1):
+Current master-brand candidate code roles (they must work across crop production, horticulture/greenhouse production, pig production and dairy/other livestock — §2.1):
 - real/documentary agricultural reality — category membership + documentary trust;
 - economic typography and units — economic salience + candidate memory code;
 - evidence/confidence/provenance language — trust semantics;
