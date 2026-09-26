@@ -113,6 +113,28 @@ test.describe('calibrated synthetic proof', () => {
   });
 });
 
+test.describe('trust stress check', () => {
+  test('trust stress check stays visibly non-forecast and evidence-safe', async ({ page }) => {
+    await page.goto('/trust/');
+
+    const stress = page.locator('#stress-check');
+    await expect(stress).toBeVisible();
+    await expect(stress).toContainText('Test the arithmetic before trusting the presentation');
+    await expect(stress).toContainText('not a forecast');
+    await expect(stress).toContainText('costs constant');
+    await expect(stress).toContainText('−€214.62');
+    await expect(stress).toContainText('−€69.10');
+    await expect(stress).toContainText('€7.49');
+    await expect(stress).toContainText('€91.74');
+    await expect(stress).toContainText('€225.68');
+    await expect(stress).toContainText('4.03');
+    await expect(stress).toContainText('Luke');
+
+    await expect(stress).not.toContainText('prediction');
+    await expect(stress).not.toContainText('recommendation engine');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
