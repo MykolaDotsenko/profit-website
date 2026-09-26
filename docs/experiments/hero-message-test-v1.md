@@ -1,12 +1,12 @@
 # PROFIT Hero Message Test v1 — WWW-000
 
-Status: **Draft — not approved to run.** A human must settle the items in §2 before session 1.
+Status: **Draft — not approved to run.** D1–D3 were approved by the PROFIT team on 2026-09-26. D4 is blocking, and D5–D8 must be settled before session 1 (§2).
 Date: 2026-09-26
 Implementation-plan ID: WWW-000
 Stimulus: `prototypes/hero-message-test/`
 
 Canonical basis:
-- `docs/website-blueprint-v1.md` §5 (01 Hero: durable rules, H1/H2/H3, hero decision rule), §8, §11, §17 (hero farmer-test protocol, Round 1, hero kill criteria), §18
+- `docs/website-blueprint-v1.md`: §5 (01 Hero: durable rules, H1/H2/H3, hero decision rule), §8, §11, §17 (hero farmer-test protocol, Round 1, hero kill criteria and counting rules; procedure clarified 2026-09-26 per D1–D3), §18
 - `docs/ai/IMPLEMENTATION_PLAN.md` — WWW-000
 - `docs/ai/context.yaml` — `hero_validation`
 
@@ -24,41 +24,47 @@ This test does **not** decide the art direction, final headline wording, the cat
 
 Only the surviving message(s) feed WWW-001. No H direction is a winner before this test is run and analysed.
 
-## 2. Settle before session 1
+## 2. Decisions and pre-session requirements
 
-These items cannot be settled from canonical documents alone. AI must not settle them.
+AI must not settle the open items.
 
-| # | Item | Why it matters | Proposed default | Owner |
+| # | Item | Status | Decision / requirement | Owner |
 |---|---|---|---|---|
-| D1 | **Exposure design and counting rule** | Blueprint §17 describes one timed exposure plus recall (for the first hero), then comparison. Its kill thresholds are counts across the whole cohort ("one-third or more", "three or more participants"). At n = 9–12, a first-exposure-only design gives 3–4 responses per direction, and those cohort-level thresholds almost never trigger. | **PROPOSED:** every participant gets a timed exposure, open recall and a second viewing for **all three** directions, in counterbalanced order. Comparison comes only after all three (§8). Kill counts use all participants per direction. First-exposure results are reported separately as the least-contaminated signal (§11). | Human (PROFIT team) |
-| D2 | **Meaning of "repeated pattern"** | Most Blueprint kill criteria say "repeated" without a number. | **PROPOSED:** 3 or more participants, independently, which mirrors the Blueprint's misclassification rule. 2 participants = CONCERN. | Human |
-| D3 | **Exposure duration** | The Blueprint allows about 5–10 s. The same duration must be used for everyone. | **PROPOSED:** 10 s, fixed for the whole round (`index.html?t=10`). | Human |
-| D4 | **Product-truth reference** | Some kill criteria can only be applied if we know what the product actually supports: "implies precision/data coverage that the current product cannot support" and H3's "product proof is not mature/credible enough". | **REQUIRED:** the product owner writes down what Field Profitability currently supports. That means inputs, cost allocation, margin definition, drivers/explanations, data sources/integrations, precision and coverage. Store it with the results. | Product owner |
-| D5 | **Cohort language and locale** | The stimulus copy is the English Blueprint text. Translating it changes what is being tested. | **REQUIRED if not English:** a native speaker who knows farm vocabulary translates all three directions with the same care, and someone back-translates them. Number, unit and currency formats are localized the same way in all three. The approved translation becomes the tested text; record it with the results. | Human |
-| D6 | **Scenario plausibility** | Implausible illustrative numbers damage trust in every direction. That makes results noisier and can hide real message differences. | **REQUIRED:** someone who knows farm economics in the cohort's region reviews §4.3: crops, areas, yields, costs, margins, units and currency. Any change is applied identically to all three directions. | Human |
-| D7 | **Consent and data handling** | Participant data. | **REQUIRED:** use the team's own consent process. This protocol does not define legal consent terms. | Human |
+| D1 | Exposure design and counting rule | **APPROVED** (2026-09-26) | Every participant evaluates all three directions in counterbalanced order. For each direction: the same timed exposure, open recall, then a second viewing with probes. Overall comparison comes only after all three have been evaluated independently. Kill criteria are counted across all participants who evaluated a direction. First-exposure results are kept and reported separately as the least-contaminated signal. Now in Blueprint §17. | PROFIT team |
+| D2 | "Repeated pattern" | **APPROVED** (2026-09-26) | 3 or more independent participants. 2 independent participants = **CONCERN**, not an automatic kill. The count does not apply to critical evidence-integrity failures: a single case that shows a false or unsupported claim must be corrected regardless of count. Now in Blueprint §17. | PROFIT team |
+| D3 | Exposure duration | **APPROVED** (2026-09-26) | Fixed **10 seconds** for the entire first round. The stimulus enforces it and it cannot be configured. | PROFIT team |
+| D4 | Product-truth reference for Field Profitability | **REQUIRED — BLOCKING** | This protocol cannot apply K6, H3's "product proof is not mature/credible enough" or the CAUSAL/PRECISION-SCOPE codes without it. The product owner documents what exists today: inputs, calculations, margin definition, cost allocation, drivers/explanations, data sources, precision/coverage, and what is still hypothetical or not built. Also document whether a real Field Profitability UI exists that may be shown (Blueprint §5 H3: "real Field Profitability UI when available"). If one exists, a human decides whether Round 1 keeps the equivalent hypothetical cards for all three directions. A real UI for H3 alone would break the controlled comparison. *Checked 2026-09-26:* no such reference exists in this repository's canonical documentation. The separate core PROFIT repository was not inspected in this session. Capability must not be reconstructed from marketing or research copy. | Product owner |
+| D5 | Cohort language and locale | **REQUIRED before sessions** | A human decides the cohort language. Until then the stimulus stays in the English Blueprint text and is not localized. If it is translated, a native speaker who knows farm vocabulary translates all three directions with the same care; someone back-translates them; number/unit/currency formats are localized identically. The approved translation becomes the tested text. | Human |
+| D6 | Scenario plausibility | **REQUIRED before sessions** | Someone with farm-economics knowledge of the specific country/cohort reviews §4.3: crops, areas, yields, revenue (implied price), costs, margins, units and currency. Any change is applied identically to all three directions. Until then the numbers are AI-drafted placeholders, **not** regional facts. | Human (domain) |
+| D7 | Consent and data handling | **REQUIRED before sessions** | Defined by a human through the team's own process. This protocol defines no legal or consent terms. §9 only minimizes what is recorded. | Human |
+| D8 | Farm imagery in the scaffold | **REQUIRED before sessions** | Choose between (1) **no image**, the current stimulus: no photography cue from art directions A/B, but a neutral card of tabular numbers can pull readings towards accounting/finance (§3); or (2) **one identical, human-approved documentary field image** in all three directions: farm context, but it brings in a photography cue and needs source/rights provenance. AI must not select, generate or edit the image. | PROFIT team |
 
-Once D1–D7 are settled, freeze the stimulus: record its git commit hash and do not edit it during the round.
+Once D4–D8 are settled: run one dry run (§8), then freeze the stimulus. Record its git commit hash and do not edit it during the round.
 
 ## 3. What is held constant and what varies
 
-Blueprint §17 Round 1 requires the same neutral/static scaffold. It holds constant typography hierarchy, layout, CTA wording/placement, proof-object complexity and image quality, with motion off.
+Blueprint §17 Round 1 requires the same neutral/static scaffold, holding constant typography hierarchy, layout, CTA wording/placement, proof-object complexity and image quality, with motion off.
 
 | Element | H1 / H2 / H3 |
 |---|---|
-| Scaffold (white canvas, system font, no photography, no colour semantics, no field geometry, no motion) | identical |
+| Scaffold (white canvas, system font, no colour semantics, no field geometry, no motion; imagery per D8, currently none) | identical |
 | Header (plain `PROFIT` wordmark; no navigation, so nav labels cannot feed recall) | identical |
 | Typography roles and sizes, layout, breakpoints | identical |
 | CTAs: **Join the pilot** (primary) · **See how PROFIT works** (secondary), same placement | identical |
 | Proof card frame and size (equal by construction), `HYPOTHETICAL EXAMPLE`, `Confidence: Not assessed` | identical |
-| Decision question, source line | identical |
+| Decision question, illustrative source line | identical |
 | Underlying scenario (§4.3) | identical |
 | **Eyebrow, headline, support** | **varies** — Blueprint §5 verbatim |
-| **Proof-card body** | **varies** — each follows its Blueprint §5 proof-object definition, using the same scenario and 3 economic/production values each |
+| **Proof-card body** | **varies** — each follows its Blueprint §5 proof-object definition and uses the same scenario |
 
-Why the scaffold is neutral: it must not look like A (warm editorial canvas, documentary photography), B (field geometry and overlays) or C (dark product surfaces, metric clusters). Art direction is tested separately in WWW-001/002. Photography is left out entirely rather than using a placeholder or stock image.
+The scaffold is deliberately unlike A (warm editorial canvas, documentary photography) and B (photography with field geometry and overlays). It **does share part of C's grammar**. Blueprint §19 lists C as including "graphite/dark or highly neutral product-like surfaces", "strong tabular numeric hierarchy", "compact metric clusters", "economic states and comparisons" and "explicit evidence/confidence". The scaffold uses a highly neutral surface, tabular numbers and explicit evidence/confidence, though it has no metric clusters or dense UI.
 
-Because of this, absolute comprehension may come out lower than it would for a fully designed hero. See §12 for the rule when all three fail the same way.
+C's category-confusion risk is accounting/ERP/finance. That is also H1's own kill signal. So if `ACC`/`FIN` misreadings recur in **all three** directions, treat them first as a scaffold signal (§12), not as evidence against one message. Art direction is tested separately in WWW-001/002.
+
+Known by-products (not message differences):
+- Equal card size by construction leaves unequal empty space inside the card (most in H1).
+- The CTA sits at different heights because the headlines and supports differ in length.
+- Absolute comprehension may be lower than for a fully designed hero. See §12 for the rule when all three fail the same way.
 
 ## 4. Stimulus content
 
@@ -77,25 +83,27 @@ Rendering-only details: a non-breaking space before each em dash, and balanced l
 | | Blueprint §5 proof-object definition | Stimulus body |
 |---|---|---|
 | H1 | a small number of contrasting field economics with provenance/illustrative labeling | "Three fields, one farm": margin for Field 24, Field 12, Field 31 |
-| H2 | farm data → economic interpretation → decision, one concrete metric/question | Field 31: FARM DATA (yield, costs) ↓ ECONOMIC INTERPRETATION (margin) ↓ the shared decision question |
-| H3 | field-level economics, source context, `Confidence: Not assessed` | Field 31: yield, costs, margin |
+| H2 | farm data → economic interpretation → decision, one concrete metric/question | Field 31: FARM DATA (yield, costs) ↓ ECONOMIC INTERPRETATION (revenue, margin) ↓ the shared decision question |
+| H3 | real Field Profitability UI when available; otherwise field-level economics, source context, `Confidence: Not assessed` | Field 31: yield, revenue, costs, margin. This takes the "otherwise" branch until D4 says whether a real UI exists. |
 
-The H3 headline promises "what drives it". The stimulus shows only the parts that make up the margin (yield, costs → margin). It does not show causal drivers, because nothing establishes a causal claim. Record causal expectations when participants voice them (§10).
+H2 and H3 show revenue so that the arithmetic reconciles: revenue − costs = margin.
+
+The H3 headline promises "what drives it". The stimulus shows only the parts that make up the margin. It does not show causal drivers, because nothing establishes a causal claim. Record causal expectations when participants voice them (§10).
 
 ### 4.3 Shared scenario — HYPOTHETICAL EXAMPLE
 
-| Field | Crop | Area | Yield | Costs | Margin |
-|---|---|---|---|---|---|
-| Field 24 | Wheat | 41.7 ha | — | — | €637/ha |
-| Field 12 | Wheat | 23.0 ha | — | — | €148/ha |
-| Field 31 | Barley | 18.4 ha | 4.1 t/ha | €834/ha | −€96/ha |
+| Field | Crop | Area | Yield | Revenue | Costs | Margin |
+|---|---|---|---|---|---|---|
+| Field 24 | Wheat | 41.7 ha | — | — | — | €637/ha |
+| Field 12 | Wheat | 23.0 ha | — | — | — | €148/ha |
+| Field 31 | Barley | 18.4 ha | 4.1 t/ha | €738/ha | €834/ha | −€96/ha |
 
 - Evidence: **HYPOTHETICAL EXAMPLE** · Confidence: **Not assessed**
-- Decision question: **What would you investigate on Field 31 before changing the plan?** (a question, not a recommendation; adapted from `docs/experiments/field-economics-motion-test-v1.md`)
-- Source line: **Source: farmer-provided field records · one season** (Blueprint §8 provenance category "Farmer-provided"; it implies no machinery or other integrations)
-- Provenance of the numbers: Field 24 reuses the motion-protocol scenario. The rest are AI-drafted placeholders, chosen only to be internally consistent (−€96/ha implies about €180/t barley). They are **not** regional facts, **not** customer data and **not** PROFIT outputs. They need D6 review.
+- Decision question: **What would you investigate on Field 31 before changing the plan?** A question, not a recommendation; adapted from `docs/experiments/field-economics-motion-test-v1.md`.
+- Source line: **Illustrative source: farmer-provided field records · one season**. This uses the Blueprint §8 provenance category "Farmer-provided" and implies no machinery or other integrations. It is labelled illustrative because the numbers do not come from any records.
+- Provenance of the numbers: Field 24's margin reuses the motion-protocol scenario. The rest are AI-drafted placeholders, chosen only to be internally consistent (€738/ha at 4.1 t/ha implies about €180/t barley). They are **not** regional facts, customer data or PROFIT outputs, and they need D6 review.
 - "Margin" is intentionally left undefined in the stimulus. How participants read it is data (§8, probe d).
-- Values that appear more than once must be edited together: `Field 31 · Barley · 18.4 ha` and `−€96/ha` (H1/H2/H3), `4.1 t/ha` and `€834/ha` (H2/H3).
+- Values that appear more than once must be edited together: `Field 31 · Barley · 18.4 ha` and `−€96/ha` (H1/H2/H3); `4.1 t/ha`, `€738/ha` and `€834/ha` (H2/H3).
 
 ## 5. Participants
 
@@ -107,7 +115,7 @@ Exclude, or analyse separately:
 - investors, advisors to PROFIT, PROFIT staff or friends;
 - anyone who has already seen PROFIT positioning, decks or prototypes.
 
-Record for segmentation: role, farm type and main crops, approximate farmed area, country/region, digital tools used for farm economics, and whether they currently compare costs or margins by field.
+Determine each participant's segment at screening, **before** assigning an order. Record for segmentation: role, farm type and main crops, approximate farmed area, country/region, digital tools used for farm economics, and whether they currently compare costs or margins by field.
 
 If the recruited farmers form materially different segments, counterbalance and analyse each segment separately. Do not average them (Blueprint §17).
 
@@ -115,7 +123,7 @@ Recruitment and scheduling messages must not describe PROFIT's product or use an
 
 ## 6. Assignment (counterbalancing)
 
-Assign orders in booking order, decided before the first session. Do not reassign on the day. If a participant drops out, the replacement takes the same order.
+Assign orders in booking order within each segment, using a separate P-sequence per segment, decided before the first session. Do not reassign on the day. If a participant drops out, the replacement takes the same order. If segments only become clear after sessions, do not reassign; report the resulting imbalance.
 
 | Participant | Order |
 |---|---|
@@ -136,77 +144,92 @@ Assign orders in booking order, decided before the first session. Do not reassig
 
 - Use one device, browser, window size and zoom (100%) for every session. Use full screen, with notifications off.
 - Primary exposure is on a laptop or desktop screen: in person at normal viewing distance, or remote with the stimulus shared at full screen.
-- Open `prototypes/hero-message-test/index.html?t=<D3>`. This moderator view shows direction labels, so the participant must never see it.
+- Open `prototypes/hero-message-test/index.html`. This moderator view shows direction labels, so the participant must never see it.
 - Session keys (need JavaScript):
   - <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> loads H1/H2/H3 behind a hidden screen;
-  - <kbd>Space</kbd> shows it for the fixed duration, then hides it;
+  - <kbd>Space</kbd> shows it for exactly 10 s (D3), then hides it;
   - <kbd>B</kbd> shows or hides it without a timer.
-- Without JavaScript, use the direction links and time the exposure manually. Record that the session was manually timed.
+- Opening or reloading a stimulus address starts on the hidden screen. The browser Back button keeps the screen hidden. Use <kbd>B</kbd> to leave it.
+- Without JavaScript, use the direction links, time 10 s manually and record that the session was manually timed.
 - The CTAs are placeholder links and do nothing. If a participant tries one, ask what they expected to happen.
-- Record for each session: date, mode, moderator, note-taker, stimulus commit hash, exposure seconds, order.
+- Record for each session: date, mode, moderator, note-taker, stimulus commit hash, timing (timed/manual), order.
 
-Mobile is **not** a participant task in this round; the mobile participant task is AD-5 in WWW-002. It is a team design gate here instead. At about 390 px, check that no direction loses the proof card or has to remove the economic proof to fit (hero kill criterion K9). Record what the first 390 × 844 viewport shows for each direction.
+Mobile is **not** a participant task in this round; the mobile participant task is AD-5 in WWW-002. K9 is therefore N/A by construction: the shared scaffold keeps the proof card on mobile for every direction. As a design note for later mobile composition, record which elements are visible in the first 390 × 844 viewport for each direction: badge, values, decision question, source line, CTA.
 
 ## 8. Moderator script
 
 Use the same wording for every participant. Do not explain PROFIT, correct answers or coach until the participant has finished all tasks.
 
-**Intro (verbatim):**
+**Dry run (before the freeze):** do one full rehearsal with someone outside the sample to check timing, keys, wording and session length. Rehearsal answers are not data.
+
+**Intro (verbatim; protocol wording):**
 > "I'll show you the first screen of a website for a few seconds. Look at it the way you normally would. When it disappears I'll ask what you remember and what you think it is. There are no right or wrong answers — we're testing the website, not you."
 
-**For each direction, in the assigned order:**
+**Before the 2nd and 3rd directions (verbatim; protocol wording):**
+> "Now I'll show you another version of the first screen, again for a few seconds. Please look at it the way you normally would."
 
-1. Load the direction behind the hidden screen. Say "Ready?" and press <kbd>Space</kbd>. The stimulus shows for the D3 duration, then hides.
+**For each direction, in the assigned order (D1):**
+
+1. Load the direction behind the hidden screen. Say "Ready?" and press <kbd>Space</kbd>. The stimulus shows for 10 s, then hides.
 2. **Open recall** (Blueprint §17, verbatim). Ask with the screen hidden, before any explanation:
    1. What do you think PROFIT does?
    2. Who do you think it is for?
    3. What farm problem do you think it helps with?
    4. What economic result/question do you think you would see?
    5. What would you expect to click or do next?
-
-   For the 2nd and 3rd directions, also ask: "Is anything different from the previous one? What?"
-3. **Second viewing** (<kbd>B</kbd>, untimed) and probes, in this order. Leading probes come last.
-   - a. What is the panel with numbers showing you? *(no explanation given — K5)*
+3. **Second viewing** (<kbd>B</kbd>, untimed) and probes, in this order. The leading probe comes last.
+   - a. What is the panel with numbers showing you? *(added — K5; no explanation given)*
    - b. What part is unclear? *(Blueprint)*
    - c. What sounds least credible? *(Blueprint)*
-   - d. What data would you expect PROFIT to need? *(Blueprint)* What do you think "margin" includes here?
+   - d. What data would you expect PROFIT to need? *(Blueprint)* What do you think "margin" includes here? *(added)*
    - e. Does anything sound like a promise of guaranteed profit? *(Blueprint; leading, so ask it last)*
 4. **First direction only**, after its probes:
-   - Where do you think these numbers come from?
-   - What do you think happens after "Join the pilot"?
+   - Where do you think these numbers come from? *(added)*
+   - What do you think happens after "Join the pilot"? *(added)*
    - What would stop you from joining a pilot? *(Blueprint)*
 
-**After all three** (comparison; not "which do you like?"):
+**After all three** (comparison, all protocol additions; not "which do you like?"):
 - Which version makes it clearest what PROFIT would do for a farm like yours? Why?
 - Which version would you trust least? Why?
 - Does any version promise more than you believe? Which words?
 - If you could keep one sentence from any version, which one, and why? *(secondary: rewrite input only)*
 
-Probes a, d (the margin part) and the three first-direction questions are additions. They make the Blueprint §17 "Record" items observable: proof-object comprehension, data expectations, CTA comprehension, and reading illustrative numbers as real. Every other question is Blueprint wording.
+**Debrief (verbatim; protocol wording):**
+> "Thank you. Before we finish: all the numbers you saw were invented examples, not results from any real farm or customer. The versions were wording tests, and none of them is final. Do you have any questions?"
+
+Do not pitch PROFIT in the debrief. If asked about the pilot, give only the team's standard information.
+
+The recall and probe questions marked *Blueprint* are Blueprint §17 wording. Everything marked *added* or *protocol wording* is an addition. The additions make Blueprint §17's "Record" items observable: proof-object comprehension, data expectations, CTA comprehension, and reading illustrative numbers as real.
+
+**Known residual contamination under D1.** Each direction's probes, including the leading probe e, come before the next direction's exposure and recall. So recall in positions 2–3 is shaped by earlier probes as well as earlier exposures. This protocol reduces the effect:
+- no comparison question appears before all three directions are evaluated;
+- a PROMISE reading counts as *spontaneous* only before the participant's first probe e (§10);
+- answers in positions 2–3 are flagged as probe-exposed in the analysis (§11).
+
+Another order also fits D1's listed properties: all three timed exposures with recall first, then the three second viewings with probes. It would remove probe carry-over. Choosing it is a human decision and has not been applied.
 
 ## 9. Recording sheet
 
-Copy this sheet once per participant. Keep names and contact details **outside the repository** and use participant IDs only. Anonymized, consented verbatims may be committed with the results. Personal data may not.
+The repository is **public**. Keep participant sheets, notes and recordings **outside the repository** and use participant IDs only. The committed results file (§13) uses segment-level descriptors only, never a per-participant combination of role, crops, area and region. It includes verbatims only if they are anonymized, consented and stripped of identifying details. Personal data is never committed.
 
 ```text
 Participant: P__   Segment: ____   Date: ____   Mode: in person / remote
-Moderator: ____   Note-taker: ____   Stimulus commit: ____   Exposure: __ s (timed / manual)
+Moderator: ____   Note-taker: ____   Stimulus commit: ____   Exposure: 10 s (timed / manual)
 Order: H_ → H_ → H_
 Role: ____   Farm type / main crops: ____   Approx. area: ____   Country/region: ____
 Tools for farm economics: none / spreadsheet / farm software / advisor / other: ____
 Compares costs or margins by field today: yes / sometimes / no
 Prior exposure to PROFIT: none / yes (→ analyse separately)
 
-Exposure _ of 3 — H_
+Exposure _ of 3 — H_   (position 1 = first exposure; positions 2–3 = probe-exposed)
  Recall (verbatim)  1 does: ____  2 for: ____  3 problem: ____  4 economic result: ____  5 next: ____
- Different from previous (2nd/3rd only): ____
  Probes (verbatim)  a panel: ____  b unclear: ____  c least credible: ____
                     d data / margin: ____  e guaranteed profit: ____
  First direction only: numbers from: ____  after "Join the pilot": ____  pilot barriers: ____
  Codes (§10): JOB-CONCRETE P/PA/F   JOB-INTENDED Y/N   AUDIENCE Y/N   MECHANISM Y/P/N
               ECON-RESULT Y/N   NEXT-ACTION Y/N   CATEGORY-WITHOUT-JOB Y/N   MISCLASS: ____
               PROMISE spontaneous / prompted-only / none   PRECISION-SCOPE Y/N   CAUSAL Y/N
-              PROOF-UNAIDED Y/P/N   NUMBERS-READ-AS-REAL Y/N   UNCLEAR WORDS: ____
+              PROOF-UNAIDED Y/P/N   NUMBERS-READ-AS-REAL Y/N   LABEL-ECHO Y/N   UNCLEAR WORDS: ____
 
 Comparison (verbatim): clearest: ____  least trusted: ____  over-promise: ____  keep sentence: ____
 ```
@@ -224,16 +247,23 @@ Two people should code the answers independently where possible, then settle dis
 | ECON-RESULT | Recalls an economic result or question, e.g. margin, €/ha, a weak field. |
 | NEXT-ACTION | Names a plausible next step (join the pilot, see how it works, investigate a field). |
 | CATEGORY-WITHOUT-JOB | Recalls category/technology words (e.g. "decision intelligence", "AI", "data") but not the job (K4). |
-| MISCLASS | `ACC` accounting/bookkeeping/tax · `LAND` land valuation/real estate · `AIC` generic AI/data consultancy or platform · `MKT` marketplace/trading/input buying · `AGRO` agronomy advice/satellite/mapping · `FIN` loans/insurance/banking · `REP` consulting/reporting service · `OTH` other (describe) |
-| PROMISE | Reads it as guaranteed higher profit, savings or verified results. Record whether this was spontaneous (before probe e) or prompted only; spontaneous is stronger evidence. |
+| MISCLASS | `ACC` accounting/bookkeeping/tax · `LAND` land valuation/real estate · `AIC` generic AI/data consultancy or platform · `MKT` marketplace/trading/input buying · `AGRO` agronomy advice/satellite/mapping · `FIN` loans/insurance/banking · `REP` consulting/reporting service · `OTH` other (describe). If `ACC`/`FIN` recur across all three directions, check for a scaffold signal first (§3). |
+| PROMISE | Reads it as guaranteed higher profit, savings or verified results. **Spontaneous** only if it appears before the participant's first probe e of the session; **prompted-only** otherwise. Spontaneous is stronger evidence. |
 | PRECISION-SCOPE | Expects precision, automation, integrations or coverage the product-truth reference (D4) does not support. Examples: "it knows every field's exact profit automatically", "it connects to my machinery", "whole farm including livestock". |
 | CAUSAL | Expects PROFIT to establish why, e.g. "it tells me why the field loses money". Compare with D4. This is an evidence-integrity risk, especially for H3's "what drives it". |
 | PROOF-UNAIDED | Probe a is answered correctly without explanation: a field-level economic result derived from farm information. Y / partial / N (K5). |
-| NUMBERS-READ-AS-REAL | Believes the numbers are real customer, farm or verified results despite `HYPOTHETICAL EXAMPLE`. This is a **scaffold** signal: if it repeats, fix the labelling for all three directions and do not blame one message. |
+| NUMBERS-READ-AS-REAL | Believes the numbers are real customer, farm or verified results despite `HYPOTHETICAL EXAMPLE` and the illustrative source line. This is a **scaffold** signal: if it repeats, fix the labelling for all three directions and do not blame one message. |
+| LABEL-ECHO | The answer to "Where do you think these numbers come from?" only repeats the source label. Code it separately so it is not mistaken for comprehension. |
 
 ## 11. Hero kill criteria (Blueprint §17)
 
-These are directional qualitative gates, not statistical proof. For each direction, fill in a count across all participants and the first-exposure-only count. Use one of: TRIGGERED / CONCERN / NOT TRIGGERED / N/A.
+These are directional qualitative gates, not statistical proof. Blueprint §17 sets the counting rules:
+- **Count** each criterion across all participants who evaluated that direction (D1).
+- Keep and report the **first-exposure** count separately as the least-contaminated signal. Flag positions 2–3 as probe-exposed.
+- **Repeated pattern** = 3 or more independent participants. **2 = CONCERN**, not an automatic kill (D2).
+- **Evidence-integrity exception:** a single case that shows a false or unsupported claim is corrected regardless of count (D2). Examples: numbers read as verified results because of a label, or an implied integration.
+
+Use one of: TRIGGERED / CONCERN / NOT TRIGGERED / N/A. Fill in each cell as "all-participant count (first-exposure count)".
 
 | # | Criterion (Blueprint wording) | H1 | H2 | H3 |
 |---|---|---|---|---|
@@ -245,7 +275,7 @@ These are directional qualitative gates, not statistical proof. For each directi
 | K6 | the direction implies precision/data coverage that the current product cannot support (needs D4) | | | |
 | K7 | the CTA or next step is materially unclear | | | |
 | K8 | the hero only works when animation is enabled | N/A — no motion | N/A | N/A |
-| K9 | mobile requires removing the product/economic proof to fit the composition (team design gate, §7) | | | |
+| K9 | mobile requires removing the product/economic proof to fit the composition | N/A — shared scaffold keeps the proof card on mobile (§7) | N/A | N/A |
 
 Variant-specific kill signals (Blueprint §17):
 
@@ -253,7 +283,7 @@ Variant-specific kill signals (Blueprint §17):
 - **H2:** farmers paraphrase it only as generic "AI/data for better decisions"; `Agricultural Decision Intelligence` creates confusion or adds no useful meaning; "more profitable decisions" is interpreted as a promised financial outcome.
 - **H3:** target farmers do not care enough about field-level margin to make it a first-screen job; "margin by field" implies unsupported precision or unavailable data; the product proof is not mature/credible enough to substantiate the headline (needs D4).
 
-Counting (if D1 is accepted as proposed): a criterion is TRIGGERED when the all-participant count meets the threshold. If the first-exposure-only signal points the other way, the direction is **NEEDS EVIDENCE**, not ADVANCE or KILL. Later exposures carry learning from earlier directions, so a pass that shows up only in 2nd/3rd position is weak evidence.
+A TRIGGERED or CONCERN status follows the all-participant count. If the first-exposure result diverges materially from it, state the divergence explicitly in the decision rationale (§12). The divergence does not override the approved count.
 
 ## 12. Decision rules
 
@@ -264,23 +294,30 @@ For each direction, decide **ADVANCE / REWRITE / KILL / NEEDS EVIDENCE**, citing
 - **KILL** when the core job itself fails, e.g. farmers do not care about it, or there is repeated misclassification that no wording change would plausibly fix.
 - **NEEDS EVIDENCE** when signals conflict or differences are subtle. Use a larger follow-up "if differences are subtle or the decision becomes costly to reverse" (Blueprint §17).
 - More than one direction may advance. WWW-001 needs **one** controlled message, so the team picks one and records why, or runs a follow-up. Do not hybridize untested wording.
-- **If all three fail the same criterion**, first work out whether the scaffold caused it before killing anything. Possible scaffold causes: missing farm imagery, an unclear proof card, unnoticed labels. Fix the scaffold identically for all three and retest. Adding other candidates, such as the alternatives in `docs/website-strategy.md` §3, needs a human decision.
+- **If all three fail the same criterion**, first work out whether the scaffold caused it before killing anything. Possible scaffold causes:
+  - missing farm imagery (D8);
+  - a C-like neutral numeric card that reads as accounting/finance;
+  - an unclear proof card;
+  - unnoticed labels.
+
+  Fix the scaffold identically for all three and retest. Adding other candidates, such as the alternatives in `docs/website-strategy.md` §3, needs a human decision.
 - Never report "H_ won". Report the sample size, segments, order balance and remaining uncertainty.
 
 ## 13. Result template
 
-Record results in `docs/experiments/hero-message-test-v1-results.md`, anonymized and with no personal data.
+Record results in `docs/experiments/hero-message-test-v1-results.md`. Keep them anonymized and segment-level only (§9), with no personal data.
 
 ```text
 Cohort: n = __, segments: ____, first exposures per direction: H1 __ / H2 __ / H3 __
-Settled items D1–D7: ____ (D4 product-truth reference attached: yes/no)
-Stimulus commit: ____   Exposure: __ s   Language/locale: ____
+Decisions: D1–D3 approved 2026-09-26; D4 reference attached: yes/no; D5 locale: ____; D6 reviewer/date: ____; D7 process: ____; D8 imagery: ____
+Stimulus commit: ____   Exposure: 10 s (timed / manual sessions: __)
 
-H1 — evidence: ____   failure patterns: ____   kill table: ____   decision: ADVANCE / REWRITE / KILL / NEEDS EVIDENCE
-H2 — evidence: ____   failure patterns: ____   kill table: ____   decision: ...
-H3 — evidence: ____   failure patterns: ____   kill table: ____   decision: ...
+H1 — evidence: ____   failure patterns: ____   kill table (all / first-exposure): ____   decision: ADVANCE / REWRITE / KILL / NEEDS EVIDENCE
+H2 — evidence: ____   failure patterns: ____   kill table (all / first-exposure): ____   decision: ...
+H3 — evidence: ____   failure patterns: ____   kill table (all / first-exposure): ____   decision: ...
 
-Scaffold signals (NUMBERS-READ-AS-REAL, shared unclear words): ____
+Evidence-integrity cases (any count): ____
+Scaffold signals (NUMBERS-READ-AS-REAL, cross-direction ACC/FIN, shared unclear words): ____
 Message selected for WWW-001, and why: ____
 Rewrites that need retesting: ____
 Remaining uncertainty: ____
@@ -296,7 +333,8 @@ Remaining uncertainty: ____
 ## 15. Reconsider if
 
 - recall is driven by the proof-card body rather than the copy. Then run a copy-only check with one identical proof body for all three;
-- the neutral scaffold itself causes a systematic failure (e.g. "looks unfinished" or "not trustworthy") across all directions;
+- the neutral scaffold itself causes a systematic failure (e.g. "looks unfinished", "accounting software" or "not trustworthy") across all directions;
 - the recruited cohort does not match the Field Profitability wedge;
 - the product-truth reference (D4) contradicts what the proof cards imply;
+- D8 adds imagery. Then re-verify that the image is identical across all three and that equal card size, layout and first-viewport content still hold;
 - the Blueprint's hero candidates, CTA or evidence semantics change before the round is run.

@@ -112,7 +112,7 @@ This wording is a hypothesis and must be validated with real farmers and investo
 Alternative message candidates worth testing:
 
 - **Know what every hectare is really worth.**
-- **Know where your farm makes money — and where it loses it.**
+- **Know where your farm makes money — and where it doesn't.** (H1 candidate in Blueprint §5; Blueprint wording is canonical)
 
 Success is comprehension and qualified action, not internal preference.
 

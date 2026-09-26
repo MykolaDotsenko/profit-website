@@ -285,6 +285,7 @@ Answer real buyer questions:
 ### 08 — Evidence
 
 Use explicit states:
+- Hypothetical
 - Modelled
 - Observed
 - Attributed
@@ -667,13 +668,10 @@ Keep constant:
 
 Do not pair each message direction with a different art direction in this round. That would confound message and visual effects.
 
-Procedure:
-1. randomly/counterbalance which hero a participant sees first;
-2. expose the first hero for approximately 5–10 seconds;
-3. hide it;
-4. ask open recall questions before giving explanations;
-5. show it again and probe credibility/data expectations;
-6. only after independent recall, allow comparison with the other directions.
+Procedure — every participant evaluates all three directions:
+1. assign each participant a counterbalanced H1/H2/H3 order, so each direction is seen first, second and third equally often;
+2. for each direction in that order: expose it for the same fixed duration (**10 seconds** throughout the first round), hide it, ask the open recall questions before giving any explanation, then show it again and run the credibility probe;
+3. only after all three directions have been evaluated independently, allow overall comparison between them.
 
 First-round sample:
 - **9–12 target farmers** is sufficient for qualitative elimination signals;
@@ -708,7 +706,7 @@ Do not use “Which one do you like?” as the primary decision question.
 
 Only after one or more hero message directions survive Round 1:
 - use the same surviving message/proof content across the three visual directions;
-- test Editorial Intelligence vs Farm Data Layer vs Economic Command;
+- test A — Evidence-Led Editorial vs B — Farm Operations Layer vs C — Economic Control Room (§19);
 - then run logo-off/category-confusion diagnostics.
 
 This preserves:
@@ -717,6 +715,11 @@ This preserves:
 ### Hero kill criteria
 
 These are directional qualitative gates, not statistical proof.
+
+Counting rules:
+- count each criterion across all participants who evaluated that direction; keep and report first-exposure results separately as the least-contaminated signal;
+- a **repeated pattern** means 3 or more independent participants; 2 independent participants is a **CONCERN**, not an automatic kill;
+- the count does not apply to critical evidence-integrity failures: a single case that shows a false or unsupported claim must be corrected regardless of count.
 
 Kill or materially rewrite a hero direction when any of the following appears as a repeated pattern:
 

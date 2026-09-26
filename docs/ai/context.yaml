@@ -143,7 +143,7 @@ hero_validation:
   status: "open hypothesis; current hero is a control, not a production winner"
   experiment_protocol: "docs/experiments/hero-message-test-v1.md"
   stimulus: "prototypes/hero-message-test/"
-  instrument_status: "drafted; not approved to run until the protocol's pre-session items (D1-D7) are settled by a human"
+  instrument_status: "drafted; D1-D3 approved 2026-09-26; not approved to run: D4 product-truth reference is blocking, D5-D8 required before sessions"
   durable_rules:
     - "Hero comprehension must not depend on understanding the category label."
     - "A static first frame must communicate farmer + economic job + credible proof + next action."
@@ -156,7 +156,8 @@ hero_validation:
     H3: "Field Profitability / product proof first"
   first_test:
     cohort: "9-12 target field/crop farm decision-makers for qualitative elimination; no statistical-winner claim"
-    method: "same neutral static scaffold; randomized first exposure; open recall before comparison"
+    method: "same neutral static scaffold; every participant evaluates H1/H2/H3 in counterbalanced order; fixed 10 s exposure, open recall, then second viewing/probes per direction; overall comparison only after all three"
+    counting: "kill criteria counted across all participants per direction; first-exposure results reported separately; repeated pattern = 3+ independent participants, 2 = concern; evidence-integrity failures corrected regardless of count"
   kill_patterns:
     - "material farmer-economic job is not understood"
     - "recurring misclassification"

@@ -4,19 +4,20 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>PROFIT — hero message test</title>
+<title>PROFIT</title>
 <!--
   WWW-000 hero message test stimulus. Protocol: docs/experiments/hero-message-test-v1.md
 
-  Deliberately neutral: no photography, no brand font, no colour semantics, no field
-  geometry, no motion, so that H1/H2/H3 differ only in their message variables.
+  Deliberately neutral: no photography (pending protocol D8), no brand font, no colour
+  semantics, no field geometry, no motion, so that H1/H2/H3 differ only in their message variables.
 
   Every shared element (header, CTA, proof-card frame, evidence/confidence labels,
   decision question, source line) exists exactly once in this file. Only the elements
   marked class="v v1|v2|v3" differ between directions.
 
-  Copy: docs/website-blueprint-v1.md §5, verbatim. All numbers are illustrative
-  placeholders and must pass a human plausibility review before any session.
+  Copy: docs/website-blueprint-v1.md §5, verbatim. All numbers are AI-drafted illustrative
+  placeholders and must pass the protocol's D6 human plausibility review before any session.
+  Exposure is fixed at 10 seconds (protocol D3, approved 2026-09-26).
 -->
 <style>
   :root {
@@ -47,8 +48,8 @@
   #h1:target ~ main .v1, #h2:target ~ main .v2, #h3:target ~ main .v3 { display: block; }
 
   /* Hidden screen between timed exposures (enabled by the small script below). */
-  .is-hidden .site-header, .is-hidden .hero { visibility: hidden; }
-  .is-hidden :target ~ main .blank {
+  .is-hidden .site-header, .is-hidden .hero, .is-hidden .moderator { visibility: hidden; }
+  .is-hidden .blank {
     display: grid;
     place-items: center;
     position: fixed;
@@ -197,10 +198,10 @@
     <h2>Session keys (needs JavaScript)</h2>
     <ul>
       <li><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> — load H1 / H2 / H3 behind a hidden screen.</li>
-      <li><kbd>Space</kbd> — show the loaded stimulus for <strong data-exposure-seconds>10</strong> seconds, then hide it automatically.</li>
-      <li><kbd>B</kbd> — show / hide without a timer (second viewing).</li>
+      <li><kbd>Space</kbd> — show the loaded stimulus for <strong>10 seconds</strong>, then hide it automatically.</li>
+      <li><kbd>B</kbd> — show / hide without a timer (second viewing); also leaves the hidden screen.</li>
     </ul>
-    <p>Exposure is set once per round in the address: <code>index.html?t=10</code> (allowed 5–10 seconds; default 10).</p>
+    <p>Exposure is fixed at 10 seconds for the whole first round (protocol D3). With JavaScript on, opening or reloading a stimulus address starts on the hidden screen, and the browser Back button keeps the screen hidden.</p>
   </div>
 
   <div class="hero">
@@ -253,6 +254,7 @@
             </li>
             <li class="step">
               <p class="step-label">ECONOMIC INTERPRETATION</p>
+              <p class="step-row"><span>Revenue</span> <span class="value">€738/ha</span></p>
               <p class="step-row"><span>Margin</span> <span class="value">−€96/ha</span></p>
             </li>
           </ol>
@@ -263,6 +265,7 @@
           <table class="rows">
             <tbody>
               <tr><th scope="row">Yield</th><td class="value">4.1 t/ha</td></tr>
+              <tr><th scope="row">Revenue</th><td class="value">€738/ha</td></tr>
               <tr><th scope="row">Costs</th><td class="value">€834/ha</td></tr>
               <tr><th scope="row">Margin</th><td class="value">−€96/ha</td></tr>
             </tbody>
@@ -274,7 +277,7 @@
         <p class="decision-label">DECISION QUESTION</p>
         <p class="decision-question">What would you investigate on Field 31 before changing the plan?</p>
       </div>
-      <p class="source">Source: farmer-provided field records · one&nbsp;season</p>
+      <p class="source">Illustrative source: farmer-provided field records · one&nbsp;season</p>
     </section>
 
     <div class="hero-cta">
@@ -288,11 +291,10 @@
 </main>
 
 <script>
-  // Optional timed exposure for consistent sessions. The page works without it.
+  // Optional session helper: fixed 10-second exposure (protocol D3). The page works without it.
   (() => {
     const root = document.documentElement;
-    const requested = Number(new URLSearchParams(location.search).get("t"));
-    const seconds = Number.isFinite(requested) && requested > 0 ? Math.min(10, Math.max(5, requested)) : 10;
+    const EXPOSURE_MS = 10000;
     const onStimulus = () => /^#h[123]$/.test(location.hash);
     let timer = 0;
 
@@ -301,26 +303,22 @@
       root.classList.toggle("is-hidden", hidden);
     };
 
-    for (const el of document.querySelectorAll("[data-exposure-seconds]")) el.textContent = String(seconds);
-
-    addEventListener("hashchange", () => { if (!onStimulus()) setHidden(false); });
+    // Opening or reloading a stimulus address never shows it unannounced.
+    if (onStimulus()) setHidden(true);
 
     document.addEventListener("keydown", (event) => {
-      if (event.altKey || event.ctrlKey || event.metaKey || event.repeat) return;
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (event.key === " " && onStimulus()) event.preventDefault(); // never scroll a stimulus
+      if (event.repeat) return;
 
       if (event.key === "1" || event.key === "2" || event.key === "3") {
         setHidden(true);
         location.hash = "h" + event.key;
-        return;
-      }
-      if (!onStimulus()) return;
-
-      if (event.key === "b" || event.key === "B") {
+      } else if (event.key === "b" || event.key === "B") {
         setHidden(!root.classList.contains("is-hidden"));
-      } else if (event.key === " " && root.classList.contains("is-hidden")) {
-        event.preventDefault();
+      } else if (event.key === " " && onStimulus() && root.classList.contains("is-hidden")) {
         setHidden(false);
-        timer = setTimeout(() => root.classList.add("is-hidden"), seconds * 1000);
+        timer = setTimeout(() => root.classList.add("is-hidden"), EXPOSURE_MS);
       }
     });
   })();

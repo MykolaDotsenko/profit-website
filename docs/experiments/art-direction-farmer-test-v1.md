@@ -1,6 +1,6 @@
 # PROFIT Art Direction Farmer Test v1
 
-Status: Ready to run
+Status: Protocol drafted — execution BLOCKED until WWW-000 produces one surviving hero message and WWW-001 produces three equivalent-fidelity prototypes
 Date: 2026-09-26
 Owner: PROFIT website team
 Canonical basis:
@@ -14,7 +14,7 @@ Broad art-direction research is stopped for this cycle.
 
 Reason:
 recent external masterclasses reinforced the existing conclusion but did not materially change:
-- the leading hypothesis;
+- the research prior;
 - the three candidate directions;
 - the main trust/comprehension risks;
 - the experiments required to distinguish them.
@@ -43,10 +43,10 @@ Candidates:
 - **B — Farm Operations Layer**
 - **C — Economic Control Room**
 
-Current leading hypothesis:
+Research prior (Blueprint §19 — theoretical fit only):
 **A — Evidence-Led Editorial**
 
-This is a control hypothesis, not a winner.
+This is not farmer evidence and not a leading or winning direction. It must not affect prototype fidelity, participant framing or test effort, and it is never disclosed to participants.
 
 ## 3. Controlled prototype requirements
 
@@ -83,6 +83,8 @@ Not allowed in first test:
 - different proof quality;
 - different levels of evidence disclosure.
 
+For AD-7, prepare the same four surfaces for each direction (homepage hero; Field Profitability product exhibit; evidence/trust panel; farmer PDF/report or summary card) with equivalent design/prototyping effort and mobile fidelity (Blueprint §19).
+
 ## 4. Test cohort
 
 Primary cohort:
@@ -107,25 +109,35 @@ For each participant:
 1. Assign first direction in counterbalanced order.
 2. Show static hero/key frame for 5–10 seconds.
 3. Hide it.
-4. Ask open recall questions.
-5. Show it again.
-6. Run evidence/trust task.
-7. Run category-classification question.
-8. Repeat with remaining directions.
-9. Only after all independent tasks, ask comparative preference and why.
-10. Run mobile task on the same direction set or a balanced subset.
+4. Ask the AD-1 open recall questions.
+5. With the screen still hidden, run the AD-3 mechanism reconstruction.
+6. Show it again.
+7. Run the AD-2 evidence interpretation task.
+8. Run the AD-4 category-confusion diagnostic.
+9. Repeat with remaining directions.
+10. Only after all independent tasks, ask comparative preference and why.
+11. Run the AD-5 mobile task on the same direction set or a balanced subset.
+12. Run AD-6 (bad news / uncertainty) and AD-7 (brand-system transfer) as separate tasks, in counterbalanced direction order.
+
+Do not disclose the internal research prior (§2) to participants.
 
 Avoid coaching, explanation or correction until the participant has finished the task.
 
-## 6. AD-1 — 10-second comprehension + trust
+## 6. AD-1 — 10-second farmer comprehension
 
-Ask after hiding the screen:
+Static only. Randomized/counterbalanced order.
 
-1. What do you think PROFIT does?
-2. Who is it for?
-3. What farm problem does it help with?
-4. What economic question/result did you notice?
-5. What would you do next?
+Ask after hiding the screen (Blueprint §19):
+
+1. What does PROFIT do?
+2. What farm/economic problem does it help with?
+3. What did you notice first?
+4. What would you do next?
+5. What kind of software is this?
+
+Supplementary (protocol additions):
+- Who is it for?
+- What economic question/result did you notice?
 
 Then ask:
 - What felt credible?
@@ -136,13 +148,20 @@ Record:
 - verbatim answer;
 - correct/partial/incorrect product classification;
 - farmer-economic job recalled;
+- what was noticed first;
 - product proof noticed: yes/no;
 - CTA understood: yes/no;
 - trust language used spontaneously.
 
-## 7. AD-2 — Evidence interpretation
+## 7. AD-2 — Evidence interpretation / calibrated trust
 
 Use the same scenario in all directions.
+
+Ask (Blueprint §19):
+- What exactly does this number mean?
+- Where did it come from?
+- How certain should you be?
+- What would you verify before acting?
 
 Participant must identify:
 - what the economic number means;
@@ -163,7 +182,25 @@ Record:
 Critical trust principle:
 **A visually impressive direction fails if it causes overconfidence.**
 
-## 8. AD-3 — Product-reality / category-confusion
+## 8. AD-3 — Mechanism reconstruction
+
+Without showing the screen again, ask the participant to reconstruct:
+
+**farm reality → data/source → economic interpretation → decision**
+
+This is the most direct test of whether the visual grammar explains PROFIT rather than merely looking credible.
+
+Expected strengths (Blueprint §19; hypotheses, not results):
+- A: hierarchy/meaning;
+- B: physical-data causality;
+- C: economic state/action.
+
+Record:
+- which steps the participant reconstructs unaided;
+- steps missed or reordered;
+- any unsupported causal claim introduced by the visual sequence.
+
+## 9. AD-4 — Category-confusion diagnostic
 
 Ask:
 
@@ -171,26 +208,27 @@ Ask:
 
 Use neutral options:
 - farm decision-support;
-- farm accounting/finance;
+- accounting/finance;
 - agronomy/satellite/mapping;
-- generic AI/data platform;
+- generic analytics/AI;
 - consulting/reporting;
 - other.
 
 Then ask:
-“What made you classify it that way?”
+“Which visual cue caused that classification?”
 
 Expected risk signatures:
 - A → consulting/report/editorial;
 - B → agronomy/satellite/mapping;
 - C → accounting/ERP/finance.
 
-## 9. AD-4 — Mobile farmer task
+## 10. AD-5 — Mobile task
 
 At ~390 px ask participant to find:
 1. the key economic issue;
-2. evidence/confidence;
-3. next action.
+2. source/context;
+3. evidence/confidence;
+4. next action.
 
 Record:
 - completion success;
@@ -201,7 +239,7 @@ Record:
 
 Kill any direction whose core meaning depends on desktop scale.
 
-## 10. AD-5 — Trust under bad news / uncertainty
+## 11. AD-6 — Bad-news / uncertainty trust
 
 Use a deliberately uncomfortable case:
 - negative field margin;
@@ -218,7 +256,26 @@ Ask:
 
 This is a critical test because PROFIT must earn trust when the system reports bad or uncertain information, not only attractive outcomes.
 
-## 11. Direction-specific kill criteria
+## 12. AD-7 — Brand-system transfer test
+
+Apply A/B/C to the same four surfaces:
+1. homepage hero;
+2. Field Profitability product exhibit;
+3. evidence/trust panel;
+4. farmer PDF/report or summary card.
+
+Do not redesign each surface from scratch.
+
+Evaluate:
+- does one grammar remain coherent across all four?
+- which constants survive?
+- which variables can change?
+- does the system become repetitive?
+- does recognition depend only on logo/color?
+
+This tests long-term brand distinctiveness potential better than a single hero comparison.
+
+## 13. Direction-specific kill criteria
 
 ### A — Evidence-Led Editorial
 
@@ -244,7 +301,7 @@ Kill or materially redesign if:
 - less digitally confident farmers show materially more hesitation;
 - precision aesthetics create false confidence or imply unsupported maturity.
 
-## 12. Cross-direction kill criteria
+## 14. Cross-direction kill criteria
 
 A direction cannot win if:
 - roughly one-third or more of participants fail to identify the intended farmer-economic job;
@@ -257,7 +314,7 @@ A direction cannot win if:
 
 These are qualitative decision gates, not statistical significance thresholds.
 
-## 13. Decision matrix
+## 15. Decision matrix
 
 Do not collapse the result into a cosmetic score.
 
@@ -269,11 +326,13 @@ For each direction record:
 | Correct product classification | | | |
 | Product proof noticed | | | |
 | Evidence interpretation | | | |
+| Mechanism reconstruction | | | |
 | Calibrated trust | | | |
 | False-precision risk | | | |
 | Mobile task success | | | |
 | Category-confusion pattern | | | |
 | Trust under bad news | | | |
+| Brand-system transfer | | | |
 | Qualitative farmer preference | | | |
 
 Use:
@@ -285,7 +344,7 @@ Use:
 Primary selection rule:
 **farmer comprehension + calibrated trust beat visual preference.**
 
-## 14. Result template
+## 16. Result template
 
 ### Direction A
 Evidence:
@@ -317,7 +376,7 @@ Failure patterns:
 Decision:
 PASS / CONCERN / REJECT / NEEDS EVIDENCE
 
-## 15. Final decision
+## 17. Final decision
 
 Selected base direction:
 -
@@ -334,7 +393,7 @@ Elements explicitly rejected:
 Remaining uncertainty:
 -
 
-## 16. After the test
+## 18. After the test
 
 If one direction clearly survives:
 1. update the Blueprint;

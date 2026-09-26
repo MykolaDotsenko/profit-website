@@ -46,7 +46,7 @@ Stimulus:
 `prototypes/hero-message-test/`
 
 Status:
-**Test instrument drafted — not approved to run.** A human must settle the protocol's pre-session items (§2) before session 1. No acceptance criterion below has been met yet.
+**Test instrument drafted — not approved to run.** D1–D3 were approved on 2026-09-26: all three directions per participant, fixed 10 s exposure, and the counting rules (now in Blueprint §17). D4, the Field Profitability product-truth reference, is blocking. D5–D8 must be settled before session 1. No acceptance criterion below has been met yet.
 
 Outcome:
 Eliminate weak hero positioning before visual art direction becomes a confounding variable.
