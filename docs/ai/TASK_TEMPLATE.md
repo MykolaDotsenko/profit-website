@@ -67,6 +67,10 @@ Describe the minimum implementation that can prove the intended value.
 - [ ] Not generic AI/SaaS by default
 - [ ] Real/proprietary PROFIT inputs used where available
 - [ ] Mobile hierarchy is intentional
+- [ ] Agricultural scenes/data/workflows are operationally plausible
+- [ ] Page depth matches the surface: homepage concise, deeper methodology inspectable elsewhere
+- [ ] No perfect-data / perfect-connectivity / fully-connected-machinery assumption is implied without evidence
+- [ ] Forecast/modelled outputs do not read as observed or verified outcomes
 
 ## Verification
 
