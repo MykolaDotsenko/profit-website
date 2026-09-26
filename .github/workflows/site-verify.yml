@@ -19,6 +19,7 @@ on:
       - "src/**"
       - "public/**"
       - "tests/**"
+      - "playwright.config.ts"
       - "package.json"
       - "package-lock.json"
       - "astro.config.mjs"
