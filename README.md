@@ -25,7 +25,7 @@ The website must communicate:
 
 “Verified” must only be used when the evidence and attribution standard is actually satisfied.
 
-Field Profitability is the current public wedge, not the boundary of the PROFIT master brand. The website must not accidentally position PROFIT as crop-only or present future production domains as already shipped.
+Field Profitability is the current public wedge, not the boundary of the PROFIT master brand. Company scope spans arable crops; horticulture/orchards/berries; greenhouse/protected cultivation; pigs; dairy; beef/grazing livestock; poultry/eggs; other livestock and mixed farms. This is product direction, not a claim that each domain is already shipped.
 
 ## AI-assisted development
 
@@ -111,7 +111,8 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 
 ### Where things live
 
-- `src/content/<locale>/` — all page copy, typed. `shared.ts` holds the hero candidates (with their hypothesis status), Field Profitability facts, hard questions and pilot steps.
+- `src/content/<locale>/` — all page copy, typed. `shared.ts` holds the hero candidates (with their hypothesis status), the master-brand production-scope direction, Field Profitability facts, hard questions and pilot steps.
+- Homepage/company copy distinguishes whole-farm product direction from current product truth and records the current data/forecasting doctrine: existing-records-first, optional automation, old-machinery compatibility, offline-first where needed, deterministic economics, baseline-first forecasting, scenario comparison and VEV after observed/attributed outcomes.
 - `src/content/examples/field-season.ts` — the one illustrative example (the WWW-000 stimulus values). The build fails if its arithmetic drifts or if it is labelled anything other than Hypothetical / Not assessed.
 - `src/domain/` — locale-neutral economics (metric identity, definition, version, currency, unit, period) and evidence semantics. Every metric definition is explicitly `confirmed` or `provisional`; public Metric rendering rejects provisional definitions. `format.ts` does presentation per locale.
 - `src/config/release.ts` — auditable hard gates for indexable release and pilot-form activation.
