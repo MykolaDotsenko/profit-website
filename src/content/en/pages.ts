@@ -158,7 +158,8 @@ export const trust = {
     chainNote: 'Nothing on this site is labelled Verified.',
     provenanceTitle: 'Where a number comes from',
     provenanceLead: 'Each figure is labelled with its source category:',
-    provenanceNote: 'A category is a label, not a claim that PROFIT uses that source. Field Profitability, the first module, works from farmer-provided records.',
+    provenanceNote:
+      'A category is a label, not a claim that PROFIT uses that source in production. Field Profitability is designed around farmer-provided field records; the current website example is instead statistics-calibrated synthetic data and is labelled Hypothetical.',
   },
   calculations: {
     intro: { id: 'calculations', eyebrow: 'Numbers', title: 'How numbers are produced' } satisfies SectionIntro,
