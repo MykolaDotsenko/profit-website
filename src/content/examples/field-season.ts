@@ -2,10 +2,10 @@
  * HYPOTHETICAL EXAMPLE — one invented farm, three fields, one season.
  *
  * The values are the WWW-000 stimulus values (prototypes/hero-message-test), so the site and the
- * test never show different numbers for the same example. They are illustrative placeholders,
- * not customer data, regional facts or PROFIT outputs. The Field 31 split into variable and
- * allocated fixed costs is new here and, like the rest, needs a human plausibility review for
- * the target market (protocol D6) before launch.
+ * test never show different numbers for the same example. They are statistics-calibrated synthetic
+ * values, not customer data, regional facts or PROFIT outputs. Calibration sources and limitations
+ * are documented in docs/experiments/www-000-statistical-surrogate-v1.md. Human farmer validation
+ * remains open.
  *
  * The currency is data carried by the example, not a site default.
  */
@@ -34,10 +34,10 @@ export interface FieldSeasonExample {
 }
 
 const field31Inputs: FieldInputs = {
-  yieldPerHa: 4.1,
-  pricePerT: 180,
-  variableCostsPerHa: 596,
-  allocatedFixedCostsPerHa: 238,
+  yieldPerHa: 3.7,
+  pricePerT: 207,
+  variableCostsPerHa: 490,
+  allocatedFixedCostsPerHa: 345,
 };
 const field31 = computeFieldEconomics(field31Inputs);
 
@@ -56,16 +56,16 @@ export const fieldSeasonExample: FieldSeasonExample = {
   currency: 'EUR',
   period: { kind: 'season', count: 1 },
   meta: assertPublishable(
-    { evidence: 'hypothetical', confidence: 'not-assessed', provenance: ['farmer-provided'], illustrative: true },
+    { evidence: 'hypothetical', confidence: 'not-assessed', provenance: ['market', 'derived-modelled'], illustrative: true },
     'fieldSeasonExample',
   ),
   focusFieldId: '31',
   fields: [
-    { id: '24', crop: 'wheat', areaHa: 41.7, operatingProfitPerHa: 637 },
-    { id: '12', crop: 'wheat', areaHa: 23.0, operatingProfitPerHa: 148 },
+    { id: '24', crop: 'wheat', areaHa: 41.7, operatingProfitPerHa: 221 },
+    { id: '12', crop: 'wheat', areaHa: 23.0, operatingProfitPerHa: 49 },
     {
       id: '31',
-      crop: 'barley',
+      crop: 'wheat',
       areaHa: 18.4,
       operatingProfitPerHa: field31.operatingProfitPerHa,
       inputs: field31Inputs,
