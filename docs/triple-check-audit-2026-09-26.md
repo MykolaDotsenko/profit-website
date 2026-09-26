@@ -320,10 +320,31 @@ Therefore the current coded-site baseline remains:
 
 ### Updated highest-value next work
 
-1. create three genuinely different art-direction prototypes;
-2. run farmer 10-second comprehension testing;
-3. run brand-code recognition/confusion testing;
-4. validate/reject the signature motion;
-5. decide Framer vs coded production only after those learning steps.
+1. validate hero message/positioning independently on a neutral static scaffold;
+2. create three genuinely different art-direction prototypes using the surviving message;
+3. run art-direction farmer comprehension + calibrated-trust testing;
+4. run brand-code recognition/confusion testing;
+5. validate/reject the signature motion;
+6. decide Framer vs coded production only after those learning steps.
 
 The main project risk has shifted from insufficient research to insufficient real-user validation.
+
+
+### New correction 5 — art-direction prior bias
+
+Recent documentation correctly introduced **A — Evidence-Led Editorial** as the strongest theoretical fit, but calling it a "leading hypothesis" inside the execution context can bias AI/design effort and test interpretation.
+
+Correction:
+- treat A as a **research prior**, not a test winner;
+- build A/B/C to equivalent fidelity and content completeness;
+- do not tell participants which direction is preferred;
+- fix observation criteria before reviewing outcomes;
+- farmer evidence, not polish allocation, determines which direction advances.
+
+### New correction 6 — active sequence synchronization
+
+The W0 dependency graph correctly introduced `WWW-000 — Controlled hero message validation`, but the summary "Current recommended active sequence" still began at WWW-001.
+
+The active sequence is now synchronized:
+
+**WWW-000 → WWW-001 → WWW-002 → WWW-003 → WWW-004 → WWW-005**.
