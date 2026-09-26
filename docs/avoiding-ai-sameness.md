@@ -1859,3 +1859,627 @@ The goal is not "no one has ever seen anything like this."
 The goal is:
 
 **A farmer immediately understands that this is serious agricultural technology — and, after repeated exposure, increasingly recognises that this particular combination of agriculture, economics, evidence, and motion is PROFIT.**
+
+
+---
+
+# Targeted 2026 process audit — fixation, homogenisation, judgement and drift
+
+Research date: 2026-09-26
+
+Scope:
+This pass was deliberately narrower than the earlier broad reviews. It tested whether current evidence materially changes PROFIT's creative process.
+
+Priority sources:
+- D&AD — AI for Creativity: Amplify your Creative Practice  
+  https://campus.dandad.org/courses/ai-for-creativity
+- D&AD — Creative Evaluation  
+  https://www.dandad.org/learning/masterclasses/creative-evaluation
+- D&AD — AI: Your Creative Collaborator  
+  https://www.dandad.org/learning/masterclasses/ai-your-creative-collaborator
+- Wadinambiarachchi et al. — The Effects of Generative AI on Design Fixation and Divergent Thinking, CHI 2024  
+  https://doi.org/10.1145/3613904.3642919
+- Doshi & Hauser — Generative AI enhances individual creativity but reduces the collective diversity of novel content, Science Advances 2024  
+  https://doi.org/10.1126/sciadv.adn5290
+- Montefiore et al. — Does generative AI make us think alike? systematic review / meta-analysis, 2026  
+  https://doi.org/10.1080/0144929X.2026.2726451
+- Wan & Kalman — Diverse AI personas can mitigate the homogenization effect in human-AI collaborative ideation, 2026  
+  https://doi.org/10.1016/j.chbah.2026.100289
+- Adobe Research — How AI is redistributing creative work  
+  https://www.adobe.com/ai/research/202606/ai-is-redistributing-creative-work.html
+- Adobe Research — Why creative friction can lead to better outcomes  
+  https://www.adobe.com/ai/research/202607/why-creative-friction-can-lead-to-better-outcomes.html
+- Adobe Research — visual provenance / authenticity workflow  
+  https://www.adobe.com/ai/research/202609/how-an-award-winning-photojournalist-proves-photo-authenticity.html
+- Figma — 2026 AI Report  
+  https://www.figma.com/blog/2026-ai-report/
+- Figma — Digital tools, human expression: Config 2026 identity  
+  https://www.figma.com/blog/the-visual-identity-behind-config-2026/
+
+## Research stop
+
+Broad research is now stopped for this question.
+
+The last sources converged on the same process-level mechanisms rather than adding new ones:
+- AI output can improve an individual result while narrowing collective diversity;
+- fixation can happen before the image is generated, during brief → prompt translation;
+- workflow structure materially changes homogenisation risk;
+- diverse AI inputs/perspectives can preserve diversity better than uniform deployment;
+- speed is useful, but removing all creative friction can weaken ownership/depth;
+- human value shifts toward framing, selection, judgement, contextual understanding and accountability;
+- provenance is more useful when it records what actually happened rather than applying a vague binary "AI used" label.
+
+Re-open broad research only if a real PROFIT design experiment reveals a failure that these mechanisms do not explain.
+
+---
+
+## Finding 16 — Full canonical context can over-constrain divergence
+
+### 1. What is new?
+
+The existing system assumes that stronger machine-readable context generally improves AI output.
+
+That is true for production and convergence, but not necessarily for early divergence.
+
+The 2026 homogenisation meta-analysis reports stronger homogenisation in semantically constrained ideation tasks. CHI 2024 also shows that fixation can originate during the translation from a brief/example into a prompt, before the designer reacts to any generated image.
+
+Therefore:
+**the same detailed canonical context that protects production quality can narrow exploration if every Explorer receives it unchanged.**
+
+This is a direct correction to the current "produce through canonical machine-readable context" rule.
+
+### 2. PROFIT risk reduced
+
+Without correction, every independent concept branch may inherit:
+- Evidence-Led Editorial as the implicit preferred answer;
+- economic typography as the obvious visual anchor;
+- field geometry as the obvious spatial device;
+- the same NOT-PROFIT exclusions;
+- the same reference vocabulary.
+
+The result could be three polished variants of the PROFIT house style rather than three independent hypotheses.
+
+### 3. Rule
+
+Use **phase-specific context**.
+
+#### Divergence Context Capsule
+Give all branches only:
+- user/farmer problem;
+- desired outcome;
+- factual product truth;
+- evidence/VEV integrity;
+- legal/accessibility constraints;
+- real proprietary raw inputs needed for truthfulness.
+
+Do **not** automatically include:
+- current leading art direction;
+- other branches' concepts;
+- preferred composition;
+- approved examples;
+- candidate distinctive assets as required motifs;
+- the full exclusion board;
+- an existing polished prototype.
+
+Each independent branch also receives a genuinely different strategic lens.
+
+#### Convergence Context
+After independent territories exist, restore:
+- full Blueprint;
+- brand grammar;
+- candidate brand codes;
+- NOT-PROFIT exclusions;
+- competitor/category collision checks;
+- technical/performance constraints;
+- Creative Evaluation Compass.
+
+#### Production Context
+Builder agents receive the full canonical system.
+
+### 4. Workflow verification
+
+Before concept review, record for every branch:
+- which context capsule it received;
+- strategic lens;
+- raw inputs;
+- whether it saw another branch;
+- whether it saw the current leading direction.
+
+Compare territories on:
+- core metaphor;
+- information hierarchy;
+- primary proof object;
+- image/product balance;
+- spatial/compositional logic;
+- motion premise, if any.
+
+### 5. Kill criterion
+
+The divergence round is invalid and must restart if:
+- multiple "independent" territories share the same underlying composition/metaphor because they inherited the same preferred system;
+- a branch saw another branch before establishing its own concept;
+- the current leading art direction materially shaped all branches;
+- diversity exists only in color, crop, typography styling or surface treatment.
+
+---
+
+## Finding 17 — Functional AI roles are not perspective diversity
+
+### 1. What is new?
+
+PROFIT already separates AI into:
+Challenger / Explorer / Analyst / Builder / Simulator.
+
+The new correction is:
+**role separation and perspective separation solve different problems.**
+
+The 2026 peer-reviewed diverse-persona experiment found that intentionally diversified AI inputs can mitigate collective homogenisation compared with uniform AI deployment.
+
+A Challenger and Explorer running on the same model, same framing, same examples and same latent category assumptions can still converge.
+
+### 2. PROFIT risk reduced
+
+"Five AI roles" can become governance theatre:
+different labels, same statistical prior.
+
+### 3. Rule
+
+For brand-defining divergence, require **perspective heterogeneity inside the Explorer stage**.
+
+Independent Explorer branches should differ in at least the strategic lens and framing assumptions. When practical, also vary:
+- prompt architecture;
+- analogy domain;
+- reference family;
+- model/tool or generation seed.
+
+Do not force model diversity when it adds operational complexity without evidence. The important requirement is **independent perspective origin**, not collecting tools.
+
+Functional roles remain:
+- Challenger;
+- Explorer;
+- Analyst;
+- Builder;
+- Simulator.
+
+Perspective diversity is an additional axis.
+
+### 4. Workflow verification
+
+Every concept territory must contain an origin statement:
+- starting question;
+- strategic lens;
+- analogy/source domain;
+- what it intentionally ignored;
+- how it differs from the other territories.
+
+Create a simple lineage map before convergence.
+
+### 5. Kill criterion
+
+A "three-direction" round fails if:
+- the territories can be described as variants of one strategic premise;
+- two branches clearly derive from the same initial AI suggestion;
+- branch independence cannot be reconstructed;
+- the only meaningful difference is execution style.
+
+---
+
+## Finding 18 — Prompt formation is itself a fixation surface
+
+### 1. What is new?
+
+The CHI 2024 fixation study found that participants frequently copied words from the brief/example into prompts, and the generated imagery then reproduced those fixating features.
+
+This means:
+**"human brief first" is necessary but not sufficient.**
+
+A designer can still convert a human brief directly into a narrow, category-loaded prompt.
+
+### 2. PROFIT risk reduced
+
+A prompt such as:
+"premium agritech platform, aerial field, data overlay, modern green SaaS"
+can recreate the exact category average the process is meant to escape.
+
+Even a better prompt can remain fixated if it translates the brief literally.
+
+### 3. Rule
+
+Add a **brief → framing → prompt** separation.
+
+Before generative visual work:
+1. write the problem in non-visual terms;
+2. generate independent conceptual framings/analogies;
+3. sketch or diagram low-fidelity structural ideas;
+4. only then write AI prompts.
+
+Prompts for divergent visual generation should describe:
+- relationships;
+- tensions;
+- behavior;
+- information hierarchy;
+- analogy;
+
+before surface style nouns.
+
+Do not copy a polished reference or the existing prototype directly into every Explorer prompt.
+
+### 4. Workflow verification
+
+For each Explorer branch, retain:
+- original brief;
+- framing statement;
+- first rough human sketch/structure;
+- first AI prompt;
+- first AI output.
+
+Audit whether prompt nouns and compositions were inherited mechanically from the brief/reference.
+
+### 5. Kill criterion
+
+Restart the branch if:
+- its first prompt is mostly a restatement of category/style terms from the brief;
+- the generated concept reproduces the existing reference structure with cosmetic changes;
+- most later outputs remain descendants of the first polished generation;
+- the team cannot identify a pre-AI conceptual decision that materially shaped the direction.
+
+---
+
+## Finding 19 — Preserve productive friction at human judgement points
+
+### 1. What is new?
+
+Adobe's 2026 creative-friction research found that creative ownership is associated with influence, depth and investment, and that removing friction indiscriminately can remove useful struggle and reflection.
+
+Figma's 2026 AI research similarly shifts the scarce value from raw production toward deciding what is worth building/shipping.
+
+This strengthens the current Human Advantage doctrine:
+**some friction is a quality-control mechanism, not inefficiency.**
+
+### 2. PROFIT risk reduced
+
+If AI instantly supplies:
+- the framing;
+- references;
+- concepts;
+- polish;
+- rationale;
+- winner;
+
+the team may gain speed while losing problem depth, authorship and taste.
+
+### 3. Rule
+
+Maintain a **human authorship checkpoint** at four points:
+
+1. **Frame** — human writes the decision/problem and tension before AI exploration.
+2. **Origin** — at least one human low-fidelity structural idea exists before polished AI imagery for brand-defining work.
+3. **Selection** — human decision owner writes why a direction advances/rejects before AI produces the presentation rationale.
+4. **Exception** — only a human can approve deviation from evidence integrity, documentary-truth rules or established brand grammar; evidence rules themselves cannot be waived.
+
+Use AI aggressively for friction that does not create meaning:
+- resizing;
+- formatting;
+- production variants;
+- mechanical adaptation;
+- implementation;
+- repetitive comparison.
+
+### 4. Workflow verification
+
+At review, ask the creative owner to explain:
+- the problem;
+- the central idea;
+- the key intentional choices;
+- what AI contributed;
+- what AI proposed that was rejected;
+- why the selected direction is better for the farmer.
+
+The explanation must stand without reading an AI-generated rationale.
+
+### 5. Kill criterion
+
+Do not approve a brand-defining concept if:
+- its human owner cannot explain the core idea and trade-offs independently;
+- "the AI produced the strongest option" is the main selection rationale;
+- no meaningful human decision can be identified before polish;
+- speed removed the exploration needed to understand the farmer/problem.
+
+---
+
+## Finding 20 — Creative evaluation needs independence, not only a shared language
+
+### 1. What is new?
+
+D&AD's Creative Evaluation material reinforces the value of shared language and clear benchmarks for evaluating creative work, including AI output.
+
+PROFIT already has a Creative Evaluation Compass.
+
+Challenge Pass reveals the missing safeguard:
+**a shared framework can still produce confirmation bias when the same people establish the frame, generate the preferred direction and evaluate it together.**
+
+Figma's 2026 research also emphasizes that fast generation makes selection and trade-off judgement more important.
+
+### 2. PROFIT risk reduced
+
+The team could rationalize the current leading hypothesis — for example Evidence-Led Editorial — because the Compass itself was written around existing PROFIT beliefs.
+
+### 3. Rule
+
+Use a two-stage evaluation for material creative decisions.
+
+#### Stage 1 — independent judgement
+Before group discussion:
+- reviewers score/mark PASS / CONCERN / REJECT / NEEDS EVIDENCE independently;
+- randomize concept order;
+- hide creator/AI/model identity where practical;
+- record reasons before seeing the group's opinion.
+
+#### Stage 2 — adversarial convergence
+Assign:
+- one reviewer to **falsify the preferred direction**;
+- one reviewer to **steelman the strongest rejected direction**.
+
+AI can help surface counterarguments, but cannot determine the final winner.
+
+For farmer-facing design, real farmer evidence outranks expert taste when they conflict on comprehension/trust.
+
+### 4. Workflow verification
+
+Keep the pre-discussion evaluation record.
+
+Compare:
+- independent judgments;
+- post-discussion decision;
+- what evidence changed minds;
+- whether leadership/creator identity changed the evaluation without new evidence.
+
+### 5. Kill criterion
+
+Re-run evaluation if:
+- no independent pre-discussion judgement exists;
+- reviewers knew the preferred answer and simply justified it;
+- the winning rationale relies on creator status, AI novelty or presentation polish rather than farmer/product evidence;
+- a direction cannot survive a serious falsification attempt.
+
+---
+
+## Finding 21 — AI novelty must pass authenticity / plausibility filtering
+
+### 1. What is new?
+
+Recent peer-reviewed product-design research reports an evaluative asymmetry:
+AI-generated designs can attract higher novelty ratings while receiving lower authenticity/plausibility and usefulness judgments than human designs.
+
+The exact product category in that study was not agriculture, so PROFIT must treat this as a transferable warning, not direct farmer evidence.
+
+The useful mechanism is:
+**novelty attracts attention faster than plausibility is evaluated.**
+
+### 2. PROFIT risk reduced
+
+PROFIT may overvalue:
+- unusual compositions;
+- dramatic field overlays;
+- impossible/fabricated machinery scenes;
+- synthetic "real farm" imagery;
+- product UI that looks advanced but implies unavailable data or precision.
+
+### 3. Rule
+
+Creative Evaluation must explicitly test **contextual plausibility** inside Product Truth.
+
+Ask:
+- Could this agricultural scene actually exist?
+- Could the represented data realistically be available?
+- Does the UI imply capabilities or precision PROFIT does not have?
+- Would an experienced farmer see something operationally wrong?
+- Is novelty doing work that product truth should be doing?
+
+### 4. Workflow verification
+
+For farmer-facing brand-critical visuals, include at least one domain-plausibility review by:
+- a relevant farmer/operator;
+- or a team member with direct domain expertise.
+
+Separate:
+- "visually interesting";
+- "credible in agricultural reality".
+
+### 5. Kill criterion
+
+Reject or relabel the asset if:
+- visual novelty depends on implausible farm operations/data;
+- synthetic polish creates a false sense of product maturity;
+- an experienced reviewer identifies a material agricultural impossibility;
+- authenticity concerns are dismissed merely because the image looks distinctive.
+
+---
+
+## Finding 22 — Provenance should describe transformations, not just declare "AI-assisted"
+
+### 1. What is new?
+
+PROFIT already requires creative provenance.
+
+Adobe's 2026 authenticity work adds an important refinement: a blanket "AI used" label collapses very different operations into one ambiguous claim. In a peer-reviewed ICWSM 2026 experiment, C2PA provenance labels increased perceived transparency/credibility/trust for news images; that result is specific to news, so it should not be claimed as proven farmer behavior.
+
+The durable process lesson is:
+**provenance is useful when it is granular and inspectable.**
+
+### 2. PROFIT risk reduced
+
+A generic provenance field such as:
+"AI-assisted: yes"
+does not tell the team whether:
+- a real field photo was color-corrected;
+- a sky was replaced;
+- machinery was synthesized;
+- a whole farm scene was generated;
+- an economic overlay was illustrative.
+
+That ambiguity undermines documentary truth and makes later brand drift hard to audit.
+
+### 3. Rule
+
+For brand-critical visual assets, record operation-level provenance:
+- original/source asset;
+- ownership/rights;
+- documentary vs illustrative classification;
+- crops/color/retouching;
+- generative fill/replacement;
+- synthetic objects/backgrounds;
+- compositing;
+- model/tool where relevant;
+- human approval;
+- evidence status of any economic content.
+
+For **documentary agriculture**:
+- retain the original source;
+- do not generatively add/remove factual scene elements and still classify the result as documentary;
+- if generative alteration changes factual scene content, classify the output as illustration/concept imagery.
+
+Use Content Credentials/C2PA when practical, not as a mandatory dependency.
+
+### 4. Workflow verification
+
+A reviewer should be able to reconstruct:
+**source → transformations → final asset**.
+
+Sample brand-critical assets during drift audits.
+
+### 5. Kill criterion
+
+Do not ship a brand-critical asset as documentary proof if:
+- its source/origin cannot be reconstructed;
+- material synthetic alteration is unknown;
+- a generated or materially altered farm scene is presented as factual documentary reality;
+- economic proof and illustrative imagery are visually mixed in a way that can mislead.
+
+---
+
+# Challenge Pass — can the anti-sameness system create sameness?
+
+Yes.
+
+The current system has four self-inflicted failure modes.
+
+## Failure mode A — over-specification
+
+Too many invariants, exclusions, approved examples and preferred codes can cause all Explorers to converge before ideation begins.
+
+Correction:
+**thin divergence context → full convergence context → full production context.**
+
+## Failure mode B — anti-generic becomes novelty theatre
+
+Rejecting every common category cue can make PROFIT less understandable.
+
+Correction:
+keep the existing semiotic rule:
+**category membership + ownable difference**.
+
+The AI mirror test remains a warning, not an automatic rejection.
+
+Kill a mirrored concept only when its core proposition, composition and identity can be reproduced from a generic brief **and** proprietary PROFIT truth is not essential to it.
+
+## Failure mode C — fixed "three territories" become ritual templates
+
+Economic Evidence / Farm Reality / Decision Intelligence were useful examples, but they must not become the permanent three answers to every brief.
+
+Correction:
+the requirement is **three or more independent strategic framings**, not three permanently named style buckets.
+
+## Failure mode D — human-only zones become taste dictatorship
+
+Human judgement is essential, but "human" does not mean unaccountable.
+
+Correction:
+human owners must record rationale and expose material farmer-facing decisions to user evidence.
+
+Taste can choose among valid expressions.
+Taste cannot override:
+- evidence integrity;
+- farmer comprehension;
+- documentary truth;
+- accessibility;
+- observed user failure.
+
+---
+
+# Updated production-grade creative process
+
+For brand-defining work:
+
+1. **Human strategic frame**
+   - user/problem;
+   - product truth;
+   - economic/evidence constraints;
+   - decision to be made.
+
+2. **Independent frame generation**
+   - 3+ genuinely different strategic lenses;
+   - no shared concept outputs.
+
+3. **Thin-context divergence**
+   - phase-specific context;
+   - low-fidelity human origin;
+   - perspective-diverse Explorer branches.
+
+4. **First-good quarantine**
+   - no preferred concept gets polished/selected before independent territories exist.
+
+5. **Full-context collision**
+   - restore category map, brand grammar, NOT-PROFIT board, production constraints.
+
+6. **Independent evaluation**
+   - blind/randomized where practical;
+   - individual rationale before group discussion.
+
+7. **Challenge convergence**
+   - falsify preferred direction;
+   - steelman strongest rejected direction;
+   - test with farmers where material.
+
+8. **Human selection**
+   - explicit rationale;
+   - AI cannot approve itself.
+
+9. **Production**
+   - Builder role;
+   - full canonical context;
+   - provenance;
+   - accessibility/performance/evidence gates.
+
+10. **Drift audit**
+    - compare shipped work with brand grammar;
+    - distinguish intentional evolution from accidental AI convergence.
+
+---
+
+# New durable rules summary
+
+1. **Context must be phase-specific.**
+   Full brand context is safest in convergence/production, not necessarily in early divergence.
+
+2. **AI role diversity ≠ perspective diversity.**
+   Explorer branches need independent strategic origins.
+
+3. **Prompt formation can create fixation.**
+   Use brief → framing → low-fidelity structure → prompt.
+
+4. **Preserve productive human friction.**
+   Framing, origin, selection and exceptions remain human-owned.
+
+5. **Evaluate independently before discussing collectively.**
+   Shared language needs anti-confirmation-bias controls.
+
+6. **Novelty must pass plausibility.**
+   Product Truth includes operational/documentary authenticity.
+
+7. **Provenance must be granular.**
+   Record transformations, not just an "AI-assisted" flag.
+
+8. **Anti-sameness itself must be red-teamed.**
+   Avoid over-specification, novelty theatre, ritual territories and taste dictatorship.
+
