@@ -36,6 +36,11 @@ The product/design summaries inside `AGENTS.md` exist to help agents work safely
 
 Research files provide evidence and rationale. They do not silently override canonical implementation decisions.
 
+When interpreting project state, use the repository vocabulary consistently:
+- **LOCKED** — do not change without explicit evidence/decision;
+- **FLEXIBLE** — implementation may vary inside the approved constraints;
+- **OPEN / HYPOTHESIS** — requires validation or an explicit decision.
+
 ## 3. Product objective
 
 Build a premium public website that helps a farmer quickly understand:
