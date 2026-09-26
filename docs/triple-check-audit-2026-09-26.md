@@ -348,3 +348,51 @@ The W0 dependency graph correctly introduced `WWW-000 — Controlled hero messag
 The active sequence is now synchronized:
 
 **WWW-000 → WWW-001 → WWW-002 → WWW-003 → WWW-004 → WWW-005**.
+
+
+## External-builder context-gap audit
+
+Date: 2026-09-26
+
+Purpose:
+verify that a frontier coding/design agent can understand the material PROFIT product context from the repository without access to the originating ChatGPT Project conversation.
+
+### Material gaps found and corrected
+
+1. **Master-brand scope**
+   - Field Profitability was clear as the current wedge, but the repo did not state strongly enough that it is not the boundary of PROFIT.
+   - Added an explicit rule against accidentally crop-locking the company while also forbidding unsupported future-module claims.
+
+2. **Company operating context**
+   - Added the internal principle: **Create Value. Prove It. Scale It.**
+   - Added the rule that customer-level evidence outranks global/leadership/scale ambition.
+   - Internal ambition remains non-public context unless evidence supports a claim.
+
+3. **VEV measurement context**
+   - Added VEV per Customer as the primary internal value metric.
+   - Added supported normalized views: per hectare/production unit, per € paid, share of eligible customers with positive VEV, attribution confidence, period/cohort.
+   - Explicitly prohibited inventing missing VEV formulas/thresholds.
+
+4. **Data/trust boundary**
+   - Added permissioned/transparent data-use requirements and guardrails against undocumented ownership/sharing claims.
+   - Reinforced privacy, security, auditability and farmer control.
+
+5. **AI/quantitative truth**
+   - Added the rule that AI cannot be the sole source of truth for critical quantitative outputs.
+   - Real economic values require validated data/rules/models plus assumptions/provenance/period/uncertainty.
+
+6. **Operational synchronization**
+   - Synced AD-1…AD-7 across Blueprint-derived AI context and Implementation Plan.
+   - Synced next-high-value work to WWW-000 → WWW-005.
+   - Updated AGENTS anti-sameness wording from fixed concept territories to independent strategic framings with phase-appropriate context.
+
+### Deliberately not copied into the website repo
+
+The full Project conversation, speculative future feature lists, personal/team details without a public-content decision, and broad research history were not duplicated.
+
+Reason:
+external builders need **minimum sufficient canonical context**, not transcript-scale context that increases fixation and contradiction risk.
+
+### Result
+
+The repository is materially closer to being self-sufficient for an external builder. Remaining unknowns should be represented as OPEN/HYPOTHESIS rather than guessed.
