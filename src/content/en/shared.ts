@@ -84,7 +84,7 @@ export const productionScopeNote =
   'These production systems describe the direction of the PROFIT master brand. They are not a claim that every domain is a current product. Field Profitability is the first concrete product focus.';
 
 /** Labels for the illustrative example, shared by the hero proof card and the exhibit. */
-export const exampleRecords = 'farmer-provided field records';
+export const exampleRecords = 'statistics-calibrated synthetic field records';
 export const decisionQuestion = 'What would you investigate on Field 31 before changing the plan?';
 
 export const moduleStatus = 'In development — not yet available';
