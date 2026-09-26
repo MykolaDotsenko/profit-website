@@ -2,7 +2,7 @@
 
 Neutral static scaffold for the controlled H1/H2/H3 hero-message test.
 
-Protocol and status: [`docs/experiments/hero-message-test-v1.md`](../../docs/experiments/hero-message-test-v1.md). **Draft, not approved to run.** The test candidates are H1/H2/H3 **v2**; v1 was superseded before farmer testing by the product-truth gate. D1–D4 are settled. D5–D7 are open, and D8 is approved in principle but blocked until an asset exists (protocol §2).
+Protocol and status: [`docs/experiments/hero-message-test-v1.md`](../../docs/experiments/hero-message-test-v1.md). **Operationally prepared, not approved to run.** The test candidates are H1/H2/H3 **v2**; v1 was superseded before farmer testing by the product-truth gate. D1–D4 are settled. D5–D8 have operational checklists in [`www-000-preflight-pack-v1.md`](../../docs/experiments/www-000-preflight-pack-v1.md), but their human gates remain open.
 
 ## Open
 
@@ -21,7 +21,7 @@ Open `index.html` in a current browser. No build step, package manager, framewor
 
 - A **message** test instrument. The three directions differ only in eyebrow, headline, support and proof-card body.
 - **Not an art direction.** It avoids A and B (no photography, no field geometry) and has no brand font, colour semantics or motion. Its neutral numeric card shares part of C's grammar; protocol §3 explains the risk. D8 is approved in principle as one identical documentary field-crop image, but none is added until a licensed/approved asset with provenance is supplied. Never substitute a synthetic image. Do not reuse it as a design base for WWW-001.
-- **Not a master-brand statement.** It tests the Field Profitability wedge. The PROFIT master brand stays extensible to crop production, pig production and dairy (Blueprint §2.1).
+- **Not a master-brand statement.** It tests the Field Profitability wedge. The PROFIT master brand stays extensible across crops, horticulture/greenhouse production and livestock (Blueprint §2.1).
 - **Not production code.**
 - **Not evidence of anything yet.** No farmer has seen it.
 
