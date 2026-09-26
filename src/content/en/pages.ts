@@ -389,7 +389,7 @@ export const investors = {
   case: {
     intro: { id: 'case', eyebrow: 'The case', title: 'The case, step by step', lead: 'Each step carries its current status.' } satisfies SectionIntro,
     items: [
-      { status: 'hypothesis', title: 'Problem', text: 'Farm decisions are made while their economics are spread across records, prices and costs.' },
+      { status: 'hypothesis', title: 'Problem', text: 'Across crop, horticulture and livestock systems, production and economic information is fragmented across records, prices, costs and operational context.' },
       { status: 'in-development', title: 'Wedge', text: 'Field Profitability: operating profit, field by field.' },
       { status: 'in-development', title: 'Product', text: 'Fixed formulas for field-level operating economics. AI explains results; it does not calculate them.' },
       { status: 'hypothesis', title: 'Farmer value', text: 'Farmers make better-informed field decisions with the economics in view.' },
@@ -406,7 +406,11 @@ export const investors = {
       },
       { status: 'open', title: 'Business model', text: 'Pricing is not published.' },
       { status: 'hypothesis', title: 'Defensibility', text: 'Evidence of value, farmer trust and permissioned data are candidate sources. None is claimed.' },
-      { status: 'hypothesis', title: 'Scale', text: 'The same approach can work in more markets, if each market’s own evidence supports it.' },
+      {
+        status: 'hypothesis',
+        title: 'Scale',
+        text: 'The master-brand decision logic may transfer across crops, horticulture, greenhouse production and livestock, but each domain and market requires its own production model and evidence.',
+      },
     ] satisfies StatusItem[],
   },
   notClaimed: {
