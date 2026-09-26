@@ -36,6 +36,7 @@ The website must communicate:
 - [Design Masterclass Findings](docs/design-masterclass-findings.md)
 - [Modern Design Masterclasses Deep Pass 2026](docs/modern-design-masterclasses-deep-pass-2026.md)
 - [Modern Branding Masterclasses Deep Pass 2026](docs/modern-branding-masterclasses-deep-pass-2026.md)
+- [Avoiding AI Sameness — PROFIT Standard](docs/avoiding-ai-sameness.md)
 - [Frontend Masterclass Findings](docs/frontend-masterclass-findings.md)
 - [Frontend Masterclasses Deep Pass 2026](docs/frontend-masterclasses-deep-pass-2026.md)
 - [Frontend Technologies & Frameworks](docs/frontend-technologies-frameworks.md)
