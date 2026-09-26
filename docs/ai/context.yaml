@@ -135,6 +135,27 @@ hero_validation:
     - "hero depends on animation"
     - "CTA/next step is unclear"
 
+art_direction_validation:
+  status: "open hypothesis; farmer evidence required before production lock"
+  leading_hypothesis: "A — Evidence-Led Editorial"
+  objective: "maximize farmer comprehension + calibrated trust"
+  directions:
+    A: "Evidence-Led Editorial — real farm truth + editorial hierarchy + economic typography + inspectable evidence"
+    B: "Farm Operations Layer — farm reality + spatial/data layer + economics"
+    C: "Economic Control Room — dense product/economic precision + supporting farm context"
+  controlled_test_rule: "Use the same surviving message, proof scenario, evidence state, CTA hierarchy, and no essential motion across A/B/C."
+  experiments:
+    - "AD-1 10-second comprehension + trust"
+    - "AD-2 evidence interpretation"
+    - "AD-3 product-reality/category-confusion"
+    - "AD-4 mobile farmer task"
+    - "AD-5 trust under bad news/uncertainty"
+  category_confusion_risks:
+    A: "consulting/report/editorial"
+    B: "agronomy/satellite/mapping"
+    C: "accounting/ERP/finance"
+  decision_rule: "Do not choose on aesthetics, novelty, investor preference or animation. Farmer comprehension and calibrated trust are primary."
+
 homepage:
   desired_jobs:
     - "Immediate orientation"
