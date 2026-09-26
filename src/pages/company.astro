@@ -17,6 +17,34 @@ const p = content(Astro.currentLocale).company;
     <div class="prose">{p.building.text.map((para) => <p>{para}</p>)}</div>
   </Section>
 
+  <Section intro={p.scope.intro} tone="sunken">
+    <ItemList items={p.scope.systems} columns={3} />
+    <p class="evidence-note">{p.scope.evidence}</p>
+    <p class="source-note"><a class="text-link" href={p.scope.source.href}>{p.scope.source.label}</a></p>
+    <p class="scope-note">{p.scope.note}</p>
+  </Section>
+
+  <Section intro={p.dataStrategy.intro} layout="split">
+    <ItemList items={p.dataStrategy.items} columns={2} />
+    <p class="evidence-note">{p.dataStrategy.evidence}</p>
+    <ul class="source-list" role="list">
+      {p.dataStrategy.sources.map((source) => (
+        <li><a class="text-link" href={source.href}>{source.label}</a></li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section intro={p.forecasting.intro} layout="split">
+    <ItemList items={p.forecasting.items} columns={2} />
+    <p class="evidence-note">{p.forecasting.research}</p>
+    <ul class="source-list" role="list">
+      {p.forecasting.sources.map((source) => (
+        <li><a class="text-link" href={source.href}>{source.label}</a></li>
+      ))}
+    </ul>
+    <p class="scope-note">{p.forecasting.note}</p>
+  </Section>
+
   <Section intro={p.why.intro} layout="split">
     <div class="prose">{p.why.text.map((para) => <p>{para}</p>)}</div>
   </Section>
@@ -41,6 +69,32 @@ const p = content(Astro.currentLocale).company;
 </BaseLayout>
 
 <style>
+  .evidence-note,
+  .source-note,
+  .source-list,
+  .scope-note {
+    max-width: var(--measure-wide);
+    font-size: var(--text-small);
+  }
+  .evidence-note {
+    margin-block-start: var(--space-5);
+    color: var(--color-text-secondary);
+  }
+  .source-note,
+  .source-list {
+    margin-block-start: var(--space-2);
+    color: var(--color-text-secondary);
+  }
+  .source-list {
+    display: grid;
+    gap: var(--space-1);
+  }
+  .scope-note {
+    margin-block-start: var(--space-5);
+    padding-inline-start: var(--space-4);
+    border-inline-start: 3px solid var(--color-line-strong);
+    font-weight: var(--weight-strong);
+  }
   .prose {
     max-width: var(--measure-wide);
     display: grid;
