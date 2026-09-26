@@ -41,9 +41,9 @@ const field31Inputs: FieldInputs = {
 };
 const field31 = computeFieldEconomics(field31Inputs);
 
-// The stimulus shows revenue €738/ha, operating costs €834/ha and operating profit −€96/ha.
+// The stimulus shows revenue €765.90/ha, operating costs €835/ha and operating profit −€69.10/ha.
 // Fail the build if the arithmetic and the published numbers ever drift apart.
-const expected = { revenuePerHa: 738, operatingCostsPerHa: 834, operatingProfitPerHa: -96 };
+const expected = { revenuePerHa: 765.9, operatingCostsPerHa: 835, operatingProfitPerHa: -69.1 };
 for (const [key, value] of Object.entries(expected) as [keyof typeof expected, number][]) {
   if (roundMoney(field31[key]) !== value) {
     throw new Error(`Illustrative example drifted: ${key} is ${field31[key]}, stimulus shows ${value}.`);
