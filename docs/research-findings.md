@@ -245,3 +245,178 @@ Unless evidence shows clear benefit:
 - What proof format is most credible before verified customer VEV exists?
 - Does Framer materially accelerate learning enough to justify lock-in?
 - When does custom Astro implementation create measurable value over Framer?
+
+
+## Deep pass: business-card / corporate presentation websites
+
+### Positioning must stay flexible before traction
+
+April Dunford explicitly advises very early or pre-launch products to keep positioning relatively loose until customer traction provides stronger evidence.
+
+Implication for PROFIT:
+
+- website v1 is a learning instrument, not a permanent positioning artifact;
+- headlines, category language and CTA must be easy to test and revise;
+- avoid hard-coding a grand category claim before farmers consistently understand and value it;
+- treat "Agricultural Decision Intelligence" as a positioning hypothesis until validated.
+
+### The homepage must explain the company before it impresses
+
+Corporate-site research from Nielsen Norman Group found that users, including business users and investors, are often confused by vague corporate language and expect clear, authentic and transparent explanations of what a company actually does.
+
+Implication for PROFIT:
+
+- the homepage needs one concise purpose statement;
+- jargon cannot substitute for explanation;
+- the About/Company page must state what PROFIT does, why it exists and who is behind it;
+- company copy should be tested with people outside the team.
+
+### Build from the message/feature, not from a fashionable layout
+
+Refactoring UI's "start with a feature, not a layout" principle is highly relevant to a presentation site.
+
+Implication for PROFIT:
+
+Do not begin with:
+- hero template;
+- bento grid;
+- card count;
+- trendy animation pattern.
+
+Begin with:
+- what the farmer must understand;
+- what evidence must be visible;
+- what product behavior should be demonstrated;
+- what next action matters.
+
+Then create the layout around those communication needs.
+
+### Deliberately limit visual choices
+
+Refactoring UI also recommends limiting choices and establishing systems for spacing, sizing, type and color.
+
+Implication for PROFIT:
+
+Create constrained design tokens early:
+- small type scale;
+- small spacing scale;
+- limited radius set;
+- restrained color roles;
+- consistent economic-number styles.
+
+This should make the website feel intentional rather than decorated.
+
+### Data displays need hierarchy, not repeated labels
+
+A useful Refactoring UI principle is that labels are often a last resort when context and formatting already communicate meaning.
+
+For PROFIT economic visuals, avoid visual noise such as:
+
+Revenue: €2,084/ha  
+Cost: €1,447/ha  
+Margin: €637/ha
+
+when stronger hierarchy can communicate:
+
+€637/ha  
+Margin
+
+with supporting revenue/cost visually de-emphasized.
+
+The goal is not to remove semantic labels needed for accessibility, but to avoid giving every metric equal visual weight.
+
+### Typography rules must be contextual
+
+Thinking with Type and Refactoring UI reinforce that text cannot be treated with a single global style.
+
+For PROFIT:
+- large headlines may use tight line-height;
+- body text needs more generous line-height;
+- line length must be controlled;
+- economic numerals should use consistent alignment and tabular figures where useful;
+- units must remain visually connected to values without competing with them.
+
+### Brand identity is a repeatable system
+
+Designing Brand Identity, 6th Edition reinforces that the website should express a broader brand system, not invent an isolated homepage aesthetic.
+
+PROFIT should consistently express:
+- agricultural reality;
+- economic precision;
+- evidence;
+- calm confidence;
+- disciplined intelligence.
+
+These signals must carry across:
+- homepage;
+- investor page;
+- farmer page;
+- case studies;
+- forms;
+- charts;
+- social assets later.
+
+### Trust must be designed explicitly
+
+Corporate website research shows that visitors look for authenticity, transparency and outside confirmation.
+
+Until PROFIT has strong customer proof, trust should come from:
+- precise explanations;
+- transparent methodology;
+- real team/company information;
+- honest evidence states;
+- real product visuals;
+- clear data/privacy principles;
+- no invented logos, endorsements or savings.
+
+### Conversion does not mean aggressive selling
+
+Landing-page optimization principles remain useful even though many visual examples are dated.
+
+For PROFIT, conversion means the right next step for the right visitor.
+
+Primary farmer conversion:
+- qualified pilot interest / conversation.
+
+Investor conversion:
+- deeper understanding / investor contact.
+
+Do not optimize click-through at the cost of lead quality or trust.
+
+### Forms are part of the sales experience
+
+Web Form Design remains relevant because forms are often the final friction point.
+
+PROFIT pilot/contact forms should:
+- ask only what is needed for the next conversation;
+- clearly explain why information is requested;
+- use visible labels;
+- provide useful error messages;
+- avoid requiring farm data before trust is established;
+- work well on mobile.
+
+### Accessibility and performance are credibility signals
+
+Quality target remains:
+- WCAG 2.2 AA;
+- LCP <= 2.5 s;
+- INP <= 200 ms;
+- CLS <= 0.1;
+- evaluate Core Web Vitals at the 75th percentile, separated for mobile and desktop.
+
+For PROFIT, this matters beyond compliance: a fast, stable, accessible site signals engineering discipline to investors and respects farmers using variable devices and network conditions.
+
+## Strongest new conclusion
+
+**The website itself should operate as a controlled positioning experiment.**
+
+The launch architecture should make it cheap to change:
+- headline;
+- supporting message;
+- proof order;
+- CTA;
+- farmer vs investor paths;
+- product visual;
+- category language.
+
+A beautiful but rigid website is less valuable at PROFIT's current stage than a premium site that can continuously learn from real users.
