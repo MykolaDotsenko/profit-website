@@ -35,8 +35,10 @@ If a material production-platform decision is made, create an ADR.
 
 Reversible engineering proceeds in parallel with W0: a coded Astro foundation with the seven core routes, reusable sections, evidence/trust components, accessible navigation, a performance baseline and a localization-ready content model ([ADR 0002](../decisions/0002-coded-website-foundation.md)). Hero copy, proof objects, images, art-direction tokens and CTA copy are data or tokens, so W0 results can replace them without layout rewrites.
 
-It does not meet any exit criterion above, decide WWW-005, freeze WWW-000 or start WWW-001. WWW-000 farmer sessions still wait for the recruitment gate and D5–D8.
-- Operational preflight prepared: `docs/experiments/www-000-preflight-pack-v1.md` covers D5 recruitment screening/cohort balance, D6 human economic-scenario review, D7 minimum research-data/consent process, D8 documentary-asset provenance and dry-run/freeze rules. Human gates remain open; this does not approve the test to run.
+It does not meet any human-validation exit criterion above, decide WWW-005, or turn a surrogate result into farmer evidence.
+- Operational preflight prepared: `docs/experiments/www-000-preflight-pack-v1.md` covers D5 recruitment screening/cohort balance, D6 human terminology/domain review, D7 minimum research-data/consent process, D8 documentary-asset provenance and dry-run/freeze rules.
+- Statistical surrogate completed: `docs/experiments/www-000-statistical-surrogate-v1.md` replaces arbitrary scenario placeholders with statistics-calibrated synthetic Finnish values and performs a product-truth/message-risk audit. It resolves placeholder plausibility, not farmer comprehension.
+- H3 v2 is the provisional development default because it currently has the strongest product-truth alignment and lowest claim-risk. It is not a tested winner.
 
 ### Future gate — master-brand positioning (does not block current work)
 
@@ -71,12 +73,12 @@ Stimulus:
 `prototypes/hero-message-test/`
 
 Status:
-**Test instrument drafted — not approved to run.**
+**Human test not run; statistical surrogate completed; instrument remains available for later human validation.**
 - D1–D3 were approved on 2026-09-26: a Phase A → B → C session flow, fixed 10 s exposure, and the counting rules (now in Blueprint §17).
 - D4 is settled. The Field Profitability product-truth boundary (an unmerged, unshipped vertical slice) is now in Blueprint §2.2, and PT-1/PT-2 are resolved.
 - The product-truth gate superseded the v1 candidates before testing. The test candidates are H1/H2/H3 v2.
 - International validation architecture is defined (Blueprint §2.3). Operating focus is EU-first; Market A is provisionally Finland under a recruitment gate.
-- Before the stimulus is frozen: D5 Market Cohort Specification, D6 market-specific scenario validation, D7 research-data/consent process and the approved D8 controlled documentary asset must be resolved.
+- Statistical calibration now provides a Finnish plausibility baseline for the economic scenario. Human terminology/comprehension validation, research-data/consent process and the approved D8 controlled documentary asset remain open for a future farmer round.
 
 No acceptance criterion below has been met yet.
 
@@ -213,7 +215,7 @@ Execution source:
 Status:
 **BLOCKED until WWW-002 produces a surviving art-direction base or sufficiently narrow survivor set.**
 
-Before start: the scenario's generic "Margin €637/ha" must be revalidated against the Field Profitability product-truth boundary (Blueprint §2.2). Relabel it only once its calculation provenance establishes what the number represents (see the execution source, §3).
+Before start: the motion prototype now uses the same statistics-calibrated synthetic economics and the explicit metric "Operating profit €221/ha". Human comprehension and art-direction gates still remain.
 
 Do not use the existing motion prototype as evidence that motion is valuable. It is implementation-feasibility evidence only.
 
