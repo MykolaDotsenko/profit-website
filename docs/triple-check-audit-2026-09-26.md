@@ -231,3 +231,99 @@ The marginal value of more broad theory is lower than the value of:
 Current doctrine:
 
 **Create clarity → show product truth → expose evidence → preserve farmer control → test distinctiveness → then scale the implementation.**
+
+
+## Second triple-check — conversation-wide audit
+
+Date: 2026-09-26
+
+A second independent audit covered the full website conversation, the accumulated research archive, the prototype, and the newer AI-development documentation layer.
+
+### New correction 1 — confidence semantics
+
+The prototype correctly uses `Confidence: Not assessed` for illustrative data, but the AI contract originally listed only:
+
+`High / Medium / Low / Insufficient evidence`
+
+This created a semantic conflict.
+
+Decision:
+- assessed confidence states remain High / Medium / Low / Insufficient evidence;
+- `Not assessed` is a **meta-state**, used only when confidence has not actually been evaluated;
+- it must not be confused with Low or Insufficient evidence.
+
+Canonical/derived docs were synchronized.
+
+### New correction 2 — anti-sameness sequencing
+
+The implementation plan originally validated the existing `Field → Economics Reveal` prototype before the three independent art directions.
+
+That contradicted the project's own rule:
+**divergence before refinement**.
+
+Risk:
+the existing prototype could become an anchor and narrow later exploration.
+
+Corrected order:
+1. three independent art directions;
+2. farmer 10-second comprehension testing;
+3. brand-code recognition/confusion testing;
+4. signature-motion validation within the broader visual exploration;
+5. production-platform decision.
+
+### New correction 3 — research saturation
+
+The project now has enough general strategy/design/frontend research for the current stage.
+
+Broad additional masterclass/tutorial research is no longer the default next step.
+
+New research should start only when it:
+- resolves a named OPEN hypothesis;
+- verifies a time-sensitive fact;
+- materially challenges a current decision;
+- or reduces a meaningful farmer-trust / implementation risk.
+
+Otherwise prefer:
+**prototype → test → learn → update decision**.
+
+### New correction 4 — prompting strategy
+
+The recent conversation over-expanded the prompt set.
+
+With `AGENTS.md`, `docs/ai/context.yaml`, the Blueprint, and the task template in place, large repeated master prompts waste context and can reintroduce conflicting historical research.
+
+Decision:
+- individual prompts should stay narrow;
+- one concrete task/decision per prompt;
+- repository context carries persistent rules;
+- substantial work uses the task template and acceptance criteria;
+- do not paste the whole project history into each prompt.
+
+### AI documentation architecture assessment
+
+The new AI layer is useful rather than redundant because it:
+- prevents loading the full research archive by default;
+- separates canonical decisions from research;
+- makes LOCKED / FLEXIBLE / OPEN state explicit;
+- adds acceptance/verification discipline;
+- preserves durable decision rationale.
+
+Guardrail:
+do not keep adding documentation layers unless they reduce real confusion or execution risk.
+
+### Re-verified technical fact
+
+Astro 7.3 remains current as of the audit date, while TypeScript 7.0 is stable generally but Microsoft explicitly states that Astro/Vue/Svelte/MDX embedded-language workflows should continue on TypeScript 6.0 until the necessary programmatic API support exists.
+
+Therefore the current coded-site baseline remains:
+**Astro 7.3.x + TypeScript 6.x**, if coded production is selected.
+
+### Updated highest-value next work
+
+1. create three genuinely different art-direction prototypes;
+2. run farmer 10-second comprehension testing;
+3. run brand-code recognition/confusion testing;
+4. validate/reject the signature motion;
+5. decide Framer vs coded production only after those learning steps.
+
+The main project risk has shifted from insufficient research to insufficient real-user validation.
