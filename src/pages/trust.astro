@@ -5,13 +5,14 @@ import ContentGap from '../components/ContentGap.astro';
 import CtaBand from '../components/CtaBand.astro';
 import EvidenceLadder from '../components/EvidenceLadder.astro';
 import ItemList from '../components/ItemList.astro';
+import Metric from '../components/Metric.astro';
 import VerificationChain from '../components/VerificationChain.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import SensitivityTable from '../components/SensitivityTable.astro';
 import { content } from '../content';
 import { fieldSeasonExample } from '../content/examples/field-season';
-import { fieldSensitivityBreakEven, fieldSensitivityScenarios } from '../content/examples/field-sensitivity';
+import { fieldSensitivityBreakEven, fieldSensitivityCurrency, fieldSensitivityScenarios } from '../content/examples/field-sensitivity';
 import { PROVENANCE } from '../domain/evidence';
 import { localeInfo, ui } from '../i18n';
 
@@ -73,6 +74,7 @@ const e = p.evidence;
   <Section intro={p.stressCheck.intro}>
     <SensitivityTable
       scenarios={fieldSensitivityScenarios}
+      currency={fieldSensitivityCurrency}
       labels={{
         caption: p.stressCheck.caption,
         scenario: p.stressCheck.columns.scenario,
@@ -84,11 +86,12 @@ const e = p.evidence;
       }}
     />
     <div class="stress-meta">
-      <p>
-        {p.stressCheck.breakEvenLead}
-        <strong>{fieldSensitivityBreakEven.pricePerT.toFixed(2)} EUR/t</strong>
-        or
-        <strong>{fieldSensitivityBreakEven.yieldPerHa.toFixed(2)} t/ha</strong>.
+      <p class="break-even-line">
+        <span>{p.stressCheck.breakEvenLead}</span>
+        <Metric value={{ metric: 'break_even_price', amount: fieldSensitivityBreakEven.pricePerT, currency: fieldSensitivityCurrency, perMass: 't' }} />
+        <span>or</span>
+        <Metric value={{ metric: 'break_even_yield', amount: fieldSensitivityBreakEven.yieldPerHa, mass: 't', perArea: 'ha' }} />
+        <span>.</span>
       </p>
       <p>{p.stressCheck.note}</p>
       <p>{p.stressCheck.calibration}</p>
@@ -180,9 +183,11 @@ const e = p.evidence;
     color: var(--color-text-secondary);
     font-size: var(--text-small);
   }
-  .stress-meta strong {
-    color: var(--color-text);
-    font-variant-numeric: tabular-nums lining-nums;
+  .break-even-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-1);
   }
   .source-list {
     display: flex;
