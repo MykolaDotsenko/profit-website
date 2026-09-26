@@ -6,6 +6,7 @@ on:
       - "**/*.md"
       - "**/*.yaml"
       - "scripts/validate_ai_docs.py"
+      - "prototypes/art-directions/**"
       - "src/config/release.ts"
       - "src/domain/economics.ts"
       - "src/components/Metric.astro"
@@ -20,6 +21,7 @@ on:
       - "**/*.md"
       - "**/*.yaml"
       - "scripts/validate_ai_docs.py"
+      - "prototypes/art-directions/**"
       - ".github/workflows/docs-contract.yml"
 
 permissions:
