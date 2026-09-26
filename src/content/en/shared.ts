@@ -88,11 +88,6 @@ export const fieldProfitability = {
     { title: 'ERP integrations', text: 'No connections to business or accounting systems.' },
   ] satisfies TextItem[],
   ai: 'AI may explain a stored result in plain language. It does not calculate the numbers.',
-  /** Definitions inferred from metric names; see src/domain/economics.ts `needsReview`. */
-  review: {
-    owner: 'product',
-    text: 'Confirm the operating-margin and break-even definitions against the Field Profitability reference.',
-  } satisfies ContentGap,
 };
 
 export const pilotSteps: TextItem[] = [
