@@ -25,6 +25,26 @@ The website must communicate:
 
 “Verified” must only be used when the evidence and attribution standard is actually satisfied.
 
+## AI-assisted development
+
+AI coding/design agents must start with:
+
+1. [AGENTS.md](AGENTS.md) — mandatory AI development contract and source-precedence rules
+2. [AI Development Index](docs/ai/README.md) — task-specific context routing
+3. [Machine-readable AI Context](docs/ai/context.yaml) — compact current project state
+4. [AI Task Template](docs/ai/TASK_TEMPLATE.md) — task/acceptance/verification handoff
+
+**Do not load the entire research archive by default.**
+
+The AI layer is intentionally compact so agents can distinguish:
+- locked rules;
+- flexible implementation choices;
+- open hypotheses;
+- canonical decisions;
+- supporting research.
+
+If AI context conflicts with canonical documentation, follow the precedence defined in `AGENTS.md`.
+
 ## Canonical documentation
 
 - [Website Blueprint v1](docs/website-blueprint-v1.md) — operational source of truth for implementation
@@ -32,6 +52,9 @@ The website must communicate:
 - [Triple-Check Audit](docs/triple-check-audit-2026-09-26.md) — verified corrections and remaining uncertainties
 
 ## Research and supporting documentation
+
+These files are an evidence library. They support decisions but do not silently override the canonical Blueprint.
+
 - [Research Findings](docs/research-findings.md)
 - [Marketing Bestseller Findings](docs/marketing-bestseller-findings.md)
 - [Psychology Bestseller Findings](docs/psychology-bestseller-findings.md)
