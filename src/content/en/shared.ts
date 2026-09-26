@@ -7,6 +7,7 @@
  * a `review` gap instead of being presented as settled.
  */
 import type { ContentGap, HeroVariant, Question, TextItem } from '../types';
+import { assertMetricPublishable, type MetricId } from '../../domain/economics';
 
 const WWW000 = 'No farmer evidence yet: WWW-000 has not run.';
 
@@ -53,6 +54,20 @@ export const decisionQuestion = 'What would you investigate on Field 31 before c
 export const moduleStatus = 'In development — not yet available';
 
 /** Field Profitability, stated inside the product-truth boundary (Blueprint §2.2). */
+const PUBLIC_FIELD_PROFITABILITY_OUTPUT_METRICS = [
+  'revenue',
+  'operating_costs',
+  'gross_margin',
+  'operating_profit',
+  'operating_margin',
+  'break_even_price',
+  'break_even_yield',
+] as const satisfies readonly MetricId[];
+
+for (const metric of PUBLIC_FIELD_PROFITABILITY_OUTPUT_METRICS) {
+  assertMetricPublishable(metric, 'Field Profitability public capability copy');
+}
+
 export const fieldProfitability = {
   name: 'Field Profitability',
   summary: 'The operating economics of each field, season by season.',
