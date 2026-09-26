@@ -739,7 +739,7 @@ At current stage:
 2. kill/rewrite weak message directions and revise positioning;
 3. prototype the three independent visual art directions using the same surviving/controlled message;
 4. test visual comprehension/distinctiveness and then validate the combined hero;
-5. validate/reject signature motion only after static meaning works;
+5. validate/reject the candidate Field → Economics motion only after static meaning works;
 6. launch the smallest credible production surface;
 7. measure real behavior;
 8. A/B test only when traffic is sufficient.
