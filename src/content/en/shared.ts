@@ -56,15 +56,15 @@ export const primaryCta = { label: 'Join the pilot', href: '/contact/' };
 export const productionSystems: TextItem[] = [
   {
     title: 'Arable & field crops',
-    text: 'Fields, rotations, yield, inputs, machinery and selling conditions — with Field Profitability as the current first concrete product focus.',
+    text: 'Field- and season-level economics across yield, price, inputs, machinery and allocated costs. Field Profitability is the current first concrete focus.',
   },
   {
     title: 'Horticulture, orchards & berries',
-    text: 'Blocks, varieties, marketable yield, grading, labour, storage, losses and realised price can drive very different economics from field crops.',
+    text: 'Block, variety, marketable yield, grade, labour, storage, losses and realised price create a different economic model from field crops.',
   },
   {
     title: 'Vegetables & greenhouse production',
-    text: 'Crop cycles, labour, energy, inputs, yield, quality, timing and price create a production system that needs its own economic model.',
+    text: 'Crop cycle, labour, energy, inputs, quality, timing and selling price shape the economics of protected and open-field production.',
   },
   {
     title: 'Pig production',
@@ -72,11 +72,11 @@ export const productionSystems: TextItem[] = [
   },
   {
     title: 'Dairy',
-    text: 'Milk production, feed, herd health, reproduction, replacement and price/cost context interact economically at cow, group and herd level.',
+    text: 'Milk production, feed, herd health, reproduction, replacement and price/cost context interact at cow, group and herd level.',
   },
   {
     title: 'Other livestock & mixed farms',
-    text: 'Beef cattle, poultry, eggs, sheep, goats and mixed farms require domain-specific production units rather than forcing every farm into a per-hectare model.',
+    text: 'Beef cattle, poultry, eggs, sheep, goats and mixed farms need domain-specific production units — not a forced per-hectare model.',
   },
 ];
 
