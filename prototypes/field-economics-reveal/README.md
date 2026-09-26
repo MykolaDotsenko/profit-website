@@ -32,3 +32,25 @@ Do not copy directly into production without:
 - accessibility testing;
 - responsive visual QA;
 - farmer comprehension testing.
+
+
+## Critical review status — 2026-09-26
+
+This implementation is **not test-ready production guidance** and is not evidence that motion improves comprehension.
+
+Known limitations identified in the targeted motion review:
+- the sequence has no explicit decision-state step;
+- the economic metric begins resolving before evidence/confidence fully resolves, which can create a short false-precision window;
+- the farm-dimming animation has no proven information purpose;
+- the long sticky-scroll choreography has not been shown to improve time-to-understanding;
+- the placeholder is illustrative rather than approved documentary farm material;
+- sequential data markers can accidentally imply causal attribution that the prototype has not established.
+
+Before farmer testing:
+1. create the complete static control;
+2. add an explicit non-fabricated decision question/next action;
+3. keep **HYPOTHETICAL EXAMPLE** and **Confidence: Not assessed** adjacent to the economic result;
+4. create the minimum motion variant from the same composition;
+5. compare Static vs Motion using the canonical Blueprint protocol.
+
+Do not add GSAP or heavier animation infrastructure before the motion benefit is validated.
