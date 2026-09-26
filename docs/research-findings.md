@@ -160,17 +160,19 @@ Field image/map
 
 This can explain the product better than several generic feature sections.
 
-### Economic typography is a potential moat in brand expression
+### Economic typography is a potential distinctive brand asset
 
-Examples:
+Illustrative formatting examples only:
 
 - €637 / ha
 - +12.4%
 - 6.42 t / ha
-- Confidence: High
-- Observed: 2027 season
+- Evidence: Hypothetical example
+- Confidence: Not assessed
 
-A consistent economic-display system can make PROFIT recognizable even without the logo.
+These values do not represent observed or verified PROFIT outcomes.
+
+A consistent economic-display system can become a recognisable PROFIT brand code over time when repeatedly paired with the PROFIT brand and validated through recognition testing.
 
 ### Farmer trust is the main constraint
 
@@ -314,7 +316,8 @@ For PROFIT economic visuals, avoid visual noise such as:
 
 Revenue: €2,084/ha  
 Cost: €1,447/ha  
-Margin: €637/ha
+Margin: €637/ha  
+*(illustrative formatting example only)*
 
 when stronger hierarchy can communicate:
 
