@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContentGap from '../components/ContentGap.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ItemList from '../components/ItemList.astro';
 import PageIntro from '../components/PageIntro.astro';
@@ -21,9 +20,6 @@ const p = c.farmers;
 
   <Section intro={p.getBack.intro} layout="split" tone="sunken">
     <ItemList items={p.getBack.items} columns={2} />
-    <div class="gap-space">
-      <ContentGap owner={p.getBack.review.owner} kind="review" text={p.getBack.review.text} />
-    </div>
   </Section>
 
   <Section intro={p.notDo.intro} layout="split">
@@ -45,9 +41,6 @@ const p = c.farmers;
 </BaseLayout>
 
 <style>
-  .gap-space {
-    margin-block-start: var(--space-5);
-  }
   .ai-note {
     margin-block-start: var(--space-5);
     max-width: var(--measure-wide);
