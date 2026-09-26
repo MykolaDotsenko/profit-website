@@ -65,22 +65,127 @@ Do not use “verified” unless the evidence standard is actually met.
 ### 01 — Hero
 
 Goal:
-Immediate orientation and relevance.
+Immediate farmer orientation, economic relevance and a credible next action.
 
-Content:
-- category eyebrow;
-- one clear farmer-economic outcome;
-- one short supporting explanation;
-- one primary CTA;
-- one secondary CTA;
-- credible product/farm visual.
+The hero is a product/positioning hypothesis, not a decoration layer.
 
-Default:
-- Eyebrow: AGRICULTURAL DECISION INTELLIGENCE
-- Headline: Turn farm data into more profitable decisions.
-- Support: PROFIT connects what happens on the farm with what it means economically.
-- Primary CTA: Join the pilot
-- Secondary CTA: See how PROFIT works
+#### Durable hero rules
+
+After a 5–10 second first exposure, a target farmer should be able to paraphrase:
+- this is for a farm/farmer;
+- PROFIT connects farm reality/data to economic meaning;
+- the product can help inspect a concrete economic decision or field-level profitability problem;
+- what the next action is.
+
+The hero must not depend on:
+- the category label being understood;
+- animation;
+- generic claims about AI/intelligence;
+- fabricated social proof;
+- unverified savings or profit uplift.
+
+The category eyebrow is secondary. If `Agricultural Decision Intelligence` is used, the rest of the hero must remain understandable when that phrase is removed.
+
+The hero visual must be a **proof object**, not decorative farm imagery:
+- one real or realistic agricultural artifact/context;
+- one concrete economic result or question;
+- enough causal context to show how farm information connects to economics;
+- correct evidence/confidence labeling when values are illustrative.
+
+A static first frame must communicate the core meaning. Motion may strengthen the farm → data → economics transformation, but may not carry essential information.
+
+Current CTA control:
+- Primary: **Join the pilot**
+- Secondary: **See how PROFIT works**
+
+The current hero copy is a test control, not a locked production winner.
+
+#### H1 — Economic visibility / farmer job first
+
+Eyebrow:
+**FIELD ECONOMICS**
+
+Headline candidate:
+**Know where your farm makes money — and where it doesn't.**
+
+Support candidate:
+**PROFIT connects field operations, costs and outcomes so you can see where margin is being created or lost and what to investigate next.**
+
+Proof object:
+a field/farm view showing a small number of contrasting field economics with clear provenance/illustrative labeling.
+
+Primary assumptions:
+- economic visibility is a stronger first job than “intelligence”;
+- farmers naturally understand “where money is made/lost”;
+- the wording is interpreted as decision support, not bookkeeping/accounting;
+- the scope does not overstate what Field Profitability can currently support.
+
+Main risks:
+- too broad for the first production wedge;
+- sounds like accounting software;
+- “makes money” may be read as a guaranteed outcome rather than visibility.
+
+#### H2 — Decision intelligence / current control
+
+Eyebrow:
+**AGRICULTURAL DECISION INTELLIGENCE**
+
+Headline:
+**Turn farm data into more profitable decisions.**
+
+Support:
+**PROFIT connects what happens on the farm with what it means economically.**
+
+Proof object:
+a real-farm artifact moving conceptually from farm data → economic interpretation → decision, with one concrete metric/question.
+
+Primary assumptions:
+- farmers understand or tolerate the category language;
+- “more profitable decisions” is motivating and not interpreted as a guaranteed profit claim;
+- a broad platform promise creates more qualified interest than a narrow field-profitability wedge.
+
+Main risks:
+- generic “data → better decisions” SaaS language;
+- category jargon consumes first-screen attention without adding comprehension;
+- the visitor understands the aspiration but still cannot explain what the product actually does.
+
+#### H3 — Field Profitability / product proof first
+
+Eyebrow:
+**FIELD PROFITABILITY**
+
+Headline candidate:
+**See margin by field — and what drives it.**
+
+Support candidate:
+**PROFIT brings operations, costs and outcomes together into field-level economics, with assumptions and confidence visible when they are assessed.**
+
+Proof object:
+real Field Profitability UI when available; otherwise an explicitly **HYPOTHETICAL EXAMPLE** showing field-level economics, source context and `Confidence: Not assessed`.
+
+Primary assumptions:
+- the first target cohort has a strong field-margin visibility problem;
+- a narrow, concrete wedge creates more trust than a broad platform promise;
+- farmers understand “margin by field” as decision support;
+- the product/data model can support the precision implied by the wording.
+
+Main risks:
+- narrows perceived company scope too early;
+- “margin by field” may imply unsupported precision;
+- the hero fails if Field Profitability is not yet credible enough to show as product truth.
+
+#### Hero decision rule
+
+Do not choose H1/H2/H3 by team preference or aesthetics.
+
+Advance a direction only when target-farmer evidence shows that it improves:
+- comprehension;
+- economic relevance;
+- credibility;
+- correct product expectation;
+- qualified next-step intent.
+
+A direction with stronger visual appeal but weaker product understanding must not win.
 
 ### 02 — Farmer economic questions
 
@@ -507,13 +612,109 @@ Do not ask for sensitive or detailed farm data before trust is established.
 
 ## 17. User validation
 
-### Farmer 10-second test
-Ask:
-1. What does PROFIT do?
-2. Who is it for?
-3. What problem does it solve?
-4. Why might it matter economically?
-5. What would you click next?
+### Hero farmer-test protocol
+
+Primary first-round cohort:
+farm decision-makers who are relevant to the current field/crop profitability wedge.
+
+Do not mix investors into the farmer-comprehension sample.
+If materially different farmer segments are tested, analyse them as separate cohorts rather than averaging them together.
+
+#### Round 1 — isolate the message
+
+Test H1/H2/H3 on the same neutral/static visual scaffold.
+
+Keep constant:
+- typography hierarchy;
+- layout;
+- CTA wording/placement;
+- proof-object complexity;
+- image quality;
+- motion: off.
+
+Do not pair each message direction with a different art direction in this round. That would confound message and visual effects.
+
+Procedure:
+1. randomly/counterbalance which hero a participant sees first;
+2. expose the first hero for approximately 5–10 seconds;
+3. hide it;
+4. ask open recall questions before giving explanations;
+5. show it again and probe credibility/data expectations;
+6. only after independent recall, allow comparison with the other directions.
+
+First-round sample:
+- **9–12 target farmers** is sufficient for qualitative elimination signals;
+- do not claim a statistical winner from this sample;
+- use a larger follow-up if differences are subtle or the decision becomes costly to reverse.
+
+Open recall:
+1. What do you think PROFIT does?
+2. Who do you think it is for?
+3. What farm problem do you think it helps with?
+4. What economic result/question do you think you would see?
+5. What would you expect to click or do next?
+
+Credibility probe:
+- What part is unclear?
+- What sounds least credible?
+- What data would you expect PROFIT to need?
+- Does anything sound like a promise of guaranteed profit?
+- What would stop you from joining a pilot?
+
+Record:
+- verbatim paraphrases;
+- material misclassification;
+- repeated unclear words;
+- unintended promise/precision interpretations;
+- CTA comprehension;
+- recall of the farmer job versus recall of category/AI language.
+
+Do not use “Which one do you like?” as the primary decision question.
+
+#### Round 2 — isolate art direction
+
+Only after one or more hero message directions survive Round 1:
+- use the same surviving message/proof content across the three visual directions;
+- test Editorial Intelligence vs Farm Data Layer vs Economic Command;
+- then run logo-off/category-confusion diagnostics.
+
+This preserves:
+**message learning first → visual learning second → combined validation third.**
+
+### Hero kill criteria
+
+These are directional qualitative gates, not statistical proof.
+
+Kill or materially rewrite a hero direction when any of the following appears as a repeated pattern:
+
+- roughly one-third or more of the first-round cohort cannot state a concrete farmer-economic job after the short exposure;
+- three or more participants independently make the same material misclassification (for example bookkeeping, land valuation, generic AI consultancy, marketplace);
+- participants repeatedly interpret the copy as a guarantee of higher profit or verified savings;
+- the category/technology wording is remembered, but the product job is not;
+- the proof object needs verbal explanation to connect farm reality with economic meaning;
+- the direction implies precision/data coverage that the current product cannot support;
+- the CTA or next step is materially unclear;
+- the hero only works when animation is enabled;
+- mobile requires removing the product/economic proof to fit the composition.
+
+Variant-specific kill signals:
+
+**H1 — Economic visibility**
+- repeated classification as accounting/bookkeeping;
+- wording implies whole-farm coverage beyond the actual wedge;
+- negative “made/lost” framing reduces trust or willingness to continue.
+
+**H2 — Decision intelligence**
+- farmers paraphrase it only as generic “AI/data for better decisions”;
+- `Agricultural Decision Intelligence` creates confusion or adds no useful meaning;
+- “more profitable decisions” is interpreted as a promised financial outcome.
+
+**H3 — Field Profitability**
+- target farmers do not care enough about field-level margin to make it a first-screen job;
+- “margin by field” implies unsupported precision or unavailable data;
+- the product proof is not mature/credible enough to substantiate the headline.
+
+Advance a direction when most participants can independently paraphrase the intended farmer-economic job, no recurring trust failure appears, and the next action is understood.
 
 ### Deeper farmer test
 Ask:
