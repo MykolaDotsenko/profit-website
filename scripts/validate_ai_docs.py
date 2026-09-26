@@ -29,6 +29,8 @@ REQUIRED_FILES = [
     ".github/ISSUE_TEMPLATE/ai-development-task.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
     "src/config/release.ts",
+    "src/domain/economics.ts",
+    "src/components/Metric.astro",
     "playwright.config.ts",
     "tests/browser/site.spec.ts",
 ]
@@ -107,6 +109,14 @@ TEXT_INVARIANTS = {
         "Public release blocked",
         "Pilot form endpoint blocked",
         "RELEASE_GATES",
+    ],
+    "src/domain/economics.ts": [
+        "status: 'confirmed' | 'provisional'",
+        "assertMetricDefinitionPublishable",
+        "assertMetricPublishable",
+    ],
+    "src/components/Metric.astro": [
+        "assertMetricPublishable",
     ],
     "tests/browser/site.spec.ts": [
         "wcag22aa",
