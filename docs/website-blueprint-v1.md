@@ -813,9 +813,28 @@ Accessibility:
 - accessible form errors
 
 Automation:
-- Playwright
-- axe-core for automated checks
-- manual accessibility testing remains required
+- Playwright browser QA is a committed CI gate for critical routes, 390/768/1024/1440 widths, menu/CTA/form flows, runtime failures and automated accessibility;
+- axe-core for automated WCAG A/AA checks;
+- manual accessibility testing remains required.
+
+### Production-release hard gates
+
+An indexable coded build must fail while blocking public-release gates remain unresolved.
+
+At minimum gate:
+- unvalidated hero/message hypothesis;
+- unvalidated art direction;
+- privacy notice;
+- farm-data terms;
+- pilot-process commitments;
+- legal company/contact details;
+- team proof/consent;
+- approved documentary image/provenance;
+- evidence-definition review.
+
+A configured pilot-form endpoint must fail before the privacy/company/pilot-process gates are ready.
+
+Public economic rendering must also fail for any metric whose canonical definition is marked `provisional`. Metric definitions require explicit `confirmed | provisional` status and source provenance.
 
 ## 15. Images and fonts
 
@@ -1046,7 +1065,8 @@ A/B/C must receive:
 - equivalent content completeness;
 - equivalent design/prototyping effort;
 - static-first implementation;
-- equivalent mobile fidelity.
+- equivalent mobile fidelity;
+- identical underlying content/domain truth, without forcing identical composition.
 
 Do not let:
 - A receive better photography;
@@ -1055,6 +1075,8 @@ Do not let:
 - one direction receive more time/polish.
 
 The test is invalid if execution quality becomes the main difference.
+
+**Composition-isolation rule:** the current coded foundation is an engineering baseline, not a neutral art-direction template. A/B/C may reuse semantic/domain primitives and the same controlled content, but WWW-001 must allow each direction to define its own hierarchy, layout, proof-object composition, photography/product balance and spatial logic. A tokens-only reskin of the current `Hero` / `Section` / `ProofCard` structure is not an independent direction.
 
 ---
 
