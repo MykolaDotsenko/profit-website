@@ -1,8 +1,9 @@
 # PROFIT Hero Message Test v1 — WWW-000
 
-Status: **Draft — not approved to run.**
+Status: **Draft — operationally prepared, not approved to run.**
 - Test candidates: **H1/H2/H3 v2** (Blueprint §5). The v1 set was superseded before farmer testing by the product-truth gate (§4.1a).
 - D1–D4 are settled, including PT-1/PT-2.
+- D5–D8 operational checklists are prepared in `docs/experiments/www-000-preflight-pack-v1.md`, but the human gates remain open.
 - Before freeze: Finland's recruitment gate must pass; D5 Market Cohort Specification must be confirmed, then D6 market-specific scenario validation, D7 research-data/consent process and the D8 controlled documentary asset must be resolved (§2, Blueprint §2.3).
 
 Date: 2026-09-26
@@ -37,8 +38,8 @@ This test does **not** decide the art direction, final headline wording, the cat
 **Scope — wedge, not master brand.**
 - WWW-000 tests the **Field Profitability wedge** message.
 - It does not test or decide the PROFIT master-brand positioning or category scope.
-- Its results must not redefine PROFIT as a field-crop-only company. The master brand, naming and website architecture stay extensible to crop production, pig production and dairy without rebranding (Blueprint §2.1).
-- Nothing in the stimulus or the session presents pig production or dairy as available.
+- Its results must not redefine PROFIT as a field-crop-only company. The master brand, naming and website architecture stay extensible across crops, horticulture/greenhouse production and livestock without rebranding (Blueprint §2.1).
+- Nothing in the stimulus or the session presents horticulture, greenhouse or livestock directions as available products.
 
 Only the surviving message(s) feed WWW-001. No H direction is a winner before this test is run and analysed.
 
@@ -56,6 +57,15 @@ AI must not settle the open items.
 | D6 | Market-Specific Economic Scenario Validation | **OPEN — required after D5, before sessions** | A domain expert for Market A validates §4.3: crop, area, yield, implied price, currency, operating costs, operating profit, units and local economic terminology. Changes are applied identically to H1/H2/H3. Local scenario values remain **illustrative Market A test inputs**, not regional facts or global PROFIT truths. | Human (domain) |
 | D7 | Research Data / Consent Architecture | **OPEN — required before sessions** | Global research principles: voluntary participation; purpose limitation; data minimisation; anonymised/pseudonymised handling; no personal data in the public repository; recording only with explicit consent. Jurisdiction-specific compliance is a **local overlay** and remains OPEN until Market A is selected. This protocol does not invent legal advice or jurisdiction-specific requirements. | Human / research owner |
 | D8 | Controlled Documentary Asset | **APPROVED in principle** (2026-09-26) — **BLOCKED until an approved asset exists** | One identical real/documentary field-crop image in H1/H2/H3 (requirements in §3) with source/rights/provenance and identical crop/framing/treatment. It is a **WWW-000 Market A controlled test asset**, not the global PROFIT hero or a master-brand image decision. No AI-generated/synthetic image may be substituted or presented as documentary. | PROFIT team |
+
+**Operational preparation note (2026-09-27):**
+- D5 screener/cohort-balance template drafted;
+- D6 human domain-review checklist drafted;
+- D7 minimal research/consent/data-handling process drafted, with Finland-specific/legal approval still open;
+- D8 asset-selection/provenance checklist drafted;
+- none of these drafts closes the corresponding human gate.
+
+See `docs/experiments/www-000-preflight-pack-v1.md`.
 
 Once the Finland recruitment gate passes and D5–D7 plus the D8 asset are settled:
 1. apply the changes identically to all three directions;
