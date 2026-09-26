@@ -26,10 +26,11 @@ The research archive is deliberately not the default AI context. This reduces:
 
 | Task | Read |
 |---|---|
-| Homepage structure / content hierarchy | Blueprint → Strategy → Marketing findings if needed |
-| Positioning / headline / CTA | Strategy → Marketing findings → Psychology findings |
-| Farmer trust / evidence / claims | Blueprint → Psychology findings → Triple-check audit |
-| Brand identity / visual direction | Blueprint → Modern Branding → Avoiding AI Sameness |
+| Homepage structure / content hierarchy | Blueprint → Trust & Professionalism Synthesis → Strategy → Marketing findings if needed |
+| Positioning / headline / CTA | Strategy → Trust & Professionalism Synthesis → Marketing findings → Psychology findings |
+| Farmer trust / evidence / claims | Blueprint → Trust & Professionalism Synthesis → Psychology findings → Triple-check audit |
+| Agricultural data / forecasting / DSS public copy | Trust & Professionalism Synthesis → Whole-Farm Evidence Note → Blueprint |
+| Brand identity / visual direction | Blueprint → Trust & Professionalism Synthesis → Modern Branding → Avoiding AI Sameness |
 | AI-generated visual/design work | Avoiding AI Sameness → Modern Branding |
 | Layout / responsive design | Blueprint → Design Masterclass → Modern Design Deep Pass |
 | Motion / visual effects | Blueprint → Modern Visual Effects → Visual Effects Roadmap |
@@ -81,6 +82,8 @@ ADRs preserve rationale for material durable decisions. They do not replace the 
 - `frontend-masterclass-findings.md`
 - `frontend-masterclasses-deep-pass-2026.md`
 - `frontend-technologies-frameworks.md`
+- `website-trust-professionalism-synthesis-2026-09-27.md`
+- `whole-farm-scope-evidence-2026-09-27.md`
 
 These are valuable references but must not silently override the Blueprint.
 
