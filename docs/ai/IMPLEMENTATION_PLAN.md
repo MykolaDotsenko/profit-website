@@ -124,13 +124,17 @@ Constraints:
 - do not combine H1/H2/H3 with A/B/C as nine uncontrolled concepts;
 - do not hybridize A/B/C before the first visual test;
 - build all three to equivalent fidelity, content completeness and visual-production quality;
+- **composition isolation:** A/B/C may reuse shared domain/content truth and semantic primitives (for example Metric/EvidenceLabel), but the current coded foundation's Hero/Section/ProofCard/FieldExample composition is not a neutral scaffold and must not be imposed on all three;
+- each direction owns its layout, hierarchy, photography/product balance and spatial logic during WWW-001;
+- a tokens-only reskin of the current foundation does not count as an independent art direction;
 - do not tell test participants which direction is the internal research prior;
 - illustrative values must be labelled correctly.
 
 Acceptance:
 - [ ] desktop and ~390 px mobile key frames for all three;
 - [ ] each direction has a distinct core visual idea and distinct category-confusion risk;
-- [ ] same information hierarchy can be compared across variants;
+- [ ] all directions use the same semantic content/economic scenario while remaining free to use different compositions;
+- [ ] no direction is disadvantaged by being forced through the current editorial foundation DOM;
 - [ ] generic AI/SaaS similarity is red-teamed;
 - [ ] each works statically;
 - [ ] each can be tested without explaining the concept first;
