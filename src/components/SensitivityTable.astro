@@ -29,7 +29,7 @@ const yieldValue = (amount: number) =>
   present({ metric: 'yield', amount, mass: 't', perArea: 'ha' }, locale.intl, t.units);
 ---
 
-<div class="sensitivity-table-wrap">
+<div class="sensitivity-table-wrap" tabindex="0" role="region" aria-label={labels.caption}>
   <table class="sensitivity-table">
     <caption>{labels.caption}</caption>
     <thead>
