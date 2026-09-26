@@ -56,19 +56,22 @@ export interface MetricDefinition {
   dimension: MetricDimension;
   /** Where the definition comes from, for review when the source changes. */
   source: string;
-  /** Set when the formula is inferred and still needs product-owner confirmation. */
-  needsReview?: string;
+  /** Public UI may render only confirmed metric definitions. */
+  status: 'confirmed' | 'provisional';
+  /** Required context while a definition is provisional. */
+  reviewNote?: string;
 }
 
-const FP_SOURCE = 'Blueprint §2.2 Field Profitability product-truth boundary';
+const FP_SOURCE =
+  'MykolaDotsenko/PROFIT docs/field-profitability.md + lib/field-profitability.ts @ 7d07345ee077bb01e755ae89fcceebca18e1f3d8';
 const FP_VERSION = 'fp-boundary-2026-09-26';
 
 /** Field Profitability metric definitions. Operating profit is not gross margin and not statutory net profit. */
 export const METRICS: Record<MetricId, MetricDefinition> = {
-  yield: { id: 'yield', domain: 'crop', version: FP_VERSION, formula: null, dimension: 'mass_per_area', source: FP_SOURCE },
-  price: { id: 'price', domain: 'crop', version: FP_VERSION, formula: null, dimension: 'money_per_mass', source: FP_SOURCE },
-  revenue: { id: 'revenue', domain: 'crop', version: FP_VERSION, formula: 'yield × price', dimension: 'money_per_area', source: FP_SOURCE },
-  variable_costs: { id: 'variable_costs', domain: 'crop', version: FP_VERSION, formula: null, dimension: 'money_per_area', source: FP_SOURCE },
+  yield: { id: 'yield', domain: 'crop', version: FP_VERSION, formula: null, dimension: 'mass_per_area', source: FP_SOURCE, status: 'confirmed' },
+  price: { id: 'price', domain: 'crop', version: FP_VERSION, formula: null, dimension: 'money_per_mass', source: FP_SOURCE, status: 'confirmed' },
+  revenue: { id: 'revenue', domain: 'crop', version: FP_VERSION, formula: 'yield × price', dimension: 'money_per_area', source: FP_SOURCE, status: 'confirmed' },
+  variable_costs: { id: 'variable_costs', domain: 'crop', version: FP_VERSION, formula: null, dimension: 'money_per_area', source: FP_SOURCE, status: 'confirmed' },
   allocated_fixed_costs: {
     id: 'allocated_fixed_costs',
     domain: 'crop',
@@ -76,6 +79,7 @@ export const METRICS: Record<MetricId, MetricDefinition> = {
     formula: null,
     dimension: 'money_per_area',
     source: FP_SOURCE,
+    status: 'confirmed',
   },
   operating_costs: {
     id: 'operating_costs',
@@ -84,6 +88,7 @@ export const METRICS: Record<MetricId, MetricDefinition> = {
     formula: 'variable_costs + allocated_fixed_costs',
     dimension: 'money_per_area',
     source: FP_SOURCE,
+    status: 'confirmed',
   },
   gross_margin: {
     id: 'gross_margin',
@@ -92,6 +97,7 @@ export const METRICS: Record<MetricId, MetricDefinition> = {
     formula: 'revenue − variable_costs',
     dimension: 'money_per_area',
     source: FP_SOURCE,
+    status: 'confirmed',
   },
   operating_profit: {
     id: 'operating_profit',
@@ -100,6 +106,7 @@ export const METRICS: Record<MetricId, MetricDefinition> = {
     formula: 'revenue − variable_costs − allocated_fixed_costs',
     dimension: 'money_per_area',
     source: FP_SOURCE,
+    status: 'confirmed',
   },
   operating_margin: {
     id: 'operating_margin',
@@ -108,7 +115,7 @@ export const METRICS: Record<MetricId, MetricDefinition> = {
     formula: 'operating_profit ÷ revenue',
     dimension: 'ratio',
     source: FP_SOURCE,
-    needsReview: 'Formula inferred from the metric name; confirm against the Field Profitability reference.',
+    status: 'confirmed',
   },
   break_even_price: {
     id: 'break_even_price',
@@ -117,7 +124,7 @@ export const METRICS: Record<MetricId, MetricDefinition> = {
     formula: 'operating_costs ÷ yield',
     dimension: 'money_per_mass',
     source: FP_SOURCE,
-    needsReview: 'Price at which operating profit is zero; confirm the reference uses operating (not variable) costs.',
+    status: 'confirmed',
   },
   break_even_yield: {
     id: 'break_even_yield',
@@ -126,9 +133,26 @@ export const METRICS: Record<MetricId, MetricDefinition> = {
     formula: 'operating_costs ÷ price',
     dimension: 'mass_per_area',
     source: FP_SOURCE,
-    needsReview: 'Yield at which operating profit is zero; confirm the reference uses operating (not variable) costs.',
+    status: 'confirmed',
   },
 };
+
+export function assertMetricDefinitionPublishable(
+  definition: MetricDefinition,
+  context = 'public economic output',
+): MetricDefinition {
+  if (definition.status !== 'confirmed') {
+    const note = definition.reviewNote ? ` ${definition.reviewNote}` : '';
+    throw new Error(
+      `${context}: metric "${definition.id}" uses a provisional definition and cannot be rendered publicly.${note}`,
+    );
+  }
+  return definition;
+}
+
+export function assertMetricPublishable(metric: MetricId, context?: string): MetricDefinition {
+  return assertMetricDefinitionPublishable(METRICS[metric], context);
+}
 
 /** One economic value with its identity and units, but no presentation. */
 export interface EconomicValue {
