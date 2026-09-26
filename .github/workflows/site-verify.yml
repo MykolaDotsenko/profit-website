@@ -52,6 +52,22 @@ jobs:
         env:
           ASTRO_TELEMETRY_DISABLED: "1"
 
+      - name: Prove unresolved gates block an indexable build
+        shell: bash
+        run: |
+          set +e
+          SITE_INDEXABLE=true npm run build > /tmp/release-gate.log 2>&1
+          status=$?
+          set -e
+          cat /tmp/release-gate.log
+          if [ "$status" -eq 0 ]; then
+            echo "Expected SITE_INDEXABLE=true build to be blocked while release gates are open."
+            exit 1
+          fi
+          grep -q "Public release blocked" /tmp/release-gate.log
+        env:
+          ASTRO_TELEMETRY_DISABLED: "1"
+
 
   browser-qa:
     needs: verify
