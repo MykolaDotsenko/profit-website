@@ -1,0 +1,68 @@
+---
+/**
+ * One economic value, written for the current locale. Screen readers get the long form
+ * ("minus 96 euros per hectare"); the visual form keeps the unit smaller than the figure.
+ * Negative values keep their minus sign, so risk never relies on colour alone.
+ */
+import type { EconomicValue } from '../domain/economics';
+import { present, type FormatOptions } from '../domain/format';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  value: EconomicValue;
+  size?: 's' | 'm' | 'l';
+  /** Colour the figure by sign. Off for inputs such as costs, where sign is not a result. */
+  signal?: boolean;
+  format?: FormatOptions;
+}
+
+const { value, size = 's', signal = false, format } = Astro.props;
+const locale = localeInfo(Astro.currentLocale);
+const p = present(value, locale.intl, ui(locale.code).units, format);
+---
+
+<data
+  class:list={['metric', `metric--${size}`, { 'is-negative': signal && p.negative, 'is-positive': signal && !p.negative }]}
+  value={String(value.amount)}
+>
+  <span aria-hidden="true"><span class="metric__figure">{p.figure}</span><span class="metric__unit">{p.unit}</span></span>
+  <span class="sr-only">{p.spoken}</span>
+</data>
+
+<style>
+  @layer components {
+    .metric {
+      font-family: var(--font-numeric);
+      font-variant-numeric: tabular-nums lining-nums;
+      white-space: nowrap;
+      font-weight: var(--weight-strong);
+      line-height: 1.1;
+    }
+    .metric--s {
+      font-size: var(--text-metric-s);
+    }
+    .metric--m {
+      font-size: var(--text-metric-m);
+    }
+    .metric--l {
+      font-size: var(--text-metric-l);
+      letter-spacing: -0.02em;
+    }
+    .metric__unit {
+      font-size: 0.62em;
+      font-weight: var(--weight-medium);
+      margin-inline-start: 0.05em;
+      color: var(--color-text-secondary);
+      letter-spacing: 0;
+    }
+    .metric--s .metric__unit {
+      font-size: 0.85em;
+    }
+    .is-negative {
+      color: var(--color-value-risk);
+    }
+    .is-positive {
+      color: var(--color-value-positive);
+    }
+  }
+</style>

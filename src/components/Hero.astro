@@ -1,0 +1,132 @@
+---
+/**
+ * Homepage hero. Copy comes from a HeroVariant record, so H1/H2/H3 swap without layout changes.
+ * The static first frame carries the whole message; nothing depends on motion.
+ *
+ * Order follows Blueprint §11 mobile priority: value → economic metric → product proof →
+ * trust (evidence label) → CTA. On wide screens the CTA moves up beside the proof object.
+ * The documentary image slot supplies the "real agricultural reality" layer of the master grammar.
+ */
+import ImageSlot from './ImageSlot.astro';
+import ProofCard from './ProofCard.astro';
+import type { FieldSeasonExample } from '../content/examples/field-season';
+import type { Cta, HeroVariant } from '../content/types';
+import { localeInfo, localePath } from '../i18n';
+
+interface Props {
+  variant: HeroVariant;
+  primary: Cta;
+  secondary: Cta;
+  example: FieldSeasonExample;
+  proofLabels: {
+    list: string;
+    data: string;
+    economics: string;
+    decision: string;
+    question: string;
+    records: string;
+  };
+  image: { caption: string; requirement: string };
+}
+
+const { variant, primary, secondary, example, proofLabels, image } = Astro.props;
+const locale = localeInfo(Astro.currentLocale).code;
+const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(locale, cta.href));
+---
+
+<section class="hero" aria-labelledby="hero-title" data-hero-variant={variant.id} data-message-state={variant.status.state}>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">{variant.eyebrow}</p>
+      <h1 id="hero-title" class="hero__title">{variant.headline}</h1>
+      <p class="hero__support">{variant.support}</p>
+    </div>
+    <div class="hero__card">
+      <ProofCard kind={variant.proof} example={example} labels={proofLabels} />
+    </div>
+    <div class="hero__actions">
+      <a class="button button--primary" href={href(primary)}>{primary.label}</a>
+      <a class="button button--secondary" href={href(secondary)}>{secondary.label}</a>
+    </div>
+    <div class="hero__summary">
+      <slot name="summary" />
+    </div>
+    <div class="hero__image">
+      <ImageSlot caption={image.caption} requirement={image.requirement} aspect="3/2" />
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .hero {
+      padding-block: clamp(2rem, 1.2rem + 3.5vw, 5rem) clamp(3rem, 2rem + 4vw, 6rem);
+      container-type: inline-size;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-6);
+    }
+    .hero__copy {
+      display: grid;
+      gap: var(--space-4);
+      align-content: start;
+    }
+    .hero__title {
+      font-size: var(--text-display);
+      max-width: 17ch;
+    }
+    .hero__support {
+      font-size: var(--text-lead);
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+      max-width: 34rem;
+    }
+    .hero__card,
+    .hero__image {
+      max-width: 34rem;
+    }
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+    .hero__summary:empty {
+      display: none;
+    }
+    @container (min-width: 62rem) {
+      .hero__grid {
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+          'copy card'
+          'actions card'
+          'summary image';
+        column-gap: var(--space-8);
+        row-gap: var(--space-6);
+      }
+      .hero__copy {
+        grid-area: copy;
+        padding-block-start: var(--space-5);
+      }
+      .hero__card {
+        grid-area: card;
+        max-width: none;
+      }
+      .hero__actions {
+        grid-area: actions;
+        align-self: start;
+      }
+      .hero__summary {
+        grid-area: summary;
+        align-self: start;
+      }
+      .hero__image {
+        grid-area: image;
+        max-width: none;
+        margin-inline-start: 14%;
+      }
+    }
+  }
+</style>

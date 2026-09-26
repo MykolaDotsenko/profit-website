@@ -1,0 +1,51 @@
+name: Site Verify
+
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "public/**"
+      - "tests/**"
+      - "package.json"
+      - "package-lock.json"
+      - "astro.config.mjs"
+      - "tsconfig.json"
+      - ".github/workflows/site-verify.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - "public/**"
+      - "tests/**"
+      - "package.json"
+      - "package-lock.json"
+      - "astro.config.mjs"
+      - "tsconfig.json"
+      - ".github/workflows/site-verify.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Type check, domain tests and production build
+        run: npm run verify
+        env:
+          ASTRO_TELEMETRY_DISABLED: "1"

@@ -41,6 +41,9 @@ TEXT_INVARIANTS = {
         "Field Profitability is the current wedge/proof hypothesis",
         "AI-generated prose or reasoning is not a source of truth for critical economic numbers",
         "AD-7",
+        "Global by architecture. Local by evidence.",
+        "Domain × Market × Evidence",
+        "I5 — International product evidence",
     ],
     "AGENTS.md": [
         "Authority and precedence",
@@ -53,6 +56,7 @@ TEXT_INVARIANTS = {
         "Create Value. Prove It. Scale It.",
         "Verified Economic Value per Customer",
         "AI must not be the sole source of truth for critical quantitative outputs",
+        "Global by architecture. Local by evidence.",
     ],
     "docs/ai/context.yaml": [
         'schema_version: 1',
@@ -67,6 +71,8 @@ TEXT_INVARIANTS = {
         'company_context:',
         'vev_measurement:',
         'trust_guardrails:',
+        'international_validation:',
+        'Domain × Market × Evidence',
         'AD-7 brand-system transfer',
     ],
     "docs/ai/IMPLEMENTATION_PLAN.md": [

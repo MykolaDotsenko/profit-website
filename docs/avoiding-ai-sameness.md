@@ -208,7 +208,9 @@ Own:
 
 Design these as a recognisable typographic language.
 
-### 2. Field geometry
+### 2. Field geometry — crop / Field Profitability domain code
+
+*Reclassified 2026-09-26: this is a candidate domain code, not a master-brand distinctive asset or invariant (Blueprint §2.1, §25). Do not require it for pig production or dairy expression.*
 
 Use:
 - parcel outlines;
@@ -771,7 +773,7 @@ Once validated, avoid unnecessary rebrands of:
 - economic-number language;
 - evidence states;
 - confidence language;
-- field/data geometry;
+- field/data geometry *(crop / Field Profitability domain only; not a master-brand invariant — Blueprint §25)*;
 - core typography roles;
 - photography principles;
 - motion grammar.
@@ -1592,7 +1594,7 @@ Examples:
 - evidence vocabulary;
 - confidence vocabulary;
 - canonical unit formatting;
-- field/data geometry principles;
+- operational/data-context principles *(field/data geometry is a crop / Field Profitability domain variable, not a master-brand invariant — Blueprint §30)*;
 - photography truthfulness;
 - motion personality;
 - core color semantics.

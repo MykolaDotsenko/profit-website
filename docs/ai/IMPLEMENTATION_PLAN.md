@@ -31,6 +31,30 @@ Do not lock the full production platform or build a large page system before the
 
 If a material production-platform decision is made, create an ADR.
 
+### Parallel engineering track — Website Build Pass 01 (owner decision, 2026-09-26)
+
+Reversible engineering proceeds in parallel with W0: a coded Astro foundation with the seven core routes, reusable sections, evidence/trust components, accessible navigation, a performance baseline and a localization-ready content model ([ADR 0002](../decisions/0002-coded-website-foundation.md)). Hero copy, proof objects, images, art-direction tokens and CTA copy are data or tokens, so W0 results can replace them without layout rewrites.
+
+It does not meet any exit criterion above, decide WWW-005, freeze WWW-000 or start WWW-001. WWW-000 farmer sessions still wait for the recruitment gate and D5–D8.
+
+### Future gate — master-brand positioning (does not block current work)
+
+Before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
+
+### International validation architecture
+
+Principle: **Global by architecture. Local by evidence.**
+
+Use the Blueprint §2.3 `Domain × Market × Evidence` model and I0–I5 maturity ladder. Do not pool materially different markets into one qualitative cohort or treat one-market evidence as international validation.
+
+Current operating focus:
+**EU-first, Europe-expandable.**
+
+Market A is provisionally **Finland**, with the first WWW-000 cohort in Southwest Finland (Finnish-language crop decision-makers), subject to the recruitment-feasibility gate. This is a first-learning-market decision, not a statement that Finland is the largest European market.
+
+Immediate decision before WWW-000 freeze:
+confirm that 9–12 eligible Market A participants can be recruited without obvious convenience/sample bias. If not, reopen Market A rather than weakening the cohort.
+
 ---
 
 # Workstreams
@@ -39,13 +63,31 @@ If a material production-platform decision is made, create an ADR.
 
 ### WWW-000 — Controlled hero message validation
 
+Execution source:
+`docs/experiments/hero-message-test-v1.md`
+
+Stimulus:
+`prototypes/hero-message-test/`
+
+Status:
+**Test instrument drafted — not approved to run.**
+- D1–D3 were approved on 2026-09-26: a Phase A → B → C session flow, fixed 10 s exposure, and the counting rules (now in Blueprint §17).
+- D4 is settled. The Field Profitability product-truth boundary (an unmerged, unshipped vertical slice) is now in Blueprint §2.2, and PT-1/PT-2 are resolved.
+- The product-truth gate superseded the v1 candidates before testing. The test candidates are H1/H2/H3 v2.
+- International validation architecture is defined (Blueprint §2.3). Operating focus is EU-first; Market A is provisionally Finland under a recruitment gate.
+- Before the stimulus is frozen: D5 Market Cohort Specification, D6 market-specific scenario validation, D7 research-data/consent process and the approved D8 controlled documentary asset must be resolved.
+
+No acceptance criterion below has been met yet.
+
 Outcome:
 Eliminate weak hero positioning before visual art direction becomes a confounding variable.
 
-Test the three canonical Blueprint directions:
+Test the three canonical Blueprint directions, using the **v2** candidates in Blueprint §5. The v1 wording was superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1.
 - H1 — Economic visibility / farmer job first
-- H2 — Decision intelligence / current control
+- H2 — Decision intelligence / decision-context first (v1: current control)
 - H3 — Field Profitability / product proof first
+
+Scope: the Field Profitability **wedge** message only, for the provisional Finland Market A cohort (Blueprint §2.3). Results must retain market/cohort context, must not be pooled with materially different markets, and must not redefine PROFIT as field-crop-only or globally validated. The master brand stays extensible to crop production, pig production and dairy without rebranding (Blueprint §2.1).
 
 Constraints:
 - same neutral/static scaffold;
@@ -91,7 +133,18 @@ Acceptance:
 - [ ] same information hierarchy can be compared across variants;
 - [ ] generic AI/SaaS similarity is red-teamed;
 - [ ] each works statically;
-- [ ] each can be tested without explaining the concept first.
+- [ ] each can be tested without explaining the concept first;
+- [ ] each direction passes an internal master-brand transfer stress test (Blueprint §19 AD-7, domain transfer). The same visual grammar is expressed in three production contexts: crop production, pig production and dairy. This is an internal design-system diagnostic, not products or public pages. Rules:
+  - documentary/category-level agricultural reality and generic operational/economic context only;
+  - no fake product UI;
+  - no fabricated pig/dairy metrics or results;
+  - no pig/dairy capability shown as shipped.
+  Record, per direction:
+  - whether the PROFIT grammar survives without field geometry;
+  - which elements are invariant and which are domain variables;
+  - whether it falls apart without a field/map/parcel visual;
+  - whether it still looks like PROFIT rather than generic livestock software.
+  A direction that needs field geometry for its identity is flagged as a master-brand scalability concern. That is not an automatic kill: it may remain a crop-module expression, but not the master-brand system.
 
 Depends on: WWW-000.
 
@@ -110,7 +163,7 @@ Run the Blueprint experiments:
 - AD-4 — category-confusion diagnostic;
 - AD-5 — mobile farmer task;
 - AD-6 — trust under bad news/uncertainty;
-- AD-7 — brand-system transfer.
+- AD-7 — brand-system transfer (surface transfer + internal crop/pig/dairy domain diagnostic).
 
 Primary decision objective:
 **farmer comprehension + calibrated trust**
@@ -154,6 +207,8 @@ Execution source:
 
 Status:
 **BLOCKED until WWW-002 produces a surviving art-direction base or sufficiently narrow survivor set.**
+
+Before start: the scenario's generic "Margin €637/ha" must be revalidated against the Field Profitability product-truth boundary (Blueprint §2.2). Relabel it only once its calculation provenance establishes what the number represents (see the execution source, §3).
 
 Do not use the existing motion prototype as evidence that motion is valuable. It is implementation-feasibility evidence only.
 
@@ -211,6 +266,8 @@ Start only after W0 produces enough evidence to justify production work.
 
 ### WWW-101 — Repository production scaffold
 
+Status: foundation built in Build Pass 01 (ADR 0002). WWW-005 is still open.
+
 If coded production is selected:
 
 Acceptance:
@@ -224,6 +281,8 @@ Acceptance:
 Depends on: WWW-005.
 
 ### WWW-102 — Design tokens / semantic primitives
+
+Status: Build Pass 01 has baseline tokens by semantic role, with placeholder values. Not done: no values are validated.
 
 Define only validated/reusable rules:
 
@@ -244,6 +303,8 @@ Acceptance:
 Depends on: WWW-001 plus sufficient design selection evidence.
 
 ### WWW-103 — Core layout and navigation shell
+
+Status: shell built in Build Pass 01 on the baseline tokens.
 
 Acceptance:
 - [ ] semantic landmarks;
@@ -490,7 +551,7 @@ Current recommended active sequence:
 5. WWW-004 — validate or reject the signature motion within the broader visual exploration
 6. WWW-005 — decide production platform only when implementation creates more learning value than another validation cycle
 
-Only after that promote W1/W2 implementation issues.
+Only after that promote W1/W2 implementation issues. Reversible engineering on the Build Pass 01 foundation may continue in parallel (§0); it does not replace this sequence.
 
 This preserves learning speed and avoids building a polished site around unvalidated positioning.
 

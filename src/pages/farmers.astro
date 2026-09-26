@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentGap from '../components/ContentGap.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ItemList from '../components/ItemList.astro';
+import PageIntro from '../components/PageIntro.astro';
+import QuestionList from '../components/QuestionList.astro';
+import Section from '../components/Section.astro';
+import { content } from '../content';
+
+const c = content(Astro.currentLocale);
+const p = c.farmers;
+---
+
+<BaseLayout title={p.meta.title} description={p.meta.description}>
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
+
+  <Section intro={p.provide.intro} layout="split">
+    <ItemList items={p.provide.items} columns={2} />
+  </Section>
+
+  <Section intro={p.getBack.intro} layout="split" tone="sunken">
+    <ItemList items={p.getBack.items} columns={2} />
+    <div class="gap-space">
+      <ContentGap owner={p.getBack.review.owner} kind="review" text={p.getBack.review.text} />
+    </div>
+  </Section>
+
+  <Section intro={p.notDo.intro} layout="split">
+    <ItemList items={p.notDo.items} columns={2} marker="cross" />
+    <p class="ai-note">{p.notDo.ai}</p>
+  </Section>
+
+  <Section intro={p.questions.intro} layout="split">
+    <QuestionList questions={c.shared.hardQuestions} />
+  </Section>
+
+  <CtaBand
+    intro={{ ...p.pilot.intro, id: 'pilot', title: 'How the pilot would work' }}
+    stepsTitle={p.pilot.stepsTitle}
+    steps={p.pilot.steps}
+    review={p.pilot.review}
+    primary={p.pilot.primary}
+  />
+</BaseLayout>
+
+<style>
+  .gap-space {
+    margin-block-start: var(--space-5);
+  }
+  .ai-note {
+    margin-block-start: var(--space-5);
+    max-width: var(--measure-wide);
+    font-weight: var(--weight-strong);
+  }
+</style>

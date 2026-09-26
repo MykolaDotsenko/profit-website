@@ -1,0 +1,99 @@
+---
+import ContentGap from './ContentGap.astro';
+import { localeInfo, localePath, ui } from '../i18n';
+
+const locale = localeInfo(Astro.currentLocale);
+const t = ui(locale.code);
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-footer__wordmark" href={localePath(locale.code, '/')}>{t.brand}</a>
+      <p class="site-footer__tagline">{t.footer.tagline}</p>
+      <p class="site-footer__evidence">{t.footer.evidenceNote}</p>
+    </div>
+    <nav class="site-footer__nav" aria-label={t.footer.label}>
+      {
+        t.footer.groups.map((group) => (
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">{group.title}</h2>
+            <ul role="list">
+              {group.items.map((item) => (
+                <li>
+                  <a href={localePath(locale.code, item.href)}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </nav>
+    <div class="site-footer__legal">
+      <ContentGap owner="owner" tone="inverse">
+        Company details for the footer: legal name, business ID and registered address.
+      </ContentGap>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @layer components {
+    .site-footer {
+      background: var(--color-inverse-canvas);
+      color: var(--color-inverse-text);
+      padding-block: var(--space-8) var(--space-7);
+      --color-focus: var(--color-inverse-focus);
+    }
+    .site-footer__inner {
+      display: grid;
+      gap: var(--space-7);
+    }
+    .site-footer__wordmark {
+      font-weight: 750;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      font-size: 1.125rem;
+    }
+    .site-footer__tagline {
+      margin-block-start: var(--space-3);
+      max-width: 28rem;
+      font-size: var(--text-lead);
+      line-height: 1.45;
+    }
+    .site-footer__evidence {
+      margin-block-start: var(--space-5);
+      max-width: 30rem;
+      padding-block-start: var(--space-4);
+      border-block-start: 1px solid var(--color-inverse-line);
+      color: var(--color-inverse-secondary);
+      font-size: var(--text-caption);
+    }
+    .site-footer__nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+      gap: var(--space-6);
+    }
+    .site-footer__heading {
+      font-size: var(--text-label);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-inverse-secondary);
+      margin-block-end: var(--space-3);
+    }
+    .site-footer__group li + li {
+      margin-block-start: var(--space-2);
+    }
+    .site-footer__group a {
+      text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    }
+    @media (min-width: 60rem) {
+      .site-footer__inner {
+        grid-template-columns: 5fr 7fr;
+      }
+      .site-footer__legal {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+</style>

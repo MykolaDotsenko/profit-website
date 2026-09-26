@@ -1,0 +1,414 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConfidenceScale from '../components/ConfidenceScale.astro';
+import ContentGap from '../components/ContentGap.astro';
+import CtaBand from '../components/CtaBand.astro';
+import EvidenceLadder from '../components/EvidenceLadder.astro';
+import FieldExample from '../components/FieldExample.astro';
+import Hero from '../components/Hero.astro';
+import ItemList from '../components/ItemList.astro';
+import QuestionList from '../components/QuestionList.astro';
+import Section from '../components/Section.astro';
+import StepSequence from '../components/StepSequence.astro';
+import VerificationChain from '../components/VerificationChain.astro';
+import { site } from '../config/site';
+import { content } from '../content';
+import { fieldSeasonExample } from '../content/examples/field-season';
+import { localePath } from '../i18n';
+
+const c = content(Astro.currentLocale);
+const h = c.home;
+const s = c.shared;
+const variant = s.heroVariants[site.heroVariant];
+const link = (href: string) => localePath(Astro.currentLocale, href);
+---
+
+<BaseLayout description={h.meta.description}>
+  <!-- 1 · Hero: copy is a WWW-000 hypothesis record (content/en/shared.ts), not a tested winner. -->
+  <Hero
+    variant={variant}
+    primary={h.hero.primary}
+    secondary={h.hero.secondary}
+    example={fieldSeasonExample}
+    proofLabels={h.hero.proofLabels}
+    image={h.hero.image}
+  >
+    <section slot="summary" class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title" class="eyebrow tldr__title">{h.thirtySeconds.title}</h2>
+      <dl class="tldr__list">
+        {
+          h.thirtySeconds.items.map((item) => (
+            <div>
+              <dt>{item.title}</dt>
+              <dd>{item.text}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+  </Hero>
+
+
+  <!-- 2 · Product / economic proof -->
+  <Section intro={h.example.intro} tone="sunken">
+    <FieldExample example={fieldSeasonExample} labels={h.example.labels} />
+  </Section>
+
+  <!-- 3 · Farmer problem -->
+  <Section intro={h.problem.intro}>
+    <ol class="farmer-questions" role="list">
+      {
+        h.problem.questions.map((q, i) => (
+          <li class:list={['farmer-question', { 'is-farmer-call': !q.covered }]}>
+            <span class="farmer-question__index num" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="farmer-question__text">{q.question}</h3>
+            <p class="farmer-question__answer">{q.answer}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="scatter">
+      <h3 class="scatter__title">{h.problem.hard.title}</h3>
+      <p class="scatter__lead">{h.problem.hard.lead}</p>
+      <ul class="scatter__sources" role="list">
+        {
+          h.problem.hard.sources.map((src) => (
+            <li>
+              <span class="scatter__name">{src.title}</span>
+              <span class="scatter__detail">{src.text}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="scatter__conclusion">{h.problem.hard.conclusion}</p>
+    </div>
+  </Section>
+
+  <!-- 4 · How PROFIT works -->
+  <Section intro={h.how.intro}>
+    <StepSequence steps={h.how.steps} actors={s.actors} moduleLabel={h.how.moduleLabel} />
+    <p class="how-note">{h.how.note}</p>
+  </Section>
+
+  <!-- 5 · Economic value / evidence logic -->
+  <Section intro={h.value.intro} tone="inverse">
+    <div class="value">
+      <div>
+        <h3 class="value__title">{h.value.ladderTitle}</h3>
+        <EvidenceLadder current={fieldSeasonExample.meta.evidence} currentLabel={h.value.currentLabel} />
+      </div>
+      <div class="value__split">
+        <div>
+          <h3 class="value__title">{h.value.confidenceTitle}</h3>
+          <p class="value__text">{h.value.confidenceText}</p>
+          <ConfidenceScale assessedLabel={h.value.assessedLabel} notAssessedText={h.value.notAssessedText} />
+        </div>
+        <div>
+          <h3 class="value__title">{h.value.chainTitle}</h3>
+          <VerificationChain steps={s.verificationChain} />
+          <p class="value__note">{h.value.chainNote}</p>
+        </div>
+      </div>
+      <p><a class="text-link" href={link(h.value.link.href)}>{h.value.link.label}</a></p>
+    </div>
+  </Section>
+
+  <!-- 6 · Field Profitability, the first wedge -->
+  <Section intro={h.wedge.intro} layout="split">
+    <p slot="head" class="status-chip">{h.wedge.status}</p>
+    <div class="wedge">
+      <div>
+        <h3 class="wedge__title">{h.wedge.inputsTitle}</h3>
+        <ul class="wedge__list" role="list">{s.fieldProfitability.inputs.map((i) => <li>{i.title}</li>)}</ul>
+      </div>
+      <div>
+        <h3 class="wedge__title">{h.wedge.outputsTitle}</h3>
+        <ul class="wedge__list" role="list">{s.fieldProfitability.outputs.map((i) => <li>{i.title}</li>)}</ul>
+      </div>
+      <div>
+        <h3 class="wedge__title">{h.wedge.exclusionsTitle}</h3>
+        <ul class="wedge__list wedge__list--excluded" role="list">
+          {s.fieldProfitability.exclusions.map((i) => <li>{i.title}</li>)}
+        </ul>
+      </div>
+    </div>
+    <p class="wedge__ai">{s.fieldProfitability.ai}</p>
+    <p><a class="text-link" href={link(h.wedge.link.href)}>{h.wedge.link.label}</a></p>
+  </Section>
+
+  <!-- 7 · Trust / farmer control -->
+  <Section intro={h.control.intro} tone="sunken">
+    <ItemList items={h.control.principles} columns={2} marker="number" />
+    <div class="control-questions">
+      <h3 class="control-questions__title">{h.control.questionsTitle}</h3>
+      <QuestionList questions={s.questions(h.control.questionIds)} level={4} />
+      <ul class="control-links" role="list">
+        {
+          h.control.links.map((l) => (
+            <li>
+              <a class="text-link" href={link(l.href)}>{l.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Section>
+
+  <!-- 8 · Company -->
+  <Section intro={h.company.intro} layout="split">
+    <div class="company stack">
+      {h.company.text.map((p) => <p class="company__text">{p}</p>)}
+      <h3 class="company__subtitle">{h.company.stillProvenTitle}</h3>
+      <ul class="company__list">{h.company.stillProven.map((p) => <li>{p}</li>)}</ul>
+      <ContentGap owner={h.company.teamGap.owner} text={h.company.teamGap.text} />
+      <p><a class="text-link" href={link(h.company.link.href)}>{h.company.link.label}</a></p>
+    </div>
+  </Section>
+
+  <!-- 9 · Pilot CTA (footer follows in the layout) -->
+  <CtaBand
+    intro={h.cta.intro}
+    stepsTitle={h.cta.stepsTitle}
+    steps={h.cta.steps}
+    review={h.cta.review}
+    primary={h.cta.primary}
+    secondary={h.cta.secondary}
+  />
+</BaseLayout>
+
+<style>
+  @layer components {
+    .tldr {
+      container-type: inline-size;
+      display: grid;
+      gap: var(--space-3);
+      padding-block-start: var(--space-4);
+      border-block-start: 1px solid var(--color-line-strong);
+    }
+    .tldr__title {
+      color: var(--color-text);
+    }
+    .tldr__list > div {
+      display: grid;
+      align-content: start;
+      gap: 0.125rem;
+      padding-block: var(--space-3);
+      border-block-start: 1px solid var(--color-line);
+    }
+    .tldr__list dt {
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+    }
+    .tldr__list dd {
+      font-size: var(--text-small);
+      line-height: 1.5;
+    }
+    @container (min-width: 32rem) {
+      .tldr__list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: var(--space-6);
+      }
+    }
+
+    .farmer-questions {
+      border-block-start: 1px solid var(--color-line-strong);
+    }
+    .farmer-question {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: var(--space-1) var(--space-3);
+      padding-block: var(--space-5);
+      border-block-end: 1px solid var(--color-line);
+    }
+    .farmer-question__index {
+      grid-row: span 2;
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+      color: var(--color-text-secondary);
+      padding-block-start: 0.45em;
+    }
+    .farmer-question__text {
+      font-size: var(--text-question);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      max-width: 30ch;
+    }
+    .farmer-question__answer {
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    .farmer-question.is-farmer-call .farmer-question__answer {
+      color: var(--color-text);
+      font-weight: var(--weight-strong);
+    }
+    @container (min-width: 56rem) {
+      .farmer-question {
+        grid-template-columns: 3rem minmax(0, 7fr) minmax(0, 4fr);
+        align-items: baseline;
+      }
+      .farmer-question__index {
+        grid-row: auto;
+      }
+    }
+
+    .scatter {
+      margin-block-start: var(--space-8);
+      display: grid;
+      gap: var(--space-3);
+    }
+    .scatter__title {
+      font-size: var(--text-subsection);
+    }
+    .scatter__lead,
+    .scatter__conclusion {
+      max-width: var(--measure-wide);
+      color: var(--color-text-secondary);
+    }
+    .scatter__sources {
+      display: grid;
+      gap: var(--space-2);
+      margin-block: var(--space-3);
+    }
+    .scatter__sources li {
+      display: grid;
+      gap: 0.125rem;
+      padding: var(--space-3) var(--space-4);
+      border: 1px solid var(--color-line);
+      border-inline-start: 3px solid var(--color-line-strong);
+      background: var(--color-surface);
+    }
+    .scatter__name {
+      font-weight: var(--weight-strong);
+    }
+    .scatter__detail {
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+    @container (min-width: 40rem) {
+      .scatter__sources {
+        grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+      }
+      /* Deliberately uneven: the records do not line up in real life either. */
+      .scatter__sources li:nth-child(2) { margin-block-start: var(--space-5); }
+      .scatter__sources li:nth-child(4) { margin-block-start: var(--space-4); }
+      .scatter__sources li:nth-child(5) { margin-block-start: var(--space-2); }
+    }
+
+    .how-note {
+      margin-block-start: var(--space-6);
+      max-width: var(--measure-wide);
+      padding-block-start: var(--space-4);
+      border-block-start: 1px solid var(--color-line);
+      color: var(--color-text-secondary);
+      font-size: var(--text-small);
+    }
+
+    .value {
+      display: grid;
+      gap: var(--space-8);
+    }
+    .value__title {
+      font-size: var(--text-subsection);
+      margin-block-end: var(--space-4);
+    }
+    .value__text {
+      max-width: var(--measure);
+      color: var(--color-text-secondary);
+      margin-block-end: var(--space-5);
+    }
+    .value__split {
+      display: grid;
+      gap: var(--space-7);
+    }
+    @container (min-width: 56rem) {
+      .value__split {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-8);
+      }
+    }
+    .value__note {
+      margin-block-start: var(--space-4);
+      font-weight: var(--weight-strong);
+    }
+
+    .wedge {
+      display: grid;
+      gap: var(--space-6);
+    }
+    @container (min-width: 36rem) {
+      .wedge {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .wedge__title {
+      font-size: var(--text-label);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      padding-block-end: var(--space-3);
+      border-block-end: 1px solid var(--color-line-strong);
+    }
+    .wedge__list li {
+      padding-block: var(--space-2);
+      border-block-end: 1px solid var(--color-line);
+      font-size: var(--text-small);
+    }
+    .wedge__list--excluded li {
+      color: var(--color-text-secondary);
+    }
+    .wedge__list--excluded li::before {
+      content: '×';
+      display: inline-block;
+      width: 1.25rem;
+    }
+    .wedge__ai {
+      margin-block: var(--space-6) var(--space-4);
+      max-width: var(--measure-wide);
+      font-weight: var(--weight-strong);
+    }
+
+    .control-questions {
+      margin-block-start: var(--space-8);
+      display: grid;
+      gap: var(--space-4);
+      max-width: 52rem;
+    }
+    .control-questions__title {
+      font-size: var(--text-subsection);
+    }
+    .control-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3) var(--space-6);
+    }
+
+    .company {
+      max-width: var(--measure-wide);
+      --stack-space: var(--space-4);
+    }
+    .company__text {
+      font-size: var(--text-lead);
+      line-height: 1.5;
+    }
+    .company__subtitle {
+      font-size: var(--text-label);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      padding-block-start: var(--space-4);
+    }
+    .company__list {
+      padding-inline-start: 1.25rem;
+    }
+    .company__list li + li {
+      margin-block-start: var(--space-2);
+    }
+  }
+</style>

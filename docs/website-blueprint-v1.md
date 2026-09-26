@@ -37,7 +37,11 @@ These are implementation guardrails, not homepage copy.
 
 - PROFIT is the master brand; Field Profitability is the current wedge/proof hypothesis.
 - Do not let the website architecture, naming or visual system imply that PROFIT is permanently crop-only.
-- Do not depict livestock/other future production domains as shipped capabilities unless current canonical documentation explicitly supports them.
+- Keep the master brand, naming, information architecture, category language and visual system extensible to crop production, pig production and dairy without rebranding.
+  - Field/crop-specific language, imagery and metrics belong at module or wedge level (e.g. Field Profitability).
+  - Before any field/crop-specific element (e.g. field geometry, crop imagery) is promoted to a master-brand code, check that it transfers to pig production and dairy.
+- Wedge tests such as WWW-000 may be Field Profitability-specific. Their results must not redefine PROFIT as a field-crop-only company, and a surviving wedge message is not a master-brand positioning (§3).
+- Do not depict livestock/other future production domains (including pig production and dairy) as shipped capabilities unless current canonical documentation explicitly supports them.
 - The public site is a learning/trust/conversion surface, not the core application.
 - Customer-level evidence outranks global ambition or investor narrative.
 - Never convert internal ambition (leadership, scale, moat, company valuation) into a factual public claim without evidence.
@@ -49,6 +53,142 @@ AI-generated prose or reasoning is not a source of truth for critical economic n
 When real economic outputs are shown, derive them from validated data/rules/models and expose material assumptions, period, provenance and uncertainty.
 
 When that standard cannot be met, label the result as illustrative/modelled rather than real/verified.
+
+## 2.2 Field Profitability product-truth boundary (internal)
+
+Use this boundary to check that website copy and proof objects never promise more than has been designed or implemented. It is **internal**, not a public claim: nothing here may be presented as shipped or available until it is shipped and verified.
+
+Scope: this boundary covers the Field Profitability module only. It does not define the scope of the PROFIT master brand (§2.1).
+
+- **Status:** implemented vertical slice. Source: `MykolaDotsenko/PROFIT`, branch `feat/field-profitability` @ `7d07345`. PR #1 was closed without merge. **Unshipped; not production-verified.**
+- **Reference inputs:** field; crop; season; currency; area; yield; price; variable costs; allocated fixed costs.
+- **Reference calculations:** revenue; variable costs; allocated fixed costs; operating costs; gross margin; operating profit; revenue / ha; cost / ha; operating profit / ha; operating margin %; ROI on allocated costs; break-even price; break-even yield.
+- **Definition:** **Operating profit = revenue − variable costs − allocated fixed costs.** It is not statutory net profit, and not gross margin (revenue − variable costs).
+- **Reference exclusions:** whole-farm P&L; financing; tax; depreciation policy; inventory accounting; GIS; scenario optimisation; external telemetry; ERP integrations.
+- **AI explanation:** may explain stored deterministic metrics; does not calculate financial truth.
+- **Established by the 2026-09-26 product-truth review:**
+  - several field records can be listed side by side in a saved-snapshots table. This is a list/presentation pattern, not a separate analytics feature;
+  - there is no assumptions model or UI and no assessed confidence attached to calculations. Website evidence/confidence labels (e.g. `Confidence: Not assessed` on illustrative material) are website semantics, not a product capability.
+
+## 2.3 International validation architecture (internal)
+
+Principle:
+
+**Global by architecture. Local by evidence.**
+
+PROFIT may be designed for international scale, but a result from one market, language, production domain or cohort is evidence for that context only. Do not convert local learning into a global claim without replication.
+
+### EU-first operating focus and Market A decision
+
+Near-term operating theatre:
+
+**EU-first, Europe-expandable.**
+
+The product architecture remains global-capable, while current validation, localisation and data/economic assumptions are optimised first for EU markets. EU evidence must still remain country/cohort-specific; “European farmer” is not a valid pooled research cohort.
+
+**Market A — provisional decision: Finland.**
+
+Purpose:
+choose the fastest credible learning market for Field Profitability, not the largest total addressable market.
+
+Current rationale:
+- Finland combines modern agricultural technology use with significant profitability pressure;
+- official farm-economics and crop statistics are unusually accessible through Luke/Economydoctor;
+- the crop wedge is large enough to recruit a coherent first cohort;
+- the market is operationally manageable for a first localisation/VEV-learning cycle;
+- existing Finnish tools already cover crop planning/economics, which makes differentiation pressure useful: PROFIT must prove economic decision value rather than win by basic digitisation.
+
+**Recruitment gate:** Finland becomes the frozen Market A only if the team can recruit 9–12 eligible crop decision-makers without obvious convenience/sample bias. If this fails, reopen Market A rather than weakening the cohort.
+
+First-cohort specification (D5):
+- country: **Finland**;
+- initial region: **Southwest Finland (Varsinais-Suomi)**;
+- working language: **Finnish**;
+- production context: cereal/oilseed/protein-crop / arable farms relevant to Field Profitability;
+- farm-size band: target **50–200 ha** for the first round, with justified exceptions; hectare band is a research-control choice, not a market-definition claim;
+- decision-maker: owner, manager or partner responsible for field-level crop/economic decisions;
+- digital maturity: mixed; record current tools and avoid recruiting a cohort dominated by one software product or one maturity level;
+- economic context: field-level revenue/cost/profitability decisions under current Finnish crop-farm profitability pressure.
+
+Why Southwest Finland:
+official 2025 Luke structural data lists about 2,194 cereal-production enterprises in Southwest Finland, providing a sufficiently deep, concentrated recruitment pool for a 9–12 person qualitative test.
+
+Reconsider Market A if:
+- the recruitment gate fails;
+- the cohort becomes dominated by one vendor/tool or unusually advanced users;
+- Market-A localisation materially changes the product truth rather than presentation;
+- D6 cannot produce a credible, auditable Finnish scenario;
+- stronger access/evidence makes another EU market materially faster for first VEV learning.
+
+Runner-up/future roles:
+- **Sweden** — strong adjacent Nordic replication candidate;
+- **Poland** — high-contrast EU replication/robustness candidate with much larger and more heterogeneous farm structure;
+- **Denmark** — strategically useful later for cross-domain pig/dairy transfer, but a stronger incumbent digital ecosystem raises the bar for a first crop-wedge entry;
+- **Estonia** — digitally innovative and structurally attractive, but small and already served by a strong local-origin FMS competitor;
+- **Germany/France** — scale markets after the wedge and onboarding/evidence model are better proven.
+
+This ordering is an internal learning strategy, not a public market-priority claim.
+
+### Domain × Market × Evidence
+
+Evaluate product/brand hypotheses on three explicit dimensions:
+
+- **Domain** — production system being evaluated (current wedge: crop / Field Profitability; pig production and dairy remain future/unshipped domains until separately supported).
+- **Market** — country, region, working language, farm-size band, decision-maker role, digital maturity and relevant economic context.
+- **Evidence** — the actual evidence state, cohort, period and confidence supporting the conclusion.
+
+Rules:
+- one qualitative cohort should be internally coherent enough to interpret; do not mix materially different countries/languages into one pooled WWW-000 cohort;
+- when the same hypothesis is tested in another market, analyse that market separately first, then compare whether the mechanism/result replicates;
+- do not hardcode one country's crop, price, currency, unit, terminology or cost structure as a PROFIT-wide truth;
+- do not hardcode one production domain's variables as master-brand invariants;
+- VEV/effect claims must always retain the relevant domain, market/cohort and measurement period.
+
+### International evidence maturity — I0 to I5
+
+These are **internal evidence/maturity labels, not marketing claims**. A level is achieved only when its evidence exists; documenting the ladder does not achieve a level.
+
+- **I0 — International-ready architecture:** market/domain assumptions are separable; locale, currency, unit and production-domain presentation are not embedded as universal truths.
+- **I1 — One-market evidence:** one defined target-market cohort supports the product/message hypothesis for that market/domain.
+- **I2 — Cross-market replication:** the same core job/mechanism is independently supported in a second market.
+- **I3 — Cross-market robustness:** the hypothesis remains useful across materially different market contexts, with local adaptations explicitly separated from the invariant mechanism.
+- **I4 — Cross-domain validation:** the master economic/evidence grammar is supported by actual domain evidence across crop production, pig production and dairy; internal design transfer alone does not satisfy this level.
+- **I5 — International product evidence:** repeatable customer value/VEV, retention and willingness-to-pay evidence exists across multiple markets/domains with attributable, cohort/period-specific evidence.
+
+Do not describe PROFIT as internationally validated, globally proven or equivalent unless the relevant evidence actually exists.
+
+### Locale-neutral economic semantics
+
+Canonical economic meaning must be independent from presentation.
+
+Conceptually separate:
+- metric identity;
+- metric definition/formula/version;
+- numeric value;
+- currency;
+- production unit;
+- measurement period;
+- provenance/evidence state;
+
+from:
+- locale;
+- translated/display label;
+- number/currency/unit formatting.
+
+For example, `€637/ha` is a presentation of a value, not the metric identity. Likewise, a local display term such as “margin” must not redefine the underlying formula.
+
+This is a product/data semantics rule, not a decision to introduce a particular engineering framework or schema now.
+
+### WWW-000 market-validation boundary
+
+WWW-000 remains a **Field Profitability wedge test for Market A**. Market A is provisionally Finland under the recruitment gate above; D5 defines the first coherent Finnish cohort.
+
+- **D5 — Market Cohort Specification:** country; region; working language; crop/production context; farm-size band; decision-maker role; digital maturity; relevant economic context. One coherent cohort; other markets are separate replication cohorts.
+- **D6 — Market-Specific Economic Scenario Validation:** after D5, a domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology for that market. Local values remain test inputs, not global PROFIT truths.
+- **D7 — Research Data / Consent Architecture:** global principles are voluntary participation, purpose limitation, data minimisation, anonymised/pseudonymised research handling, no personal data in the public repository, and recording only with explicit consent. Jurisdiction-specific compliance remains OPEN until Market A is chosen; do not invent legal requirements.
+- **D8 — Controlled Documentary Asset:** one identical approved documentary crop image across H1/H2/H3 with source/rights/provenance. It is a WWW-000 Market A test asset, not the global PROFIT hero or master-brand image. No synthetic substitution presented as documentary.
+
+After this architecture pass, the next action is to satisfy the **Finland recruitment gate and finish D5–D8**, not WWW-001. If Finland fails the recruitment gate, reopen Market A using farmer access, problem severity/economic value, data availability, willingness-to-pay learning potential, competitive intensity, regulatory/data friction, localisation cost, speed to first VEV evidence and replication potential.
 
 ## 3. Primary positioning hypothesis
 
@@ -63,6 +203,8 @@ Supporting line:
 
 Important:
 These are hypotheses. Validate with real farmers before treating them as fixed brand language.
+
+Master-brand gate: before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
 
 ## 4. Core narrative
 
@@ -86,7 +228,7 @@ Primary internal value metric:
 
 Where relevant and evidence permits, supporting views may include:
 - VEV per hectare or relevant production unit;
-- VEV per € paid to PROFIT;
+- VEV per unit of currency paid to PROFIT (e.g. per € in a euro market);
 - share of eligible customers with positive VEV;
 - attribution confidence;
 - explicit period and cohort.
@@ -133,16 +275,45 @@ Current CTA control:
 
 The current hero copy is a test control, not a locked production winner.
 
+#### Product-truth gate — v1 superseded before farmer testing (2026-09-26)
+
+The H1/H2/H3 **v1** copy below was written before the Field Profitability product-truth boundary (§2.2) existed. On 2026-09-26, **before any farmer session**, a product-truth review superseded all three v1 candidates. **No farmer evidence exists for v1.** They are not farmer-test losers, and the rewrite is not a test result.
+
+Reason: the §2.2 reference exposed scope/semantic conflicts.
+- **H1 v1:** whole-farm framing; "field operations" ingestion and a "what to investigate next" capability that the reference does not have.
+- **H2 v1:** an implied guarantee in "more profitable decisions"; generic "farm data" beyond the inputs the reference accepts.
+- **H3 v1:** "with assumptions and confidence visible when they are assessed" is a known unsupported capability claim. Generic "margin" and causal "what drives it" conflict with the reference semantics.
+
+The **v2** candidates in each direction below are the WWW-000 test candidates. The v1 assumptions and risks are kept as history; several no longer apply to v2.
+
+The v2 field-level scope, including H2 v2's narrowing from "farm data" to field data, is module/wedge-level product truth for this test. It does not narrow the PROFIT master brand or category (§2.1).
+
+The v1 H2 headline and support are the same text as the §3 primary positioning hypothesis, AGENTS.md §6 and `docs/ai/context.yaml` `positioning`. Those entries are unchanged, pending a human decision on whether the positioning hypothesis itself should be restated. Any restatement must keep the master-brand positioning extensible to crop production, pig production and dairy (§2.1). Do not replace it with the wedge-scoped v2 wording.
+
 #### H1 — Economic visibility / farmer job first
 
-Eyebrow:
+Eyebrow (v1 and v2):
 **FIELD ECONOMICS**
 
-Headline candidate:
+v1 headline (superseded before farmer testing):
 **Know where your farm makes money — and where it doesn't.**
 
-Support candidate:
+v1 support (superseded):
 **PROFIT connects field operations, costs and outcomes so you can see where margin is being created or lost and what to investigate next.**
+
+**v2 — WWW-000 test candidate:**
+
+Headline:
+**See which fields make money — and which don't.**
+
+Support:
+**PROFIT compares each field's revenue with the costs allocated to it, so you can see operating profitability field by field.**
+
+Why v2:
+- keeps the economic-visibility job;
+- removes the whole-farm P&L implication;
+- removes unsupported "field operations" ingestion and the unsupported "what to investigate next" capability;
+- multi-field visibility is supported by the §2.2 saved-snapshots presentation.
 
 Proof object:
 a field/farm view showing a small number of contrasting field economics with clear provenance/illustrative labeling.
@@ -158,16 +329,30 @@ Main risks:
 - sounds like accounting software;
 - “makes money” may be read as a guaranteed outcome rather than visibility.
 
-#### H2 — Decision intelligence / current control
+#### H2 — Decision intelligence (v1: current control · v2: decision-context first)
 
-Eyebrow:
+Eyebrow (v1 and v2):
 **AGRICULTURAL DECISION INTELLIGENCE**
 
-Headline:
+v1 headline (superseded before farmer testing):
 **Turn farm data into more profitable decisions.**
 
-Support:
+v1 support (superseded):
 **PROFIT connects what happens on the farm with what it means economically.**
+
+**v2 — WWW-000 test candidate:**
+
+Headline:
+**Connect field data to the economics behind your decisions.**
+
+Support:
+**PROFIT turns yield, price and allocated-cost data into operating-profit and break-even metrics you can inspect before deciding what to do next.**
+
+Why v2:
+- keeps the Decision Intelligence hypothesis;
+- removes the implied guarantee in "more profitable decisions";
+- narrows generic "farm data" to data the §2.2 reference actually accepts;
+- claims no optimisation or recommendations.
 
 Proof object:
 a real-farm artifact moving conceptually from farm data → economic interpretation → decision, with one concrete metric/question.
@@ -184,14 +369,28 @@ Main risks:
 
 #### H3 — Field Profitability / product proof first
 
-Eyebrow:
+Eyebrow (v1 and v2):
 **FIELD PROFITABILITY**
 
-Headline candidate:
+v1 headline (superseded before farmer testing):
 **See margin by field — and what drives it.**
 
-Support candidate:
+v1 support (superseded; contains a known unsupported capability claim):
 **PROFIT brings operations, costs and outcomes together into field-level economics, with assumptions and confidence visible when they are assessed.**
+
+**v2 — WWW-000 test candidate:**
+
+Headline:
+**See operating profit by field — and what goes into it.**
+
+Support:
+**PROFIT brings yield, price, variable costs and allocated fixed costs together into field-level operating economics, including break-even price and yield.**
+
+Why v2:
+- matches the §2.2 metric semantics;
+- removes the unsupported assumptions/confidence capability;
+- replaces causal "what drives it" with compositional "what goes into it";
+- does not confuse operating profit with gross margin or statutory net profit.
 
 Proof object:
 real Field Profitability UI when available; otherwise an explicitly **HYPOTHETICAL EXAMPLE** showing field-level economics, source context and `Confidence: Not assessed`.
@@ -205,7 +404,8 @@ Primary assumptions:
 Main risks:
 - narrows perceived company scope too early;
 - “margin by field” may imply unsupported precision;
-- the hero fails if Field Profitability is not yet credible enough to show as product truth.
+- the hero fails if Field Profitability is not yet credible enough to show as product truth;
+- “margin” may be read differently from the Field Profitability reference's defined economics (e.g. operating profit, which is not gross margin or net profit), and “what drives it” may imply driver/causal analysis the current reference does not provide (reference status and details: `docs/experiments/hero-message-test-v1.md` §4.4).
 
 #### Hero decision rule
 
@@ -285,6 +485,7 @@ Answer real buyer questions:
 ### 08 — Evidence
 
 Use explicit states:
+- Hypothetical
 - Modelled
 - Observed
 - Attributed
@@ -648,32 +849,31 @@ Do not ask for sensitive or detailed farm data before trust is established.
 ### Hero farmer-test protocol
 
 Primary first-round cohort:
-farm decision-makers who are relevant to the current field/crop profitability wedge.
+farm decision-makers who are relevant to the current field/crop profitability wedge **within one defined Market A context (§2.3)**.
 
 Do not mix investors into the farmer-comprehension sample.
-If materially different farmer segments are tested, analyse them as separate cohorts rather than averaging them together.
+Do not pool materially different countries, languages or market contexts into one WWW-000 cohort. Cross-market replication uses separate cohorts and is analysed market-by-market before any cross-market comparison.
+If materially different farmer segments are tested within one market, analyse them as separate cohorts rather than averaging them together.
 
 #### Round 1 — isolate the message
 
-Test H1/H2/H3 on the same neutral/static visual scaffold.
+Test the H1/H2/H3 **v2** candidates (§5) on the same neutral/static visual scaffold. Round 1 tests the Field Profitability wedge message only. It does not validate the master-brand positioning or category scope (§2.1, §3).
 
 Keep constant:
 - typography hierarchy;
 - layout;
 - CTA wording/placement;
-- proof-object complexity;
+- proof-object complexity and fidelity (never a real or higher-fidelity product UI for one direction only);
 - image quality;
 - motion: off.
 
 Do not pair each message direction with a different art direction in this round. That would confound message and visual effects.
 
-Procedure:
-1. randomly/counterbalance which hero a participant sees first;
-2. expose the first hero for approximately 5–10 seconds;
-3. hide it;
-4. ask open recall questions before giving explanations;
-5. show it again and probe credibility/data expectations;
-6. only after independent recall, allow comparison with the other directions.
+Procedure — every participant evaluates all three directions, in three phases:
+1. assign each participant a counterbalanced H1/H2/H3 order, so each direction is seen first, second and third equally often;
+2. **Phase A — independent exposure + recall:** for each direction in that order, expose it for the same fixed duration (**10 seconds** throughout the first round), hide it and ask the open recall questions only. No credibility, data or guaranteed-profit probes, no explanation and no comparison until Phase A is complete for all three;
+3. **Phase B — second viewing + probes:** show each direction again, in the same assigned order, and run the credibility probe;
+4. **Phase C — comparison:** only after Phases A and B, allow overall comparison between directions.
 
 First-round sample:
 - **9–12 target farmers** is sufficient for qualitative elimination signals;
@@ -708,7 +908,7 @@ Do not use “Which one do you like?” as the primary decision question.
 
 Only after one or more hero message directions survive Round 1:
 - use the same surviving message/proof content across the three visual directions;
-- test Editorial Intelligence vs Farm Data Layer vs Economic Command;
+- test A — Evidence-Led Editorial vs B — Farm Operations Layer vs C — Economic Control Room (§19);
 - then run logo-off/category-confusion diagnostics.
 
 This preserves:
@@ -717,6 +917,11 @@ This preserves:
 ### Hero kill criteria
 
 These are directional qualitative gates, not statistical proof.
+
+Counting rules:
+- count each criterion across all participants who evaluated that direction; keep and report first-position recall results separately as the least-contaminated signal;
+- a **repeated pattern** means 3 or more independent participants; 2 independent participants is a **CONCERN**, not an automatic kill;
+- the count does not apply to critical evidence-integrity failures: a single case that shows a false or unsupported claim must be corrected regardless of count.
 
 Kill or materially rewrite a hero direction when any of the following appears as a repeated pattern:
 
@@ -731,6 +936,8 @@ Kill or materially rewrite a hero direction when any of the following appears as
 - mobile requires removing the product/economic proof to fit the composition.
 
 Variant-specific kill signals:
+
+These were written for the v1 wording. For the v2 candidates, apply them by meaning: H2's promised-outcome signal applies to any promised financial outcome, and H3's “margin” signals apply to “operating profit by field”.
 
 **H1 — Economic visibility**
 - repeated classification as accounting/bookkeeping;
@@ -1029,7 +1236,7 @@ This may outperform A when the farmer needs to understand *where the number came
 
 Mixed.
 
-Field geometry can support a recognisable PROFIT system, but:
+Field geometry can support a recognisable PROFIT expression in the crop/Field Profitability domain. It is a domain code, not a master-brand invariant (§2.1, §25). Even there:
 - aerial imagery;
 - parcel outlines;
 - satellite overlays;
@@ -1331,7 +1538,9 @@ A trusted visual system must remain credible when the information is inconvenien
 
 #### AD-7 — Brand-system transfer test
 
-Apply A/B/C to the same four surfaces:
+Two dimensions.
+
+**Surface transfer.** Apply A/B/C to the same four surfaces:
 1. homepage hero;
 2. Field Profitability product exhibit;
 3. evidence/trust panel;
@@ -1339,12 +1548,31 @@ Apply A/B/C to the same four surfaces:
 
 Do not redesign each surface from scratch.
 
+**Domain transfer — internal diagnostic.** Express the same A/B/C grammar in three production contexts:
+1. crop production;
+2. pig production;
+3. dairy.
+
+This is an internal design-system diagnostic, not a product or a public page:
+- use only documentary/category-level agricultural reality and generic operational/economic context;
+- no fake product UI;
+- no fabricated pig/dairy metrics or results;
+- never show pig/dairy capabilities as shipped.
+
 Evaluate:
-- does one grammar remain coherent across all four?
+- does one grammar remain coherent across all four surfaces?
 - which constants survive?
 - which variables can change?
 - does the system become repetitive?
 - does recognition depend only on logo/color?
+- is the PROFIT grammar still recognisable without field geometry?
+- which elements are truly invariant, and which must be domain variables?
+- does the direction fall apart without a field/map/parcel visual?
+- does it still look like PROFIT rather than generic livestock software?
+
+If a direction needs field geometry for its identity, that is a **master-brand scalability concern**, even if the direction is strong for Field Profitability. It is not an automatic kill. The direction may remain a crop-module expression, but not the master-brand system.
+
+The farmer-facing WWW-002 test stays with the current crop cohort. Domain transfer at this stage is an internal design-system test, not evidence of farmer comprehension in pig or dairy cohorts.
 
 This tests long-term brand distinctiveness potential better than a single hero comparison.
 
@@ -1365,9 +1593,9 @@ Not distinctive by itself.
 Requirement:
 real, specific, operational agriculture; not stock "farmer with tablet."
 
-#### 2. Field geometry
+#### 2. Field geometry — crop / Field Profitability domain code
 Role:
-**spatial/context bridge**
+**spatial/context bridge** for the crop / Field Profitability domain. It is a candidate domain code, **not a master-brand invariant**.
 
 It connects:
 physical farm → operational/data context.
@@ -1375,6 +1603,10 @@ physical farm → operational/data context.
 Not distinctive by itself because field geometry is common in agritech.
 
 Its value increases only when consistently linked to economic interpretation.
+
+Use it actively in Field Profitability, but never require it for pig production or dairy expression.
+- Other production domains use domain-specific operational structure/context, which stays OPEN until product/domain evidence exists.
+- Do not invent fixed "pig geometry" or "dairy geometry" codes.
 
 #### 3. Economic typography
 Role:
@@ -1397,7 +1629,7 @@ This is primarily a product/trust system, not decoration.
 
 It becomes a brand code only if repeated consistently and remembered by users.
 
-#### 5. Agriculture → data → economics composition
+#### 5. Agriculture/production → data/context → economics composition
 Role:
 **core compositional grammar**
 
@@ -1438,7 +1670,7 @@ System logic:
 **real agriculture**
 → establishes category/reality
 
-**field/data geometry**
+**operational/data context** (domain-specific structure; field geometry in crop / Field Profitability)
 → establishes source/context
 
 **economic typography**
@@ -1597,7 +1829,7 @@ Primary signature motif:
 
 Build recognizable brand expression from:
 - real agricultural photography;
-- field geometry;
+- precise operational/data context (domain-specific structure; field geometry in crop / Field Profitability only);
 - economic typography;
 - evidence/confidence states;
 - restrained explanatory motion.
@@ -1637,18 +1869,21 @@ Working brand architecture:
 
 Do not call a visual element a distinctive asset until recognition/uniqueness evidence exists.
 
-Current candidate code roles:
-- real agricultural photography — category membership + documentary trust;
-- field geometry — spatial/data context bridge;
-- economic typography — economic salience + candidate memory code;
-- evidence/confidence language — trust semantics;
-- agriculture → data → economics — compositional grammar;
+Current master-brand candidate code roles (they must work across crop production, pig production and dairy — §2.1):
+- real/documentary agricultural reality — category membership + documentary trust;
+- economic typography and units — economic salience + candidate memory code;
+- evidence/confidence/provenance language — trust semantics;
+- agriculture/production → data/context → economics — compositional grammar;
 - calm explanatory motion — temporal grammar;
 - future signature symbol/device — open hypothesis.
 
+Domain-specific variable codes:
+- field geometry — spatial/data context bridge for crop / Field Profitability; a candidate domain code, not a master-brand invariant;
+- other production domains (pig production, dairy): domain-specific operational structure/context — OPEN until product/domain evidence exists.
+
 The strongest current system hypothesis is not any single cue. It is the **relationship**:
 
-**real agricultural reality → precise data/context → economic meaning → evidence/confidence → decision**
+**real agricultural/production reality → precise operational/data context → economic meaning → evidence/confidence → decision**
 
 Test candidate recognition at the system level and component level.
 
@@ -1695,7 +1930,7 @@ Required process:
 
 Working anti-sameness system hypothesis:
 
-**real agriculture → precise field/data context → economic meaning → evidence/confidence → measured explanatory motion when useful**
+**real agricultural/production reality → precise operational/data context → economic meaning → evidence/confidence → measured explanatory motion when useful**
 
 Do not call this a distinctive signature until recognition/uniqueness evidence exists.
 
@@ -2185,7 +2420,7 @@ Keep **invariants** stable:
 - economic typography logic;
 - evidence/confidence semantics;
 - unit formatting;
-- field/data geometry principles;
+- operational/data-context principles: source context is shown precisely and linked to economic meaning, whatever the production domain;
 - photography truthfulness;
 - motion personality.
 
@@ -2194,7 +2429,7 @@ Allow **variables** within defined ranges:
 - image crops;
 - section rhythm;
 - grid splits;
-- field shapes;
+- domain-specific operational structure (field geometry and field shapes in crop / Field Profitability; pig/dairy structure OPEN until product/domain evidence exists);
 - overlay placement;
 - density;
 - scale;

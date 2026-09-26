@@ -1,0 +1,30 @@
+---
+import type { EvidenceMeta } from '../domain/evidence';
+import type { Period } from '../domain/economics';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  meta: EvidenceMeta;
+  period: Period;
+  /** Plain description of the records the example imitates. */
+  records: string;
+}
+
+const { meta, period, records } = Astro.props;
+const t = ui(localeInfo(Astro.currentLocale).code);
+const prefix = meta.illustrative ? t.evidence.illustrativeSource : t.evidence.provenance[meta.provenance[0] ?? 'farmer-provided'];
+---
+
+<p class="source-line">
+  {prefix}: {records} · {t.seasons(period.count)}
+</p>
+
+<style>
+  @layer components {
+    .source-line {
+      font-size: var(--text-caption);
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+    }
+  }
+</style>

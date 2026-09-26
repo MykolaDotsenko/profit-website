@@ -78,8 +78,76 @@ These files are an evidence library. They support decisions but do not silently 
 
 ## Status
 
-Repository initialized. Positioning, information architecture, visual direction and implementation approach are being validated before production build.
+Positioning, visual direction and the production platform are still being validated (WWW-000 to WWW-005). In parallel, **Website Build Pass 01** provides a reversible coded foundation: a multi-page site whose hero copy, proof objects, images, art-direction tokens and CTA copy can be replaced after farmer evidence ([ADR 0002](docs/decisions/0002-coded-website-foundation.md)). It is not a launched site.
+
+## Website (Build Pass 01)
+
+Astro 7.3.5 (static output), TypeScript 6.0.3 for the Astro toolchain, semantic HTML, native CSS (custom properties, cascade layers, container queries), no UI framework runtime. The only client JavaScript is a small inline script on `/contact` for form errors and status.
+
+### Run
+
+Requires Node.js 22.12 or later.
+
+```sh
+npm ci
+npm run dev       # http://localhost:4321
+npm run verify    # astro check + domain tests + production build
+npm run preview   # serve the production build
+```
+
+Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/contact`, plus a 404 page. There is no `/results` (Blueprint §6).
+
+### Build-time settings
+
+| Variable | Default | Effect |
+|---|---|---|
+| `HERO_VARIANT` | `h2` | Which WWW-000 v2 candidate the homepage shows (`h1`, `h2`, `h3`). All three are untested hypotheses; the default is not a winner. |
+| `SHOW_CONTENT_STATUS` | `true` | Preview banner and "Input needed / Draft for review" notes. |
+| `SITE_INDEXABLE` | `false` | When false, every page carries `noindex, nofollow`. |
+| `PILOT_FORM_ENDPOINT` | unset | Unset: the form validates but sends nothing and says so. Set it only after a privacy notice exists. |
+| `SITE_URL` | unset | Production origin for canonical URLs. |
+
+### Where things live
+
+- `src/content/<locale>/` — all page copy, typed. `shared.ts` holds the hero candidates (with their hypothesis status), Field Profitability facts, hard questions and pilot steps.
+- `src/content/examples/field-season.ts` — the one illustrative example (the WWW-000 stimulus values). The build fails if its arithmetic drifts or if it is labelled anything other than Hypothetical / Not assessed.
+- `src/domain/` — locale-neutral economics (metric identity, definition, version, currency, unit, period) and evidence semantics. `format.ts` does presentation per locale.
+- `src/i18n/` — locale registry and interface strings.
+- `src/styles/tokens.css` — baseline design tokens by semantic role. Placeholder values, not an approved art direction.
+- `src/components/` — components with stable meaning (evidence label, metric, proof card, field exhibit, image slot, content gap, …).
+- `tests/domain.test.ts` — arithmetic, locale presentation and evidence-guard tests.
+
+### Changing things after farmer evidence
+
+- **Hero copy:** edit or add a record in `src/content/en/shared.ts` (`heroVariants`); switch with `HERO_VARIANT`.
+- **Proof object:** each hero record names its proof body (`field-list`, `field-flow`, `field-composition`); values come from `field-season.ts`.
+- **Images:** pass an `image` (with `credit`) to `ImageSlot`. Width/height and aspect ratio reserve space. No stock or synthetic images.
+- **Art direction:** change values in `tokens.css`; components use roles only.
+- **CTA copy:** `primaryCta` in `shared.ts` and the page content files.
+
+### Localization
+
+English is the development content language, not a market decision. To add a locale: add it to `astro.config.mjs` (`i18n.locales`) and `src/i18n/locales.ts`, add `src/i18n/<code>.ts` and `src/content/<code>/`, then add routes under `src/pages/<code>/`. Numbers, currencies and units are formatted per locale from locale-neutral values; the currency travels with each value, and per-hectare units belong to the crop domain only. Translate all three hero candidates with the same care and back-translate economic terms (protocol D5/D6).
+
+### Content gaps before launch
+
+Shown on the pages as "Input needed" or "Draft for review" while `SHOW_CONTENT_STATUS` is on. None of these may be filled by AI drafting.
+
+| Gap | Owner | Where |
+|---|---|---|
+| Team: names, roles, relevant expertise, consent to publish | PROFIT team | `/`, `/company` |
+| Company details: legal name, business ID, registered address, contact address | PROFIT team | footer, `/company` |
+| Pilot process: who replies, how, how fast | PROFIT team | pilot steps on `/`, `/farmers`, `/product`, `/trust`, `/company`, `/contact` |
+| Data terms: ownership, sharing, retention, deletion | legal | `/trust`, hard question "Who owns the data?" |
+| Privacy notice and security measures, before the form collects anything | legal | `/trust`, `/contact` |
+| Direct contact for investors, partners and other enquiries | PROFIT team | `/investors`, `/contact` |
+| Plain-language evidence-state definitions, checked against the VEV methodology | PROFIT team | `/trust`, homepage evidence section |
+| Operating-margin and break-even definitions, checked against the Field Profitability reference | product owner | `/farmers`, `/product` |
+| Documentary photograph with source, rights and provenance | PROFIT team | homepage hero |
+| Plausibility of the illustrative numbers for the target market, including the new Field 31 cost split (protocol D6) | domain expert | `field-season.ts` |
+| Brand symbol / favicon (open hypothesis), final typeface, palette and art direction (WWW-001/002) | PROFIT team | `tokens.css`, `BaseLayout.astro` |
 
 ## Prototypes
 
+- [Hero Message Test Stimulus](prototypes/hero-message-test/README.md) — WWW-000 neutral static scaffold for H1/H2/H3
 - [Signature Effect Prototype](prototypes/field-economics-reveal/README.md) — Field → Economics Reveal

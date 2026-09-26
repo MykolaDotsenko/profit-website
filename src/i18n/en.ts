@@ -1,0 +1,125 @@
+import type { UIStrings } from './types';
+
+/** English interface strings. Development content language; not a market decision. */
+export const en: UIStrings = {
+  brand: 'PROFIT',
+  skipLink: 'Skip to content',
+  nav: {
+    label: 'Main',
+    menu: 'Menu',
+    close: 'Close menu',
+    items: [
+      { href: '/farmers/', label: 'Farmers' },
+      { href: '/product/', label: 'Product' },
+      { href: '/trust/', label: 'Trust' },
+      { href: '/company/', label: 'Company' },
+      { href: '/investors/', label: 'Investors' },
+    ],
+    cta: { href: '/contact/', label: 'Join the pilot' },
+  },
+  footer: {
+    label: 'Footer',
+    tagline: 'PROFIT connects what happens on the farm with what it means economically.',
+    evidenceNote:
+      'Every figure on this site is a hypothetical example unless it is labelled otherwise. Evidence is labelled Hypothetical, Modelled, Observed, Attributed or Verified.',
+    groups: [
+      {
+        title: 'PROFIT',
+        items: [
+          { href: '/farmers/', label: 'For farmers' },
+          { href: '/product/', label: 'Field Profitability' },
+          { href: '/company/', label: 'Company' },
+          { href: '/investors/', label: 'Investors and partners' },
+        ],
+      },
+      {
+        title: 'Trust',
+        items: [
+          { href: '/trust/#evidence', label: 'Evidence and methodology' },
+          { href: '/trust/#data', label: 'Data and farmer control' },
+          { href: '/trust/#privacy', label: 'Privacy and security principles' },
+          { href: '/trust/#limitations', label: 'Limitations' },
+        ],
+      },
+      {
+        title: 'Next step',
+        items: [{ href: '/contact/', label: 'Join the pilot' }],
+      },
+    ],
+  },
+  status: {
+    previewLabel: 'Preview build',
+    previewText:
+      'Not a launched site. The headline is an untested hypothesis, and every figure is a hypothetical example.',
+    gapLabel: 'Input needed',
+    reviewLabel: 'Draft for review',
+    imagePending: 'Image pending',
+  },
+  evidence: {
+    exampleLabel: 'Hypothetical example',
+    states: {
+      hypothetical: 'Hypothetical',
+      modelled: 'Modelled',
+      observed: 'Observed',
+      attributed: 'Attributed',
+      verified: 'Verified',
+    },
+    stateDescriptions: {
+      hypothetical: 'An illustration. It is not based on any real farm’s records.',
+      modelled: 'Calculated from assumptions or a model. Not yet measured on a farm.',
+      observed: 'Measured on a real farm. Not yet linked to a decision or cause.',
+      attributed: 'A measured change linked to a specific decision, with the method stated.',
+      verified: 'Meets the full evidence and attribution standard for Verified Economic Value.',
+    },
+    confidenceLabel: 'Confidence',
+    confidence: {
+      high: 'High',
+      medium: 'Medium',
+      low: 'Low',
+      'insufficient-evidence': 'Insufficient evidence',
+      'not-assessed': 'Not assessed',
+    },
+    provenance: {
+      'farmer-provided': 'Farmer-provided',
+      machinery: 'Machinery',
+      satellite: 'Satellite',
+      weather: 'Weather',
+      market: 'Market',
+      'derived-modelled': 'Derived/modelled',
+    },
+    illustrativeSource: 'Illustrative source',
+    rungOf: (rung, total) => `Evidence level ${rung} of ${total}`,
+  },
+  metrics: {
+    yield: 'Yield',
+    price: 'Price',
+    revenue: 'Revenue',
+    variable_costs: 'Variable costs',
+    allocated_fixed_costs: 'Allocated fixed costs',
+    operating_costs: 'Operating costs',
+    gross_margin: 'Gross margin',
+    operating_profit: 'Operating profit',
+    operating_margin: 'Operating margin',
+    break_even_price: 'Break-even price',
+    break_even_yield: 'Break-even yield',
+  },
+  units: {
+    perArea: { ha: '/ha' },
+    perMass: { t: '/t' },
+    mass: { t: 't' },
+    area: { ha: 'ha' },
+    spoken: {
+      perArea: { ha: 'per hectare' },
+      perMass: { t: 'per tonne' },
+      mass: { t: 'tonnes' },
+      area: { ha: 'hectares' },
+    },
+  },
+  crops: { wheat: 'Wheat', barley: 'Barley' },
+  field: (id) => `Field ${id}`,
+  seasons: (count) => (count === 1 ? 'one season' : `${count} seasons`),
+  meta: {
+    defaultDescription: 'PROFIT connects what happens on the farm with what it means economically.',
+    titleSuffix: 'PROFIT',
+  },
+};

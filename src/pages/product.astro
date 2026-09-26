@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentGap from '../components/ContentGap.astro';
+import CtaBand from '../components/CtaBand.astro';
+import FieldExample from '../components/FieldExample.astro';
+import ItemList from '../components/ItemList.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import { content } from '../content';
+import { fieldSeasonExample } from '../content/examples/field-season';
+
+const c = content(Astro.currentLocale);
+const p = c.product;
+---
+
+<BaseLayout title={p.meta.title} description={p.meta.description}>
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} status={p.intro.status} />
+
+  <Section intro={p.example.intro} tone="sunken">
+    <FieldExample example={fieldSeasonExample} labels={p.example.labels} />
+  </Section>
+
+  <Section intro={p.definitions.intro} layout="split">
+    <ItemList items={p.definitions.items} columns={2} />
+    <div class="gap-space">
+      <ContentGap owner={p.definitions.review.owner} kind="review" text={p.definitions.review.text} />
+    </div>
+  </Section>
+
+  <Section intro={p.inputs.intro} layout="split">
+    <ItemList items={p.inputs.items} columns={2} marker="number" />
+  </Section>
+
+  <Section intro={p.calculation.intro} layout="split" tone="sunken">
+    <ItemList items={p.calculation.items} columns={1} />
+  </Section>
+
+  <Section intro={p.exclusions.intro} layout="split">
+    <ItemList items={p.exclusions.items} columns={2} marker="cross" />
+  </Section>
+
+  <CtaBand intro={p.cta.intro} stepsTitle={p.cta.stepsTitle} steps={p.cta.steps} review={p.cta.review} primary={p.cta.primary} />
+</BaseLayout>
+
+<style>
+  .gap-space {
+    margin-block-start: var(--space-5);
+  }
+</style>

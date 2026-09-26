@@ -1,0 +1,228 @@
+---
+import { site } from '../config/site';
+import { localeInfo, localePath, ui } from '../i18n';
+
+const locale = localeInfo(Astro.currentLocale);
+const t = ui(locale.code);
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => {
+  const target = localePath(locale.code, href);
+  return path === target || path === target.replace(/\/$/, '');
+};
+const homeHref = localePath(locale.code, '/');
+---
+
+<header class="site-header">
+  {
+    site.showContentStatus && (
+      <p class="preview-banner">
+        <strong>{t.status.previewLabel}.</strong> {t.status.previewText}
+      </p>
+    )
+  }
+  <div class="site-header__bar container">
+    <a class="wordmark" href={homeHref} aria-current={path === homeHref ? 'page' : undefined}>{t.brand}</a>
+
+    <button class="menu-button" type="button" popovertarget="site-nav" aria-controls="site-nav">
+      <span class="menu-button__icon" aria-hidden="true"></span>
+      {t.nav.menu}
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label={t.nav.label} popover>
+      <div class="site-nav__panel-head">
+        <span class="wordmark" aria-hidden="true">{t.brand}</span>
+        <button class="menu-button" type="button" popovertarget="site-nav" popovertargetaction="hide">
+          {t.nav.close}
+        </button>
+      </div>
+      <ul class="site-nav__list" role="list">
+        {
+          t.nav.items.map((item) => (
+            <li>
+              <a href={localePath(locale.code, item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a
+        class="button button--primary site-nav__cta"
+        href={localePath(locale.code, t.nav.cta.href)}
+        aria-current={isCurrent(t.nav.cta.href) ? 'page' : undefined}
+      >
+        {t.nav.cta.label}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @layer components {
+    .site-header {
+      border-block-end: 1px solid var(--color-line);
+      background: var(--color-canvas);
+    }
+    .preview-banner {
+      padding: var(--space-2) var(--gutter);
+      background: var(--color-inverse-canvas);
+      color: var(--color-inverse-text);
+      font-size: var(--text-caption);
+      line-height: 1.45;
+      text-align: center;
+    }
+    .site-header__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-5);
+      min-height: var(--header-height);
+    }
+    .wordmark {
+      font-weight: 750;
+      font-size: 1.0625rem;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      padding-block: var(--space-2);
+    }
+    .menu-button {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      min-height: 2.75rem;
+      padding: 0 var(--space-4);
+      border: 1px solid var(--color-control-border);
+      border-radius: var(--radius-m);
+      background: transparent;
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+      cursor: pointer;
+    }
+    .menu-button__icon {
+      width: 1rem;
+      height: 0.625rem;
+      border-block: 2px solid currentColor;
+      position: relative;
+    }
+    .menu-button__icon::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      top: 50%;
+      border-top: 2px solid currentColor;
+      transform: translateY(-50%);
+    }
+
+    /* Small screens: the navigation is a native popover (no JavaScript). */
+    .site-nav:popover-open {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      padding: 0 var(--gutter) var(--space-7);
+      border: 0;
+      background: var(--color-canvas);
+      color: var(--color-text);
+      overflow-y: auto;
+    }
+    .site-nav:popover-open .site-nav__panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--header-height);
+      border-block-end: 1px solid var(--color-line);
+      margin-block-end: var(--space-4);
+    }
+    .site-nav__panel-head {
+      display: none;
+    }
+    .site-nav:popover-open .site-nav__list a {
+      display: block;
+      padding: var(--space-3) 0;
+      font-size: 1.375rem;
+      font-weight: var(--weight-strong);
+      text-decoration: none;
+      border-block-end: 1px solid var(--color-line);
+    }
+    .site-nav:popover-open .site-nav__cta {
+      margin-block-start: var(--space-6);
+      width: 100%;
+    }
+    .site-nav a[aria-current='page'] {
+      text-decoration-line: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: currentColor;
+    }
+
+    /* Browsers without popover support show the links inline instead. */
+    @supports not selector(:popover-open) {
+      .menu-button {
+        display: none;
+      }
+      .site-header__bar {
+        flex-wrap: wrap;
+        padding-block: var(--space-2);
+      }
+      .site-nav__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2) var(--space-4);
+      }
+      .site-nav__cta {
+        display: none;
+      }
+    }
+
+    /* Wide screens: the same list, always visible. */
+    @media (min-width: 60rem) {
+      .menu-button {
+        display: none;
+      }
+      .site-nav,
+      .site-nav:popover-open {
+        display: flex;
+        align-items: center;
+        gap: var(--space-6);
+        position: static;
+        inset: auto;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        overflow: visible;
+      }
+      .site-nav:popover-open .site-nav__panel-head {
+        display: none;
+      }
+      .site-nav__list {
+        display: flex;
+        gap: var(--space-5);
+      }
+      .site-nav__list a,
+      .site-nav:popover-open .site-nav__list a {
+        display: inline-block;
+        padding: var(--space-2) 0;
+        font-size: var(--text-small);
+        font-weight: var(--weight-medium);
+        border: 0;
+        text-decoration-line: none;
+      }
+      .site-nav__list a:hover {
+        text-decoration-line: underline;
+      }
+      .site-nav__cta,
+      .site-nav:popover-open .site-nav__cta {
+        display: inline-flex;
+        width: auto;
+        margin: 0;
+        min-height: 2.5rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+</style>

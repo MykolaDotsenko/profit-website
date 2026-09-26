@@ -1,0 +1,99 @@
+---
+/**
+ * Data → Economics → Decision → Action → Measurement (Blueprint §5, WWW-204). Static by design:
+ * the order and the actor carry the meaning, not motion.
+ */
+import type { Actor, Step } from '../content/types';
+
+interface Props {
+  steps: Step[];
+  actors: Record<Actor, string>;
+  moduleLabel: string;
+}
+
+const { steps, actors, moduleLabel } = Astro.props;
+---
+
+<ol class="steps" role="list">
+  {
+    steps.map((step, i) => (
+      <li class:list={['step', `step--${step.actor}`]}>
+        <p class="step__meta">
+          <span class="step__number num">{String(i + 1).padStart(2, '0')}</span>
+          <span class="step__actor">{actors[step.actor]}</span>
+        </p>
+        <h3 class="step__title">{step.title}</h3>
+        <p class="step__text">{step.text}</p>
+        {step.module && (
+          <p class="step__module">
+            <span class="step__module-label">{moduleLabel}</span> {step.module}
+          </p>
+        )}
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  @layer components {
+    .steps {
+      display: grid;
+      gap: 0;
+      counter-reset: step;
+    }
+    .step {
+      display: grid;
+      gap: var(--space-2);
+      align-content: start;
+      padding: var(--space-5) 0;
+      border-block-start: 1px solid var(--color-line-strong);
+    }
+    .step__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-caption);
+    }
+    .step__number {
+      font-weight: var(--weight-strong);
+    }
+    .step__actor {
+      padding: 0.1rem 0.45rem;
+      border: 1px solid var(--color-control-border);
+      border-radius: 999px;
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: 0.04em;
+    }
+    .step--profit .step__actor {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: var(--color-on-brand);
+    }
+    .step__title {
+      font-size: var(--text-subsection);
+    }
+    .step__text {
+      color: var(--color-text);
+    }
+    .step__module {
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+      padding-block-start: var(--space-2);
+    }
+    .step__module-label {
+      display: block;
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      margin-block-end: var(--space-1);
+    }
+    @container (min-width: 56rem) {
+      .steps {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: var(--space-5);
+      }
+    }
+  }
+</style>

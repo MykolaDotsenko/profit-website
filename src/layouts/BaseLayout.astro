@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../config/site';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  /** Page title without the brand suffix. Omit on the homepage. */
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const locale = localeInfo(Astro.currentLocale);
+const t = ui(locale.code);
+const fullTitle = title ? `${title} · ${t.meta.titleSuffix}` : `${t.meta.titleSuffix} · Agricultural Decision Intelligence`;
+const metaDescription = description ?? t.meta.defaultDescription;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+---
+
+<!doctype html>
+<html lang={locale.lang} dir={locale.dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDescription} />
+    {!site.indexable && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta name="theme-color" content="#f4f2ec" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={locale.intl.replace('-', '_')} />
+    <!-- No brand symbol exists yet (open hypothesis). An empty icon avoids a failed favicon request. -->
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.skipLink}</a>
+    <SiteHeader />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+
+<style is:global>
+  @layer components {
+    .skip-link {
+      position: absolute;
+      inset-inline-start: var(--space-4);
+      inset-block-start: var(--space-3);
+      z-index: 100;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-brand);
+      color: var(--color-on-brand);
+      font-weight: var(--weight-strong);
+      border-radius: var(--radius-m);
+      transform: translateY(-200%);
+    }
+    .skip-link:focus {
+      transform: none;
+    }
+  }
+</style>

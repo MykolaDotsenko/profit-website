@@ -1,0 +1,106 @@
+---
+/** A case laid out step by step, each step labelled with what it currently is. */
+import type { StatusItem } from '../content/types';
+
+interface Props {
+  items: StatusItem[];
+  statusLabels: Record<StatusItem['status'], string>;
+  ordered?: boolean;
+}
+
+const { items, statusLabels, ordered = false } = Astro.props;
+const List = ordered ? 'ol' : 'ul';
+---
+
+<List class="status-list" role="list">
+  {
+    items.map((item, i) => (
+      <li class:list={['status-item', `status-item--${item.status}`]}>
+        {ordered && <span class="status-item__index num">{String(i + 1).padStart(2, '0')}</span>}
+        <div class="status-item__body">
+          <h3 class="status-item__title">{item.title}</h3>
+          <p class="status-item__text">{item.text}</p>
+        </div>
+        <p class="status-item__status">{statusLabels[item.status]}</p>
+      </li>
+    ))
+  }
+</List>
+
+<style>
+  @layer components {
+    .status-list {
+      border-block-start: 1px solid var(--color-line-strong);
+    }
+    .status-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-2) var(--space-4);
+      padding-block: var(--space-4);
+      border-block-end: 1px solid var(--color-line);
+    }
+    .status-item__index {
+      font-size: var(--text-caption);
+      font-weight: var(--weight-strong);
+      color: var(--color-text-secondary);
+      padding-block-start: 0.25em;
+    }
+    .status-item__body {
+      min-width: 0;
+    }
+    .status-list:not(ol) .status-item__body {
+      grid-column: 1 / -1;
+    }
+    .status-item__title {
+      font-size: var(--text-body);
+      font-weight: var(--weight-strong);
+    }
+    .status-item__text {
+      margin-block-start: var(--space-1);
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+      max-width: var(--measure-wide);
+    }
+    .status-item__status {
+      grid-column: 2;
+      justify-self: start;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--color-control-border);
+      border-radius: var(--radius-s);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .status-list:not(ol) .status-item__status {
+      grid-column: 1 / -1;
+    }
+    .status-item--hypothesis .status-item__status,
+    .status-item--open .status-item__status {
+      border-style: dashed;
+    }
+    .status-item--exists .status-item__status {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: var(--color-on-brand);
+    }
+    @container (min-width: 34rem) {
+      .status-item {
+        grid-template-columns: auto 1fr auto;
+        align-items: start;
+      }
+      .status-list:not(ol) .status-item {
+        grid-template-columns: 1fr auto;
+      }
+      .status-list:not(ol) .status-item__body {
+        grid-column: 1;
+      }
+      .status-item__status,
+      .status-list:not(ol) .status-item__status {
+        grid-column: auto;
+        justify-self: end;
+      }
+    }
+  }
+</style>
