@@ -630,3 +630,55 @@ Test a compact **PROFIT in 30 seconds** layer covering:
 For long desktop pages, test subtle guided wayfinding or section markers.
 
 Do not use scroll hijacking or forced scrollytelling.
+
+
+## 25. Brand system and distinctive assets
+
+The website must operate as the first full expression of a reusable PROFIT brand system.
+
+Brand logic:
+
+**Story → Symbol → System**
+
+Working brand architecture:
+- PROFIT — master brand;
+- Agricultural Decision Intelligence — category/proposition hypothesis;
+- Field Profitability — module/product;
+- Verified Economic Value — value measurement standard.
+
+Candidate distinctive brand codes:
+- economic typography;
+- field geometry;
+- real-farm + data-overlay composition;
+- evidence states;
+- confidence states;
+- photography treatment;
+- calm explanatory motion;
+- future signature symbol/device.
+
+Test distinctiveness with logo/name removed.
+
+The product UI and marketing site should share the same brand DNA rather than becoming visually unrelated systems.
+
+## 26. Verbal identity
+
+PROFIT voice should be:
+- precise;
+- grounded;
+- calm;
+- transparent;
+- human;
+- economically literate.
+
+Tone may flex by context:
+- hero: short/direct;
+- product: practical;
+- methodology: forensic;
+- company: human;
+- security: unambiguous;
+- investor: evidence-led.
+
+Brand language includes both:
+**what we say + how we say it.**
+
+Avoid generic SaaS/AI language and corporate filler.
