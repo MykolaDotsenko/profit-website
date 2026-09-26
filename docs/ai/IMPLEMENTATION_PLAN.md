@@ -21,6 +21,7 @@ Do not lock the full production platform or build a large page system before the
 
 ### Exit criteria for this gate
 
+- [ ] Controlled H1/H2/H3 hero message validation has been run and weak directions have been killed/rewritten.
 - [ ] Three genuinely different art directions exist.
 - [ ] Farmer 10-second comprehension testing has been run.
 - [ ] Main positioning/headline findings are documented.
@@ -86,7 +87,7 @@ Acceptance:
 - [ ] generic AI/SaaS similarity is red-teamed;
 - [ ] each can be tested without explaining the concept first.
 
-Depends on: none.
+Depends on: WWW-000.
 
 ### WWW-002 — Farmer 10-second comprehension test
 
