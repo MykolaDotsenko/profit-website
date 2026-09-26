@@ -11,6 +11,7 @@ import {
 import { assertReleaseConfiguration } from '../src/config/release.ts';
 import { assertPublishable } from '../src/domain/evidence.ts';
 import { present } from '../src/domain/format.ts';
+import { fieldSeasonExample, focusField } from '../src/content/examples/field-season.ts';
 
 const units = {
   perArea: { ha: '/ha' },
@@ -29,6 +30,21 @@ test('operating profit = revenue − variable costs − allocated fixed costs (B
   assert.equal(roundMoney(e.breakEvenPrice), 203.41);
   assert.equal(Math.round(e.breakEvenYield * 100) / 100, 4.63);
   assert.notEqual(METRICS.operating_profit.formula, METRICS.gross_margin.formula);
+});
+
+test('statistics-calibrated focus field stays hypothetical and internally consistent', () => {
+  const f = focusField(fieldSeasonExample);
+  assert.equal(f.crop, 'wheat');
+  assert.equal(f.inputs.yieldPerHa, 3.7);
+  assert.equal(f.inputs.pricePerT, 207);
+  assert.equal(f.inputs.variableCostsPerHa, 490);
+  assert.equal(f.inputs.allocatedFixedCostsPerHa, 345);
+  assert.equal(roundMoney(f.economics.revenuePerHa), 765.9);
+  assert.equal(roundMoney(f.economics.operatingCostsPerHa), 835);
+  assert.equal(roundMoney(f.economics.operatingProfitPerHa), -69.1);
+  assert.equal(fieldSeasonExample.meta.evidence, 'hypothetical');
+  assert.equal(fieldSeasonExample.meta.confidence, 'not-assessed');
+  assert.deepEqual(fieldSeasonExample.meta.provenance, ['market', 'derived-modelled']);
 });
 
 test('the same value is presented per locale and currency, never with a hard-coded symbol', () => {
