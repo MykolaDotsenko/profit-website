@@ -91,8 +91,10 @@ Requires Node.js 22.12 or later.
 ```sh
 npm ci
 npm run dev       # http://localhost:4321
-npm run verify    # astro check + domain tests + production build
+npm run verify    # astro check + domain/release tests + production build
 npm run preview   # serve the production build
+
+# Browser QA is pinned and run by GitHub Actions (Playwright 1.63.0 + Axe 4.13.0).
 ```
 
 Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/contact`, plus a 404 page. There is no `/results` (Blueprint §6).
@@ -103,26 +105,28 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 |---|---|---|
 | `HERO_VARIANT` | `h2` | Which WWW-000 v2 candidate the homepage shows (`h1`, `h2`, `h3`). All three are untested hypotheses; the default is not a winner. |
 | `SHOW_CONTENT_STATUS` | `true` | Preview banner and "Input needed / Draft for review" notes. |
-| `SITE_INDEXABLE` | `false` | When false, every page carries `noindex, nofollow`. |
-| `PILOT_FORM_ENDPOINT` | unset | Unset: the form validates but sends nothing and says so. Set it only after a privacy notice exists. |
+| `SITE_INDEXABLE` | `false` | When false, every page carries `noindex, nofollow`. Setting true now fails the build until `src/config/release.ts` has no blocking public-release gates. |
+| `PILOT_FORM_ENDPOINT` | unset | Unset: the form validates but sends nothing. Configuring an endpoint now fails until privacy/company/pilot-process release gates are ready. |
 | `SITE_URL` | unset | Production origin for canonical URLs. |
 
 ### Where things live
 
 - `src/content/<locale>/` — all page copy, typed. `shared.ts` holds the hero candidates (with their hypothesis status), Field Profitability facts, hard questions and pilot steps.
 - `src/content/examples/field-season.ts` — the one illustrative example (the WWW-000 stimulus values). The build fails if its arithmetic drifts or if it is labelled anything other than Hypothetical / Not assessed.
-- `src/domain/` — locale-neutral economics (metric identity, definition, version, currency, unit, period) and evidence semantics. `format.ts` does presentation per locale.
+- `src/domain/` — locale-neutral economics (metric identity, definition, version, currency, unit, period) and evidence semantics. Every metric definition is explicitly `confirmed` or `provisional`; public Metric rendering rejects provisional definitions. `format.ts` does presentation per locale.
+- `src/config/release.ts` — auditable hard gates for indexable release and pilot-form activation.
 - `src/i18n/` — locale registry and interface strings.
 - `src/styles/tokens.css` — baseline design tokens by semantic role. Placeholder values, not an approved art direction.
 - `src/components/` — components with stable meaning (evidence label, metric, proof card, field exhibit, image slot, content gap, …).
-- `tests/domain.test.ts` — arithmetic, locale presentation and evidence-guard tests.
+- `tests/domain.test.ts` — arithmetic, locale presentation, evidence, metric-definition and release-gate tests.
+- `tests/browser/site.spec.ts` — CI browser regression coverage for routes, responsive widths, Axe accessibility, navigation, CTA, forms and reduced motion.
 
 ### Changing things after farmer evidence
 
 - **Hero copy:** edit or add a record in `src/content/en/shared.ts` (`heroVariants`); switch with `HERO_VARIANT`.
 - **Proof object:** each hero record names its proof body (`field-list`, `field-flow`, `field-composition`); values come from `field-season.ts`.
 - **Images:** pass an `image` (with `credit`) to `ImageSlot`. Width/height and aspect ratio reserve space. No stock or synthetic images.
-- **Art direction:** change values in `tokens.css`; components use roles only.
+- **Art direction:** `tokens.css` is replaceable, but WWW-001 must not treat the current editorial DOM as neutral. A/B/C may reuse shared content/domain data and semantic primitives while using independent compositions. A tokens-only reskin does not count as three directions.
 - **CTA copy:** `primaryCta` in `shared.ts` and the page content files.
 
 ### Localization
@@ -142,7 +146,6 @@ Shown on the pages as "Input needed" or "Draft for review" while `SHOW_CONTENT_S
 | Privacy notice and security measures, before the form collects anything | legal | `/trust`, `/contact` |
 | Direct contact for investors, partners and other enquiries | PROFIT team | `/investors`, `/contact` |
 | Plain-language evidence-state definitions, checked against the VEV methodology | PROFIT team | `/trust`, homepage evidence section |
-| Operating-margin and break-even definitions, checked against the Field Profitability reference | product owner | `/farmers`, `/product` |
 | Documentary photograph with source, rights and provenance | PROFIT team | homepage hero |
 | Plausibility of the illustrative numbers for the target market, including the new Field 31 cost split (protocol D6) | domain expert | `field-season.ts` |
 | Brand symbol / favicon (open hypothesis), final typeface, palette and art direction (WWW-001/002) | PROFIT team | `tokens.css`, `BaseLayout.astro` |
