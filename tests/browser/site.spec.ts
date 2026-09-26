@@ -50,6 +50,16 @@ for (const viewport of viewports) {
 }
 
 test.describe('critical interactions', () => {
+  test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
+    await page.goto('/');
+    await page.keyboard.press('Tab');
+
+    const skip = page.getByRole('link', { name: /skip/i });
+    await expect(skip).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('#main')).toBeFocused();
+  });
+
   test('mobile navigation opens, closes with Escape and returns focus', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
