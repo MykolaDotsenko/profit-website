@@ -1,16 +1,19 @@
 schema_version: 1
 last_updated: "2026-09-26"
 purpose: "Compact derived context for AI-assisted development of the PROFIT public website."
-authority_note: "If this file conflicts with AGENTS.md or canonical documentation, the higher-priority source wins."
+authority_note: "This is a derived summary. For product/content/design/implementation decisions, canonical documentation wins. AGENTS.md governs AI workflow/process."
 
-source_priority:
-  - "explicit current user instruction"
-  - "AGENTS.md"
-  - "docs/website-blueprint-v1.md"
-  - "docs/triple-check-audit-2026-09-26.md"
-  - "docs/website-strategy.md"
-  - "docs/ai/context.yaml"
-  - "supporting research"
+authority:
+  ai_workflow:
+    - "explicit current user instruction"
+    - "AGENTS.md"
+  product_and_implementation:
+    - "explicit current user instruction"
+    - "docs/website-blueprint-v1.md"
+    - "docs/triple-check-audit-2026-09-26.md for verified corrections not yet reflected elsewhere"
+    - "docs/website-strategy.md"
+    - "docs/ai/context.yaml"
+    - "supporting research"
 
 project:
   name: "PROFIT Website"
