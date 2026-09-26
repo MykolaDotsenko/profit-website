@@ -730,3 +730,23 @@ The strongest candidate brand system is:
 **measured explanatory motion**
 
 The website should be the first place where this system is tested, learned from, and codified.
+
+
+## 26. AI sameness governance
+
+See the dedicated standard:
+**docs/avoiding-ai-sameness.md**
+
+Key rule:
+
+**AI may scale the PROFIT brand system; it may not invent the brand from generic model priors.**
+
+Brand-critical AI work must use:
+- canonical brand context;
+- approved source assets;
+- explicit exclusions;
+- decision rationale;
+- human creative review;
+- recognition/confusion testing.
+
+Maintain a live **NOT PROFIT** board and an **Approved Brand Corpus**.
