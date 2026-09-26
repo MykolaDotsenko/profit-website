@@ -246,7 +246,7 @@ Prefer CSS scroll-driven animation for simple transforms before adding ScrollTri
 
 # 7. Scroll-triggered effects — useful for section rhythm
 
-Chrome 145 introduced CSS scroll-triggered animations as a declarative alternative to IntersectionObserver-style triggers in supporting browsers.
+Chrome 146 shipped CSS scroll-triggered animations as a declarative alternative to IntersectionObserver-style triggers. An earlier Chrome preview article had projected Chrome 145; the stable release notes place the feature in Chrome 146.
 
 Source:
 https://developer.chrome.com/blog/scroll-triggered-animations
@@ -865,14 +865,18 @@ Operational/data layer appears inside or around the boundary.
 Supporting detail recedes.
 
 ### State 5
-One economic number becomes dominant:
+One illustrative economic number becomes dominant:
 
 **€637 / ha**
 Margin
 
 ### State 6
-Evidence label resolves:
-MODELLED / OBSERVED / ATTRIBUTED / VERIFIED
+Prototype evidence treatment resolves:
+
+**HYPOTHETICAL EXAMPLE**
+**Confidence: Not assessed**
+
+In production, replace this with MODELLED / OBSERVED / ATTRIBUTED / VERIFIED only when the underlying evidence actually supports that label.
 
 ### Why this is strong
 
