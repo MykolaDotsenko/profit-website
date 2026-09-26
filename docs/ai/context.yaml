@@ -136,7 +136,9 @@ hero_validation:
     - "CTA/next step is unclear"
 
 art_direction_validation:
-  status: "open hypothesis; farmer evidence required before production lock"
+  status: "testing phase; broad research stopped for current cycle"
+  experiment_protocol: "docs/experiments/art-direction-farmer-test-v1.md"
+  research_reopen_rule: "Re-open external research only for a specific observed test failure, material open hypothesis, or time-sensitive constraint."
   leading_hypothesis: "A — Evidence-Led Editorial"
   objective: "maximize farmer comprehension + calibrated trust"
   directions:
