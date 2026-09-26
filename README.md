@@ -32,7 +32,9 @@ AI coding/design agents must start with:
 1. [AGENTS.md](AGENTS.md) — mandatory AI development contract and source-precedence rules
 2. [AI Development Index](docs/ai/README.md) — task-specific context routing
 3. [Machine-readable AI Context](docs/ai/context.yaml) — compact current project state
-4. [AI Task Template](docs/ai/TASK_TEMPLATE.md) — task/acceptance/verification handoff
+4. [Implementation Plan](docs/ai/IMPLEMENTATION_PLAN.md) — staged, issue-ready work plan
+5. [AI Task Template](docs/ai/TASK_TEMPLATE.md) — task/acceptance/verification handoff
+6. [Decision Records](docs/decisions/README.md) — durable rationale for material decisions
 
 **Do not load the entire research archive by default.**
 
@@ -43,7 +45,9 @@ The AI layer is intentionally compact so agents can distinguish:
 - canonical decisions;
 - supporting research.
 
-If AI context conflicts with canonical documentation, follow the precedence defined in `AGENTS.md`.
+If AI context conflicts with canonical documentation, follow the authority model defined in `AGENTS.md`.
+
+Documentation structure is guarded by [Docs Contract CI](.github/workflows/docs-contract.yml), which runs the standard-library validator in `scripts/validate_ai_docs.py`.
 
 ## Canonical documentation
 
