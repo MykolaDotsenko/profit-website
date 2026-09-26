@@ -31,6 +31,12 @@ Do not lock the full production platform or build a large page system before the
 
 If a material production-platform decision is made, create an ADR.
 
+### Parallel engineering track — Website Build Pass 01 (owner decision, 2026-09-26)
+
+Reversible engineering proceeds in parallel with W0: a coded Astro foundation with the seven core routes, reusable sections, evidence/trust components, accessible navigation, a performance baseline and a localization-ready content model ([ADR 0002](../decisions/0002-coded-website-foundation.md)). Hero copy, proof objects, images, art-direction tokens and CTA copy are data or tokens, so W0 results can replace them without layout rewrites.
+
+It does not meet any exit criterion above, decide WWW-005, freeze WWW-000 or start WWW-001. WWW-000 farmer sessions still wait for the recruitment gate and D5–D8.
+
 ### Future gate — master-brand positioning (does not block current work)
 
 Before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
@@ -260,6 +266,8 @@ Start only after W0 produces enough evidence to justify production work.
 
 ### WWW-101 — Repository production scaffold
 
+Status: foundation built in Build Pass 01 (ADR 0002). WWW-005 is still open.
+
 If coded production is selected:
 
 Acceptance:
@@ -273,6 +281,8 @@ Acceptance:
 Depends on: WWW-005.
 
 ### WWW-102 — Design tokens / semantic primitives
+
+Status: Build Pass 01 has baseline tokens by semantic role, with placeholder values. Not done: no values are validated.
 
 Define only validated/reusable rules:
 
@@ -293,6 +303,8 @@ Acceptance:
 Depends on: WWW-001 plus sufficient design selection evidence.
 
 ### WWW-103 — Core layout and navigation shell
+
+Status: shell built in Build Pass 01 on the baseline tokens.
 
 Acceptance:
 - [ ] semantic landmarks;
@@ -539,7 +551,7 @@ Current recommended active sequence:
 5. WWW-004 — validate or reject the signature motion within the broader visual exploration
 6. WWW-005 — decide production platform only when implementation creates more learning value than another validation cycle
 
-Only after that promote W1/W2 implementation issues.
+Only after that promote W1/W2 implementation issues. Reversible engineering on the Build Pass 01 foundation may continue in parallel (§0); it does not replace this sequence.
 
 This preserves learning speed and avoids building a polished site around unvalidated positioning.
 

@@ -39,6 +39,7 @@ The research archive is deliberately not the default AI context. This reduces:
 | Strategic rationale | Website Strategy → relevant research only |
 | Task sequencing / dependencies | Implementation Plan → Blueprint |
 | Material architecture/product decision | Decision Records policy → Blueprint/Strategy → relevant evidence |
+| Website code (Build Pass 01) | [README Website section](../../README.md) → ADR 0002 → Blueprint |
 
 ## Canonical vs supporting
 

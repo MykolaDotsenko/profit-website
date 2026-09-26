@@ -383,6 +383,7 @@ motion:
 
 technology:
   platform_state: "open"
+  coded_foundation: "Website Build Pass 01 (ADR 0002): reversible Astro 7.3.5 static foundation, TypeScript 6, no framework runtime, built in parallel with W0 by owner decision; does not decide WWW-005 or any hero/art-direction choice"
   framer: "Valid when it materially accelerates message/design validation and learning."
   coded_preference: "Astro if/when fully owned coded production is selected."
   architecture_order:
