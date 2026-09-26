@@ -35,6 +35,7 @@ The website must communicate:
 - [Masterclasses & Tutorials](docs/masterclasses-and-tutorials.md)
 - [Design Masterclass Findings](docs/design-masterclass-findings.md)
 - [Frontend Masterclass Findings](docs/frontend-masterclass-findings.md)
+- [Frontend Masterclasses Deep Pass 2026](docs/frontend-masterclasses-deep-pass-2026.md)
 - [Frontend Technologies & Frameworks](docs/frontend-technologies-frameworks.md)
 
 ## Status
