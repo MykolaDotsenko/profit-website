@@ -846,3 +846,63 @@ Every effect requires:
 - accessibility validation;
 - performance review;
 - brand/distinctiveness rationale.
+
+
+## 30. Semiotic and flexible-system safeguards
+
+Avoiding AI sameness requires both category legibility and distinctiveness.
+
+### Category process
+1. deconstruct agritech category codes;
+2. document overcrowded clichés;
+3. temporarily remove competitor/category references during initial concepting;
+4. reintroduce them for a collision/confusion test.
+
+Use generic-AI similarity only as an originality warning, not as proof.
+
+### Brand grammar
+
+Keep **invariants** stable:
+- economic typography;
+- evidence/confidence semantics;
+- unit formatting;
+- field/data geometry principles;
+- photography truthfulness;
+- motion personality.
+
+Allow **variables** within defined ranges:
+- crops/subjects;
+- image crops;
+- section rhythm;
+- grid splits;
+- field shapes;
+- overlay placement;
+- density;
+- scale.
+
+Consistency comes from grammar, not identical templates.
+
+### Human-only zones
+
+Final human ownership is required for:
+- farmer empathy;
+- documentary truth;
+- core brand point of view;
+- final art direction;
+- localization/cultural nuance;
+- sensitive evidence framing.
+
+### Creative provenance
+
+For every brand-critical AI-assisted asset, retain:
+- asset purpose/path;
+- brand-context version;
+- design-token/content-system version;
+- AI tool/model/version when available;
+- AI workflow role;
+- source/reference assets and rights;
+- human owner/reviewer;
+- approval decision/date;
+- evidence status if economic claims appear.
+
+Brand-critical AI workflows must be versioned, auditable, and reversible.
