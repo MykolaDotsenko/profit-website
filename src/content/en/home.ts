@@ -57,14 +57,12 @@ export const home = {
     } satisfies SectionIntro,
     systems: productionSystems,
     note: productionScopeNote,
-    statsTitle: 'Why the scope matters',
-    stats: [
-      { title: '€531.9B', text: 'EU agricultural output in 2024.' },
-      { title: '€267.7B', text: 'Crop output in the EU in 2024.' },
-      { title: '€218.8B', text: 'Animals and animal products output in the EU in 2024.' },
-    ] satisfies TextItem[],
-    categoryNote:
-      'Among the largest 2024 EU output categories were milk (€78.6B), vegetables and horticultural products (€72.0B), pigs (€46.8B), fruits (€39.5B) and cattle (€38.4B). These are gross output values, not farm profit.',
+    contextStat: {
+      value: '€531.9B',
+      label: 'EU agricultural output in 2024',
+      detail:
+        '€267.7B came from crops and €218.8B from animals and animal products. Gross output values, not farm profit or PROFIT market size.',
+    },
     source: {
       label: 'Eurostat · Key figures on the European food chain 2025',
       href: 'https://ec.europa.eu/eurostat/en/web/products-key-figures/w/ks-01-25-049',
