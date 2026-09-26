@@ -6,6 +6,12 @@ on:
       - "**/*.md"
       - "**/*.yaml"
       - "scripts/validate_ai_docs.py"
+      - "src/config/release.ts"
+      - "src/domain/economics.ts"
+      - "src/components/Metric.astro"
+      - "tests/browser/site.spec.ts"
+      - "playwright.config.ts"
+      - ".github/workflows/site-verify.yml"
       - ".github/workflows/docs-contract.yml"
   push:
     branches:
