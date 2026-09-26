@@ -163,66 +163,20 @@ export const home = {
       },
     ] satisfies Step[],
     note: 'An outcome on its own does not show that a decision caused it. The evidence ladder below says what it takes.',
-    dataPrinciplesTitle: 'Data should fit the farm',
-    dataPrinciples: [
+    operatingPrinciplesTitle: 'Two rules behind the system',
+    operatingPrinciples: [
       {
-        title: 'Use existing records first',
-        text: 'Start with the production, sales, cost and operational records a farm already has before asking for new hardware or more manual work.',
+        title: 'Fit the farm',
+        text: 'Start from the records a farm already has. Add automation where it genuinely reduces work; do not assume new machinery, perfect connectivity or constant manual entry.',
       },
       {
-        title: 'Automate where the source is reliable',
-        text: 'Machine, sensor, positioning and external data can reduce manual entry when they are available and trustworthy; they are not prerequisites for every farm.',
-      },
-      {
-        title: 'Make older equipment workable',
-        text: 'Future capture workflows should minimise operator input and use context such as time and location where appropriate, rather than assuming every machine is digitally connected.',
-      },
-      {
-        title: 'Work offline when the farm needs it',
-        text: 'Field and farm work must not stop because coverage disappears. Capture locally and synchronise later where workflows require connectivity.',
+        title: 'Keep uncertainty visible',
+        text: 'Known economics stay explicit. Forecasts and scenarios should show assumptions and ranges when evidence supports them, rather than pretending the future is certain.',
       },
     ] satisfies TextItem[],
-    dataEvidence:
-      'Eurostat reported that about 11% of EU farms used a farm management information system in 2023, while around 18% of farms with utilised agricultural area used some precision-farming technology or practice.',
-    dataSource: {
-      label: 'Eurostat · Digitalisation in EU agriculture, 2023 data',
-      href: 'https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260724-1',
-    },
-    offlineSource: {
-      label: 'European Commission · Future connectivity needs for precision farming, 2026',
-      href: 'https://digital-strategy.ec.europa.eu/en/library/assessment-future-connectivity-needs-precision-farming-adoption',
-    },
-    forecastingTitle: 'Forecast uncertainty — not a magic profit number',
-    forecastingLead:
-      'The PROFIT direction is to keep known economics deterministic, forecast uncertain production or market drivers only when the data supports it, compare scenarios, and show the range and confidence behind the result.',
-    forecastingPrinciples: [
-      {
-        title: 'Known economics first',
-        text: 'Definitions and arithmetic stay explicit. An AI model is not the source of truth for revenue, cost or profit calculations.',
-      },
-      {
-        title: 'Forecast the uncertain drivers',
-        text: 'Yield, production, price, feed, energy or other domain-specific drivers should be forecast separately where useful, then combined through the economic model.',
-      },
-      {
-        title: 'Compare scenarios',
-        text: 'A useful decision view compares alternatives and a do-nothing baseline, rather than presenting one unexplained future-profit number.',
-      },
-      {
-        title: 'Earn model complexity',
-        text: 'Start with simple baselines and only use more complex models when they materially improve out-of-sample performance and remain operationally reliable.',
-      },
-      {
-        title: 'Show uncertainty',
-        text: 'Ranges, assumptions, update dates and confidence matter more than false precision.',
-      },
-      {
-        title: 'Measure what happened',
-        text: 'Forecast quality is not Verified Economic Value. The actual outcome, counterfactual, attribution and confidence still have to be assessed after the decision.',
-      },
-    ] satisfies TextItem[],
-    forecastingNote:
-      'This is the PROFIT development standard, not a claim that the current Field Profitability build performs forecasting, optimisation or scenario simulation.',
+    operatingPrinciplesNote:
+      'These are PROFIT development principles, not a claim that the current Field Profitability build already includes telemetry, forecasting or optimisation.',
+    operatingPrinciplesLink: { label: 'How PROFIT approaches data and forecasting', href: '/company/#data-strategy' },
   },
   value: {
     intro: {
