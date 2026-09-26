@@ -168,6 +168,49 @@ export const trust = {
       { title: 'Illustrations are labelled', text: 'Examples are marked Hypothetical with Confidence: Not assessed, and never presented as results.' },
     ] satisfies TextItem[],
   },
+  stressCheck: {
+    intro: {
+      id: 'stress-check',
+      eyebrow: 'Illustrative stress check',
+      title: 'Test the arithmetic before trusting the presentation',
+      lead:
+        'The example below is not a forecast and not a current product feature. It holds operating costs constant and changes yield and price around the statistics-calibrated synthetic base case to show how sensitive the result is.',
+    } satisfies SectionIntro,
+    caption: 'Field 31 · deterministic sensitivity around the synthetic base case',
+    columns: {
+      scenario: 'Scenario',
+      yield: 'Yield',
+      price: 'Price',
+      costs: 'Operating costs',
+      profit: 'Operating profit',
+    },
+    names: {
+      downside: 'Downside',
+      base: 'Base case',
+      'price-up': 'Price +10%',
+      'yield-up': 'Yield +10%',
+      upside: 'Yield +10% · Price +10%',
+    },
+    breakEvenLead: 'At the base synthetic cost structure, break-even is approximately',
+    note:
+      'Costs are deliberately held constant to isolate arithmetic sensitivity. This is not agronomic forecasting, optimisation, a recommendation or a claim about how costs behave when yield changes.',
+    calibration:
+      'Calibration uses Finnish official statistics as plausibility anchors: 2025 wheat production/area, the 2025 quality-adjusted bread-wheat producer price, and Luke EconomyDoctor 2024 cereal-farm cost totals. The field records themselves remain synthetic.',
+    sources: [
+      {
+        label: 'Luke · Crop production 2025',
+        href: 'https://www.luke.fi/en/statistics/crop-production-statistics/crop-production-2025',
+      },
+      {
+        label: 'Luke · Producer Prices of Agricultural and Horticultural Products 2025',
+        href: 'https://www.luke.fi/en/statistics/producer-prices-of-agricultural-and-horticultural-products/producer-prices-of-agricultural-and-horticultural-products-2025',
+      },
+      {
+        label: 'Luke EconomyDoctor · Cereal Farms',
+        href: 'https://taloustohtori.luke.fi/en/agriculture-and-horticulture/timeline/income-statement/cereal-farms/',
+      },
+    ],
+  },
   data: {
     intro: { id: 'data', eyebrow: 'Farmer control', title: 'Data and farmer control' } satisfies SectionIntro,
     principles: [
@@ -197,7 +240,7 @@ export const trust = {
       { title: 'No results are published', text: 'There are no customer or pilot results on this site.' },
       { title: 'Nothing is Verified', text: 'No figure on this site meets the Verified standard.' },
       { title: 'Missing data is not handled yet', text: 'The current design does not handle estimated or missing values, and does not attach a confidence level to results.' },
-      { title: 'The examples are invented', text: 'Every figure on this site is a hypothetical example.' },
+      { title: 'The examples are synthetic', text: 'Every field-level example on this site is hypothetical. Current crop examples are calibrated to official statistics for plausibility, not derived from customer records.' },
     ] satisfies TextItem[],
   },
   cta: pilotCta,
