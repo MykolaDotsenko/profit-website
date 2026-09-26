@@ -28,6 +28,7 @@ REQUIRED_FILES = [
     "docs/decisions/0001-ai-development-documentation-architecture.md",
     ".github/ISSUE_TEMPLATE/ai-development-task.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    "docs/website-trust-professionalism-synthesis-2026-09-27.md",
     "src/config/release.ts",
     "src/domain/economics.ts",
     "src/components/Metric.astro",
@@ -104,6 +105,12 @@ TEXT_INVARIANTS = {
         "Acceptance criteria",
         "Verification plan",
         "Integrity gate",
+    ],
+    "docs/website-trust-professionalism-synthesis-2026-09-27.md": [
+        "work with the farm that exists",
+        "deterministic economics",
+        "homepage should not become a white paper",
+        "AI may scale execution",
     ],
     "src/config/release.ts": [
         "Public release blocked",
