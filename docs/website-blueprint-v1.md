@@ -735,13 +735,18 @@ Ask:
 
 At current stage:
 
-1. qualitative farmer testing;
-2. revise positioning;
-3. launch;
-4. measure real behavior;
-5. A/B test only when traffic is sufficient.
+1. controlled H1/H2/H3 hero-message testing on one neutral/static scaffold;
+2. kill/rewrite weak message directions and revise positioning;
+3. prototype the three independent visual art directions using the same surviving/controlled message;
+4. test visual comprehension/distinctiveness and then validate the combined hero;
+5. validate/reject signature motion only after static meaning works;
+6. launch the smallest credible production surface;
+7. measure real behavior;
+8. A/B test only when traffic is sufficient.
 
 Do not run statistically weak experiments for appearance of rigor.
+
+Do not use different copy + different art direction + different motion in one early experiment. That produces a polished concept but weak causal learning.
 
 ## 19. Three visual directions to prototype
 
