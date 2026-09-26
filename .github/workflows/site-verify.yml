@@ -6,6 +6,7 @@ on:
       - "src/**"
       - "public/**"
       - "tests/**"
+      - "playwright.config.ts"
       - "package.json"
       - "package-lock.json"
       - "astro.config.mjs"
@@ -49,3 +50,42 @@ jobs:
         run: npm run verify
         env:
           ASTRO_TELEMETRY_DISABLED: "1"
+
+
+  browser-qa:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install production/dev dependencies
+        run: npm ci
+
+      - name: Install pinned browser-QA tools
+        run: npm install --no-save --package-lock=false @playwright/test@1.63.0 @axe-core/playwright@4.13.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser, responsive and accessibility QA
+        run: npx playwright test
+        env:
+          ASTRO_TELEMETRY_DISABLED: "1"
+
+      - name: Upload browser report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          if-no-files-found: ignore
+          retention-days: 7
