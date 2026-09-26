@@ -58,6 +58,27 @@ Primary principle:
 
 **Farmer value first. Investor narrative second. Evidence before hype.**
 
+## 3.1 PROFIT company/scope context — LOCKED
+
+Internal operating principle:
+
+**Create Value. Prove It. Scale It.**
+
+External agents must preserve these boundaries:
+- PROFIT is the master brand; Field Profitability is the current website wedge, not the company boundary.
+- Do not crop-lock the brand architecture.
+- Do not invent or market future livestock/other modules as shipped.
+- Customer-level evidence outranks global/leadership/scale ambition.
+- Internal ambitions are not public proof claims.
+- The website is not the core farm-management application.
+
+Primary internal value metric:
+**Verified Economic Value per Customer**
+
+Where evidence supports it, VEV may also be represented per hectare/production unit, per € paid to PROFIT, as share of eligible customers with positive VEV, and with attribution confidence for a defined period/cohort.
+
+Do not invent missing VEV formulas or verification thresholds.
+
 ## 4. Evidence integrity — LOCKED
 
 Never:
@@ -82,6 +103,10 @@ Illustrative mockups must use clearly illustrative labels such as:
 
 - `HYPOTHETICAL EXAMPLE`
 - `Confidence: Not assessed`
+
+AI must not be the sole source of truth for critical quantitative outputs. Real economic numbers require validated source data/rules/models plus visible assumptions, provenance, period and uncertainty.
+
+Do not make undocumented legal claims about farmer data ownership/sharing. Data use must remain permissioned, transparent and consistent with privacy, security, auditability and farmer control.
 
 ## 5. Brand/design doctrine — LOCKED
 
@@ -260,8 +285,8 @@ Prefer reversible experiments over premature architecture.
 For brand-defining work:
 
 1. human/problem-led brief;
-2. at least 3 independent concept territories;
-3. divergence before refinement;
+2. at least 3 independent strategic framings; fixed territory names are not reusable default answers;
+3. divergence before refinement using phase-appropriate context;
 4. proprietary inputs;
 5. AI in a declared role: Challenger / Explorer / Analyst / Builder / Simulator;
 6. human convergence;
