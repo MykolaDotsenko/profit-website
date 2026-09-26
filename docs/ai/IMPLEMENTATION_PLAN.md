@@ -414,11 +414,12 @@ This preserves learning speed and avoids building a polished site around unvalid
 
 Before an AI agent starts any WWW task:
 
-1. create/copy `docs/ai/TASK_TEMPLATE.md` into the task/issue context;
+1. create the GitHub issue with `.github/ISSUE_TEMPLATE/ai-development-task.yml` when working through GitHub; use `docs/ai/TASK_TEMPLATE.md` as the portable fallback;
 2. identify LOCKED / FLEXIBLE / OPEN constraints;
 3. reference the relevant Blueprint section;
 4. define acceptance criteria before implementation;
-5. verify before declaring Done.
+5. verify before declaring Done;
+6. use the PR template to report only checks that actually ran.
 
 # Definition of Ready
 
