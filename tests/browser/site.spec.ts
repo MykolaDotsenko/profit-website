@@ -122,12 +122,13 @@ test.describe('trust stress check', () => {
     await expect(stress).toContainText('Test the arithmetic before trusting the presentation');
     await expect(stress).toContainText('not a forecast');
     await expect(stress).toContainText('costs constant');
-    await expect(stress).toContainText('−€214.62');
-    await expect(stress).toContainText('−€69.10');
-    await expect(stress).toContainText('€7.49');
-    await expect(stress).toContainText('€91.74');
-    await expect(stress).toContainText('€225.68');
-    await expect(stress).toContainText('4.03');
+    // Public presentation is deliberately rounded; exact arithmetic is guarded in domain.test.ts.
+    await expect(stress).toContainText('−€215');
+    await expect(stress).toContainText('−€69');
+    await expect(stress).toContainText('€7');
+    await expect(stress).toContainText('€92');
+    await expect(stress).toContainText('€226');
+    await expect(stress).toContainText('4.0');
     await expect(stress).toContainText('Luke');
 
     await expect(stress).not.toContainText('prediction');
