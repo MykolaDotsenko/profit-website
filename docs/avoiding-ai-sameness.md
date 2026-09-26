@@ -951,11 +951,16 @@ Examples:
 
 Humans retain final ownership of:
 - strategic framing;
+- farmer empathy;
+- documentary truth;
 - creative point of view;
 - brand codes;
 - taste;
 - final selection;
+- sensitive evidence framing;
 - exceptions to the system.
+
+Human ownership is accountable, not absolute. Human taste cannot override evidence integrity, farmer comprehension, accessibility, documentary truth or observed user failure.
 
 ### New rule
 
@@ -993,25 +998,38 @@ Before seeing AI concepts, each involved human writes:
 
 Do not share yet.
 
-#### Phase B — Independent concept territories
-Create at least three genuinely different territories.
+#### Phase B — Independent strategic framings
+Create at least three genuinely different framings before high-fidelity execution.
 
 They must differ in:
-- underlying idea;
+- underlying problem interpretation;
+- strategic idea;
 - visual metaphor;
 - information hierarchy;
 - emotional register.
 
-Color changes do not count.
+Do not reuse fixed territory names merely to satisfy the number three.
 
-#### Phase C — AI expansion
-Use AI to expand each territory separately.
+Color/style changes do not count.
+
+#### Phase C — Thin-context AI expansion
+Use AI to expand each framing separately.
+
+Each Explorer sees:
+- the shared product/farmer truth and hard constraints;
+- its own strategic framing;
+- necessary proprietary raw inputs.
+
+Each Explorer does not initially see:
+- other concept outputs;
+- the current preferred art direction;
+- the full execution-example/exclusion corpus.
 
 Do not ask:
 "Which of these is best?"
 
 Do ask:
-"What unexplored direction exists within this territory?"
+"What unexplored direction exists within this framing?"
 
 #### Phase D — Forced push
 Before selection, push promising ideas one step further.
