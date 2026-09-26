@@ -39,7 +39,7 @@ It does not meet any exit criterion above, decide WWW-005, freeze WWW-000 or sta
 
 ### Future gate — master-brand positioning (does not block current work)
 
-Before the master-brand homepage positioning is permanently locked, or before pig production or dairy become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
+Before the master-brand homepage positioning is permanently locked, or before horticulture/greenhouse/livestock directions become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort. The WWW-000 result cannot close this gate. It does not block current learning on the Field Profitability wedge.
 
 ### International validation architecture
 
@@ -87,7 +87,7 @@ Test the three canonical Blueprint directions, using the **v2** candidates in Bl
 - H2 — Decision intelligence / decision-context first (v1: current control)
 - H3 — Field Profitability / product proof first
 
-Scope: the Field Profitability **wedge** message only, for the provisional Finland Market A cohort (Blueprint §2.3). Results must retain market/cohort context, must not be pooled with materially different markets, and must not redefine PROFIT as field-crop-only or globally validated. The master brand stays extensible to crop production, pig production and dairy without rebranding (Blueprint §2.1).
+Scope: the Field Profitability **wedge** message only, for the provisional Finland Market A cohort (Blueprint §2.3). Results must retain market/cohort context, must not be pooled with materially different markets, and must not redefine PROFIT as field-crop-only or globally validated. The master brand stays extensible to crop production, horticulture/greenhouse production, pig production and dairy/other livestock without rebranding (Blueprint §2.1).
 
 Constraints:
 - same neutral/static scaffold;
@@ -138,7 +138,7 @@ Acceptance:
 - [ ] generic AI/SaaS similarity is red-teamed;
 - [ ] each works statically;
 - [ ] each can be tested without explaining the concept first;
-- [ ] each direction passes an internal master-brand transfer stress test (Blueprint §19 AD-7, domain transfer). The same visual grammar is expressed in three production contexts: crop production, pig production and dairy. This is an internal design-system diagnostic, not products or public pages. Rules:
+- [ ] each direction passes an internal master-brand transfer stress test (Blueprint §19 AD-7, domain transfer). The same visual grammar is expressed in three production contexts: crop production, horticulture/greenhouse production, pig production and dairy/other livestock. This is an internal design-system diagnostic, not products or public pages. Rules:
   - documentary/category-level agricultural reality and generic operational/economic context only;
   - no fake product UI;
   - no fabricated pig/dairy metrics or results;
@@ -167,7 +167,7 @@ Run the Blueprint experiments:
 - AD-4 — category-confusion diagnostic;
 - AD-5 — mobile farmer task;
 - AD-6 — trust under bad news/uncertainty;
-- AD-7 — brand-system transfer (surface transfer + internal crop/pig/dairy domain diagnostic).
+- AD-7 — brand-system transfer (surface transfer + internal crop/horticulture-greenhouse/pig/dairy-other-livestock domain diagnostic).
 
 Primary decision objective:
 **farmer comprehension + calibrated trust**
