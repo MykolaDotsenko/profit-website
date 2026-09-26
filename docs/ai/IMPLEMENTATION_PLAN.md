@@ -94,7 +94,7 @@ Depends on: WWW-001.
 
 ### WWW-004 — Signature motion validation
 
-Use the existing Field → Economics Reveal prototype.
+Use the existing Field → Economics Reveal prototype **only after independent art-direction divergence exists**, so the current prototype does not become the default visual anchor prematurely.
 
 Acceptance:
 - [ ] causal sequence is understandable;
@@ -103,7 +103,7 @@ Acceptance:
 - [ ] reduced-motion state is complete;
 - [ ] effect is removed/simplified if it does not improve comprehension enough to justify cost.
 
-Depends on: none.
+Depends on: WWW-001.
 
 ### WWW-005 — Production platform decision
 
@@ -400,11 +400,11 @@ Do **not** create the entire backlog as active work at once.
 
 Current recommended active sequence:
 
-1. WWW-001
-2. WWW-004
-3. WWW-002
-4. WWW-003
-5. WWW-005
+1. WWW-001 — create three genuinely different art directions
+2. WWW-002 — run farmer 10-second comprehension testing
+3. WWW-003 — run brand-code recognition/confusion testing
+4. WWW-004 — validate or reject the signature motion within the broader visual exploration
+5. WWW-005 — decide production platform only when implementation creates more learning value than another validation cycle
 
 Only after that promote W1/W2 implementation issues.
 
@@ -452,3 +452,18 @@ A task is done when:
 - visual concepts fail trust or recognition tests;
 - the platform decision changes learning speed/cost materially;
 - real VEV evidence changes the strongest public narrative.
+
+
+## Research stop rule
+
+General website/design/frontend research is no longer the default next step.
+
+Start new research only when a named WWW task has a material unresolved question that:
+- blocks the experiment;
+- changes a high-impact decision;
+- requires current external verification;
+- or exposes a meaningful farmer-trust / implementation risk.
+
+Otherwise prefer:
+
+**prototype → test → learn → update decision**.
