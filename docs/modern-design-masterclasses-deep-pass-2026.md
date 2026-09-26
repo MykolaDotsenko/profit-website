@@ -203,13 +203,15 @@ use:
 - editorial caption;
 - farm context.
 
-Example:
+Illustrative visual example only:
 
 **FIELD 24**
 Wheat · 41.7 ha
 
 **€637 / ha**
 Margin
+
+**HYPOTHETICAL EXAMPLE — NOT OBSERVED VALUE**
 
 with a selectively framed profitability view behind it.
 
@@ -405,7 +407,7 @@ Wheat · 41.7 ha
 €637 / ha
 MARGIN
 
-Observed / Modelled badge where appropriate.
+For illustrative mockups use **HYPOTHETICAL EXAMPLE** and **Confidence: Not assessed**. Use Observed / Modelled / Attributed / Verified only when the underlying evidence actually supports that state.
 
 This combines:
 - clarity;
