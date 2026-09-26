@@ -773,3 +773,76 @@ Repeated AI errors should trigger a system/context correction, not endless outpu
 Logo-off testing is diagnostic only.
 
 For a young brand, emerging distinctive assets should normally be repeatedly co-presented with the PROFIT name/logo so users can learn the association.
+
+
+## 29. Visual effects strategy
+
+Visual effects exist to explain hierarchy, causality, state change, or brand meaning.
+
+Core rule:
+
+**Make economic causality visible. Do not make the website move for its own sake.**
+
+Preferred implementation ladder:
+1. static composition;
+2. CSS microinteraction;
+3. clip-path / SVG;
+4. CSS scroll-driven animation;
+5. native View Transitions;
+6. small JavaScript;
+7. GSAP;
+8. Canvas/WebGL/Three.js only when uniquely justified.
+
+### Recommended signature effect
+
+**Field → Economics Reveal**
+
+Real farm image
+→ field boundary SVG draw
+→ operational/data layer
+→ dominant €/ha economic result
+→ evidence/confidence state.
+
+Prototype with CSS/SVG/scroll-driven CSS first.
+
+### Effect budget
+
+Homepage:
+- maximum 2 signature storytelling effects;
+- one focal motion event per viewport/section;
+- supporting motion limited to reveals, navigation progress, and interaction feedback.
+
+### Recommended
+- field-boundary SVG animation;
+- clip-path farm-image reveals;
+- scroll-linked farm → data → economics transformation;
+- native View Transitions;
+- subtle image hover;
+- calm hover/focus states;
+- guided section progress.
+
+### Prototype first
+- text line reveal;
+- mild parallax;
+- GSAP choreography;
+- field-shape morphing;
+- controlled video-on-scroll.
+
+### Not v1 by default
+- decorative WebGL/Three.js hero;
+- shader/noise backgrounds;
+- particles;
+- custom cursors;
+- liquid cursor effects;
+- scroll hijacking;
+- long loader intros;
+- autoplay hero video;
+- excessive kinetic typography.
+
+Every effect requires:
+- meaningful static fallback;
+- reduced-motion behavior;
+- mobile validation;
+- accessibility validation;
+- performance review;
+- brand/distinctiveness rationale.
