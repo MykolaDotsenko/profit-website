@@ -35,6 +35,7 @@ The website must communicate:
 - [Masterclasses & Tutorials](docs/masterclasses-and-tutorials.md)
 - [Design Masterclass Findings](docs/design-masterclass-findings.md)
 - [Modern Design Masterclasses Deep Pass 2026](docs/modern-design-masterclasses-deep-pass-2026.md)
+- [Modern Visual Effects Deep Pass 2026](docs/modern-visual-effects-deep-pass-2026.md)
 - [Modern Branding Masterclasses Deep Pass 2026](docs/modern-branding-masterclasses-deep-pass-2026.md)
 - [Avoiding AI Sameness — PROFIT Standard](docs/avoiding-ai-sameness.md)
   - includes second five-pass research on D&AD/Figma/Adobe creative-process safeguards
