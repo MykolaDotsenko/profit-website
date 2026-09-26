@@ -2,6 +2,9 @@
 /**
  * Hero proof object. The frame, evidence label, decision question and source line are shared;
  * only the body changes with the hero direction, so swapping H1/H2/H3 needs no layout change.
+ *
+ * This component is valid for WWW-000 message isolation. It is not a required WWW-001
+ * art-direction scaffold; A/B/C may compose the same evidence/domain truth independently.
  */
 import EvidenceLabel from './EvidenceLabel.astro';
 import Metric from './Metric.astro';
