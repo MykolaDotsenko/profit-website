@@ -139,13 +139,13 @@ art_direction_validation:
   status: "testing phase; broad research stopped for current cycle"
   experiment_protocol: "docs/experiments/art-direction-farmer-test-v1.md"
   research_reopen_rule: "Re-open external research only for a specific observed test failure, material open hypothesis, or time-sensitive constraint."
-  leading_hypothesis: "A — Evidence-Led Editorial"
+  research_prior: "A — Evidence-Led Editorial; theoretical prior only, not a test winner"
   objective: "maximize farmer comprehension + calibrated trust"
   directions:
     A: "Evidence-Led Editorial — real farm truth + editorial hierarchy + economic typography + inspectable evidence"
     B: "Farm Operations Layer — farm reality + spatial/data layer + economics"
     C: "Economic Control Room — dense product/economic precision + supporting farm context"
-  controlled_test_rule: "Use the same surviving message, proof scenario, evidence state, CTA hierarchy, and no essential motion across A/B/C."
+  controlled_test_rule: "Use the same surviving message, proof scenario, evidence state, CTA hierarchy, no essential motion, and equivalent prototype fidelity across A/B/C. Do not disclose the internal research prior to participants."
   experiments:
     - "AD-1 10-second comprehension + trust"
     - "AD-2 evidence interpretation"
