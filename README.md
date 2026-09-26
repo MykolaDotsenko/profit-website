@@ -46,3 +46,7 @@ The website must communicate:
 ## Status
 
 Repository initialized. Positioning, information architecture, visual direction and implementation approach are being validated before production build.
+
+## Prototypes
+
+- [Signature Effect Prototype](prototypes/field-economics-reveal/README.md) — Field → Economics Reveal
