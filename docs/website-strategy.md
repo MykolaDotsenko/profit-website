@@ -45,8 +45,10 @@ Execution rule:
 - PROFIT is the master brand.
 - Field Profitability is the current concrete wedge/proof hypothesis for the first farmer-facing website.
 - Do not turn that wedge into a permanent crop-only company definition.
-- The broader product ambition spans agricultural decision support across production systems; livestock and other farm domains may become relevant, but they are **not launch claims** unless separately validated and documented.
-- Do not create future modules/pages merely to imply platform breadth.
+- The broader company/product direction explicitly spans multiple agricultural production systems: arable/field crops; horticulture, orchards and berries; vegetables and greenhouse/protected cultivation; pig production; dairy; beef/grazing livestock; poultry/eggs; other livestock and mixed farms.
+- This is **master-brand scope**, not a claim that each domain is already a product. Field Profitability remains the first concrete product focus.
+- Each domain keeps its own production unit, operational structure and economics. Do not force livestock, greenhouse or horticulture into crop/per-hectare semantics.
+- Do not create future modules/pages merely to imply platform breadth; show scope as company direction and label current product truth separately.
 
 ### VEV measurement context
 
@@ -82,6 +84,34 @@ Any calculator, economic metric or product mockup must:
 - remain clearly illustrative/modelled when validation is unavailable.
 
 Confidence/evidence presentation should not exceed the quality of the underlying data. Material data-quality considerations include completeness, consistency, freshness, provenance and representativeness.
+
+### Data-collection direction
+
+PROFIT should work with the farm that exists, not only with highly digitised farms.
+
+Priority:
+1. reuse existing production, sales, cost, herd/feed/field and operational records;
+2. automate capture from machinery, sensors, positioning or external sources when reliable and useful;
+3. for old/non-connected equipment, minimise operator workload and use context such as time/location plus human confirmation where appropriate;
+4. support offline-first capture and later synchronisation where connectivity is unreliable;
+5. preserve source provenance and distinguish recorded, inferred and modelled data.
+
+Do not make new hardware, telemetry or continuous connectivity a prerequisite for economic decision support.
+
+### Forecasting direction
+
+The preferred PROFIT forecasting architecture is:
+
+**deterministic economics → forecast uncertain drivers → scenario comparison → decision → actual outcome → attribution/confidence → VEV**
+
+Rules:
+- do not use an LLM as the quantitative forecasting engine;
+- start from simple/historical/statistical baselines;
+- increase model complexity only when out-of-sample evidence justifies it;
+- forecast domain-specific uncertain drivers (for example yield, production, price, feed, energy) separately where practical rather than hiding everything in one black-box profit number;
+- compare alternatives against a defensible baseline/counterfactual;
+- expose ranges, assumptions and confidence;
+- forecast accuracy is not Verified Economic Value; VEV requires observed outcome and attribution evidence.
 
 ## 2. Primary audience
 
@@ -183,15 +213,16 @@ Do not create empty pages for perceived completeness.
 ## 7. Homepage hierarchy
 
 1. **Hero** — what PROFIT is and the economic outcome
-2. **Product visual** — show, do not merely describe
-3. **Farmer problem** — where economic visibility breaks
-4. **How PROFIT works** — data → intelligence → decision
-5. **Economic value** — what gets measured
-6. **Product wedge** — Field Profitability / first concrete use case
-7. **Evidence** — real pilot/results when available
-8. **Trust** — data ownership, transparency, control
-9. **Company** — who is building it and why
-10. **CTA** — pilot / conversation
+2. **PROFIT in 30 seconds** — target user, problem, mechanism, first wedge, evidence standard, next action
+3. **Production scope** — crops, horticulture/greenhouses and livestock as master-brand direction, explicitly separated from shipped product truth
+4. **Product visual / current proof** — show Field Profitability concretely
+5. **Farmer problem** — where economic visibility breaks
+6. **How PROFIT works** — low-friction data → deterministic economics → scenarios/forecasting where justified → decision → measurement
+7. **Economic value / evidence** — what gets measured and how uncertainty is labelled
+8. **Product wedge** — Field Profitability / first concrete use case
+9. **Trust** — data ownership, transparency, control
+10. **Company** — who is building it and why
+11. **CTA** — pilot / conversation
 
 ## 8. CTA strategy
 
