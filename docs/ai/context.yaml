@@ -211,14 +211,36 @@ brand:
 ai_creative_process:
   required:
     - "human/problem-led strategic brief"
-    - "3+ independent concept territories for brand-defining work"
-    - "divergence before refinement"
-    - "proprietary/real inputs"
+    - "3+ independent strategic framings for brand-defining work; fixed territory names are not reusable default answers"
+    - "phase-specific context: thin divergence context, full convergence/production context"
+    - "brief → framing → low-fidelity human structure → AI prompt for brand-defining visual ideation"
+    - "first-good-concept quarantine until independent territories exist"
+    - "perspective-diverse independent Explorer branches; functional AI roles alone do not count as diversity"
     - "role-bound AI: Challenger, Explorer, Analyst, Builder, or Simulator"
-    - "human convergence and final approval"
+    - "proprietary/real inputs without forcing preferred aesthetics during early divergence"
+    - "independent evaluation before group discussion; blind/randomize creator or AI origin where practical"
+    - "falsify preferred direction and steelman strongest rejected direction before final convergence"
+    - "human ownership of strategic framing, farmer empathy, documentary truth, final taste and final selection"
+    - "contextual plausibility review for agricultural scenes, data availability and implied product capability"
+    - "granular transformation-level provenance for brand-critical AI-assisted assets"
     - "recognition/confusion testing where practical"
-    - "versioned provenance for brand-critical AI-assisted assets"
   forbidden_pattern: "one AI loop writes the brief, creates, judges and approves the same brand-defining work"
+  divergence_context:
+    include:
+      - "farmer/user problem"
+      - "desired outcome"
+      - "factual product truth"
+      - "evidence/VEV integrity"
+      - "legal/accessibility constraints"
+      - "necessary proprietary raw inputs"
+    withhold_by_default:
+      - "current leading art direction"
+      - "other concept outputs"
+      - "preferred composition"
+      - "approved execution examples"
+      - "candidate distinctive assets as mandatory motifs"
+      - "full exclusion board"
+  documentary_rule: "If AI materially adds/removes factual farm-scene content, classify the result as illustration/concept imagery rather than documentary agriculture."
 
 motion:
   principle: "Make economic causality visible; do not make the site move for its own sake."
@@ -345,3 +367,4 @@ definition_of_done:
 research_efficiency:
   prompting: "Prefer one concrete task/decision per prompt; rely on repository context instead of repeating large project summaries."
   research_stop_rule: "Run new broad research only to resolve a specific open hypothesis, verify a time-sensitive claim, materially challenge a decision, or reduce a meaningful risk. Prefer testing once evidence is sufficient for the next reversible experiment."
+  anti_sameness_research_status: "Broad anti-sameness research stopped after the 2026-09-26 targeted process audit; reopen only when a real workflow/test failure is not explained by the current mechanism set."
