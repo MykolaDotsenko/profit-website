@@ -1652,17 +1652,19 @@ AI-generated polish must never become the source of PROFIT's creative point of v
 Required process:
 1. category deconstruction / exclusion board;
 2. human/problem-led divergent framing;
-3. at least 3 independent concept territories;
+3. at least 3 independent strategic framings;
 4. proprietary inputs (real farm imagery, field geometry, product UI, economic/evidence system);
 5. AI used to expand/adapt, not define the initial identity;
 6. human convergence against trust, distinctiveness and product truth;
 7. systemise approved direction into tokens/components/rules;
 8. competitor-confusion and logo-off recognition tests;
-9. governed AI generation only from approved brand context.
+9. governed AI generation only from phase-appropriate brand context.
 
-Primary anti-sameness signature:
+Working anti-sameness system hypothesis:
 
-**real agriculture + field geometry + economic typography + evidence language + measured causal motion**
+**real agriculture → precise field/data context → economic meaning → evidence/confidence → measured causal motion when useful**
+
+Do not call this a distinctive signature until recognition/uniqueness evidence exists.
 
 Treat generic cues as high-risk by default:
 - stock farmer + tablet;
