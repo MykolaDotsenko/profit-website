@@ -137,3 +137,19 @@ The template forces:
 Do not ask an AI agent to “make the site modern/premium” without the canonical context.
 
 That instruction alone is considered under-specified and high risk for generic AI/SaaS output.
+
+
+## Prompting rule
+
+Keep user prompts focused.
+
+A strong prompt usually needs:
+1. one task/decision;
+2. desired outcome;
+3. the relevant canonical file or section;
+4. important constraints;
+5. expected verification.
+
+Do not duplicate the whole PROFIT constitution or research archive in every prompt. The repository already carries that context.
+
+Use broad research only when a concrete OPEN question cannot be answered reliably from current evidence.
