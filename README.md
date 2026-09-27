@@ -162,9 +162,11 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 
 ### Localization
 
-English is the canonical/default website language and stays on unprefixed routes (`/`, `/product/`, `/trust/`, …). Ukrainian is an opt-in localization under `/uk/` with a route-preserving EN / UA switcher. The site does not geo-redirect or browser-language-redirect users.
+English is the canonical/default website language and stays on unprefixed routes (`/`, `/product/`, `/trust/`, …). Ukrainian is an opt-in localization under `/uk/`; Finnish is an opt-in localization under `/fi/`. The route-preserving switcher is EN / UA / FI. The site does not geo-redirect or browser-language-redirect users.
 
-Numbers, currencies and units are formatted from locale-neutral values. Product formulas and evidence semantics are shared across locales; localization may translate labels and explanations but may not change metric identity, evidence state, confidence meaning or release gates. Equivalent EN/UK routes emit language alternates when `SITE_URL` is configured.
+Numbers, currencies and units are formatted from locale-neutral values. Product formulas and evidence semantics are shared across locales; localization may translate labels and explanations but may not change metric identity, evidence state, confidence meaning or release gates. Equivalent EN/UK/FI routes emit language alternates when `SITE_URL` is configured.
+
+Finnish economic copy deliberately uses **operatiivinen tulos** for the product metric `revenue − variable costs − allocated fixed costs`, **katetuotto** for gross margin, and **kohdistetut kiinteät kustannukset** for allocated fixed costs. This avoids misrepresenting the product metric as statutory `liikevoitto` or `tilikauden tulos`.
 
 ### Content gaps before launch
 
