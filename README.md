@@ -108,7 +108,7 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 
 | Variable | Default | Effect |
 |---|---|---|
-| `HERO_VARIANT` | `h3` | Which WWW-000 v2 candidate the homepage shows (`h1`, `h2`, `h3`). H3 is the provisional development default from the surrogate audit, not a farmer-validated winner. |
+| `HERO_VARIANT` | `h4` | Which hero hypothesis the homepage shows (`h1`, `h2`, `h3`, `h4`). H1-H3 are the existing WWW-000 v2 controlled candidates. H4 is the owner-directed development default added after the surrogate; it has no farmer evidence and is not a winner. |
 | `SHOW_CONTENT_STATUS` | `true` | Preview banner and "Input needed / Draft for review" notes. |
 | `SITE_INDEXABLE` | `false` | When false, every page carries `noindex, nofollow`. Setting true now fails the build until `src/config/release.ts` has no blocking public-release gates. |
 | `PILOT_FORM_ENDPOINT` | unset | Unset: the form validates but sends nothing. Configuring an endpoint now fails until privacy/company/pilot-process release gates are ready. |
