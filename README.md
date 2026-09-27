@@ -83,6 +83,7 @@ These files are an evidence library. They support decisions but do not silently 
 - [100-Point Release Quality Contract](docs/release/website-100-scorecard.md) — auditable 50-criterion Definition of Done; 100/100 is impossible while any public-release gate is blocked.
 - [PROFIT VEV Standard v1](docs/methodology/vev-standard-v1.md) — evidence/attribution standard for Hypothetical → Modelled → Observed → Attributed → Verified.
 - [Pilot Intake Runbook v1](docs/operations/pilot-intake-runbook-v1.md) — confirmed owner, email reply flow, two-business-day target and first-contact data boundary.
+- [Privacy & Farm-Data Policy Decisions v1](docs/legal/privacy-data-policy-decisions-v1.md) — conservative internal defaults for enquiry purpose/basis/retention and farm-data secondary-use/deletion/export rules; final legal approval still required.
 - [Privacy & Farm-Data Trust Pack](docs/legal/privacy-data-trust-pack.md) — production-readiness draft separating current contact-data behavior from the legal/privacy and farm-data decisions required before pilot activation.
 
 ## Status
