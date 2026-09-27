@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ConfidenceScale from '../components/ConfidenceScale.astro';
 import ContentGap from '../components/ContentGap.astro';
 import CtaBand from '../components/CtaBand.astro';
+import DecisionChange from '../components/DecisionChange.astro';
 import EvidenceLadder from '../components/EvidenceLadder.astro';
 import FieldExample from '../components/FieldExample.astro';
 import Hero from '../components/Hero.astro';
@@ -103,6 +104,14 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
       </ol>
       <p class="record-intake__conclusion">{h.problem.hard.conclusion}</p>
     </div>
+
+    <DecisionChange
+      title={h.problem.changeFrame.title}
+      leftLabel={h.problem.changeFrame.leftLabel}
+      rightLabel={h.problem.changeFrame.rightLabel}
+      rows={h.problem.changeFrame.rows}
+      note={h.problem.changeFrame.note}
+    />
   </Section>
 
   <!-- 5 · How PROFIT works -->
