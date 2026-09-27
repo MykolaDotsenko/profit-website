@@ -501,15 +501,117 @@ export const trust = {
       'This is the PROFIT system-design direction. It is not a claim that the current product autonomously recommends actions or already runs predictive DSS workflows.',
   },
   privacy: {
-    intro: { id: 'privacy', eyebrow: 'Privacy and security', title: 'Privacy and security principles' } satisfies SectionIntro,
+    intro: {
+      id: 'privacy',
+      eyebrow: 'Privacy · data control',
+      title: 'Start with less data. Agree the terms before farm records.',
+      lead:
+        'The current pilot intake is deliberately small. A live form still needs an approved privacy notice, and farm-production records need separate, explicit data terms before they are requested.',
+    } satisfies SectionIntro,
+    currentTitle: 'What this website asks for today',
+    currentItems: [
+      {
+        title: 'Five contact/context details',
+        text: 'Name, farm or company, country, email and farm type — enough to understand the enquiry and reply.',
+      },
+      {
+        title: 'No farm records at first contact',
+        text: 'The website does not ask for yields, prices, costs, machinery, sensor, field or livestock records in the pilot form.',
+      },
+      {
+        title: 'Preview submission is off',
+        text: 'In the current pre-launch build, no pilot endpoint is configured by default. The preview validates the form but sends nothing.',
+      },
+      {
+        title: 'No analytics or cookie layer in the current code',
+        text: 'The coded site currently implements no analytics, cookie-consent system, document.cookie, localStorage or sessionStorage tracking. Deployment infrastructure must be re-audited before launch.',
+      },
+    ] satisfies TextItem[],
+    noticeTitle: 'What the final privacy notice still has to specify',
+    noticeLead:
+      'Before personal data is collected through a live form, the notice must match the actual controller, deployment and processing — not a template.',
+    noticeItems: [
+      {
+        title: 'Who is responsible',
+        text: 'Confirmed controller legal identity and contact details, plus a DPO/contact where legally applicable.',
+      },
+      {
+        title: 'Purpose + legal basis',
+        text: 'The real purpose for each use of the data and the approved GDPR legal basis. PROFIT will not infer the legal basis from convenience.',
+      },
+      {
+        title: 'Retention',
+        text: 'How long contact data is kept, or the criteria used to decide that period.',
+      },
+      {
+        title: 'Recipients, processors + transfers',
+        text: 'The actual hosting, form, email or CRM recipients/processors and any transfer outside the EU/EEA with the applicable safeguard.',
+      },
+      {
+        title: 'Rights + complaint path',
+        text: 'How a person can exercise applicable access, rectification, erasure, restriction, portability or objection rights and contact the competent data-protection authority.',
+      },
+    ] satisfies TextItem[],
+    farmTermsTitle: 'Before any farm records are shared',
+    farmTermsLead:
+      'Production data needs a separate agreement about permitted use and control. PROFIT will not turn a general pilot enquiry into permission for unrelated data use.',
+    farmTermsItems: [
+      {
+        title: 'Scope + stated purpose',
+        text: 'Define which field, cost, machinery, herd or other records are needed, why they are needed and what PROFIT will not use them for.',
+      },
+      {
+        title: 'Access + sharing',
+        text: 'Define who can access the records, which processors or subprocessors may handle them, and when sharing is allowed.',
+      },
+      {
+        title: 'Retention + deletion + export',
+        text: 'Define how long records remain, what happens at the end of the pilot, what can be exported and how deletion is handled.',
+      },
+      {
+        title: 'Correction + provenance',
+        text: 'Keep material recorded, imported, inferred and modelled values distinguishable and provide a path to correct bad records.',
+      },
+      {
+        title: 'Secondary use + model training',
+        text: 'Do not imply benchmarking, model training or other secondary use from pilot participation. Any later secondary purpose needs an explicit, approved basis and transparent controls.',
+      },
+      {
+        title: 'Security + incidents',
+        text: 'Describe only controls and responsibilities that actually exist, including access, processors and incident handling. Do not imply certifications that have not been earned.',
+      },
+    ] satisfies TextItem[],
+    principlesTitle: 'The operating principles',
     items: [
       { title: 'Data minimisation', text: 'Ask only for what the next step needs.' },
-      { title: 'Purpose limitation', text: 'Use data only for the purpose it was given for.' },
-      { title: 'Permissioned access', text: 'Access to farm data follows the farmer’s permission.' },
-      { title: 'Auditability', text: 'Changes to data and results should be traceable.' },
+      { title: 'Purpose limitation', text: 'State the purpose and do not silently expand it.' },
+      { title: 'Permission + control', text: 'Do not request farm records before the terms and permitted use are clear.' },
+      { title: 'Auditability', text: 'Keep material sources, changes and evidence states traceable.' },
     ] satisfies TextItem[],
-    note: 'These are principles, not certifications.',
-    gap: { owner: 'legal', text: 'Privacy notice and security measures, published before the pilot form collects anything.' } satisfies ContentGap,
+    note:
+      'These are PROFIT development principles and current-code facts, not certifications or an approved privacy notice.',
+    sources: [
+      {
+        label: 'European Commission · Principles of the GDPR',
+        href: 'https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/principles-gdpr_en',
+      },
+      {
+        label: 'European Commission · Legal grounds for processing data',
+        href: 'https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/legal-grounds-processing-data_en',
+      },
+      {
+        label: 'European Commission · Information for individuals',
+        href: 'https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en',
+      },
+      {
+        label: 'European Commission · Controller and processor roles',
+        href: 'https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/application-gdpr_en',
+      },
+    ],
+    gap: {
+      owner: 'legal',
+      text: 'Approve the final controller/contact, legal basis, retention, processors/transfers, rights wording and farm-data terms before the form is connected or farm records are requested.',
+    } satisfies ContentGap,
   },
   limitations: {
     intro: { id: 'limitations', eyebrow: 'Limitations', title: 'What is not yet proven' } satisfies SectionIntro,
@@ -879,8 +981,12 @@ const pilotForm: PilotFormContent = {
     },
   },
   submit: 'Send',
-  privacy: 'We use these details only to reply to you about the pilot. We do not ask for farm records here.',
-  privacyReview: { owner: 'legal', text: 'Privacy notice for this form, before it is connected.' },
+  privacy: 'We use these five details only for the pilot enquiry flow described here. We do not ask for farm records in this form.',
+  privacyLink: { label: 'Privacy and farm-data readiness', href: '/trust/#privacy' },
+  privacyReview: {
+    owner: 'legal',
+    text: 'The live form still requires an approved privacy notice with the real controller, legal basis, retention, processors/transfers and rights information.',
+  },
   previewNote: 'Preview: this form is not connected yet and sends nothing.',
   errorPrefix: 'Error:',
   summaryTitle: 'Check the form',

@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     "docs/experiments/www-000-statistical-surrogate-v1.md",
     "docs/homepage-content-brief-v1.md",
     "docs/website-trust-professionalism-synthesis-2026-09-27.md",
+    "docs/legal/privacy-data-trust-pack.md",
     "src/config/release.ts",
     "src/domain/economics.ts",
     "src/components/Metric.astro",
@@ -168,6 +169,15 @@ TEXT_INVARIANTS = {
         "deterministic economics",
         "homepage should not become a white paper",
         "AI may scale execution",
+    ],
+    "docs/legal/privacy-data-trust-pack.md": [
+        "Production-readiness draft — legal approval required",
+        "Current coded website data inventory",
+        "Legal basis | **OPEN — do not infer**",
+        "Before accepting farm records",
+        "No secondary use, cross-customer benchmarking or model training should be implied",
+        "privacy-notice` — **BLOCKED**",
+        "data-terms` — **BLOCKED**",
     ],
     "src/config/release.ts": [
         "Public release blocked",

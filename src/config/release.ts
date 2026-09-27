@@ -56,14 +56,14 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     area: 'legal',
     owner: 'legal',
     state: 'blocked',
-    reason: 'A publishable privacy notice has not been approved.',
+    reason: 'A privacy/data readiness pack exists, but the final notice still needs confirmed controller/contact, legal basis, retention, processors/transfers, rights wording and legal approval.',
   },
   {
     id: 'data-terms',
     area: 'legal',
     owner: 'legal',
     state: 'blocked',
-    reason: 'Farm-data ownership/sharing/retention/deletion terms have not been approved.',
+    reason: 'Draft farm-data term requirements exist, but permitted use, access/sharing, retention/deletion/export, secondary use/model training and security responsibilities are not yet approved.',
   },
   {
     id: 'pilot-process',

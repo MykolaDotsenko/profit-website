@@ -590,6 +590,26 @@ Decision:
 
 Reconsider if farmer testing shows that a removed element materially improves correct comprehension or calibrated trust.
 
+### P0 — Privacy & farm-data trust pack
+
+Status: **production-readiness draft implemented; legal gates remain BLOCKED.**
+
+Source:
+- `docs/legal/privacy-data-trust-pack.md`
+
+Implemented:
+- current five-field website data inventory;
+- separation of contact personal data from future farm/production records;
+- Trust-page disclosure of current coded behavior;
+- checklist of final privacy-notice facts/decisions;
+- farm-data term requirements covering purpose, access/sharing, retention/deletion/export, provenance, secondary use/model training and security;
+- direct pilot-form link to the Trust privacy section.
+
+Gate rule:
+- `privacy-notice` stays BLOCKED until actual controller/contact, legal basis, retention, processors/transfers, rights/complaint wording and legal approval exist;
+- `data-terms` stays BLOCKED until the farm-data agreement is approved;
+- no pilot endpoint may bypass the existing release guard.
+
 ### WWW-501 — Accessibility gate
 
 Target:

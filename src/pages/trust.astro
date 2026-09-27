@@ -146,10 +146,42 @@ const e = p.evidence;
     </div>
   </Section>
 
-  <Section intro={p.privacy.intro} layout="split">
-    <ItemList items={p.privacy.items} columns={2} />
-    <p class="block-note">{p.privacy.note}</p>
-    <ContentGap owner={p.privacy.gap.owner} text={p.privacy.gap.text} />
+  <Section intro={p.privacy.intro}>
+    <div class="privacy-readiness" data-brand-code="privacy-readiness">
+      <section class="privacy-readiness__block" aria-labelledby="privacy-current-title">
+        <h3 id="privacy-current-title" class="block-title">{p.privacy.currentTitle}</h3>
+        <ItemList items={p.privacy.currentItems} columns={1} layout="rows" />
+      </section>
+
+      <section class="privacy-readiness__block" aria-labelledby="privacy-notice-title">
+        <h3 id="privacy-notice-title" class="block-title">{p.privacy.noticeTitle}</h3>
+        <p class="block-text">{p.privacy.noticeLead}</p>
+        <ItemList items={p.privacy.noticeItems} columns={1} layout="rows" />
+      </section>
+
+      <section class="privacy-readiness__block" aria-labelledby="farm-data-terms-title">
+        <h3 id="farm-data-terms-title" class="block-title">{p.privacy.farmTermsTitle}</h3>
+        <p class="block-text">{p.privacy.farmTermsLead}</p>
+        <ItemList items={p.privacy.farmTermsItems} columns={1} layout="rows" />
+      </section>
+
+      <section class="privacy-readiness__block privacy-readiness__principles" aria-labelledby="privacy-principles-title">
+        <h3 id="privacy-principles-title" class="block-title">{p.privacy.principlesTitle}</h3>
+        <ItemList items={p.privacy.items} columns={2} />
+        <p class="block-note">{p.privacy.note}</p>
+      </section>
+
+      <div class="privacy-readiness__sources">
+        <p class="eyebrow">Primary legal references</p>
+        <ul class="source-list" role="list">
+          {p.privacy.sources.map((source) => (
+            <li><a class="text-link" href={source.href}>{source.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <ContentGap owner={p.privacy.gap.owner} kind="review" text={p.privacy.gap.text} />
+    </div>
   </Section>
 
   <Section intro={p.limitations.intro} layout="split" tone="sunken">
@@ -243,5 +275,27 @@ const e = p.evidence;
     margin-block: var(--space-5) var(--space-4);
     max-width: var(--measure-wide);
     font-weight: var(--weight-strong);
+  }
+  .privacy-readiness {
+    display: grid;
+    gap: var(--space-8);
+  }
+  .privacy-readiness__block {
+    display: grid;
+    gap: var(--space-4);
+    min-width: 0;
+  }
+  .privacy-readiness__block > .block-title,
+  .privacy-readiness__block > .block-text {
+    margin-block-end: 0;
+  }
+  .privacy-readiness__principles {
+    padding-block-start: var(--space-6);
+    border-block-start: 1px solid var(--color-line-strong);
+  }
+  .privacy-readiness__sources {
+    display: grid;
+    gap: var(--space-3);
+    max-width: var(--measure-wide);
   }
 </style>
