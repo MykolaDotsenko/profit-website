@@ -449,6 +449,10 @@ export const trust = {
         label: 'Smart Agricultural Technology · tree-crop yield systematic review (2024)',
         href: 'https://doi.org/10.1016/j.atech.2024.100556',
       },
+      {
+        label: 'Smart Agricultural Technology · historical and contemporary yield-model review (2026)',
+        href: 'https://doi.org/10.1016/j.atech.2025.101672',
+      },
     ],
     note:
       'PROFIT does not treat random train/test splits, leaderboard accuracy or model complexity as sufficient evidence for a farm decision. Future-period and independent farm/field validation are preferred where practical.',
@@ -636,6 +640,10 @@ export const company = {
       {
         label: 'Smart Agricultural Technology · tree-crop yield systematic review',
         href: 'https://doi.org/10.1016/j.atech.2024.100556',
+      },
+      {
+        label: 'Smart Agricultural Technology · historical and contemporary yield-model review (2026)',
+        href: 'https://doi.org/10.1016/j.atech.2025.101672',
       },
     ],
     note:
