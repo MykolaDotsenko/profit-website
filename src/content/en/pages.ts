@@ -514,6 +514,7 @@ export const trust = {
 };
 
 export const company = {
+  onPageLabel: 'On this page',
   meta: { title: 'Company', description: 'What PROFIT is building, including whole-farm scope, data strategy, model-selection discipline, decision support and what is still being proven.' },
   intro: {
     eyebrow: 'Company',
