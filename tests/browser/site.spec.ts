@@ -349,7 +349,7 @@ test.describe('internal navigation integrity', () => {
 
       if (url.hash) {
         const id = decodeURIComponent(url.hash.slice(1));
-        await expect(page.locator(`#${CSS.escape(id)}`), `Fragment ${target} should exist`).toHaveCount(1);
+        await expect(page.locator(`[id="${id.replaceAll('"', '\\"')}"]`), `Fragment ${target} should exist`).toHaveCount(1);
       }
     }
   });
