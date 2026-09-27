@@ -80,6 +80,45 @@ export const productionSystems: TextItem[] = [
   },
 ];
 
+export const productionUnitGrammar = [
+  {
+    title: 'Arable & field crops',
+    unit: 'Field / season',
+    state: 'Current first focus',
+    text: 'Field-level operating economics. Field Profitability is the current concrete product focus.',
+  },
+  {
+    title: 'Horticulture, orchards & berries',
+    unit: 'Block / variety / crop cycle',
+    state: 'Direction',
+    text: 'The production unit changes, but the logic stays production context → economics → evidence → decision.',
+  },
+  {
+    title: 'Vegetables & greenhouse production',
+    unit: 'Field block / compartment / crop cycle',
+    state: 'Direction',
+    text: 'Labour, energy, inputs, quality and timing need a domain-specific economic model.',
+  },
+  {
+    title: 'Pig production',
+    unit: 'Batch / production cycle',
+    state: 'Direction',
+    text: 'Feed, growth, mortality, throughput and selling conditions belong to the production context.',
+  },
+  {
+    title: 'Dairy',
+    unit: 'Cow / group / herd / period',
+    state: 'Direction',
+    text: 'Milk, feed, health, reproduction and replacement require livestock-specific economics.',
+  },
+  {
+    title: 'Other livestock & mixed farms',
+    unit: 'Animal / group / flock / herd / period',
+    state: 'Direction',
+    text: 'The relevant production unit changes by domain; PROFIT should not force everything into per-hectare logic.',
+  },
+] as const;
+
 export const productionScopeNote =
   'These production systems describe the direction of the PROFIT master brand. They are not a claim that every domain is a current product. Field Profitability is the first concrete product focus.';
 
