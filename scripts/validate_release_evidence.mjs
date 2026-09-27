@@ -28,7 +28,9 @@ if (registry.scoring.current_pass_criteria !== passed) fail(`stored pass count $
 if (registry.scoring.current_score !== score) fail(`stored score ${registry.scoring.current_score} != computed ${score}.`);
 if (registry.criteria.length !== 50 || scorecard.scoring.maximum_points !== 100) fail('canonical 50-criterion / 100-point contract drifted.');
 
-const blockedGateIds = [...releaseSource.matchAll(/id:\s*'([^']+)'[\s\S]*?state:\s*'blocked'/g)].map((m) => m[1]);
+const gateStates = [...releaseSource.matchAll(/id:\s*'([^']+)'[\s\S]*?state:\s*'(blocked|ready)'/g)]
+  .map((m) => ({ id: m[1], state: m[2] }));
+const blockedGateIds = gateStates.filter((gate) => gate.state === 'blocked').map((gate) => gate.id);
 const gateToCriteria = new Map();
 for (const category of scorecard.categories) for (const criterion of category.criteria) for (const gate of criterion.release_gates ?? []) {
   if (!gateToCriteria.has(gate)) gateToCriteria.set(gate, []);
