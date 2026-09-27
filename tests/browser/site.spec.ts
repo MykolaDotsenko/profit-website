@@ -1364,7 +1364,7 @@ test.describe('WCAG reflow and user text overrides', () => {
       await expect(nav).toBeVisible();
       const navBox = await nav.boundingBox();
       expect(navBox, route).not.toBeNull();
-      expect(navBox!.right, route).toBeLessThanOrEqual(1281);
+      expect(navBox!.x + navBox!.width, route).toBeLessThanOrEqual(1281);
     }
   });
 
