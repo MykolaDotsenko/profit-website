@@ -64,7 +64,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Section>
 
   <!-- 3 · Product / economic proof -->
-  <Section intro={h.example.intro} tone="sunken">
+  <Section intro={h.example.intro}>
     <FieldExample example={fieldSeasonExample} labels={h.example.labels} />
   </Section>
 
@@ -245,23 +245,42 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
     }
 
     .scope-proof {
-      margin-block-start: var(--space-8);
-      padding-block-start: var(--space-5);
-      border-block-start: 1px solid var(--color-line-strong);
+      display: grid;
+      gap: var(--space-2);
+      margin-block-start: var(--space-6);
+      padding: var(--space-4) var(--space-5);
+      border: 1px solid var(--color-line);
+      background: var(--color-surface);
     }
     .how-cluster__title {
       font-size: var(--text-subsection);
       margin-block-end: var(--space-4);
     }
     .scope-proof__value {
-      font-size: clamp(2.2rem, 6vw, 4.75rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
+      font-size: clamp(1.75rem, 3vw, 2.75rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
       font-weight: var(--weight-strong);
     }
     .scope-proof__label {
-      margin-block-start: var(--space-2);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
       font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+    @container (min-width: 44rem) {
+      .scope-proof {
+        grid-template-columns: auto minmax(12rem, 3fr) minmax(0, 6fr);
+        align-items: baseline;
+        column-gap: var(--space-5);
+      }
+      .scope-proof__note {
+        margin-block-start: 0;
+      }
+      .scope-proof .source-note {
+        grid-column: 3;
+      }
     }
     .scope-proof__note,
     .scope-note,
