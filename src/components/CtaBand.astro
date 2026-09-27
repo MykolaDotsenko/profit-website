@@ -20,7 +20,7 @@ const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(loc
 ---
 
 <Section intro={intro} layout="split" tone="inverse" class="cta-band">
-  <div class="cta-band__body">
+  <div class="cta-band__body" data-brand-code="qualified-next-step">
     <h3 class="cta-band__steps-title">{stepsTitle}</h3>
     <ol class="cta-band__steps" role="list">
       {
@@ -52,6 +52,7 @@ const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(loc
       gap: var(--space-5);
       max-width: none;
     }
+
     .cta-band__steps-title {
       font-family: var(--font-label);
       font-size: var(--text-label);
@@ -59,38 +60,41 @@ const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(loc
       text-transform: uppercase;
       color: var(--color-inverse-secondary);
     }
+
     .cta-band__steps {
       display: grid;
-      gap: 1px;
-      border: 1px solid var(--color-inverse-line);
-      background: var(--color-inverse-line);
+      border-block: 1px solid var(--color-inverse-line);
     }
+
     .cta-band__steps li {
       display: grid;
       grid-template-columns: 2.75rem minmax(0, 1fr);
       gap: var(--space-3);
-      padding: var(--space-4);
-      background: var(--color-inverse-canvas);
+      padding-block: var(--space-4);
     }
+
+    .cta-band__steps li + li {
+      border-block-start: 1px solid var(--color-inverse-line);
+    }
+
     .cta-band__index {
-      display: inline-grid;
-      place-items: center;
-      width: 2rem;
-      height: 2rem;
-      border: 1px solid var(--color-inverse-secondary);
-      border-radius: var(--radius-s);
       font-family: var(--font-label);
       font-weight: var(--weight-strong);
       font-size: var(--text-caption);
-      line-height: 1;
+      line-height: 1.5;
+      color: var(--color-inverse-secondary);
     }
+
     .cta-band__step-title {
       font-weight: var(--weight-strong);
     }
+
     .cta-band__step-text {
+      margin-block-start: var(--space-1);
       color: var(--color-inverse-secondary);
       font-size: var(--text-small);
     }
+
     .cta-band__actions {
       display: flex;
       flex-wrap: wrap;
@@ -99,20 +103,42 @@ const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(loc
       padding-block-start: var(--space-4);
       border-block-start: 1px solid var(--color-inverse-line);
     }
+
     .cta-band__actions .button--primary {
       background: var(--color-inverse-text);
       color: var(--color-inverse-canvas);
       border-color: var(--color-inverse-text);
     }
+
     .cta-band__actions .button--primary:hover {
       background: var(--paper-300);
     }
+
     .cta-band__actions .text-link {
       color: var(--color-inverse-text);
     }
+
     @container (min-width: 50rem) {
       .cta-band__steps {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .cta-band__steps li {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        padding-inline: var(--space-4);
+      }
+
+      .cta-band__steps li:first-child {
+        padding-inline-start: 0;
+      }
+
+      .cta-band__steps li:last-child {
+        padding-inline-end: 0;
+      }
+
+      .cta-band__steps li + li {
+        border-block-start: 0;
+        border-inline-start: 1px solid var(--color-inverse-line);
       }
     }
   }
