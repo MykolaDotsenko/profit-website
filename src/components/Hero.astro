@@ -1,20 +1,21 @@
 ---
 /**
- * Homepage hero. Copy comes from a HeroVariant record, so H1/H2/H3 swap without layout changes.
- * The static first frame carries the whole message; nothing depends on motion.
+ * Provisional production hero for the selected B2 — Production Unit Grammar direction.
  *
- * Order follows Blueprint §11 mobile priority: value → economic metric → product proof →
- * trust (evidence label) → CTA. On wide screens the CTA moves up beside the proof object.
- * The documentary image slot supplies the "real agricultural reality" layer of the master grammar.
+ * The composition is domain-aware but not crop-locked: production unit/context sits beside
+ * explicit economics, evidence and a farmer-owned decision. Field geometry is deliberately
+ * absent from the master-brand hero.
  *
- * WWW-001 warning: this is the coded-foundation editorial composition, not a neutral art-direction
- * scaffold. A/B/C may reuse shared data/semantic primitives without inheriting this layout.
+ * Selection status: best current internal direction, not farmer-validated. See ADR 0003.
  */
+import EvidenceLabel from './EvidenceLabel.astro';
 import ImageSlot from './ImageSlot.astro';
-import ProofCard from './ProofCard.astro';
-import type { FieldSeasonExample } from '../content/examples/field-season';
+import Metric from './Metric.astro';
+import SourceLine from './SourceLine.astro';
+import { fieldLabel, fieldParts } from './fieldLabel';
+import { focusField, type FieldSeasonExample } from '../content/examples/field-season';
 import type { Cta, HeroVariant } from '../content/types';
-import { localeInfo, localePath } from '../i18n';
+import { localeInfo, localePath, ui } from '../i18n';
 
 interface Props {
   variant: HeroVariant;
@@ -33,29 +34,105 @@ interface Props {
 }
 
 const { variant, primary, secondary, example, proofLabels, image } = Astro.props;
-const locale = localeInfo(Astro.currentLocale).code;
-const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(locale, cta.href));
+const locale = localeInfo(Astro.currentLocale);
+const t = ui(locale.code);
+const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(locale.code, cta.href));
+const focus = focusField(example);
+const cur = example.currency;
+const perHa = (metric: 'revenue' | 'operating_costs' | 'operating_profit', amount: number) => ({
+  metric,
+  amount,
+  currency: cur,
+  perArea: 'ha' as const,
+});
+const yieldValue = {
+  metric: 'yield' as const,
+  amount: focus.inputs.yieldPerHa,
+  mass: 't' as const,
+  perArea: 'ha' as const,
+};
+const priceValue = {
+  metric: 'price' as const,
+  amount: focus.inputs.pricePerT,
+  currency: cur,
+  perMass: 't' as const,
+};
 ---
 
 <section class="hero" aria-labelledby="hero-title" data-hero-variant={variant.id} data-message-state={variant.status.state}>
-  <div class="container hero__grid">
-    <div class="hero__copy">
-      <p class="eyebrow">{variant.eyebrow}</p>
-      <h1 id="hero-title" class="hero__title">{variant.headline}</h1>
-      <p class="hero__support">{variant.support}</p>
-    </div>
-    <div class="hero__card">
-      <ProofCard kind={variant.proof} example={example} labels={proofLabels} />
-    </div>
-    <div class="hero__actions">
-      <a class="button button--primary" href={href(primary)}>{primary.label}</a>
-      <a class="button button--secondary" href={href(secondary)}>{secondary.label}</a>
-    </div>
-    <div class="hero__summary">
-      <slot name="summary" />
-    </div>
-    <div class="hero__image">
-      <ImageSlot caption={image.caption} requirement={image.requirement} aspect="3/2" />
+  <div class="container">
+    <div class="hero__frame">
+      <aside class="hero__rail" aria-label="Current production context">
+        <div class="hero__rail-top">
+          <p class="operational-label">Current production unit</p>
+          <p class="hero__unit">{fieldLabel(focus, t, locale.intl)}</p>
+          <p class="hero__unit-detail">{fieldParts(focus, t, locale.intl).detail}</p>
+        </div>
+
+        <dl class="hero__rail-facts">
+          <div>
+            <dt>Product status</dt>
+            <dd>In development</dd>
+          </div>
+          <div>
+            <dt>Evidence</dt>
+            <dd>Hypothetical</dd>
+          </div>
+          <div>
+            <dt>Confidence</dt>
+            <dd>Not assessed</dd>
+          </div>
+        </dl>
+
+        <p class="hero__rail-note">
+          Field Profitability is the current first product focus. The production-unit grammar is designed to transfer beyond crops without forcing every farm into a per-hectare model.
+        </p>
+      </aside>
+
+      <div class="hero__copy">
+        <p class="eyebrow">{variant.eyebrow}</p>
+        <h1 id="hero-title" class="hero__title">{variant.headline}</h1>
+        <p class="hero__support">{variant.support}</p>
+      </div>
+
+      <aside class="hero__state" aria-label="Illustrative economic state">
+        <EvidenceLabel meta={example.meta} />
+        <div class="hero__state-main">
+          <p class="operational-label">{t.metrics.operating_profit}</p>
+          <Metric value={perHa('operating_profit', focus.economics.operatingProfitPerHa)} size="l" signal />
+          <p class="hero__state-period">{fieldLabel(focus, t, locale.intl)} · one season</p>
+        </div>
+        <dl class="hero__state-context">
+          <div>
+            <dt>{t.metrics.yield}</dt>
+            <dd><Metric value={yieldValue} /></dd>
+          </div>
+          <div>
+            <dt>{t.metrics.price}</dt>
+            <dd><Metric value={priceValue} /></dd>
+          </div>
+          <div>
+            <dt>{t.metrics.operating_costs}</dt>
+            <dd><Metric value={perHa('operating_costs', focus.economics.operatingCostsPerHa)} /></dd>
+          </div>
+        </dl>
+        <p class="hero__decision-label">{proofLabels.decision}</p>
+        <p class="hero__decision">{proofLabels.question}</p>
+        <SourceLine meta={example.meta} period={example.period} records={proofLabels.records} />
+      </aside>
+
+      <div class="hero__actions">
+        <a class="button button--primary" href={href(primary)}>{primary.label}</a>
+        <a class="button button--secondary" href={href(secondary)}>{secondary.label}</a>
+      </div>
+
+      <div class="hero__image">
+        <ImageSlot caption={image.caption} requirement={image.requirement} aspect="16/9" />
+      </div>
+
+      <div class="hero__summary">
+        <slot name="summary" />
+      </div>
     </div>
   </div>
 </section>
@@ -63,72 +140,212 @@ const href = (cta: Cta) => (cta.href.startsWith('#') ? cta.href : localePath(loc
 <style>
   @layer components {
     .hero {
-      padding-block: clamp(2rem, 1.2rem + 3.5vw, 5rem) clamp(3rem, 2rem + 4vw, 6rem);
+      padding-block: var(--space-5) clamp(3rem, 2rem + 4vw, 6rem);
       container-type: inline-size;
     }
-    .hero__grid {
+
+    .hero__frame {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: var(--space-6);
+      border: 1px solid var(--color-line-strong);
+      background: var(--color-surface);
     }
+
+    .hero__copy,
+    .hero__state,
+    .hero__rail,
+    .hero__actions,
+    .hero__image,
+    .hero__summary {
+      min-width: 0;
+    }
+
     .hero__copy {
       display: grid;
       gap: var(--space-4);
-      align-content: start;
+      padding: clamp(1.5rem, 1rem + 3vw, 3.75rem);
+      border-block-end: 1px solid var(--color-line-strong);
     }
+
     .hero__title {
-      font-size: var(--text-display);
-      max-width: 17ch;
+      max-width: 14ch;
+      font-size: clamp(2.65rem, 1.65rem + 4vw, 5.75rem);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
     }
+
     .hero__support {
+      max-width: 39rem;
+      color: var(--color-text-secondary);
       font-size: var(--text-lead);
       line-height: 1.5;
+    }
+
+    .hero__state {
+      display: grid;
+      gap: var(--space-5);
+      padding: var(--space-5);
+      border-block-end: 1px solid var(--color-line-strong);
+      background: var(--color-production-surface);
+    }
+
+    .hero__state-main {
+      display: grid;
+      gap: var(--space-2);
+      padding-block: var(--space-3) var(--space-5);
+    }
+
+    .hero__state-main :global(.metric--l) {
+      font-size: clamp(3.75rem, 2.6rem + 6vw, 7.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.065em;
+    }
+
+    .hero__state-period,
+    .hero__rail-note {
       color: var(--color-text-secondary);
-      max-width: 34rem;
+      font-size: var(--text-caption);
+      line-height: 1.5;
     }
-    .hero__card,
-    .hero__image {
-      max-width: 34rem;
+
+    .hero__state-context,
+    .hero__rail-facts {
+      display: grid;
+      border-block-start: 1px solid var(--color-line);
     }
+
+    .hero__state-context > div,
+    .hero__rail-facts > div {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-3);
+      align-items: baseline;
+      padding-block: var(--space-3);
+      border-block-end: 1px solid var(--color-line);
+    }
+
+    .hero__state-context dt,
+    .hero__rail-facts dt {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-caption);
+      line-height: 1.35;
+    }
+
+    .hero__state-context dd,
+    .hero__rail-facts dd {
+      text-align: end;
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+    }
+
+    .hero__decision-label {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+
+    .hero__decision {
+      max-width: 25rem;
+      font-size: var(--text-subsection);
+      font-weight: var(--weight-strong);
+      line-height: 1.25;
+    }
+
     .hero__actions {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-3);
+      padding: var(--space-5);
+      border-block-end: 1px solid var(--color-line-strong);
     }
+
+    .hero__rail {
+      display: grid;
+      gap: var(--space-5);
+      padding: var(--space-5);
+      border-block-end: 1px solid var(--color-line-strong);
+      background: var(--color-production-rail);
+    }
+
+    .hero__rail-top {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .hero__unit {
+      font-weight: var(--weight-strong);
+      line-height: 1.25;
+    }
+
+    .hero__unit-detail {
+      color: var(--color-text-secondary);
+      font-size: var(--text-caption);
+    }
+
+    .operational-label {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+
+    .hero__image {
+      padding: var(--space-5);
+      border-block-end: 1px solid var(--color-line-strong);
+    }
+
+    .hero__summary {
+      padding: var(--space-5);
+    }
+
     .hero__summary:empty {
       display: none;
     }
+
     @container (min-width: 62rem) {
-      .hero__grid {
-        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-        grid-template-rows: auto auto 1fr;
+      .hero__frame {
+        grid-template-columns: minmax(12rem, 2.1fr) minmax(0, 6.2fr) minmax(19rem, 3.7fr);
         grid-template-areas:
-          'copy card'
-          'actions card'
-          'summary image';
-        column-gap: var(--space-8);
-        row-gap: var(--space-6);
+          'rail copy state'
+          'rail actions state'
+          'rail image image'
+          'rail summary summary';
       }
+
+      .hero__rail {
+        grid-area: rail;
+        align-content: space-between;
+        border-block-end: 0;
+        border-inline-end: 1px solid var(--color-line-strong);
+      }
+
       .hero__copy {
         grid-area: copy;
-        padding-block-start: var(--space-5);
+        border-inline-end: 1px solid var(--color-line-strong);
       }
-      .hero__card {
-        grid-area: card;
-        max-width: none;
+
+      .hero__state {
+        grid-area: state;
+        border-block-end: 1px solid var(--color-line-strong);
       }
+
       .hero__actions {
         grid-area: actions;
-        align-self: start;
+        border-inline-end: 1px solid var(--color-line-strong);
       }
-      .hero__summary {
-        grid-area: summary;
-        align-self: start;
-      }
+
       .hero__image {
         grid-area: image;
-        max-width: none;
-        margin-inline-start: 14%;
+      }
+
+      .hero__summary {
+        grid-area: summary;
       }
     }
   }
