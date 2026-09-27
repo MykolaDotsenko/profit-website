@@ -1,10 +1,9 @@
 ---
 /**
- * Section frame with an editorial heading. Layout and tone vary so the page does not repeat
- * one "headline + cards" template (Blueprint §7 Layout).
+ * B2 production-section frame. Headings behave like operational rails beside the content
+ * on wide screens, keeping the site closer to real production records than generic SaaS cards.
  *
- * WWW-001 warning: this foundation section grammar must not be imposed on all independent
- * art-direction prototypes; composition is part of the hypothesis under test.
+ * The art direction is provisional and remains reversible after farmer validation.
  */
 import type { SectionIntro } from '../content/types';
 
@@ -45,11 +44,8 @@ const headingId = intro.id ? `${intro.id}-title` : undefined;
     /* Containers, so layouts respond to available space in rem: enlarged text collapses columns. */
     .section {
       padding-block: var(--space-section);
+      border-block-start: 1px solid var(--color-line-strong);
       container: section / inline-size;
-    }
-    .section + .section--default,
-    .section--default + .section--default {
-      border-block-start: 1px solid var(--color-line);
     }
     .section--sunken {
       background: var(--color-surface-sunken);
@@ -70,6 +66,7 @@ const headingId = intro.id ? `${intro.id}-title` : undefined;
       display: grid;
       gap: var(--space-3);
       align-content: start;
+      min-width: 0;
     }
     .section__title {
       font-size: var(--text-section);
@@ -88,12 +85,21 @@ const headingId = intro.id ? `${intro.id}-title` : undefined;
     }
     @container section (min-width: 62rem) {
       .section--split .section__inner {
-        grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-        gap: var(--space-7);
+        grid-template-columns: minmax(12rem, 3fr) minmax(0, 9fr);
+        gap: 0;
+        border: 1px solid var(--color-line-strong);
+        background: var(--color-surface);
       }
       .section--split .section__head {
         position: sticky;
         top: var(--space-6);
+        align-self: start;
+        padding: var(--space-5);
+        border-inline-end: 1px solid var(--color-line-strong);
+        background: var(--color-production-rail);
+      }
+      .section--split .section__body {
+        padding: var(--space-5);
       }
     }
   }
