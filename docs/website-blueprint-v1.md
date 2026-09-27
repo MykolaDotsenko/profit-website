@@ -1038,15 +1038,26 @@ Do not use different copy + different art direction + different motion in one ea
 
 ### Decision status
 
-No production winner is selected.
+**B2 — Production Unit Grammar is the provisional production art direction.**
 
-Current research prior:
+This is an implementation decision under current evidence, not a farmer-validated winner.
 
-- **A — Evidence-Led Editorial** currently has the strongest theoretical fit with farmer comprehension + calibrated trust.
-- **B — Farm Operations Layer** is the strongest challenger because it may explain the farm → data mechanism more immediately.
-- **C — Economic Control Room** remains a useful counterfactual because it may communicate product seriousness, but carries the highest accounting/ERP confusion risk.
+The selected master grammar is:
 
-This ordering is **not farmer evidence** and must not affect prototype fidelity, participant framing or test effort.
+**production unit → context / records → economics → evidence / confidence → farmer decision**
+
+Why B2 is selected now:
+- strongest connection to real agricultural production;
+- strongest cross-domain transfer after removing field geometry as the invariant;
+- lower generic editorial/consultancy risk than A2;
+- lower ERP/accounting/dashboard-maturity risk than C2;
+- strongest anti-AI-sameness potential because the visual logic comes from PROFIT’s operating model rather than a fashionable layout.
+
+A2 and C2 remain documented challengers.
+
+Human validation remains open. Reconsider B2 if target users repeatedly classify it as GIS/telemetry, if the production-unit grammar does not transfer beyond crops, or if another direction materially outperforms it on farmer comprehension + calibrated trust.
+
+Decision record: `docs/decisions/0003-provisional-b2-production-unit-art-direction.md`.
 
 ### What current external research materially changes
 
