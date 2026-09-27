@@ -21,7 +21,7 @@ export const en: UIStrings = {
     label: 'Footer',
     tagline: 'PROFIT connects what happens on the farm with what it means economically.',
     evidenceNote:
-      'Every figure on this site is a hypothetical example unless it is labelled otherwise. Evidence is labelled Hypothetical, Modelled, Observed, Attributed or Verified.',
+      'PROFIT economic and value examples are labelled by evidence state and confidence. Sourced external statistics are identified separately and are not customer results.',
     groups: [
       {
         title: 'PROFIT',
@@ -50,7 +50,7 @@ export const en: UIStrings = {
   status: {
     previewLabel: 'Preview build',
     previewText:
-      'Not a launched site. The headline is an untested hypothesis, and every figure is a hypothetical example.',
+      'Not a launched site. The headline is an untested hypothesis. Illustrative PROFIT economics are labelled Hypothetical; sourced external statistics are identified separately.',
     gapLabel: 'Input needed',
     reviewLabel: 'Draft for review',
     imagePending: 'Image pending',
