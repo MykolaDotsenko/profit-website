@@ -12,6 +12,8 @@ Purpose: give AI agents the smallest reliable context required to work on the PR
 6. [Website Strategy](../website-strategy.md) — strategic rationale
 7. [Decision Records](../decisions/README.md) — durable rationale for material decisions
 8. [100-Point Release Quality Contract](../release/website-100-scorecard.md) — auditable final Definition of Done
+9. [Release Evidence Registry](../release/website-evidence-registry.json) — current binary PASS/BLOCKED state and strict score
+10. [100/100 Closure Pack](../release/website-100-closure-pack.md) — remaining evidence actions
 
 ## Context-loading rule
 
@@ -41,7 +43,7 @@ The research archive is deliberately not the default AI context. This reduces:
 | Signature prototype | Prototype README → Modern Visual Effects |
 | Strategic rationale | Website Strategy → relevant research only |
 | Task sequencing / dependencies | Implementation Plan → Blueprint |
-| Final release quality / 100-point assessment | 100-Point Release Quality Contract → release gates → exact-SHA CI evidence |
+| Final release quality / 100-point assessment | Release Evidence Registry → 100-Point Release Quality Contract → release gates → exact-SHA CI evidence |
 | Material architecture/product decision | Decision Records policy → Blueprint/Strategy → relevant evidence |
 | Website code (Build Pass 01) | [README Website section](../../README.md) → ADR 0002 → Blueprint |
 
