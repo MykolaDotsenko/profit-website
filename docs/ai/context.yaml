@@ -240,16 +240,16 @@ routes:
     security: "Split from /trust only when content depth/customer requirements justify it."
 
 hero_validation:
-  status: "open human-validation hypothesis; H3 is the provisional development default from a statistical/product-truth surrogate audit, not a production winner"
+  status: "open human-validation hypothesis; H4 is the reversible development default from an owner-directed 2026-09-27 message refinement, not a production winner"
   experiment_protocol: "docs/experiments/hero-message-test-v1.md"
   stimulus: "prototypes/hero-message-test/"
-  instrument_status: "drafted; test candidates are v2; D1-D4 settled; a Finnish statistical surrogate has calibrated the scenario and resolved placeholder plausibility; H3 is a provisional development default only; human cohort/comprehension validation remains open and the controlled test is not approved to run/freeze until the human/research/asset gates are available"
-  candidate_set: "v2 (product-truth-safe, 2026-09-26); v1 superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1"
+  instrument_status: "drafted; the controlled WWW-000 instrument still contains H1/H2/H3 v2; D1-D4 settled; a Finnish statistical surrogate calibrated the scenario; H4 was added later as a development hypothesis and requires an explicit protocol/stimulus revision before controlled testing; human cohort/comprehension validation remains open"
+  candidate_set: "H1/H2/H3 v2 remain the existing controlled set; H4 Economic decision clarity is a 2026-09-27 development hypothesis outside the current three-way instrument; no hero candidate has farmer evidence"
   surrogate_validation:
     source: "docs/experiments/www-000-statistical-surrogate-v1.md"
     status: "completed as risk-reduction evidence; not farmer evidence"
     calibrated_example: "Finnish Luke 2025 crop production/area + 2025 producer price + 2024 EconomyDoctor cereal-farm cost scale"
-    provisional_default: "H3 v2 — selected for development because it has the lowest current claim-risk and strongest Field Profitability semantic alignment; no comprehension winner claim"
+    provisional_default: "H4 — See the economics before you decide. Owner-directed development default; not covered by the earlier surrogate, no farmer evidence, no comprehension-winner claim"
     remaining_open: ["farmer 10-second comprehension", "category interpretation", "trust response", "Finnish language nuance", "CTA relevance", "documentary-asset response"]
   scope: "Field Profitability wedge message only; not a master-brand positioning test; results must not redefine PROFIT as field-crop-only (company_context.scope_boundary.extensibility)"
   product_truth_reference: "field_profitability_reference (Blueprint section 2.2); WWW-000 v2 check in hero-message-test-v1.md section 4.4"
@@ -263,6 +263,7 @@ hero_validation:
     H1: "Economic visibility / farmer job first"
     H2: "Decision intelligence / decision-context first (v2; v1 was the current control)"
     H3: "Field Profitability / product proof first"
+    H4: "Economic decision clarity / farmer control first — development candidate, not yet in the three-way controlled instrument"
   first_test:
     cohort: "9-12 crop decision-makers from one Market A cohort (provisionally Finland, Southwest Finland, Finnish; international_validation.market_A); not pooled with other markets; qualitative elimination; no statistical-winner claim"
     method: "same neutral static scaffold; every participant evaluates H1/H2/H3 in counterbalanced order; Phase A: fixed 10 s exposure + open recall only, for all three; Phase B: second viewing + probes in the same order; Phase C: comparison"

@@ -1,7 +1,8 @@
 # PROFIT Hero Message Test v1 — WWW-000
 
 Status: **Draft — operationally prepared, not approved to run.**
-- Test candidates: **H1/H2/H3 v2** (Blueprint §5). The v1 set was superseded before farmer testing by the product-truth gate (§4.1a).
+- Controlled test candidates remain **H1/H2/H3 v2** (Blueprint §5). The v1 set was superseded before farmer testing by the product-truth gate (§4.1a).
+- **H4 — Economic decision clarity** was added on 2026-09-27 as an owner-directed development candidate. It has no farmer evidence and is not automatically admitted to this three-way instrument; a protocol/stimulus revision is required before testing it.
 - D1–D4 are settled, including PT-1/PT-2.
 - D5–D8 operational checklists are prepared in `docs/experiments/www-000-preflight-pack-v1.md`, but the human gates remain open.
 - Before freeze: Finland's recruitment gate must pass; D5 Market Cohort Specification must be confirmed, then D6 market-specific scenario validation, D7 research-data/consent process and the D8 controlled documentary asset must be resolved (§2, Blueprint §2.3).
@@ -13,7 +14,7 @@ Stimulus: `prototypes/hero-message-test/`
 Canonical basis:
 - `docs/website-blueprint-v1.md`:
   - §2.2 Field Profitability product-truth boundary;
-  - §5 01 Hero: durable rules, product-truth gate, H1/H2/H3 v1 history and v2 candidates, hero decision rule;
+  - §5 01 Hero: durable rules, product-truth gate, H1/H2/H3 v1 history and v2 candidates, H4 development hypothesis, hero decision rule;
   - §8;
   - §11;
   - §17 hero farmer-test protocol: Round 1 phases, hero kill criteria and counting rules;
@@ -30,6 +31,7 @@ Which hero **message** directions survive, which need rewriting and which should
 - **H1 v2** — Economic visibility / farmer job first
 - **H2 v2** — Decision intelligence / decision-context first
 - **H3 v2** — Field Profitability / product proof first
+- **H4** — Economic decision clarity / farmer control first — **development candidate only; not currently in this controlled three-way instrument**
 
 The v1 candidates were superseded **before any farmer session** by the product-truth gate (§4.1a). No farmer evidence exists for them, and the rewrite is not a test result.
 
@@ -42,6 +44,8 @@ This test does **not** decide the art direction, final headline wording, the cat
 - Nothing in the stimulus or the session presents horticulture, greenhouse or livestock directions as available products.
 
 Only the surviving message(s) feed WWW-001. No H direction is a winner before this test is run and analysed.
+
+**H4 protocol boundary:** the coded website may use H4 as a reversible pre-launch development default, but that implementation is not validation. Before H4 can be compared in WWW-000, decide whether to replace one existing direction or redesign the instrument as a four-candidate counterbalanced test; document that decision before stimulus freeze.
 
 ## 2. Decisions and pre-freeze requirements
 

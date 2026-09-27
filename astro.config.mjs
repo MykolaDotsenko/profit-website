@@ -18,8 +18,8 @@ export default defineConfig({
   },
   env: {
     schema: {
-      // Which WWW-000 v2 hero candidate the homepage shows. All three are untested hypotheses.
-      HERO_VARIANT: envField.enum({ context: 'server', access: 'public', values: ['h1', 'h2', 'h3'], optional: true }),
+      // Which hero message hypothesis the homepage shows. H1-H3 are WWW-000 v2; H4 is the owner-directed development candidate.
+      HERO_VARIANT: envField.enum({ context: 'server', access: 'public', values: ['h1', 'h2', 'h3', 'h4'], optional: true }),
       // Shows the preview banner and "input needed" notes. Keep on until the content gaps are closed.
       SHOW_CONTENT_STATUS: envField.boolean({ context: 'server', access: 'public', default: true }),
       // Pre-launch builds ask search engines not to index them.

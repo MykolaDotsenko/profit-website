@@ -7,14 +7,13 @@ import type { HeroVariantId } from '../content/types';
 import { assertReleaseConfiguration } from './release';
 
 /**
- * Provisional development default: H3 v2.
+ * Provisional development default: H4.
  *
- * A statistics/product-truth surrogate audit found H3 has the lowest current claim-risk and the
- * strongest semantic alignment with the documented Field Profitability boundary. This is NOT
- * farmer evidence and NOT a test winner. H1/H2/H3 remain WWW-000 hypotheses.
- * See docs/experiments/www-000-statistical-surrogate-v1.md.
+ * H4 is an owner-directed economic-decision clarity candidate added after the H1/H2/H3
+ * statistical surrogate. It has no farmer evidence and is not a test winner. The release gate
+ * remains blocked until human validation. H1/H2/H3 remain selectable unchanged.
  */
-const DEFAULT_HERO: HeroVariantId = 'h3';
+const DEFAULT_HERO: HeroVariantId = 'h4';
 const pilotFormEndpoint = PILOT_FORM_ENDPOINT ?? null;
 
 assertReleaseConfiguration({
