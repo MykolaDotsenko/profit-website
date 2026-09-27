@@ -175,6 +175,7 @@ const decisionSupportSteps = [
 ] as const;
 
 export const farmers = {
+  onPageLabel: 'On this page',
   meta: {
     title: 'For farmers',
     description: 'How PROFIT is being built across crop, horticulture and livestock production — including realistic data collection, quality checks and Field Profitability as the first concrete focus.',
@@ -239,6 +240,7 @@ export const farmers = {
 };
 
 export const product = {
+  onPageLabel: 'On this page',
   meta: {
     title: 'Field Profitability',
     description: 'PROFIT’s first module: the operating economics of each field, season by season. In development and not yet available.',
