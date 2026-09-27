@@ -1,0 +1,140 @@
+---
+interface Row {
+  topic: string;
+  before: string;
+  after: string;
+}
+
+interface Props {
+  title: string;
+  leftLabel: string;
+  rightLabel: string;
+  rows: readonly Row[];
+  note: string;
+}
+
+const { title, leftLabel, rightLabel, rows, note } = Astro.props;
+---
+
+<div class="decision-change">
+  <div class="decision-change__head">
+    <p class="eyebrow">{title}</p>
+  </div>
+  <div class="decision-change__labels" aria-hidden="true">
+    <span>{leftLabel}</span>
+    <span>{rightLabel}</span>
+  </div>
+  <dl class="decision-change__rows">
+    {rows.map((row) => (
+      <div class="decision-change__row">
+        <dt>{row.topic}</dt>
+        <dd class="decision-change__before">
+          <span class="decision-change__mobile-label">{leftLabel}</span>
+          {row.before}
+        </dd>
+        <dd class="decision-change__after">
+          <span class="decision-change__mobile-label">{rightLabel}</span>
+          {row.after}
+        </dd>
+      </div>
+    ))}
+  </dl>
+  <p class="decision-change__note">{note}</p>
+</div>
+
+<style>
+  @layer components {
+    .decision-change {
+      margin-block-start: var(--space-8);
+      border: 1px solid var(--color-line-strong);
+      background: var(--color-surface);
+    }
+    .decision-change__head {
+      padding: var(--space-4) var(--space-5);
+      border-block-end: 1px solid var(--color-line-strong);
+      background: var(--color-production-rail);
+    }
+    .decision-change__labels {
+      display: none;
+    }
+    .decision-change__rows {
+      display: grid;
+    }
+    .decision-change__row {
+      display: grid;
+      gap: 0;
+    }
+    .decision-change__row + .decision-change__row {
+      border-block-start: 1px solid var(--color-line);
+    }
+    .decision-change__row dt,
+    .decision-change__row dd {
+      min-width: 0;
+      padding: var(--space-4) var(--space-5);
+      margin: 0;
+    }
+    .decision-change__row dt {
+      background: var(--color-production-rail);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+    .decision-change__before,
+    .decision-change__after {
+      color: var(--color-text-secondary);
+      font-size: var(--text-small);
+      line-height: 1.5;
+    }
+    .decision-change__after {
+      background: var(--color-production-surface);
+      color: var(--color-text);
+    }
+    .decision-change__mobile-label {
+      display: block;
+      margin-block-end: var(--space-2);
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+    .decision-change__note {
+      padding: var(--space-4) var(--space-5);
+      border-block-start: 1px solid var(--color-line-strong);
+      color: var(--color-text-secondary);
+      font-size: var(--text-caption);
+      line-height: 1.5;
+    }
+    @media (min-width: 54rem) {
+      .decision-change__labels {
+        display: grid;
+        grid-template-columns: minmax(12rem, 2.5fr) repeat(2, minmax(0, 4.75fr));
+        border-block-end: 1px solid var(--color-line);
+      }
+      .decision-change__labels::before {
+        content: '';
+      }
+      .decision-change__labels span {
+        padding: var(--space-3) var(--space-5);
+        font-family: var(--font-label);
+        font-size: var(--text-label);
+        font-weight: var(--weight-strong);
+        letter-spacing: var(--tracking-label);
+        text-transform: uppercase;
+      }
+      .decision-change__labels span + span,
+      .decision-change__row dd {
+        border-inline-start: 1px solid var(--color-line);
+      }
+      .decision-change__row {
+        grid-template-columns: minmax(12rem, 2.5fr) repeat(2, minmax(0, 4.75fr));
+      }
+      .decision-change__mobile-label {
+        display: none;
+      }
+    }
+  }
+</style>
