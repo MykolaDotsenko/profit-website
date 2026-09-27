@@ -40,7 +40,7 @@ const visible = Boolean(image) || site.showContentStatus;
             decoding="async"
           />
         ) : (
-          <div class="team-portrait__placeholder" role="img" aria-label={requirement}>
+          <div class="team-portrait__placeholder" role="img" aria-label={`${name}: ${requirement}`}>
             <span aria-hidden="true">{initials}</span>
           </div>
         )
