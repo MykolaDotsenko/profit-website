@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.0",
+  "title": "PROFIT Website Release Evidence Registry",
+  "date": "2026-09-27",
+  "scoring": {
+    "points_per_pass": 2,
+    "blocked_points": 0,
+    "expected_criteria": 50,
+    "expected_max_points": 100,
+    "current_pass_criteria": 31,
+    "current_score": 62,
+    "rule": "Only PASS earns points. BLOCKED remains 0 until the criterion's own required evidence exists."
+  },
+  "criteria": [
+    {
+      "id": "FC-01",
+      "status": "blocked",
+      "evidence": [],
+      "blocker": "No target-farmer 5–10 second open-recall evidence exists for the public hero.",
+      "closure_action": "Run WWW-000 with 9–12 target farmers; record open recall, material misclassifications and the surviving public message."
+    },
+    {
+      "id": "FC-02",
+      "status": "pass",
+      "evidence": [
+        "docs/website-blueprint-v1.md",
+        "src/pages/index.astro",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "FC-03",
+      "status": "pass",
+      "evidence": [
+        "src/content/en/home.ts",
+        "src/content/en/shared.ts",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "FC-04",
+      "status": "pass",
+      "evidence": [
+        "src/content/en/home.ts",
+        "src/content/en/pages.ts",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "FC-05",
+      "status": "blocked",
+      "evidence": [
+        "tests/browser/site.spec.ts"
+      ],
+      "blocker": "CTA/form mechanics are proven, but the criterion also requires target-farmer evidence that the next action is understood.",
+      "closure_action": "Add next-action comprehension to WWW-000 and record the result."
+    },
+    {
+      "id": "PT-01",
+      "status": "pass",
+      "evidence": [
+        "src/content/en/shared.ts",
+        "src/content/en/pages.ts",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "PT-02",
+      "status": "pass",
+      "evidence": [
+        "src/domain/economics.ts",
+        "tests/domain.test.ts"
+      ]
+    },
+    {
+      "id": "PT-03",
+      "status": "pass",
+      "evidence": [
+        "docs/experiments/www-000-statistical-surrogate-v1.md",
+        "src/content/examples/field-season.ts",
+        "tests/domain.test.ts",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "PT-04",
+      "status": "blocked",
+      "evidence": [
+        "docs/experiments/www-000-statistical-surrogate-v1.md"
+      ],
+      "blocker": "The calibrated example has statistical plausibility evidence but no Market-A human domain/economic sign-off.",
+      "closure_action": "Have a Finnish/Market-A crop-economics reviewer validate values, units, allocation interpretation and terminology; record reviewer/date/conclusion."
+    },
+    {
+      "id": "PT-05",
+      "status": "pass",
+      "evidence": [
+        "src/content/en/shared.ts",
+        "src/content/en/pages.ts",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "EV-01",
+      "status": "pass",
+      "evidence": [
+        "docs/methodology/vev-standard-v1.md",
+        "src/domain/vev.ts",
+        "tests/domain.test.ts"
+      ]
+    },
+    {
+      "id": "EV-02",
+      "status": "pass",
+      "evidence": [
+        "docs/methodology/vev-standard-v1.md",
+        "src/domain/evidence.ts",
+        "src/i18n/en.ts"
+      ]
+    },
+    {
+      "id": "EV-03",
+      "status": "pass",
+      "evidence": [
+        "docs/methodology/vev-standard-v1.md",
+        "src/config/release.ts"
+      ]
+    },
+    {
+      "id": "EV-04",
+      "status": "pass",
+      "evidence": [
+        "docs/methodology/vev-standard-v1.md",
+        "src/content/en/shared.ts",
+        "src/pages/trust.astro"
+      ]
+    },
+    {
+      "id": "EV-05",
+      "status": "pass",
+      "evidence": [
+        "scripts/validate_claim_hygiene.mjs",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "TD-01",
+      "status": "blocked",
+      "evidence": [
+        "docs/legal/pilot-privacy-notice-template-v1.md",
+        "docs/legal/privacy-data-policy-decisions-v1.md"
+      ],
+      "blocker": "The privacy notice still lacks controller/contact facts, actual processors/transfers/security facts, jurisdiction-specific rights/complaint wording and formal legal approval.",
+      "closure_action": "Resolve all bracketed facts in the privacy template, perform controller-specific legal review, publish the approved notice and link it at collection time."
+    },
+    {
+      "id": "TD-02",
+      "status": "blocked",
+      "evidence": [
+        "docs/legal/pilot-farm-data-terms-template-v1.md",
+        "docs/legal/privacy-data-policy-decisions-v1.md"
+      ],
+      "blocker": "Farm-data defaults are decided but final terms still lack actual infrastructure/processors/security responsibilities and formal contractual/legal approval.",
+      "closure_action": "Resolve infrastructure facts, complete contractual wording, obtain legal approval and make terms available before any farm records are requested."
+    },
+    {
+      "id": "TD-03",
+      "status": "pass",
+      "evidence": [
+        "docs/legal/privacy-data-policy-decisions-v1.md",
+        "src/content/en/pages.ts",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "TD-04",
+      "status": "pass",
+      "evidence": [
+        "src/components/PilotForm.astro",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "TD-05",
+      "status": "blocked",
+      "evidence": [
+        "docs/legal/privacy-data-policy-decisions-v1.md",
+        "scripts/validate_claim_hygiene.mjs"
+      ],
+      "blocker": "A final legal/engineering claim audit cannot pass until production providers, security controls and approved policy text are known.",
+      "closure_action": "At release candidate, compare every privacy/security claim against deployed providers, implemented controls and approved legal text; record sign-off."
+    },
+    {
+      "id": "CC-01",
+      "status": "blocked",
+      "evidence": [],
+      "blocker": "Legal company identity and required publication details are not confirmed in the repository.",
+      "closure_action": "Provide authoritative legal entity name, registration/business ID, jurisdiction and required registered/public address/contact facts; cross-check against the official registry."
+    },
+    {
+      "id": "CC-02",
+      "status": "blocked",
+      "evidence": [
+        "docs/operations/pilot-intake-runbook-v1.md"
+      ],
+      "blocker": "Pilot replies have an owner, but a confirmed public direct-contact path for investors/partners/general enquiries is not available.",
+      "closure_action": "Configure a monitored direct-contact address/path, publish it and perform a send/receive smoke test."
+    },
+    {
+      "id": "CC-03",
+      "status": "blocked",
+      "evidence": [
+        "src/content/en/shared.ts",
+        "src/components/TeamCapabilities.astro"
+      ],
+      "blocker": "Team capability copy exists, but each published member has not supplied explicit final wording/profile/photo consent.",
+      "closure_action": "Obtain one recorded confirmation per member covering name, role, expertise wording, links, photo use and permission to publish."
+    },
+    {
+      "id": "CC-04",
+      "status": "pass",
+      "evidence": [
+        "src/content/en/shared.ts",
+        "src/components/TeamCapabilities.astro",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "CC-05",
+      "status": "pass",
+      "evidence": [
+        "scripts/validate_claim_hygiene.mjs",
+        "src/content/en/pages.ts"
+      ]
+    },
+    {
+      "id": "BD-01",
+      "status": "blocked",
+      "evidence": [
+        "docs/experiments/art-direction-farmer-test-v1.md",
+        "docs/experiments/art-direction-internal-red-team-v1.md"
+      ],
+      "blocker": "B2 has internal/red-team evidence but no completed target-farmer art-direction validation.",
+      "closure_action": "Run the canonical B2 farmer test; record comprehension, trust and dashboard/accounting/GIS misclassification patterns against kill criteria."
+    },
+    {
+      "id": "BD-02",
+      "status": "blocked",
+      "evidence": [],
+      "blocker": "No approved real agricultural documentary asset with recorded rights/provenance exists.",
+      "closure_action": "Supply at least one real agriculture image with source, rights/permission, context and allowed use/crops; add provenance record and render it through the production image system."
+    },
+    {
+      "id": "BD-03",
+      "status": "pass",
+      "evidence": [
+        "docs/website-blueprint-v1.md",
+        "src/styles/global.css",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "BD-04",
+      "status": "pass",
+      "evidence": [
+        "src/content/en/shared.ts",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "BD-05",
+      "status": "pass",
+      "evidence": [
+        "docs/homepage-content-brief-v1.md",
+        "src/pages/index.astro",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "CP-01",
+      "status": "pass",
+      "evidence": [
+        "docs/operations/pilot-intake-runbook-v1.md",
+        "src/config/release.ts"
+      ]
+    },
+    {
+      "id": "CP-02",
+      "status": "pass",
+      "evidence": [
+        "src/components/PilotForm.astro",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "CP-03",
+      "status": "blocked",
+      "evidence": [
+        "src/config/release.ts",
+        "src/components/PilotForm.astro"
+      ],
+      "blocker": "Production form delivery is intentionally disabled until privacy-notice and company-details gates are READY.",
+      "closure_action": "After privacy/company gates close, configure the production endpoint, verify server-side validation/delivery/failure behavior and perform an end-to-end delivery smoke test."
+    },
+    {
+      "id": "CP-04",
+      "status": "pass",
+      "evidence": [
+        "src/components/PilotForm.astro",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "CP-05",
+      "status": "pass",
+      "evidence": [
+        "src/content/en/pages.ts",
+        "scripts/validate_claim_hygiene.mjs"
+      ]
+    },
+    {
+      "id": "AR-01",
+      "status": "pass",
+      "evidence": [
+        "tests/browser/site.spec.ts",
+        ".github/workflows/site-verify.yml"
+      ]
+    },
+    {
+      "id": "AR-02",
+      "status": "blocked",
+      "evidence": [
+        "tests/browser/site.spec.ts"
+      ],
+      "blocker": "Automated keyboard coverage exists, but the contract explicitly requires a manual keyboard/focus and representative screen-reader sign-off.",
+      "closure_action": "Run the final release SHA using keyboard only and at least one representative screen reader; record route/interaction results and defects."
+    },
+    {
+      "id": "AR-03",
+      "status": "blocked",
+      "evidence": [
+        "tests/browser/site.spec.ts"
+      ],
+      "blocker": "Responsive widths are automated, but required manual 200%/400% zoom and WCAG reflow sign-off is not recorded.",
+      "closure_action": "Audit critical routes at required zoom/reflow settings on the release candidate and record pass/fail evidence."
+    },
+    {
+      "id": "AR-04",
+      "status": "pass",
+      "evidence": [
+        "tests/browser/site.spec.ts",
+        "src/styles/global.css"
+      ]
+    },
+    {
+      "id": "AR-05",
+      "status": "pass",
+      "evidence": [
+        "tests/browser/site.spec.ts",
+        ".github/workflows/site-verify.yml"
+      ]
+    },
+    {
+      "id": "PE-01",
+      "status": "pass",
+      "evidence": [
+        "astro.config.mjs",
+        "tests/browser/site.spec.ts"
+      ]
+    },
+    {
+      "id": "PE-02",
+      "status": "blocked",
+      "evidence": [],
+      "blocker": "No statistically meaningful production RUM exists yet; the contract keeps CWV provisional until RUM closes it.",
+      "closure_action": "Deploy the release candidate, collect sufficient mobile/desktop RUM and verify LCP ≤2.5s, INP ≤200ms and CLS ≤0.1 at p75; retain a production-equivalent lab audit before enough RUM exists."
+    },
+    {
+      "id": "PE-03",
+      "status": "pass",
+      "evidence": [
+        "tests/browser/site.spec.ts",
+        ".github/workflows/site-verify.yml"
+      ]
+    },
+    {
+      "id": "PE-04",
+      "status": "blocked",
+      "evidence": [
+        "astro.config.mjs"
+      ],
+      "blocker": "Final image/font network audit cannot be completed before the real documentary asset and production deployment exist.",
+      "closure_action": "After real assets are installed, audit formats/srcset/dimensions/loading priority/font payload/preloads and production waterfall."
+    },
+    {
+      "id": "PE-05",
+      "status": "pass",
+      "evidence": [
+        ".github/workflows/site-verify.yml",
+        "package.json"
+      ]
+    },
+    {
+      "id": "RI-01",
+      "status": "blocked",
+      "evidence": [
+        "src/config/release.ts"
+      ],
+      "blocker": "Nine public-release gates remain BLOCKED.",
+      "closure_action": "Close every release gate with its required evidence; do not override the gate mechanism."
+    },
+    {
+      "id": "RI-02",
+      "status": "pass",
+      "evidence": [
+        "src/config/release.ts",
+        "tests/domain.test.ts",
+        ".github/workflows/site-verify.yml"
+      ]
+    },
+    {
+      "id": "RI-03",
+      "status": "blocked",
+      "evidence": [
+        "astro.config.mjs",
+        "src/pages/robots.txt.ts",
+        "src/pages/sitemap-index.xml.ts",
+        "src/layouts/BaseLayout.astro"
+      ],
+      "blocker": "SEO/crawl infrastructure is implemented but cannot be verified on the actual production origin until the release candidate is deployed with a confirmed canonical domain.",
+      "closure_action": "Configure the canonical production SITE_URL, deploy the candidate, then verify canonical URLs, robots, sitemap, metadata and route status codes from the live origin."
+    },
+    {
+      "id": "RI-04",
+      "status": "blocked",
+      "evidence": [
+        "docs/operations/pilot-intake-runbook-v1.md"
+      ],
+      "blocker": "Pilot ownership exists, but website availability/privacy-request monitoring and final delivery/incident ownership are not fully operationalized.",
+      "closure_action": "Name owners for site availability, privacy requests and critical incidents; configure monitoring/notifications and perform delivery/alert smoke tests."
+    },
+    {
+      "id": "RI-05",
+      "status": "pass",
+      "evidence": [
+        "scripts/validate_ai_docs.py",
+        ".github/workflows/docs-contract.yml",
+        "docs/ai/context.yaml",
+        "docs/ai/IMPLEMENTATION_PLAN.md"
+      ]
+    }
+  ]
+}
