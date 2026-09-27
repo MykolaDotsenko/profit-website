@@ -55,6 +55,7 @@ export interface UIStrings {
     currentExample: string;
     economicState: string;
     productionContext: string;
+    brandFlow: string;
   };
   evidence: {
     exampleLabel: string;
