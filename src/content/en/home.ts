@@ -249,6 +249,7 @@ export const home = {
       'Assessed confidence reflects the data behind a value: how complete, consistent, fresh, traceable and representative it is.',
     assessedLabel: 'Assessed confidence',
     notAssessedText: 'No assessment was made. “Not assessed” is not a confidence level.',
+    currentSiteLabel: 'Current site',
     currentSiteNote: 'Nothing on this site is labelled Verified.',
     chainTitle: 'How a value would become Verified',
     chainSummary: 'Inspect the verification chain',
