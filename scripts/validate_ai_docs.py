@@ -202,9 +202,9 @@ TEXT_INVARIANTS = {
     "docs/legal/privacy-data-trust-pack.md": [
         "Production-readiness draft — legal approval required",
         "Current coded website data inventory",
-        "Legal basis | **OPEN — do not infer**",
+        "Legal basis | **PROPOSED: legitimate interests**",
         "Before accepting farm records",
-        "No secondary use, cross-customer benchmarking or model training should be implied",
+        "No secondary use, cross-customer benchmarking or model training is permitted by pilot participation alone",
         "privacy-notice` — **BLOCKED**",
         "data-terms` — **BLOCKED**",
     ],
