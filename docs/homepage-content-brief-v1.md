@@ -166,7 +166,7 @@ Answer:
 
 Do not lock hero copy until farmer testing.
 
-Current controlled candidates remain H1/H2/H3 in the canonical Blueprint.
+H1/H2/H3 remain the existing controlled WWW-000 v2 candidates. H4 — Economic decision clarity — is a reversible development hypothesis added on 2026-09-27 after the surrogate; it is not yet part of the existing three-way test instrument and does not close the message gate.
 
 ### Required first-frame meaning
 Without scrolling or animation, communicate:
@@ -218,10 +218,10 @@ Give a compact mental model before deeper content.
 Farmers and farm businesses across crop, horticulture and livestock production.
 
 **The problem**  
-The records behind an agricultural decision are often fragmented, while the economic effect is hard to see before acting.
+Production, sales and cost records are fragmented. The economic meaning behind the next decision can be hard to see.
 
-**What PROFIT does**  
-Connects production reality and farm records to explicit economic meaning.
+**The goal**  
+Less guesswork around the economics of a decision — with the farmer still in control.
 
 **First concrete product focus**  
 Field Profitability — operating economics field by field. In development.
