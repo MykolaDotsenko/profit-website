@@ -10,6 +10,7 @@ on:
       - "src/config/release.ts"
       - "src/domain/economics.ts"
       - "src/components/Metric.astro"
+      - "src/components/OnPageNav.astro"
       - "tests/browser/site.spec.ts"
       - "playwright.config.ts"
       - ".github/workflows/site-verify.yml"
