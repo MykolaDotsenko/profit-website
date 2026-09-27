@@ -100,6 +100,7 @@ export interface PilotFormContent {
   };
   submit: string;
   privacy: string;
+  privacyLink: { label: string; href: string };
   privacyReview: ContentGap;
   previewNote: string;
   errorPrefix: string;
