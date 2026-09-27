@@ -41,6 +41,18 @@ export const home = {
       requirement: 'Needs an approved photograph with source, rights and provenance. No stock or synthetic images.',
     },
   },
+  journey: {
+    label: 'On this page',
+    items: [
+      { index: '01', label: 'Production systems', href: '#production-systems' },
+      { index: '02', label: 'Field economics', href: '#example' },
+      { index: '03', label: 'Farmer questions', href: '#questions' },
+      { index: '04', label: 'How it works', href: '#how-it-works' },
+      { index: '05', label: 'Evidence', href: '#evidence' },
+      { index: '06', label: 'Farmer control', href: '#control' },
+      { index: '07', label: 'Pilot', href: '#join' },
+    ],
+  },
   thirtySeconds: {
     title: 'PROFIT in 30 seconds',
     items: [
