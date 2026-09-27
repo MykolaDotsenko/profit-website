@@ -301,6 +301,28 @@ test.describe('B2 mobile hierarchy', () => {
   });
 });
 
+test.describe('claim and source integrity', () => {
+  test('sourced statistics stay distinct from hypothetical PROFIT economics', async ({ page }) => {
+    await page.goto('/');
+
+    const main = page.locator('main');
+    await expect(main.locator('#example')).toContainText('Hypothetical example');
+    await expect(main.locator('#production-systems')).toContainText('€531.9B');
+    await expect(main.locator('#production-systems')).toContainText('Eurostat');
+    await expect(page.locator('.preview-banner')).toContainText('Illustrative PROFIT economics are labelled Hypothetical');
+    await expect(page.locator('.preview-banner')).toContainText('sourced external statistics are identified separately');
+    await expect(page.locator('footer')).toContainText('Sourced external statistics are identified separately');
+    await expect(page.locator('body')).not.toContainText('every figure is a hypothetical example');
+  });
+
+  test('investor evidence standard does not relabel external statistics as PROFIT evidence', async ({ page }) => {
+    await page.goto('/investors/');
+    const main = page.locator('main');
+    await expect(main).toContainText('PROFIT economic and value examples carry an evidence state');
+    await expect(main).toContainText('External statistics are sourced separately');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
