@@ -10,6 +10,7 @@ on:
       - "scripts/validate_claim_hygiene.mjs"
       - "scripts/validate_website_scorecard.mjs"
       - "scripts/validate_release_evidence.mjs"
+      - "scripts/validate_deployment_contract.mjs"
       - "docs/release/website-100-scorecard.json"
       - "docs/release/website-100-scorecard.md"
       - "docs/release/website-evidence-registry.json"
@@ -19,6 +20,8 @@ on:
       - "package.json"
       - "package-lock.json"
       - "astro.config.mjs"
+      - "vercel.json"
+      - ".github/workflows/deploy-website.yml"
       - "tsconfig.json"
       - ".github/workflows/site-verify.yml"
   push:
@@ -32,6 +35,7 @@ on:
       - "scripts/validate_claim_hygiene.mjs"
       - "scripts/validate_website_scorecard.mjs"
       - "scripts/validate_release_evidence.mjs"
+      - "scripts/validate_deployment_contract.mjs"
       - "docs/release/website-100-scorecard.json"
       - "docs/release/website-100-scorecard.md"
       - "docs/release/website-evidence-registry.json"
@@ -41,6 +45,8 @@ on:
       - "package.json"
       - "package-lock.json"
       - "astro.config.mjs"
+      - "vercel.json"
+      - ".github/workflows/deploy-website.yml"
       - "tsconfig.json"
       - ".github/workflows/site-verify.yml"
 

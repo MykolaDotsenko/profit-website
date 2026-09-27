@@ -13,11 +13,12 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "node --experimental-strip-types --test tests/domain.test.ts",
-    "verify": "npm run design:check && npm run claims:check && npm run scorecard:check && npm run evidence:check && astro check && npm test && astro build",
+    "verify": "npm run design:check && npm run claims:check && npm run scorecard:check && npm run evidence:check && npm run deploy:check && astro check && npm test && astro build",
     "design:check": "node scripts/validate_design_system.mjs",
     "claims:check": "node scripts/validate_claim_hygiene.mjs",
     "scorecard:check": "node scripts/validate_website_scorecard.mjs",
-    "evidence:check": "node scripts/validate_release_evidence.mjs"
+    "evidence:check": "node scripts/validate_release_evidence.mjs",
+    "deploy:check": "node scripts/validate_deployment_contract.mjs"
   },
   "dependencies": {
     "astro": "7.3.5"

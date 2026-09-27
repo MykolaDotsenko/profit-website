@@ -1,0 +1,113 @@
+name: Deploy Website (Manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Deployment target"
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - production
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-deploy-${{ inputs.target }}
+  cancel-in-progress: false
+
+jobs:
+  verify-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ASTRO_TELEMETRY_DISABLED: "1"
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install repository dependencies
+        run: npm ci
+
+      - name: Validate deployment credentials are configured
+        shell: bash
+        run: |
+          for name in VERCEL_ORG_ID VERCEL_PROJECT_ID VERCEL_TOKEN; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Missing required GitHub Actions secret: $name"
+              exit 1
+            fi
+          done
+
+      - name: Verify preview candidate remains non-indexable
+        if: inputs.target == 'preview'
+        run: npm run verify
+        env:
+          SITE_INDEXABLE: "false"
+          SHOW_CONTENT_STATUS: "true"
+
+      - name: Verify production candidate passes every public release gate
+        if: inputs.target == 'production'
+        run: npm run verify
+        env:
+          SITE_INDEXABLE: "true"
+          SHOW_CONTENT_STATUS: "false"
+
+      - name: Pull Vercel preview environment
+        if: inputs.target == 'preview'
+        run: npx --yes vercel@59.19.1 pull --yes --environment=preview --token="$VERCEL_TOKEN"
+
+      - name: Build Vercel preview artifact
+        if: inputs.target == 'preview'
+        run: npx --yes vercel@59.19.1 build --token="$VERCEL_TOKEN"
+        env:
+          SITE_INDEXABLE: "false"
+          SHOW_CONTENT_STATUS: "true"
+
+      - name: Deploy immutable preview
+        if: inputs.target == 'preview'
+        id: preview
+        shell: bash
+        run: |
+          url="$(npx --yes vercel@59.19.1 deploy --prebuilt --token="$VERCEL_TOKEN")"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "### Preview deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "- URL: $url" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: ${GITHUB_SHA}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Indexable: no" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Pull Vercel production environment
+        if: inputs.target == 'production'
+        run: npx --yes vercel@59.19.1 pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build gated production artifact
+        if: inputs.target == 'production'
+        run: npx --yes vercel@59.19.1 build --prod --token="$VERCEL_TOKEN"
+        env:
+          SITE_INDEXABLE: "true"
+          SHOW_CONTENT_STATUS: "false"
+
+      - name: Deploy production artifact
+        if: inputs.target == 'production'
+        id: production
+        shell: bash
+        run: |
+          url="$(npx --yes vercel@59.19.1 deploy --prebuilt --prod --token="$VERCEL_TOKEN")"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "### Production deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "- URL: $url" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: ${GITHUB_SHA}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Release gates: passed before build" >> "$GITHUB_STEP_SUMMARY"
