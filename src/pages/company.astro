@@ -13,10 +13,12 @@ import ProductionScope from '../components/ProductionScope.astro';
 import Section from '../components/Section.astro';
 import TeamCapabilities from '../components/TeamCapabilities.astro';
 import { content } from '../content';
+import { localeInfo, ui } from '../i18n';
 
 const c = content(Astro.currentLocale);
 const p = c.company;
 const s = c.shared;
+const t = ui(localeInfo(Astro.currentLocale).code);
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
@@ -49,7 +51,7 @@ const s = c.shared;
   </Section>
 
   <Section intro={p.dataProcessing.intro} tone="sunken">
-    <MethodPipeline steps={p.dataProcessing.steps} ariaLabel="PROFIT data quality gates" />
+    <MethodPipeline steps={p.dataProcessing.steps} ariaLabel={t.common.dataQualityGates} />
     <p class="scope-note">{p.dataProcessing.principle}</p>
   </Section>
 
@@ -69,7 +71,7 @@ const s = c.shared;
   </Section>
 
   <Section intro={p.decisionSupport.intro}>
-    <MethodPipeline steps={p.decisionSupport.steps} ariaLabel="PROFIT decision-support architecture" />
+    <MethodPipeline steps={p.decisionSupport.steps} ariaLabel={t.common.decisionSupportArchitecture} />
     <p class="evidence-note">{p.decisionSupport.research}</p>
     <ul class="source-list" role="list">
       {p.decisionSupport.sources.map((source) => (
