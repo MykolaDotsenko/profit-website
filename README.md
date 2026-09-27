@@ -2,6 +2,16 @@
 
 Public presentation and marketing website for PROFIT.
 
+## Website
+
+**Live URL:** not published yet. The repository is release-gated and remains non-indexable until the required farmer/legal/company evidence is complete.
+
+- [Deployment & live-site runbook](docs/operations/vercel-hosting-runbook-v1.md)
+- [Strict release evidence status](docs/release/website-evidence-registry.json)
+- [100/100 closure pack](docs/release/website-100-closure-pack.md)
+
+The accepted hosting path is **Astro static → Vercel**. After the one-time Vercel project link is created, the first immutable preview URL will be recorded here; the public production URL will replace it only after every release gate is READY.
+
 ## Purpose
 
 The website exists to help farmers, investors and partners quickly understand:
