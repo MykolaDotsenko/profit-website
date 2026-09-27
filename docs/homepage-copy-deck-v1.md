@@ -7,6 +7,8 @@ Source: `docs/homepage-content-brief-v1.md`
 
 This deck is the copy source for the coded homepage.
 
+Production narrative order (owner refinement, 2026-09-27): **Hero → 30-second mental model → farmer problem → PROFIT mechanism → detailed Field Profitability proof → current product boundary → whole-farm direction → evidence → farmer control → company/team → pilot CTA.** The order is reversible pending farmer validation; it exists to keep the farmer problem and concrete wedge ahead of company breadth.
+
 It does **not** promote an untested hero candidate to a winner. H1/H2/H3 remain the existing controlled WWW-000 v2 hypotheses. H4 is a reversible owner-directed development hypothesis added after the surrogate and is not yet admitted to that controlled instrument.
 
 ---
@@ -81,89 +83,7 @@ Documentary image requirement:
 
 ---
 
-# 03 — Whole-farm scope
-
-Eyebrow:
-
-**One economic discipline · different production systems**
-
-Title:
-
-**Different farms. Different production models. The same economic discipline.**
-
-Lead:
-
-**A hectare, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd are not interchangeable. PROFIT is being built to keep each production reality specific while making its economics explicit.**
-
-Production contexts:
-
-### Arable & field crops
-**Field- and season-level economics across yield, price, inputs, machinery and allocated costs. Field Profitability is the current first concrete focus.**
-
-### Horticulture, orchards & berries
-**Block, variety, marketable yield, grade, labour, storage, losses and realised price create a different economic model from field crops.**
-
-### Vegetables & greenhouse production
-**Crop cycle, labour, energy, inputs, quality, timing and selling price shape the economics of protected and open-field production.**
-
-### Pig production
-**Feed, growth, mortality, throughput, batch performance and selling conditions shape the economics of a production cycle.**
-
-### Dairy
-**Milk production, feed, herd health, reproduction, replacement and price/cost context interact at cow, group and herd level.**
-
-### Other livestock & mixed farms
-**Beef cattle, poultry, eggs, sheep, goats and mixed farms need domain-specific production units — not a forced per-hectare model.**
-
-Boundary note:
-
-**These production systems describe the direction of the PROFIT master brand. They are not a claim that every domain is a current product. Field Profitability is the first concrete product focus.**
-
-Supporting context:
-
-**€531.9B — EU agricultural output in 2024**
-
-**€267.7B came from crops and €218.8B from animals and animal products. Gross output values, not farm profit or PROFIT market size.**
-
-Source:
-
-**Eurostat · Key figures on the European food chain 2025**
-
----
-
-# 04 — Current concrete proof
-
-Eyebrow:
-
-**Current first focus · hypothetical example**
-
-Title:
-
-**See the economics behind a field — not just the result**
-
-Lead:
-
-**Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This is a statistics-calibrated synthetic example, not a customer result.**
-
-Definition:
-
-**Operating profit = revenue − variable costs − allocated fixed costs. It is not gross margin, and not statutory net profit.**
-
-Decision question:
-
-**What would you investigate on Field 31 before changing the plan?**
-
-Decision note:
-
-**PROFIT shows the economics. The decision stays yours.**
-
-Illustrative source:
-
-**Statistics-calibrated synthetic field records · one season**
-
----
-
-# 05 — Farmer problem
+# 03 — Farmer problem
 
 Eyebrow:
 
@@ -205,7 +125,7 @@ Conclusion:
 
 ---
 
-# 06 — How PROFIT works
+# 04 — How PROFIT works
 
 Eyebrow:
 
@@ -271,7 +191,123 @@ Link:
 
 ---
 
-# 07 — Economic value & evidence
+# 05 — Current concrete proof
+
+Eyebrow:
+
+**Current first focus · hypothetical example**
+
+Title:
+
+**See the economics behind a field — not just the result**
+
+Lead:
+
+**Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This is a statistics-calibrated synthetic example, not a customer result.**
+
+Definition:
+
+**Operating profit = revenue − variable costs − allocated fixed costs. It is not gross margin, and not statutory net profit.**
+
+Decision question:
+
+**What would you investigate on Field 31 before changing the plan?**
+
+Decision note:
+
+**PROFIT shows the economics. The decision stays yours.**
+
+Illustrative source:
+
+**Statistics-calibrated synthetic field records · one season**
+
+---
+
+# 06 — Field Profitability boundary
+
+Eyebrow:
+
+**Current first product**
+
+Title:
+
+**Field Profitability**
+
+Lead:
+
+**The operating economics of each field, season by season. It is where PROFIT starts.**
+
+Status:
+
+**In development — not yet available**
+
+Subheads:
+
+**What goes in**  
+**What comes out**  
+**Not included**
+
+AI note:
+
+**AI may explain a stored result in plain language. It does not calculate the numbers.**
+
+Link:
+
+**What Field Profitability does, and does not do**
+
+---
+
+# 07 — Whole-farm scope
+
+Eyebrow:
+
+**One economic discipline · different production systems**
+
+Title:
+
+**Different farms. Different production models. The same economic discipline.**
+
+Lead:
+
+**A hectare, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd are not interchangeable. PROFIT is being built to keep each production reality specific while making its economics explicit.**
+
+Production contexts:
+
+### Arable & field crops
+**Field- and season-level economics across yield, price, inputs, machinery and allocated costs. Field Profitability is the current first concrete focus.**
+
+### Horticulture, orchards & berries
+**Block, variety, marketable yield, grade, labour, storage, losses and realised price create a different economic model from field crops.**
+
+### Vegetables & greenhouse production
+**Crop cycle, labour, energy, inputs, quality, timing and selling price shape the economics of protected and open-field production.**
+
+### Pig production
+**Feed, growth, mortality, throughput, batch performance and selling conditions shape the economics of a production cycle.**
+
+### Dairy
+**Milk production, feed, herd health, reproduction, replacement and price/cost context interact at cow, group and herd level.**
+
+### Other livestock & mixed farms
+**Beef cattle, poultry, eggs, sheep, goats and mixed farms need domain-specific production units — not a forced per-hectare model.**
+
+Boundary note:
+
+**These production systems describe the direction of the PROFIT master brand. They are not a claim that every domain is a current product. Field Profitability is the first concrete product focus.**
+
+Supporting context:
+
+**€531.9B — EU agricultural output in 2024**
+
+**€267.7B came from crops and €218.8B from animals and animal products. Gross output values, not farm profit or PROFIT market size.**
+
+Source:
+
+**Eurostat · Key figures on the European food chain 2025**
+
+---
+
+# 08 — Economic value & evidence
 
 Eyebrow:
 
@@ -314,40 +350,6 @@ Trust line:
 Link:
 
 **Read the methodology**
-
----
-
-# 08 — Field Profitability boundary
-
-Eyebrow:
-
-**Current first product**
-
-Title:
-
-**Field Profitability**
-
-Lead:
-
-**The operating economics of each field, season by season. It is where PROFIT starts.**
-
-Status:
-
-**In development — not yet available**
-
-Subheads:
-
-**What goes in**  
-**What comes out**  
-**Not included**
-
-AI note:
-
-**AI may explain a stored result in plain language. It does not calculate the numbers.**
-
-Link:
-
-**What Field Profitability does, and does not do**
 
 ---
 
