@@ -9,6 +9,7 @@ export const en: UIStrings = {
     english: 'English',
     ukrainian: 'Ukrainian',
     finnish: 'Finnish',
+    danish: 'Danish',
   },
   common: {
     pilot: 'Pilot',
