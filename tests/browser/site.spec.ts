@@ -535,6 +535,29 @@ test.describe('scan-first brochure behavior', () => {
   });
 });
 
+test.describe('supporting-page scanability', () => {
+  test('supporting pages expose scan-first local navigation', async ({ page }) => {
+    for (const route of ['/farmers/', '/product/', '/trust/', '/company/']) {
+      await page.goto(route);
+      const nav = page.locator('.on-page-nav');
+      await expect(nav, route).toBeVisible();
+      await expect(nav).toContainText('On this page');
+      expect(await nav.getByRole('link').count(), route).toBeGreaterThanOrEqual(5);
+    }
+  });
+
+  test('Field Profitability proof exposes production-to-decision lineage', async ({ page }) => {
+    await page.goto('/');
+    const example = page.locator('#example');
+    const lineage = example.locator('.field-example__lineage');
+    await expect(lineage).toBeVisible();
+    await expect(lineage).toContainText('Production record');
+    await expect(lineage).toContainText('Economics');
+    await expect(lineage).toContainText('Break-even');
+    await expect(lineage).toContainText('Farmer-owned');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
