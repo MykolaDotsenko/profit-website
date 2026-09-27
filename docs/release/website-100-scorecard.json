@@ -1,0 +1,617 @@
+{
+  "schema_version": "1.0",
+  "title": "PROFIT Website 100-Point Release Quality Contract",
+  "date": "2026-09-27",
+  "authority": [
+    "docs/website-blueprint-v1.md",
+    "docs/triple-check-audit-2026-09-26.md",
+    "docs/website-strategy.md",
+    "AGENTS.md"
+  ],
+  "scoring": {
+    "categories": 10,
+    "criteria_per_category": 5,
+    "points_per_criterion": 2,
+    "maximum_points": 100,
+    "pass_rule": "Award 2 points only when the required evidence exists and the verification method passes. Otherwise award 0. No partial credit in the canonical release score.",
+    "release_rule": "A 100/100 release score is prohibited while any public-release gate in src/config/release.ts is BLOCKED.",
+    "evidence_rule": "AI judgement, simulation or internal preference cannot substitute for evidence explicitly requiring a farmer, legal approval, rights/provenance, company fact, consent or independent domain review.",
+    "freshness_rule": "Use the current repository HEAD and current evidence references. Do not persist a current total inside this contract because it would become stale."
+  },
+  "categories": [
+    {
+      "id": "farmer-comprehension",
+      "name": "Farmer comprehension & value",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "FC-01",
+          "title": "Hero communicates the farmer/economic job in 5–10 seconds",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "human",
+          "evidence_required": "Documented target-farmer message test showing correct open-recall understanding of farm relevance, economic decision job and next step, with material misclassifications below the canonical kill threshold.",
+          "verification": "Review the approved WWW-000 result against Blueprint §17 counting/kill rules and confirm the public hero matches a surviving message.",
+          "release_gates": [
+            "hero-message"
+          ]
+        },
+        {
+          "id": "FC-02",
+          "title": "Farmer problem is concrete before methodological depth",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "mixed",
+          "evidence_required": "Homepage presents concrete farmer economic questions and fragmented-record problem before deep methodology, with no unsupported capability claim.",
+          "verification": "Manual content-order review plus browser assertions on homepage problem/proof sections.",
+          "release_gates": []
+        },
+        {
+          "id": "FC-03",
+          "title": "Current product vs company direction is unambiguous",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Field Profitability is clearly marked as the first concrete product and in development; crop/horticulture/livestock are described only as master-brand direction unless separately proven shipped.",
+          "verification": "Claim-hygiene review and browser regression checks on homepage/product/company scope language.",
+          "release_gates": []
+        },
+        {
+          "id": "FC-04",
+          "title": "Farmer decision authority is explicit",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Decision-support language consistently keeps the farmer as decision owner and avoids autonomous-prescription framing.",
+          "verification": "Claim-hygiene scan plus browser/content assertions across homepage, product and trust routes.",
+          "release_gates": []
+        },
+        {
+          "id": "FC-05",
+          "title": "Next action is clear and low friction",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "mixed",
+          "evidence_required": "Primary CTA is understandable, pilot step is explained and first contact asks only minimum contact/context information.",
+          "verification": "Browser CTA/form tests plus farmer comprehension evidence that the next step is understood.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "product-truth",
+      "name": "Product truth & economics",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "PT-01",
+          "title": "Field Profitability status and scope are truthful",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Public copy states In development — not yet available and exposes current documented inputs, outputs and exclusions without implying production availability.",
+          "verification": "Browser assertions and claim-hygiene validation.",
+          "release_gates": []
+        },
+        {
+          "id": "PT-02",
+          "title": "Economic metric definitions are canonical and confirmed",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Operating profit and related public metrics use confirmed canonical definitions with provenance; no provisional definition can render publicly.",
+          "verification": "Domain tests and Metric component release guard.",
+          "release_gates": []
+        },
+        {
+          "id": "PT-03",
+          "title": "Illustrative economics are visibly hypothetical",
+          "points": 2,
+          "owner": "domain",
+          "evidence_type": "mixed",
+          "evidence_required": "Synthetic example is labelled Hypothetical / Not assessed, arithmetic is correct and statistical plausibility evidence is retained.",
+          "verification": "Domain arithmetic tests, browser labels and evidence reference review.",
+          "release_gates": [
+            "example-plausibility"
+          ]
+        },
+        {
+          "id": "PT-04",
+          "title": "Target-market economic example has human domain sign-off",
+          "points": 2,
+          "owner": "domain",
+          "evidence_type": "human",
+          "evidence_required": "A Market-A human domain/economic reviewer validates values, units, allocations and local terminology for the public example.",
+          "verification": "Review recorded domain sign-off and confirm the rendered example matches the approved scenario.",
+          "release_gates": [
+            "example-domain-review"
+          ]
+        },
+        {
+          "id": "PT-05",
+          "title": "Capability boundaries and exclusions remain inspectable",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Whole-farm P&L, tax/financing, GIS, telemetry, ERP, optimisation, forecasting and other non-current capabilities are not implied as current Field Profitability functions.",
+          "verification": "Claim-hygiene scan and browser assertions on product boundary content.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "evidence-vev",
+      "name": "Evidence, confidence & VEV integrity",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "EV-01",
+          "title": "Evidence ladder semantics are consistent",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Hypothetical → Modelled → Observed → Attributed → Verified is used consistently and no value is promoted to a higher state without evidence.",
+          "verification": "Domain/evidence tests, claim-hygiene checks and content review.",
+          "release_gates": []
+        },
+        {
+          "id": "EV-02",
+          "title": "Confidence semantics are distinct from evidence state",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "High / Medium / Low / Insufficient evidence are assessed confidence states and Not assessed remains a separate meta-state.",
+          "verification": "Domain tests and rendered confidence-component review.",
+          "release_gates": []
+        },
+        {
+          "id": "EV-03",
+          "title": "Plain-language evidence definitions are approved against the PROFIT VEV standard",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "mixed",
+          "evidence_required": "Public definitions of evidence states and Verified Economic Value are explicitly approved and aligned with the current VEV methodology.",
+          "verification": "Review the approved VEV/evidence-definition decision record and rendered copy.",
+          "release_gates": [
+            "evidence-definitions"
+          ]
+        },
+        {
+          "id": "EV-04",
+          "title": "Attribution and causality boundaries are explicit",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "The site distinguishes forecast, modelled benefit, observed outcome, attribution and Verified value, and exposes the verification chain where relevant.",
+          "verification": "Browser/content assertions on evidence and methodology surfaces.",
+          "release_gates": []
+        },
+        {
+          "id": "EV-05",
+          "title": "Unsupported superiority, profit and accuracy claims are absent",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Production copy contains no unverified customer result, guaranteed profit uplift, unsupported accuracy, fabricated social proof or superiority claim.",
+          "verification": "Claim-hygiene validator plus manual release claim audit.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "trust-legal-data",
+      "name": "Trust, privacy & farm-data governance",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "TD-01",
+          "title": "Publishable privacy notice is approved",
+          "points": 2,
+          "owner": "legal",
+          "evidence_type": "legal",
+          "evidence_required": "A jurisdiction-appropriate privacy notice is approved for publication and matches actual collection/processing behavior.",
+          "verification": "Legal approval reference plus rendered privacy content review.",
+          "release_gates": [
+            "privacy-notice"
+          ]
+        },
+        {
+          "id": "TD-02",
+          "title": "Farm-data terms are approved",
+          "points": 2,
+          "owner": "legal",
+          "evidence_type": "legal",
+          "evidence_required": "Ownership/control, purpose, sharing, retention, deletion/export and end-of-pilot treatment are documented and approved.",
+          "verification": "Legal/product approval reference plus rendered data-terms review.",
+          "release_gates": [
+            "data-terms"
+          ]
+        },
+        {
+          "id": "TD-03",
+          "title": "Permission and purpose are visible in the product story",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Public UX explains that farm records are used with permission and for a stated purpose without inventing stronger legal guarantees.",
+          "verification": "Claim-hygiene review and browser assertions on trust/pilot content.",
+          "release_gates": []
+        },
+        {
+          "id": "TD-04",
+          "title": "First contact minimizes farm-data collection",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Pilot form contains only Name, Farm/company, Country, Email and Farm type; no farm economics or operational records are requested initially.",
+          "verification": "Browser form-field count/content test.",
+          "release_gates": []
+        },
+        {
+          "id": "TD-05",
+          "title": "Security/privacy wording matches implemented reality",
+          "points": 2,
+          "owner": "legal",
+          "evidence_type": "mixed",
+          "evidence_required": "No security, ownership, compliance or data-use claim exceeds approved policy and implemented system behavior.",
+          "verification": "Final legal/engineering release claim audit.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "company-credibility",
+      "name": "Company & team credibility",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "CC-01",
+          "title": "Legal company identity is complete",
+          "points": 2,
+          "owner": "owner",
+          "evidence_type": "external",
+          "evidence_required": "Required legal company name, registration/business information, jurisdiction and publication details are factual and complete.",
+          "verification": "Cross-check rendered company/footer details against authoritative company records.",
+          "release_gates": [
+            "company-details"
+          ]
+        },
+        {
+          "id": "CC-02",
+          "title": "Direct contact path is operational",
+          "points": 2,
+          "owner": "owner",
+          "evidence_type": "external",
+          "evidence_required": "Farmers, investors/partners and other enquiries have a confirmed reachable contact path.",
+          "verification": "Send/receive smoke test and rendered contact-link review.",
+          "release_gates": [
+            "direct-contact"
+          ]
+        },
+        {
+          "id": "CC-03",
+          "title": "Team proof and consent are complete",
+          "points": 2,
+          "owner": "owner",
+          "evidence_type": "human",
+          "evidence_required": "Names, public role wording, relevant expertise, profile/photo use and consent are confirmed by each published team member.",
+          "verification": "Review individual confirmations and rendered team records.",
+          "release_gates": [
+            "team-proof"
+          ]
+        },
+        {
+          "id": "CC-04",
+          "title": "Team capabilities explain why the team fits the problem",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "mixed",
+          "evidence_required": "Team presentation ties agriculture/farm operations, science/engineering/data and product/software/AI capabilities to concrete PROFIT responsibilities without generic CV filler.",
+          "verification": "Content review against confirmed bios and company capability flow.",
+          "release_gates": []
+        },
+        {
+          "id": "CC-05",
+          "title": "No fabricated customers, partners, testimonials or founder mythology",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "All company proof is factual; unknowns remain explicit; no placeholder is styled as real social proof.",
+          "verification": "Claim-hygiene validator and manual release audit.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "brand-distinctiveness",
+      "name": "Brand distinctiveness & documentary authenticity",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "BD-01",
+          "title": "Production art direction is validated with target farmers",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "human",
+          "evidence_required": "Farmer testing supports the production direction on comprehension and calibrated trust without recurring dashboard/accounting/GIS misclassification.",
+          "verification": "Review WWW-001/WWW-002 farmer-test evidence against canonical AD criteria.",
+          "release_gates": [
+            "art-direction"
+          ]
+        },
+        {
+          "id": "BD-02",
+          "title": "Documentary agriculture has verified rights and provenance",
+          "points": 2,
+          "owner": "owner",
+          "evidence_type": "external",
+          "evidence_required": "At least one approved real agricultural asset has recorded source, rights/provenance and appropriate context; no synthetic image is presented as documentary.",
+          "verification": "Asset provenance record plus rendered-image inspection.",
+          "release_gates": [
+            "documentary-image"
+          ]
+        },
+        {
+          "id": "BD-03",
+          "title": "B2 visual grammar remains recognizable without generic SaaS cues",
+          "points": 2,
+          "owner": "design",
+          "evidence_type": "mixed",
+          "evidence_required": "Production-unit context, economic typography, evidence/confidence and farmer-decision grammar remain coherent without generic green SaaS/dashboard/bento/AI decoration.",
+          "verification": "Logo-off internal/target-user comparison and final design-system review.",
+          "release_gates": []
+        },
+        {
+          "id": "BD-04",
+          "title": "Master-brand grammar transfers across production systems",
+          "points": 2,
+          "owner": "design",
+          "evidence_type": "mixed",
+          "evidence_required": "The brand invariant works for field crops, horticulture/greenhouse and livestock without forcing per-hectare or field-geometry language onto non-crop domains.",
+          "verification": "Cross-domain transfer review using canonical production-unit examples.",
+          "release_gates": []
+        },
+        {
+          "id": "BD-05",
+          "title": "Every major visual choice has a communication purpose",
+          "points": 2,
+          "owner": "design",
+          "evidence_type": "mixed",
+          "evidence_required": "Final visual audit finds no decorative complexity that weakens comprehension, trust, accessibility or performance.",
+          "verification": "Blueprint §20 acceptance review and final design challenge pass.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "conversion-pilot",
+      "name": "Qualified conversion & pilot operations",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "CP-01",
+          "title": "Pilot response process is operationally defined",
+          "points": 2,
+          "owner": "owner",
+          "evidence_type": "external",
+          "evidence_required": "Named operational owner, response channel and realistic response process are confirmed.",
+          "verification": "Operational runbook plus end-to-end inquiry smoke test.",
+          "release_gates": [
+            "pilot-process"
+          ]
+        },
+        {
+          "id": "CP-02",
+          "title": "Pilot form remains five-field and qualified",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Form asks exactly the approved five contact/context fields and explains what happens next.",
+          "verification": "Browser form tests.",
+          "release_gates": []
+        },
+        {
+          "id": "CP-03",
+          "title": "Production form delivery is reliable and privacy-gated",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "mixed",
+          "evidence_required": "Production endpoint validates server-side, delivers to the confirmed destination, fails safely and cannot be configured before required privacy/company/process gates are ready.",
+          "verification": "Integration/smoke tests plus existing release-configuration guard.",
+          "release_gates": []
+        },
+        {
+          "id": "CP-04",
+          "title": "Form states are accessible and resilient",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "automated",
+          "evidence_required": "Validation, error, retry and success states are keyboard/screen-reader usable and do not lose user input unnecessarily.",
+          "verification": "Browser accessibility/form-flow tests plus manual keyboard/screen-reader smoke test.",
+          "release_gates": []
+        },
+        {
+          "id": "CP-05",
+          "title": "Conversion copy is honest and non-coercive",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "CTA copy does not imply instant onboarding, product availability, artificial urgency or guaranteed outcome.",
+          "verification": "Claim-hygiene and final content audit.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "accessibility-responsive",
+      "name": "Accessibility & responsive usability",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "AR-01",
+          "title": "Automated WCAG A/AA checks pass on critical routes",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "automated",
+          "evidence_required": "Axe reports zero WCAG A/AA violations on critical routes at 390/768/1024/1440 in the exact release candidate.",
+          "verification": "Site Verify Playwright/Axe job.",
+          "release_gates": []
+        },
+        {
+          "id": "AR-02",
+          "title": "Keyboard, focus and screen-reader manual checks pass",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "human",
+          "evidence_required": "Manual audit verifies logical keyboard order, visible focus, landmarks/headings, interactive names, disclosure/menu/form behavior and representative screen-reader sanity.",
+          "verification": "Signed manual accessibility checklist tied to release SHA.",
+          "release_gates": []
+        },
+        {
+          "id": "AR-03",
+          "title": "Zoom and reflow are usable",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "human",
+          "evidence_required": "Content and core interactions remain usable at required zoom/reflow conditions without loss of information or two-dimensional scrolling where WCAG prohibits it.",
+          "verification": "Manual zoom/reflow audit tied to release SHA.",
+          "release_gates": []
+        },
+        {
+          "id": "AR-04",
+          "title": "Reduced-motion behavior is complete",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "mixed",
+          "evidence_required": "Meaning does not depend on animation and motion respects prefers-reduced-motion.",
+          "verification": "Browser reduced-motion tests plus manual inspection of animated states.",
+          "release_gates": []
+        },
+        {
+          "id": "AR-05",
+          "title": "Responsive layouts have no critical overflow or hierarchy failure",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "automated",
+          "evidence_required": "Critical routes pass 390/768/1024/1440 overflow/runtime tests and mobile keeps farmer value/proof/CTA hierarchy.",
+          "verification": "Site Verify browser QA plus manual spot check on representative devices.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "performance-engineering",
+      "name": "Performance & engineering reliability",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "PE-01",
+          "title": "Static/minimal-JS architecture remains intact",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "automated",
+          "evidence_required": "Core presentation works as static semantic HTML/CSS with only justified client JavaScript and no unnecessary runtime/framework dependency.",
+          "verification": "Build artifact/dependency review and no-JS sanity check.",
+          "release_gates": []
+        },
+        {
+          "id": "PE-02",
+          "title": "Core Web Vitals meet quality targets",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "mixed",
+          "evidence_required": "LCP ≤ 2.5 s, INP ≤ 200 ms and CLS ≤ 0.1 at p75 mobile/desktop when RUM exists; before sufficient RUM, production-equivalent lab evidence must show no material risk and the criterion remains provisional until RUM closes it.",
+          "verification": "Production RUM report when statistically meaningful; production-equivalent lab audit during launch preparation.",
+          "release_gates": []
+        },
+        {
+          "id": "PE-03",
+          "title": "Critical routes have no console, page or request failures",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "automated",
+          "evidence_required": "Critical route/browser matrix produces no console errors, page errors or failed critical requests.",
+          "verification": "Site Verify runtime-failure collection.",
+          "release_gates": []
+        },
+        {
+          "id": "PE-04",
+          "title": "Images and fonts follow performance policy",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "mixed",
+          "evidence_required": "Responsive image formats/sizes, explicit dimensions, appropriate loading priority and minimal font payload/preload strategy are implemented for real production assets.",
+          "verification": "Asset audit plus production network/waterfall inspection.",
+          "release_gates": []
+        },
+        {
+          "id": "PE-05",
+          "title": "Exact release SHA passes the complete CI contract",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "automated",
+          "evidence_required": "Design check, claim hygiene, scorecard check, Astro/type checks, domain tests, production build, release negative build and browser/Axe QA all succeed on the exact release SHA.",
+          "verification": "GitHub Actions checks for the release SHA.",
+          "release_gates": []
+        }
+      ]
+    },
+    {
+      "id": "release-integrity",
+      "name": "Release & operational integrity",
+      "maximum_points": 10,
+      "criteria": [
+        {
+          "id": "RI-01",
+          "title": "All public-release gates are READY with evidence",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "mixed",
+          "evidence_required": "Every gate in src/config/release.ts is READY and carries an auditable evidence reference.",
+          "verification": "Release configuration check against referenced evidence.",
+          "release_gates": []
+        },
+        {
+          "id": "RI-02",
+          "title": "Indexability cannot bypass release truth",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "automated",
+          "evidence_required": "SITE_INDEXABLE=true fails while any public gate is blocked and succeeds only after all gates are legitimately ready.",
+          "verification": "CI release-gate negative/positive release-candidate tests.",
+          "release_gates": []
+        },
+        {
+          "id": "RI-03",
+          "title": "Production SEO/URL infrastructure is correct",
+          "points": 2,
+          "owner": "engineering",
+          "evidence_type": "mixed",
+          "evidence_required": "Canonical production origin, robots, sitemap, metadata and route status behavior are correct on the deployed release candidate.",
+          "verification": "Production smoke test and crawl/metadata inspection.",
+          "release_gates": []
+        },
+        {
+          "id": "RI-04",
+          "title": "Operational ownership and monitoring are defined",
+          "points": 2,
+          "owner": "owner",
+          "evidence_type": "external",
+          "evidence_required": "Named ownership exists for website availability, contact/pilot delivery, privacy requests and critical incident follow-up; monitoring appropriate to the static site/form path is active.",
+          "verification": "Operational runbook plus notification/delivery smoke tests.",
+          "release_gates": []
+        },
+        {
+          "id": "RI-05",
+          "title": "Documentation and implementation agree at release",
+          "points": 2,
+          "owner": "product",
+          "evidence_type": "automated",
+          "evidence_required": "Canonical docs, compact AI context, implementation status and release configuration describe the actual release; no known critical content gap is hidden.",
+          "verification": "Docs Contract CI plus final evidence/challenge/execution audit.",
+          "release_gates": []
+        }
+      ]
+    }
+  ]
+}

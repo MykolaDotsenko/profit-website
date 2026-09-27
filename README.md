@@ -80,6 +80,7 @@ These files are an evidence library. They support decisions but do not silently 
 - [Homepage Content Brief v1](docs/homepage-content-brief-v1.md) — section-by-section English homepage control for message, evidence, scope, trust, visual intent and claim boundaries.
 - [Whole-Farm Scope, Data Collection & Forecasting Evidence](docs/whole-farm-scope-evidence-2026-09-27.md)
 - [Website Trust & Professionalism Synthesis](docs/website-trust-professionalism-synthesis-2026-09-27.md) — cross-disciplinary bridge from website/brand/AI-sameness research and project work on human factors, data collection, forecasting and decision-support systems.
+- [100-Point Release Quality Contract](docs/release/website-100-scorecard.md) — auditable 50-criterion Definition of Done; 100/100 is impossible while any public-release gate is blocked.
 
 ## Status
 
@@ -96,7 +97,7 @@ Requires Node.js 22.12 or later.
 ```sh
 npm ci
 npm run dev       # http://localhost:4321
-npm run verify    # design + claim hygiene + astro check + domain/release tests + production build
+npm run verify    # design + claim hygiene + 100-point scorecard contract + astro check + domain/release tests + production build
 npm run preview   # serve the production build
 
 # Browser QA is pinned and run by GitHub Actions (Playwright 1.63.0 + Axe 4.13.0).

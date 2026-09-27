@@ -11,6 +11,7 @@ Purpose: give AI agents the smallest reliable context required to work on the PR
 5. [Triple-Check Audit](../triple-check-audit-2026-09-26.md) — verified corrections / known uncertainty
 6. [Website Strategy](../website-strategy.md) — strategic rationale
 7. [Decision Records](../decisions/README.md) — durable rationale for material decisions
+8. [100-Point Release Quality Contract](../release/website-100-scorecard.md) — auditable final Definition of Done
 
 ## Context-loading rule
 
@@ -35,10 +36,11 @@ The research archive is deliberately not the default AI context. This reduces:
 | Layout / responsive design | Blueprint → Design Masterclass → Modern Design Deep Pass |
 | Motion / visual effects | Blueprint → Modern Visual Effects → Visual Effects Roadmap |
 | Frontend architecture | Blueprint → Frontend Technologies → Frontend Deep Pass |
-| Accessibility / performance / QA | Blueprint → Frontend Deep Pass → Triple-check audit |
+| Accessibility / performance / QA | Blueprint → 100-Point Release Quality Contract → Frontend Deep Pass → Triple-check audit |
 | Signature prototype | Prototype README → Modern Visual Effects |
 | Strategic rationale | Website Strategy → relevant research only |
 | Task sequencing / dependencies | Implementation Plan → Blueprint |
+| Final release quality / 100-point assessment | 100-Point Release Quality Contract → release gates → exact-SHA CI evidence |
 | Material architecture/product decision | Decision Records policy → Blueprint/Strategy → relevant evidence |
 | Website code (Build Pass 01) | [README Website section](../../README.md) → ADR 0002 → Blueprint |
 
