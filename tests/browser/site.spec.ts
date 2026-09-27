@@ -400,6 +400,7 @@ test.describe('closing conversion surface', () => {
     await expect(join).toContainText('What happens after you click');
     await expect(join).toContainText('Send five details');
     await expect(join).toContainText('We reply');
+    await expect(join).toContainText('within two business days');
     await expect(join).toContainText('Terms before data');
     await expect(join.getByRole('link', { name: 'Join the pilot' })).toBeVisible();
     await expect(join.getByRole('link', { name: 'Read how PROFIT handles data first' })).toBeVisible();
@@ -788,6 +789,17 @@ test.describe('team capability proof', () => {
     await expect(team).toBeVisible();
     const overflow = await team.evaluate((el) => el.scrollWidth - el.clientWidth);
     expect(overflow).toBeLessThanOrEqual(1);
+  });
+});
+
+test.describe('pilot operating process', () => {
+  test('public pilot flow exposes confirmed response timing without asking for farm records', async ({ page }) => {
+    await page.goto('/contact/');
+
+    const main = page.locator('main');
+    await expect(main).toContainText('within two business days');
+    await expect(main).toContainText('No farm records');
+    await expect(main).not.toContainText('Confirm the pilot process, who replies and how fast');
   });
 });
 
