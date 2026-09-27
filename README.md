@@ -81,6 +81,7 @@ These files are an evidence library. They support decisions but do not silently 
 - [Whole-Farm Scope, Data Collection & Forecasting Evidence](docs/whole-farm-scope-evidence-2026-09-27.md)
 - [Website Trust & Professionalism Synthesis](docs/website-trust-professionalism-synthesis-2026-09-27.md) — cross-disciplinary bridge from website/brand/AI-sameness research and project work on human factors, data collection, forecasting and decision-support systems.
 - [100-Point Release Quality Contract](docs/release/website-100-scorecard.md) — auditable 50-criterion Definition of Done; 100/100 is impossible while any public-release gate is blocked.
+- [Privacy & Farm-Data Trust Pack](docs/legal/privacy-data-trust-pack.md) — production-readiness draft separating current contact-data behavior from the legal/privacy and farm-data decisions required before pilot activation.
 
 ## Status
 
