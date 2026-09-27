@@ -1112,6 +1112,8 @@ Human validation remains open. Reconsider B2 if target users repeatedly classify
 
 Decision record: `docs/decisions/0003-provisional-b2-production-unit-art-direction.md`.
 
+**Production-system refinement — 2026-09-27:** internal logo-off/generic-SaaS red-teaming found that the core B2 codes were strongest in Hero, FieldExample and ProductionScope, while several process surfaces still used interchangeable equal-weight card grids. The coded production system therefore carries B2 through process surfaces using continuous decision lineage / operational-ledger compositions rather than adding a new decorative motif. Canonical core components expose explicit `data-brand-code` markers and the design validator guards their presence. This is system consistency, not evidence that the codes are distinctive to users; logo-off/competitor-confusion validation remains open.
+
 ### What current external research materially changes
 
 Relevant current material converges on five durable implications:
