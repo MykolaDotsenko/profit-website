@@ -379,6 +379,39 @@ test.describe('runtime footprint', () => {
   });
 });
 
+test.describe('production shell integrity', () => {
+  test('pre-launch metadata and heading structure stay valid', async ({ page }) => {
+    const seenTitles = new Set<string>();
+
+    for (const route of routes) {
+      const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
+      expect(response?.ok(), route).toBeTruthy();
+
+      await expect(page.locator('h1'), `${route} should have exactly one H1`).toHaveCount(1);
+      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /\S{20,}/);
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+
+      const title = await page.title();
+      expect(title.trim().length, `${route} title should be non-empty`).toBeGreaterThan(0);
+      expect(seenTitles.has(title), `Duplicate title: ${title}`).toBeFalsy();
+      seenTitles.add(title);
+
+      await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', title);
+      await expect(page.locator('meta[property="og:description"]')).toHaveAttribute('content', /\S{20,}/);
+      await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute('content', 'PROFIT');
+      await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary');
+    }
+  });
+
+  test('404 remains an actual not-found response with a usable recovery path', async ({ page }) => {
+    const response = await page.goto('/this-route-must-not-exist');
+    expect(response?.status()).toBe(404);
+    await expect(page.locator('h1')).toHaveText('This page does not exist');
+    await expect(page.locator('a[href="/"]')).toContainText('Go to the homepage');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
