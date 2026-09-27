@@ -5,6 +5,7 @@ import { PAGES_A_TRANSLATIONS } from './translations-pages-a';
 import { PAGES_B_TRANSLATIONS } from './translations-pages-b';
 import { PAGES_C_TRANSLATIONS } from './translations-pages-c';
 import { PAGES_D_TRANSLATIONS } from './translations-pages-d';
+import { SIMPLE_TRANSLATIONS } from './translations-simple';
 
 const EXTRA_TRANSLATIONS: Record<string, string> = {
   'The operating economics of each field, season by season. It is where PROFIT starts.':
@@ -22,6 +23,7 @@ const TRANSLATIONS: Record<string, string> = {
   ...PAGES_B_TRANSLATIONS,
   ...PAGES_C_TRANSLATIONS,
   ...PAGES_D_TRANSLATIONS,
+  ...SIMPLE_TRANSLATIONS,
   ...EXTRA_TRANSLATIONS,
 };
 
