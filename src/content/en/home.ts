@@ -108,6 +108,12 @@ export const home = {
       question: decisionQuestion,
       decisionNote: 'PROFIT shows the economics. The decision stays yours.',
       records: exampleRecords,
+      lineage: [
+        { title: 'Production record', text: 'Field / season' },
+        { title: 'Economics', text: 'Explicit formula' },
+        { title: 'Threshold', text: 'Break-even' },
+        { title: 'Decision', text: 'Farmer-owned' },
+      ],
     },
   },
   problem: {
