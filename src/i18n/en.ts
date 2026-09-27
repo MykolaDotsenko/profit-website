@@ -65,6 +65,8 @@ export const en: UIStrings = {
     periodLabel: 'Period',
     roleLabel: 'Role',
     currentExample: 'Current example',
+    economicState: 'Illustrative economic state',
+    productionContext: 'Current production context',
   },
   evidence: {
     exampleLabel: 'Hypothetical example',
