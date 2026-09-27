@@ -38,7 +38,7 @@ Reversible engineering proceeds in parallel with W0: a coded Astro foundation wi
 It does not meet any human-validation exit criterion above, decide WWW-005, or turn a surrogate result into farmer evidence.
 - Operational preflight prepared: `docs/experiments/www-000-preflight-pack-v1.md` covers D5 recruitment screening/cohort balance, D6 human terminology/domain review, D7 minimum research-data/consent process, D8 documentary-asset provenance and dry-run/freeze rules.
 - Statistical surrogate completed: `docs/experiments/www-000-statistical-surrogate-v1.md` replaces arbitrary scenario placeholders with statistics-calibrated synthetic Finnish values and performs a product-truth/message-risk audit. It resolves placeholder plausibility, not farmer comprehension.
-- H3 v2 is the provisional development default because it currently has the strongest product-truth alignment and lowest claim-risk. It is not a tested winner.
+- H3 v2 remains the strongest candidate from the completed statistical/product-truth surrogate, but on 2026-09-27 the owner directed a new H4 economic-decision clarity hypothesis for the coded pre-launch homepage. H4 is the reversible development default only; it was added after the surrogate, has no farmer evidence and is not a tested winner.
 
 ### Future gate — master-brand positioning (does not block current work)
 
@@ -76,7 +76,7 @@ Status:
 **Human test not run; statistical surrogate completed; instrument remains available for later human validation.**
 - D1–D3 were approved on 2026-09-26: a Phase A → B → C session flow, fixed 10 s exposure, and the counting rules (now in Blueprint §17).
 - D4 is settled. The Field Profitability product-truth boundary (an unmerged, unshipped vertical slice) is now in Blueprint §2.2, and PT-1/PT-2 are resolved.
-- The product-truth gate superseded the v1 candidates before testing. The test candidates are H1/H2/H3 v2.
+- The product-truth gate superseded the v1 candidates before testing. The existing controlled test candidates remain H1/H2/H3 v2. H4 is a later development hypothesis and requires a documented protocol/stimulus revision before it may enter WWW-000.
 - International validation architecture is defined (Blueprint §2.3). Operating focus is EU-first; Market A is provisionally Finland under a recruitment gate.
 - Statistical calibration now provides a Finnish plausibility baseline for the economic scenario. Human terminology/comprehension validation, research-data/consent process and the approved D8 controlled documentary asset remain open for a future farmer round.
 
@@ -85,7 +85,7 @@ No acceptance criterion below has been met yet.
 Outcome:
 Eliminate weak hero positioning before visual art direction becomes a confounding variable.
 
-Test the three canonical Blueprint directions, using the **v2** candidates in Blueprint §5. The v1 wording was superseded before farmer testing by the product-truth gate; no farmer evidence exists for v1.
+The existing controlled instrument tests the three v2 directions below. H4 is implemented as a reversible homepage development hypothesis but is not silently added to this three-way protocol. Before testing H4, explicitly decide whether it replaces a direction or whether the experiment is redesigned as a four-candidate counterbalanced instrument.
 - H1 — Economic visibility / farmer job first
 - H2 — Decision intelligence / decision-context first (v1: current control)
 - H3 — Field Profitability / product proof first
