@@ -207,6 +207,13 @@ test('release gate blocks indexable builds and form endpoints while launch block
   );
   assert.throws(
     () => assertReleaseConfiguration({ indexable: false, pilotFormEndpoint: 'https://example.test/pilot' }),
-    /Pilot form endpoint blocked/,
+    (error: unknown) => {
+      assert.ok(error instanceof Error);
+      assert.match(error.message, /Pilot form endpoint blocked/);
+      assert.match(error.message, /privacy-notice/);
+      assert.match(error.message, /company-details/);
+      assert.doesNotMatch(error.message, /pilot-process/);
+      return true;
+    },
   );
 });
