@@ -802,6 +802,7 @@ export const investors = {
 };
 
 const pilotForm: PilotFormContent = {
+  eyebrow: 'Pilot intake',
   title: 'Your details',
   requiredNote: 'All five fields are required.',
   fields: {
