@@ -542,6 +542,23 @@ Sequence:
 
 These are cross-cutting and should not be postponed to the end.
 
+### PR-12 — Final 100-point website release contract
+
+Status: **implemented as the release-quality Definition of Done.**
+
+Sources:
+- `docs/release/website-100-scorecard.json` — machine-readable contract;
+- `docs/release/website-100-scorecard.md` — human operating guide;
+- `scripts/validate_website_scorecard.mjs` — structural/gate-coverage validator.
+
+Rules:
+- 10 categories × 5 binary criteria × 2 points = 100;
+- no partial credit in the canonical release score;
+- required human/legal/external evidence cannot be replaced by AI simulation;
+- 100/100 is prohibited while any public-release gate remains blocked;
+- `npm run verify` must fail if scorecard arithmetic/IDs/gate coverage drift.
+
+
 ### WWW-501 — Accessibility gate
 
 Target:
