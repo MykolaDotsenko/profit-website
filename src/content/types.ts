@@ -78,6 +78,7 @@ export interface StatusItem {
 
 /** Pilot form copy (Blueprint §16: five fields only). */
 export interface PilotFormContent {
+  eyebrow: string;
   title: string;
   requiredNote: string;
   fields: {
