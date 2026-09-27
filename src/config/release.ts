@@ -98,8 +98,9 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     id: 'documentary-image',
     area: 'trust',
     owner: 'owner',
-    state: 'blocked',
-    reason: 'An approved documentary agricultural asset with rights/provenance is not supplied.',
+    state: 'ready',
+    reason: 'A real Finnish wheat-field photograph is rendered with explicit author/source/licence attribution and a completed rights/provenance record; it is labelled as documentary context, not a PROFIT customer or pilot.',
+    evidence: 'docs/release/evidence/documentary-fi-wheat-vampula-2022-01.md',
   },
   {
     id: 'example-plausibility',
