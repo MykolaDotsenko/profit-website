@@ -48,6 +48,7 @@ const t = ui(localeInfo(Astro.currentLocale).code);
     ) : (
       <div class="image-slot__placeholder">
         <span class="image-slot__tag">{t.status.imagePending}</span>
+        <span class="image-slot__placeholder-title">Documentary agriculture</span>
       </div>
     )
   }
@@ -72,21 +73,36 @@ const t = ui(localeInfo(Astro.currentLocale).code);
     }
     .image-slot__placeholder {
       position: relative;
-      background-color: var(--color-surface-sunken);
-      background-image: repeating-linear-gradient(
-        135deg,
-        transparent 0 11px,
-        color-mix(in srgb, var(--color-line) 70%, transparent) 11px 12px
-      );
-      border: 1px solid var(--color-line);
+      display: flex;
+      align-items: end;
+      padding: var(--space-4);
+      background: var(--color-production-rail);
+      border: 1px solid var(--color-line-strong);
+    }
+    .image-slot__placeholder::before {
+      content: '';
+      position: absolute;
+      inset: var(--space-4);
+      border-inline-start: 1px solid var(--color-line);
+      border-block-end: 1px solid var(--color-line);
+      pointer-events: none;
+    }
+    .image-slot__placeholder-title {
+      position: relative;
+      max-width: 12ch;
+      font-size: var(--text-subsection);
+      font-weight: var(--weight-strong);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
     .image-slot__tag {
       position: absolute;
       inset-block-start: var(--space-3);
       inset-inline-start: var(--space-3);
       padding: 0.2rem 0.45rem;
-      background: var(--color-canvas);
-      border: 1px solid var(--color-line);
+      background: var(--color-surface);
+      border: 1px solid var(--color-line-strong);
+      font-family: var(--font-label);
       font-size: var(--text-label);
       font-weight: var(--weight-strong);
       letter-spacing: var(--tracking-label);
