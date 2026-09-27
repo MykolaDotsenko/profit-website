@@ -66,8 +66,12 @@ const { rows, labels } = Astro.props;
     caption-side: top;
     padding: var(--space-4);
     text-align: start;
-    font-size: var(--text-small);
+    font-family: var(--font-label);
+    font-size: var(--text-label);
     font-weight: var(--weight-strong);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    background: var(--color-production-rail);
   }
 
   th,
@@ -82,14 +86,17 @@ const { rows, labels } = Astro.props;
 
   thead th {
     color: var(--color-text-secondary);
+    font-family: var(--font-label);
     font-size: var(--text-caption);
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
+    background: var(--color-production-surface);
   }
 
   tbody th {
     width: 18%;
     font-weight: var(--weight-strong);
+    background: color-mix(in srgb, var(--color-production-surface) 55%, var(--color-surface));
   }
 
   tbody td {
