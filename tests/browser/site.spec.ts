@@ -136,6 +136,67 @@ test.describe('trust stress check', () => {
   });
 });
 
+test.describe('methodology surfaces', () => {
+  test('farmers page explains realistic data collection without claiming it is shipped', async ({ page }) => {
+    await page.goto('/farmers/');
+
+    const main = page.locator('main');
+    await expect(main).toContainText('Use the records you already have. Add automation only where it helps.');
+    await expect(main).toContainText('Older machinery still needs a path');
+    await expect(main).toContainText('Offline first where the work requires it');
+    await expect(main).toContainText('development principles, not claims about the current Field Profitability build');
+    await expect(main).toContainText('Check completeness');
+    await expect(main).toContainText('Check representativeness');
+  });
+
+  test('product page keeps deterministic economics separate from future forecasting', async ({ page }) => {
+    await page.goto('/product/');
+
+    const main = page.locator('main');
+    await expect(main).toContainText('Deterministic economics now. Forecasting only when evidence justifies it.');
+    await expect(main).toContainText('Forecasting, optimisation, automatic activity recognition and scenario simulation');
+    await expect(main).toContainText('are not current Field Profitability capabilities');
+  });
+
+  test('trust page exposes data lifecycle, model comparison and human decision authority', async ({ page }) => {
+    await page.goto('/trust/');
+
+    const main = page.locator('main');
+    await expect(main).toContainText('From a farm record to a decision — with the quality checks visible');
+    await expect(main).toContainText('No model wins by reputation. It has to win on the task.');
+    await expect(main).toContainText('Historical / naive baseline');
+    await expect(main).toContainText('Linear / regularised regression');
+    await expect(main).toContainText('Tree ensembles');
+    await expect(main).toContainText('Deep learning / foundation models');
+    await expect(main).toContainText('Support the decision. Do not replace the farmer.');
+    await expect(main).toContainText('The farmer keeps authority');
+    await expect(main).toContainText('not a claim that the current product autonomously recommends actions');
+  });
+
+  test('company page explains data quality, model selection and DSS research direction', async ({ page }) => {
+    await page.goto('/company/');
+
+    const main = page.locator('main');
+    await expect(main).toContainText('Quality before intelligence');
+    await expect(main).toContainText('Completeness');
+    await expect(main).toContainText('Compare models against a baseline, not against marketing');
+    await expect(main).toContainText('A decision is more than a prediction');
+    await expect(main).toContainText('technology-push design');
+    await expect(main).toContainText('not a claim that a full predictive DSS is already shipped');
+  });
+
+  test('homepage stays concise while linking to the deeper methodology', async ({ page }) => {
+    await page.goto('/');
+
+    const how = page.locator('#how-it-works');
+    await expect(how).toContainText('Three rules behind the system');
+    await expect(how).toContainText('Quality before intelligence');
+    await expect(how).toContainText('How PROFIT handles data, models and decisions');
+    await expect(how).not.toContainText('Random Forest');
+    await expect(how).not.toContainText('deep learning');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
