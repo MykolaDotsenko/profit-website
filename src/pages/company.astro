@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CompanyFacts from '../components/CompanyFacts.astro';
 import ContentGap from '../components/ContentGap.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ItemList from '../components/ItemList.astro';
@@ -97,7 +98,10 @@ const s = c.shared;
   </Section>
 
   <Section intro={p.details.intro} layout="split">
-    <ContentGap owner={p.details.gap.owner} text={p.details.gap.text} />
+    <CompanyFacts items={p.details.items} />
+    <div class="company-details-review">
+      <ContentGap owner={p.details.gap.owner} kind="review" text={p.details.gap.text} />
+    </div>
   </Section>
 
   <CtaBand intro={p.cta.intro} stepsTitle={p.cta.stepsTitle} steps={p.cta.steps} review={p.cta.review} primary={p.cta.primary} />
@@ -130,7 +134,8 @@ const s = c.shared;
     border-inline-start: 3px solid var(--color-line-strong);
     font-weight: var(--weight-strong);
   }
-  .team-review {
+  .team-review,
+  .company-details-review {
     margin-block-start: var(--space-5);
   }
   .prose {
