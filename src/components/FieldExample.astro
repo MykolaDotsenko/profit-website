@@ -384,6 +384,10 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       background: var(--color-surface);
     }
 
+    .field-example__panel--compare {
+      overflow: hidden;
+    }
+
     .field-example__panel--economics {
       background: var(--color-production-surface);
     }
@@ -399,7 +403,7 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
 
     .snapshot-wrap:focus-visible {
       outline: 2px solid currentColor;
-      outline-offset: 3px;
+      outline-offset: -3px;
     }
 
     table {
