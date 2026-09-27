@@ -1055,7 +1055,11 @@ test.describe('English default + Ukrainian opt-in localization', () => {
     await expect(page.locator('main')).toContainText('Операційний прибуток');
     await expect(page.locator('main')).toContainText('Не оцінено');
     await expect(page.locator('main')).toContainText('−69');
+    await expect(page.locator('main')).toContainText('207');
+
+    await page.goto('/uk/product/');
     await expect(page.locator('main')).toContainText('225');
+    await expect(page.locator('main')).toContainText('Ціна беззбитковості');
   });
 
   test('language switcher preserves the current route in both directions', async ({ page }) => {
