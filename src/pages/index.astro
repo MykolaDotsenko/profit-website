@@ -7,6 +7,7 @@ import EvidenceLadder from '../components/EvidenceLadder.astro';
 import FieldExample from '../components/FieldExample.astro';
 import Hero from '../components/Hero.astro';
 import ItemList from '../components/ItemList.astro';
+import ProductionScope from '../components/ProductionScope.astro';
 import QuestionList from '../components/QuestionList.astro';
 import Section from '../components/Section.astro';
 import StepSequence from '../components/StepSequence.astro';
@@ -50,7 +51,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
 
   <!-- 2 · Master-brand production scope: direction, not a claim of shipped modules. -->
   <Section intro={h.scope.intro} tone="sunken">
-    <ItemList items={h.scope.systems} columns={3} />
+    <ProductionScope items={h.scope.units} />
     <aside class="scope-proof" aria-label="EU agriculture context">
       <p class="scope-proof__value num">{h.scope.contextStat.value}</p>
       <p class="scope-proof__label">{h.scope.contextStat.label}</p>
