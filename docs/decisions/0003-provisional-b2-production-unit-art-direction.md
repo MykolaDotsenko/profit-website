@@ -88,6 +88,30 @@ Cross-cutting requirements already established independently of art direction re
 
 These are product/trust requirements, not imported visual motifs.
 
+## Implementation status
+
+B2 is now implemented provisionally across the coded site, including:
+
+- homepage hero with mobile value-first order;
+- domain-neutral production-unit scope;
+- Field Profitability proof as a production-unit/economic record;
+- supporting page introductions and section rails;
+- operational record lists and decision/method pipelines;
+- model-comparison and evidence surfaces;
+- explicit current-capability boundary;
+- pilot CTA, header and footer;
+- documentary-asset placeholder that does not simulate a real farm image.
+
+The implementation intentionally keeps:
+- H3 as a provisional, non-farmer-validated hero message;
+- documentary photography absent until source/rights/provenance exist;
+- livestock/horticulture domains as direction only;
+- public release gates blocked where evidence/legal/company inputs are missing.
+
+This moves B2 from concept selection to a **provisional production system**, not to validated brand status.
+
+---
+
 ## Main risks
 
 1. **Telemetry / GIS misclassification**  
