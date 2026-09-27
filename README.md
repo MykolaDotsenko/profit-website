@@ -153,7 +153,7 @@ Shown on the pages as "Input needed" or "Draft for review" while `SHOW_CONTENT_S
 | Direct contact for investors, partners and other enquiries | PROFIT team | `/investors`, `/contact` |
 | Plain-language evidence-state definitions, checked against the VEV methodology | PROFIT team | `/trust`, homepage evidence section |
 | Documentary photograph with source, rights and provenance | PROFIT team | homepage hero |
-| Human/local terminology and domain review of the calibrated illustrative scenario. Statistical placeholder plausibility is already resolved by the Finnish surrogate evidence; this remains a human-validation quality check, not an open placeholder-data blocker. | domain expert | `docs/experiments/www-000-statistical-surrogate-v1.md`, future WWW-000/D6 round |
+| Human Market-A/domain review of the calibrated illustrative scenario and local terminology (WWW-000 D6). Statistical placeholder plausibility is already reduced by the Finnish surrogate evidence, but that surrogate does not close the human D6 gate or public-release blocker. | domain expert | `docs/experiments/www-000-statistical-surrogate-v1.md`, `docs/experiments/www-000-preflight-pack-v1.md` |
 | Brand symbol / favicon, approved documentary asset and farmer validation of the provisional B2 art direction (WWW-002/003) | PROFIT team | `tokens.css`, `BaseLayout.astro`, B2 components |
 
 ## Prototypes
