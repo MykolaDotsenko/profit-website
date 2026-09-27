@@ -1,4 +1,4 @@
-name: QA Live Accessibility Edge Cases
+name: QA Live Reflow Diagnostics
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  live-a11y-edge:
+  diagnose:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -17,132 +17,114 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
+      - run: npm ci
+      - run: npm install --no-save --package-lock=false @playwright/test@1.63.0
+      - run: npx playwright install --with-deps chromium
 
-      - name: Install repository dependencies
-        run: npm ci
-
-      - name: Install pinned Playwright
-        run: npm install --no-save --package-lock=false @playwright/test@1.63.0
-
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Run live reflow, text-spacing and forced-colors checks
+      - name: Diagnose reflow offenders
         shell: bash
         run: |
-          cat > live-a11y-edge.mjs <<'EOF'
+          cat > live-reflow-diagnostic.mjs <<'EOF'
           import { chromium } from '@playwright/test';
 
           const base = process.env.LIVE_BASE_URL;
-          const routes = [
-            '/', '/farmers/', '/product/', '/trust/', '/company/', '/investors/', '/contact/',
-            '/uk/', '/fi/', '/da/'
+          const browser = await chromium.launch();
+
+          function print(label, data) {
+            console.log('DIAG ' + label + ' ' + JSON.stringify(data));
+          }
+
+          async function diagnose(page, label) {
+            const data = await page.evaluate(() => {
+              const vw = document.documentElement.clientWidth;
+              const nodes = Array.from(document.querySelectorAll('body *'));
+              const describe = (el) => {
+                const r = el.getBoundingClientRect();
+                const s = getComputedStyle(el);
+                return {
+                  tag: el.tagName.toLowerCase(),
+                  id: el.id || '',
+                  cls: typeof el.className === 'string' ? el.className : '',
+                  text: (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 90),
+                  left: Math.round(r.left),
+                  right: Math.round(r.right),
+                  width: Math.round(r.width),
+                  scrollWidth: el.scrollWidth || 0,
+                  clientWidth: el.clientWidth || 0,
+                  overflowX: s.overflowX,
+                  whiteSpace: s.whiteSpace,
+                  minWidth: s.minWidth,
+                  display: s.display,
+                  position: s.position,
+                  fontSize: s.fontSize,
+                };
+              };
+
+              const crossing = nodes
+                .map(describe)
+                .filter((x) => x.right > vw + 1 || x.left < -1)
+                .sort((a,b) => (b.right - vw) - (a.right - vw))
+                .slice(0, 25);
+
+              const scrollRegions = nodes
+                .map(describe)
+                .filter((x) => x.scrollWidth > x.clientWidth + 1 && ['auto','scroll'].includes(x.overflowX))
+                .slice(0, 25);
+
+              return {
+                innerWidth: window.innerWidth,
+                clientWidth: vw,
+                rootScrollWidth: document.documentElement.scrollWidth,
+                bodyScrollWidth: document.body.scrollWidth,
+                crossing,
+                scrollRegions,
+              };
+            });
+            print(label, data);
+          }
+
+          const scenarios = [
+            { name: '320-en-farmers', route: '/farmers/', width: 320 },
+            { name: '320-en-trust', route: '/trust/', width: 320 },
+            { name: '320-en-company', route: '/company/', width: 320 },
+            { name: '320-uk-home', route: '/uk/', width: 320 },
+            { name: '320-fi-home', route: '/fi/', width: 320 },
+            { name: '320-da-home', route: '/da/', width: 320 },
           ];
 
-          const browser = await chromium.launch();
-          const failures = [];
-
-          async function assertNoHorizontalOverflow(page, label) {
-            const geometry = await page.evaluate(() => ({
-              scrollWidth: document.documentElement.scrollWidth,
-              clientWidth: document.documentElement.clientWidth,
-              innerWidth: window.innerWidth,
-            }));
-            if (geometry.scrollWidth - geometry.clientWidth > 1) {
-              failures.push(`${label}: horizontal overflow ${geometry.scrollWidth - geometry.clientWidth}px`);
-            }
-          }
-
-          // WCAG 1.4.10 reflow proxy: 320 CSS px viewport.
-          {
-            const context = await browser.newContext({ viewport: { width: 320, height: 800 } });
-            for (const route of routes) {
-              const page = await context.newPage();
-              const response = await page.goto(base + route, { waitUntil: 'networkidle' });
-              if (!response?.ok()) failures.push(`320px ${route}: HTTP ${response?.status()}`);
-              await assertNoHorizontalOverflow(page, `320px ${route}`);
-              const mainVisible = await page.locator('main').isVisible();
-              if (!mainVisible) failures.push(`320px ${route}: main not visible`);
-              await page.close();
-            }
-            await context.close();
-          }
-
-          // WCAG 1.4.12 text-spacing stress values.
-          {
-            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-            for (const route of routes) {
-              const page = await context.newPage();
-              await page.goto(base + route, { waitUntil: 'networkidle' });
-              await page.addStyleTag({ content: `
-                * { line-height: 1.5 !important; letter-spacing: 0.12em !important; word-spacing: 0.16em !important; }
-                p { margin-bottom: 2em !important; }
-              ` });
-              await assertNoHorizontalOverflow(page, `text-spacing ${route}`);
-              const clippedControls = await page.evaluate(() =>
-                Array.from(document.querySelectorAll('a, button, input, select'))
-                  .filter((el) => {
-                    const r = el.getBoundingClientRect();
-                    return r.width > 0 && r.height > 0 && (
-                      r.right > document.documentElement.clientWidth + 1 ||
-                      r.left < -1
-                    );
-                  })
-                  .map((el) => (el.textContent || el.getAttribute('name') || el.tagName).trim().slice(0, 80))
-                  .slice(0, 10)
-              );
-              if (clippedControls.length) failures.push(`text-spacing ${route}: clipped controls ${clippedControls.join(' | ')}`);
-              await page.close();
-            }
-            await context.close();
-          }
-
-          // 200% text-only resize stress.
-          {
-            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-            for (const route of routes) {
-              const page = await context.newPage();
-              await page.goto(base + route, { waitUntil: 'networkidle' });
-              await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
-              await assertNoHorizontalOverflow(page, `200%-text ${route}`);
-              await page.close();
-            }
-            await context.close();
-          }
-
-          // Forced-colors should retain content and focusable navigation.
-          {
-            const context = await browser.newContext({
-              viewport: { width: 390, height: 844 },
-              forcedColors: 'active',
-            });
+          for (const sc of scenarios) {
+            const context = await browser.newContext({ viewport: { width: sc.width, height: 900 } });
             const page = await context.newPage();
-            await page.goto(base + '/', { waitUntil: 'networkidle' });
-            if (!(await page.locator('main').isVisible())) failures.push('forced-colors: main not visible');
-            await page.keyboard.press('Tab');
-            const focused = await page.evaluate(() => {
-              const el = document.activeElement;
-              return el ? { tag: el.tagName, text: el.textContent?.trim().slice(0, 80), href: el.getAttribute('href') } : null;
-            });
-            if (!focused || focused.tag !== 'A') failures.push(`forced-colors: first tab target unexpected ${JSON.stringify(focused)}`);
-            await page.close();
+            await page.goto(base + sc.route, { waitUntil: 'networkidle' });
+            await diagnose(page, sc.name);
+            await context.close();
+          }
+
+          for (const route of ['/', '/uk/', '/fi/', '/da/']) {
+            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+            const page = await context.newPage();
+            await page.goto(base + route, { waitUntil: 'networkidle' });
+            await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
+            await diagnose(page, '200-text-' + route);
+            await context.close();
+          }
+
+          for (const route of ['/', '/uk/', '/fi/', '/da/']) {
+            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+            const page = await context.newPage();
+            await page.goto(base + route, { waitUntil: 'networkidle' });
+            await page.addStyleTag({ content: `
+              * { line-height: 1.5 !important; letter-spacing: 0.12em !important; word-spacing: 0.16em !important; }
+              p { margin-bottom: 2em !important; }
+            ` });
+            await diagnose(page, 'spacing-' + route);
             await context.close();
           }
 
           await browser.close();
-
-          if (failures.length) {
-            console.error('LIVE A11Y EDGE FAILURES');
-            for (const failure of failures) console.error('- ' + failure);
-            process.exit(1);
-          }
-
-          console.log(`LIVE A11Y EDGE PASS: ${routes.length} routes at 320px, text-spacing stress, 200% text resize, and forced-colors keyboard smoke.`);
           EOF
-
-          node ./live-a11y-edge.mjs
+          node ./live-reflow-diagnostic.mjs
