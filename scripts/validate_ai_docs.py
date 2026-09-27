@@ -40,6 +40,7 @@ REQUIRED_FILES = [
     "src/components/MethodPipeline.astro",
     "src/components/ModelComparisonTable.astro",
     "src/components/ProductionScope.astro",
+    "src/i18n/en.ts",
     "playwright.config.ts",
     "tests/browser/site.spec.ts",
     "prototypes/art-directions/README.md",
@@ -188,8 +189,14 @@ TEXT_INVARIANTS = {
     ],
     "src/components/ProductionScope.astro": [
         "production-unit",
-        "Production unit",
+        "t.production.unitLabel",
+        "t.production.scopeLabel",
         "Current first focus",
+    ],
+    "src/i18n/en.ts": [
+        "Production unit",
+        "PROFIT production-unit grammar",
+        "Production → Economics → Evidence → Decision",
     ],
     "tests/browser/site.spec.ts": [
         "wcag22aa",
