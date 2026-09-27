@@ -5,7 +5,6 @@
 import type { ContentGap, PilotFormContent, SectionIntro, StatusItem, TextItem } from '../types';
 import {
   decisionQuestion,
-  evidenceReview,
   exampleRecords,
   fieldProfitability,
   moduleStatus,
@@ -324,7 +323,7 @@ export const trust = {
     } satisfies SectionIntro,
     ladderTitle: 'The evidence ladder',
     currentLabel: 'This site today',
-    review: evidenceReview,
+    standardNote: 'PROFIT VEV Standard v1 governs these definitions. Verification is about evidence quality and attribution, not whether the economic effect is positive. A Verified value may therefore be positive, zero or negative.',
     confidenceTitle: 'Confidence',
     confidenceText: 'Assessed confidence reflects the data behind a value: how complete, consistent, fresh, traceable and representative it is. Confidence never exceeds the quality of that data.',
     assessedLabel: 'Assessed confidence',

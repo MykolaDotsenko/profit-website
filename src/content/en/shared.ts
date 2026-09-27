@@ -320,7 +320,7 @@ export const hardQuestions: Question[] = [
     question: 'What does “verified” mean?',
     answer: [
       'Verified is the top of the evidence ladder: Hypothetical, Modelled, Observed, Attributed, Verified.',
-      'We use it only when the evidence and attribution standard is actually met. Nothing on this site is labelled Verified.',
+      'Under PROFIT VEV Standard v1, it requires an attributed incremental economic effect, explicit counterfactual, reproducible economics, documented evidence, assessed confidence and a recorded verification review. Nothing on this site is labelled Verified.',
     ],
   },
   {
@@ -359,10 +359,5 @@ export const verificationChain: TextItem[] = [
   { title: 'Attribution', text: 'How much of that difference the decision can be credited with, and how that was established.' },
   { title: 'Confidence', text: 'How certain the assessment is, given the data behind it.' },
 ];
-
-export const evidenceReview: ContentGap = {
-  owner: 'owner',
-  text: 'The plain-language definitions of each evidence state are a draft. Confirm them against the VEV methodology.',
-};
 
 export const actors = { you: 'You', profit: 'PROFIT', both: 'You and PROFIT' } as const;

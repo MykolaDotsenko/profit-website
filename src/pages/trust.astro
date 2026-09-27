@@ -47,7 +47,9 @@ const e = p.evidence;
     <div class="evidence stack">
       <h3 class="block-title">{e.ladderTitle}</h3>
       <EvidenceLadder current={fieldSeasonExample.meta.evidence} currentLabel={e.currentLabel} />
-      <ContentGap owner={e.review.owner} kind="review" text={e.review.text} />
+      <aside class="vev-standard" id="vev-standard">
+        <p>{e.standardNote}</p>
+      </aside>
     </div>
 
     <div class="evidence-grid">
@@ -207,6 +209,13 @@ const e = p.evidence;
   }
   .evidence {
     --stack-space: var(--space-5);
+  }
+  .vev-standard {
+    max-width: var(--measure-wide);
+    padding: var(--space-4) var(--space-5);
+    border-inline-start: 3px solid var(--color-line-strong);
+    background: var(--color-production-rail);
+    font-size: var(--text-small);
   }
   .evidence-grid {
     display: grid;

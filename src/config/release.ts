@@ -121,8 +121,9 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     id: 'evidence-definitions',
     area: 'trust',
     owner: 'product',
-    state: 'blocked',
-    reason: 'Plain-language evidence-state definitions still require VEV-methodology confirmation.',
+    state: 'ready',
+    reason: 'PROFIT VEV Standard v1 defines the evidence ladder, confidence thresholds, attribution requirements and verification review rule; public definitions are aligned to that standard.',
+    evidence: 'docs/methodology/vev-standard-v1.md',
   },
 ] as const;
 

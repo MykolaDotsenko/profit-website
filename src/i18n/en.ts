@@ -83,11 +83,11 @@ export const en: UIStrings = {
       verified: 'Verified',
     },
     stateDescriptions: {
-      hypothetical: 'An illustration. It is not based on any real farm’s records.',
-      modelled: 'Calculated from assumptions or a model. Not yet measured on a farm.',
-      observed: 'Measured on a real farm. Not yet linked to a decision or cause.',
-      attributed: 'A measured change linked to a specific decision, with the method stated.',
-      verified: 'Meets the full evidence and attribution standard for Verified Economic Value.',
+      hypothetical: 'An illustration or scenario. It is not a realised farm outcome.',
+      modelled: 'Calculated from explicit assumptions or a model. It is not yet a measured realised outcome.',
+      observed: 'A real outcome measured for a stated period. Observation alone does not show what caused it.',
+      attributed: 'A measured incremental effect linked to a defined decision or intervention against an explicit counterfactual, with attribution method and confidence stated.',
+      verified: 'An attributed incremental economic effect that passes the PROFIT VEV verification standard: reproducible economics, documented evidence and counterfactual, assessed confidence, and recorded review.',
     },
     confidenceLabel: 'Confidence',
     confidence: {
