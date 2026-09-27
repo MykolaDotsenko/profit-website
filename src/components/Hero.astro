@@ -62,33 +62,6 @@ const priceValue = {
 <section class="hero" aria-labelledby="hero-title" data-hero-variant={variant.id} data-message-state={variant.status.state}>
   <div class="container">
     <div class="hero__frame">
-      <aside class="hero__rail" aria-label="Current production context">
-        <div class="hero__rail-top">
-          <p class="operational-label">Current production unit</p>
-          <p class="hero__unit">{fieldLabel(focus, t, locale.intl)}</p>
-          <p class="hero__unit-detail">{fieldParts(focus, t, locale.intl).detail}</p>
-        </div>
-
-        <dl class="hero__rail-facts">
-          <div>
-            <dt>Product status</dt>
-            <dd>In development</dd>
-          </div>
-          <div>
-            <dt>Evidence</dt>
-            <dd>Hypothetical</dd>
-          </div>
-          <div>
-            <dt>Confidence</dt>
-            <dd>Not assessed</dd>
-          </div>
-        </dl>
-
-        <p class="hero__rail-note">
-          Field Profitability is the current first product focus. The production-unit grammar is designed to transfer beyond crops without forcing every farm into a per-hectare model.
-        </p>
-      </aside>
-
       <div class="hero__copy">
         <p class="eyebrow">{variant.eyebrow}</p>
         <h1 id="hero-title" class="hero__title">{variant.headline}</h1>
@@ -125,6 +98,33 @@ const priceValue = {
         <a class="button button--primary" href={href(primary)}>{primary.label}</a>
         <a class="button button--secondary" href={href(secondary)}>{secondary.label}</a>
       </div>
+
+      <aside class="hero__rail" aria-label="Current production context">
+        <div class="hero__rail-top">
+          <p class="operational-label">Current production unit</p>
+          <p class="hero__unit">{fieldLabel(focus, t, locale.intl)}</p>
+          <p class="hero__unit-detail">{fieldParts(focus, t, locale.intl).detail}</p>
+        </div>
+
+        <dl class="hero__rail-facts">
+          <div>
+            <dt>Product status</dt>
+            <dd>In development</dd>
+          </div>
+          <div>
+            <dt>Evidence</dt>
+            <dd>Hypothetical</dd>
+          </div>
+          <div>
+            <dt>Confidence</dt>
+            <dd>Not assessed</dd>
+          </div>
+        </dl>
+
+        <p class="hero__rail-note">
+          Field Profitability is the current first product focus. The production-unit grammar is designed to transfer beyond crops without forcing every farm into a per-hectare model.
+        </p>
+      </aside>
 
       <div class="hero__image">
         <ImageSlot caption={image.caption} requirement={image.requirement} aspect="16/9" />
