@@ -49,7 +49,6 @@ const e = p.evidence;
       <EvidenceLadder current={fieldSeasonExample.meta.evidence} currentLabel={e.currentLabel} />
       <aside class="vev-standard" id="vev-standard">
         <p>{e.standardNote}</p>
-        <p><a class="text-link" href="/company/#evidence-standard">{e.standardLink.label}</a></p>
       </aside>
     </div>
 
@@ -218,10 +217,6 @@ const e = p.evidence;
     background: var(--color-production-rail);
     font-size: var(--text-small);
   }
-  .vev-standard p + p {
-    margin-block-start: var(--space-2);
-  }
-
   .evidence-grid {
     display: grid;
     gap: var(--space-7);
