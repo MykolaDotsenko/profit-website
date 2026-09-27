@@ -639,6 +639,31 @@ test.describe('scan-first brochure behavior', () => {
   });
 });
 
+test.describe('B2 brand-system continuity', () => {
+  test('homepage exposes the canonical production/economic/decision brand codes', async ({ page }) => {
+    await page.goto('/');
+
+    await expect(page.locator('[data-brand-code="production-unit-grammar"]')).toHaveCount(1);
+    await expect(page.locator('[data-brand-code="economic-state-proof"]')).toHaveCount(1);
+    await expect(page.locator('[data-brand-code="cross-domain-production-grammar"]')).toHaveCount(1);
+    await expect(page.locator('[data-brand-code="decision-lineage"]')).toHaveCount(1);
+    await expect(page.locator('[data-brand-code="qualified-next-step"]')).toHaveCount(1);
+  });
+
+  test('methodology pages use the operational-ledger code instead of isolated process cards', async ({ page }) => {
+    await page.goto('/company/');
+    const ledgers = page.locator('[data-brand-code="operational-ledger"]');
+    expect(await ledgers.count()).toBeGreaterThanOrEqual(2);
+
+    const first = ledgers.first();
+    const rows = first.locator('.method-pipeline__step');
+    expect(await rows.count()).toBeGreaterThan(1);
+    const firstTop = await rows.nth(0).evaluate((el) => el.getBoundingClientRect().top);
+    const secondTop = await rows.nth(1).evaluate((el) => el.getBoundingClientRect().top);
+    expect(firstTop).toBeLessThan(secondTop);
+  });
+});
+
 test.describe('supporting-page scanability', () => {
   test('B2 split rails stay static and record lists vary by meaning', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 1000 });
