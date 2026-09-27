@@ -742,7 +742,8 @@ export const company = {
 };
 
 export const investors = {
-  meta: { title: 'Investors and partners', description: 'An evidence-led view of PROFIT: what exists today, and what is still a hypothesis.' },
+  onPageLabel: 'On this page',
+  meta: { title: 'Investors and partners', description: 'An evidence-led view of PROFIT: what exists today, what remains a hypothesis, and what must be proven before scale.' },
   intro: {
     eyebrow: 'Investors and partners',
     title: 'What exists today, and what is still a hypothesis',
@@ -792,6 +793,42 @@ export const investors = {
         text: 'The master-brand decision logic may transfer across crops, horticulture, greenhouse production and livestock, but each domain and market requires its own production model and evidence.',
       },
     ] satisfies StatusItem[],
+  },
+  proofNext: {
+    intro: {
+      id: 'proof-next',
+      eyebrow: 'Before scale',
+      title: 'What PROFIT still has to prove',
+      lead: 'The company case becomes stronger only when customer-level evidence survives each next gate.',
+    } satisfies SectionIntro,
+    items: [
+      {
+        title: 'Comprehension and trust',
+        text: 'Target farmers understand the proposition, the economic definitions and the evidence labels without being pushed toward a decision.',
+      },
+      {
+        title: 'Observed customer value',
+        text: 'Real farms use the product and produce measurable outcomes, not only modelled examples or forecasts.',
+      },
+      {
+        title: 'Attribution and VEV',
+        text: 'Incremental economic effect can be separated from the baseline and counterfactual with an explicit confidence level.',
+      },
+      {
+        title: 'Retention and pull',
+        text: 'Farmers keep using PROFIT because it continues to improve decisions across seasons or production cycles.',
+      },
+      {
+        title: 'Repeatable economics',
+        text: 'Acquisition, service and product costs support a repeatable business model without weakening farmer value or trust.',
+      },
+      {
+        title: 'Cross-domain transfer',
+        text: 'The production-unit grammar and decision method transfer beyond the first crop wedge only after each domain earns its own evidence.',
+      },
+    ] satisfies TextItem[],
+    note:
+      'These are proof gates, not published milestones or forecasts. Global scale remains an ambition until customer evidence, retention and unit economics support it.',
   },
   notClaimed: {
     intro: { id: 'not-claimed', eyebrow: 'Limits', title: 'What we do not claim' } satisfies SectionIntro,
@@ -865,6 +902,27 @@ export const contact = {
     eyebrow: 'Contact',
     title: 'Join the pilot',
     lead: 'Five details, no farm records. We use them only to reply to you about the pilot.',
+  },
+  fit: {
+    title: 'Pilot fit today',
+    items: [
+      {
+        title: 'Best current fit',
+        text: 'An arable or field-crop farm willing to discuss field-level operating economics and the records already available.',
+      },
+      {
+        title: 'No new machinery required',
+        text: 'The first Field Profitability concept works from farmer-provided field records. Connected machinery is not required.',
+      },
+      {
+        title: 'Other production systems are welcome to register interest',
+        text: 'Horticulture, greenhouse and livestock are part of the wider PROFIT direction, but no current module is implied by selecting those farm types.',
+      },
+      {
+        title: 'Not a fit for full farm accounting',
+        text: 'The current pilot is not a replacement for statutory accounts, tax, financing, inventory accounting or a full farm ERP.',
+      },
+    ] satisfies TextItem[],
   },
   stepsTitle: 'What happens next',
   steps: pilotSteps,
