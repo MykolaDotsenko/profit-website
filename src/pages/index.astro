@@ -8,6 +8,7 @@ import EvidenceLadder from '../components/EvidenceLadder.astro';
 import FieldExample from '../components/FieldExample.astro';
 import Hero from '../components/Hero.astro';
 import ItemList from '../components/ItemList.astro';
+import JourneyNav from '../components/JourneyNav.astro';
 import ProductionScope from '../components/ProductionScope.astro';
 import QuestionList from '../components/QuestionList.astro';
 import Section from '../components/Section.astro';
@@ -49,6 +50,8 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
       </dl>
     </section>
   </Hero>
+
+  <JourneyNav label={h.journey.label} items={h.journey.items} />
 
   <!-- 2 · Master-brand production scope: direction, not a claim of shipped modules. -->
   <Section intro={h.scope.intro} tone="sunken" spacing="compact">
