@@ -403,6 +403,9 @@ Acceptance:
 
 ### WWW-207 — Evidence and trust
 
+Status:
+**Homepage brochure refinement implemented:** evidence ladder, confidence and the current-site Verified status remain visible; the full verification chain uses native accessible progressive disclosure and links onward to /trust for methodology depth.
+
 Acceptance:
 - [ ] canonical evidence states;
 - [ ] confidence semantics;

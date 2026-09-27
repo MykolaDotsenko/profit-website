@@ -349,6 +349,36 @@ test.describe('H4 message integrity', () => {
   });
 });
 
+test.describe('homepage evidence progressive disclosure', () => {
+  test('trust-critical evidence stays visible while verification depth is progressive', async ({ page }) => {
+    await page.goto('/');
+    const evidence = page.locator('#evidence');
+    await expect(evidence).toContainText('Hypothetical');
+    await expect(evidence).toContainText('Confidence');
+    await expect(evidence).toContainText('Nothing on this site is labelled Verified.');
+
+    const details = evidence.locator('.value__disclosure');
+    await expect(details).not.toHaveAttribute('open', '');
+    await expect(details.getByText('Inspect the verification chain')).toBeVisible();
+
+    await details.locator('summary').click();
+    await expect(details).toHaveAttribute('open', '');
+    await expect(details).toContainText('Baseline');
+    await expect(details).toContainText('Counterfactual');
+    await expect(details).toContainText('Attribution');
+    await expect(details).toContainText('PROFIT does not treat a forecast as a fact');
+  });
+
+  test('verification disclosure remains keyboard operable', async ({ page }) => {
+    await page.goto('/');
+    const summary = page.locator('#evidence .value__disclosure summary');
+    await summary.focus();
+    await expect(summary).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('#evidence .value__disclosure')).toHaveAttribute('open', '');
+  });
+});
+
 test.describe('closing conversion surface', () => {
   test('closing pilot CTA stays explicit and visually separated', async ({ page }) => {
     await page.goto('/');

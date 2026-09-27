@@ -301,13 +301,15 @@ Verification chain:
 
 **Baseline → Counterfactual → Intervention → Actual outcome → Incremental effect → Attribution → Confidence**
 
+Presentation rule:
+**Evidence ladder, confidence and the current-site note stay visible by default. The full verification chain may use accessible progressive disclosure so methodology depth remains inspectable without making the homepage feel like a report.**
+
+Current-site note:
+**Nothing on this site is labelled Verified.**
+
 Trust line:
 
 **PROFIT does not treat a forecast as a fact, a modelled benefit as an outcome, or an outcome as proof that PROFIT caused it.**
-
-Current-site note:
-
-**Nothing on this site is labelled Verified.**
 
 Link:
 

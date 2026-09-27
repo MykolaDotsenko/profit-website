@@ -249,9 +249,12 @@ export const home = {
       'Assessed confidence reflects the data behind a value: how complete, consistent, fresh, traceable and representative it is.',
     assessedLabel: 'Assessed confidence',
     notAssessedText: 'No assessment was made. “Not assessed” is not a confidence level.',
-    chainTitle: 'What a verified value has to show',
+    currentSiteLabel: 'Current site',
+    currentSiteNote: 'Nothing on this site is labelled Verified.',
+    chainTitle: 'How a value would become Verified',
+    chainSummary: 'Inspect the verification chain',
     chainNote:
-      'PROFIT does not treat a forecast as a fact, a modelled benefit as an outcome, or an outcome as proof that PROFIT caused it. Nothing on this site is labelled Verified.',
+      'PROFIT does not treat a forecast as a fact, a modelled benefit as an outcome, or an outcome as proof that PROFIT caused it.',
     link: { label: 'Read the methodology', href: '/trust/#evidence' },
   },
   wedge: {
