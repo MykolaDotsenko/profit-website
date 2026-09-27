@@ -1,4 +1,4 @@
-name: QA Bootstrap Vercel Preview
+name: QA Live Vercel E2E
 
 on:
   push:
@@ -9,18 +9,16 @@ permissions:
   contents: read
 
 concurrency:
-  group: qa-vercel-preview-bootstrap
-  cancel-in-progress: false
+  group: qa-live-vercel-e2e
+  cancel-in-progress: true
 
 jobs:
-  preview:
+  live-e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     env:
       ASTRO_TELEMETRY_DISABLED: "1"
-      VERCEL_TEAM_ID: "team_AJmQMyR5j2vR39hERrsYbsvj"
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      PROJECT_NAME: "profit-website"
+      LIVE_BASE_URL: "https://profit-website.vercel.app"
 
     steps:
       - name: Checkout exact candidate
@@ -35,126 +33,87 @@ jobs:
       - name: Install repository dependencies
         run: npm ci
 
-      - name: Validate preview candidate
+      - name: Verify repository candidate
         run: npm run verify
         env:
           SITE_INDEXABLE: "false"
           SHOW_CONTENT_STATUS: "true"
           PILOT_FORM_ENDPOINT: ""
 
-      - name: Confirm Vercel credential availability
+      - name: Install pinned browser-QA tools
+        run: npm install --no-save --package-lock=false @playwright/test@1.63.0 @axe-core/playwright@4.13.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Generate live-origin Playwright config
         shell: bash
         run: |
-          if [ -z "$VERCEL_TOKEN" ]; then
-            echo "::error::VERCEL_TOKEN GitHub Actions secret is not configured."
-            exit 1
-          fi
+          cat > playwright.live.config.ts <<'EOF'
+          import { defineConfig } from '@playwright/test';
 
-      - name: Create or resolve isolated Vercel project
-        id: project
-        shell: bash
-        run: |
-          node <<'NODE'
-          const fs = require('node:fs');
-
-          const teamId = process.env.VERCEL_TEAM_ID;
-          const token = process.env.VERCEL_TOKEN;
-          const name = process.env.PROJECT_NAME;
-          const headers = {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          };
-
-          const api = async (url, init = {}) => {
-            const response = await fetch(url, { ...init, headers: { ...headers, ...(init.headers || {}) } });
-            const text = await response.text();
-            let body = {};
-            try { body = text ? JSON.parse(text) : {}; } catch { body = { raw: text }; }
-            return { response, body };
-          };
-
-          (async () => {
-            const getUrl = `https://api.vercel.com/v9/projects/${encodeURIComponent(name)}?teamId=${encodeURIComponent(teamId)}`;
-            let { response, body } = await api(getUrl);
-
-            if (response.status === 404) {
-              ({ response, body } = await api(
-                `https://api.vercel.com/v11/projects?teamId=${encodeURIComponent(teamId)}`,
-                {
-                  method: 'POST',
-                  body: JSON.stringify({
-                    name,
-                    framework: 'astro',
-                    installCommand: 'npm ci',
-                    buildCommand: 'npm run build',
-                    outputDirectory: 'dist',
-                  }),
-                },
-              ));
-            }
-
-            if (!response.ok || !body.id) {
-              console.error(`Unable to create/resolve Vercel project: HTTP ${response.status}`);
-              if (body?.error?.code) console.error(`Vercel error code: ${body.error.code}`);
-              if (body?.error?.message) console.error(`Vercel error: ${body.error.message}`);
-              process.exit(1);
-            }
-
-            fs.mkdirSync('.vercel', { recursive: true });
-            fs.writeFileSync('.vercel/project.json', JSON.stringify({ orgId: teamId, projectId: body.id }, null, 2));
-            fs.appendFileSync(process.env.GITHUB_OUTPUT, `project_id=${body.id}\n`);
-            console.log(`Resolved Vercel project ${name} (${body.id}).`);
-          })().catch((error) => {
-            console.error(error instanceof Error ? error.message : String(error));
-            process.exit(1);
+          export default defineConfig({
+            testDir: './tests/browser',
+            timeout: 30_000,
+            expect: { timeout: 5_000 },
+            fullyParallel: true,
+            forbidOnly: true,
+            retries: 1,
+            workers: 4,
+            reporter: [['list'], ['html', { open: 'never', outputFolder: 'playwright-live-report' }]],
+            use: {
+              baseURL: process.env.LIVE_BASE_URL,
+              trace: 'retain-on-failure',
+              screenshot: 'only-on-failure',
+            },
           });
-          NODE
+          EOF
 
-      - name: Pull preview environment
-        run: npx --yes vercel@59.19.1 pull --yes --environment=preview --token="$VERCEL_TOKEN"
+      - name: Run full browser/Axe suite against live Vercel origin
+        run: npx playwright test --config=playwright.live.config.ts
 
-      - name: Build immutable non-indexable preview
-        run: npx --yes vercel@59.19.1 build --token="$VERCEL_TOKEN"
-        env:
-          SITE_INDEXABLE: "false"
-          SHOW_CONTENT_STATUS: "true"
-          PILOT_FORM_ENDPOINT: ""
-
-      - name: Deploy preview
-        id: deploy
+      - name: Verify live security, crawl and form-safety contract
         shell: bash
         run: |
-          url="$(npx --yes vercel@59.19.1 deploy --prebuilt --token="$VERCEL_TOKEN")"
-          echo "url=$url" >> "$GITHUB_OUTPUT"
-          echo "### QA preview" >> "$GITHUB_STEP_SUMMARY"
-          echo "- URL: $url" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Git commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Vercel project: ${{ steps.project.outputs.project_id }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- SITE_INDEXABLE: false" >> "$GITHUB_STEP_SUMMARY"
-          echo "- PILOT_FORM_ENDPOINT: disabled" >> "$GITHUB_STEP_SUMMARY"
+          set -euo pipefail
 
-      - name: Inspect deployed artifact
-        run: npx --yes vercel@59.19.1 inspect "${{ steps.deploy.outputs.url }}" --token="$VERCEL_TOKEN"
+          headers="$(mktemp)"
+          home="$(mktemp)"
+          curl -fsS -D "$headers" -o "$home" "$LIVE_BASE_URL/"
 
-      - name: Public smoke when deployment protection permits it
-        shell: bash
-        env:
-          PREVIEW_URL: ${{ steps.deploy.outputs.url }}
-        run: |
-          set +e
-          status="$(curl -sS -o /tmp/home.html -w '%{http_code}' "$PREVIEW_URL/")"
-          set -e
-          echo "Preview root HTTP status: $status"
-          if [ "$status" = "200" ]; then
-            grep -q 'name="robots" content="noindex, nofollow"' /tmp/home.html
-            robots="$(curl -fsS "$PREVIEW_URL/robots.txt")"
-            printf '%s\n' "$robots" | grep -q '^Disallow: /$'
-            not_found="$(curl -sS -o /dev/null -w '%{http_code}' "$PREVIEW_URL/__qa-not-found__")"
-            test "$not_found" = "404"
-            echo "Public smoke passed."
-          elif [ "$status" = "401" ] || [ "$status" = "403" ]; then
-            echo "Deployment protection is active; authenticated live-origin QA must use Vercel access tooling."
-          else
-            echo "::error::Unexpected preview root HTTP status: $status"
-            exit 1
-          fi
+          grep -qi '^strict-transport-security: max-age=' "$headers"
+          grep -qi '^x-content-type-options: nosniff' "$headers"
+          grep -qi '^x-frame-options: DENY' "$headers"
+          grep -qi '^referrer-policy: strict-origin-when-cross-origin' "$headers"
+          grep -qi '^permissions-policy: camera=(), microphone=(), geolocation=()' "$headers"
+          grep -q 'name="robots" content="noindex, nofollow"' "$home"
+
+          robots="$(curl -fsS "$LIVE_BASE_URL/robots.txt")"
+          printf '%s\n' "$robots" | grep -q '^User-agent: \*$'
+          printf '%s\n' "$robots" | grep -q '^Disallow: /$'
+
+          sitemap_headers="$(mktemp)"
+          sitemap="$(mktemp)"
+          curl -fsS -D "$sitemap_headers" -o "$sitemap" "$LIVE_BASE_URL/sitemap-index.xml"
+          grep -qi '^content-type: application/xml' "$sitemap_headers"
+          grep -q '<urlset' "$sitemap"
+
+          not_found="$(curl -sS -o /dev/null -w '%{http_code}' "$LIVE_BASE_URL/__qa-not-found__")"
+          test "$not_found" = "404"
+
+          contact="$(curl -fsS "$LIVE_BASE_URL/contact/")"
+          form_tag="$(printf '%s' "$contact" | grep -o '<form[^>]*data-pilot-form[^>]*>' | head -1)"
+          submit_tag="$(printf '%s' "$contact" | grep -o '<button[^>]*data-submit[^>]*>' | head -1)"
+          ! printf '%s' "$form_tag" | grep -q ' action='
+          ! printf '%s' "$form_tag" | grep -q ' method='
+          printf '%s' "$submit_tag" | grep -q 'type="button"'
+          printf '%s' "$contact" | grep -q 'This preview is not connected to a submission service yet. Nothing was sent.'
+
+      - name: Upload live browser report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-playwright-report
+          path: playwright-live-report
+          if-no-files-found: ignore
+          retention-days: 7
