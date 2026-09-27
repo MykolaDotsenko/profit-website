@@ -200,6 +200,10 @@ test.describe('methodology surfaces', () => {
     await expect(how).not.toContainText('deep learning');
 
     await page.goto('/trust/');
+    await expect(page.locator('main')).toContainText('Check completeness');
+    await expect(page.locator('main')).toContainText('Check consistency and duplicates');
+
+    await page.goto('/company/');
     await expect(page.locator('main')).toContainText('Quality before intelligence');
   });
 });
