@@ -558,6 +558,42 @@ test.describe('supporting-page scanability', () => {
   });
 });
 
+test.describe('qualified conversion and investor proof', () => {
+  test('contact page qualifies the current pilot before asking for details', async ({ page }) => {
+    await page.goto('/contact/');
+
+    const fit = page.locator('#fit');
+    await expect(fit).toBeVisible();
+    await expect(fit).toContainText('Pilot fit today');
+    await expect(fit).toContainText('Best current fit');
+    await expect(fit).toContainText('No new machinery required');
+    await expect(fit).toContainText('Other production systems are welcome to register interest');
+    await expect(fit).toContainText('Not a fit for full farm accounting');
+
+    const fitTop = await fit.evaluate((el) => el.getBoundingClientRect().top);
+    const formTop = await page.locator('[data-pilot-form]').evaluate((el) => el.getBoundingClientRect().top);
+    expect(fitTop).toBeLessThan(formTop);
+  });
+
+  test('investor page exposes proof gates before scale and avoids vanity claims', async ({ page }) => {
+    await page.goto('/investors/');
+
+    const proof = page.locator('#proof-next');
+    await expect(proof).toBeVisible();
+    await expect(proof).toContainText('What PROFIT still has to prove');
+    await expect(proof).toContainText('Comprehension and trust');
+    await expect(proof).toContainText('Observed customer value');
+    await expect(proof).toContainText('Attribution and VEV');
+    await expect(proof).toContainText('Retention and pull');
+    await expect(proof).toContainText('Repeatable economics');
+    await expect(proof).toContainText('Cross-domain transfer');
+    await expect(proof).toContainText('Global scale remains an ambition');
+
+    const nav = page.locator('.on-page-nav');
+    await expect(nav.getByRole('link', { name: /What PROFIT still has to prove/ })).toHaveAttribute('href', '#proof-next');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
