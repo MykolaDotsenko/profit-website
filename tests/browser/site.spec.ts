@@ -3,6 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 const routes = ['/', '/farmers/', '/product/', '/trust/', '/company/', '/investors/', '/contact/'] as const;
 const viewports = [
+  { name: '320', width: 320, height: 800 },
   { name: '390', width: 390, height: 844 },
   { name: '768', width: 768, height: 1024 },
   { name: '1024', width: 1024, height: 768 },
@@ -1324,5 +1325,88 @@ test.describe('Danish opt-in localization', () => {
     expect(geometry.documentScrollX).toBeLessThanOrEqual(1);
     expect(geometry.regionOverflow).toBeGreaterThan(0);
     expect(geometry.localScrollX).toBeGreaterThan(0);
+  });
+});
+
+
+test.describe('WCAG reflow and user text overrides', () => {
+  const localizedRoots = ['/', '/uk/', '/fi/', '/da/'] as const;
+
+  test('all localized public routes reflow at 320 CSS px without page-level horizontal scrolling', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 800 });
+
+    const localizedRoutes = (['uk', 'fi', 'da'] as const).flatMap((locale) =>
+      routes.map((route) => `/${locale}${route}`),
+    );
+
+    for (const route of localizedRoutes) {
+      const response = await page.goto(route, { waitUntil: 'networkidle' });
+      expect(response?.ok(), route).toBeTruthy();
+
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      expect(overflow, route).toBeLessThanOrEqual(1);
+    }
+  });
+
+  test('200% text-only resize keeps primary navigation inside the viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+
+    for (const route of localizedRoots) {
+      await page.goto(route, { waitUntil: 'networkidle' });
+      await page.evaluate(() => {
+        document.documentElement.style.fontSize = '200%';
+      });
+
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      expect(overflow, route).toBeLessThanOrEqual(1);
+
+      const nav = page.locator('#site-nav');
+      await expect(nav).toBeVisible();
+      const navBox = await nav.boundingBox();
+      expect(navBox, route).not.toBeNull();
+      expect(navBox!.x + navBox!.width, route).toBeLessThanOrEqual(1281);
+    }
+  });
+
+  test('WCAG text-spacing overrides do not create page-level overflow', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+
+    for (const route of localizedRoots) {
+      await page.goto(route, { waitUntil: 'networkidle' });
+      await page.addStyleTag({
+        content: `
+          * {
+            line-height: 1.5 !important;
+            letter-spacing: 0.12em !important;
+            word-spacing: 0.16em !important;
+          }
+          p { margin-bottom: 2em !important; }
+        `,
+      });
+
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      expect(overflow, route).toBeLessThanOrEqual(1);
+    }
+  });
+
+  test('forced-colors mode retains visible content and keyboard entry point', async ({ browser }) => {
+    const context = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      forcedColors: 'active',
+    });
+    const page = await context.newPage();
+    await page.goto('/', { waitUntil: 'networkidle' });
+
+    await expect(page.locator('main')).toBeVisible();
+    await page.keyboard.press('Tab');
+    await expect(page.locator('.skip-link')).toBeFocused();
+
+    await context.close();
   });
 });

@@ -109,7 +109,8 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
 
       <div class="field-example__grid">
         <div class="field-example__panel field-example__panel--compare">
-          <table class="snapshot">
+          <div class="snapshot-wrap" tabindex="0" role="region" aria-label={labels.tableCaption}>
+            <table class="snapshot">
             <caption>{labels.tableCaption}</caption>
             <thead>
               <tr>
@@ -136,7 +137,8 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
                 ))
               }
             </tbody>
-          </table>
+            </table>
+          </div>
         </div>
 
         <div class="field-example__panel field-example__panel--economics">
@@ -382,12 +384,62 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       background: var(--color-surface);
     }
 
+    .field-example__panel--compare {
+      overflow: hidden;
+    }
+
     .field-example__panel--economics {
       background: var(--color-production-surface);
     }
 
+    .snapshot-wrap {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      contain: inline-size;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+    }
+
+    .snapshot-wrap:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: -3px;
+    }
+
     table {
       width: 100%;
+    }
+
+    .snapshot {
+      min-width: 18rem;
+    }
+
+    @media (max-width: 30rem) {
+      .snapshot {
+        min-width: 0;
+        table-layout: fixed;
+      }
+
+      .snapshot th,
+      .snapshot td {
+        min-width: 0;
+      }
+
+      .snapshot thead th:first-child {
+        width: 40%;
+      }
+
+      .snapshot thead th:nth-child(2) {
+        width: 28%;
+      }
+
+      .snapshot thead th:nth-child(3) {
+        width: 32%;
+      }
+
+      .snapshot thead th {
+        overflow-wrap: anywhere;
+      }
     }
 
     caption {
