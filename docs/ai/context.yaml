@@ -33,6 +33,13 @@ company_context:
     master_brand_gate: "before master-brand homepage positioning is permanently locked, or before horticulture/greenhouse/livestock directions become public product domains, validate the master-brand proposition with relevant target users beyond the crop cohort; WWW-000 cannot close this gate; it does not block Field Profitability wedge learning"
     extensibility: "master brand, naming, IA, category language and visual system stay extensible across arable crops; horticulture/orchards/berries; greenhouse/protected cultivation; pig production; dairy; beef/grazing livestock; poultry/eggs; other livestock and mixed farms without rebranding; domain-specific metrics/units remain local; Field Profitability is the current first concrete product focus"
   public_claim_rule: "Internal ambition is not public proof."
+  qualified_conversion:
+    pilot_rule: "qualify current product fit before requesting contact details; five details only; no farm records"
+    current_fit: "Field Profitability / arable-field economics is the first pilot focus; connected machinery is not required"
+    non_fit: "do not imply full farm accounting, ERP, livestock modules or automated recommendation capability"
+    investor_rule: "show what exists, what is hypothesis, what is not claimed, and what must be proven before scale"
+    scale_rule: "comprehension/trust → observed value → attribution/VEV → retention/pull → repeatable economics → cross-domain transfer"
+
 
 field_profitability_reference:
   canonical_source: "docs/website-blueprint-v1.md section 2.2 (internal product-truth boundary)"
