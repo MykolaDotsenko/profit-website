@@ -7,15 +7,14 @@
  */
 import { site } from '../config/site';
 import type { ImageAsset } from '../content/types';
-import { localeInfo, ui } from '../i18n';
 
 interface Props {
   name: string;
   image?: ImageAsset;
+  requirement: string;
 }
 
-const { name, image } = Astro.props;
-const t = ui(localeInfo(Astro.currentLocale).code);
+const { name, image, requirement } = Astro.props;
 const initials = name
   .split(/\s+/)
   .filter(Boolean)
@@ -41,17 +40,13 @@ const visible = Boolean(image) || site.showContentStatus;
             decoding="async"
           />
         ) : (
-          <div class="team-portrait__placeholder" role="img" aria-label={`Portrait pending for ${name}`}>
+          <div class="team-portrait__placeholder" role="img" aria-label={requirement}>
             <span aria-hidden="true">{initials}</span>
           </div>
         )
       }
       <figcaption>
-        {
-          image
-            ? image.credit
-            : `${t.status.reviewLabel}: approved portrait and publication consent required.`
-        }
+        {image ? image.credit : requirement}
       </figcaption>
     </figure>
   )
