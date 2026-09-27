@@ -1058,8 +1058,12 @@ test.describe('English default + Ukrainian opt-in localization', () => {
     await expect(page.locator('main')).toContainText('207');
 
     await page.goto('/uk/product/');
-    await expect(page.locator('main')).toContainText('225');
     await expect(page.locator('main')).toContainText('Ціна беззбитковості');
+    await expect(page.locator('main')).toContainText('226');
+    await expect(page.locator('main')).toContainText('Урожайність беззбитковості');
+    await expect(page.locator('main')).toContainText('4,0');
+    await expect(page.locator('main')).not.toContainText('The first PROFIT module.');
+    await expect(page.locator('main')).not.toContainText('Revenue');
   });
 
   test('language switcher preserves the current route in both directions', async ({ page }) => {
