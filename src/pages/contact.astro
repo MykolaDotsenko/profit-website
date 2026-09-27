@@ -7,15 +7,17 @@ import Section from '../components/Section.astro';
 import PilotForm from '../components/PilotForm.astro';
 import { site } from '../config/site';
 import { content } from '../content';
+import { localeInfo, ui } from '../i18n';
 
 const p = content(Astro.currentLocale).contact;
+const t = ui(localeInfo(Astro.currentLocale).code);
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
 
   <Section
-    intro={{ id: 'fit', eyebrow: 'Current scope', title: p.fit.title, lead: 'Qualify the conversation before sharing anything.' }}
+    intro={{ id: 'fit', eyebrow: t.common.currentScope, title: p.fit.title, lead: t.common.qualifyConversation }}
     layout="split"
     tone="sunken"
   >
