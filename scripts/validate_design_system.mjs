@@ -63,6 +63,23 @@ function validate(path) {
 
 walk(src);
 
+const requiredBrandCodes = new Map([
+  ['src/components/Hero.astro', 'data-brand-code="production-unit-grammar"'],
+  ['src/components/FieldExample.astro', 'data-brand-code="economic-state-proof"'],
+  ['src/components/ProductionScope.astro', 'data-brand-code="cross-domain-production-grammar"'],
+  ['src/components/StepSequence.astro', 'data-brand-code="decision-lineage"'],
+  ['src/components/MethodPipeline.astro', 'data-brand-code="operational-ledger"'],
+  ['src/components/CtaBand.astro', 'data-brand-code="qualified-next-step"'],
+]);
+
+for (const [file, marker] of requiredBrandCodes) {
+  const fullPath = join(root, file);
+  const text = readFileSync(fullPath, 'utf8');
+  if (!text.includes(marker)) {
+    report(fullPath, 1, 'brand-code-marker', `Missing required brand code: ${marker}`);
+  }
+}
+
 if (violations.length) {
   console.error('Design-system contract FAILED:');
   for (const v of violations) {
@@ -72,4 +89,4 @@ if (violations.length) {
 }
 
 console.log('Design-system contract OK');
-console.log('Checked production Astro/CSS/TS for token, radius, shadow and dependency drift.');
+console.log('Checked production Astro/CSS/TS for token, radius, shadow, dependency and canonical B2 brand-code drift.');

@@ -103,12 +103,24 @@ B2 is now implemented provisionally across the coded site, including:
 - documentary-asset placeholder that does not simulate a real farm image.
 
 The implementation intentionally keeps:
-- H3 as a provisional, non-farmer-validated hero message;
+- H4 as the reversible, non-farmer-validated development hero message;
 - documentary photography absent until source/rights/provenance exist;
 - livestock/horticulture domains as direction only;
 - public release gates blocked where evidence/legal/company inputs are missing.
 
 This moves B2 from concept selection to a **provisional production system**, not to validated brand status.
+
+### 2026-09-27 system-consistency refinement
+
+A second internal logo-off/generic-SaaS red-team identified a narrower implementation risk: Hero, FieldExample and ProductionScope already expressed the intended B2 grammar strongly, but equal-weight process cards in StepSequence, MethodPipeline and CTA steps could make the broader site feel interchangeable with generic B2B/SaaS documentation.
+
+Decision:
+- keep B2 unchanged as the art direction;
+- replace isolated process-card treatment with continuous decision-lineage / operational-ledger treatment;
+- make the canonical B2 component roles machine-auditable through explicit brand-code markers;
+- do **not** invent a new symbol, decorative device, animation system or colour gimmick.
+
+This is an internal systemisation decision only. It does not satisfy the logo-off recognition or farmer-validation gates.
 
 ---
 
