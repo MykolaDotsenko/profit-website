@@ -1,0 +1,95 @@
+---
+/**
+ * Optional team portrait surface.
+ *
+ * A missing portrait is shown only in content-review mode. This prevents a placeholder from
+ * masquerading as published proof while allowing the final photo to land without layout redesign.
+ */
+import { site } from '../config/site';
+import type { ImageAsset } from '../content/types';
+import { localeInfo, ui } from '../i18n';
+
+interface Props {
+  name: string;
+  image?: ImageAsset;
+}
+
+const { name, image } = Astro.props;
+const t = ui(localeInfo(Astro.currentLocale).code);
+const initials = name
+  .split(/\s+/)
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((part) => part[0]?.toUpperCase())
+  .join('');
+const visible = Boolean(image) || site.showContentStatus;
+---
+
+{
+  visible && (
+    <figure class="team-portrait" data-team-portrait-state={image ? 'approved' : 'pending'}>
+      {
+        image ? (
+          <img
+            src={image.src}
+            srcset={image.srcset}
+            sizes={image.sizes}
+            width={image.width}
+            height={image.height}
+            alt={image.alt}
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <div class="team-portrait__placeholder" role="img" aria-label={`Portrait pending for ${name}`}>
+            <span aria-hidden="true">{initials}</span>
+          </div>
+        )
+      }
+      <figcaption>
+        {
+          image
+            ? image.credit
+            : `${t.status.reviewLabel}: approved portrait and publication consent required.`
+        }
+      </figcaption>
+    </figure>
+  )
+}
+
+<style>
+  @layer components {
+    .team-portrait {
+      display: grid;
+      gap: var(--space-2);
+      width: min(7rem, 32vw);
+      margin: 0;
+    }
+
+    .team-portrait img,
+    .team-portrait__placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border: 1px solid var(--color-line-strong);
+    }
+
+    .team-portrait__placeholder {
+      display: grid;
+      place-items: end start;
+      padding: var(--space-3);
+      background: var(--color-production-rail);
+      color: var(--color-text);
+      font-family: var(--font-label);
+      font-size: var(--text-subsection);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+    }
+
+    .team-portrait figcaption {
+      color: var(--color-text-secondary);
+      font-size: var(--text-label);
+      line-height: 1.4;
+    }
+  }
+</style>
