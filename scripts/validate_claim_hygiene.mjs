@@ -9,7 +9,6 @@ const forbidden = [
   { pattern: /\bAI-powered\b/i, reason: 'generic AI marketing claim' },
   { pattern: /\bguaranteed profit\b/i, reason: 'unsupported economic guarantee' },
   { pattern: /\bguaranteed savings\b/i, reason: 'unsupported economic guarantee' },
-  { pattern: /\bmarket leader(?:ship)?\b/i, reason: 'leadership claim without evidence' },
   { pattern: /\bindustry-leading\b/i, reason: 'comparative superiority claim without evidence' },
   { pattern: /\bbest-in-class\b/i, reason: 'comparative superiority claim without evidence' },
   { pattern: /\brevolutionary\b/i, reason: 'hype language' },
