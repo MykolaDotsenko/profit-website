@@ -17,6 +17,16 @@ const t = ui(locale.code);
 const fullTitle = title ? `${title} · ${t.meta.titleSuffix}` : t.meta.titleSuffix;
 const metaDescription = description ?? t.meta.defaultDescription;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+const websiteStructuredData = Astro.site
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: t.brand,
+      url: new URL('/', Astro.site).href,
+      description: t.meta.defaultDescription,
+      inLanguage: locale.lang,
+    }
+  : null;
 ---
 
 <!doctype html>
@@ -38,7 +48,10 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : nu
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={metaDescription} />
-    <!-- No brand symbol exists yet (open hypothesis). An empty icon avoids a failed favicon request. -->
+    {websiteStructuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(websiteStructuredData)} />
+    )}
+    <!-- No approved brand/social image exists yet. Do not fabricate an og:image or favicon asset. -->
     <link rel="icon" href="data:," />
   </head>
   <body>
