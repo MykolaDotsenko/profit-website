@@ -32,14 +32,17 @@ const t = ui(localeInfo(Astro.currentLocale).code);
   @layer components {
     .ladder {
       display: grid;
-      gap: 0;
+      gap: 1px;
+      border: 1px solid var(--color-line-strong);
+      background: var(--color-line);
     }
     .ladder__rung {
       display: grid;
       gap: var(--space-2);
       align-content: start;
-      padding: var(--space-4) 0 var(--space-5);
-      border-block-start: 1px solid var(--color-line);
+      min-width: 0;
+      padding: var(--space-4);
+      background: var(--color-inverse-canvas);
     }
     .ladder__head {
       display: flex;
@@ -47,6 +50,7 @@ const t = ui(localeInfo(Astro.currentLocale).code);
       gap: var(--space-3);
     }
     .ladder__index {
+      font-family: var(--font-label);
       font-size: var(--text-caption);
       color: var(--color-text-secondary);
     }
@@ -59,7 +63,7 @@ const t = ui(localeInfo(Astro.currentLocale).code);
       color: var(--color-text-secondary);
     }
     .ladder__rung.is-current {
-      border-block-start: 3px solid var(--color-line-strong);
+      box-shadow: inset 0.3rem 0 0 currentColor;
     }
     .ladder__current {
       justify-self: start;
@@ -74,13 +78,7 @@ const t = ui(localeInfo(Astro.currentLocale).code);
     @container (min-width: 56rem) {
       .ladder {
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: var(--space-5);
       }
-      /* Each rung sits a step higher: position carries the order, not colour. */
-      .ladder__rung:nth-child(1) { margin-block-start: 4rem; }
-      .ladder__rung:nth-child(2) { margin-block-start: 3rem; }
-      .ladder__rung:nth-child(3) { margin-block-start: 2rem; }
-      .ladder__rung:nth-child(4) { margin-block-start: 1rem; }
     }
   }
 </style>
