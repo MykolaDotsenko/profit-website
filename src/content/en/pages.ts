@@ -18,6 +18,7 @@ import {
 } from './shared';
 
 const exampleLabels = {
+  productName: fieldProfitability.name,
   notScreenshot: 'Illustration, not a product screenshot.',
   tableCaption: 'Operating profit by field, one season',
   columnField: 'Field',
