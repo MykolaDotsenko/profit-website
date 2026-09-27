@@ -78,9 +78,9 @@ The final notice must be based on actual facts. Do not fill a row by assumption.
 | Controller contact | **OPEN** | monitored privacy/contact address |
 | DPO/contact if applicable | **OPEN / applicability to confirm** | legal determination + contact if required |
 | Categories of personal data | **DRAFTED** | verify five-field form + any technical logs actually collected |
-| Purpose | **DRAFTED** | confirm that contact data is used to evaluate/reply about pilot or enquiry |
-| Legal basis | **OPEN — do not infer** | legal decision for each purpose |
-| Retention period / criteria | **OPEN** | operational + legal decision |
+| Purpose | **DECIDED INTERNALLY** | reply to inbound enquiry + assess current pilot fit; final legal review still required |
+| Legal basis | **PROPOSED: legitimate interests** | controller-specific approval + balancing assessment; change if final counsel determines another basis fits the real relationship better |
+| Retention period / criteria | **POLICY TARGET DECIDED** | 12 months after last substantive contact for non-participant enquiries; final approval + implementation verification required |
 | Recipients/processors | **OPEN** | actual hosting/form/email/CRM providers |
 | International transfers | **OPEN** | actual provider locations + transfer mechanism where applicable |
 | Automated decision-making/profiling | **Current site: none identified** | verify actual production behavior before publication |
@@ -92,7 +92,7 @@ The final notice must be based on actual facts. Do not fill a row by assumption.
 
 ### Hard rule
 
-**Do not choose “consent”, “contract”, “legitimate interest” or another GDPR legal basis because it sounds convenient.** The legal basis must match the real purpose and relationship and be approved before publication.
+The internal readiness position proposes legitimate interests for the minimal inbound-enquiry flow because the person initiates contact, the data is minimal and the use is limited to reply/fit assessment. This remains subject to controller-specific legal approval and a balancing assessment. If the real relationship better fits another lawful basis, the final notice must say so.
 
 ## 5. Farm-data terms — decisions required before records are shared
 
@@ -119,11 +119,11 @@ Before accepting farm records, define and approve:
 - any international transfer mechanism required.
 
 ### 5.4 Retention, deletion and return/export
-- how long pilot records are kept;
-- deletion trigger and operational process;
-- what can be exported/returned;
-- backup deletion limitations if any;
-- what happens when the pilot or customer relationship ends.
+Internal policy targets:
+- provide agreed exportable records/results at pilot exit where technically feasible;
+- delete active-system records within 30 days after a valid deletion/end trigger unless another documented legal need applies;
+- allow backup expiry up to 90 days where immediate granular deletion is not technically feasible;
+- final terms must match the actual infrastructure before these targets become contractual promises.
 
 ### 5.5 Correction and provenance
 - farmer can identify/correct incorrect records;
@@ -131,9 +131,9 @@ Before accepting farm records, define and approve:
 - source/provenance should remain traceable.
 
 ### 5.6 Secondary use, benchmarking and model training
-Default readiness position:
+Approved internal default:
 
-**No secondary use, cross-customer benchmarking or model training should be implied from participation in the pilot.**
+**No secondary use, cross-customer benchmarking or model training is permitted by pilot participation alone.**
 
 If PROFIT later wants any secondary use:
 - define it as a separate purpose;
@@ -214,6 +214,11 @@ Re-open this inventory immediately if PROFIT adds or changes:
 - marketing communications.
 
 ## 9. Current release decision
+
+Internal policy decisions are now recorded in:
+- `docs/legal/privacy-data-policy-decisions-v1.md`;
+- `docs/legal/pilot-privacy-notice-template-v1.md`;
+- `docs/legal/pilot-farm-data-terms-template-v1.md`.
 
 Keep both gates blocked:
 
