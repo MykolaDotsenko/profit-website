@@ -1,6 +1,6 @@
 ---
 import { site } from '../config/site';
-import { localeInfo, localePath, ui } from '../i18n';
+import { localizedEquivalentPath, localeInfo, localePath, ui } from '../i18n';
 
 const locale = localeInfo(Astro.currentLocale);
 const t = ui(locale.code);
@@ -10,6 +10,8 @@ const isCurrent = (href: string) => {
   return path === target || path === target.replace(/\/$/, '');
 };
 const homeHref = localePath(locale.code, '/');
+const englishHref = localizedEquivalentPath('en', locale.code, path);
+const ukrainianHref = localizedEquivalentPath('uk', locale.code, path);
 ---
 
 <header class="site-header">
@@ -49,6 +51,11 @@ const homeHref = localePath(locale.code, '/');
           ))
         }
       </ul>
+      <div class="language-switcher" aria-label={t.language.label}>
+        <a href={englishHref} lang="en" aria-current={locale.code === 'en' ? 'true' : undefined}>EN</a>
+        <span aria-hidden="true">/</span>
+        <a href={ukrainianHref} lang="uk" aria-current={locale.code === 'uk' ? 'true' : undefined}>UA</a>
+      </div>
       <a
         class="button button--primary site-nav__cta"
         href={localePath(locale.code, t.nav.cta.href)}
@@ -169,6 +176,22 @@ const homeHref = localePath(locale.code, '/');
       margin-block-start: var(--space-6);
       width: 100%;
     }
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-block-start: var(--space-5);
+      font-family: var(--font-label);
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+    }
+    .language-switcher a {
+      text-decoration: none;
+    }
+    .language-switcher a[aria-current='true'] {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
     .site-nav a[aria-current='page'] {
       text-decoration-line: underline;
       text-decoration-thickness: 2px;
@@ -237,6 +260,9 @@ const homeHref = localePath(locale.code, '/');
       }
       .site-nav__list a:hover {
         text-decoration-line: underline;
+      }
+      .language-switcher {
+        margin: 0;
       }
       .site-nav__cta,
       .site-nav:popover-open .site-nav__cta {
