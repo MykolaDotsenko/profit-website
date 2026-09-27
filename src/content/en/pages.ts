@@ -2,7 +2,7 @@
  * Supporting-route copy: /farmers, /product, /trust, /company, /investors, /contact and 404.
  * Each page holds only content the canonical docs support; missing facts are content gaps.
  */
-import type { ContentGap, PilotFormContent, SectionIntro, StatusItem, TextItem } from '../types';
+import type { CompanyFact, ContentGap, PilotFormContent, SectionIntro, StatusItem, TextItem } from '../types';
 import {
   decisionQuestion,
   evidenceReview,
@@ -738,8 +738,23 @@ export const company = {
     } satisfies ContentGap,
   },
   details: {
-    intro: { id: 'details', eyebrow: 'Details', title: 'Company details' } satisfies SectionIntro,
-    gap: { owner: 'owner', text: 'Legal name, business ID, registered address and a contact address.' } satisfies ContentGap,
+    intro: {
+      id: 'details',
+      eyebrow: 'Details',
+      title: 'Company details',
+      lead: 'Publish only facts that can be checked against authoritative company records.',
+    } satisfies SectionIntro,
+    items: [
+      { label: 'Legal company name' },
+      { label: 'Business ID / registration number' },
+      { label: 'Jurisdiction' },
+      { label: 'Registered address' },
+      { label: 'Public contact address' },
+    ] satisfies CompanyFact[],
+    gap: {
+      owner: 'owner',
+      text: 'Supply and verify each company fact against authoritative records before public release.',
+    } satisfies ContentGap,
   },
   cta: pilotCta,
 };
