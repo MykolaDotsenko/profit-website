@@ -277,7 +277,7 @@ test.describe('critical interactions', () => {
 
     expect(await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
     await expect(page.locator('main')).toBeVisible();
-    await expect(page.locator('.proof-card')).toBeVisible();
+    await expect(page.locator('.hero__state')).toBeVisible();
 
     await context.close();
   });
