@@ -46,6 +46,8 @@ export interface UIStrings {
   };
   production: {
     currentUnit: string;
+    unitLabel: string;
+    scopeLabel: string;
     productStatus: string;
     inDevelopment: string;
     evidenceLabel: string;
