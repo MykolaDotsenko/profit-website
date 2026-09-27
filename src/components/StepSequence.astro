@@ -14,7 +14,7 @@ interface Props {
 const { steps, actors, moduleLabel } = Astro.props;
 ---
 
-<ol class="steps" role="list">
+<ol class="steps" role="list" data-brand-code="decision-lineage">
   {
     steps.map((step, i) => (
       <li class:list={['step', `step--${step.actor}`]}>
@@ -38,64 +38,113 @@ const { steps, actors, moduleLabel } = Astro.props;
   @layer components {
     .steps {
       display: grid;
-      gap: 1px;
-      border: 1px solid var(--color-line-strong);
-      background: var(--color-line-strong);
-      counter-reset: step;
+      border-block: 1px solid var(--color-line-strong);
     }
+
     .step {
       display: grid;
-      gap: var(--space-2);
+      grid-template-columns: 3rem minmax(0, 1fr);
+      column-gap: var(--space-4);
+      row-gap: var(--space-2);
       align-content: start;
       min-width: 0;
-      padding: var(--space-5);
-      background: var(--color-surface);
+      padding-block: var(--space-5);
     }
+
+    .step + .step {
+      border-block-start: 1px solid var(--color-line);
+    }
+
     .step__meta {
-      display: flex;
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 3rem auto minmax(1rem, 1fr);
+      gap: var(--space-4);
       align-items: center;
-      gap: var(--space-3);
-      font-size: var(--text-caption);
-    }
-    .step__number {
-      font-weight: var(--weight-strong);
-    }
-    .step__actor {
-      padding: 0.1rem 0.45rem;
-      border: 1px solid var(--color-control-border);
-      border-radius: var(--radius-s);
-      font-family: var(--font-label);
-      font-size: var(--text-label);
-      font-weight: var(--weight-strong);
-      letter-spacing: 0.04em;
-    }
-    .step--profit .step__actor {
-      background: var(--color-brand);
-      border-color: var(--color-brand);
-      color: var(--color-on-brand);
-    }
-    .step__title {
-      font-size: var(--text-subsection);
-    }
-    .step__text {
-      color: var(--color-text);
-    }
-    .step__module {
-      font-size: var(--text-small);
+      min-width: 0;
       color: var(--color-text-secondary);
-      padding-block-start: var(--space-2);
     }
-    .step__module-label {
-      display: block;
+
+    .step__meta::after {
+      content: '';
+      height: 1px;
+      background: var(--color-line);
+    }
+
+    .step__number {
+      font-family: var(--font-label);
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+      color: var(--color-production);
+    }
+
+    .step__actor {
+      font-family: var(--font-label);
       font-size: var(--text-label);
       font-weight: var(--weight-strong);
       letter-spacing: var(--tracking-label);
       text-transform: uppercase;
-      margin-block-end: var(--space-1);
     }
+
+    .step--profit .step__actor {
+      color: var(--color-text);
+    }
+
+    .step__title,
+    .step__text,
+    .step__module {
+      grid-column: 2;
+    }
+
+    .step__title {
+      font-size: var(--text-subsection);
+      line-height: 1.25;
+    }
+
+    .step__text {
+      color: var(--color-text-secondary);
+    }
+
+    .step__module {
+      padding-block-start: var(--space-2);
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+    }
+
+    .step__module-label {
+      display: block;
+      margin-block-end: var(--space-1);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+
     @container (min-width: 56rem) {
       .steps {
         grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+        padding: var(--space-5) var(--space-4) var(--space-6);
+      }
+
+      .step + .step {
+        border-block-start: 0;
+        border-inline-start: 1px solid var(--color-line);
+      }
+
+      .step__meta {
+        grid-template-columns: auto auto minmax(1rem, 1fr);
+        gap: var(--space-3);
+      }
+
+      .step__title,
+      .step__text,
+      .step__module {
+        grid-column: 1;
       }
     }
   }
