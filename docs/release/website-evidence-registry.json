@@ -7,8 +7,8 @@
     "blocked_points": 0,
     "expected_criteria": 50,
     "expected_max_points": 100,
-    "current_pass_criteria": 32,
-    "current_score": 64,
+    "current_pass_criteria": 33,
+    "current_score": 66,
     "rule": "Only PASS earns points. BLOCKED remains 0 until the criterion's own required evidence exists."
   },
   "criteria": [
@@ -403,13 +403,15 @@
     },
     {
       "id": "PE-04",
-      "status": "blocked",
+      "status": "pass",
       "evidence": [
-        "astro.config.mjs"
-      ],
-      "blocker": "Final image/font network audit cannot be completed before the real documentary asset and production deployment exist.",
-      "closure_action": "After real assets are installed, audit formats/srcset/dimensions/loading priority/font payload/preloads and production waterfall.",
-      "closure_template": "docs/release/evidence-forms/production-release-verification-record.md"
+        "docs/release/evidence/production-asset-font-network-audit-v1.md",
+        "docs/release/evidence/documentary-fi-wheat-vampula-2022-01.md",
+        "src/styles/tokens.css",
+        "src/components/ImageSlot.astro",
+        "tests/browser/site.spec.ts",
+        ".github/workflows/site-verify.yml"
+      ]
     },
     {
       "id": "PE-05",

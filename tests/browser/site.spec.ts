@@ -766,6 +766,52 @@ test.describe('supporting-page scanability', () => {
   });
 });
 
+test.describe('production asset and font policy', () => {
+  test('built site uses responsive documentary delivery and makes no webfont requests', async ({ page }) => {
+    const requests: Array<{ url: string; type: string }> = [];
+    page.on('request', (request) => requests.push({ url: request.url(), type: request.resourceType() }));
+
+    await page.goto('/company/', { waitUntil: 'networkidle' });
+
+    const image = page.locator('.image-slot img[src*="upload.wikimedia.org"]').first();
+    await expect(image).toHaveAttribute('width', '1280');
+    await expect(image).toHaveAttribute('height', '853');
+    await expect(image).toHaveAttribute('srcset', /640px.*640w.*1024px.*1024w.*1280px.*1280w/);
+    await expect(image).toHaveAttribute('sizes', '(min-width: 60rem) 52vw, 100vw');
+    await expect(image).toHaveAttribute('loading', 'lazy');
+    await expect(image).toHaveAttribute('decoding', 'async');
+    await expect(image).toHaveAttribute('fetchpriority', 'auto');
+
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(
+      () => requests.some((entry) => entry.type === 'image' && entry.url.includes('upload.wikimedia.org')),
+      { message: 'Documentary image should appear in the production-build request waterfall' },
+    ).toBeTruthy();
+
+    expect(
+      requests.filter((entry) => entry.type === 'font'),
+      'System-font policy should produce no webfont network requests',
+    ).toEqual([]);
+
+    await expect(page.locator('link[rel="preload"][as="font"]')).toHaveCount(0);
+
+    const fontFaceCount = await page.evaluate(() => {
+      let count = 0;
+      for (const sheet of Array.from(document.styleSheets)) {
+        try {
+          for (const rule of Array.from(sheet.cssRules)) {
+            if (rule instanceof CSSFontFaceRule) count += 1;
+          }
+        } catch {
+          // Cross-origin stylesheets are not used by PROFIT; ignore browser-protected sheets defensively.
+        }
+      }
+      return count;
+    });
+    expect(fontFaceCount).toBe(0);
+  });
+});
+
 test.describe('documentary agriculture proof', () => {
   test('company page uses a real rights-attributed Finnish field photograph without customer implication', async ({ page }) => {
     await page.goto('/company/');

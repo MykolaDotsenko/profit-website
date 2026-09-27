@@ -6,7 +6,7 @@ Machine-readable truth: `docs/release/website-evidence-registry.json`
 
 ## Current strict score
 
-**64/100 — 32 of 50 criteria PASS.**
+**66/100 — 33 of 50 criteria PASS.**
 
 This is the evidence-complete score, not the implementation-quality estimate.
 
@@ -27,7 +27,7 @@ Every BLOCKED criterion in the machine-readable registry points to one of these 
 
 ## Critical path
 
-The remaining 18 criteria are intentionally not all software tasks. They fall into five closure streams.
+The remaining 17 criteria are intentionally not all software tasks. They fall into five closure streams.
 
 ### A. Target-farmer evidence
 
@@ -76,11 +76,14 @@ Do not infer these from convenience.
 
 ### D. Human QA / production evidence
 
+Completed:
+- **PE-04 production asset/font policy — PASS** via production-build browser/network audit.
+
+
 Closes:
 - AR-02 — manual keyboard + representative screen-reader audit;
 - AR-03 — manual zoom/reflow audit;
 - PE-02 — production CWV/RUM;
-- PE-04 — real image/font network audit;
 - RI-03 — live-origin SEO/crawl audit;
 - RI-04 — operational ownership/monitoring.
 

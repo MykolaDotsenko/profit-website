@@ -20,7 +20,7 @@ project:
   name: "PROFIT Website"
   repository: "MykolaDotsenko/profit-website"
   product_role: "Public presentation, trust, learning and qualified-conversion surface; not the core farm-management application."
-  current_stage: "Provisional B2 production website implementation is active and regression-tested; strict release evidence is tracked in docs/release/website-evidence-registry.json (32/50 PASS = 64/100 after the documentary-image gate) against the 100-point contract; the homepage is farmer-first and compressed; privacy/farm-data readiness is documented while legal approval remains blocked; team consent, hero/art-direction farmer validation, company facts and other external release evidence remain open; a rights-cleared Finnish documentary wheat-field asset is now approved and rendered."
+  current_stage: "Provisional B2 production website implementation is active and regression-tested; strict release evidence is tracked in docs/release/website-evidence-registry.json (33/50 PASS = 66/100 after documentary-image and production asset/font network audits) against the 100-point contract; the homepage is farmer-first and compressed; privacy/farm-data readiness is documented while legal approval remains blocked; team consent, hero/art-direction farmer validation, company facts and other external release evidence remain open; a rights-cleared Finnish documentary wheat-field asset is now approved and rendered."
 
 company_context:
   internal_mission: "Build a global Agricultural Decision Intelligence company by creating, proving and scaling superior Verified Economic Value for farmers."
