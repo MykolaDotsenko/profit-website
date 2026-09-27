@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "version": "0.1.0",
-  "description": "PROFIT public website — Build Pass 01 foundation (Astro, static output).",
+  "description": "PROFIT public company website — provisional B2 Production Unit Grammar implementation (Astro, static output).",
   "engines": {
     "node": ">=22.12.0"
   },
