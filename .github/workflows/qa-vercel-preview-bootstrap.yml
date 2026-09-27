@@ -1,4 +1,4 @@
-name: QA Live Reflow Diagnostics
+name: QA Exact Fix Preview E2E
 
 on:
   push:
@@ -9,122 +9,55 @@ permissions:
   contents: read
 
 jobs:
-  diagnose:
+  exact-preview:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     env:
-      LIVE_BASE_URL: "https://profit-website.vercel.app"
+      ASTRO_TELEMETRY_DISABLED: "1"
+      LIVE_BASE_URL: "https://profit-website-l705yz86q-nikolais-projects-7d807184.vercel.app"
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout exact fix candidate
+        uses: actions/checkout@v4
+        with:
+          ref: "4d6e0bd0d380cf88a50dab4d6a00b98e04cb078d"
+
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
+
       - run: npm ci
-      - run: npm install --no-save --package-lock=false @playwright/test@1.63.0
+      - run: npm run verify
+        env:
+          SITE_INDEXABLE: "false"
+          SHOW_CONTENT_STATUS: "true"
+          PILOT_FORM_ENDPOINT: ""
+
+      - run: npm install --no-save --package-lock=false @playwright/test@1.63.0 @axe-core/playwright@4.13.0
       - run: npx playwright install --with-deps chromium
 
-      - name: Diagnose reflow offenders
+      - name: Generate remote Playwright config
         shell: bash
         run: |
-          cat > live-reflow-diagnostic.mjs <<'EOF'
-          import { chromium } from '@playwright/test';
-
-          const base = process.env.LIVE_BASE_URL;
-          const browser = await chromium.launch();
-
-          function print(label, data) {
-            console.log('DIAG ' + label + ' ' + JSON.stringify(data));
-          }
-
-          async function diagnose(page, label) {
-            const data = await page.evaluate(() => {
-              const vw = document.documentElement.clientWidth;
-              const nodes = Array.from(document.querySelectorAll('body *'));
-              const describe = (el) => {
-                const r = el.getBoundingClientRect();
-                const s = getComputedStyle(el);
-                return {
-                  tag: el.tagName.toLowerCase(),
-                  id: el.id || '',
-                  cls: typeof el.className === 'string' ? el.className : '',
-                  text: (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 90),
-                  left: Math.round(r.left),
-                  right: Math.round(r.right),
-                  width: Math.round(r.width),
-                  scrollWidth: el.scrollWidth || 0,
-                  clientWidth: el.clientWidth || 0,
-                  overflowX: s.overflowX,
-                  whiteSpace: s.whiteSpace,
-                  minWidth: s.minWidth,
-                  display: s.display,
-                  position: s.position,
-                  fontSize: s.fontSize,
-                };
-              };
-
-              const crossing = nodes
-                .map(describe)
-                .filter((x) => x.right > vw + 1 || x.left < -1)
-                .sort((a,b) => (b.right - vw) - (a.right - vw))
-                .slice(0, 25);
-
-              const scrollRegions = nodes
-                .map(describe)
-                .filter((x) => x.scrollWidth > x.clientWidth + 1 && ['auto','scroll'].includes(x.overflowX))
-                .slice(0, 25);
-
-              return {
-                innerWidth: window.innerWidth,
-                clientWidth: vw,
-                rootScrollWidth: document.documentElement.scrollWidth,
-                bodyScrollWidth: document.body.scrollWidth,
-                crossing,
-                scrollRegions,
-              };
-            });
-            print(label, data);
-          }
-
-          const scenarios = [
-            { name: '320-en-farmers', route: '/farmers/', width: 320 },
-            { name: '320-en-trust', route: '/trust/', width: 320 },
-            { name: '320-en-company', route: '/company/', width: 320 },
-            { name: '320-uk-home', route: '/uk/', width: 320 },
-            { name: '320-fi-home', route: '/fi/', width: 320 },
-            { name: '320-da-home', route: '/da/', width: 320 },
-          ];
-
-          for (const sc of scenarios) {
-            const context = await browser.newContext({ viewport: { width: sc.width, height: 900 } });
-            const page = await context.newPage();
-            await page.goto(base + sc.route, { waitUntil: 'networkidle' });
-            await diagnose(page, sc.name);
-            await context.close();
-          }
-
-          for (const route of ['/', '/uk/', '/fi/', '/da/']) {
-            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-            const page = await context.newPage();
-            await page.goto(base + route, { waitUntil: 'networkidle' });
-            await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
-            await diagnose(page, '200-text-' + route);
-            await context.close();
-          }
-
-          for (const route of ['/', '/uk/', '/fi/', '/da/']) {
-            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-            const page = await context.newPage();
-            await page.goto(base + route, { waitUntil: 'networkidle' });
-            await page.addStyleTag({ content: `
-              * { line-height: 1.5 !important; letter-spacing: 0.12em !important; word-spacing: 0.16em !important; }
-              p { margin-bottom: 2em !important; }
-            ` });
-            await diagnose(page, 'spacing-' + route);
-            await context.close();
-          }
-
-          await browser.close();
+          cat > playwright.remote.config.ts <<'EOF'
+          import { defineConfig } from '@playwright/test';
+          export default defineConfig({
+            testDir: './tests/browser',
+            timeout: 30_000,
+            expect: { timeout: 5_000 },
+            fullyParallel: true,
+            forbidOnly: true,
+            retries: 1,
+            workers: 4,
+            reporter: 'list',
+            use: {
+              baseURL: process.env.LIVE_BASE_URL,
+              trace: 'retain-on-failure',
+              screenshot: 'only-on-failure',
+            },
+          });
           EOF
-          node ./live-reflow-diagnostic.mjs
+
+      - name: Run all 121 browser/Axe/reflow tests against exact Vercel preview
+        run: npx playwright test --config=playwright.remote.config.ts
