@@ -97,15 +97,32 @@ international_validation:
 
 decision_intelligence_direction:
   status: "product-development doctrine; not a claim that current Field Profitability already implements all capabilities"
+  public_methodology_surface:
+    homepage: "concise only: fit the farm; quality before intelligence; keep uncertainty visible; link to /trust/#data-lifecycle"
+    farmers: "practical data collection + quality path, including existing records, old machinery and offline-first direction; clearly label future capabilities"
+    product: "current Field Profitability boundary: deterministic economics; forecasting/optimisation/activity recognition/scenario simulation are not current capabilities"
+    trust: "inspectable data lifecycle + deterministic sensitivity + model-comparison discipline + decision-support architecture + evidence/confidence/privacy"
+    company: "research-backed data strategy, data-quality gates, forecasting/model-selection doctrine and DSS design rationale"
+    density_rule: "homepage remains a brochure surface, not a white paper; technical depth lives on trust/company/farmers"
+  data_quality:
+    sequence: ["completeness", "consistency", "duplicates", "anomalies", "freshness", "provenance", "representativeness"]
+    rule: "data quality is assessed before model sophistication; weak input lowers confidence rather than being hidden by complexity"
   data_collection:
     principle: "work with the farm that exists"
     priority: ["reuse existing records", "automate reliable sources when available", "minimise operator input for old/non-connected machinery", "offline-first capture with later sync where required", "preserve provenance and farmer permission"]
     rule: "new hardware, telemetry and continuous connectivity are not universal prerequisites"
   forecasting:
     sequence: ["deterministic economics", "forecast uncertain domain drivers", "scenario comparison vs baseline", "decision", "actual outcome", "attribution/confidence", "VEV"]
+    model_candidates: ["historical/naive baseline", "linear/regularised regression", "tree ensembles", "time-series/process/hybrid", "deep learning/foundation models only when justified"]
     model_rule: "baseline-first; increase ML complexity only when material out-of-sample gains and operational reliability justify it"
+    validation_rule: "prefer temporal/rolling future-period validation and independent farm/field holdout where practical; random split alone is insufficient for decision-critical claims"
     uncertainty_rule: "show ranges, assumptions, update date and confidence; do not present one precise-looking black-box profit forecast"
     truth_rule: "LLM is not the quantitative source of truth; forecast accuracy alone is not Verified Economic Value"
+  decision_support:
+    sequence: ["state", "alternatives", "economic consequences", "uncertainty", "farmer decision", "actual outcome", "learning"]
+    authority_rule: "PROFIT supports comparison; farmer retains decision authority"
+    adoption_rule: "avoid technology-push DSS; fit end-user workflow and make uncertainty inspectable"
+    current_boundary: "full predictive DSS is not a current shipped capability"
 
 objectives:
   primary:
