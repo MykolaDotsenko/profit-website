@@ -42,6 +42,17 @@ export interface UIStrings {
     gapLabel: string;
     reviewLabel: string;
     imagePending: string;
+    documentaryAgriculture: string;
+  };
+  production: {
+    currentUnit: string;
+    productStatus: string;
+    inDevelopment: string;
+    evidenceLabel: string;
+    productLabel: string;
+    periodLabel: string;
+    roleLabel: string;
+    currentExample: string;
   };
   evidence: {
     exampleLabel: string;
