@@ -171,11 +171,27 @@ export const hardQuestions: Question[] = [
     ],
   },
   {
+    id: 'manual-entry',
+    question: 'Will I have to enter everything manually?',
+    answer: [
+      'The current Field Profitability concept starts from field records you provide. It does not require connected machinery.',
+      'The wider PROFIT direction is to reuse existing records first, automate reliable sources where it genuinely reduces work, support offline capture where needed, and ask for confirmation mainly when the system is uncertain. Those broader capture capabilities are not part of the current build.',
+    ],
+  },
+  {
     id: 'incomplete-data',
     question: 'What if my data is incomplete?',
     answer: [
       'This is still open. The current design does not yet handle estimated or missing values, and it does not attach a confidence level to a result.',
       'We would rather say that than guess.',
+    ],
+  },
+  {
+    id: 'forecasting',
+    question: 'How would PROFIT forecast the future without guessing?',
+    answer: [
+      'Known economics should stay deterministic. Uncertain drivers such as yield, price, production, feed or energy can be forecast only when the data supports it.',
+      'The method is baseline first: compare simple and more complex models on unseen future periods and, where possible, other farms or fields; show ranges and assumptions; then carry that uncertainty into economic scenarios. Forecasting is a development direction, not a current Field Profitability feature.',
     ],
   },
   {
