@@ -64,6 +64,7 @@ At the time of this document:
 - the preview form validates locally and **sends nothing** when no endpoint is configured;
 - the build prevents a pilot endpoint from being configured while the privacy-notice, company-details or pilot-process gates are blocked;
 - no analytics, cookie-consent framework, `document.cookie`, `localStorage` or `sessionStorage` implementation was found in the current coded site;
+- one below-the-fold documentary photograph is delivered from Wikimedia's image CDN; the image element uses `referrerpolicy="no-referrer"`, but the browser still makes a network request to Wikimedia when the lazy-loaded asset enters the loading range;
 - the site does not currently ask for farm records.
 
 These facts must be re-audited whenever deployment, analytics, form delivery, hosting or third-party services change.

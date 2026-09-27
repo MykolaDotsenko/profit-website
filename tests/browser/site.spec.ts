@@ -766,6 +766,32 @@ test.describe('supporting-page scanability', () => {
   });
 });
 
+test.describe('documentary agriculture proof', () => {
+  test('company page uses a real rights-attributed Finnish field photograph without customer implication', async ({ page }) => {
+    await page.goto('/company/');
+
+    const section = page.locator('#field-reality').locator('..');
+    const image = page.locator('.image-slot img[src*="upload.wikimedia.org"]').first();
+    await expect(image).toHaveCount(1);
+    await expect(image).toHaveAttribute('alt', 'A mature wheat field under a blue sky in Vampula, Finland.');
+    await expect(image).toHaveAttribute('loading', 'lazy');
+    await expect(image).toHaveAttribute('referrerpolicy', 'no-referrer');
+
+    const figure = image.locator('xpath=ancestor::figure');
+    await expect(figure).toContainText('Wheat field in Vampula, Finland');
+    await expect(figure).toContainText('not a PROFIT customer, pilot farm or product result');
+    await expect(figure).toContainText('Photo by Kallerna');
+    await expect(figure.getByRole('link', { name: 'Wikimedia Commons source' })).toHaveAttribute(
+      'href',
+      'https://commons.wikimedia.org/wiki/File:Vehn%C3%A4pelto_6.jpg',
+    );
+    await expect(figure.getByRole('link', { name: 'CC BY-SA 4.0' })).toHaveAttribute(
+      'href',
+      'https://creativecommons.org/licenses/by-sa/4.0/',
+    );
+  });
+});
+
 test.describe('team capability proof', () => {
   test('homepage and company page show multidisciplinary team proof without hiding review status', async ({ page }) => {
     await page.goto('/');

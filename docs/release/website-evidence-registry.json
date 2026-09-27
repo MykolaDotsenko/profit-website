@@ -7,8 +7,8 @@
     "blocked_points": 0,
     "expected_criteria": 50,
     "expected_max_points": 100,
-    "current_pass_criteria": 31,
-    "current_score": 62,
+    "current_pass_criteria": 32,
+    "current_score": 64,
     "rule": "Only PASS earns points. BLOCKED remains 0 until the criterion's own required evidence exists."
   },
   "criteria": [
@@ -255,11 +255,14 @@
     },
     {
       "id": "BD-02",
-      "status": "blocked",
-      "evidence": [],
-      "blocker": "No approved real agricultural documentary asset with recorded rights/provenance exists.",
-      "closure_action": "Supply at least one real agriculture image with source, rights/permission, context and allowed use/crops; add provenance record and render it through the production image system.",
-      "closure_template": "docs/release/evidence-forms/documentary-asset-provenance-record.md"
+      "status": "pass",
+      "evidence": [
+        "docs/release/evidence/documentary-fi-wheat-vampula-2022-01.md",
+        "src/components/ImageSlot.astro",
+        "src/content/en/pages.ts",
+        "src/pages/company.astro",
+        "tests/browser/site.spec.ts"
+      ]
     },
     {
       "id": "BD-03",

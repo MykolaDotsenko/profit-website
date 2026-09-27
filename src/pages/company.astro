@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContentGap from '../components/ContentGap.astro';
 import CtaBand from '../components/CtaBand.astro';
+import ImageSlot from '../components/ImageSlot.astro';
 import ItemList from '../components/ItemList.astro';
 import MethodPipeline from '../components/MethodPipeline.astro';
 import ModelComparisonTable from '../components/ModelComparisonTable.astro';
@@ -21,7 +22,7 @@ const s = c.shared;
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
     <OnPageNav
       label={p.onPageLabel}
-      items={[p.building.intro, p.scope.intro, p.dataStrategy.intro, p.forecasting.intro, p.decisionSupport.intro, p.stillProven.intro, p.team.intro]}
+      items={[p.building.intro, p.scope.intro, p.dataStrategy.intro, p.forecasting.intro, p.decisionSupport.intro, p.stillProven.intro, p.documentary.intro, p.team.intro]}
     />
   </PageIntro>
 
@@ -87,6 +88,15 @@ const s = c.shared;
 
   <Section intro={p.stillProven.intro} layout="split">
     <ItemList items={p.stillProven.items} columns={1} layout="rows" />
+  </Section>
+
+  <Section intro={p.documentary.intro} tone="sunken">
+    <ImageSlot
+      caption={p.documentary.caption}
+      requirement={p.documentary.requirement}
+      aspect="3/2"
+      image={p.documentary.image}
+    />
   </Section>
 
   <Section intro={p.team.intro} layout="split">

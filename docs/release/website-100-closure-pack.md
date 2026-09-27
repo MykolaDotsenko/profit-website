@@ -6,7 +6,7 @@ Machine-readable truth: `docs/release/website-evidence-registry.json`
 
 ## Current strict score
 
-**62/100 — 31 of 50 criteria PASS.**
+**64/100 — 32 of 50 criteria PASS.**
 
 This is the evidence-complete score, not the implementation-quality estimate.
 
@@ -27,7 +27,7 @@ Every BLOCKED criterion in the machine-readable registry points to one of these 
 
 ## Critical path
 
-The remaining 19 criteria are intentionally not all software tasks. They fall into five closure streams.
+The remaining 18 criteria are intentionally not all software tasks. They fall into five closure streams.
 
 ### A. Target-farmer evidence
 
@@ -48,14 +48,15 @@ Required action:
 Closes:
 - CC-01 — legal company identity;
 - CC-02 — direct contact;
-- CC-03 — team confirmation/consent;
-- BD-02 — documentary asset.
+- CC-03 — team confirmation/consent.
+
+Completed:
+- **BD-02 documentary asset — PASS** with a rights-cleared Finnish wheat-field photograph and recorded provenance.
 
 Required actions:
 - authoritative legal entity details from the official company record;
 - one monitored direct-contact path with a send/receive smoke test;
-- one explicit publish confirmation per team member;
-- at least one real agricultural image with source + rights/provenance + context.
+- one explicit publish confirmation per team member.
 
 ### C. Legal / farm-data approval
 

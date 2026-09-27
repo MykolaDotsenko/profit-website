@@ -657,6 +657,33 @@ export const company = {
       href: 'https://ec.europa.eu/eurostat/en/web/products-key-figures/w/ks-01-25-049',
     },
   },
+  documentary: {
+    intro: {
+      id: 'field-reality',
+      eyebrow: 'Field reality',
+      title: 'Agriculture before interface',
+      lead:
+        'PROFIT starts from real production systems. This documentary reference anchors the company story in the physical context behind the records and economics.',
+    } satisfies SectionIntro,
+    caption:
+      'Wheat field in Vampula, Finland. Documentary reference only — not a PROFIT customer, pilot farm or product result.',
+    requirement: 'Real agriculture with traceable source, rights and context.',
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Vehn%C3%A4pelto_6.jpg/1280px-Vehn%C3%A4pelto_6.jpg',
+      srcset:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Vehn%C3%A4pelto_6.jpg/640px-Vehn%C3%A4pelto_6.jpg 640w, https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Vehn%C3%A4pelto_6.jpg/1024px-Vehn%C3%A4pelto_6.jpg 1024w, https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Vehn%C3%A4pelto_6.jpg/1280px-Vehn%C3%A4pelto_6.jpg 1280w',
+      sizes: '(min-width: 60rem) 52vw, 100vw',
+      width: 1280,
+      height: 853,
+      alt: 'A mature wheat field under a blue sky in Vampula, Finland.',
+      credit: 'Photo by Kallerna, 16 August 2022',
+      sourceLabel: 'Wikimedia Commons source',
+      sourceHref: 'https://commons.wikimedia.org/wiki/File:Vehn%C3%A4pelto_6.jpg',
+      licenseLabel: 'CC BY-SA 4.0',
+      licenseHref: 'https://creativecommons.org/licenses/by-sa/4.0/',
+      modificationNote: 'No image edits; displayed at the source 3:2 aspect ratio.',
+    },
+  },
   dataStrategy: {
     intro: {
       id: 'data-strategy',

@@ -15,6 +15,11 @@ interface ImageAsset {
   alt: string;
   /** Required: who made it, where, and under what rights. */
   credit: string;
+  sourceLabel?: string;
+  sourceHref?: string;
+  licenseLabel?: string;
+  licenseHref?: string;
+  modificationNote?: string;
 }
 
 interface Props {
@@ -44,6 +49,7 @@ const t = ui(localeInfo(Astro.currentLocale).code);
         loading={priority ? 'eager' : 'lazy'}
         fetchpriority={priority ? 'high' : 'auto'}
         decoding="async"
+        referrerpolicy="no-referrer"
       />
     ) : (
       <div class="image-slot__placeholder">
@@ -54,7 +60,22 @@ const t = ui(localeInfo(Astro.currentLocale).code);
   }
   <figcaption class="image-slot__caption">
     <span>{caption}</span>
-    <span class="image-slot__credit">{image ? image.credit : requirement}</span>
+    <span class="image-slot__credit">
+      {
+        image ? (
+          <>
+            <span>{image.credit}</span>
+            {image.sourceHref && image.sourceLabel && (
+              <> · <a class="text-link" href={image.sourceHref}>{image.sourceLabel}</a></>
+            )}
+            {image.licenseHref && image.licenseLabel && (
+              <> · <a class="text-link" href={image.licenseHref}>{image.licenseLabel}</a></>
+            )}
+            {image.modificationNote && <> · {image.modificationNote}</>}
+          </>
+        ) : requirement
+      }
+    </span>
   </figcaption>
 </figure>
 
