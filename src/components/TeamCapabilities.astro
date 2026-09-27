@@ -1,14 +1,21 @@
 ---
+import TeamPortrait from './TeamPortrait.astro';
 import type { SectionIntro, TeamMember } from '../content/types';
 
 interface Props {
   intro: SectionIntro;
   flow: readonly string[];
   members: readonly TeamMember[];
+  labels: {
+    expertise: string;
+    contribution: string;
+    profiles: string;
+    portraitRequirement: string;
+  };
   compact?: boolean;
 }
 
-const { intro, flow, members, compact = false } = Astro.props;
+const { intro, flow, members, labels, compact = false } = Astro.props;
 ---
 
 <div class:list={['team-capability', { 'team-capability--compact': compact }]}>
@@ -32,25 +39,31 @@ const { intro, flow, members, compact = false } = Astro.props;
       <article class="team-member" role="listitem">
         <div class="team-member__index num" aria-hidden="true">{String(index + 1).padStart(2, '0')}</div>
         <div class="team-member__identity">
-          <h4>{member.name}</h4>
-          <p>{member.role}</p>
+          {!compact && <TeamPortrait name={member.name} image={member.portrait} requirement={labels.portraitRequirement} />}
+          <div class="team-member__identity-copy">
+            <h4>{member.name}</h4>
+            <p>{member.role}</p>
+          </div>
         </div>
         <div class="team-member__strength">
-          <span>Strongest fit</span>
+          <span>{labels.expertise}</span>
           <p>{member.strength}</p>
         </div>
         {!compact && (
           <div class="team-member__contribution">
-            <span>Contribution to PROFIT</span>
+            <span>{labels.contribution}</span>
             <p>{member.contribution}</p>
           </div>
         )}
         {!compact && member.links.length > 0 && (
-          <ul class="team-member__links" role="list" aria-label={`${member.name} public profiles`}>
-            {member.links.map((link) => (
-              <li><a class="text-link" href={link.href}>{link.label}</a></li>
-            ))}
-          </ul>
+          <div class="team-member__proof">
+            <span class="team-member__proof-label">{labels.profiles}</span>
+            <ul class="team-member__links" role="list" aria-label={`${member.name} — ${labels.profiles}`}>
+              {member.links.map((link) => (
+                <li><a class="text-link" href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
+          </div>
         )}
       </article>
     ))}
@@ -127,6 +140,12 @@ const { intro, flow, members, compact = false } = Astro.props;
 
     .team-member__identity {
       display: grid;
+      gap: var(--space-3);
+      align-content: start;
+    }
+
+    .team-member__identity-copy {
+      display: grid;
       gap: var(--space-1);
     }
 
@@ -168,6 +187,20 @@ const { intro, flow, members, compact = false } = Astro.props;
       font-size: var(--text-small);
     }
 
+    .team-member__proof {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .team-member__proof-label {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+
     .team-member__links {
       display: flex;
       flex-wrap: wrap;
@@ -203,6 +236,10 @@ const { intro, flow, members, compact = false } = Astro.props;
       }
 
       .team-member__links {
+        grid-column: 4;
+      }
+
+      .team-member__proof {
         grid-column: 4;
       }
 
