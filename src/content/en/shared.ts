@@ -1,8 +1,9 @@
 /**
  * Copy shared by several pages. English development content.
  *
- * Source rules: hero candidates are verbatim Blueprint §5 v2; product statements stay inside the
- * Field Profitability product-truth boundary (Blueprint §2.2), which is unshipped; evidence
+ * Source rules: H1/H2/H3 are verbatim Blueprint §5 v2; H4 is the owner-directed economic-decision
+ * clarity candidate recorded in Blueprint §5. Product statements stay inside the Field Profitability
+ * product-truth boundary (Blueprint §2.2), which is unshipped; evidence
  * language follows AGENTS.md §4. Anything that is a commitment the team has to confirm carries
  * a `review` gap instead of being presented as settled.
  */
@@ -11,7 +12,7 @@ import { assertMetricPublishable, type MetricId } from '../../domain/economics';
 
 const WWW000 = 'No farmer evidence yet: WWW-000 has not run.';
 
-/** WWW-000 v2 candidates (Blueprint §5). All three are untested hypotheses. */
+/** Hero message candidates (Blueprint §5). All four are untested hypotheses. */
 export const heroVariants: Record<HeroVariant['id'], HeroVariant> = {
   h1: {
     id: 'h1',
@@ -42,6 +43,20 @@ export const heroVariants: Record<HeroVariant['id'], HeroVariant> = {
       'PROFIT brings yield, price, variable costs and allocated fixed costs together into field-level operating economics, including break-even price and yield.',
     proof: 'field-composition',
     status: { state: 'hypothesis', source: 'Blueprint §5 H3 v2 — WWW-000 test candidate', evidence: WWW000 },
+  },
+  h4: {
+    id: 'h4',
+    direction: 'Economic decision clarity / farmer control first',
+    eyebrow: 'Agricultural Decision Intelligence',
+    headline: 'See the economics before you decide.',
+    support:
+      'PROFIT is being built to connect what happens on the farm with what it means economically. It starts with Field Profitability: operating profit and break-even, field by field — while the decision stays with the farmer.',
+    proof: 'field-composition',
+    status: {
+      state: 'hypothesis',
+      source: 'Blueprint §5 H4 — owner-directed development candidate, 2026-09-27',
+      evidence: 'No farmer evidence yet. H4 was added after the statistical surrogate and is not a test winner.',
+    },
   },
 };
 
