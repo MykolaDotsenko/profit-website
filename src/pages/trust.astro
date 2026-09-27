@@ -8,6 +8,7 @@ import ItemList from '../components/ItemList.astro';
 import MethodPipeline from '../components/MethodPipeline.astro';
 import Metric from '../components/Metric.astro';
 import ModelComparisonTable from '../components/ModelComparisonTable.astro';
+import OnPageNav from '../components/OnPageNav.astro';
 import VerificationChain from '../components/VerificationChain.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
@@ -26,27 +27,20 @@ const e = p.evidence;
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
-    <nav class="on-page" aria-label={p.onPageLabel}>
-      <ul role="list">
-        {
-          [
-            p.evidence.intro,
-            p.calculations.intro,
-            p.stressCheck.intro,
-            p.data.intro,
-            p.dataLifecycle.intro,
-            p.modelComparison.intro,
-            p.decisionSupport.intro,
-            p.privacy.intro,
-            p.limitations.intro,
-          ].map((s) => (
-            <li>
-              <a href={`#${s.id}`}>{s.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <OnPageNav
+      label={p.onPageLabel}
+      items={[
+        p.evidence.intro,
+        p.calculations.intro,
+        p.stressCheck.intro,
+        p.data.intro,
+        p.dataLifecycle.intro,
+        p.modelComparison.intro,
+        p.decisionSupport.intro,
+        p.privacy.intro,
+        p.limitations.intro,
+      ]}
+    />
   </PageIntro>
 
   <Section intro={e.intro}>
@@ -166,13 +160,6 @@ const e = p.evidence;
 </BaseLayout>
 
 <style>
-  .on-page ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-5);
-    margin-block-start: var(--space-3);
-    font-size: var(--text-small);
-  }
   .block-title {
     font-size: var(--text-subsection);
     margin-block-end: var(--space-4);
