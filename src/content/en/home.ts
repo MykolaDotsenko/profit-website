@@ -3,7 +3,7 @@
  * docs/homepage-copy-deck-v1.md:
  * hero → 30-second summary → whole-farm scope → concrete proof → farmer problem →
  * how it works → economic value/evidence → Field Profitability → trust → company → pilot CTA.
- * Hero variants remain WWW-000 hypotheses and are intentionally not rewritten here.
+ * H1/H2/H3 remain WWW-000 v2 hypotheses; H4 is the owner-directed development candidate.
  */
 import type { ContentGap, SectionIntro, Step, TextItem } from '../types';
 import {
