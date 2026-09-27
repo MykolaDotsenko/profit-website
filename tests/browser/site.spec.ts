@@ -1124,7 +1124,36 @@ test.describe('Finnish opt-in localization', () => {
       const overflow = await page.evaluate(
         () => Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
       );
-      expect(overflow, route).toBeLessThanOrEqual(1);
+      if (overflow > 1) {
+        const offenders = await page.evaluate(() => {
+          const viewport = window.innerWidth;
+          return Array.from(document.querySelectorAll('body *'))
+            .map((el) => {
+              const rect = el.getBoundingClientRect();
+              const style = getComputedStyle(el);
+              return {
+                tag: el.tagName.toLowerCase(),
+                id: el.id,
+                className: typeof el.className === 'string' ? el.className : '',
+                text: (el.textContent ?? '').trim().replace(/\s+/g, ' ').slice(0, 100),
+                left: Math.round(rect.left),
+                right: Math.round(rect.right),
+                width: Math.round(rect.width),
+                scrollWidth: (el as HTMLElement).scrollWidth ?? 0,
+                clientWidth: (el as HTMLElement).clientWidth ?? 0,
+                overflowX: style.overflowX,
+                position: style.position,
+                display: style.display,
+                minWidth: style.minWidth,
+                maxWidth: style.maxWidth,
+              };
+            })
+            .filter((item) => item.right > viewport + 1 || item.left < -1)
+            .sort((a, b) => b.right - a.right)
+            .slice(0, 20);
+        });
+        throw new Error(`${route} page overflow ${overflow}px; crossing elements: ${JSON.stringify(offenders)}`);
+      }
     }
   });
 
