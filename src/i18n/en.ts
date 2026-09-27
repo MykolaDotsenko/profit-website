@@ -58,6 +58,8 @@ export const en: UIStrings = {
   },
   production: {
     currentUnit: 'Current production unit',
+    unitLabel: 'Production unit',
+    scopeLabel: 'PROFIT production-unit grammar',
     productStatus: 'Product status',
     inDevelopment: 'In development',
     evidenceLabel: 'Evidence',
