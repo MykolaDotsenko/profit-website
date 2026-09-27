@@ -537,12 +537,13 @@ test.describe('scan-first brochure behavior', () => {
 
 test.describe('supporting-page scanability', () => {
   test('supporting pages expose scan-first local navigation', async ({ page }) => {
-    for (const route of ['/farmers/', '/product/', '/trust/', '/company/']) {
+    for (const route of ['/farmers/', '/product/', '/trust/', '/company/', '/investors/']) {
       await page.goto(route);
       const nav = page.locator('.on-page-nav');
       await expect(nav, route).toBeVisible();
       await expect(nav).toContainText('On this page');
-      expect(await nav.getByRole('link').count(), route).toBeGreaterThanOrEqual(5);
+      const minimum = route === '/investors/' ? 5 : 5;
+      expect(await nav.getByRole('link').count(), route).toBeGreaterThanOrEqual(minimum);
     }
   });
 
