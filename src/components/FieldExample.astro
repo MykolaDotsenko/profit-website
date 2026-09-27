@@ -54,7 +54,7 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
   <div class="field-example__frame">
     <aside class="field-example__rail" aria-label="Illustrative production unit">
       <div class="field-example__rail-top">
-        <p class="field-example__rail-label">Production unit</p>
+        <p class="field-example__rail-label">{t.production.currentUnit}</p>
         <p class="field-example__rail-name">{fieldParts(f, t, locale.intl).name}</p>
         <p class="field-example__rail-detail">{fieldParts(f, t, locale.intl).detail}</p>
       </div>
@@ -66,16 +66,16 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
 
       <dl class="field-example__rail-facts">
         <div>
-          <dt>Product</dt>
+          <dt>{t.production.productLabel}</dt>
           <dd>Field Profitability</dd>
         </div>
         <div>
-          <dt>Period</dt>
-          <dd>One season</dd>
+          <dt>{t.production.periodLabel}</dt>
+          <dd>{t.seasons(1)}</dd>
         </div>
         <div>
-          <dt>Role</dt>
-          <dd>Current example</dd>
+          <dt>{t.production.roleLabel}</dt>
+          <dd>{t.production.currentExample}</dd>
         </div>
       </dl>
     </aside>
