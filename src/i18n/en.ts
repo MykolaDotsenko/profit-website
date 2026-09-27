@@ -54,6 +54,17 @@ export const en: UIStrings = {
     gapLabel: 'Input needed',
     reviewLabel: 'Draft for review',
     imagePending: 'Image pending',
+    documentaryAgriculture: 'Documentary agriculture',
+  },
+  production: {
+    currentUnit: 'Current production unit',
+    productStatus: 'Product status',
+    inDevelopment: 'In development',
+    evidenceLabel: 'Evidence',
+    productLabel: 'Product',
+    periodLabel: 'Period',
+    roleLabel: 'Role',
+    currentExample: 'Current example',
   },
   evidence: {
     exampleLabel: 'Hypothetical example',
