@@ -479,6 +479,62 @@ test.describe('positioning and crawl hygiene', () => {
   });
 });
 
+test.describe('scan-first brochure behavior', () => {
+  test('desktop homepage exposes quiet guided navigation without crowding mobile', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto('/');
+
+    const journey = page.locator('.journey-nav');
+    await expect(journey).toBeVisible();
+    await expect(journey).toContainText('On this page');
+    await expect(journey.getByRole('link', { name: /Production systems/ })).toHaveAttribute('href', '#production-systems');
+    await expect(journey.getByRole('link', { name: /Field economics/ })).toHaveAttribute('href', '#example');
+    await expect(journey.getByRole('link', { name: /Evidence/ })).toHaveAttribute('href', '#evidence');
+    await expect(journey.getByRole('link', { name: /Pilot/ })).toHaveAttribute('href', '#join');
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await expect(journey).toBeHidden();
+  });
+
+  test('Field Profitability proof leads with one named economic state before detail', async ({ page }) => {
+    await page.goto('/');
+
+    const example = page.locator('#example');
+    const state = example.locator('.field-example__state');
+    await expect(state).toBeVisible();
+    await expect(state).toContainText('Illustrative economic state');
+    await expect(state).toContainText('Operating profit');
+    await expect(state).toContainText('−€69');
+    await expect(state).toContainText('Operating profit = revenue − variable costs − allocated fixed costs.');
+
+    const positions = await example.evaluate((root) => {
+      const stateEl = root.querySelector('.field-example__state');
+      const gridEl = root.querySelector('.field-example__grid');
+      if (!stateEl || !gridEl) throw new Error('Missing proof hierarchy');
+      return {
+        state: stateEl.getBoundingClientRect().top,
+        grid: gridEl.getBoundingClientRect().top,
+      };
+    });
+    expect(positions.state).toBeLessThan(positions.grid);
+  });
+
+  test('pilot form makes low-friction scope explicit before fields', async ({ page }) => {
+    await page.goto('/contact/');
+
+    const form = page.locator('[data-pilot-form]');
+    const assurances = form.locator('.pilot-form__assurances');
+    await expect(assurances).toBeVisible();
+    await expect(assurances).toContainText('5 details');
+    await expect(assurances).toContainText('No farm records');
+    await expect(assurances).toContainText('Used only to reply about the pilot');
+
+    const assuranceTop = await assurances.evaluate((el) => el.getBoundingClientRect().top);
+    const firstFieldTop = await form.locator('.field').first().evaluate((el) => el.getBoundingClientRect().top);
+    expect(assuranceTop).toBeLessThan(firstFieldTop);
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
