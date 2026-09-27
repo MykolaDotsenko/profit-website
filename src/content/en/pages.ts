@@ -508,7 +508,7 @@ export const trust = {
     items: [
       { title: 'The product is not available yet', text: 'Field Profitability is in development.' },
       { title: 'No results are published', text: 'There are no customer or pilot results on this site.' },
-      { title: 'Nothing is Verified', text: 'No figure on this site meets the Verified standard.' },
+      { title: 'Nothing is Verified', text: 'No PROFIT economic or value example on this site meets the Verified standard.' },
       { title: 'Missing data is not handled yet', text: 'The current design does not handle estimated or missing values, and does not attach a confidence level to results.' },
       { title: 'The examples are synthetic', text: 'Every field-level example on this site is hypothetical. Current crop examples are calibrated to official statistics for plausibility, not derived from customer records.' },
     ] satisfies TextItem[],
