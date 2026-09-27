@@ -74,3 +74,4 @@ ADRs explain and preserve material decisions.
 They do **not** outrank the canonical website documentation by themselves.
 
 When an ADR changes a canonical product/design/implementation decision, update the canonical source in the same change or explicitly state that the ADR is still Proposed.
+- [ADR 0004 — Vercel for the reversible static website release path](0004-vercel-static-hosting.md)
