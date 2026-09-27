@@ -83,7 +83,7 @@ These files are an evidence library. They support decisions but do not silently 
 
 ## Status
 
-Positioning, visual direction and the production platform are still being validated (WWW-000 to WWW-005). In parallel, **Website Build Pass 01** provides a reversible coded foundation: a multi-page site whose hero copy, proof objects, images, art-direction tokens and CTA copy can be replaced after farmer evidence ([ADR 0002](docs/decisions/0002-coded-website-foundation.md)). It is not a launched site.
+Positioning and farmer validation remain open. **B2 — Production Unit Grammar** is now the provisional production art direction and is implemented across the coded site ([ADR 0003](docs/decisions/0003-provisional-b2-production-unit-art-direction.md)). This is the strongest current implementation decision, not a farmer-validated winner. The site remains pre-launch and non-indexable while release gates are open.
 
 ## Website (Build Pass 01)
 
@@ -108,7 +108,7 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 
 | Variable | Default | Effect |
 |---|---|---|
-| `HERO_VARIANT` | `h2` | Which WWW-000 v2 candidate the homepage shows (`h1`, `h2`, `h3`). All three are untested hypotheses; the default is not a winner. |
+| `HERO_VARIANT` | `h3` | Which WWW-000 v2 candidate the homepage shows (`h1`, `h2`, `h3`). H3 is the provisional development default from the surrogate audit, not a farmer-validated winner. |
 | `SHOW_CONTENT_STATUS` | `true` | Preview banner and "Input needed / Draft for review" notes. |
 | `SITE_INDEXABLE` | `false` | When false, every page carries `noindex, nofollow`. Setting true now fails the build until `src/config/release.ts` has no blocking public-release gates. |
 | `PILOT_FORM_ENDPOINT` | unset | Unset: the form validates but sends nothing. Configuring an endpoint now fails until privacy/company/pilot-process release gates are ready. |
@@ -122,17 +122,17 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 - `src/domain/` — locale-neutral economics (metric identity, definition, version, currency, unit, period) and evidence semantics. Every metric definition is explicitly `confirmed` or `provisional`; public Metric rendering rejects provisional definitions. `format.ts` does presentation per locale.
 - `src/config/release.ts` — auditable hard gates for indexable release and pilot-form activation.
 - `src/i18n/` — locale registry and interface strings.
-- `src/styles/tokens.css` — baseline design tokens by semantic role. Placeholder values, not an approved art direction.
-- `src/components/` — components with stable meaning (evidence label, metric, proof card, field exhibit, image slot, content gap, …).
+- `src/styles/tokens.css` — semantic tokens for the provisional B2 Production Unit Grammar direction; reversible after farmer validation.
+- `src/components/` — components with stable meaning plus the selected production grammar: evidence label, metric, production-unit scope, B2 hero, field exhibit, image slot, content gap, methodology surfaces, …).
 - `tests/domain.test.ts` — arithmetic, locale presentation, evidence, metric-definition and release-gate tests.
 - `tests/browser/site.spec.ts` — CI browser regression coverage for routes, responsive widths, Axe accessibility, navigation, CTA, forms and reduced motion.
 
 ### Changing things after farmer evidence
 
 - **Hero copy:** edit or add a record in `src/content/en/shared.ts` (`heroVariants`); switch with `HERO_VARIANT`.
-- **Proof object:** each hero record names its proof body (`field-list`, `field-flow`, `field-composition`); values come from `field-season.ts`.
+- **Hero proof:** B2 renders the controlled field example as production context + economic state + evidence + decision question; values come from `field-season.ts`.
 - **Images:** pass an `image` (with `credit`) to `ImageSlot`. Width/height and aspect ratio reserve space. No stock or synthetic images.
-- **Art direction:** `tokens.css` is replaceable, but WWW-001 must not treat the current editorial DOM as neutral. A/B/C may reuse shared content/domain data and semantic primitives while using independent compositions. A tokens-only reskin does not count as three directions.
+- **Art direction:** B2 Production Unit Grammar is the current production direction. Change it only through a material decision with evidence and a new/superseding ADR; A2/C2 remain documented challengers.
 - **CTA copy:** `primaryCta` in `shared.ts` and the page content files.
 
 ### Localization
@@ -154,7 +154,7 @@ Shown on the pages as "Input needed" or "Draft for review" while `SHOW_CONTENT_S
 | Plain-language evidence-state definitions, checked against the VEV methodology | PROFIT team | `/trust`, homepage evidence section |
 | Documentary photograph with source, rights and provenance | PROFIT team | homepage hero |
 | Plausibility of the illustrative numbers for the target market, including the new Field 31 cost split (protocol D6) | domain expert | `field-season.ts` |
-| Brand symbol / favicon (open hypothesis), final typeface, palette and art direction (WWW-001/002) | PROFIT team | `tokens.css`, `BaseLayout.astro` |
+| Brand symbol / favicon, approved documentary asset and farmer validation of the provisional B2 art direction (WWW-002/003) | PROFIT team | `tokens.css`, `BaseLayout.astro`, B2 components |
 
 ## Prototypes
 
