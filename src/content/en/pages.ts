@@ -806,6 +806,7 @@ const pilotForm: PilotFormContent = {
   eyebrow: 'Pilot intake',
   title: 'Your details',
   requiredNote: 'All five fields are required.',
+  assurances: ['5 details', 'No farm records', 'Used only to reply about the pilot'],
   fields: {
     name: { label: 'Name' },
     organisation: { label: 'Farm or company' },
