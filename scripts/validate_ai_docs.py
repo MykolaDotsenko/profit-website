@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     "docs/experiments/www-000-statistical-surrogate-v1.md",
     "docs/homepage-content-brief-v1.md",
     "docs/website-trust-professionalism-synthesis-2026-09-27.md",
+    "docs/methodology/vev-standard-v1.md",
     "docs/legal/privacy-data-trust-pack.md",
     "src/config/release.ts",
     "src/domain/economics.ts",
@@ -169,6 +170,14 @@ TEXT_INVARIANTS = {
         "deterministic economics",
         "homepage should not become a white paper",
         "AI may scale execution",
+    ],
+    "docs/methodology/vev-standard-v1.md": [
+        "Verified Economic Value",
+        "positive, zero or negative",
+        "Baseline → Counterfactual",
+        "Low may support Attributed but not Verified",
+        "Medium or High may support Verified",
+        "Do not weaken the standard",
     ],
     "docs/legal/privacy-data-trust-pack.md": [
         "Production-readiness draft — legal approval required",
