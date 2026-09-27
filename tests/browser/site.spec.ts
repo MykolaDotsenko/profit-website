@@ -318,6 +318,24 @@ test.describe('B2 mobile hierarchy', () => {
   });
 });
 
+test.describe('closing conversion surface', () => {
+  test('closing pilot CTA stays explicit and visually separated', async ({ page }) => {
+    await page.goto('/');
+
+    const join = page.locator('#join');
+    await expect(join).toBeVisible();
+    await expect(join).toHaveClass(/section--inverse/);
+    await expect(join).toContainText('Join the pilot');
+    await expect(join).toContainText('Five details. No farm records.');
+    await expect(join).toContainText('What happens after you click');
+    await expect(join).toContainText('Send five details');
+    await expect(join).toContainText('We reply');
+    await expect(join).toContainText('Terms before data');
+    await expect(join.getByRole('link', { name: 'Join the pilot' })).toBeVisible();
+    await expect(join.getByRole('link', { name: 'Read how PROFIT handles data first' })).toBeVisible();
+  });
+});
+
 test.describe('claim and source integrity', () => {
   test('sourced statistics stay distinct from hypothetical PROFIT economics', async ({ page }) => {
     await page.goto('/');
