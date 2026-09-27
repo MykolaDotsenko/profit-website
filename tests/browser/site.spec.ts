@@ -1124,52 +1124,7 @@ test.describe('Finnish opt-in localization', () => {
       const overflow = await page.evaluate(
         () => Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
       );
-      if (overflow > 1) {
-        const geometry = await page.evaluate(() => {
-          const viewport = window.innerWidth;
-          const describe = (el: Element) => {
-            const rect = el.getBoundingClientRect();
-            const style = getComputedStyle(el);
-            return {
-              tag: el.tagName.toLowerCase(),
-              id: el.id,
-              className: typeof el.className === 'string' ? el.className : '',
-              left: Math.round(rect.left),
-              right: Math.round(rect.right),
-              width: Math.round(rect.width),
-              scrollWidth: (el as HTMLElement).scrollWidth ?? 0,
-              clientWidth: (el as HTMLElement).clientWidth ?? 0,
-              overflowX: style.overflowX,
-              display: style.display,
-              position: style.position,
-              boxSizing: style.boxSizing,
-              paddingLeft: style.paddingLeft,
-              paddingRight: style.paddingRight,
-            };
-          };
-          const wrap = document.querySelector('.model-table-wrap');
-          const chain = [];
-          let node: Element | null = wrap;
-          while (node && node !== document.documentElement) {
-            chain.push(describe(node));
-            node = node.parentElement;
-          }
-          const nearViewport = Array.from(document.querySelectorAll('body *'))
-            .map(describe)
-            .filter((item) => item.right > viewport + 1 && item.right < viewport + 100)
-            .slice(0, 20);
-          return {
-            innerWidth: window.innerWidth,
-            rootClientWidth: document.documentElement.clientWidth,
-            rootScrollWidth: document.documentElement.scrollWidth,
-            bodyClientWidth: document.body.clientWidth,
-            bodyScrollWidth: document.body.scrollWidth,
-            chain,
-            nearViewport,
-          };
-        });
-        throw new Error(`${route} page overflow ${overflow}px; geometry: ${JSON.stringify(geometry)}`);
-      }
+      expect(overflow, route).toBeLessThanOrEqual(1);
     }
   });
 
