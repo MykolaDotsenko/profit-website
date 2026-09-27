@@ -364,6 +364,21 @@ test.describe('internal navigation integrity', () => {
   });
 });
 
+test.describe('runtime footprint', () => {
+  test('homepage stays free of executable client scripts', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('script[src]')).toHaveCount(0);
+    await expect(page.locator('script:not([type]), script[type="module"], script[type="text/javascript"]')).toHaveCount(0);
+  });
+
+  test('contact client logic is isolated to the pilot form', async ({ page }) => {
+    await page.goto('/contact/');
+    const scripts = page.locator('script[src], script:not([type]), script[type="module"], script[type="text/javascript"]');
+    expect(await scripts.count()).toBeLessThanOrEqual(1);
+    await expect(page.locator('[data-pilot-form]')).toHaveCount(1);
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
