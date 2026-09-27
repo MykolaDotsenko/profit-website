@@ -293,7 +293,7 @@ art_direction_validation:
     proof_rule: "Field Profitability example is rendered as a production-unit record, not a generic analytics dashboard"
     documentary_rule: "pending asset space is explicit; no generated/stock image is presented as documentary agriculture"
     market_stat_rule: "market statistics remain supporting context and must not visually outrank farmer economic proof"
-    brochure_refinement: "production scope explicitly separates the domain-variable production unit from the invariant Production → Economics → Evidence → Decision discipline; split section rails are static rather than sticky application/documentation chrome; record lists may use grid or row/ledger composition according to meaning"
+    brochure_refinement: "production scope explicitly separates the domain-variable production unit from the invariant Production → Economics → Evidence → Decision discipline; split section rails are static rather than sticky application/documentation chrome; record lists may use grid or row/ledger composition according to meaning; homepage evidence keeps ladder/confidence/current-site status visible while the full verification chain uses native progressive disclosure"
     verification_guard: "npm run verify includes design-system and English claim-hygiene checks before Astro/type/domain/build verification; edits to either validator trigger Site Verify"
   research_prior: "A — Evidence-Led Editorial was the earlier theoretical prior; it is retained as a challenger, not selected production direction"
   objective: "maximize farmer comprehension + calibrated trust"
