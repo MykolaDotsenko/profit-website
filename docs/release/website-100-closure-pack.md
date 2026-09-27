@@ -1,0 +1,99 @@
+# PROFIT Website — 100/100 Closure Pack
+
+Status: **Operational release checklist**  
+Date: **2026-09-27**  
+Machine-readable truth: `docs/release/website-evidence-registry.json`
+
+## Current strict score
+
+**62/100 — 31 of 50 criteria PASS.**
+
+This is the evidence-complete score, not the implementation-quality estimate.
+
+## Critical path
+
+The remaining 19 criteria are intentionally not all software tasks. They fall into five closure streams.
+
+### A. Target-farmer evidence
+
+Closes or contributes to:
+- FC-01 — hero comprehension;
+- FC-05 — next-action comprehension;
+- BD-01 — production art direction.
+
+Required action:
+1. Recruit 9–12 target crop decision-makers in Market A.
+2. Use the existing fixed-exposure, open-recall protocol.
+3. Record comprehension, misclassification, next action and calibrated-trust observations.
+4. Apply pre-existing kill criteria.
+5. Promote only a surviving message/art direction; do not call a tiny sample a statistical winner.
+
+### B. Company / team / documentary facts
+
+Closes:
+- CC-01 — legal company identity;
+- CC-02 — direct contact;
+- CC-03 — team confirmation/consent;
+- BD-02 — documentary asset.
+
+Required actions:
+- authoritative legal entity details from the official company record;
+- one monitored direct-contact path with a send/receive smoke test;
+- one explicit publish confirmation per team member;
+- at least one real agricultural image with source + rights/provenance + context.
+
+### C. Legal / farm-data approval
+
+Closes:
+- TD-01 — approved privacy notice;
+- TD-02 — approved farm-data terms;
+- TD-05 — final privacy/security claim audit.
+
+The internal policy choices are already narrowed. Remaining work is factual/controller-specific:
+- controller/contact;
+- actual hosting/form/email/CRM processors and locations;
+- actual security/log behavior;
+- competent supervisory authority and rights wording;
+- final controller-specific legal review/approval.
+
+Do not infer these from convenience.
+
+### D. Human QA / production evidence
+
+Closes:
+- AR-02 — manual keyboard + representative screen-reader audit;
+- AR-03 — manual zoom/reflow audit;
+- PE-02 — production CWV/RUM;
+- PE-04 — real image/font network audit;
+- RI-03 — live-origin SEO/crawl audit;
+- RI-04 — operational ownership/monitoring.
+
+These are release-candidate tasks. Record the exact SHA and environment for each result.
+
+### E. Remaining product/production closure
+
+Closes:
+- PT-04 — Market-A economic reviewer;
+- CP-03 — production form delivery;
+- RI-01 — all gates READY.
+
+Order:
+1. Market-A domain sign-off.
+2. Company + privacy facts.
+3. Legal approval.
+4. Production endpoint and direct contact.
+5. Documentary asset.
+6. Manual accessibility/device audit.
+7. Deploy non-indexable release candidate.
+8. Production SEO/performance/monitoring checks.
+9. All gates READY.
+10. Exact-SHA CI.
+11. Enable indexability.
+
+## Non-negotiable release rule
+
+Do not change a BLOCKED criterion to PASS because the implementation “looks ready”.
+
+Change it only when the criterion’s own required evidence exists.
+
+Do not lower the standard to reach 100/100.
