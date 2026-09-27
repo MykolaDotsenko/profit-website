@@ -9,7 +9,6 @@ import {
   fieldProfitability,
   moduleStatus,
   pilotSteps,
-  pilotStepsReview,
   primaryCta,
   productionScopeNote,
   productionSystems,
@@ -43,7 +42,6 @@ const pilotCta = {
   intro: { id: 'join', eyebrow: 'Next step', title: 'Join the pilot', lead: 'A short form, then a conversation. No farm records.' } satisfies SectionIntro,
   stepsTitle: 'What happens after you click',
   steps: pilotSteps,
-  review: pilotStepsReview,
   primary: primaryCta,
 };
 
@@ -999,7 +997,7 @@ const pilotForm: PilotFormContent = {
   status: {
     notConnected: 'This preview is not connected to a submission service yet. Nothing was sent.',
     sending: 'Sending…',
-    success: 'Thank you. We will reply by email.',
+    success: 'Thank you. We aim to reply by email within two business days.',
     failure: 'Your details were not sent. Please try again later.',
   },
 };
@@ -1034,7 +1032,6 @@ export const contact = {
   },
   stepsTitle: 'What happens next',
   steps: pilotSteps,
-  review: pilotStepsReview,
   form: pilotForm,
   other: {
     title: 'Other enquiries',
