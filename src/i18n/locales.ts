@@ -1,7 +1,7 @@
 /**
  * Locale registry. English is the development content language, not a market decision.
  *
- * English remains the default unprefixed locale. Ukrainian is an opt-in localized route set under /uk/.
+ * English remains the default unprefixed locale. Ukrainian and Finnish are opt-in localized route sets under /uk/ and /fi/.
  * New locales must preserve product/economic/evidence semantics and receive terminology review.
  */
 export interface LocaleInfo {
@@ -19,6 +19,7 @@ export interface LocaleInfo {
 export const LOCALES = {
   en: { code: 'en', lang: 'en', dir: 'ltr', intl: 'en-GB', name: 'English' },
   uk: { code: 'uk', lang: 'uk', dir: 'ltr', intl: 'uk-UA', name: 'Українська' },
+  fi: { code: 'fi', lang: 'fi', dir: 'ltr', intl: 'fi-FI', name: 'Suomi' },
 } as const satisfies Record<string, LocaleInfo>;
 
 export type Locale = keyof typeof LOCALES;
