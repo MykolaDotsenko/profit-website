@@ -32,9 +32,7 @@ const t = ui(localeInfo(Astro.currentLocale).code);
   @layer components {
     .ladder {
       display: grid;
-      gap: 1px;
       border: 1px solid var(--color-line-strong);
-      background: var(--color-line);
     }
     .ladder__rung {
       display: grid;
@@ -42,7 +40,9 @@ const t = ui(localeInfo(Astro.currentLocale).code);
       align-content: start;
       min-width: 0;
       padding: var(--space-4);
-      background: var(--color-inverse-canvas);
+    }
+    .ladder__rung + .ladder__rung {
+      border-block-start: 1px solid var(--color-line);
     }
     .ladder__head {
       display: flex;
@@ -78,6 +78,10 @@ const t = ui(localeInfo(Astro.currentLocale).code);
     @container (min-width: 56rem) {
       .ladder {
         grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+      .ladder__rung + .ladder__rung {
+        border-block-start: 0;
+        border-inline-start: 1px solid var(--color-line);
       }
     }
   }
