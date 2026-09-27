@@ -184,6 +184,28 @@ export const farmers = {
     systems: productionSystems,
     note: productionScopeNote,
   },
+  dataCollection: {
+    intro: {
+      id: 'data-collection',
+      eyebrow: 'Data collection',
+      title: 'Use the records you already have. Add automation only where it helps.',
+      lead:
+        'The current Field Profitability concept starts from farmer-provided field records. The broader PROFIT direction is to reduce manual entry without making new machinery, perfect connectivity or constant screen attention a condition for use.',
+    } satisfies SectionIntro,
+    items: dataCollectionPrinciples,
+    note:
+      'Connected machinery, automatic activity recognition, contextual inference and offline capture are development principles, not claims about the current Field Profitability build.',
+  },
+  dataPath: {
+    intro: {
+      id: 'data-path',
+      eyebrow: 'From record to result',
+      title: 'What should happen after data arrives',
+      lead:
+        'Before a number influences a decision, the data behind it should be checked, traced and handled according to its quality.',
+    } satisfies SectionIntro,
+    steps: dataQualitySteps,
+  },
   provide: {
     intro: { id: 'what-you-provide', eyebrow: 'Inputs', title: 'What you would provide', lead: 'For each field and season.' } satisfies SectionIntro,
     items: fieldProfitability.inputs,
@@ -243,6 +265,21 @@ export const product = {
       { title: 'Fixed formulas', text: 'Every figure comes from the definitions above, applied to the inputs you provide. The same inputs always give the same result.' },
       { title: 'AI explains, it does not calculate', text: fieldProfitability.ai },
       { title: 'Your currency', text: 'Figures carry the currency they were recorded in. Field figures are per hectare.' },
+    ] satisfies TextItem[],
+  },
+  methodBoundary: {
+    intro: {
+      id: 'method-boundary',
+      eyebrow: 'Current product boundary',
+      title: 'Deterministic economics now. Forecasting only when evidence justifies it.',
+      lead:
+        'Field Profitability is designed around explicit field economics. Forecasting, optimisation, automatic activity recognition and scenario simulation belong to the wider PROFIT research direction and are not current Field Profitability capabilities.',
+    } satisfies SectionIntro,
+    items: [
+      { title: 'Current arithmetic', text: 'Known inputs are transformed with fixed, inspectable formulas.' },
+      { title: 'Data quality first', text: 'Missing, stale or conflicting data should reduce confidence before any model is trusted.' },
+      { title: 'Future forecasting discipline', text: 'Uncertain drivers should be forecast separately, compared against simple baselines and carried into ranges or scenarios rather than one precise future-profit number.' },
+      { title: 'Farmer authority', text: 'Any future decision-support layer compares alternatives; it does not remove the farmer from the decision.' },
     ] satisfies TextItem[],
   },
   exclusions: {
@@ -346,6 +383,104 @@ export const trust = {
     terms: 'Data terms are not yet published. Until they are, PROFIT makes no legal claim about ownership or sharing, and does not ask for farm data.',
     termsGap: { owner: 'legal', text: 'Data terms: ownership, sharing, retention and deletion.' } satisfies ContentGap,
   },
+  dataLifecycle: {
+    intro: {
+      id: 'data-lifecycle',
+      eyebrow: 'Data processing',
+      title: 'From a farm record to a decision — with the quality checks visible',
+      lead:
+        'PROFIT should not hide data cleaning, inference or modelling behind one “smart” output. The source, quality gate, calculation and uncertainty state should remain inspectable.',
+    } satisfies SectionIntro,
+    steps: [
+      {
+        title: 'Collect',
+        text: 'Start from permissioned farm records and add machine, sensor or external data only where it materially improves the decision.',
+        state: 'Input',
+      },
+      ...dataQualitySteps,
+      {
+        title: 'Calculate known economics',
+        text: 'Apply explicit deterministic formulas to known inputs before introducing predictive models.',
+        state: 'Deterministic',
+      },
+      {
+        title: 'Forecast only uncertain drivers',
+        text: 'Where justified, compare models for variables such as yield, price, production, feed or energy — not a black-box future-profit number.',
+        state: 'Research direction',
+      },
+      {
+        title: 'Compare alternatives',
+        text: 'Carry uncertainty into scenario A, scenario B and a defensible current-practice or do-nothing counterfactual.',
+        state: 'Decision support',
+      },
+      {
+        title: 'Measure the actual outcome',
+        text: 'After the decision, record what happened and assess incremental effect, attribution and confidence before calling value Verified.',
+        state: 'Evidence',
+      },
+    ],
+    note:
+      'Only the deterministic Field Profitability arithmetic is a current concrete product focus. The wider data, forecasting and decision-support pipeline is a PROFIT development standard.',
+  },
+  modelComparison: {
+    intro: {
+      id: 'model-comparison',
+      eyebrow: 'Forecasting discipline',
+      title: 'No model wins by reputation. It has to win on the task.',
+      lead:
+        'Model choice depends on data volume, quality, horizon, production domain, transferability and operational reliability. The simplest adequate model is the preferred starting point.',
+    } satisfies SectionIntro,
+    labels: {
+      caption: 'PROFIT model-comparison discipline — development standard, not a list of shipped models',
+      candidate: 'Candidate',
+      useWhen: 'When it may be justified',
+      evaluation: 'What it must prove',
+      risk: 'Main failure mode',
+    },
+    rows: modelComparisonRows,
+    research:
+      'Systematic reviews of agricultural yield prediction show wide use of linear regression, Random Forest, gradient boosting, deep learning and hybrid approaches, with model suitability strongly dependent on dataset size, context and validation design.',
+    sources: [
+      {
+        label: 'Smart Agricultural Technology · crop-yield ML systematic review (2025)',
+        href: 'https://doi.org/10.1016/j.atech.2024.100718',
+      },
+      {
+        label: 'Smart Agricultural Technology · tree-crop yield systematic review (2024)',
+        href: 'https://doi.org/10.1016/j.atech.2024.100556',
+      },
+    ],
+    note:
+      'PROFIT does not treat random train/test splits, leaderboard accuracy or model complexity as sufficient evidence for a farm decision. Future-period and independent farm/field validation are preferred where practical.',
+  },
+  decisionSupport: {
+    intro: {
+      id: 'decision-support',
+      eyebrow: 'Decision support',
+      title: 'Support the decision. Do not replace the farmer.',
+      lead:
+        'The PROFIT decision-support pattern is state → alternatives → economic consequences → uncertainty → farmer decision → actual outcome → learning.',
+    } satisfies SectionIntro,
+    steps: decisionSupportSteps,
+    research:
+      'Agricultural DSS research repeatedly identifies two problems PROFIT should avoid: technology-push systems that do not fit farmer needs, and outputs that hide uncertainty. Recent reviews call for participatory, interactive and uncertainty-aware decision support.',
+    sources: [
+      {
+        label: 'Agricultural Water Management · decision-support adoption review',
+        href: 'https://doi.org/10.1016/j.agwat.2021.107161',
+      },
+      {
+        label: 'Engineering · integrating forecasts into agricultural DSS (2026)',
+        href: 'https://doi.org/10.1016/j.eng.2026.05.015',
+      },
+      {
+        label: 'Technological Forecasting & Social Change · smart-agriculture technology acceptance review',
+        href: 'https://doi.org/10.1016/j.techfore.2023.122374',
+      },
+    ],
+    note:
+      'This is the PROFIT system-design direction. It is not a claim that the current product autonomously recommends actions or already runs predictive DSS workflows.',
+  },
   privacy: {
     intro: { id: 'privacy', eyebrow: 'Privacy and security', title: 'Privacy and security principles' } satisfies SectionIntro,
     items: [
@@ -445,6 +580,18 @@ export const company = {
       },
     ],
   },
+  dataProcessing: {
+    intro: {
+      id: 'data-processing',
+      eyebrow: 'Data quality',
+      title: 'Quality before intelligence',
+      lead:
+        'More data is not automatically better data. Before PROFIT relies on a record, benchmark or model, the quality problem should be made explicit.',
+    } satisfies SectionIntro,
+    steps: dataQualitySteps,
+    principle:
+      'Completeness → consistency → duplicates → anomalies → freshness → provenance → representativeness. A weak input should lower confidence, not be hidden by a more sophisticated model.',
+  },
   forecasting: {
     intro: {
       id: 'forecasting',
@@ -493,6 +640,47 @@ export const company = {
     ],
     note:
       'This is the PROFIT development direction. It is not a claim that the current Field Profitability build already performs forecasting, optimisation or scenario simulation.',
+  },
+  modelComparison: {
+    intro: {
+      id: 'model-comparison',
+      eyebrow: 'Model selection',
+      title: 'Compare models against a baseline, not against marketing',
+      lead:
+        'PROFIT’s forecasting research starts from the simplest defensible baseline and adds complexity only when unseen-data performance, reliability and decision value improve materially.',
+    } satisfies SectionIntro,
+    labels: {
+      caption: 'Candidate model families and the evidence gate each one faces',
+      candidate: 'Candidate',
+      useWhen: 'When it may be justified',
+      evaluation: 'What it must prove',
+      risk: 'Main failure mode',
+    },
+    rows: modelComparisonRows,
+  },
+  decisionSupport: {
+    intro: {
+      id: 'decision-support',
+      eyebrow: 'Decision system',
+      title: 'A decision is more than a prediction',
+      lead:
+        'A useful agricultural DSS should connect the current state, realistic alternatives, economic consequences, uncertainty and the farmer’s own decision — then learn from the actual outcome.',
+    } satisfies SectionIntro,
+    steps: decisionSupportSteps,
+    research:
+      'Reviews of agricultural decision-support systems warn that technology-push design, weak treatment of uncertainty and poor fit with end-user needs undermine adoption. PROFIT therefore treats farmer authority, inspectable assumptions and measured outcomes as system requirements.',
+    sources: [
+      {
+        label: 'Agricultural Water Management · decision-support adoption review',
+        href: 'https://doi.org/10.1016/j.agwat.2021.107161',
+      },
+      {
+        label: 'Engineering · uncertainty-aware agricultural DSS review (2026)',
+        href: 'https://doi.org/10.1016/j.eng.2026.05.015',
+      },
+    ],
+    note:
+      'This is a development architecture, not a claim that a full predictive DSS is already shipped.',
   },
   why: {
     intro: { id: 'why', eyebrow: 'Why', title: 'Why' } satisfies SectionIntro,
