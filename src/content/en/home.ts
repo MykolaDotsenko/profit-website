@@ -82,6 +82,7 @@ export const home = {
       lead: 'Revenue, variable costs and allocated fixed costs come together in one operating-profit view. This is a statistics-calibrated synthetic example, not a customer result.',
     } satisfies SectionIntro,
     labels: {
+      productName: fieldProfitability.name,
       notScreenshot: 'Illustration, not a product screenshot.',
       tableCaption: 'Operating profit by field, one season',
       columnField: 'Field',
