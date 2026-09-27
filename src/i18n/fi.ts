@@ -9,6 +9,7 @@ export const fi: UIStrings = {
     english: 'Englanti',
     ukrainian: 'Ukraina',
     finnish: 'Suomi',
+    danish: 'Tanska',
   },
   common: {
     pilot: 'Pilotti',
