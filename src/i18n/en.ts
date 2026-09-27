@@ -8,6 +8,7 @@ export const en: UIStrings = {
     label: 'Language',
     english: 'English',
     ukrainian: 'Ukrainian',
+    finnish: 'Finnish',
   },
   common: {
     pilot: 'Pilot',
