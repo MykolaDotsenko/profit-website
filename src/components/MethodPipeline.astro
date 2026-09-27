@@ -1,0 +1,94 @@
+---
+interface Step {
+  title: string;
+  text: string;
+  state?: string;
+}
+
+interface Props {
+  steps: readonly Step[];
+  ariaLabel: string;
+}
+
+const { steps, ariaLabel } = Astro.props;
+---
+
+<ol class="method-pipeline" aria-label={ariaLabel}>
+  {steps.map((step, index) => (
+    <li class="method-pipeline__step">
+      <div class="method-pipeline__index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</div>
+      <div>
+        <div class="method-pipeline__head">
+          <h3>{step.title}</h3>
+          {step.state && <span class="method-pipeline__state">{step.state}</span>}
+        </div>
+        <p>{step.text}</p>
+      </div>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .method-pipeline {
+    display: grid;
+    border-block-start: 1px solid var(--color-line-strong);
+  }
+
+  .method-pipeline__step {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    gap: var(--space-3);
+    padding-block: var(--space-5);
+    border-block-end: 1px solid var(--color-line);
+  }
+
+  .method-pipeline__index {
+    font-size: var(--text-small);
+    font-weight: var(--weight-strong);
+    color: var(--color-text-secondary);
+    font-variant-numeric: tabular-nums lining-nums;
+    padding-block-start: 0.2rem;
+  }
+
+  .method-pipeline__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+  }
+
+  .method-pipeline h3 {
+    font-size: var(--text-subsection);
+    line-height: 1.2;
+  }
+
+  .method-pipeline__state {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--color-evidence-line);
+    background: var(--color-evidence-bg);
+    font-size: var(--text-caption);
+    font-weight: var(--weight-strong);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .method-pipeline p {
+    max-width: var(--measure-wide);
+    margin-block-start: var(--space-2);
+    color: var(--color-text-secondary);
+    font-size: var(--text-small);
+    line-height: 1.55;
+  }
+
+  @container (min-width: 54rem) {
+    .method-pipeline {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: var(--space-8);
+    }
+
+    .method-pipeline__step:nth-child(2) {
+      border-block-start: 1px solid var(--color-line-strong);
+    }
+  }
+</style>
