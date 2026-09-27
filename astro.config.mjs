@@ -1,8 +1,8 @@
 // @ts-check
 import { defineConfig, envField } from 'astro/config';
 
-// Build Pass 01 foundation. Static output only: no server runtime, adapter or framework integration.
-// The production platform decision (WWW-005) stays open; see README.md.
+// Provisional B2 production website. Static output only: no server runtime, adapter or framework
+// integration. The public hosting/platform decision (WWW-005) remains open; see README.md.
 export default defineConfig({
   // Canonical URLs are emitted only when the production origin is known.
   site: process.env.SITE_URL || undefined,
