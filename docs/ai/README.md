@@ -14,6 +14,7 @@ Purpose: give AI agents the smallest reliable context required to work on the PR
 8. [100-Point Release Quality Contract](../release/website-100-scorecard.md) — auditable final Definition of Done
 9. [Release Evidence Registry](../release/website-evidence-registry.json) — current binary PASS/BLOCKED state and strict score
 10. [100/100 Closure Pack](../release/website-100-closure-pack.md) — remaining evidence actions
+11. [Release Evidence Forms](../release/evidence-forms/) — standardized records for closing human/legal/external blockers
 
 ## Context-loading rule
 
