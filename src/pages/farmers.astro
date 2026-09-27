@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ItemList from '../components/ItemList.astro';
+import MethodPipeline from '../components/MethodPipeline.astro';
 import PageIntro from '../components/PageIntro.astro';
 import QuestionList from '../components/QuestionList.astro';
 import Section from '../components/Section.astro';
@@ -17,6 +18,15 @@ const p = c.farmers;
   <Section intro={p.scope.intro} tone="sunken">
     <ItemList items={p.scope.systems} columns={3} />
     <p class="scope-note">{p.scope.note}</p>
+  </Section>
+
+  <Section intro={p.dataCollection.intro}>
+    <ItemList items={p.dataCollection.items} columns={2} />
+    <p class="method-note">{p.dataCollection.note}</p>
+  </Section>
+
+  <Section intro={p.dataPath.intro} tone="sunken">
+    <MethodPipeline steps={p.dataPath.steps} ariaLabel="Data quality path" />
   </Section>
 
   <Section intro={p.provide.intro} layout="split">
@@ -54,9 +64,15 @@ const p = c.farmers;
     font-size: var(--text-small);
     font-weight: var(--weight-strong);
   }
-  .ai-note {
+  .ai-note,
+  .method-note {
     margin-block-start: var(--space-5);
     max-width: var(--measure-wide);
     font-weight: var(--weight-strong);
+  }
+  .method-note {
+    padding-inline-start: var(--space-4);
+    border-inline-start: 3px solid var(--color-line-strong);
+    font-size: var(--text-small);
   }
 </style>
