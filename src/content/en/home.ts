@@ -132,6 +132,35 @@ export const home = {
       conclusion:
         'The work is not collecting data for its own sake. It is bringing the right records together so the economic question can be inspected consistently.',
     },
+    changeFrame: {
+      title: 'What changes in the decision process',
+      leftLabel: 'When the economic view stays fragmented',
+      rightLabel: 'PROFIT approach',
+      rows: [
+        {
+          topic: 'Records',
+          before: 'Production, sales and cost records remain in different places and formats.',
+          after: 'Reuse the records around one decision and keep their provenance visible.',
+        },
+        {
+          topic: 'Economics',
+          before: 'Definitions and allocations can be reconstructed differently from one analysis to the next.',
+          after: 'Apply explicit, repeatable economic definitions before adding predictive models.',
+        },
+        {
+          topic: 'Uncertainty',
+          before: 'Assumptions can disappear inside one precise-looking result.',
+          after: 'Keep assumptions, evidence state and confidence inspectable.',
+        },
+        {
+          topic: 'Decision',
+          before: 'The farmer still has to reconcile the evidence before deciding.',
+          after: 'Put comparable economics in view while the farmer keeps decision authority.',
+        },
+      ],
+      note:
+        'This is the PROFIT operating approach, not a claim that every farm currently works the same way or that the current product already automates every step.',
+    },
   },
   how: {
     intro: {
