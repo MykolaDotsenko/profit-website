@@ -40,6 +40,128 @@ const pilotCta = {
   primary: primaryCta,
 };
 
+const dataCollectionPrinciples: TextItem[] = [
+  {
+    title: 'Start with records that already exist',
+    text: 'Field records, invoices, sales, input costs, feed or herd records should be reused before asking a farm to create another parallel data-entry routine.',
+  },
+  {
+    title: 'Connected machinery when it genuinely helps',
+    text: 'Machine, sensor, positioning or platform data can reduce manual work when the source is reliable and permissioned. Telemetry should not be a prerequisite for using PROFIT.',
+  },
+  {
+    title: 'Older machinery still needs a path',
+    text: 'For non-connected equipment, the product direction is minimal operator input, context-aware capture and confirmation only when the system is uncertain — not constant typing while working.',
+  },
+  {
+    title: 'Offline first where the work requires it',
+    text: 'Field work cannot depend on continuous coverage. Capture should be able to happen locally and synchronise later when connectivity returns.',
+  },
+  {
+    title: 'External data only with a purpose',
+    text: 'Weather, market, satellite, soil or other external sources should be added only when they materially improve a decision and their provenance remains visible.',
+  },
+] satisfies TextItem[];
+
+const dataQualitySteps = [
+  {
+    title: 'Capture with permission',
+    text: 'Keep the source and purpose attached to the record. Recorded, imported, inferred and estimated values must remain distinguishable.',
+    state: 'Principle',
+  },
+  {
+    title: 'Check completeness',
+    text: 'Identify missing fields and periods before producing a confident economic or predictive result.',
+    state: 'Quality gate',
+  },
+  {
+    title: 'Check consistency and duplicates',
+    text: 'Look for unit mismatches, impossible combinations, repeated records and conflicts between sources.',
+    state: 'Quality gate',
+  },
+  {
+    title: 'Check anomalies and freshness',
+    text: 'Flag unusual values and stale records instead of silently treating them as normal or current.',
+    state: 'Quality gate',
+  },
+  {
+    title: 'Preserve provenance',
+    text: 'Keep track of where the value came from, when it was recorded, and whether it was observed, inferred or modelled.',
+    state: 'Trust',
+  },
+  {
+    title: 'Check representativeness',
+    text: 'A model or benchmark should not be treated as transferable to a farm, field, season or production system it does not represent.',
+    state: 'Model gate',
+  },
+] as const;
+
+const modelComparisonRows = [
+  {
+    candidate: 'Historical / naive baseline',
+    useWhen: 'Always as the minimum reference, especially when data is limited.',
+    evaluation: 'A more complex model must materially beat this out of sample before it earns operational use.',
+    risk: 'Can miss changing relationships, but exposes whether complexity adds real value.',
+  },
+  {
+    candidate: 'Linear / regularised regression',
+    useWhen: 'When relationships are reasonably stable and interpretability matters.',
+    evaluation: 'Temporal holdout, independent farm/field checks where possible, MAE/RMSE and residual diagnostics.',
+    risk: 'Can underfit nonlinear relationships or interactions.',
+  },
+  {
+    candidate: 'Tree ensembles',
+    useWhen: 'For nonlinear tabular relationships and interactions with enough representative data.',
+    evaluation: 'Rolling or future-period validation, farm/field holdout, calibration and stability checks.',
+    risk: 'Can overfit farm-specific structure and appear stronger than it transfers.',
+  },
+  {
+    candidate: 'Time-series / process / hybrid models',
+    useWhen: 'When temporal or biological structure is central and the extra complexity is justified.',
+    evaluation: 'Forward validation, scenario robustness, domain plausibility and operational reliability.',
+    risk: 'Higher maintenance burden and more assumptions to validate.',
+  },
+  {
+    candidate: 'Deep learning / foundation models',
+    useWhen: 'Only when data scale, task structure and measurable performance gain justify them.',
+    evaluation: 'Must outperform simpler baselines on unseen data and meet explainability, cost and reliability constraints.',
+    risk: 'Data hunger, transfer failure, opacity and complexity without farmer value.',
+  },
+] as const;
+
+const decisionSupportSteps = [
+  {
+    title: 'State',
+    text: 'Describe the current production and economic state from traceable records.',
+    state: 'Known',
+  },
+  {
+    title: 'Alternatives',
+    text: 'Define the realistic choices — including current practice or doing nothing where that is the proper counterfactual.',
+    state: 'Decision',
+  },
+  {
+    title: 'Economic consequences',
+    text: 'Translate each alternative through explicit economics rather than a black-box score.',
+    state: 'Economics',
+  },
+  {
+    title: 'Uncertainty',
+    text: 'Show assumptions, ranges and confidence where outcomes depend on weather, biology, markets or model uncertainty.',
+    state: 'Uncertain',
+  },
+  {
+    title: 'Farmer decision',
+    text: 'PROFIT supports the comparison. The farmer keeps authority and can reject the modelled option.',
+    state: 'Human',
+  },
+  {
+    title: 'Outcome and learning',
+    text: 'Record what actually happened, compare it with the counterfactual and update the evidence rather than declaring the forecast correct.',
+    state: 'Evidence',
+  },
+] as const;
+
 export const farmers = {
   meta: {
     title: 'For farmers',
