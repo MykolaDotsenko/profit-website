@@ -468,6 +468,57 @@ test.describe('internal navigation integrity', () => {
   });
 });
 
+test.describe('privacy and farm-data readiness', () => {
+  test('trust page separates current website data from future farm-data terms', async ({ page }) => {
+    await page.goto('/trust/#privacy');
+
+    const privacy = page.locator('#privacy');
+    await expect(privacy).toContainText('Start with less data. Agree the terms before farm records.');
+    await expect(privacy).toContainText('What this website asks for today');
+    await expect(privacy).toContainText('Five contact/context details');
+    await expect(privacy).toContainText('No farm records at first contact');
+    await expect(privacy).toContainText('Preview submission is off');
+    await expect(privacy).toContainText('No analytics or cookie layer in the current code');
+
+    await expect(privacy).toContainText('What the final privacy notice still has to specify');
+    await expect(privacy).toContainText('Purpose + legal basis');
+    await expect(privacy).toContainText('Retention');
+    await expect(privacy).toContainText('Recipients, processors + transfers');
+    await expect(privacy).toContainText('Rights + complaint path');
+
+    await expect(privacy).toContainText('Before any farm records are shared');
+    await expect(privacy).toContainText('Secondary use + model training');
+    await expect(privacy).toContainText('Retention + deletion + export');
+    await expect(privacy).toContainText('Draft for review');
+    await expect(privacy.getByRole('link', { name: /European Commission · Principles of the GDPR/ })).toBeVisible();
+  });
+
+  test('pilot form keeps five fields and links to privacy readiness before activation', async ({ page }) => {
+    await page.goto('/contact/');
+
+    const form = page.locator('[data-pilot-form]');
+    await expect(form.locator('input, select')).toHaveCount(5);
+    await expect(form).toContainText('We do not ask for farm records in this form.');
+    await expect(form.getByRole('link', { name: 'Privacy and farm-data readiness' })).toHaveAttribute('href', '/trust/#privacy');
+    await expect(form).toContainText('The live form still requires an approved privacy notice');
+    await expect(form).toContainText('Preview: this form is not connected yet and sends nothing.');
+  });
+
+  test('pre-launch pages do not implement analytics or cookie storage APIs', async ({ page }) => {
+    for (const route of routes) {
+      await page.goto(route);
+      await expect(page.locator('script[src]')).toHaveCount(0);
+      const source = await page.locator('html').evaluate(() =>
+        Array.from(document.scripts).map((script) => script.textContent ?? '').join('\n'),
+      );
+      expect(source).not.toContain('document.cookie');
+      expect(source).not.toContain('localStorage');
+      expect(source).not.toContain('sessionStorage');
+      expect(source).not.toMatch(/gtag|googletagmanager|plausible|posthog|segment/i);
+    }
+  });
+});
+
 test.describe('runtime footprint', () => {
   test('homepage stays free of executable client scripts', async ({ page }) => {
     await page.goto('/');
