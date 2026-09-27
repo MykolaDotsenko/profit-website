@@ -217,6 +217,9 @@ test.describe('selected B2 production-unit grammar', () => {
     await expect(scope).toContainText('Block / variety / crop cycle');
     await expect(scope).toContainText('Batch / production cycle');
     await expect(scope).toContainText('Cow / group / herd / period');
+    await expect(scope).toContainText('Changes with the production system');
+    await expect(scope).toContainText('Stays consistent');
+    await expect(scope).toContainText('Production → Economics → Evidence → Decision');
     await expect(scope).toContainText('Current first focus');
     await expect(scope.getByText('Direction', { exact: true })).toHaveCount(5);
   });
@@ -536,6 +539,18 @@ test.describe('scan-first brochure behavior', () => {
 });
 
 test.describe('supporting-page scanability', () => {
+  test('B2 split rails stay static and record lists vary by meaning', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto('/product/');
+
+    const rail = page.locator('.section--split .section__head').first();
+    await expect(rail).toBeVisible();
+    expect(await rail.evaluate((el) => getComputedStyle(el).position)).toBe('static');
+
+    await expect(page.locator('.items--rows')).toHaveCount(4);
+    await expect(page.locator('.items--grid')).toHaveCount(1);
+  });
+
   test('supporting pages expose scan-first local navigation', async ({ page }) => {
     for (const route of ['/farmers/', '/product/', '/trust/', '/company/', '/investors/']) {
       await page.goto(route);

@@ -48,6 +48,8 @@ export interface UIStrings {
     currentUnit: string;
     unitLabel: string;
     scopeLabel: string;
+    scopeVariableLabel: string;
+    scopeInvariantLabel: string;
     productStatus: string;
     inDevelopment: string;
     evidenceLabel: string;

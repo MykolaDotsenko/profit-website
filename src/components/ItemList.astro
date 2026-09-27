@@ -8,13 +8,15 @@ interface Props {
   /** Heading level for item titles. */
   level?: 3 | 4;
   marker?: 'none' | 'number' | 'cross';
+  /** 'rows' keeps title and explanation in a ledger-like record on wide screens. */
+  layout?: 'grid' | 'rows';
 }
 
-const { items, columns = 2, level = 3, marker = 'none' } = Astro.props;
+const { items, columns = 2, level = 3, marker = 'none', layout = 'grid' } = Astro.props;
 const Heading = `h${level}` as 'h3' | 'h4';
 ---
 
-<ul class:list={['items', `items--${columns}`, `items--${marker}`]} role="list">
+<ul class:list={['items', `items--${columns}`, `items--${marker}`, `items--${layout}`]} role="list">
   {
     items.map((item, i) => (
       <li class="item">
@@ -74,13 +76,30 @@ const Heading = `h${level}` as 'h3' | 'h4';
       color: var(--color-text-secondary);
     }
     @container (min-width: 34rem) {
-      .items--2,
-      .items--3 {
+      .items--grid.items--2,
+      .items--grid.items--3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    @container (min-width: 44rem) {
+      .items--rows .item {
+        grid-template-columns: auto minmax(10rem, 3fr) minmax(0, 6fr);
+        align-items: baseline;
+      }
+      .items--rows.items--none .item {
+        grid-template-columns: minmax(10rem, 3fr) minmax(0, 6fr);
+      }
+      .items--rows .item__marker {
+        grid-row: auto;
+      }
+      .items--rows .item__text {
+        grid-column: auto;
+      }
+    }
+
     @container (min-width: 56rem) {
-      .items--3 {
+      .items--grid.items--3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }

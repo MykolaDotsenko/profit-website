@@ -96,7 +96,7 @@ Requires Node.js 22.12 or later.
 ```sh
 npm ci
 npm run dev       # http://localhost:4321
-npm run verify    # astro check + domain/release tests + production build
+npm run verify    # design + claim hygiene + astro check + domain/release tests + production build
 npm run preview   # serve the production build
 
 # Browser QA is pinned and run by GitHub Actions (Playwright 1.63.0 + Axe 4.13.0).
@@ -126,6 +126,7 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 - `src/components/` — components with stable meaning plus the selected production grammar: evidence label, metric, production-unit scope, B2 hero, field exhibit, image slot, content gap, methodology surfaces, …).
 - `tests/domain.test.ts` — arithmetic, locale presentation, evidence, metric-definition and release-gate tests.
 - `tests/browser/site.spec.ts` — CI browser regression coverage for routes, responsive widths, Axe accessibility, navigation, CTA, forms and reduced motion.
+- `scripts/validate_claim_hygiene.mjs` — English production-copy guard against unsupported hype/superiority language; runs inside `npm run verify` and has its own Site Verify path trigger.
 
 ### Changing things after farmer evidence
 

@@ -26,12 +26,12 @@ const p = content(Astro.currentLocale).investors;
   </Section>
 
   <Section intro={p.proofNext.intro} tone="sunken">
-    <ItemList items={p.proofNext.items} columns={2} />
+    <ItemList items={p.proofNext.items} columns={2} layout="rows" />
     <p class="proof-note">{p.proofNext.note}</p>
   </Section>
 
   <Section intro={p.notClaimed.intro} layout="split">
-    <ItemList items={p.notClaimed.items} columns={2} marker="cross" />
+    <ItemList items={p.notClaimed.items} columns={2} marker="cross" layout="rows" />
   </Section>
 
   <Section intro={p.contact.intro} layout="split">

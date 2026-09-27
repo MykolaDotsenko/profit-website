@@ -13,8 +13,9 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "node --experimental-strip-types --test tests/domain.test.ts",
-    "verify": "npm run design:check && astro check && npm test && astro build",
-    "design:check": "node scripts/validate_design_system.mjs"
+    "verify": "npm run design:check && npm run claims:check && astro check && npm test && astro build",
+    "design:check": "node scripts/validate_design_system.mjs",
+    "claims:check": "node scripts/validate_claim_hygiene.mjs"
   },
   "dependencies": {
     "astro": "7.3.5"

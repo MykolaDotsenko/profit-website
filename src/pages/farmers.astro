@@ -28,7 +28,7 @@ const p = c.farmers;
   </Section>
 
   <Section intro={p.dataCollection.intro}>
-    <ItemList items={p.dataCollection.items} columns={2} />
+    <ItemList items={p.dataCollection.items} columns={2} layout="rows" />
     <p class="method-note">{p.dataCollection.note}</p>
   </Section>
 
@@ -45,7 +45,7 @@ const p = c.farmers;
   </Section>
 
   <Section intro={p.notDo.intro} layout="split">
-    <ItemList items={p.notDo.items} columns={2} marker="cross" />
+    <ItemList items={p.notDo.items} columns={2} marker="cross" layout="rows" />
     <p class="ai-note">{p.notDo.ai}</p>
   </Section>
 

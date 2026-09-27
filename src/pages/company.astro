@@ -34,7 +34,7 @@ const p = content(Astro.currentLocale).company;
   </Section>
 
   <Section intro={p.dataStrategy.intro} layout="split">
-    <ItemList items={p.dataStrategy.items} columns={2} />
+    <ItemList items={p.dataStrategy.items} columns={2} layout="rows" />
     <p class="evidence-note">{p.dataStrategy.evidence}</p>
     <ul class="source-list" role="list">
       {p.dataStrategy.sources.map((source) => (
@@ -49,7 +49,7 @@ const p = content(Astro.currentLocale).company;
   </Section>
 
   <Section intro={p.forecasting.intro} layout="split">
-    <ItemList items={p.forecasting.items} columns={2} />
+    <ItemList items={p.forecasting.items} columns={2} layout="rows" />
     <p class="evidence-note">{p.forecasting.research}</p>
     <ul class="source-list" role="list">
       {p.forecasting.sources.map((source) => (
@@ -79,11 +79,11 @@ const p = content(Astro.currentLocale).company;
   </Section>
 
   <Section intro={p.principles.intro} layout="split" tone="sunken">
-    <ItemList items={p.principles.items} columns={1} marker="number" />
+    <ItemList items={p.principles.items} columns={1} marker="number" layout="rows" />
   </Section>
 
   <Section intro={p.stillProven.intro} layout="split">
-    <ItemList items={p.stillProven.items} columns={1} />
+    <ItemList items={p.stillProven.items} columns={1} layout="rows" />
   </Section>
 
   <Section intro={p.team.intro} layout="split">
