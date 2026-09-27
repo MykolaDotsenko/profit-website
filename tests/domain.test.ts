@@ -124,7 +124,12 @@ test('release gate blocks indexable builds and form endpoints while launch block
   assert.doesNotThrow(() => assertReleaseConfiguration({ indexable: false, pilotFormEndpoint: null }));
   assert.throws(
     () => assertReleaseConfiguration({ indexable: true, pilotFormEndpoint: null }),
-    /Public release blocked/,
+    (error: unknown) => {
+      assert.ok(error instanceof Error);
+      assert.match(error.message, /Public release blocked/);
+      assert.match(error.message, /example-domain-review/);
+      return true;
+    },
   );
   assert.throws(
     () => assertReleaseConfiguration({ indexable: false, pilotFormEndpoint: 'https://example.test/pilot' }),
