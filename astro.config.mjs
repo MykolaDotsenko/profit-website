@@ -12,7 +12,7 @@ export default defineConfig({
   // English is the development content language. Add a locale here and a dictionary in
   // src/i18n and src/content before creating its routes (README.md → Localization).
   i18n: {
-    locales: ['en', 'uk', 'fi'],
+    locales: ['en', 'uk', 'fi', 'da'],
     defaultLocale: 'en',
     routing: { prefixDefaultLocale: false },
   },

@@ -1213,3 +1213,116 @@ test.describe('Finnish opt-in localization', () => {
     expect(geometry.localScrollX).toBeGreaterThan(0);
   });
 });
+
+
+test.describe('Danish opt-in localization', () => {
+  test('English remains default and exposes the equivalent Danish route', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+    const language = page.locator('.language-switcher');
+    await expect(language.getByRole('link', { name: 'DA' })).toHaveAttribute('href', '/da/');
+    await expect(language.getByRole('link', { name: 'EN' })).toHaveAttribute('aria-current', 'true');
+  });
+
+  test('all Danish public routes resolve without mobile horizontal overflow', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    for (const route of ['/', '/farmers/', '/product/', '/trust/', '/company/', '/investors/', '/contact/']) {
+      const response = await page.goto(`/da${route}`);
+      expect(response?.status(), route).toBe(200);
+      await expect(page.locator('html'), route).toHaveAttribute('lang', 'da');
+      const overflow = await page.evaluate(
+        () => Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
+      );
+      expect(overflow, route).toBeLessThanOrEqual(1);
+    }
+  });
+
+  test('Danish homepage preserves product truth and economic terminology', async ({ page }) => {
+    await page.goto('/da/');
+    const main = page.locator('main');
+    await expect(main).toContainText('Se økonomien før du beslutter.');
+    await expect(main).toContainText('Operationelt resultat');
+    await expect(main).toContainText('Ikke vurderet');
+    await expect(main).toContainText('−69');
+    await expect(main).toContainText('207');
+    await expect(main).not.toContainText('Operating profit');
+  });
+
+  test('Danish product page preserves formula semantics and avoids accounting-term drift', async ({ page }) => {
+    await page.goto('/da/product/');
+    const main = page.locator('main');
+    await expect(main).toContainText('Operationelt resultat');
+    await expect(main).toContainText('Omsætning');
+    await expect(main).toContainText('Variable omkostninger');
+    await expect(main).toContainText('Fordelte faste omkostninger');
+    await expect(main).toContainText('Dækningsbidrag');
+    await expect(main).toContainText('Nulpunktpris');
+    await expect(main).toContainText('226');
+    await expect(main).toContainText('Nulpunktsudbytte');
+    await expect(main).toContainText('4,0');
+    await expect(main).toContainText(
+      'Operationelt resultat = omsætning − variable omkostninger − fordelte faste omkostninger.',
+    );
+    await expect(main).not.toContainText('The first PROFIT module.');
+    await expect(main).not.toContainText('Revenue');
+  });
+
+  test('language switcher preserves trust route across EN, UA, FI and DA', async ({ page }) => {
+    await page.goto('/da/trust/');
+    const language = page.locator('.language-switcher');
+    await expect(language.getByRole('link', { name: 'EN' })).toHaveAttribute('href', '/trust/');
+    await expect(language.getByRole('link', { name: 'UA' })).toHaveAttribute('href', '/uk/trust/');
+    await expect(language.getByRole('link', { name: 'FI' })).toHaveAttribute('href', '/fi/trust/');
+    await expect(language.getByRole('link', { name: 'DA' })).toHaveAttribute('href', '/da/trust/');
+    await expect(language.getByRole('link', { name: 'DA' })).toHaveAttribute('aria-current', 'true');
+  });
+
+  test('Danish navigation remains inside /da', async ({ page }) => {
+    await page.goto('/da/');
+    const nav = page.locator('#site-nav');
+    await expect(nav.getByRole('link', { name: 'Landmænd' })).toHaveAttribute('href', '/da/farmers/');
+    await expect(nav.getByRole('link', { name: 'Produkt' })).toHaveAttribute('href', '/da/product/');
+    await expect(nav.getByRole('link', { name: 'Tillid' })).toHaveAttribute('href', '/da/trust/');
+    await expect(nav.getByRole('link', { name: 'Virksomhed' })).toHaveAttribute('href', '/da/company/');
+    await expect(nav.getByRole('link', { name: 'Investorer' })).toHaveAttribute('href', '/da/investors/');
+  });
+
+  test('Danish pilot form is localized and remains non-submitting before release', async ({ page }) => {
+    await page.goto('/da/contact/');
+    const form = page.locator('[data-pilot-form]');
+    await expect(form).toContainText('Dine oplysninger');
+    await expect(form).toContainText('Bedrift eller virksomhed');
+    await expect(form).toContainText('Bedriftstype');
+    await expect(form).toContainText('Ingen produktionsdata');
+    await expect(form).not.toHaveAttribute('action', /.+/);
+  });
+
+  test('Danish company keeps the wide model table inside its local scroll region', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/da/company/');
+    await expect(page.locator('main')).toContainText('Hvem bygger PROFIT');
+
+    const geometry = await page.evaluate(() => {
+      const region = document.querySelector<HTMLElement>('.model-table-wrap');
+      if (!region) throw new Error('model-table scroll region missing');
+
+      const documentOverflow = Math.max(0, document.documentElement.scrollWidth - window.innerWidth);
+      const regionOverflow = Math.max(0, region.scrollWidth - region.clientWidth);
+
+      window.scrollTo({ left: 10000, top: window.scrollY });
+      const documentScrollX = window.scrollX;
+      window.scrollTo({ left: 0, top: window.scrollY });
+
+      region.scrollLeft = region.scrollWidth;
+      const localScrollX = region.scrollLeft;
+      region.scrollLeft = 0;
+
+      return { documentOverflow, regionOverflow, documentScrollX, localScrollX };
+    });
+
+    expect(geometry.documentOverflow).toBeLessThanOrEqual(1);
+    expect(geometry.documentScrollX).toBeLessThanOrEqual(1);
+    expect(geometry.regionOverflow).toBeGreaterThan(0);
+    expect(geometry.localScrollX).toBeGreaterThan(0);
+  });
+});

@@ -9,6 +9,7 @@ export const uk: UIStrings = {
     english: 'Англійська',
     ukrainian: 'Українська',
     finnish: 'Фінська',
+    danish: 'Данська',
   },
   common: {
     pilot: 'Пілот',
