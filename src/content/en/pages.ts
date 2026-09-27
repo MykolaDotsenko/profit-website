@@ -636,7 +636,7 @@ export const company = {
       },
     ] satisfies TextItem[],
     research:
-      'A 2025 systematic review of 97 crop-yield studies found Linear Regression, Random Forest and Gradient Boosting Trees among the most-used ML approaches; a 2024 tree-crop review found that smaller datasets often use simpler models while larger datasets can justify more complex methods. PROFIT’s rule is therefore baseline-first and evidence-led, not AI-for-AI’s-sake.',
+      'A 2025 systematic review of 97 crop-yield studies found Linear Regression, Random Forest and Gradient Boosting Trees among the most-used ML approaches; a 2024 tree-crop review found that smaller datasets often use simpler models while larger datasets can justify more complex methods. A 2026 review also stresses data integration, contextual calibration and expert validation. PROFIT’s rule is therefore baseline-first and evidence-led, not AI-for-AI’s-sake.',
     sources: [
       {
         label: 'Smart Agricultural Technology · crop-yield ML systematic review',
