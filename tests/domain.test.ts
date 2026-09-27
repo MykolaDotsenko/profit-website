@@ -10,6 +10,7 @@ import {
 } from '../src/domain/economics.ts';
 import { assertReleaseConfiguration } from '../src/config/release.ts';
 import { assertPublishable } from '../src/domain/evidence.ts';
+import { assertEvidenceStateRequirements } from '../src/domain/vev.ts';
 import { present } from '../src/domain/format.ts';
 import { fieldSeasonExample, focusField } from '../src/content/examples/field-season.ts';
 import { fieldSensitivityBreakEven, fieldSensitivityScenarios } from '../src/content/examples/field-sensitivity.ts';
@@ -104,6 +105,79 @@ test('illustrative material can only be Hypothetical with Confidence: Not assess
   assert.throws(() => assertPublishable({ ...ok, illustrative: false }, 't'));
 });
 
+
+test('VEV evidence ladder rejects unsupported promotions', () => {
+  const observed = {
+    evidence: 'observed',
+    confidence: 'medium',
+    illustrative: false,
+    provenance: ['farmer-provided'],
+    period: '2027 season',
+    productionUnit: 'Field 31',
+    actualOutcome: 'Operating profit observed',
+    calculationDefinition: 'Operating profit = revenue − variable costs − allocated fixed costs',
+  } as const;
+  assert.doesNotThrow(() => assertEvidenceStateRequirements(observed));
+
+  assert.throws(
+    () => assertEvidenceStateRequirements({ ...observed, evidence: 'attributed' }),
+    /baseline is required/,
+  );
+
+  const attributed = {
+    ...observed,
+    evidence: 'attributed',
+    baseline: 'Prior comparable state',
+    counterfactual: 'Continue current practice',
+    intervention: 'Farmer decision supported by PROFIT',
+    incrementalEconomicEffect: 120,
+    attributionMethod: 'Matched current-practice comparison with stated limitations',
+  } as const;
+  assert.doesNotThrow(() => assertEvidenceStateRequirements(attributed));
+  assert.throws(
+    () => assertEvidenceStateRequirements({ ...attributed, confidence: 'insufficient-evidence' }),
+    /Attributed\/Verified evidence requires assessed confidence/,
+  );
+
+  const verified = {
+    ...attributed,
+    evidence: 'verified',
+    confidence: 'medium',
+    evidencePackage: 'vev/customer-001/2027',
+    review: { reviewer: 'VEV reviewer', date: '2027-12-01', conclusion: 'Standard met' },
+  } as const;
+  assert.doesNotThrow(() => assertEvidenceStateRequirements(verified));
+  assert.throws(
+    () => assertEvidenceStateRequirements({ ...verified, confidence: 'low' }),
+    /Verified evidence requires High or Medium confidence/,
+  );
+  assert.throws(
+    () => assertEvidenceStateRequirements({ ...verified, review: undefined }),
+    /documented review/,
+  );
+});
+
+test('Verified status is independent of whether economic effect is positive', () => {
+  const base = {
+    evidence: 'verified',
+    confidence: 'high',
+    illustrative: false,
+    provenance: ['farmer-provided'],
+    period: '2027 season',
+    productionUnit: 'Field 31',
+    actualOutcome: 'Measured outcome',
+    calculationDefinition: 'Explicit economic definition',
+    baseline: 'Baseline',
+    counterfactual: 'Counterfactual',
+    intervention: 'Decision',
+    attributionMethod: 'Reviewed attribution method',
+    evidencePackage: 'vev/customer-001/2027',
+    review: { reviewer: 'VEV reviewer', date: '2027-12-01', conclusion: 'Standard met' },
+  } as const;
+  assert.doesNotThrow(() => assertEvidenceStateRequirements({ ...base, incrementalEconomicEffect: 100 }));
+  assert.doesNotThrow(() => assertEvidenceStateRequirements({ ...base, incrementalEconomicEffect: 0 }));
+  assert.doesNotThrow(() => assertEvidenceStateRequirements({ ...base, incrementalEconomicEffect: -100 }));
+});
 
 test('public metric definitions must be explicitly confirmed', () => {
   assert.equal(METRICS.break_even_price.status, 'confirmed');
