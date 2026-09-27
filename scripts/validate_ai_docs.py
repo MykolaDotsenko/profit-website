@@ -40,6 +40,7 @@ REQUIRED_FILES = [
     "src/components/MethodPipeline.astro",
     "src/components/ModelComparisonTable.astro",
     "src/components/DecisionChange.astro",
+    "src/components/OnPageNav.astro",
     "src/pages/robots.txt.ts",
     "src/pages/sitemap-index.xml.ts",
     "src/components/ProductionScope.astro",
@@ -195,6 +196,11 @@ TEXT_INVARIANTS = {
         "decision-change__labels",
         "decision-change__rows",
         "decision-change__note",
+    ],
+    "src/components/OnPageNav.astro": [
+        "on-page-nav",
+        "aria-label",
+        "href={\`#\${item.id}\`}",
     ],
     "src/content/en/home.ts": [
         "What changes in the decision process",
