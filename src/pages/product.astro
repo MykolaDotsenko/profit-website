@@ -26,7 +26,7 @@ const p = c.product;
   </Section>
 
   <Section intro={p.definitions.intro} layout="split">
-    <ItemList items={p.definitions.items} columns={2} />
+    <ItemList items={p.definitions.items} columns={2} layout="rows" />
   </Section>
 
   <Section intro={p.inputs.intro} layout="split">
@@ -34,15 +34,15 @@ const p = c.product;
   </Section>
 
   <Section intro={p.calculation.intro} layout="split" tone="sunken">
-    <ItemList items={p.calculation.items} columns={1} />
+    <ItemList items={p.calculation.items} columns={1} layout="rows" />
   </Section>
 
   <Section intro={p.methodBoundary.intro} layout="split">
-    <ItemList items={p.methodBoundary.items} columns={2} />
+    <ItemList items={p.methodBoundary.items} columns={2} layout="rows" />
   </Section>
 
   <Section intro={p.exclusions.intro} layout="split">
-    <ItemList items={p.exclusions.items} columns={2} marker="cross" />
+    <ItemList items={p.exclusions.items} columns={2} marker="cross" layout="rows" />
   </Section>
 
   <CtaBand intro={p.cta.intro} stepsTitle={p.cta.stepsTitle} steps={p.cta.steps} review={p.cta.review} primary={p.cta.primary} />
