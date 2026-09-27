@@ -320,7 +320,7 @@ export const hardQuestions: Question[] = [
     question: 'What does “verified” mean?',
     answer: [
       'Verified is the top of the evidence ladder: Hypothetical, Modelled, Observed, Attributed, Verified.',
-      'We use it only when the evidence and attribution standard is actually met. Nothing on this site is labelled Verified.',
+      'Under PROFIT VEV Standard v1, it requires an attributed incremental economic effect, explicit counterfactual, reproducible economics, documented evidence, assessed confidence and a recorded verification review. Nothing on this site is labelled Verified.',
     ],
   },
   {
