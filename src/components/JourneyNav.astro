@@ -1,0 +1,110 @@
+---
+interface JourneyItem {
+  index: string;
+  label: string;
+  href: string;
+}
+
+interface Props {
+  label: string;
+  items: readonly JourneyItem[];
+}
+
+const { label, items } = Astro.props;
+---
+
+<nav class="journey-nav" aria-label={label}>
+  <div class="container journey-nav__inner">
+    <span class="journey-nav__label">{label}</span>
+    <ol class="journey-nav__list" role="list">
+      {items.map((item) => (
+        <li>
+          <a href={item.href}>
+            <span class="journey-nav__index" aria-hidden="true">{item.index}</span>
+            <span>{item.label}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<style>
+  @layer components {
+    .journey-nav {
+      display: none;
+    }
+
+    @media (min-width: 64rem) {
+      .journey-nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: block;
+        border-block: 1px solid var(--color-line-strong);
+        background: color-mix(in srgb, var(--color-canvas) 96%, transparent);
+        backdrop-filter: blur(10px);
+      }
+
+      .journey-nav__inner {
+        display: grid;
+        grid-template-columns: minmax(8rem, 1.5fr) minmax(0, 10.5fr);
+        align-items: stretch;
+      }
+
+      .journey-nav__label {
+        display: flex;
+        align-items: center;
+        padding: var(--space-3) var(--space-4) var(--space-3) 0;
+        color: var(--color-text-secondary);
+        font-family: var(--font-label);
+        font-size: var(--text-label);
+        font-weight: var(--weight-strong);
+        letter-spacing: var(--tracking-label);
+        text-transform: uppercase;
+        border-inline-end: 1px solid var(--color-line-strong);
+      }
+
+      .journey-nav__list {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+
+      .journey-nav li + li {
+        border-inline-start: 1px solid var(--color-line);
+      }
+
+      .journey-nav a {
+        display: grid;
+        gap: 0.15rem;
+        min-height: 3.6rem;
+        padding: var(--space-2) var(--space-3);
+        align-content: center;
+        color: var(--color-text-secondary);
+        font-size: var(--text-caption);
+        line-height: 1.25;
+        text-decoration: none;
+      }
+
+      .journey-nav a:hover,
+      .journey-nav a:focus-visible {
+        color: var(--color-text);
+        background: var(--color-production-surface);
+      }
+
+      .journey-nav__index {
+        font-family: var(--font-label);
+        font-size: var(--text-label);
+        font-weight: var(--weight-strong);
+        color: var(--color-production);
+      }
+    }
+
+    @media (prefers-reduced-transparency: reduce) {
+      .journey-nav {
+        backdrop-filter: none;
+        background: var(--color-canvas);
+      }
+    }
+  }
+</style>
