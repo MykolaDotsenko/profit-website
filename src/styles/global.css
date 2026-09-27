@@ -50,6 +50,11 @@
       scroll-behavior: smooth;
     }
   }
+  @media (min-width: 64rem) {
+    html {
+      scroll-padding-block-start: 4.5rem;
+    }
+  }
   body {
     min-height: 100dvh;
     background: var(--color-canvas);
