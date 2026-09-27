@@ -315,6 +315,15 @@ test.describe('claim and source integrity', () => {
     await expect(page.locator('body')).not.toContainText('every figure is a hypothetical example');
   });
 
+  test('trust methodology scopes evidence labels to PROFIT values', async ({ page }) => {
+    await page.goto('/trust/');
+    const evidence = page.locator('#evidence');
+    await expect(evidence).toContainText('Every PROFIT economic or value example carries two labels');
+    await expect(evidence).toContainText('External statistics are sourced separately');
+    await expect(evidence).toContainText('For PROFIT economic and value examples, the source category is labelled');
+    await expect(evidence).not.toContainText('Every figure we publish carries two labels');
+  });
+
   test('investor evidence standard does not relabel external statistics as PROFIT evidence', async ({ page }) => {
     await page.goto('/investors/');
     const main = page.locator('main');
