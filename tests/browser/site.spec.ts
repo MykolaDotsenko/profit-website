@@ -405,8 +405,10 @@ test.describe('production shell integrity', () => {
       expect(response?.ok(), route).toBeTruthy();
 
       await expect(page.locator('h1'), `${route} should have exactly one H1`).toHaveCount(1);
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /\S{20,}/);
       await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+
+      const description = (await page.locator('meta[name="description"]').getAttribute('content')) ?? '';
+      expect(description.trim().length, `${route} description should be substantive`).toBeGreaterThanOrEqual(40);
 
       const title = await page.title();
       expect(title.trim().length, `${route} title should be non-empty`).toBeGreaterThan(0);
@@ -414,7 +416,7 @@ test.describe('production shell integrity', () => {
       seenTitles.add(title);
 
       await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', title);
-      await expect(page.locator('meta[property="og:description"]')).toHaveAttribute('content', /\S{20,}/);
+      await expect(page.locator('meta[property="og:description"]')).toHaveAttribute('content', description);
       await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute('content', 'PROFIT');
       await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary');
     }
@@ -424,7 +426,7 @@ test.describe('production shell integrity', () => {
     const response = await page.goto('/this-route-must-not-exist');
     expect(response?.status()).toBe(404);
     await expect(page.locator('h1')).toHaveText('This page does not exist');
-    await expect(page.locator('a[href="/"]')).toContainText('Go to the homepage');
+    await expect(page.getByRole('link', { name: /Go to the homepage/ })).toHaveAttribute('href', '/');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
   });
 });
