@@ -170,16 +170,15 @@ Note:
 
 **An outcome on its own does not prove that a decision caused it.**
 
-Three operating rules:
+Two homepage operating rules:
 
 ### Fit the farm
 **Start with the records a farm already has. Add automation where it genuinely reduces work; do not assume new machinery, perfect connectivity or constant manual entry.**
 
-### Quality before intelligence
-**Check completeness, consistency, duplicates, anomalies, freshness, provenance and representativeness before trusting a model or benchmark.**
-
 ### Keep uncertainty visible
 **Known economics stay explicit. Forecasts and scenarios should show assumptions and ranges when evidence supports them, rather than pretending the future is certain.**
+
+**Quality before intelligence remains a PROFIT doctrine, but its completeness/consistency/duplicates/anomalies/freshness/provenance/representativeness detail belongs on the deeper trust methodology surface rather than competing with the homepage mechanism.**
 
 Boundary:
 
