@@ -191,7 +191,7 @@ TEXT_INVARIANTS = {
         "VERCEL_PROJECT_ID",
         "SITE_INDEXABLE=false",
         "SITE_INDEXABLE=true",
-        "release gates",
+        "public release gate",
         "Do not commit any of these values",
     ],
     "docs/methodology/vev-standard-v1.md": [
