@@ -432,9 +432,47 @@ Main risks:
 - the hero fails if Field Profitability is not yet credible enough to show as product truth;
 - “margin” may be read differently from the Field Profitability reference's defined economics (e.g. operating profit, which is not gross margin or net profit), and “what drives it” may imply driver/causal analysis the current reference does not provide (reference status and details: `docs/experiments/hero-message-test-v1.md` §4.4).
 
+#### H4 — Economic decision clarity / farmer control first
+
+Status:
+**Owner-directed development candidate added 2026-09-27. OPEN / hypothesis.**
+
+This candidate was added after the H1/H2/H3 v2 statistical surrogate. It has **no farmer evidence**, was not scored by that surrogate and is **not yet part of the existing three-way WWW-000 test instrument**. Before H4 is included in a controlled farmer session, the experiment protocol/stimulus must be explicitly revised so order balancing and comparison remain valid.
+
+Eyebrow:
+**AGRICULTURAL DECISION INTELLIGENCE**
+
+Headline:
+**See the economics before you decide.**
+
+Support:
+**PROFIT is being built to connect what happens on the farm with what it means economically. It starts with Field Profitability: operating profit and break-even, field by field — while the decision stays with the farmer.**
+
+Why this candidate exists:
+- leads with the farmer's economic decision job rather than the technology or company ambition;
+- avoids a promised profit uplift;
+- keeps the category label secondary;
+- explicitly says PROFIT is being built;
+- anchors the first concrete proof in Field Profitability;
+- makes farmer decision authority explicit.
+
+Proof object:
+use the same Field Profitability hypothetical economic state, provenance, evidence and confidence treatment as the current B2 hero. H4 does not expand the shipped product boundary.
+
+Primary assumptions:
+- “see the economics before you decide” is understood as economic visibility, not forecasting or automated advice;
+- the broader first sentence improves master-brand comprehension without hiding the concrete crop wedge;
+- explicit farmer control improves trust without making the hero feel defensive.
+
+Main risks:
+- “before you decide” could be misread as predictive/scenario functionality;
+- broad “what happens on the farm” wording could be interpreted as broader ingestion capability than the current module;
+- the category eyebrow may still create jargon or platform expectations;
+- H4 may improve brand breadth while weakening the concrete Field Profitability comprehension that H3 currently provides.
+
 #### Hero decision rule
 
-Do not choose H1/H2/H3 by team preference or aesthetics.
+Do not choose H1/H2/H3/H4 by team preference or aesthetics.
 
 Advance a direction only when target-farmer evidence shows that it improves:
 - comprehension;
