@@ -81,13 +81,12 @@ const t = ui(locale.code);
     }
     .site-footer__nav {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
       gap: 1px;
       border: 1px solid var(--color-inverse-line);
       background: var(--color-inverse-line);
     }
     .site-footer__group {
-      min-width: 0;
       padding: var(--space-5);
       background: var(--color-inverse-canvas);
     }
@@ -103,13 +102,7 @@ const t = ui(locale.code);
       margin-block-start: var(--space-2);
     }
     .site-footer__group a {
-      overflow-wrap: anywhere;
       text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
-    }
-    @media (min-width: 36rem) {
-      .site-footer__nav {
-        grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-      }
     }
     @media (min-width: 60rem) {
       .site-footer__inner {
