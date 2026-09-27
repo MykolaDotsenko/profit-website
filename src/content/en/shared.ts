@@ -68,6 +68,13 @@ export const primaryCta = { label: 'Join the pilot', href: '/contact/' };
  * profile/photo use and consent to publish.
  */
 export const teamCapability = {
+  labels: {
+    flowAria: 'How team capabilities connect',
+    expertise: 'Relevant expertise',
+    contribution: 'Contribution to PROFIT',
+    profiles: 'Public profiles',
+    portraitRequirement: 'Approved portrait and publication consent required before public release.',
+  },
   intro: {
     eyebrow: 'Team capability',
     title: 'Different disciplines, one farm decision problem',
@@ -79,7 +86,7 @@ export const teamCapability = {
     {
       name: 'Mykola Dotsenko',
       role: 'Product, Software & AI',
-      strength: 'Product systems · software architecture · AI-assisted delivery',
+      strength: 'Full-stack engineering · software architecture · data validation · AI-assisted delivery',
       contribution:
         'Connects product strategy, software architecture and implementation so PROFIT can turn complex agricultural decision problems into a coherent product.',
       links: [{ label: 'GitHub', href: 'https://github.com/MykolaDotsenko/' }],
@@ -95,7 +102,7 @@ export const teamCapability = {
     {
       name: 'Dmytro Panasenko',
       role: 'Science, Engineering & Data',
-      strength: 'Chemistry · engineering · programming · data acquisition',
+      strength: 'Chemistry · embedded systems · programming · data acquisition',
       contribution:
         'Combines a master’s degree in chemistry with experience in chemical production and livestock, plus programming and engineering work relevant to measurement and farm data collection.',
       links: [
