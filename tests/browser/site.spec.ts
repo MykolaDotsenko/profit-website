@@ -323,6 +323,38 @@ test.describe('claim and source integrity', () => {
   });
 });
 
+test.describe('internal navigation integrity', () => {
+  test('internal links and fragments resolve across core routes', async ({ page }) => {
+    const targets = new Set<string>();
+
+    for (const route of routes) {
+      const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
+      expect(response?.ok(), route).toBeTruthy();
+
+      const hrefs = await page.locator('a[href]').evaluateAll((links) =>
+        links.map((link) => (link as HTMLAnchorElement).getAttribute('href') ?? ''),
+      );
+
+      for (const href of hrefs) {
+        if (!href || href.startsWith('http:') || href.startsWith('https:') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+        const resolved = new URL(href, `http://internal.test${route}`);
+        targets.add(`${resolved.pathname}${resolved.hash}`);
+      }
+    }
+
+    for (const target of targets) {
+      const url = new URL(target, 'http://internal.test');
+      const response = await page.goto(`${url.pathname}${url.search}`, { waitUntil: 'domcontentloaded' });
+      expect(response?.ok(), `Internal link ${target} should resolve`).toBeTruthy();
+
+      if (url.hash) {
+        const id = decodeURIComponent(url.hash.slice(1));
+        await expect(page.locator(`#${CSS.escape(id)}`), `Fragment ${target} should exist`).toHaveCount(1);
+      }
+    }
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
