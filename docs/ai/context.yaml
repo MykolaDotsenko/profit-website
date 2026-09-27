@@ -20,7 +20,7 @@ project:
   name: "PROFIT Website"
   repository: "MykolaDotsenko/profit-website"
   product_role: "Public presentation, trust, learning and qualified-conversion surface; not the core farm-management application."
-  current_stage: "Positioning, information architecture, visual direction and implementation approach are being validated before production build."
+  current_stage: "Provisional B2 production website implementation is active and regression-tested; hero/art-direction farmer validation, documentary assets, legal/company details and public-release gates remain open."
 
 company_context:
   internal_mission: "Build a global Agricultural Decision Intelligence company by creating, proving and scaling superior Verified Economic Value for farmers."
@@ -278,6 +278,13 @@ art_direction_validation:
   selection_evidence: "internal A/B/C + A2/B2/C2 red-team, cross-domain transfer, anti-AI-sameness and product-truth fit; not farmer evidence"
   selected_grammar: "production unit → context / records → economics → evidence / confidence → farmer decision"
   selected_guardrail: "field geometry is crop-domain expression only; production unit is the master-brand invariant"
+  implementation_status:
+    state: "implemented provisionally across the coded website"
+    surfaces: ["homepage hero", "page intros", "section rails", "production-system scope", "Field Profitability proof", "farmer-record intake", "methodology pipelines", "model comparison", "capability boundary", "CTA", "header/footer", "documentary asset placeholder"]
+    mobile_rule: "headline/value first → economic proof/evidence → CTA → supporting production context"
+    proof_rule: "Field Profitability example is rendered as a production-unit record, not a generic analytics dashboard"
+    documentary_rule: "pending asset space is explicit; no generated/stock image is presented as documentary agriculture"
+    market_stat_rule: "market statistics remain supporting context and must not visually outrank farmer economic proof"
   research_prior: "A — Evidence-Led Editorial was the earlier theoretical prior; it is retained as a challenger, not selected production direction"
   objective: "maximize farmer comprehension + calibrated trust"
   directions:
