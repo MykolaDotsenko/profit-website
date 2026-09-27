@@ -27,6 +27,7 @@ company_context:
   operating_principle: "Create Value. Prove It. Scale It."
   evidence_priority: "Customer-level evidence outranks global, leadership, scale, moat or valuation ambition."
   vev_standard: "docs/methodology/vev-standard-v1.md — approved internal v1: Verified requires attributed incremental effect, explicit counterfactual, reproducible economics, documented evidence, High/Medium assessed confidence and recorded review; verified effect may be positive, zero or negative."
+  pilot_process: "docs/operations/pilot-intake-runbook-v1.md — primary owner Mykola Dotsenko; reply by email; target within two business days; fit/context first; no farm records before purpose/terms."
   scope_boundary:
     master_brand: "PROFIT"
     current_wedge: "Field Profitability"
