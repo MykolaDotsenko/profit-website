@@ -41,6 +41,7 @@ REQUIRED_FILES = [
     "src/components/ModelComparisonTable.astro",
     "src/components/ProductionScope.astro",
     "src/i18n/en.ts",
+    "src/content/en/shared.ts",
     "playwright.config.ts",
     "tests/browser/site.spec.ts",
     "prototypes/art-directions/README.md",
@@ -191,7 +192,13 @@ TEXT_INVARIANTS = {
         "production-unit",
         "t.production.unitLabel",
         "t.production.scopeLabel",
+        "item.current",
+    ],
+    "src/content/en/shared.ts": [
         "Current first focus",
+        "current: true",
+        "Batch / production cycle",
+        "Cow / group / herd / period",
     ],
     "src/i18n/en.ts": [
         "Production unit",
