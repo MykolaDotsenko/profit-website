@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContentGap from '../components/ContentGap.astro';
+import ItemList from '../components/ItemList.astro';
 import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
 import PilotForm from '../components/PilotForm.astro';
 import { site } from '../config/site';
 import { content } from '../content';
@@ -11,6 +13,14 @@ const p = content(Astro.currentLocale).contact;
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
+
+  <Section
+    intro={{ id: 'fit', eyebrow: 'Current scope', title: p.fit.title, lead: 'Qualify the conversation before sharing anything.' }}
+    layout="split"
+    tone="sunken"
+  >
+    <ItemList items={p.fit.items} columns={2} />
+  </Section>
 
   <div class="container contact">
     <div class="contact__next">
