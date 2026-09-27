@@ -1,0 +1,36 @@
+name: QA Accessibility Reflow Fix
+
+on:
+  push:
+    branches:
+      - fix/a11y-reflow-2026-09-27
+
+permissions:
+  contents: read
+
+jobs:
+  verify-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ASTRO_TELEMETRY_DISABLED: "1"
+      SITE_INDEXABLE: "false"
+      SHOW_CONTENT_STATUS: "true"
+      PILOT_FORM_ENDPOINT: ""
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Full repository verify
+        run: npm run verify
+      - name: Install pinned browser QA
+        run: npm install --no-save --package-lock=false @playwright/test@1.63.0 @axe-core/playwright@4.13.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run full browser, responsive and accessibility suite
+        run: npx playwright test
