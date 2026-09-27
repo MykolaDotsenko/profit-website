@@ -1,0 +1,98 @@
+---
+interface Row {
+  candidate: string;
+  useWhen: string;
+  evaluation: string;
+  risk: string;
+}
+
+interface Props {
+  rows: readonly Row[];
+  labels: {
+    caption: string;
+    candidate: string;
+    useWhen: string;
+    evaluation: string;
+    risk: string;
+  };
+}
+
+const { rows, labels } = Astro.props;
+---
+
+<div class="model-table-wrap" tabindex="0" role="region" aria-label={labels.caption}>
+  <table class="model-table">
+    <caption>{labels.caption}</caption>
+    <thead>
+      <tr>
+        <th scope="col">{labels.candidate}</th>
+        <th scope="col">{labels.useWhen}</th>
+        <th scope="col">{labels.evaluation}</th>
+        <th scope="col">{labels.risk}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          <th scope="row">{row.candidate}</th>
+          <td>{row.useWhen}</td>
+          <td>{row.evaluation}</td>
+          <td>{row.risk}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .model-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-line-strong);
+    background: var(--color-surface);
+  }
+
+  .model-table-wrap:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  .model-table {
+    width: 100%;
+    min-width: 58rem;
+    border-collapse: collapse;
+  }
+
+  caption {
+    caption-side: top;
+    padding: var(--space-4);
+    text-align: start;
+    font-size: var(--text-small);
+    font-weight: var(--weight-strong);
+  }
+
+  th,
+  td {
+    padding: var(--space-4);
+    border-block-start: 1px solid var(--color-line);
+    vertical-align: top;
+    text-align: start;
+    font-size: var(--text-small);
+    line-height: 1.5;
+  }
+
+  thead th {
+    color: var(--color-text-secondary);
+    font-size: var(--text-caption);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  tbody th {
+    width: 18%;
+    font-weight: var(--weight-strong);
+  }
+
+  tbody td {
+    color: var(--color-text-secondary);
+  }
+</style>
