@@ -56,14 +56,14 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     area: 'legal',
     owner: 'legal',
     state: 'blocked',
-    reason: 'A privacy/data readiness pack exists, but the final notice still needs confirmed controller/contact, legal basis, retention, processors/transfers, rights wording and legal approval.',
+    reason: 'Pilot-enquiry purpose, proposed legal basis and retention target are internally decided, but the final notice still needs confirmed controller/contact, actual processors/transfers, implemented security facts, rights/complaint wording and formal legal approval.',
   },
   {
     id: 'data-terms',
     area: 'legal',
     owner: 'legal',
     state: 'blocked',
-    reason: 'Draft farm-data term requirements exist, but permitted use, access/sharing, retention/deletion/export, secondary use/model training and security responsibilities are not yet approved.',
+    reason: 'Conservative farm-data defaults are internally decided, including no secondary use/model training by default and deletion/export targets, but final terms still require actual processors/security architecture, contractual wording and formal legal approval.',
   },
   {
     id: 'pilot-process',
