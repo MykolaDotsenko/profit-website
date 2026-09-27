@@ -14,6 +14,7 @@ import {
   primaryCta,
   productionScopeNote,
   productionSystems,
+  productionUnitGrammar,
 } from './shared';
 
 const exampleLabels = {
@@ -186,6 +187,7 @@ export const farmers = {
         'The common PROFIT logic is production reality → data/context → economics → uncertainty/evidence → decision. The operating unit and the inputs change by domain.',
     } satisfies SectionIntro,
     systems: productionSystems,
+    units: productionUnitGrammar,
     note: productionScopeNote,
   },
   dataCollection: {
@@ -538,6 +540,7 @@ export const company = {
         'A hectare, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd are not interchangeable. PROFIT should preserve the production model while making the economics comparable and inspectable.',
     } satisfies SectionIntro,
     systems: productionSystems,
+    units: productionUnitGrammar,
     note: productionScopeNote,
     evidence:
       'EU agricultural output was €531.9B in 2024: €267.7B from crops and €218.8B from animals and animal products. Among the largest categories were milk (€78.6B), vegetables and horticultural products (€72.0B), pigs (€46.8B), fruits (€39.5B) and cattle (€38.4B). These are gross output values, not farm profit.',
