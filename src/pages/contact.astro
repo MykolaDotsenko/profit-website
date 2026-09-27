@@ -40,8 +40,6 @@ const p = content(Astro.currentLocale).contact;
           ))
         }
       </ol>
-      <ContentGap owner={p.review.owner} kind="review" text={p.review.text} />
-
       <section class="contact__other" id="other" aria-labelledby="other-title">
         <h2 id="other-title" class="contact__title">{p.other.title}</h2>
         <p>{p.other.text}</p>
