@@ -250,6 +250,31 @@ test.describe('selected B2 production-unit grammar', () => {
   });
 });
 
+test.describe('B2 mobile hierarchy', () => {
+  test('mobile hero keeps value before supporting production context', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/');
+
+    const order = await page.evaluate(() => {
+      const selectors = ['.hero__copy', '.hero__state', '.hero__actions', '.hero__rail'];
+      return selectors.map((selector) => {
+        const el = document.querySelector(selector);
+        if (!el) throw new Error(`Missing ${selector}`);
+        return { selector, top: el.getBoundingClientRect().top };
+      });
+    });
+
+    expect(order[0].top).toBeLessThan(order[1].top);
+    expect(order[1].top).toBeLessThan(order[2].top);
+    expect(order[2].top).toBeLessThan(order[3].top);
+
+    await expect(page.locator('.hero__copy')).toContainText('See operating profit by field');
+    await expect(page.locator('.hero__state')).toContainText('Operating profit');
+    await expect(page.locator('.hero__actions')).toContainText('Join the pilot');
+    await expect(page.locator('.hero__rail')).toContainText('Current production unit');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
