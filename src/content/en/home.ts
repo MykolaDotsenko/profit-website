@@ -16,6 +16,7 @@ import {
   primaryCta,
   productionScopeNote,
   productionSystems,
+  productionUnitGrammar,
 } from './shared';
 
 export const home = {
@@ -58,6 +59,7 @@ export const home = {
         'A hectare, an orchard block, a greenhouse crop cycle, a pig batch and a dairy herd are not interchangeable. PROFIT is being built to keep each production reality specific while making its economics explicit.',
     } satisfies SectionIntro,
     systems: productionSystems,
+    units: productionUnitGrammar,
     note: productionScopeNote,
     contextStat: {
       value: '€531.9B',
