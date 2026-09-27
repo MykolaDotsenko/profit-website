@@ -7,6 +7,7 @@ interface Props {
   flow: readonly string[];
   members: readonly TeamMember[];
   labels: {
+    flowAria: string;
     expertise: string;
     contribution: string;
     profiles: string;
@@ -25,7 +26,7 @@ const { intro, flow, members, labels, compact = false } = Astro.props;
     {intro.lead && <p class="team-capability__lead">{intro.lead}</p>}
   </header>
 
-  <ol class="team-capability__flow" aria-label="How team capabilities connect" role="list">
+  <ol class="team-capability__flow" aria-label={labels.flowAria} role="list">
     {flow.map((step, index) => (
       <li>
         <span class="team-capability__flow-index num" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
@@ -233,10 +234,6 @@ const { intro, flow, members, labels, compact = false } = Astro.props;
       .team-member {
         grid-template-columns: 2.25rem minmax(11rem, 2.1fr) minmax(12rem, 2.4fr) minmax(0, 4fr);
         align-items: start;
-      }
-
-      .team-member__links {
-        grid-column: 4;
       }
 
       .team-member__proof {
