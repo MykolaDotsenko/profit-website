@@ -187,15 +187,20 @@ test.describe('methodology surfaces', () => {
     await expect(main).toContainText('not a claim that a full predictive DSS is already shipped');
   });
 
-  test('homepage stays concise while linking to the deeper methodology', async ({ page }) => {
+  test('homepage keeps only the two farmer-facing principles and links to deeper methodology', async ({ page }) => {
     await page.goto('/');
 
     const how = page.locator('#how-it-works');
-    await expect(how).toContainText('Three rules behind the system');
-    await expect(how).toContainText('Quality before intelligence');
+    await expect(how).toContainText('Two rules behind the system');
+    await expect(how).toContainText('Fit the farm');
+    await expect(how).toContainText('Keep uncertainty visible');
+    await expect(how).not.toContainText('Quality before intelligence');
     await expect(how).toContainText('How PROFIT handles data, models and decisions');
     await expect(how).not.toContainText('Random Forest');
     await expect(how).not.toContainText('deep learning');
+
+    await page.goto('/trust/');
+    await expect(page.locator('main')).toContainText('Quality before intelligence');
   });
 });
 
@@ -398,15 +403,14 @@ test.describe('closing conversion surface', () => {
 });
 
 test.describe('claim and source integrity', () => {
-  test('sourced statistics stay distinct from hypothetical PROFIT economics', async ({ page }) => {
+  test('homepage keeps hypothetical PROFIT economics distinct without an investor-like market statistic', async ({ page }) => {
     await page.goto('/');
 
     const main = page.locator('main');
     await expect(main.locator('#example')).toContainText('Hypothetical example');
-    await expect(main.locator('#production-systems')).toContainText('€531.9B');
-    await expect(main.locator('#production-systems')).toContainText('Eurostat');
+    await expect(main.locator('#production-systems')).not.toContainText('€531.9B');
+    await expect(main.locator('#production-systems')).not.toContainText('Eurostat');
     await expect(page.locator('.preview-banner')).toContainText('Illustrative PROFIT economics are labelled Hypothetical');
-    await expect(page.locator('.preview-banner')).toContainText('sourced external statistics are identified separately');
     await expect(page.locator('footer')).toContainText('Sourced external statistics are identified separately');
     await expect(page.locator('body')).not.toContainText('every figure is a hypothetical example');
   });
@@ -511,15 +515,16 @@ test.describe('production shell integrity', () => {
 });
 
 test.describe('positioning and crawl hygiene', () => {
-  test('positioning comparison remains evidence-safe and farmer-owned', async ({ page }) => {
+  test('homepage problem stays concrete without repeating the mechanism', async ({ page }) => {
     await page.goto('/');
 
-    const main = page.locator('main');
-    await expect(main).toContainText('What changes in the decision process');
-    await expect(main).toContainText('When the economic view stays fragmented');
-    await expect(main).toContainText('PROFIT approach');
-    await expect(main).toContainText('the farmer keeps decision authority');
-    await expect(main).toContainText('not a claim that every farm currently works the same way');
+    const problem = page.locator('#questions');
+    await expect(problem).toContainText('Which fields actually make money?');
+    await expect(problem).toContainText('What should change next season?');
+    await expect(problem).toContainText('Records behind the decision');
+    await expect(problem).toContainText('The work is not collecting data for its own sake.');
+    await expect(problem).not.toContainText('What changes in the decision process');
+    await expect(problem).not.toContainText('PROFIT approach');
   });
 
   test('pre-launch robots file blocks crawling', async ({ request }) => {
