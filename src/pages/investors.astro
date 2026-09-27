@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContentGap from '../components/ContentGap.astro';
 import ItemList from '../components/ItemList.astro';
+import OnPageNav from '../components/OnPageNav.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import StatusList from '../components/StatusList.astro';
@@ -12,7 +13,9 @@ const p = content(Astro.currentLocale).investors;
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
-  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
+    <OnPageNav label={p.onPageLabel} items={[p.today.intro, p.case.intro, p.proofNext.intro, p.notClaimed.intro, p.contact.intro]} />
+  </PageIntro>
 
   <Section intro={p.today.intro} layout="split">
     <StatusList items={p.today.items} statusLabels={p.statusLabels} />
@@ -20,6 +23,11 @@ const p = content(Astro.currentLocale).investors;
 
   <Section intro={p.case.intro} layout="split" tone="sunken">
     <StatusList items={p.case.items} statusLabels={p.statusLabels} ordered />
+  </Section>
+
+  <Section intro={p.proofNext.intro} tone="sunken">
+    <ItemList items={p.proofNext.items} columns={2} />
+    <p class="proof-note">{p.proofNext.note}</p>
   </Section>
 
   <Section intro={p.notClaimed.intro} layout="split">
@@ -36,6 +44,14 @@ const p = content(Astro.currentLocale).investors;
 </BaseLayout>
 
 <style>
+  .proof-note {
+    max-width: var(--measure-wide);
+    margin-block-start: var(--space-5);
+    padding-inline-start: var(--space-4);
+    border-inline-start: 3px solid var(--color-line-strong);
+    font-size: var(--text-small);
+    font-weight: var(--weight-strong);
+  }
   .contact {
     max-width: var(--measure-wide);
     font-size: var(--text-lead);
