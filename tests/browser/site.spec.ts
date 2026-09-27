@@ -1332,10 +1332,14 @@ test.describe('Danish opt-in localization', () => {
 test.describe('WCAG reflow and user text overrides', () => {
   const localizedRoots = ['/', '/uk/', '/fi/', '/da/'] as const;
 
-  test('localized homepages reflow at 320 CSS px without page-level horizontal scrolling', async ({ page }) => {
+  test('all localized public routes reflow at 320 CSS px without page-level horizontal scrolling', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 800 });
 
-    for (const route of localizedRoots) {
+    const localizedRoutes = (['uk', 'fi', 'da'] as const).flatMap((locale) =>
+      routes.map((route) => `/${locale}${route}`),
+    );
+
+    for (const route of localizedRoutes) {
       const response = await page.goto(route, { waitUntil: 'networkidle' });
       expect(response?.ok(), route).toBeTruthy();
 
