@@ -58,6 +58,10 @@ const dataCollectionPrinciples: TextItem[] = [
     text: 'Field work cannot depend on continuous coverage. Capture should be able to happen locally and synchronise later when connectivity returns.',
   },
   {
+    title: 'Infer cautiously, confirm exceptions',
+    text: 'Time, location and activity context may reduce typing and repeated confirmation. Automatic activity recognition should be used only where validated, with inferred values clearly marked and easy to correct.',
+  },
+  {
     title: 'External data only with a purpose',
     text: 'Weather, market, satellite, soil or other external sources should be added only when they materially improve a decision and their provenance remains visible.',
   },
@@ -165,7 +169,7 @@ const decisionSupportSteps = [
 export const farmers = {
   meta: {
     title: 'For farmers',
-    description: 'How PROFIT is being built across crop, horticulture and livestock production, with Field Profitability as the current first concrete product focus.',
+    description: 'How PROFIT is being built across crop, horticulture and livestock production — including realistic data collection, quality checks and Field Profitability as the first concrete focus.',
   },
   intro: {
     eyebrow: 'For farmers',
@@ -293,7 +297,7 @@ export const trust = {
   onPageLabel: 'On this page',
   meta: {
     title: 'Trust',
-    description: 'How PROFIT labels evidence and confidence, how its numbers are produced, its principles for farm data, privacy and security, and its limitations.',
+    description: 'How PROFIT handles evidence, data quality, deterministic economics, model comparison, decision support, privacy, uncertainty and limitations.',
   },
   intro: {
     eyebrow: 'Trust',
@@ -510,7 +514,7 @@ export const trust = {
 };
 
 export const company = {
-  meta: { title: 'Company', description: 'What PROFIT is building, why, how it works, and what is still being proven.' },
+  meta: { title: 'Company', description: 'What PROFIT is building, including whole-farm scope, data strategy, model-selection discipline, decision support and what is still being proven.' },
   intro: {
     eyebrow: 'Company',
     title: 'What we are building, and what is still being proven',
