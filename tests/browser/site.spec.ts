@@ -574,6 +574,37 @@ test.describe('supporting-page scanability', () => {
   });
 });
 
+test.describe('team capability proof', () => {
+  test('homepage and company page show multidisciplinary team proof without hiding review status', async ({ page }) => {
+    await page.goto('/');
+    const homeCompany = page.locator('#company');
+    await expect(homeCompany).toContainText('Different disciplines, one farm decision problem');
+    await expect(homeCompany).toContainText('Mykola Dotsenko');
+    await expect(homeCompany).toContainText('Dmytro Ruzhytskyi');
+    await expect(homeCompany).toContainText('Dmytro Panasenko');
+    await expect(homeCompany).toContainText('Draft for review');
+
+    await page.goto('/company/');
+    const team = page.locator('#team');
+    await expect(team).toContainText('Product, Software & AI');
+    await expect(team).toContainText('Livestock & Farm Operations');
+    await expect(team).toContainText('Science, Engineering & Data');
+    await expect(team).toContainText('Contribution to PROFIT');
+    await expect(team.getByRole('link', { name: 'GitHub' })).toHaveCount(3);
+    await expect(team.getByRole('link', { name: 'Hackster' })).toHaveCount(1);
+    await expect(team).toContainText('Draft for review');
+  });
+
+  test('team capability proof remains readable at mobile width', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/company/');
+    const team = page.locator('#team');
+    await expect(team).toBeVisible();
+    const overflow = await team.evaluate((el) => el.scrollWidth - el.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(1);
+  });
+});
+
 test.describe('qualified conversion and investor proof', () => {
   test('contact page qualifies the current pilot before asking for details', async ({ page }) => {
     await page.goto('/contact/');

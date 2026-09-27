@@ -302,7 +302,10 @@ export const home = {
       'Measurable value — whether PROFIT can demonstrate economic value to the evidence standard it sets itself.',
       'Pilot fit — what farmers need from the process, data and explanations to trust the numbers.',
     ],
-    teamGap: { owner: 'owner', text: 'Team: who is building PROFIT, their roles and relevant expertise.' } satisfies ContentGap,
+    teamGap: {
+      owner: 'owner',
+      text: 'Confirm each person’s public role wording, expertise, profile/photo use and consent before launch.',
+    } satisfies ContentGap,
     link: { label: 'About the company', href: '/company/' },
   },
   cta: {

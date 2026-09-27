@@ -476,7 +476,8 @@ Current research-backed sections:
 - data-quality sequence;
 - forecasting/model-selection doctrine;
 - agricultural DSS design rationale;
-- explicit limitations and evidence boundaries.
+- explicit limitations and evidence boundaries;
+- draft team capability proof across product/software/AI, livestock/farm operations and science/engineering/data. The `team-proof` release gate remains blocked until each person confirms public wording, profile/photo use and consent.
 
 ### WWW-305 — /investors
 Focus:

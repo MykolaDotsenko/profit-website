@@ -6,7 +6,7 @@
  * language follows AGENTS.md §4. Anything that is a commitment the team has to confirm carries
  * a `review` gap instead of being presented as settled.
  */
-import type { ContentGap, HeroVariant, Question, TextItem } from '../types';
+import type { ContentGap, HeroVariant, Question, TeamMember, TextItem } from '../types';
 import { assertMetricPublishable, type MetricId } from '../../domain/economics';
 
 const WWW000 = 'No farmer evidence yet: WWW-000 has not run.';
@@ -46,6 +46,50 @@ export const heroVariants: Record<HeroVariant['id'], HeroVariant> = {
 };
 
 export const primaryCta = { label: 'Join the pilot', href: '/contact/' };
+
+/**
+ * Team capability proof drafted from information already supplied in the PROFIT project.
+ * The public-release team-proof gate remains blocked until each person confirms wording,
+ * profile/photo use and consent to publish.
+ */
+export const teamCapability = {
+  intro: {
+    eyebrow: 'Team capability',
+    title: 'Different disciplines, one farm decision problem',
+    lead:
+      'PROFIT combines product and software, farm operations, and science and engineering so technical decisions stay connected to production reality.',
+  },
+  flow: ['Farm reality', 'Measurement & data', 'Economics & product', 'Farmer decision'],
+  members: [
+    {
+      name: 'Mykola Dotsenko',
+      role: 'Product, Software & AI',
+      strength: 'Product systems · software architecture · AI-assisted delivery',
+      contribution:
+        'Connects product strategy, software architecture and implementation so PROFIT can turn complex agricultural decision problems into a coherent product.',
+      links: [{ label: 'GitHub', href: 'https://github.com/MykolaDotsenko/' }],
+    },
+    {
+      name: 'Dmytro Ruzhytskyi',
+      role: 'Livestock & Farm Operations',
+      strength: 'Livestock production · farm operations · farm economics',
+      contribution:
+        'Brings the livestock and farm-operations perspective needed to test whether PROFIT reflects real production constraints, especially in pig and cattle systems.',
+      links: [{ label: 'GitHub', href: 'https://github.com/dmitruz' }],
+    },
+    {
+      name: 'Dmytro Panasenko',
+      role: 'Science, Engineering & Data',
+      strength: 'Chemistry · engineering · programming · data acquisition',
+      contribution:
+        'Combines a master’s degree in chemistry with experience in chemical production and livestock, plus programming and engineering work relevant to measurement and farm data collection.',
+      links: [
+        { label: 'GitHub', href: 'https://github.com/tech-science-hub' },
+        { label: 'Hackster', href: 'https://www.hackster.io/Dima_Panasenko' },
+      ],
+    },
+  ] satisfies TeamMember[],
+};
 
 /**
  * Master-brand production scope.

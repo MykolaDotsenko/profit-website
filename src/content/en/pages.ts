@@ -732,7 +732,10 @@ export const company = {
   },
   team: {
     intro: { id: 'team', eyebrow: 'People', title: 'Who is building PROFIT' } satisfies SectionIntro,
-    gap: { owner: 'owner', text: 'Team: names, roles and relevant expertise, with consent to publish.' } satisfies ContentGap,
+    gap: {
+      owner: 'owner',
+      text: 'Confirm each person’s public role wording, expertise, profile/photo use and consent before launch.',
+    } satisfies ContentGap,
   },
   details: {
     intro: { id: 'details', eyebrow: 'Details', title: 'Company details' } satisfies SectionIntro,
