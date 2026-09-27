@@ -1,0 +1,58 @@
+---
+interface Item {
+  id?: string;
+  title: string;
+}
+
+interface Props {
+  label: string;
+  items: readonly Item[];
+}
+
+const { label, items } = Astro.props;
+const linked = items.filter((item): item is Item & { id: string } => Boolean(item.id));
+---
+
+<nav class="on-page-nav" aria-label={label}>
+  <p class="on-page-nav__label">{label}</p>
+  <ul role="list">
+    {linked.map((item) => (
+      <li><a href={`#${item.id}`}>{item.title}</a></li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  @layer components {
+    .on-page-nav {
+      display: grid;
+      gap: var(--space-2);
+      width: 100%;
+      padding-block-start: var(--space-3);
+      border-block-start: 1px solid var(--color-line);
+    }
+    .on-page-nav__label {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+    .on-page-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-5);
+    }
+    .on-page-nav a {
+      font-size: var(--text-small);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+      text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    }
+    .on-page-nav a:hover,
+    .on-page-nav a:focus-visible {
+      text-decoration-color: currentColor;
+    }
+  }
+</style>
