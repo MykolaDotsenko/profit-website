@@ -548,13 +548,56 @@ test.describe('scan-first brochure behavior', () => {
     const journey = page.locator('.journey-nav');
     await expect(journey).toBeVisible();
     await expect(journey).toContainText('On this page');
-    await expect(journey.getByRole('link', { name: /Production systems/ })).toHaveAttribute('href', '#production-systems');
-    await expect(journey.getByRole('link', { name: /Field economics/ })).toHaveAttribute('href', '#example');
-    await expect(journey.getByRole('link', { name: /Evidence/ })).toHaveAttribute('href', '#evidence');
-    await expect(journey.getByRole('link', { name: /Pilot/ })).toHaveAttribute('href', '#join');
+    const journeyLinks = journey.getByRole('link');
+    await expect(journeyLinks).toHaveCount(7);
+    await expect(journeyLinks.nth(0)).toHaveText(/Farmer questions/);
+    await expect(journeyLinks.nth(0)).toHaveAttribute('href', '#questions');
+    await expect(journeyLinks.nth(1)).toHaveText(/How it works/);
+    await expect(journeyLinks.nth(1)).toHaveAttribute('href', '#how-it-works');
+    await expect(journeyLinks.nth(2)).toHaveText(/Field economics/);
+    await expect(journeyLinks.nth(2)).toHaveAttribute('href', '#example');
+    await expect(journeyLinks.nth(3)).toHaveText(/Production systems/);
+    await expect(journeyLinks.nth(3)).toHaveAttribute('href', '#production-systems');
+    await expect(journeyLinks.nth(4)).toHaveAttribute('href', '#evidence');
+    await expect(journeyLinks.nth(6)).toHaveAttribute('href', '#join');
 
     await page.setViewportSize({ width: 390, height: 844 });
     await expect(journey).toBeHidden();
+  });
+
+  test('homepage long-form narrative puts farmer problem and mechanism before company breadth', async ({ page }) => {
+    await page.goto('/');
+
+    const ids = [
+      'questions',
+      'how-it-works',
+      'example',
+      'field-profitability',
+      'production-systems',
+      'evidence',
+      'control',
+      'company',
+      'join',
+    ];
+
+    const positions = await page.evaluate((sectionIds) =>
+      sectionIds.map((id) => {
+        const el = document.getElementById(id);
+        if (!el) throw new Error(`Missing homepage section #${id}`);
+        return { id, top: el.getBoundingClientRect().top + window.scrollY };
+      }),
+      ids,
+    );
+
+    for (let i = 1; i < positions.length; i += 1) {
+      expect(positions[i - 1].top, `${positions[i - 1].id} should precede ${positions[i].id}`).toBeLessThan(
+        positions[i].top,
+      );
+    }
+
+    expect(positions.findIndex((item) => item.id === 'example')).toBeLessThan(
+      positions.findIndex((item) => item.id === 'production-systems'),
+    );
   });
 
   test('Field Profitability proof leads with one named economic state before detail', async ({ page }) => {

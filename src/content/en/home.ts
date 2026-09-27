@@ -1,8 +1,8 @@
 /**
  * Homepage copy. Section order follows docs/homepage-content-brief-v1.md and
  * docs/homepage-copy-deck-v1.md:
- * hero → 30-second summary → whole-farm scope → concrete proof → farmer problem →
- * how it works → economic value/evidence → Field Profitability → trust → company → pilot CTA.
+ * hero → 30-second summary → farmer problem → how it works → concrete proof →
+ * Field Profitability boundary → whole-farm scope → economic value/evidence → trust → company → pilot CTA.
  * H1/H2/H3 remain WWW-000 v2 hypotheses; H4 is the owner-directed development candidate.
  */
 import type { ContentGap, SectionIntro, Step, TextItem } from '../types';
@@ -44,10 +44,10 @@ export const home = {
   journey: {
     label: 'On this page',
     items: [
-      { index: '01', label: 'Production systems', href: '#production-systems' },
-      { index: '02', label: 'Field economics', href: '#example' },
-      { index: '03', label: 'Farmer questions', href: '#questions' },
-      { index: '04', label: 'How it works', href: '#how-it-works' },
+      { index: '01', label: 'Farmer questions', href: '#questions' },
+      { index: '02', label: 'How it works', href: '#how-it-works' },
+      { index: '03', label: 'Field economics', href: '#example' },
+      { index: '04', label: 'Production systems', href: '#production-systems' },
       { index: '05', label: 'Evidence', href: '#evidence' },
       { index: '06', label: 'Farmer control', href: '#control' },
       { index: '07', label: 'Pilot', href: '#join' },

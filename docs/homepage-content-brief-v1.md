@@ -51,6 +51,12 @@ investor / partner / advisor.
 
 The homepage must remain farmer-first even when it contains material useful to investors.
 
+Current production narrative order (owner refinement, 2026-09-27):
+
+**Hero / 30-second model → farmer problem → PROFIT mechanism → detailed Field Profitability proof → current product boundary → whole-farm direction → evidence → farmer control → company/team → pilot CTA.**
+
+Rationale: the hero already contains a compact economic proof object, so the long-form page should establish problem relevance and mechanism before asking a busy farmer to process master-brand breadth. Whole-farm scope remains mandatory, but it must not visually outrank the current concrete wedge. This is an implementation decision, not farmer validation.
+
 ---
 
 # 2. Core communication objective
@@ -239,7 +245,201 @@ No paragraphs.
 
 ---
 
-## 03 — Whole-farm scope
+## 03 — Farmer problem
+
+### Communication job
+Make the visitor recognise the job before explaining technology.
+
+### Primary questions
+
+- Which fields actually make money?
+- What does each field really cost once shared costs are allocated?
+- At what price or yield would a field break even?
+- What should change next season?
+
+The final question should remain explicitly farmer-owned.
+
+### Fragmentation story
+
+The numbers may sit across:
+- production records;
+- sales/contracts/invoices;
+- variable input records;
+- machinery/labour/building/land costs;
+- weather/market context.
+
+### Product-research insight
+Do not imply that the answer requires perfect digitisation.
+
+Professional credibility increases when the site acknowledges:
+- incomplete records;
+- old machinery;
+- intermittent connectivity;
+- mixed digital maturity.
+
+### Do not
+Turn this into an integrations list.
+
+---
+
+## 04 — How PROFIT works
+
+### Communication job
+Explain the mechanism in a way a farmer can reconstruct.
+
+### Core sequence
+
+**1. Data**  
+Start from the records behind a decision, shared with permission.
+
+**2. Economics**  
+Turn those records into economic meaning with explicit definitions/formulas.
+
+**3. Decision**  
+Put the economics in view. The farmer decides.
+
+**4. Action**  
+The action happens on the farm.
+
+**5. Measurement**  
+Record what happened in comparable terms.
+
+### Two product-development principles
+
+#### Fit the farm
+Start with records the farm already has.
+
+Add automation where it genuinely reduces workload.
+
+Do not assume:
+- new machinery;
+- telemetry;
+- constant connectivity;
+- perfect records;
+- operators manually entering everything.
+
+#### Keep uncertainty visible
+Known economics stay explicit.
+
+Forecast/scenario outputs should expose:
+- assumptions;
+- range;
+- update context;
+- confidence;
+
+when evidence supports them.
+
+### Public capability boundary
+State clearly:
+
+> These are PROFIT development principles, not a claim that the current Field Profitability build already includes telemetry, forecasting or optimisation.
+
+### Deeper link
+Link to company/trust methodology rather than expanding technical detail on homepage.
+
+---
+
+## 05 — Concrete product proof
+
+### Communication job
+Move from broad ambition back to something specific and inspectable.
+
+### Section truth
+**Field Profitability · hypothetical example**
+
+### Working title
+What field-level economics look like
+
+### What to show
+One season, several fields:
+- revenue;
+- variable costs;
+- allocated fixed costs;
+- operating costs;
+- operating profit;
+- per-hectare presentation;
+- break-even price/yield where supported by current product truth.
+
+### Definition
+**Operating profit = revenue − variable costs − allocated fixed costs.**
+
+It is:
+- not gross margin;
+- not statutory net profit.
+
+### Required labels
+- illustration, not product screenshot;
+- hypothetical example;
+- confidence not assessed.
+
+### Decision question
+Use a decision-oriented prompt:
+
+> What would you investigate on Field 31 before changing the plan?
+
+### Why this matters
+The proof should demonstrate:
+
+**show the economics → preserve farmer judgment**
+
+not:
+
+**software tells the farmer what to do.**
+
+### Visual priority
+1. economic result;
+2. cost/revenue composition;
+3. evidence label;
+4. decision question;
+5. secondary context.
+
+---
+
+## 06 — Current product boundary
+
+### Communication job
+Make current scope inspectable.
+
+### Working title
+Field Profitability
+
+### Status
+**In development — not yet available**
+
+### What goes in
+Current documented inputs only:
+- field;
+- crop;
+- season;
+- area;
+- yield;
+- price;
+- variable costs;
+- allocated fixed costs;
+- currency.
+
+### What comes out
+Current documented outputs only.
+
+### What it does not include
+Show exclusions clearly:
+- whole-farm P&L;
+- tax/financing;
+- depreciation policy;
+- inventory accounting;
+- GIS;
+- scenario optimisation;
+- machine/sensor telemetry;
+- ERP integrations.
+
+### Why exclusions matter
+They make the product more credible.
+
+Do not hide them.
+
+---
+
+## 07 — Whole-farm scope
 
 ### Communication job
 Prevent the visitor from interpreting:
@@ -324,157 +524,7 @@ Prefer one composition showing diversity of production realities while the econo
 
 ---
 
-## 04 — Concrete product proof
-
-### Communication job
-Move from broad ambition back to something specific and inspectable.
-
-### Section truth
-**Field Profitability · hypothetical example**
-
-### Working title
-What field-level economics look like
-
-### What to show
-One season, several fields:
-- revenue;
-- variable costs;
-- allocated fixed costs;
-- operating costs;
-- operating profit;
-- per-hectare presentation;
-- break-even price/yield where supported by current product truth.
-
-### Definition
-**Operating profit = revenue − variable costs − allocated fixed costs.**
-
-It is:
-- not gross margin;
-- not statutory net profit.
-
-### Required labels
-- illustration, not product screenshot;
-- hypothetical example;
-- confidence not assessed.
-
-### Decision question
-Use a decision-oriented prompt:
-
-> What would you investigate on Field 31 before changing the plan?
-
-### Why this matters
-The proof should demonstrate:
-
-**show the economics → preserve farmer judgment**
-
-not:
-
-**software tells the farmer what to do.**
-
-### Visual priority
-1. economic result;
-2. cost/revenue composition;
-3. evidence label;
-4. decision question;
-5. secondary context.
-
----
-
-## 05 — Farmer problem
-
-### Communication job
-Make the visitor recognise the job before explaining technology.
-
-### Primary questions
-
-- Which fields actually make money?
-- What does each field really cost once shared costs are allocated?
-- At what price or yield would a field break even?
-- What should change next season?
-
-The final question should remain explicitly farmer-owned.
-
-### Fragmentation story
-
-The numbers may sit across:
-- production records;
-- sales/contracts/invoices;
-- variable input records;
-- machinery/labour/building/land costs;
-- weather/market context.
-
-### Product-research insight
-Do not imply that the answer requires perfect digitisation.
-
-Professional credibility increases when the site acknowledges:
-- incomplete records;
-- old machinery;
-- intermittent connectivity;
-- mixed digital maturity.
-
-### Do not
-Turn this into an integrations list.
-
----
-
-## 06 — How PROFIT works
-
-### Communication job
-Explain the mechanism in a way a farmer can reconstruct.
-
-### Core sequence
-
-**1. Data**  
-Start from the records behind a decision, shared with permission.
-
-**2. Economics**  
-Turn those records into economic meaning with explicit definitions/formulas.
-
-**3. Decision**  
-Put the economics in view. The farmer decides.
-
-**4. Action**  
-The action happens on the farm.
-
-**5. Measurement**  
-Record what happened in comparable terms.
-
-### Two product-development principles
-
-#### Fit the farm
-Start with records the farm already has.
-
-Add automation where it genuinely reduces workload.
-
-Do not assume:
-- new machinery;
-- telemetry;
-- constant connectivity;
-- perfect records;
-- operators manually entering everything.
-
-#### Keep uncertainty visible
-Known economics stay explicit.
-
-Forecast/scenario outputs should expose:
-- assumptions;
-- range;
-- update context;
-- confidence;
-
-when evidence supports them.
-
-### Public capability boundary
-State clearly:
-
-> These are PROFIT development principles, not a claim that the current Field Profitability build already includes telemetry, forecasting or optimisation.
-
-### Deeper link
-Link to company/trust methodology rather than expanding technical detail on homepage.
-
----
-
-## 07 — Economic value & evidence
+## 08 — Economic value & evidence
 
 ### Communication job
 Show how PROFIT behaves when evidence is incomplete.
@@ -524,50 +574,6 @@ Evidence/confidence should feel integrated into the brand system, not like legal
 
 ### Progressive-disclosure rule
 Keep the evidence ladder, confidence treatment and current-site status immediately visible. Deeper verification mechanics may sit behind native accessible disclosure, provided the complete content remains available without JavaScript. This preserves the rule: the homepage should feel simple before it feels sophisticated.
-
----
-
-## 08 — Current product boundary
-
-### Communication job
-Make current scope inspectable.
-
-### Working title
-Field Profitability
-
-### Status
-**In development — not yet available**
-
-### What goes in
-Current documented inputs only:
-- field;
-- crop;
-- season;
-- area;
-- yield;
-- price;
-- variable costs;
-- allocated fixed costs;
-- currency.
-
-### What comes out
-Current documented outputs only.
-
-### What it does not include
-Show exclusions clearly:
-- whole-farm P&L;
-- tax/financing;
-- depreciation policy;
-- inventory accounting;
-- GIS;
-- scenario optimisation;
-- machine/sensor telemetry;
-- ERP integrations.
-
-### Why exclusions matter
-They make the product more credible.
-
-Do not hide them.
 
 ---
 

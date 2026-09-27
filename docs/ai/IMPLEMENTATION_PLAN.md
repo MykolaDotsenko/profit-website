@@ -339,6 +339,17 @@ Depends on: WWW-101, WWW-102.
 
 ## W2 — Homepage learning surface
 
+### PR-13 — Farmer-first homepage narrative refinement
+
+Status: **implemented as a reversible pre-launch brochure decision; not farmer validation.**
+
+Production long-form order:
+**Hero/TLDR → farmer problem → mechanism → detailed Field Profitability proof → current product boundary → whole-farm direction → evidence → farmer control → company/team → pilot CTA.**
+
+Reason: project marketing/psychology research favors problem relevance, specificity and concrete proof before company breadth; the hero already supplies an immediate compact proof object. Whole-farm direction remains present to prevent crop-lock but no longer interrupts the primary farmer story immediately after the hero.
+
+Scorecard focus: `FC-02`, `FC-03`, `FC-05`, `BD-05`. Human-validation criteria remain open.
+
 ### WWW-201 — Hero
 
 Job:

@@ -262,6 +262,21 @@ Do not invent missing VEV formulas, thresholds or verification criteria.
 
 ## 5. Homepage architecture
 
+### Production brochure narrative order — owner refinement, 2026-09-27
+
+The coded pre-launch homepage uses this long-form sequence:
+
+**Hero + 30-second mental model → farmer problem → PROFIT mechanism → detailed Field Profitability proof → current product boundary → whole-farm direction → evidence/confidence → farmer control → company/team → pilot CTA.**
+
+Rationale:
+- the hero already carries one compact economic proof object;
+- the long-form page should establish the farmer's problem and PROFIT mechanism before asking the visitor to process company breadth;
+- specificity builds credibility, so the concrete Field Profitability wedge must precede master-brand universality;
+- whole-farm scope remains mandatory to prevent crop-lock, but is supporting company-direction context rather than the first post-hero job;
+- this ordering is reversible and does **not** count as farmer validation. Reconsider it if target-farmer testing shows that earlier production-system breadth materially improves correct classification without reducing current-wedge comprehension.
+
+The numbered concepts below define required communication jobs; they are not a requirement that production DOM order preserve the original research numbering.
+
 ### 01 — Hero
 
 Goal:
