@@ -59,6 +59,34 @@ if (!header.includes("localizedEquivalentPath('fi'")) fail('language switcher mu
 if (!layout.includes('hreflang="x-default"')) fail('x-default hreflang must point to the English equivalent.');
 if (!layout.includes('languageAlternates')) fail('language alternate metadata is missing.');
 
+const translationFiles = (locale) => [
+  `src/content/${locale}/translations-home.ts`,
+  `src/content/${locale}/translations-shared.ts`,
+  `src/content/${locale}/translations-pages-a.ts`,
+  `src/content/${locale}/translations-pages-b.ts`,
+  `src/content/${locale}/translations-pages-c.ts`,
+  `src/content/${locale}/translations-pages-d.ts`,
+  `src/content/${locale}/translations-simple.ts`,
+];
+
+const translationKeys = (locale) => {
+  const keys = new Set();
+  const pattern = /^\s*'((?:\\'|[^'])+)':/gm;
+  for (const file of translationFiles(locale)) {
+    const source = read(file);
+    let match;
+    while ((match = pattern.exec(source))) keys.add(match[1]);
+  }
+  return keys;
+};
+
+const ukrainianKeys = translationKeys('uk');
+const finnishKeys = translationKeys('fi');
+const missingFinnish = [...ukrainianKeys].filter((key) => !finnishKeys.has(key));
+if (missingFinnish.length) {
+  fail(`Finnish public-copy coverage is missing ${missingFinnish.length} translated keys: ${missingFinnish.slice(0, 20).join(' | ')}`);
+}
+
 const sourceFiles = [
   'src/components/SiteHeader.astro',
   'src/layouts/BaseLayout.astro',
