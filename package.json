@@ -13,7 +13,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "node --experimental-strip-types --test tests/domain.test.ts",
-    "verify": "astro check && npm test && astro build"
+    "verify": "npm run design:check && astro check && npm test && astro build",
+    "design:check": "node scripts/validate_design_system.mjs"
   },
   "dependencies": {
     "astro": "7.3.5"
