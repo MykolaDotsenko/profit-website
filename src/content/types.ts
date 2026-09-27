@@ -81,6 +81,7 @@ export interface PilotFormContent {
   eyebrow: string;
   title: string;
   requiredNote: string;
+  assurances: string[];
   fields: {
     name: { label: string };
     organisation: { label: string };
