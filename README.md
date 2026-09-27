@@ -148,7 +148,7 @@ Shown on the pages as "Input needed" or "Draft for review" while `SHOW_CONTENT_S
 | Gap | Owner | Where |
 |---|---|---|
 | Team proof: drafted names, role/expertise wording and public profile links; confirm each person’s wording, photo/profile use and consent to publish | PROFIT team | `/`, `/company` |
-| Company details: legal name, business ID, registered address, contact address | PROFIT team | footer, `/company` |
+| Company details: legal name, business ID/registration number, jurisdiction, registered address, public contact address | PROFIT team | footer, `/company` |
 | Pilot process: who replies, how, how fast | PROFIT team | pilot steps on `/`, `/farmers`, `/product`, `/trust`, `/company`, `/contact` |
 | Data terms: ownership, sharing, retention, deletion | legal | `/trust`, hard question "Who owns the data?" |
 | Privacy notice and security measures, before the form collects anything | legal | `/trust`, `/contact` |
