@@ -10,6 +10,7 @@ const t = ui(locale.code);
   <div class="container site-footer__inner">
     <div class="site-footer__brand">
       <a class="site-footer__wordmark" href={localePath(locale.code, '/')}>{t.brand}</a>
+      <p class="site-footer__flow">{t.production.brandFlow}</p>
       <p class="site-footer__tagline">{t.footer.tagline}</p>
       <p class="site-footer__evidence">{t.footer.evidenceNote}</p>
     </div>
@@ -55,8 +56,17 @@ const t = ui(locale.code);
       text-decoration: none;
       font-size: 1.125rem;
     }
+    .site-footer__flow {
+      margin-block-start: var(--space-4);
+      color: var(--color-inverse-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
     .site-footer__tagline {
-      margin-block-start: var(--space-3);
+      margin-block-start: var(--space-4);
       max-width: 28rem;
       font-size: var(--text-lead);
       line-height: 1.45;
@@ -72,7 +82,13 @@ const t = ui(locale.code);
     .site-footer__nav {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-      gap: var(--space-6);
+      gap: 1px;
+      border: 1px solid var(--color-inverse-line);
+      background: var(--color-inverse-line);
+    }
+    .site-footer__group {
+      padding: var(--space-5);
+      background: var(--color-inverse-canvas);
     }
     .site-footer__heading {
       font-family: var(--font-label);
@@ -90,7 +106,7 @@ const t = ui(locale.code);
     }
     @media (min-width: 60rem) {
       .site-footer__inner {
-        grid-template-columns: 4fr 8fr;
+        grid-template-columns: minmax(15rem, 4fr) minmax(0, 8fr);
         border-block-start: 1px solid var(--color-inverse-line);
         padding-block-start: var(--space-6);
       }
