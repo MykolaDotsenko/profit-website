@@ -610,6 +610,21 @@ Gate rule:
 - `data-terms` stays BLOCKED until the farm-data agreement is approved;
 - no pilot endpoint may bypass the existing release guard.
 
+### PR-16 — PROFIT VEV Standard v1
+
+Status: **implemented / internally approved methodology.**
+
+Decision:
+- Verified is an evidence/attribution status, not a positive-outcome label;
+- Attributed requires an explicit counterfactual, incremental economic effect, attribution method and assessed confidence;
+- Verified additionally requires reproducible economics, documented evidence package, High/Medium confidence and a recorded verification review;
+- a Verified effect may be positive, zero or negative;
+- current public examples remain Hypothetical · Confidence: Not assessed.
+
+Release effect:
+- `evidence-definitions` may be READY with `docs/methodology/vev-standard-v1.md` as evidence;
+- no customer-result or VEV claim is created by this decision.
+
 ### WWW-501 — Accessibility gate
 
 Target:
