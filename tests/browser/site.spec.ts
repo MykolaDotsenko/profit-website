@@ -229,6 +229,25 @@ test.describe('selected B2 production-unit grammar', () => {
     await expect(hero).not.toContainText('satellite map');
     await expect(hero).not.toContainText('live telemetry');
   });
+
+  test('B2 production framing carries across supporting company routes', async ({ page }) => {
+    for (const route of ['/farmers/', '/product/', '/trust/', '/company/', '/investors/', '/contact/']) {
+      await page.goto(route);
+      await expect(page.locator('.page-intro__frame')).toBeVisible();
+      await expect(page.locator('.page-intro__rail')).toContainText('PROFIT /');
+    }
+
+    await page.goto('/farmers/');
+    await expect(page.locator('.production-scope')).toContainText('Production unit');
+
+    await page.goto('/company/');
+    await expect(page.locator('.production-scope')).toContainText('Pig production');
+    await expect(page.locator('.production-scope')).toContainText('Dairy');
+
+    await page.goto('/product/');
+    await expect(page.locator('.field-example__grid')).toBeVisible();
+    await expect(page.locator('.field-example__decision')).toContainText('Decision');
+  });
 });
 
 test.describe('critical interactions', () => {
