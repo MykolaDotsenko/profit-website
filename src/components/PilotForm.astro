@@ -30,6 +30,11 @@ const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefi
     <p class="pilot-form__head-label">{c.eyebrow}</p>
     <h2 id="pilot-form-title" class="pilot-form__title">{c.title}</h2>
     <p class="pilot-form__required">{c.requiredNote}</p>
+    <ul class="pilot-form__assurances" role="list">
+      {c.assurances.map((item, i) => (
+        <li><span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{item}</li>
+      ))}
+    </ul>
   </div>
 
   <div class="pilot-form__summary" data-error-summary tabindex="-1" role="alert" hidden>
@@ -252,6 +257,32 @@ const messages = JSON.stringify({ errors: c.errors, status: c.status, errorPrefi
     .pilot-form__required {
       font-size: var(--text-small);
       color: var(--color-text-secondary);
+    }
+
+    .pilot-form__assurances {
+      display: grid;
+      gap: 1px;
+      margin-block-start: var(--space-3);
+      border: 1px solid var(--color-line);
+      background: var(--color-line);
+    }
+
+    .pilot-form__assurances li {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: var(--space-2);
+      align-items: baseline;
+      padding: var(--space-2) var(--space-3);
+      background: color-mix(in srgb, var(--color-production-rail) 78%, var(--color-surface));
+      font-size: var(--text-caption);
+      line-height: 1.4;
+    }
+
+    .pilot-form__assurances .num {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
     }
 
     .pilot-form__summary {
