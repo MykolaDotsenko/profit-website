@@ -12,6 +12,7 @@ const isCurrent = (href: string) => {
 const homeHref = localePath(locale.code, '/');
 const englishHref = localizedEquivalentPath('en', locale.code, path);
 const ukrainianHref = localizedEquivalentPath('uk', locale.code, path);
+const finnishHref = localizedEquivalentPath('fi', locale.code, path);
 ---
 
 <header class="site-header">
@@ -55,6 +56,8 @@ const ukrainianHref = localizedEquivalentPath('uk', locale.code, path);
         <a href={englishHref} lang="en" aria-current={locale.code === 'en' ? 'true' : undefined}>EN</a>
         <span aria-hidden="true">/</span>
         <a href={ukrainianHref} lang="uk" aria-current={locale.code === 'uk' ? 'true' : undefined}>UA</a>
+        <span aria-hidden="true">/</span>
+        <a href={finnishHref} lang="fi" aria-current={locale.code === 'fi' ? 'true' : undefined}>FI</a>
       </div>
       <a
         class="button button--primary site-nav__cta"
