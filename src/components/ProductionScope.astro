@@ -5,6 +5,7 @@ interface UnitItem {
   title: string;
   unit: string;
   state: string;
+  current: boolean;
   text: string;
 }
 
@@ -18,7 +19,7 @@ const t = ui(Astro.currentLocale);
 
 <div class="production-scope" role="list" aria-label={t.production.scopeLabel}>
   {items.map((item) => (
-    <article class:list={['production-unit', { 'is-current': item.state === 'Current first focus' }]} role="listitem">
+    <article class:list={['production-unit', { 'is-current': item.current }]} role="listitem">
       <div class="production-unit__identity">
         <p class="production-unit__state">{item.state}</p>
         <h3>{item.title}</h3>
