@@ -91,7 +91,7 @@ These files are an evidence library. They support decisions but do not silently 
 
 ## Status
 
-Positioning and farmer validation remain open. **B2 — Production Unit Grammar** is now the provisional production art direction and is implemented across the coded site ([ADR 0003](docs/decisions/0003-provisional-b2-production-unit-art-direction.md)). This is the strongest current implementation decision, not a farmer-validated winner. The site remains pre-launch and non-indexable while release gates are open.
+Positioning and farmer validation remain open. **B2 — Production Unit Grammar** is now the provisional production art direction and is implemented across the coded site ([ADR 0003](docs/decisions/0003-provisional-b2-production-unit-art-direction.md)). A real Finnish documentary wheat-field image with recorded CC BY-SA 4.0 provenance is now approved for the company page. B2 is still not a farmer-validated winner. The site remains pre-launch and non-indexable while release gates are open.
 
 ## Website (Build Pass 01)
 
