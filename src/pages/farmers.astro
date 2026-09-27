@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ItemList from '../components/ItemList.astro';
 import MethodPipeline from '../components/MethodPipeline.astro';
+import OnPageNav from '../components/OnPageNav.astro';
 import PageIntro from '../components/PageIntro.astro';
 import ProductionScope from '../components/ProductionScope.astro';
 import QuestionList from '../components/QuestionList.astro';
@@ -14,7 +15,12 @@ const p = c.farmers;
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
-  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
+    <OnPageNav
+      label={p.onPageLabel}
+      items={[p.scope.intro, p.dataCollection.intro, p.dataPath.intro, p.provide.intro, p.getBack.intro, p.notDo.intro, p.questions.intro, { id: 'pilot', title: 'Pilot' }]}
+    />
+  </PageIntro>
 
   <Section intro={p.scope.intro} tone="sunken">
     <ProductionScope items={p.scope.units} />
