@@ -26,6 +26,7 @@ REQUIRED_FILES = [
     "docs/decisions/README.md",
     "docs/decisions/0000-template.md",
     "docs/decisions/0001-ai-development-documentation-architecture.md",
+    "docs/decisions/0003-provisional-b2-production-unit-art-direction.md",
     ".github/ISSUE_TEMPLATE/ai-development-task.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
     "docs/homepage-copy-deck-v1.md",
@@ -38,6 +39,7 @@ REQUIRED_FILES = [
     "src/components/Metric.astro",
     "src/components/MethodPipeline.astro",
     "src/components/ModelComparisonTable.astro",
+    "src/components/ProductionScope.astro",
     "playwright.config.ts",
     "tests/browser/site.spec.ts",
     "prototypes/art-directions/README.md",
@@ -63,6 +65,8 @@ TEXT_INVARIANTS = {
         "Global by architecture. Local by evidence.",
         "Domain × Market × Evidence",
         "I5 — International product evidence",
+        "B2 — Production Unit Grammar is the provisional production art direction",
+        "production unit → context / records → economics → evidence / confidence → farmer decision",
     ],
     "AGENTS.md": [
         "Authority and precedence",
@@ -97,6 +101,8 @@ TEXT_INVARIANTS = {
         'data_quality:',
         'decision_support:',
         'baseline-first',
+        'selected_production_direction: "B2 — Production Unit Grammar"',
+        'selected_grammar: "production unit → context / records → economics → evidence / confidence → farmer decision"',
     ],
     "docs/ai/IMPLEMENTATION_PLAN.md": [
         "Pre-production validation",
@@ -179,6 +185,11 @@ TEXT_INVARIANTS = {
         "model-table-wrap",
         "tabindex=\"0\"",
         "role=\"region\"",
+    ],
+    "src/components/ProductionScope.astro": [
+        "production-unit",
+        "Production unit",
+        "Current first focus",
     ],
     "tests/browser/site.spec.ts": [
         "wcag22aa",
