@@ -27,6 +27,7 @@ interface Props {
     question: string;
     decisionNote: string;
     records: string;
+    lineage: readonly { title: string; text: string }[];
   };
 }
 
@@ -93,6 +94,18 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
         </div>
         <p class="field-example__state-note">{labels.definition}</p>
       </div>
+
+      <ol class="field-example__lineage" aria-label="Production record to farmer decision">
+        {labels.lineage.map((step, i) => (
+          <li>
+            <span class="field-example__lineage-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span class="field-example__lineage-copy">
+              <strong>{step.title}</strong>
+              <small>{step.text}</small>
+            </span>
+          </li>
+        ))}
+      </ol>
 
       <div class="field-example__grid">
         <div class="field-example__panel field-example__panel--compare">
@@ -315,6 +328,46 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       max-width: var(--measure);
     }
 
+    .field-example__lineage {
+      display: grid;
+      gap: 1px;
+      background: var(--color-line);
+    }
+
+    .field-example__lineage li {
+      display: grid;
+      grid-template-columns: 2.25rem minmax(0, 1fr);
+      gap: var(--space-3);
+      align-items: start;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-surface);
+    }
+
+    .field-example__lineage-index {
+      color: var(--color-production);
+      font-family: var(--font-label);
+      font-size: var(--text-caption);
+      font-weight: var(--weight-strong);
+    }
+
+    .field-example__lineage-copy strong,
+    .field-example__lineage-copy small {
+      display: block;
+    }
+
+    .field-example__lineage-copy strong {
+      font-size: var(--text-small);
+      line-height: 1.3;
+    }
+
+    .field-example__lineage-copy small {
+      margin-block-start: var(--space-1);
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      line-height: 1.35;
+    }
+
     .field-example__grid {
       display: grid;
       gap: 1px;
@@ -517,6 +570,10 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       .field-example__state-value {
         justify-items: end;
         text-align: end;
+      }
+
+      .field-example__lineage {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .field-example__grid {
