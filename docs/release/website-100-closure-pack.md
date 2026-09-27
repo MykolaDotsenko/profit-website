@@ -10,6 +10,21 @@ Machine-readable truth: `docs/release/website-evidence-registry.json`
 
 This is the evidence-complete score, not the implementation-quality estimate.
 
+## Evidence-capture forms
+
+Use these rather than inventing ad-hoc sign-off:
+
+- [Target-farmer validation record](evidence-forms/target-farmer-validation-record.md)
+- [Market-A domain review](evidence-forms/market-a-domain-review-record.md)
+- [Company & direct-contact facts](evidence-forms/company-contact-facts-record.md)
+- [Team publication confirmation](evidence-forms/team-publication-confirmation.md)
+- [Documentary asset provenance](evidence-forms/documentary-asset-provenance-record.md)
+- [Privacy / farm-data legal approval](evidence-forms/legal-approval-record.md)
+- [Manual accessibility & reflow audit](evidence-forms/manual-accessibility-audit-record.md)
+- [Production release verification](evidence-forms/production-release-verification-record.md)
+
+Every BLOCKED criterion in the machine-readable registry points to one of these forms (or this closure pack for the all-gates criterion).
+
 ## Critical path
 
 The remaining 19 criteria are intentionally not all software tasks. They fall into five closure streams.

@@ -19,7 +19,11 @@ for (const item of registry.criteria) {
   if (!['pass', 'blocked'].includes(item.status)) fail(`${item.id}: invalid status ${item.status}.`);
   if (!Array.isArray(item.evidence)) fail(`${item.id}: evidence must be an array.`);
   if (item.status === 'pass' && item.evidence.length === 0) fail(`${item.id}: PASS requires evidence references.`);
-  if (item.status === 'blocked' && (!item.blocker?.trim() || !item.closure_action?.trim())) fail(`${item.id}: BLOCKED requires blocker and closure_action.`);
+  if (item.status === 'blocked') {
+    if (!item.blocker?.trim() || !item.closure_action?.trim()) fail(`${item.id}: BLOCKED requires blocker and closure_action.`);
+    if (!item.closure_template?.trim()) fail(`${item.id}: BLOCKED requires closure_template.`);
+    else if (!fs.existsSync(path.join(root, item.closure_template))) fail(`${item.id}: closure_template does not exist: ${item.closure_template}.`);
+  }
 }
 
 const passed = registry.criteria.filter((x) => x.status === 'pass').length;

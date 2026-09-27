@@ -17,7 +17,8 @@
       "status": "blocked",
       "evidence": [],
       "blocker": "No target-farmer 5–10 second open-recall evidence exists for the public hero.",
-      "closure_action": "Run WWW-000 with 9–12 target farmers; record open recall, material misclassifications and the surviving public message."
+      "closure_action": "Run WWW-000 with 9–12 target farmers; record open recall, material misclassifications and the surviving public message.",
+      "closure_template": "docs/release/evidence-forms/target-farmer-validation-record.md"
     },
     {
       "id": "FC-02",
@@ -53,7 +54,8 @@
         "tests/browser/site.spec.ts"
       ],
       "blocker": "CTA/form mechanics are proven, but the criterion also requires target-farmer evidence that the next action is understood.",
-      "closure_action": "Add next-action comprehension to WWW-000 and record the result."
+      "closure_action": "Add next-action comprehension to WWW-000 and record the result.",
+      "closure_template": "docs/release/evidence-forms/target-farmer-validation-record.md"
     },
     {
       "id": "PT-01",
@@ -89,7 +91,8 @@
         "docs/experiments/www-000-statistical-surrogate-v1.md"
       ],
       "blocker": "The calibrated example has statistical plausibility evidence but no Market-A human domain/economic sign-off.",
-      "closure_action": "Have a Finnish/Market-A crop-economics reviewer validate values, units, allocation interpretation and terminology; record reviewer/date/conclusion."
+      "closure_action": "Have a Finnish/Market-A crop-economics reviewer validate values, units, allocation interpretation and terminology; record reviewer/date/conclusion.",
+      "closure_template": "docs/release/evidence-forms/market-a-domain-review-record.md"
     },
     {
       "id": "PT-05",
@@ -151,7 +154,8 @@
         "docs/legal/privacy-data-policy-decisions-v1.md"
       ],
       "blocker": "The privacy notice still lacks controller/contact facts, actual processors/transfers/security facts, jurisdiction-specific rights/complaint wording and formal legal approval.",
-      "closure_action": "Resolve all bracketed facts in the privacy template, perform controller-specific legal review, publish the approved notice and link it at collection time."
+      "closure_action": "Resolve all bracketed facts in the privacy template, perform controller-specific legal review, publish the approved notice and link it at collection time.",
+      "closure_template": "docs/release/evidence-forms/legal-approval-record.md"
     },
     {
       "id": "TD-02",
@@ -161,7 +165,8 @@
         "docs/legal/privacy-data-policy-decisions-v1.md"
       ],
       "blocker": "Farm-data defaults are decided but final terms still lack actual infrastructure/processors/security responsibilities and formal contractual/legal approval.",
-      "closure_action": "Resolve infrastructure facts, complete contractual wording, obtain legal approval and make terms available before any farm records are requested."
+      "closure_action": "Resolve infrastructure facts, complete contractual wording, obtain legal approval and make terms available before any farm records are requested.",
+      "closure_template": "docs/release/evidence-forms/legal-approval-record.md"
     },
     {
       "id": "TD-03",
@@ -188,14 +193,16 @@
         "scripts/validate_claim_hygiene.mjs"
       ],
       "blocker": "A final legal/engineering claim audit cannot pass until production providers, security controls and approved policy text are known.",
-      "closure_action": "At release candidate, compare every privacy/security claim against deployed providers, implemented controls and approved legal text; record sign-off."
+      "closure_action": "At release candidate, compare every privacy/security claim against deployed providers, implemented controls and approved legal text; record sign-off.",
+      "closure_template": "docs/release/evidence-forms/legal-approval-record.md"
     },
     {
       "id": "CC-01",
       "status": "blocked",
       "evidence": [],
       "blocker": "Legal company identity and required publication details are not confirmed in the repository.",
-      "closure_action": "Provide authoritative legal entity name, registration/business ID, jurisdiction and required registered/public address/contact facts; cross-check against the official registry."
+      "closure_action": "Provide authoritative legal entity name, registration/business ID, jurisdiction and required registered/public address/contact facts; cross-check against the official registry.",
+      "closure_template": "docs/release/evidence-forms/company-contact-facts-record.md"
     },
     {
       "id": "CC-02",
@@ -204,7 +211,8 @@
         "docs/operations/pilot-intake-runbook-v1.md"
       ],
       "blocker": "Pilot replies have an owner, but a confirmed public direct-contact path for investors/partners/general enquiries is not available.",
-      "closure_action": "Configure a monitored direct-contact address/path, publish it and perform a send/receive smoke test."
+      "closure_action": "Configure a monitored direct-contact address/path, publish it and perform a send/receive smoke test.",
+      "closure_template": "docs/release/evidence-forms/company-contact-facts-record.md"
     },
     {
       "id": "CC-03",
@@ -214,7 +222,8 @@
         "src/components/TeamCapabilities.astro"
       ],
       "blocker": "Team capability copy exists, but each published member has not supplied explicit final wording/profile/photo consent.",
-      "closure_action": "Obtain one recorded confirmation per member covering name, role, expertise wording, links, photo use and permission to publish."
+      "closure_action": "Obtain one recorded confirmation per member covering name, role, expertise wording, links, photo use and permission to publish.",
+      "closure_template": "docs/release/evidence-forms/team-publication-confirmation.md"
     },
     {
       "id": "CC-04",
@@ -241,14 +250,16 @@
         "docs/experiments/art-direction-internal-red-team-v1.md"
       ],
       "blocker": "B2 has internal/red-team evidence but no completed target-farmer art-direction validation.",
-      "closure_action": "Run the canonical B2 farmer test; record comprehension, trust and dashboard/accounting/GIS misclassification patterns against kill criteria."
+      "closure_action": "Run the canonical B2 farmer test; record comprehension, trust and dashboard/accounting/GIS misclassification patterns against kill criteria.",
+      "closure_template": "docs/release/evidence-forms/target-farmer-validation-record.md"
     },
     {
       "id": "BD-02",
       "status": "blocked",
       "evidence": [],
       "blocker": "No approved real agricultural documentary asset with recorded rights/provenance exists.",
-      "closure_action": "Supply at least one real agriculture image with source, rights/permission, context and allowed use/crops; add provenance record and render it through the production image system."
+      "closure_action": "Supply at least one real agriculture image with source, rights/permission, context and allowed use/crops; add provenance record and render it through the production image system.",
+      "closure_template": "docs/release/evidence-forms/documentary-asset-provenance-record.md"
     },
     {
       "id": "BD-03",
@@ -300,7 +311,8 @@
         "src/components/PilotForm.astro"
       ],
       "blocker": "Production form delivery is intentionally disabled until privacy-notice and company-details gates are READY.",
-      "closure_action": "After privacy/company gates close, configure the production endpoint, verify server-side validation/delivery/failure behavior and perform an end-to-end delivery smoke test."
+      "closure_action": "After privacy/company gates close, configure the production endpoint, verify server-side validation/delivery/failure behavior and perform an end-to-end delivery smoke test.",
+      "closure_template": "docs/release/evidence-forms/production-release-verification-record.md"
     },
     {
       "id": "CP-04",
@@ -333,7 +345,8 @@
         "tests/browser/site.spec.ts"
       ],
       "blocker": "Automated keyboard coverage exists, but the contract explicitly requires a manual keyboard/focus and representative screen-reader sign-off.",
-      "closure_action": "Run the final release SHA using keyboard only and at least one representative screen reader; record route/interaction results and defects."
+      "closure_action": "Run the final release SHA using keyboard only and at least one representative screen reader; record route/interaction results and defects.",
+      "closure_template": "docs/release/evidence-forms/manual-accessibility-audit-record.md"
     },
     {
       "id": "AR-03",
@@ -342,7 +355,8 @@
         "tests/browser/site.spec.ts"
       ],
       "blocker": "Responsive widths are automated, but required manual 200%/400% zoom and WCAG reflow sign-off is not recorded.",
-      "closure_action": "Audit critical routes at required zoom/reflow settings on the release candidate and record pass/fail evidence."
+      "closure_action": "Audit critical routes at required zoom/reflow settings on the release candidate and record pass/fail evidence.",
+      "closure_template": "docs/release/evidence-forms/manual-accessibility-audit-record.md"
     },
     {
       "id": "AR-04",
@@ -373,7 +387,8 @@
       "status": "blocked",
       "evidence": [],
       "blocker": "No statistically meaningful production RUM exists yet; the contract keeps CWV provisional until RUM closes it.",
-      "closure_action": "Deploy the release candidate, collect sufficient mobile/desktop RUM and verify LCP ≤2.5s, INP ≤200ms and CLS ≤0.1 at p75; retain a production-equivalent lab audit before enough RUM exists."
+      "closure_action": "Deploy the release candidate, collect sufficient mobile/desktop RUM and verify LCP ≤2.5s, INP ≤200ms and CLS ≤0.1 at p75; retain a production-equivalent lab audit before enough RUM exists.",
+      "closure_template": "docs/release/evidence-forms/production-release-verification-record.md"
     },
     {
       "id": "PE-03",
@@ -390,7 +405,8 @@
         "astro.config.mjs"
       ],
       "blocker": "Final image/font network audit cannot be completed before the real documentary asset and production deployment exist.",
-      "closure_action": "After real assets are installed, audit formats/srcset/dimensions/loading priority/font payload/preloads and production waterfall."
+      "closure_action": "After real assets are installed, audit formats/srcset/dimensions/loading priority/font payload/preloads and production waterfall.",
+      "closure_template": "docs/release/evidence-forms/production-release-verification-record.md"
     },
     {
       "id": "PE-05",
@@ -407,7 +423,8 @@
         "src/config/release.ts"
       ],
       "blocker": "Nine public-release gates remain BLOCKED.",
-      "closure_action": "Close every release gate with its required evidence; do not override the gate mechanism."
+      "closure_action": "Close every release gate with its required evidence; do not override the gate mechanism.",
+      "closure_template": "docs/release/website-100-closure-pack.md"
     },
     {
       "id": "RI-02",
@@ -428,7 +445,8 @@
         "src/layouts/BaseLayout.astro"
       ],
       "blocker": "SEO/crawl infrastructure is implemented but cannot be verified on the actual production origin until the release candidate is deployed with a confirmed canonical domain.",
-      "closure_action": "Configure the canonical production SITE_URL, deploy the candidate, then verify canonical URLs, robots, sitemap, metadata and route status codes from the live origin."
+      "closure_action": "Configure the canonical production SITE_URL, deploy the candidate, then verify canonical URLs, robots, sitemap, metadata and route status codes from the live origin.",
+      "closure_template": "docs/release/evidence-forms/production-release-verification-record.md"
     },
     {
       "id": "RI-04",
@@ -437,7 +455,8 @@
         "docs/operations/pilot-intake-runbook-v1.md"
       ],
       "blocker": "Pilot ownership exists, but website availability/privacy-request monitoring and final delivery/incident ownership are not fully operationalized.",
-      "closure_action": "Name owners for site availability, privacy requests and critical incidents; configure monitoring/notifications and perform delivery/alert smoke tests."
+      "closure_action": "Name owners for site availability, privacy requests and critical incidents; configure monitoring/notifications and perform delivery/alert smoke tests.",
+      "closure_template": "docs/release/evidence-forms/production-release-verification-record.md"
     },
     {
       "id": "RI-05",
