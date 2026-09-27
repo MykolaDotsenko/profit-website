@@ -29,6 +29,7 @@ interface Props {
     decision: string;
     question: string;
     records: string;
+    scopeNote: string;
   };
   image: { caption: string; requirement: string };
 }
@@ -101,29 +102,27 @@ const priceValue = {
 
       <aside class="hero__rail" aria-label="Current production context">
         <div class="hero__rail-top">
-          <p class="operational-label">Current production unit</p>
+          <p class="operational-label">{t.production.currentUnit}</p>
           <p class="hero__unit">{fieldLabel(focus, t, locale.intl)}</p>
           <p class="hero__unit-detail">{fieldParts(focus, t, locale.intl).detail}</p>
         </div>
 
         <dl class="hero__rail-facts">
           <div>
-            <dt>Product status</dt>
-            <dd>In development</dd>
+            <dt>{t.production.productStatus}</dt>
+            <dd>{t.production.inDevelopment}</dd>
           </div>
           <div>
-            <dt>Evidence</dt>
+            <dt>{t.production.evidenceLabel}</dt>
             <dd>Hypothetical</dd>
           </div>
           <div>
-            <dt>Confidence</dt>
+            <dt>{t.evidence.confidenceLabel}</dt>
             <dd>Not assessed</dd>
           </div>
         </dl>
 
-        <p class="hero__rail-note">
-          Field Profitability is the current first product focus. The production-unit grammar is designed to transfer beyond crops without forcing every farm into a per-hectare model.
-        </p>
+        <p class="hero__rail-note">{proofLabels.scopeNote}</p>
       </aside>
 
       <div class="hero__image">
