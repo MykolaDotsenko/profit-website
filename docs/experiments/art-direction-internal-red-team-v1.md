@@ -389,3 +389,42 @@ Current internal learning:
 
 Do not merge these strengths into one hybrid before the first controlled comparative test. Otherwise the experiment loses its independent variables.
 
+
+
+---
+
+# Production selection after user instruction
+
+Date: 2026-09-27
+
+The user explicitly requested that PROFIT choose the strongest current direction and implement it on the site.
+
+Decision:
+
+**B2 — Production Unit Grammar is selected as the provisional production direction.**
+
+This supersedes the earlier internal "no winner" implementation state, but does not convert the internal red-team into farmer evidence.
+
+Why B2:
+- strongest production → economics mechanism;
+- strongest cross-domain master-brand transfer after removing field geometry;
+- lower generic editorial/consultancy risk than A2;
+- lower ERP/accounting/dashboard risk than C2;
+- strongest anti-AI-sameness potential because the grammar comes from PROFIT's production/economic model.
+
+Production implementation now uses:
+- production-unit rails;
+- operational labels;
+- explicit economic state;
+- visible evidence/confidence;
+- domain-neutral production-unit transfer;
+- documentary asset placeholders until D8 is satisfied;
+- square/ruled operational composition rather than bento/dashboard styling.
+
+Decision record:
+`docs/decisions/0003-provisional-b2-production-unit-art-direction.md`
+
+Validation status:
+**not farmer-validated.**
+
+A2 and C2 remain documented challengers and should be used when B2 reaches a reconsider gate.
