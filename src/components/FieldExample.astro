@@ -162,19 +162,23 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
     }
     .field-example__grid {
       display: grid;
-      gap: var(--space-4);
+      gap: 1px;
+      border: 1px solid var(--color-line-strong);
+      background: var(--color-line-strong);
     }
     @container (min-width: 56rem) {
       .field-example__grid {
-        grid-template-columns: 7fr 5fr;
-        align-items: start;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        align-items: stretch;
       }
     }
     .field-example__panel {
       padding: clamp(1rem, 0.7rem + 1vw, 1.5rem);
       background: var(--color-surface);
-      border: 1px solid var(--color-line);
       min-width: 0;
+    }
+    .field-example__panel:nth-child(2) {
+      background: var(--color-production-surface);
     }
     table {
       width: 100%;
@@ -182,8 +186,11 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
     caption {
       caption-side: top;
       text-align: start;
+      font-family: var(--font-label);
       font-weight: var(--weight-strong);
-      font-size: var(--text-small);
+      font-size: var(--text-label);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
       padding-block-end: var(--space-3);
     }
     .snapshot thead th {
@@ -286,8 +293,11 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       color: var(--color-text-secondary);
     }
     .field-example__decision {
-      padding: var(--space-4) var(--space-5);
-      border-inline-start: 3px solid var(--color-line-strong);
+      display: grid;
+      gap: var(--space-2);
+      padding: var(--space-5);
+      border: 1px solid var(--color-line-strong);
+      border-inline-start: 0.4rem solid var(--color-production);
       background: var(--color-surface);
     }
     .field-example__question {
