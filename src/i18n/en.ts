@@ -67,6 +67,7 @@ export const en: UIStrings = {
     currentExample: 'Current example',
     economicState: 'Illustrative economic state',
     productionContext: 'Current production context',
+    brandFlow: 'Production → Economics → Evidence → Decision',
   },
   evidence: {
     exampleLabel: 'Hypothetical example',
