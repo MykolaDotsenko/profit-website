@@ -13,7 +13,15 @@ const p = content(Astro.currentLocale).company;
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
-  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
+    <nav class="on-page" aria-label={p.onPageLabel}>
+      <ul role="list">
+        {[p.building.intro, p.scope.intro, p.dataStrategy.intro, p.forecasting.intro, p.decisionSupport.intro, p.stillProven.intro].map((s) => (
+          <li><a href={`#${s.id}`}>{s.title}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </PageIntro>
 
   <Section intro={p.building.intro} layout="split">
     <div class="prose">{p.building.text.map((para) => <p>{para}</p>)}</div>
@@ -91,6 +99,13 @@ const p = content(Astro.currentLocale).company;
 </BaseLayout>
 
 <style>
+  .on-page ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    margin-block-start: var(--space-3);
+    font-size: var(--text-small);
+  }
   .evidence-note,
   .source-note,
   .source-list,
