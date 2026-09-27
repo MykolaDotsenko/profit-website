@@ -1098,7 +1098,9 @@ test.describe('English default + Ukrainian opt-in localization', () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/uk/company/');
     await expect(page.locator('main')).toContainText('Хто будує PROFIT');
-    const overflow = await page.locator('body').evaluate((el) => el.scrollWidth - el.clientWidth);
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    );
     expect(overflow).toBeLessThanOrEqual(1);
   });
 });
@@ -1119,30 +1121,10 @@ test.describe('Finnish opt-in localization', () => {
       const response = await page.goto(`/fi${route}`);
       expect(response?.status(), route).toBe(200);
       await expect(page.locator('html'), route).toHaveAttribute('lang', 'fi');
-      const overflow = await page.locator('body').evaluate((el) => el.scrollWidth - el.clientWidth);
-      if (overflow > 1) {
-        const offenders = await page.evaluate(() => {
-          const viewport = document.documentElement.clientWidth;
-          return Array.from(document.querySelectorAll('body *'))
-            .map((el) => {
-              const rect = el.getBoundingClientRect();
-              return {
-                tag: el.tagName.toLowerCase(),
-                className: typeof el.className === 'string' ? el.className : '',
-                text: (el.textContent ?? '').trim().replace(/\s+/g, ' ').slice(0, 120),
-                left: Math.round(rect.left),
-                right: Math.round(rect.right),
-                width: Math.round(rect.width),
-                scrollWidth: (el as HTMLElement).scrollWidth ?? 0,
-                clientWidth: (el as HTMLElement).clientWidth ?? 0,
-              };
-            })
-            .filter((item) => item.right > viewport + 1 || item.left < -1)
-            .sort((a, b) => b.right - a.right)
-            .slice(0, 12);
-        });
-        throw new Error(`${route} horizontal overflow ${overflow}px; offenders: ${JSON.stringify(offenders)}`);
-      }
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      expect(overflow, route).toBeLessThanOrEqual(1);
     }
   });
 
