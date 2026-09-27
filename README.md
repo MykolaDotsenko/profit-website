@@ -86,12 +86,13 @@ These files are an evidence library. They support decisions but do not silently 
 - [Release Evidence Forms](docs/release/evidence-forms/) — standardized capture records for farmer validation, domain review, company/contact facts, team consent, asset rights, legal approval, accessibility and production release verification.
 - [PROFIT VEV Standard v1](docs/methodology/vev-standard-v1.md) — evidence/attribution standard for Hypothetical → Modelled → Observed → Attributed → Verified.
 - [Pilot Intake Runbook v1](docs/operations/pilot-intake-runbook-v1.md) — confirmed owner, email reply flow, two-business-day target and first-contact data boundary.
+- [Vercel Hosting & Release-Candidate Runbook v1](docs/operations/vercel-hosting-runbook-v1.md) — preview/production deployment contract and one-time account-link requirements.
 - [Privacy & Farm-Data Policy Decisions v1](docs/legal/privacy-data-policy-decisions-v1.md) — conservative internal defaults for enquiry purpose/basis/retention and farm-data secondary-use/deletion/export rules; final legal approval still required.
 - [Privacy & Farm-Data Trust Pack](docs/legal/privacy-data-trust-pack.md) — production-readiness draft separating current contact-data behavior from the legal/privacy and farm-data decisions required before pilot activation.
 
 ## Status
 
-Positioning and farmer validation remain open. **B2 — Production Unit Grammar** is now the provisional production art direction and is implemented across the coded site ([ADR 0003](docs/decisions/0003-provisional-b2-production-unit-art-direction.md)). A real Finnish documentary wheat-field image with recorded CC BY-SA 4.0 provenance is now approved for the company page. B2 is still not a farmer-validated winner. The site remains pre-launch and non-indexable while release gates are open.
+Positioning and farmer validation remain open. **B2 — Production Unit Grammar** is now the provisional production art direction and is implemented across the coded site ([ADR 0003](docs/decisions/0003-provisional-b2-production-unit-art-direction.md)). A real Finnish documentary wheat-field image with recorded CC BY-SA 4.0 provenance is now approved for the company page. B2 is still not a farmer-validated winner. The site remains pre-launch and non-indexable while release gates are open. Vercel is now the accepted reversible static-hosting path (ADR 0004); the repository deployment workflow is ready, but the Vercel account still needs a one-time PROFIT project/link + GitHub deployment secrets before a live preview can be created.
 
 ## Website (Build Pass 01)
 
@@ -106,6 +107,8 @@ npm ci
 npm run dev       # http://localhost:4321
 npm run verify    # design + claim hygiene + scorecard/evidence contracts + astro check + domain/release tests + production build
 npm run preview   # serve the production build
+
+# Deployment is manual and gated; see docs/operations/vercel-hosting-runbook-v1.md
 
 # Browser QA is pinned and run by GitHub Actions (Playwright 1.63.0 + Axe 4.13.0).
 ```
