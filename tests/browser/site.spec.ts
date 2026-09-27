@@ -314,10 +314,38 @@ test.describe('B2 mobile hierarchy', () => {
     expect(order[1].top).toBeLessThan(order[2].top);
     expect(order[2].top).toBeLessThan(order[3].top);
 
-    await expect(page.locator('.hero__copy')).toContainText('See operating profit by field');
+    await expect(page.locator('.hero__copy')).toContainText('See the economics before you decide.');
+    await expect(page.locator('.hero__copy')).toContainText('It starts with Field Profitability');
+    await expect(page.locator('.hero__copy')).toContainText('the decision stays with the farmer');
     await expect(page.locator('.hero__state')).toContainText('Operating profit');
     await expect(page.locator('.hero__actions')).toContainText('Join the pilot');
     await expect(page.locator('.hero__rail')).toContainText('Current production unit');
+  });
+});
+
+test.describe('H4 message integrity', () => {
+  test('default homepage keeps H4 explicitly hypothetical and product-truth bounded', async ({ page }) => {
+    await page.goto('/');
+    const hero = page.locator('.hero');
+    await expect(hero).toHaveAttribute('data-hero-variant', 'h4');
+    await expect(hero).toHaveAttribute('data-message-state', 'hypothesis');
+    await expect(hero).toContainText('Agricultural Decision Intelligence');
+    await expect(hero).toContainText('See the economics before you decide.');
+    await expect(hero).toContainText('Field Profitability');
+    await expect(hero).toContainText('In development');
+    await expect(hero).toContainText('Hypothetical');
+    await expect(hero).toContainText('Not assessed');
+    await expect(hero).not.toContainText('more profitable decisions');
+  });
+
+  test('30-second layer states the farmer problem and outcome without a profit promise', async ({ page }) => {
+    await page.goto('/');
+    const summary = page.locator('.tldr');
+    await expect(summary).toContainText('The problem');
+    await expect(summary).toContainText('The economic meaning behind the next decision can be hard to see.');
+    await expect(summary).toContainText('The goal');
+    await expect(summary).toContainText('Less guesswork around the economics of a decision');
+    await expect(summary).toContainText('farmer still in control');
   });
 });
 
