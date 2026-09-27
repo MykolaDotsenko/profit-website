@@ -360,9 +360,4 @@ export const verificationChain: TextItem[] = [
   { title: 'Confidence', text: 'How certain the assessment is, given the data behind it.' },
 ];
 
-export const evidenceReview: ContentGap = {
-  owner: 'owner',
-  text: 'The plain-language definitions of each evidence state are a draft. Confirm them against the VEV methodology.',
-};
-
 export const actors = { you: 'You', profit: 'PROFIT', both: 'You and PROFIT' } as const;
