@@ -97,7 +97,7 @@ const e = p.evidence;
       <p class="break-even-line">
         <span>{p.stressCheck.breakEvenLead}</span>
         <Metric value={{ metric: 'break_even_price', amount: fieldSensitivityBreakEven.pricePerT, currency: fieldSensitivityCurrency, perMass: 't' }} />
-        <span>or</span>
+        <span>{t.common.or}</span>
         <Metric value={{ metric: 'break_even_yield', amount: fieldSensitivityBreakEven.yieldPerHa, mass: 't', perArea: 'ha' }} />
         <span>.</span>
       </p>
@@ -118,7 +118,7 @@ const e = p.evidence;
   </Section>
 
   <Section intro={p.dataLifecycle.intro} tone="sunken">
-    <MethodPipeline steps={p.dataLifecycle.steps} ariaLabel="PROFIT data and evidence lifecycle" />
+    <MethodPipeline steps={p.dataLifecycle.steps} ariaLabel={t.common.dataLifecycle} />
     <p class="method-note">{p.dataLifecycle.note}</p>
   </Section>
 
@@ -136,7 +136,7 @@ const e = p.evidence;
   </Section>
 
   <Section intro={p.decisionSupport.intro} tone="inverse">
-    <MethodPipeline steps={p.decisionSupport.steps} ariaLabel="PROFIT decision-support method" />
+    <MethodPipeline steps={p.decisionSupport.steps} ariaLabel={t.common.decisionSupportMethod} />
     <div class="method-meta">
       <p>{p.decisionSupport.research}</p>
       <ul class="source-list" role="list">
@@ -174,7 +174,7 @@ const e = p.evidence;
       </section>
 
       <div class="privacy-readiness__sources">
-        <p class="eyebrow">Primary legal references</p>
+        <p class="eyebrow">{t.common.primaryLegalReferences}</p>
         <ul class="source-list" role="list">
           {p.privacy.sources.map((source) => (
             <li><a class="text-link" href={source.href}>{source.label}</a></li>
