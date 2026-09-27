@@ -1,10 +1,8 @@
 /**
  * Locale registry. English is the development content language, not a market decision.
  *
- * To add a locale (e.g. Finnish): add it to astro.config.mjs `i18n.locales`, add an entry here,
- * add src/i18n/<code>.ts and src/content/<code>/, then add routes under src/pages/<code>/.
- * Translate every H1/H2/H3 hero candidate with the same care, and have a native speaker who
- * knows farm vocabulary back-translate economic terms (protocol D5/D6).
+ * English remains the default unprefixed locale. Ukrainian is an opt-in localized route set under /uk/.
+ * New locales must preserve product/economic/evidence semantics and receive terminology review.
  */
 export interface LocaleInfo {
   /** Route/content key. */
@@ -20,6 +18,7 @@ export interface LocaleInfo {
 
 export const LOCALES = {
   en: { code: 'en', lang: 'en', dir: 'ltr', intl: 'en-GB', name: 'English' },
+  uk: { code: 'uk', lang: 'uk', dir: 'ltr', intl: 'uk-UA', name: 'Українська' },
 } as const satisfies Record<string, LocaleInfo>;
 
 export type Locale = keyof typeof LOCALES;
@@ -34,4 +33,23 @@ export function localePath(locale: string | undefined, path: string): string {
   const info = localeInfo(locale);
   if (info.code === DEFAULT_LOCALE) return path;
   return `/${info.code}${path}`;
+}
+
+/** Remove the current locale prefix so the equivalent route can be linked in another locale. */
+export function unprefixLocalePath(locale: string | undefined, path: string): string {
+  const info = localeInfo(locale);
+  if (info.code === DEFAULT_LOCALE) return path || '/';
+  const prefix = `/${info.code}`;
+  if (path === prefix || path === `${prefix}/`) return '/';
+  return path.startsWith(`${prefix}/`) ? path.slice(prefix.length) : path;
+}
+
+/** Equivalent route in another locale; used by the language switcher and hreflang links. */
+export function localizedEquivalentPath(
+  targetLocale: Locale,
+  currentLocale: string | undefined,
+  currentPath: string,
+): string {
+  const basePath = unprefixLocalePath(currentLocale, currentPath);
+  return localePath(targetLocale, basePath);
 }
