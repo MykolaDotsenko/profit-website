@@ -5,6 +5,7 @@ import CtaBand from '../components/CtaBand.astro';
 import ItemList from '../components/ItemList.astro';
 import MethodPipeline from '../components/MethodPipeline.astro';
 import ModelComparisonTable from '../components/ModelComparisonTable.astro';
+import OnPageNav from '../components/OnPageNav.astro';
 import PageIntro from '../components/PageIntro.astro';
 import ProductionScope from '../components/ProductionScope.astro';
 import Section from '../components/Section.astro';
@@ -15,13 +16,10 @@ const p = content(Astro.currentLocale).company;
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
-    <nav class="on-page" aria-label={p.onPageLabel}>
-      <ul role="list">
-        {[p.building.intro, p.scope.intro, p.dataStrategy.intro, p.forecasting.intro, p.decisionSupport.intro, p.stillProven.intro].map((s) => (
-          <li><a href={`#${s.id}`}>{s.title}</a></li>
-        ))}
-      </ul>
-    </nav>
+    <OnPageNav
+      label={p.onPageLabel}
+      items={[p.building.intro, p.scope.intro, p.dataStrategy.intro, p.forecasting.intro, p.decisionSupport.intro, p.stillProven.intro]}
+    />
   </PageIntro>
 
   <Section intro={p.building.intro} layout="split">
@@ -100,13 +98,6 @@ const p = content(Astro.currentLocale).company;
 </BaseLayout>
 
 <style>
-  .on-page ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-5);
-    margin-block-start: var(--space-3);
-    font-size: var(--text-small);
-  }
   .evidence-note,
   .source-note,
   .source-list,
