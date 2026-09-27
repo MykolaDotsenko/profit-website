@@ -74,7 +74,7 @@ international_validation:
     rule: "Display strings such as €221/ha or local terms such as margin do not define the underlying economic metric."
   www_000_gates:
     D5: "Market Cohort Specification: define country, region, working language, crop/production context, farm-size band, decision-maker role, digital maturity and economic context; one coherent Market A cohort."
-    D6: "Market-Specific Economic Scenario Validation after D5: domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology; local values are not global truths."
+    D6: "Market-Specific Economic Scenario Validation after D5: domain expert validates crop, area, yield, price, currency, costs, operating profit, units and terminology; local values are not global truths. The statistical surrogate reduces placeholder-plausibility risk but does not close D6 or the public-release human-review blocker."
     D7: "Research Data / Consent Architecture: global principles = voluntary participation, purpose limitation, data minimisation, anonymised/pseudonymised handling, no personal data in public repo, explicit consent for recording; jurisdiction-specific overlay OPEN until Market A."
     D8: "Controlled Documentary Asset: one identical approved documentary crop image with source/rights/provenance; Market A test asset only, not global hero/master-brand identity; no synthetic documentary substitution."
   market_A:
