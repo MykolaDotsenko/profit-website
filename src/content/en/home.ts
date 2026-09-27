@@ -57,8 +57,8 @@ export const home = {
     title: 'PROFIT in 30 seconds',
     items: [
       { title: 'For', text: 'Farmers and farm businesses making production and cost decisions across crops, horticulture and livestock.' },
-      { title: 'The problem', text: 'Production, sales and cost records are fragmented. The economics behind a decision are often hard to see before acting.' },
-      { title: 'What PROFIT does', text: 'Turns recorded farm reality into explicit economic meaning — without taking the decision away from the farmer.' },
+      { title: 'The problem', text: 'Production, sales and cost records are fragmented. The economic meaning behind the next decision can be hard to see.' },
+      { title: 'The goal', text: 'Less guesswork around the economics of a decision — with the farmer still in control.' },
       { title: 'First concrete focus', text: 'Field Profitability: operating economics, field by field. In development.' },
       { title: 'The standard', text: 'Hypothetical is labelled hypothetical. Verified is reserved for value that meets the evidence and attribution standard.' },
       { title: 'Next step', text: 'Join the pilot: five details, no farm records, then a conversation.' },
