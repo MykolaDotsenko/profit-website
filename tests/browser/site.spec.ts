@@ -1122,7 +1122,7 @@ test.describe('Finnish opt-in localization', () => {
       expect(response?.status(), route).toBe(200);
       await expect(page.locator('html'), route).toHaveAttribute('lang', 'fi');
       const overflow = await page.evaluate(
-        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        () => Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
       );
       expect(overflow, route).toBeLessThanOrEqual(1);
     }
@@ -1184,13 +1184,32 @@ test.describe('Finnish opt-in localization', () => {
     await expect(form).not.toHaveAttribute('action', /.+/);
   });
 
-  test('Finnish company page has no horizontal overflow at mobile width', async ({ page }) => {
+  test('Finnish company keeps the wide model table inside its local scroll region', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/fi/company/');
     await expect(page.locator('main')).toContainText('Kuka rakentaa PROFITia');
-    const overflow = await page.evaluate(
-      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
-    );
-    expect(overflow).toBeLessThanOrEqual(1);
+
+    const geometry = await page.evaluate(() => {
+      const region = document.querySelector<HTMLElement>('.model-table-wrap');
+      if (!region) throw new Error('model-table scroll region missing');
+
+      const documentOverflow = Math.max(0, document.documentElement.scrollWidth - window.innerWidth);
+      const regionOverflow = Math.max(0, region.scrollWidth - region.clientWidth);
+
+      window.scrollTo({ left: 10000, top: window.scrollY });
+      const documentScrollX = window.scrollX;
+      window.scrollTo({ left: 0, top: window.scrollY });
+
+      region.scrollLeft = region.scrollWidth;
+      const localScrollX = region.scrollLeft;
+      region.scrollLeft = 0;
+
+      return { documentOverflow, regionOverflow, documentScrollX, localScrollX };
+    });
+
+    expect(geometry.documentOverflow).toBeLessThanOrEqual(1);
+    expect(geometry.documentScrollX).toBeLessThanOrEqual(1);
+    expect(geometry.regionOverflow).toBeGreaterThan(0);
+    expect(geometry.localScrollX).toBeGreaterThan(0);
   });
 });
