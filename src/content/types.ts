@@ -52,6 +52,15 @@ export interface TextItem {
   text: string;
 }
 
+/** Draft team proof. Publication still requires individual confirmation and consent. */
+export interface TeamMember {
+  name: string;
+  role: string;
+  strength: string;
+  contribution: string;
+  links: { label: string; href: string }[];
+}
+
 export interface Question {
   id: string;
   question: string;
