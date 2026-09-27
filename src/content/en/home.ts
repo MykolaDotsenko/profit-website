@@ -164,11 +164,15 @@ export const home = {
       },
     ] satisfies Step[],
     note: 'An outcome on its own does not prove that a decision caused it.',
-    operatingPrinciplesTitle: 'Two rules behind the system',
+    operatingPrinciplesTitle: 'Three rules behind the system',
     operatingPrinciples: [
       {
         title: 'Fit the farm',
         text: 'Start from the records a farm already has. Add automation where it genuinely reduces work; do not assume new machinery, perfect connectivity or constant manual entry.',
+      },
+      {
+        title: 'Quality before intelligence',
+        text: 'Check completeness, consistency, duplicates, anomalies, freshness, provenance and representativeness before trusting a model or benchmark.',
       },
       {
         title: 'Keep uncertainty visible',
@@ -177,7 +181,7 @@ export const home = {
     ] satisfies TextItem[],
     operatingPrinciplesNote:
       'These are PROFIT development principles, not a claim that the current Field Profitability build already includes telemetry, forecasting or optimisation.',
-    operatingPrinciplesLink: { label: 'How PROFIT approaches data and forecasting', href: '/company/#data-strategy' },
+    operatingPrinciplesLink: { label: 'How PROFIT handles data, models and decisions', href: '/trust/#data-lifecycle' },
   },
   value: {
     intro: {
