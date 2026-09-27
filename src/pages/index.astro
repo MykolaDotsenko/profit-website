@@ -50,7 +50,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Hero>
 
   <!-- 2 · Master-brand production scope: direction, not a claim of shipped modules. -->
-  <Section intro={h.scope.intro} tone="sunken">
+  <Section intro={h.scope.intro} tone="sunken" spacing="compact">
     <ProductionScope items={h.scope.units} />
     <aside class="scope-proof" aria-label="EU agriculture context">
       <p class="scope-proof__value num">{h.scope.contextStat.value}</p>
@@ -64,12 +64,12 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Section>
 
   <!-- 3 · Product / economic proof -->
-  <Section intro={h.example.intro}>
+  <Section intro={h.example.intro} spacing="spacious">
     <FieldExample example={fieldSeasonExample} labels={h.example.labels} />
   </Section>
 
   <!-- 4 · Farmer problem -->
-  <Section intro={h.problem.intro}>
+  <Section intro={h.problem.intro} spacing="standard">
     <ol class="farmer-questions" role="list">
       {
         h.problem.questions.map((q, i) => (
@@ -106,7 +106,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Section>
 
   <!-- 5 · How PROFIT works -->
-  <Section intro={h.how.intro}>
+  <Section intro={h.how.intro} spacing="compact">
     <StepSequence steps={h.how.steps} actors={s.actors} moduleLabel={h.how.moduleLabel} />
     <p class="how-note">{h.how.note}</p>
 
@@ -121,7 +121,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Section>
 
   <!-- 6 · Economic value / evidence logic -->
-  <Section intro={h.value.intro} tone="inverse">
+  <Section intro={h.value.intro} tone="inverse" spacing="spacious">
     <div class="value">
       <div>
         <h3 class="value__title">{h.value.ladderTitle}</h3>
@@ -144,7 +144,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Section>
 
   <!-- 7 · Field Profitability, the first wedge -->
-  <Section intro={h.wedge.intro} layout="split">
+  <Section intro={h.wedge.intro} layout="split" spacing="compact">
     <p slot="head" class="status-chip">{h.wedge.status}</p>
     <div class="wedge">
       <div>
@@ -167,7 +167,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Section>
 
   <!-- 8 · Trust / farmer control -->
-  <Section intro={h.control.intro} tone="sunken">
+  <Section intro={h.control.intro} tone="sunken" spacing="standard">
     <ItemList items={h.control.principles} columns={2} marker="number" />
     <div class="control-questions">
       <h3 class="control-questions__title">{h.control.questionsTitle}</h3>
@@ -185,7 +185,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
   </Section>
 
   <!-- 9 · Company -->
-  <Section intro={h.company.intro} layout="split">
+  <Section intro={h.company.intro} layout="split" spacing="compact">
     <div class="company stack">
       {h.company.text.map((p) => <p class="company__text">{p}</p>)}
       <h3 class="company__subtitle">{h.company.stillProvenTitle}</h3>
