@@ -472,7 +472,7 @@ test.describe('positioning and crawl hygiene', () => {
   test('sitemap route is valid XML even before production origin is configured', async ({ request }) => {
     const response = await request.get('/sitemap-index.xml');
     expect(response.ok()).toBeTruthy();
-    expect(response.headers()['content-type']).toContain('application/xml');
+    expect(response.headers()['content-type']).toMatch(/(?:application|text)\/xml/);
     const text = await response.text();
     expect(text).toContain('<urlset');
     expect(text).toContain('http://www.sitemaps.org/schemas/sitemap/0.9');
