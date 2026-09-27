@@ -1188,7 +1188,9 @@ test.describe('Finnish opt-in localization', () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/fi/company/');
     await expect(page.locator('main')).toContainText('Kuka rakentaa PROFITia');
-    const overflow = await page.locator('body').evaluate((el) => el.scrollWidth - el.clientWidth);
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    );
     expect(overflow).toBeLessThanOrEqual(1);
   });
 });
