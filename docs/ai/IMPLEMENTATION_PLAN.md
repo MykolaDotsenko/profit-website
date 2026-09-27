@@ -119,6 +119,7 @@ Status:
 - C/C2 remain the economic-state challenger.
 - Decision record: `docs/decisions/0003-provisional-b2-production-unit-art-direction.md`.
 - Current production grammar: production unit → context/records → economics → evidence/confidence → farmer decision.
+- 2026-09-27 brochure refinement: production-scope surfaces now make the domain-variable production unit and the invariant PROFIT discipline explicit; split rails remain visually structural but no longer use sticky app/documentation behavior; deeper record lists can choose grid or row/ledger composition by meaning.
 - Field geometry is not the master-brand invariant.
 - D8 documentary asset remains unavailable, so the site retains an explicit provenance-safe asset placeholder.
 - This selection does **not** satisfy WWW-002 farmer validation; it is the strongest current implementation decision while direct farmer access is unavailable.
