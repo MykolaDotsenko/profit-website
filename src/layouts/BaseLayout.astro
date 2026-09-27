@@ -32,7 +32,12 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : nu
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={t.brand} />
     <meta property="og:locale" content={locale.intl.replace('-', '_')} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={metaDescription} />
     <!-- No brand symbol exists yet (open hypothesis). An empty icon avoids a failed favicon request. -->
     <link rel="icon" href="data:," />
   </head>
