@@ -230,6 +230,32 @@ test.describe('selected B2 production-unit grammar', () => {
     await expect(hero).not.toContainText('live telemetry');
   });
 
+  test('B2 proof stays a production-unit record rather than a generic dashboard', async ({ page }) => {
+    await page.goto('/');
+
+    const example = page.locator('#example');
+    await expect(example.locator('.field-example__rail')).toBeVisible();
+    await expect(example.locator('.field-example__rail')).toContainText('Current production unit');
+    await expect(example.locator('.field-example__rail')).toContainText('Field Profitability');
+    await expect(example.locator('.field-example__rail')).toContainText('Current example');
+    await expect(example.locator('.field-example__decision')).toContainText('Decision question');
+    await expect(example.locator('.field-example__grid')).toBeVisible();
+
+    await expect(example).not.toContainText('Dashboard');
+    await expect(example).not.toContainText('AI recommendation');
+  });
+
+  test('documentary placeholder is explicit and does not simulate farm evidence', async ({ page }) => {
+    await page.goto('/');
+
+    const slot = page.locator('.hero__image .image-slot');
+    await expect(slot).toBeVisible();
+    await expect(slot).toContainText('Image pending');
+    await expect(slot).toContainText('Documentary agriculture');
+    await expect(slot).toContainText('Needs an approved photograph with source, rights and provenance.');
+    await expect(slot.locator('img')).toHaveCount(0);
+  });
+
   test('B2 production framing carries across supporting company routes', async ({ page }) => {
     for (const route of ['/farmers/', '/product/', '/trust/', '/company/', '/investors/', '/contact/']) {
       await page.goto(route);
