@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import FieldExample from '../components/FieldExample.astro';
 import ItemList from '../components/ItemList.astro';
+import OnPageNav from '../components/OnPageNav.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import { content } from '../content';
@@ -13,7 +14,12 @@ const p = c.product;
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
-  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} status={p.intro.status} />
+  <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} status={p.intro.status}>
+    <OnPageNav
+      label={p.onPageLabel}
+      items={[p.example.intro, p.definitions.intro, p.inputs.intro, p.calculation.intro, p.methodBoundary.intro, p.exclusions.intro]}
+    />
+  </PageIntro>
 
   <Section intro={p.example.intro} tone="sunken">
     <FieldExample example={fieldSeasonExample} labels={p.example.labels} />
