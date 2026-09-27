@@ -481,15 +481,20 @@ test.describe('privacy and farm-data readiness', () => {
     await expect(privacy).toContainText('Preview submission is off');
     await expect(privacy).toContainText('No analytics or cookie layer in the current code');
 
-    await expect(privacy).toContainText('What the final privacy notice still has to specify');
-    await expect(privacy).toContainText('Purpose + legal basis');
-    await expect(privacy).toContainText('Retention');
+    await expect(privacy).toContainText('Privacy decisions made — and facts still needed');
+    await expect(privacy).toContainText('Purpose + proposed legal basis');
+    await expect(privacy).toContainText('legitimate interests');
+    await expect(privacy).toContainText('12 months after the last substantive contact');
+    await expect(privacy).toContainText('Retention target');
     await expect(privacy).toContainText('Recipients, processors + transfers');
     await expect(privacy).toContainText('Rights + complaint path');
 
     await expect(privacy).toContainText('Before any farm records are shared');
     await expect(privacy).toContainText('Secondary use + model training');
+    await expect(privacy).toContainText('does not permit cross-customer benchmarking, model training or unrelated secondary use');
     await expect(privacy).toContainText('Retention + deletion + export');
+    await expect(privacy).toContainText('within 30 days');
+    await expect(privacy).toContainText('within 90 days');
     await expect(privacy).toContainText('Draft for review');
     await expect(privacy.getByRole('link', { name: /European Commission · Principles of the GDPR/ })).toBeVisible();
   });

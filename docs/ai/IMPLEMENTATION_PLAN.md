@@ -640,6 +640,23 @@ Release effect:
 - `pilot-process` may be READY with `docs/operations/pilot-intake-runbook-v1.md` as evidence;
 - production form delivery remains blocked by privacy/company gates and is not implied by this decision.
 
+### PR-17B — Privacy and farm-data policy decisions
+
+Status: **implemented as internal policy defaults; legal release gates intentionally remain blocked.**
+
+Decisions:
+- pilot-enquiry purpose: reply + assess current pilot fit;
+- proposed GDPR basis: legitimate interests, subject to controller-specific approval/balancing;
+- no marketing from a pilot enquiry;
+- non-participant enquiry retention target: 12 months after last substantive contact;
+- no automated significant decision-making in the contact flow;
+- no secondary farm-data use, cross-customer benchmarking or model training by default;
+- active deletion target 30 days and backup-expiry target 90 days after valid end/deletion trigger;
+- final terms must match real infrastructure.
+
+Remaining external facts:
+controller/contact, processors/transfers, implemented security, rights/complaint path and formal legal approval.
+
 ### WWW-501 — Accessibility gate
 
 Target:

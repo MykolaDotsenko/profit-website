@@ -28,6 +28,7 @@ company_context:
   evidence_priority: "Customer-level evidence outranks global, leadership, scale, moat or valuation ambition."
   vev_standard: "docs/methodology/vev-standard-v1.md — approved internal v1: Verified requires attributed incremental effect, explicit counterfactual, reproducible economics, documented evidence, High/Medium assessed confidence and recorded review; verified effect may be positive, zero or negative."
   pilot_process: "docs/operations/pilot-intake-runbook-v1.md — primary owner Mykola Dotsenko; reply by email; target within two business days; fit/context first; no farm records before purpose/terms."
+  privacy_policy: "docs/legal/privacy-data-policy-decisions-v1.md — proposed legitimate-interest basis for minimal inbound enquiry, 12-month non-participant retention target, no marketing from enquiry, no secondary farm-data use/model training by default, 30-day active deletion / 90-day backup-expiry targets; controller/provider facts + formal legal approval remain external blockers."
   scope_boundary:
     master_brand: "PROFIT"
     current_wedge: "Field Profitability"
