@@ -23,6 +23,7 @@ export interface ReleaseGate {
     | 'team-proof'
     | 'documentary-image'
     | 'example-plausibility'
+    | 'example-domain-review'
     | 'evidence-definitions';
   area: ReleaseGateArea;
   owner: ReleaseGateOwner;
@@ -107,6 +108,14 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     reason:
       'Illustrative field economics are statistics-calibrated against completed Finnish Luke 2025 yield/producer-price references and a 2024 EconomyDoctor cereal-farm cost scale. This resolves placeholder plausibility only; it is not farmer validation.',
     evidence: 'docs/experiments/www-000-statistical-surrogate-v1.md',
+  },
+  {
+    id: 'example-domain-review',
+    area: 'trust',
+    owner: 'domain',
+    state: 'blocked',
+    reason:
+      'WWW-000 D6 remains open: a human Market-A domain/economic reviewer must validate the calibrated scenario values, units and local terminology before public release.',
   },
   {
     id: 'evidence-definitions',
