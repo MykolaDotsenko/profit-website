@@ -71,6 +71,7 @@ if (!layout.includes('hreflang="x-default"')) fail('x-default hreflang must poin
 if (!layout.includes('languageAlternates')) fail('language alternate metadata is missing.');
 
 const translationFiles = (locale) => [
+  `src/content/${locale}/index.ts`,
   `src/content/${locale}/translations-home.ts`,
   `src/content/${locale}/translations-shared.ts`,
   `src/content/${locale}/translations-pages-a.ts`,
