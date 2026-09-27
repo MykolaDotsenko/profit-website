@@ -571,6 +571,23 @@ Rules:
 - `npm run verify` must fail if scorecard arithmetic/IDs/gate coverage drift.
 
 
+### RELEASE — Auditable evidence registry
+
+Status: **implemented.**
+
+Sources:
+- `docs/release/website-evidence-registry.json` — one PASS/BLOCKED record for every scorecard criterion;
+- `docs/release/website-100-closure-pack.md` — grouped closure sequence;
+- `scripts/validate_release_evidence.mjs` — CI enforcement.
+
+Rules:
+- PASS requires concrete evidence references;
+- BLOCKED requires a specific blocker and closure action;
+- dependent criteria cannot PASS while their release gate is BLOCKED;
+- the strict score is computed from PASS criteria only;
+- at creation: **31/50 PASS = 62/100**;
+- human/legal/external evidence cannot be replaced by internal simulation.
+
 ### PR-13 — Farmer-first homepage compression
 
 Status: **implemented as a reversible brochure refinement pending farmer validation.**
