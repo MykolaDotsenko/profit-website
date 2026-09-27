@@ -51,138 +51,238 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
 ---
 
 <figure class="field-example">
-  <div class="field-example__head">
-    <EvidenceLabel meta={example.meta} />
-    <p class="field-example__note">{labels.notScreenshot}</p>
-  </div>
+  <div class="field-example__frame">
+    <aside class="field-example__rail" aria-label="Illustrative production unit">
+      <div class="field-example__rail-top">
+        <p class="field-example__rail-label">Production unit</p>
+        <p class="field-example__rail-name">{fieldParts(f, t, locale.intl).name}</p>
+        <p class="field-example__rail-detail">{fieldParts(f, t, locale.intl).detail}</p>
+      </div>
 
-  <div class="field-example__grid">
-    <div class="field-example__panel">
-      <table class="snapshot">
-        <caption>{labels.tableCaption}</caption>
-        <thead>
-          <tr>
-            <th scope="col">{labels.columnField}</th>
-            <th scope="col">{labels.columnPerHa}</th>
-            <th scope="col">{labels.columnTotal}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            example.fields.map((field) => (
-              <tr class:list={{ 'is-focus': field.id === example.focusFieldId }}>
-                <th scope="row">
-                  <span class="field-name">{fieldParts(field, t, locale.intl).name}</span>
-                  <span class="field-detail">{fieldParts(field, t, locale.intl).detail}</span>
-                </th>
-                <td>
-                  <Metric value={money('operating_profit', field.operatingProfitPerHa)} size="m" signal />
-                </td>
-                <td>
-                  <Metric value={{ metric: 'operating_profit', amount: field.operatingProfitPerHa * field.areaHa, currency: cur }} signal />
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
+      <div class="field-example__rail-meta">
+        <EvidenceLabel meta={example.meta} />
+        <p class="field-example__note">{labels.notScreenshot}</p>
+      </div>
 
-    <div class="field-example__panel">
-      <table class="composition">
-        <caption>{labels.compositionTitle.replace('{field}', fieldLabel(f, t, locale.intl))}</caption>
-        <tbody>
-          {
-            rows.map((row) => (
-              <tr class:list={{ 'is-subtotal': row.subtotal }}>
-                <td class="composition__op" aria-hidden="true">{row.op}</td>
-                <th scope="row">{row.label}</th>
-                <td>
-                  <Metric value={row.value} />
-                </td>
-              </tr>
-            ))
-          }
-          <tr class="is-result">
-            <td class="composition__op" aria-hidden="true">=</td>
-            <th scope="row">{t.metrics.operating_profit}</th>
-            <td>
-              <Metric value={result} size="m" signal />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <dl class="break-even">
+      <dl class="field-example__rail-facts">
         <div>
-          <dt>{t.metrics.break_even_price}</dt>
-          <dd>
-            <Metric value={{ metric: 'break_even_price', amount: f.economics.breakEvenPrice, currency: cur, perMass: 't' }} />
-            <span class="break-even__at">{labels.breakEvenAtYield}</span>
-          </dd>
+          <dt>Product</dt>
+          <dd>Field Profitability</dd>
         </div>
         <div>
-          <dt>{t.metrics.break_even_yield}</dt>
-          <dd>
-            <Metric value={{ metric: 'break_even_yield', amount: f.economics.breakEvenYield, mass: 't', perArea: 'ha' }} />
-            <span class="break-even__at">{labels.breakEvenAtPrice}</span>
-          </dd>
+          <dt>Period</dt>
+          <dd>One season</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>Current example</dd>
         </div>
       </dl>
-      <p class="field-example__definition">{labels.definition}</p>
+    </aside>
+
+    <div class="field-example__main">
+      <div class="field-example__grid">
+        <div class="field-example__panel field-example__panel--compare">
+          <table class="snapshot">
+            <caption>{labels.tableCaption}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{labels.columnField}</th>
+                <th scope="col">{labels.columnPerHa}</th>
+                <th scope="col">{labels.columnTotal}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                example.fields.map((field) => (
+                  <tr class:list={{ 'is-focus': field.id === example.focusFieldId }}>
+                    <th scope="row">
+                      <span class="field-name">{fieldParts(field, t, locale.intl).name}</span>
+                      <span class="field-detail">{fieldParts(field, t, locale.intl).detail}</span>
+                    </th>
+                    <td>
+                      <Metric value={money('operating_profit', field.operatingProfitPerHa)} size="m" signal />
+                    </td>
+                    <td>
+                      <Metric value={{ metric: 'operating_profit', amount: field.operatingProfitPerHa * field.areaHa, currency: cur }} signal />
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <div class="field-example__panel field-example__panel--economics">
+          <table class="composition">
+            <caption>{labels.compositionTitle.replace('{field}', fieldLabel(f, t, locale.intl))}</caption>
+            <tbody>
+              {
+                rows.map((row) => (
+                  <tr class:list={{ 'is-subtotal': row.subtotal }}>
+                    <td class="composition__op" aria-hidden="true">{row.op}</td>
+                    <th scope="row">{row.label}</th>
+                    <td>
+                      <Metric value={row.value} />
+                    </td>
+                  </tr>
+                ))
+              }
+              <tr class="is-result">
+                <td class="composition__op" aria-hidden="true">=</td>
+                <th scope="row">{t.metrics.operating_profit}</th>
+                <td>
+                  <Metric value={result} size="m" signal />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="break-even">
+            <div>
+              <dt>{t.metrics.break_even_price}</dt>
+              <dd>
+                <Metric value={{ metric: 'break_even_price', amount: f.economics.breakEvenPrice, currency: cur, perMass: 't' }} />
+                <span class="break-even__at">{labels.breakEvenAtYield}</span>
+              </dd>
+            </div>
+            <div>
+              <dt>{t.metrics.break_even_yield}</dt>
+              <dd>
+                <Metric value={{ metric: 'break_even_yield', amount: f.economics.breakEvenYield, mass: 't', perArea: 'ha' }} />
+                <span class="break-even__at">{labels.breakEvenAtPrice}</span>
+              </dd>
+            </div>
+          </dl>
+
+          <p class="field-example__definition">{labels.definition}</p>
+        </div>
+      </div>
+
+      <div class="field-example__decision">
+        <div>
+          <p class="field-example__decision-label">{labels.decision}</p>
+          <p class="field-example__question">{labels.question}</p>
+        </div>
+        <p class="field-example__decision-note">{labels.decisionNote}</p>
+      </div>
+
+      <figcaption>
+        <SourceLine meta={example.meta} period={example.period} records={labels.records} />
+      </figcaption>
     </div>
   </div>
-
-  <div class="field-example__decision">
-    <p class="eyebrow">{labels.decision}</p>
-    <p class="field-example__question">{labels.question}</p>
-    <p class="field-example__decision-note">{labels.decisionNote}</p>
-  </div>
-
-  <figcaption>
-    <SourceLine meta={example.meta} period={example.period} records={labels.records} />
-  </figcaption>
 </figure>
 
 <style>
   @layer components {
     .field-example {
+      container-type: inline-size;
+    }
+
+    .field-example__frame {
+      display: grid;
+      border: 1px solid var(--color-line-strong);
+      background: var(--color-line-strong);
+      gap: 1px;
+    }
+
+    .field-example__rail,
+    .field-example__main {
+      min-width: 0;
+      background: var(--color-surface);
+    }
+
+    .field-example__rail {
       display: grid;
       gap: var(--space-5);
+      align-content: start;
+      padding: var(--space-5);
+      background: var(--color-production-rail);
     }
-    .field-example__head {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-3);
+
+    .field-example__rail-top,
+    .field-example__rail-meta {
+      display: grid;
+      gap: var(--space-2);
     }
-    .field-example__note {
-      font-size: var(--text-caption);
+
+    .field-example__rail-label,
+    .field-example__decision-label {
       color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
     }
+
+    .field-example__rail-name {
+      font-size: var(--text-subsection);
+      font-weight: var(--weight-strong);
+      line-height: 1.2;
+    }
+
+    .field-example__rail-detail,
+    .field-example__note {
+      color: var(--color-text-secondary);
+      font-size: var(--text-caption);
+      line-height: 1.5;
+    }
+
+    .field-example__rail-facts {
+      display: grid;
+      border-block-start: 1px solid var(--color-line);
+    }
+
+    .field-example__rail-facts > div {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-3);
+      padding-block: var(--space-3);
+      border-block-end: 1px solid var(--color-line);
+    }
+
+    .field-example__rail-facts dt {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-caption);
+    }
+
+    .field-example__rail-facts dd {
+      text-align: end;
+      font-size: var(--text-small);
+      font-weight: var(--weight-strong);
+    }
+
+    .field-example__main {
+      display: grid;
+      gap: 1px;
+      background: var(--color-line-strong);
+    }
+
     .field-example__grid {
       display: grid;
       gap: 1px;
-      border: 1px solid var(--color-line-strong);
       background: var(--color-line-strong);
     }
-    @container (min-width: 56rem) {
-      .field-example__grid {
-        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-        align-items: stretch;
-      }
-    }
-    .field-example__panel {
+
+    .field-example__panel,
+    .field-example__decision,
+    figcaption {
+      min-width: 0;
       padding: clamp(1rem, 0.7rem + 1vw, 1.5rem);
       background: var(--color-surface);
-      min-width: 0;
     }
-    .field-example__panel:nth-child(2) {
+
+    .field-example__panel--economics {
       background: var(--color-production-surface);
     }
+
     table {
       width: 100%;
     }
+
     caption {
       caption-side: top;
       text-align: start;
@@ -193,6 +293,7 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       text-transform: uppercase;
       padding-block-end: var(--space-3);
     }
+
     .snapshot thead th {
       font-size: var(--text-caption);
       font-weight: var(--weight-medium);
@@ -202,9 +303,11 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       border-block-end: 1px solid var(--color-line-strong);
       vertical-align: bottom;
     }
+
     .snapshot thead th:first-child {
       text-align: start;
     }
+
     .snapshot tbody th {
       text-align: start;
       font-weight: var(--weight-regular);
@@ -212,57 +315,78 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       padding-block: var(--space-4);
       padding-inline-end: var(--space-3);
     }
+
     .snapshot td {
       text-align: end;
       padding-block: var(--space-4);
       padding-inline-start: var(--space-3);
       vertical-align: baseline;
     }
+
     .snapshot tbody tr + tr {
       border-block-start: 1px solid var(--color-line);
     }
+
+    .snapshot tbody tr.is-focus {
+      background: color-mix(in srgb, var(--color-production-surface) 72%, var(--color-surface));
+    }
+
+    .snapshot tbody tr.is-focus th,
+    .snapshot tbody tr.is-focus td {
+      padding-inline: var(--space-3);
+    }
+
     .field-name {
       display: block;
     }
+
     .field-detail {
       display: block;
       font-size: var(--text-caption);
       color: var(--color-text-secondary);
     }
+
     .snapshot tr.is-focus .field-name {
       font-weight: var(--weight-strong);
     }
+
     .composition th {
       text-align: start;
       font-weight: var(--weight-regular);
       font-size: var(--text-small);
       padding-block: var(--space-2);
     }
+
     .composition td {
       text-align: end;
       padding-block: var(--space-2);
     }
+
     .composition__op {
       width: 1.5rem;
       text-align: start !important;
       color: var(--color-text-secondary);
       font-family: var(--font-numeric);
     }
+
     .composition tr.is-subtotal th,
     .composition tr.is-subtotal td {
       padding-block-end: var(--space-3);
     }
+
     .composition tr.is-subtotal + tr th,
     .composition tr.is-subtotal + tr td {
       border-block-start: 1px solid var(--color-line);
       padding-block-start: var(--space-3);
     }
+
     .composition tr.is-result th,
     .composition tr.is-result td {
       border-block-start: 2px solid var(--color-line-strong);
       padding-block-start: var(--space-3);
       font-weight: var(--weight-strong);
     }
+
     .break-even {
       display: grid;
       gap: var(--space-2);
@@ -270,46 +394,76 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       padding-block-start: var(--space-4);
       border-block-start: 1px solid var(--color-line);
     }
+
     .break-even div {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: var(--space-1) var(--space-3);
     }
+
     .break-even dt {
       font-size: var(--text-small);
     }
+
     .break-even dd {
       text-align: end;
     }
+
     .break-even__at {
       display: block;
       font-size: var(--text-caption);
       color: var(--color-text-secondary);
     }
+
     .field-example__definition {
       margin-block-start: var(--space-4);
       font-size: var(--text-caption);
       color: var(--color-text-secondary);
     }
+
     .field-example__decision {
       display: grid;
-      gap: var(--space-2);
-      padding: var(--space-5);
-      border: 1px solid var(--color-line-strong);
-      border-inline-start: 0.4rem solid var(--color-production);
-      background: var(--color-surface);
+      gap: var(--space-4);
+      border-inline-start: 0.35rem solid var(--color-production);
     }
+
     .field-example__question {
-      margin-block-start: var(--space-1);
+      margin-block-start: var(--space-2);
+      max-width: 27ch;
       font-size: var(--text-subsection);
       font-weight: var(--weight-strong);
-      line-height: 1.35;
+      line-height: 1.28;
     }
+
     .field-example__decision-note {
-      margin-block-start: var(--space-2);
-      font-size: var(--text-small);
+      max-width: var(--measure);
       color: var(--color-text-secondary);
+      font-size: var(--text-small);
+      line-height: 1.5;
+    }
+
+    figcaption {
+      color: var(--color-text-secondary);
+    }
+
+    @container (min-width: 54rem) {
+      .field-example__frame {
+        grid-template-columns: minmax(12rem, 2.5fr) minmax(0, 9.5fr);
+      }
+
+      .field-example__rail {
+        align-content: space-between;
+      }
+
+      .field-example__grid {
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      }
+
+      .field-example__decision {
+        grid-template-columns: minmax(0, 7fr) minmax(16rem, 5fr);
+        align-items: end;
+      }
     }
   }
 </style>
