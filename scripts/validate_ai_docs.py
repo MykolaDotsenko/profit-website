@@ -39,6 +39,9 @@ REQUIRED_FILES = [
     "src/components/Metric.astro",
     "src/components/MethodPipeline.astro",
     "src/components/ModelComparisonTable.astro",
+    "src/components/DecisionChange.astro",
+    "src/pages/robots.txt.ts",
+    "src/pages/sitemap-index.xml.ts",
     "src/components/ProductionScope.astro",
     "src/i18n/en.ts",
     "src/content/en/shared.ts",
@@ -187,6 +190,19 @@ TEXT_INVARIANTS = {
         "model-table-wrap",
         "tabindex=\"0\"",
         "role=\"region\"",
+    ],
+    "src/components/DecisionChange.astro": [
+        "When the economic view stays fragmented",
+        "PROFIT approach",
+    ],
+    "src/pages/robots.txt.ts": [
+        "Disallow: /",
+        "Allow: /",
+    ],
+    "src/pages/sitemap-index.xml.ts": [
+        "sitemaps.org/schemas/sitemap/0.9",
+        "/trust/",
+        "/contact/",
     ],
     "src/components/ProductionScope.astro": [
         "production-unit",
