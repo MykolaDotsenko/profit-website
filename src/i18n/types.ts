@@ -53,6 +53,8 @@ export interface UIStrings {
     periodLabel: string;
     roleLabel: string;
     currentExample: string;
+    economicState: string;
+    productionContext: string;
   };
   evidence: {
     exampleLabel: string;
