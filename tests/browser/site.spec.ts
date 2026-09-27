@@ -199,6 +199,38 @@ test.describe('methodology surfaces', () => {
   });
 });
 
+test.describe('selected B2 production-unit grammar', () => {
+  test('homepage expresses production context, economics, evidence and cross-domain transfer', async ({ page }) => {
+    await page.goto('/');
+
+    const hero = page.locator('.hero__frame');
+    await expect(hero).toBeVisible();
+    await expect(hero).toContainText('Current production unit');
+    await expect(hero).toContainText('Operating profit');
+    await expect(hero).toContainText('Hypothetical');
+    await expect(hero).toContainText('Not assessed');
+    await expect(hero).toContainText('Decision question');
+
+    const scope = page.locator('.production-scope');
+    await expect(scope).toBeVisible();
+    await expect(scope).toContainText('Field / season');
+    await expect(scope).toContainText('Block / variety / crop cycle');
+    await expect(scope).toContainText('Batch / production cycle');
+    await expect(scope).toContainText('Cow / group / herd / period');
+    await expect(scope).toContainText('Current first focus');
+    await expect(scope.getByText('Direction', { exact: true })).toHaveCount(5);
+  });
+
+  test('B2 does not imply mapping or telemetry as current capability', async ({ page }) => {
+    await page.goto('/');
+
+    const hero = page.locator('.hero__frame');
+    await expect(hero).not.toContainText('GIS');
+    await expect(hero).not.toContainText('satellite map');
+    await expect(hero).not.toContainText('live telemetry');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
