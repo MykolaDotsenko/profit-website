@@ -247,14 +247,9 @@ export const fieldProfitability = {
 
 export const pilotSteps: TextItem[] = [
   { title: 'Send five details', text: 'Name, farm or company, country, email and farm type. No farm records.' },
-  { title: 'We reply by email', text: 'To arrange a first conversation about your farm and whether the pilot fits it.' },
-  { title: 'Terms before data', text: 'If you take part, we agree what data is used, and how, before anything is shared.' },
+  { title: 'We reply by email', text: 'We aim to reply within two business days to arrange a first conversation about your farm and whether the current pilot fits it.' },
+  { title: 'Terms before data', text: 'If you take part, we agree the purpose, applicable terms and what data is used before any farm records are shared.' },
 ];
-
-export const pilotStepsReview: ContentGap = {
-  owner: 'owner',
-  text: 'Confirm the pilot process, who replies and how fast, before launch.',
-};
 
 /** Blueprint §5 07: real buyer questions, answered factually; unknowns stay unknown. */
 export const hardQuestions: Question[] = [

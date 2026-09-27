@@ -35,6 +35,7 @@ REQUIRED_FILES = [
     "docs/homepage-content-brief-v1.md",
     "docs/website-trust-professionalism-synthesis-2026-09-27.md",
     "docs/methodology/vev-standard-v1.md",
+    "docs/operations/pilot-intake-runbook-v1.md",
     "docs/legal/privacy-data-trust-pack.md",
     "src/config/release.ts",
     "src/domain/economics.ts",
@@ -178,6 +179,13 @@ TEXT_INVARIANTS = {
         "Low may support Attributed but not Verified",
         "Medium or High may support Verified",
         "Do not weaken the standard",
+    ],
+    "docs/operations/pilot-intake-runbook-v1.md": [
+        "Primary owner: **Mykola Dotsenko**",
+        "within two business days",
+        "No farm records",
+        "first reply is for fit and context",
+        "pilot-process",
     ],
     "docs/legal/privacy-data-trust-pack.md": [
         "Production-readiness draft — legal approval required",
