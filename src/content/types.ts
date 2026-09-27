@@ -52,6 +52,17 @@ export interface TextItem {
   text: string;
 }
 
+export interface ImageAsset {
+  src: string;
+  srcset?: string;
+  sizes?: string;
+  width: number;
+  height: number;
+  alt: string;
+  /** Who made it, where it came from, and the usage-rights/provenance reference. */
+  credit: string;
+}
+
 /** Draft team proof. Publication still requires individual confirmation and consent. */
 export interface TeamMember {
   name: string;
@@ -59,6 +70,14 @@ export interface TeamMember {
   strength: string;
   contribution: string;
   links: { label: string; href: string }[];
+  /** Optional approved portrait. Absence is rendered only as an explicit review-state placeholder. */
+  portrait?: ImageAsset;
+}
+
+export interface CompanyFact {
+  label: string;
+  value?: string;
+  href?: string;
 }
 
 export interface Question {
