@@ -32,6 +32,64 @@ jobs:
         run: npm install --no-save --package-lock=false @playwright/test@1.63.0 @axe-core/playwright@4.13.0
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
+      - name: Diagnose Ukrainian product at 320px
+        shell: bash
+        run: |
+          npm run build
+          npm run preview -- --host 127.0.0.1 > /tmp/profit-preview.log 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid" 2>/dev/null || true' EXIT
+          for i in {1..40}; do
+            if curl -fsS http://127.0.0.1:4321/uk/product/ >/dev/null; then break; fi
+            sleep 0.5
+          done
+          cat > product-reflow-diagnostic.mjs <<'EOF'
+          import { chromium } from '@playwright/test';
+          const browser = await chromium.launch();
+          const page = await browser.newPage({ viewport: { width: 320, height: 800 } });
+          await page.goto('http://127.0.0.1:4321/uk/product/', { waitUntil: 'networkidle' });
+          const result = await page.evaluate(() => {
+            const vw = document.documentElement.clientWidth;
+            const describe = (el) => {
+              const r = el.getBoundingClientRect();
+              const s = getComputedStyle(el);
+              return {
+                tag: el.tagName.toLowerCase(),
+                id: el.id || '',
+                cls: typeof el.className === 'string' ? el.className : '',
+                text: (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 120),
+                left: Math.round(r.left),
+                right: Math.round(r.right),
+                width: Math.round(r.width),
+                scrollWidth: el.scrollWidth || 0,
+                clientWidth: el.clientWidth || 0,
+                overflowX: s.overflowX,
+                whiteSpace: s.whiteSpace,
+                minWidth: s.minWidth,
+                maxWidth: s.maxWidth,
+                widthCss: s.width,
+                display: s.display,
+                flex: s.flex,
+              };
+            };
+            return {
+              clientWidth: vw,
+              scrollWidth: document.documentElement.scrollWidth,
+              offenders: Array.from(document.querySelectorAll('body *'))
+                .map(describe)
+                .filter((x) => x.right > vw + 1 || x.left < -1)
+                .sort((a, b) => (b.right - vw) - (a.right - vw))
+                .slice(0, 40),
+              statusChip: Array.from(document.querySelectorAll('.status-chip')).map(describe),
+              onPageNav: Array.from(document.querySelectorAll('.on-page-nav, .on-page-nav *')).map(describe).slice(0,20),
+              snapshotWrap: Array.from(document.querySelectorAll('.snapshot-wrap, .snapshot')).map(describe),
+            };
+          });
+          console.log('PRODUCT-REFLOW-DIAG ' + JSON.stringify(result));
+          await browser.close();
+          EOF
+          node ./product-reflow-diagnostic.mjs
+
       - name: Run full browser, responsive and accessibility suite
         run: npx playwright test
 
