@@ -414,6 +414,34 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       min-width: 18rem;
     }
 
+    @container (max-width: 30rem) {
+      .snapshot {
+        min-width: 0;
+        table-layout: fixed;
+      }
+
+      .snapshot th,
+      .snapshot td {
+        min-width: 0;
+      }
+
+      .snapshot thead th:first-child {
+        width: 40%;
+      }
+
+      .snapshot thead th:nth-child(2) {
+        width: 28%;
+      }
+
+      .snapshot thead th:nth-child(3) {
+        width: 32%;
+      }
+
+      .snapshot thead th {
+        overflow-wrap: anywhere;
+      }
+    }
+
     caption {
       caption-side: top;
       text-align: start;
