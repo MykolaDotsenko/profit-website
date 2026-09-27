@@ -200,9 +200,9 @@ TEXT_INVARIANTS = {
     "src/components/OnPageNav.astro": [
         "on-page-nav",
         "aria-label",
-        "href={\`#\${item.id}\`}",
-    ],
-    "src/content/en/home.ts": [
+        "linked.map",
+        "#${item.id}",
+    ],    "src/content/en/home.ts": [
         "What changes in the decision process",
         "When the economic view stays fragmented",
         "PROFIT approach",
