@@ -71,7 +71,6 @@ export const SIMPLE_TRANSLATIONS: Record<string, string> = {
   'Yield': 'Урожайність',
   'Counterfactual': 'Контрфактичний сценарій',
   'Farmer-owned': 'Рішення фермера',
-  'Threshold': 'Поріг',
   'Sales': 'Продажі',
   'Accuracy': 'Точність',
   'Current first product': 'Перший поточний продукт',
