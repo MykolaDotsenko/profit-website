@@ -28,6 +28,7 @@ export interface UIStrings {
     english: string;
     ukrainian: string;
     finnish: string;
+    danish: string;
   };
   common: {
     pilot: string;
