@@ -36,6 +36,7 @@ for (const file of [
   'src/content/uk/translations-pages-b.ts',
   'src/content/uk/translations-pages-c.ts',
   'src/content/uk/translations-pages-d.ts',
+  'src/content/uk/translations-simple.ts',
 ]) {
   if (!fs.existsSync(path.join(root, file))) fail(`missing localization artifact: ${file}`);
 }
