@@ -2,6 +2,19 @@
 
 Public presentation and marketing website for PROFIT.
 
+## Website
+
+**Live site:** not published yet. No public URL is claimed until a real deployment exists.
+
+[Deploy this repository to Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMykolaDotsenko%2Fprofit-website)
+
+Release/deployment references:
+- [Vercel hosting & live-site runbook](docs/operations/vercel-hosting-runbook-v1.md)
+- [Strict release evidence registry](docs/release/website-evidence-registry.json)
+- [100/100 closure pack](docs/release/website-100-closure-pack.md)
+
+The accepted path is **Astro static → Vercel**. Preview deployments stay non-indexable. Once the first real deployment exists, this block must be updated with its exact URL; a public production URL may only be presented as released after every public release gate is READY.
+
 ## Purpose
 
 The website exists to help farmers, investors and partners quickly understand:
