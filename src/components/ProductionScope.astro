@@ -1,0 +1,115 @@
+---
+interface UnitItem {
+  title: string;
+  unit: string;
+  state: string;
+  text: string;
+}
+
+interface Props {
+  items: readonly UnitItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="production-scope" role="list" aria-label="PROFIT production-unit grammar">
+  {items.map((item) => (
+    <article class:list={['production-unit', { 'is-current': item.state === 'Current first focus' }]} role="listitem">
+      <div class="production-unit__identity">
+        <p class="production-unit__state">{item.state}</p>
+        <h3>{item.title}</h3>
+      </div>
+      <div class="production-unit__unit">
+        <span>Production unit</span>
+        <strong>{item.unit}</strong>
+      </div>
+      <p class="production-unit__text">{item.text}</p>
+    </article>
+  ))}
+</div>
+
+<style>
+  @layer components {
+    .production-scope {
+      border: 1px solid var(--color-line-strong);
+      background: var(--color-line-strong);
+      display: grid;
+      gap: 1px;
+    }
+
+    .production-unit {
+      display: grid;
+      gap: 0;
+      background: var(--color-surface);
+      min-width: 0;
+    }
+
+    .production-unit__identity,
+    .production-unit__unit,
+    .production-unit__text {
+      padding: var(--space-4);
+      min-width: 0;
+    }
+
+    .production-unit__identity {
+      display: grid;
+      gap: var(--space-2);
+      background: var(--color-production-rail);
+    }
+
+    .production-unit__identity h3 {
+      font-size: var(--text-body);
+      line-height: 1.3;
+    }
+
+    .production-unit__state,
+    .production-unit__unit span {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+
+    .production-unit__unit {
+      display: grid;
+      gap: var(--space-1);
+      border-block-start: 1px solid var(--color-line);
+      border-block-end: 1px solid var(--color-line);
+    }
+
+    .production-unit__unit strong {
+      font-size: var(--text-small);
+      line-height: 1.35;
+    }
+
+    .production-unit__text {
+      color: var(--color-text-secondary);
+      font-size: var(--text-small);
+      line-height: 1.5;
+    }
+
+    .production-unit.is-current .production-unit__identity {
+      background: var(--color-production);
+      color: var(--color-on-brand);
+    }
+
+    .production-unit.is-current .production-unit__state {
+      color: color-mix(in srgb, var(--color-on-brand) 78%, transparent);
+    }
+
+    @container (min-width: 46rem) {
+      .production-unit {
+        grid-template-columns: minmax(12rem, 3fr) minmax(13rem, 3fr) minmax(0, 6fr);
+      }
+
+      .production-unit__unit,
+      .production-unit__text {
+        border-block: 0;
+        border-inline-start: 1px solid var(--color-line);
+      }
+    }
+  }
+</style>
