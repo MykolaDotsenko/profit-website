@@ -83,6 +83,7 @@ These files are an evidence library. They support decisions but do not silently 
 - [100-Point Release Quality Contract](docs/release/website-100-scorecard.md) — auditable 50-criterion Definition of Done; 100/100 is impossible while any public-release gate is blocked.
 - [Release Evidence Registry](docs/release/website-evidence-registry.json) — current binary evidence state for all 50 criteria; CI computes the strict score from this file.
 - [100/100 Closure Pack](docs/release/website-100-closure-pack.md) — exact remaining blocker/closure actions for the path from the current strict score to release.
+- [Release Evidence Forms](docs/release/evidence-forms/) — standardized capture records for farmer validation, domain review, company/contact facts, team consent, asset rights, legal approval, accessibility and production release verification.
 - [PROFIT VEV Standard v1](docs/methodology/vev-standard-v1.md) — evidence/attribution standard for Hypothetical → Modelled → Observed → Attributed → Verified.
 - [Pilot Intake Runbook v1](docs/operations/pilot-intake-runbook-v1.md) — confirmed owner, email reply flow, two-business-day target and first-contact data boundary.
 - [Privacy & Farm-Data Policy Decisions v1](docs/legal/privacy-data-policy-decisions-v1.md) — conservative internal defaults for enquiry purpose/basis/retention and farm-data secondary-use/deletion/export rules; final legal approval still required.
