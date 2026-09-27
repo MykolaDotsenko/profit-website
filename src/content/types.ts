@@ -4,7 +4,7 @@
  * not rewriting layout.
  */
 
-export type HeroVariantId = 'h1' | 'h2' | 'h3';
+export type HeroVariantId = 'h1' | 'h2' | 'h3' | 'h4';
 
 /** Which proof body the hero shows. Each renders the same illustrative example. */
 export type ProofKind = 'field-list' | 'field-flow' | 'field-composition';
