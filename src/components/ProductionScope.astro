@@ -17,7 +17,7 @@ const { items } = Astro.props;
 const t = ui(Astro.currentLocale);
 ---
 
-<div class="production-scope" aria-label={t.production.scopeLabel}>
+<div class="production-scope" role="group" aria-label={t.production.scopeLabel}>
   <header class="production-scope__grammar">
     <div>
       <span>{t.production.scopeVariableLabel}</span>
