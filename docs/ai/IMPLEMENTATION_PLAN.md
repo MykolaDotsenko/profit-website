@@ -625,6 +625,21 @@ Release effect:
 - `evidence-definitions` may be READY with `docs/methodology/vev-standard-v1.md` as evidence;
 - no customer-result or VEV claim is created by this decision.
 
+### PR-18A — Pilot intake operating process
+
+Status: **implemented / internally approved operating process.**
+
+Decision:
+- primary owner: Mykola Dotsenko;
+- reply channel: email to the submitted address;
+- target response: within two business days;
+- first response qualifies fit and schedules a conversation;
+- no farm records before purpose and applicable terms are established.
+
+Release effect:
+- `pilot-process` may be READY with `docs/operations/pilot-intake-runbook-v1.md` as evidence;
+- production form delivery remains blocked by privacy/company gates and is not implied by this decision.
+
 ### WWW-501 — Accessibility gate
 
 Target:
