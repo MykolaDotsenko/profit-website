@@ -496,7 +496,13 @@ Current methodology surface:
 
 ### WWW-304 — /company
 
-Status: **implemented research-backed company/methodology foundation; team/company identity gaps remain open.**
+Status: **implemented research-backed company/methodology foundation; team/company proof surfaces are production-structured, while external identity/consent facts remain open.**
+
+2026-09-27 WWW-006 refinement:
+- team records explicitly separate role → relevant expertise → contribution → public profiles;
+- full company-page team records support optional provenance-bearing portraits; missing portraits render only as review-state placeholders;
+- company identity is an explicit factual ledger: legal name, business ID/registration number, jurisdiction, registered address and public contact;
+- no team/company release gate is promoted by implementation alone; individual consent and authoritative company facts remain required.
 
 Focus: factual team/company story and what is still being proven.
 

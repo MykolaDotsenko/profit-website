@@ -68,6 +68,13 @@ export const primaryCta = { label: 'Join the pilot', href: '/contact/' };
  * profile/photo use and consent to publish.
  */
 export const teamCapability = {
+  labels: {
+    flowAria: 'How team capabilities connect',
+    expertise: 'Relevant expertise',
+    contribution: 'Contribution to PROFIT',
+    profiles: 'Public profiles',
+    portraitRequirement: 'Approved portrait and publication consent required before public release.',
+  },
   intro: {
     eyebrow: 'Team capability',
     title: 'Different disciplines, one farm decision problem',

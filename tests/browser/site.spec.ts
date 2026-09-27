@@ -730,6 +730,44 @@ test.describe('B2 brand-system continuity', () => {
   });
 });
 
+
+test.describe('team and company proof surfaces', () => {
+  test('company page separates role, expertise, contribution and public profiles without fabricating proof', async ({ page }) => {
+    await page.goto('/company/');
+
+    const team = page.locator('#team');
+    await expect(team).toContainText('Mykola Dotsenko');
+    await expect(team).toContainText('Dmytro Ruzhytskyi');
+    await expect(team).toContainText('Dmytro Panasenko');
+    await expect(team).toContainText('Relevant expertise');
+    await expect(team).toContainText('Contribution to PROFIT');
+    await expect(team).toContainText('Public profiles');
+
+    await expect(team.locator('a[href="https://github.com/MykolaDotsenko/"]')).toHaveCount(1);
+    await expect(team.locator('a[href="https://github.com/dmitruz"]')).toHaveCount(1);
+    await expect(team.locator('a[href="https://github.com/tech-science-hub"]')).toHaveCount(1);
+    await expect(team.locator('a[href="https://www.hackster.io/Dima_Panasenko"]')).toHaveCount(1);
+
+    const portraits = team.locator('[data-team-portrait-state="pending"]');
+    await expect(portraits).toHaveCount(3);
+    await expect(portraits.first()).toContainText('Approved portrait and publication consent required before public release.');
+  });
+
+  test('company identity exposes every authoritative fact still required for release', async ({ page }) => {
+    await page.goto('/company/');
+
+    const details = page.locator('#details');
+    const facts = details.locator('.company-fact');
+    await expect(facts).toHaveCount(5);
+    await expect(details).toContainText('Legal company name');
+    await expect(details).toContainText('Business ID / registration number');
+    await expect(details).toContainText('Jurisdiction');
+    await expect(details).toContainText('Registered address');
+    await expect(details).toContainText('Public contact address');
+    await expect(details.locator('[data-company-proof-state="pending"]')).toHaveCount(1);
+  });
+});
+
 test.describe('supporting-page scanability', () => {
   test('B2 split rails stay static and record lists vary by meaning', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 1000 });

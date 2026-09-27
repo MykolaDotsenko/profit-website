@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CompanyFacts from '../components/CompanyFacts.astro';
 import ContentGap from '../components/ContentGap.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ImageSlot from '../components/ImageSlot.astro';
@@ -100,14 +101,17 @@ const s = c.shared;
   </Section>
 
   <Section intro={p.team.intro} layout="split">
-    <TeamCapabilities intro={s.teamCapability.intro} flow={s.teamCapability.flow} members={s.teamCapability.members} />
+    <TeamCapabilities intro={s.teamCapability.intro} flow={s.teamCapability.flow} members={s.teamCapability.members} labels={s.teamCapability.labels} />
     <div class="team-review">
       <ContentGap kind="review" owner={p.team.gap.owner} text={p.team.gap.text} />
     </div>
   </Section>
 
   <Section intro={p.details.intro} layout="split">
-    <ContentGap owner={p.details.gap.owner} text={p.details.gap.text} />
+    <CompanyFacts items={p.details.items} />
+    <div class="company-details-review">
+      <ContentGap owner={p.details.gap.owner} kind="review" text={p.details.gap.text} />
+    </div>
   </Section>
 
   <CtaBand intro={p.cta.intro} stepsTitle={p.cta.stepsTitle} steps={p.cta.steps} primary={p.cta.primary} />
@@ -140,7 +144,8 @@ const s = c.shared;
     border-inline-start: 3px solid var(--color-line-strong);
     font-weight: var(--weight-strong);
   }
-  .team-review {
+  .team-review,
+  .company-details-review {
     margin-block-start: var(--space-5);
   }
   .prose {

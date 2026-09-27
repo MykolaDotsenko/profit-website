@@ -5,22 +5,8 @@
  * Supplying `image` swaps in the photograph without layout changes; width/height and the
  * aspect ratio reserve space, so the swap cannot cause layout shift.
  */
+import type { ImageAsset } from '../content/types';
 import { localeInfo, ui } from '../i18n';
-interface ImageAsset {
-  src: string;
-  srcset?: string;
-  sizes?: string;
-  width: number;
-  height: number;
-  alt: string;
-  /** Required: who made it, where, and under what rights. */
-  credit: string;
-  sourceLabel?: string;
-  sourceHref?: string;
-  licenseLabel?: string;
-  licenseHref?: string;
-  modificationNote?: string;
-}
 
 interface Props {
   caption: string;
