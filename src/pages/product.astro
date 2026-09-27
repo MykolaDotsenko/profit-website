@@ -31,6 +31,10 @@ const p = c.product;
     <ItemList items={p.calculation.items} columns={1} />
   </Section>
 
+  <Section intro={p.methodBoundary.intro} layout="split">
+    <ItemList items={p.methodBoundary.items} columns={2} />
+  </Section>
+
   <Section intro={p.exclusions.intro} layout="split">
     <ItemList items={p.exclusions.items} columns={2} marker="cross" />
   </Section>
