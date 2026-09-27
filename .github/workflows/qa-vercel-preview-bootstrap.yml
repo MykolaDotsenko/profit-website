@@ -35,7 +35,7 @@ jobs:
       - name: Run live reflow, text-spacing and forced-colors checks
         shell: bash
         run: |
-          cat > /tmp/live-a11y-edge.mjs <<'EOF'
+          cat > live-a11y-edge.mjs <<'EOF'
           import { chromium } from '@playwright/test';
 
           const base = process.env.LIVE_BASE_URL;
@@ -145,4 +145,4 @@ jobs:
           console.log(`LIVE A11Y EDGE PASS: ${routes.length} routes at 320px, text-spacing stress, 200% text resize, and forced-colors keyboard smoke.`);
           EOF
 
-          node /tmp/live-a11y-edge.mjs
+          node ./live-a11y-edge.mjs
