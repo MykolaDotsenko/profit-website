@@ -33,6 +33,8 @@ export const home = {
       decision: 'Decision question',
       question: decisionQuestion,
       records: exampleRecords,
+      scopeNote:
+        'Field Profitability is the current first product focus. The production-unit grammar is designed to transfer beyond crops without forcing every farm into a per-hectare model.',
     },
     image: {
       caption: 'Documentary photograph: a real farm, at work.',
