@@ -13,6 +13,7 @@ import { localeInfo, ui } from '../i18n';
 interface Props {
   example: FieldSeasonExample;
   labels: {
+    productName: string;
     notScreenshot: string;
     tableCaption: string;
     columnField: string;
@@ -52,7 +53,7 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
 
 <figure class="field-example">
   <div class="field-example__frame">
-    <aside class="field-example__rail" aria-label="Illustrative production unit">
+    <aside class="field-example__rail" aria-label={`${t.evidence.exampleLabel}: ${fieldLabel(f, t, locale.intl)}`}>
       <div class="field-example__rail-top">
         <p class="field-example__rail-label">{t.production.currentUnit}</p>
         <p class="field-example__rail-name">{fieldParts(f, t, locale.intl).name}</p>
@@ -67,7 +68,7 @@ const result = money('operating_profit', f.economics.operatingProfitPerHa);
       <dl class="field-example__rail-facts">
         <div>
           <dt>{t.production.productLabel}</dt>
-          <dd>Field Profitability</dd>
+          <dd>{labels.productName}</dd>
         </div>
         <div>
           <dt>{t.production.periodLabel}</dt>
