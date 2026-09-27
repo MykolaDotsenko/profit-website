@@ -524,21 +524,21 @@ export const trust = {
         text: 'The coded site currently implements no analytics, cookie-consent system, document.cookie, localStorage or sessionStorage tracking. Deployment infrastructure must be re-audited before launch.',
       },
     ] satisfies TextItem[],
-    noticeTitle: 'What the final privacy notice still has to specify',
+    noticeTitle: 'Privacy decisions made — and facts still needed',
     noticeLead:
-      'Before personal data is collected through a live form, the notice must match the actual controller, deployment and processing — not a template.',
+      'PROFIT has set conservative internal defaults for the enquiry flow. Before a live form collects personal data, the final notice still has to match the actual controller, deployment and processors.',
     noticeItems: [
       {
         title: 'Who is responsible',
         text: 'Confirmed controller legal identity and contact details, plus a DPO/contact where legally applicable.',
       },
       {
-        title: 'Purpose + legal basis',
-        text: 'The real purpose for each use of the data and the approved GDPR legal basis. PROFIT will not infer the legal basis from convenience.',
+        title: 'Purpose + proposed legal basis',
+        text: 'Internal decision: use the five fields only to reply to an inbound enquiry and assess pilot fit. The proposed basis is legitimate interests, subject to final controller-specific legal approval and balancing assessment.',
       },
       {
-        title: 'Retention',
-        text: 'How long contact data is kept, or the criteria used to decide that period.',
+        title: 'Retention target',
+        text: 'Internal target: delete or anonymise non-participant enquiry data 12 months after the last substantive contact unless another documented lawful need applies. Final approval and implementation verification are still required.',
       },
       {
         title: 'Recipients, processors + transfers',
@@ -563,7 +563,7 @@ export const trust = {
       },
       {
         title: 'Retention + deletion + export',
-        text: 'Define how long records remain, what happens at the end of the pilot, what can be exported and how deletion is handled.',
+        text: 'Internal targets: export/return agreed records at exit where feasible, delete active-system data within 30 days after a valid trigger, and let backups expire within 90 days where granular deletion is not feasible. Final terms must match actual infrastructure.',
       },
       {
         title: 'Correction + provenance',
@@ -571,7 +571,7 @@ export const trust = {
       },
       {
         title: 'Secondary use + model training',
-        text: 'Do not imply benchmarking, model training or other secondary use from pilot participation. Any later secondary purpose needs an explicit, approved basis and transparent controls.',
+        text: 'Default policy: pilot participation does not permit cross-customer benchmarking, model training or unrelated secondary use. Any later secondary purpose requires a separate documented purpose, basis or permission, and transparent controls.',
       },
       {
         title: 'Security + incidents',
@@ -607,7 +607,7 @@ export const trust = {
     ],
     gap: {
       owner: 'legal',
-      text: 'Approve the final controller/contact, legal basis, retention, processors/transfers, rights wording and farm-data terms before the form is connected or farm records are requested.',
+      text: 'Final release still needs the real controller/contact, actual processors and transfers, implemented security facts, rights/complaint wording and formal legal approval before the form is connected or farm records are requested.',
     } satisfies ContentGap,
   },
   limitations: {
