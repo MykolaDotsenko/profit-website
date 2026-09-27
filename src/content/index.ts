@@ -5,10 +5,11 @@
 import { localeInfo, type Locale } from '../i18n';
 import * as en from './en';
 import * as uk from './uk';
+import * as fi from './fi';
 
 export type SiteContent = typeof en;
 
-const BUNDLES: Record<Locale, SiteContent> = { en, uk };
+const BUNDLES: Record<Locale, SiteContent> = { en, uk, fi };
 
 export function content(locale: string | undefined): SiteContent {
   return BUNDLES[localeInfo(locale).code as Locale];
