@@ -147,7 +147,7 @@ const link = (href: string) => localePath(Astro.currentLocale, href);
           <ConfidenceScale assessedLabel={h.value.assessedLabel} notAssessedText={h.value.notAssessedText} />
         </div>
         <div class="value__status">
-          <p class="value__status-label">Current site</p>
+          <p class="value__status-label">{h.value.currentSiteLabel}</p>
           <p class="value__status-text">{h.value.currentSiteNote}</p>
           <details class="value__disclosure">
             <summary>
