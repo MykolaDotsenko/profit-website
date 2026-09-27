@@ -1,4 +1,4 @@
-name: QA Live Vercel E2E
+name: QA Live Accessibility Edge Cases
 
 on:
   push:
@@ -8,24 +8,17 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: qa-live-vercel-e2e
-  cancel-in-progress: true
-
 jobs:
-  live-e2e:
+  live-a11y-edge:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
     env:
-      ASTRO_TELEMETRY_DISABLED: "1"
       LIVE_BASE_URL: "https://profit-website.vercel.app"
 
     steps:
-      - name: Checkout exact candidate
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
@@ -33,87 +26,123 @@ jobs:
       - name: Install repository dependencies
         run: npm ci
 
-      - name: Verify repository candidate
-        run: npm run verify
-        env:
-          SITE_INDEXABLE: "false"
-          SHOW_CONTENT_STATUS: "true"
-          PILOT_FORM_ENDPOINT: ""
-
-      - name: Install pinned browser-QA tools
-        run: npm install --no-save --package-lock=false @playwright/test@1.63.0 @axe-core/playwright@4.13.0
+      - name: Install pinned Playwright
+        run: npm install --no-save --package-lock=false @playwright/test@1.63.0
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Generate live-origin Playwright config
+      - name: Run live reflow, text-spacing and forced-colors checks
         shell: bash
         run: |
-          cat > playwright.live.config.ts <<'EOF'
-          import { defineConfig } from '@playwright/test';
+          cat > /tmp/live-a11y-edge.mjs <<'EOF'
+          import { chromium } from '@playwright/test';
 
-          export default defineConfig({
-            testDir: './tests/browser',
-            timeout: 30_000,
-            expect: { timeout: 5_000 },
-            fullyParallel: true,
-            forbidOnly: true,
-            retries: 1,
-            workers: 4,
-            reporter: [['list'], ['html', { open: 'never', outputFolder: 'playwright-live-report' }]],
-            use: {
-              baseURL: process.env.LIVE_BASE_URL,
-              trace: 'retain-on-failure',
-              screenshot: 'only-on-failure',
-            },
-          });
+          const base = process.env.LIVE_BASE_URL;
+          const routes = [
+            '/', '/farmers/', '/product/', '/trust/', '/company/', '/investors/', '/contact/',
+            '/uk/', '/fi/', '/da/'
+          ];
+
+          const browser = await chromium.launch();
+          const failures = [];
+
+          async function assertNoHorizontalOverflow(page, label) {
+            const geometry = await page.evaluate(() => ({
+              scrollWidth: document.documentElement.scrollWidth,
+              clientWidth: document.documentElement.clientWidth,
+              innerWidth: window.innerWidth,
+            }));
+            if (geometry.scrollWidth - geometry.clientWidth > 1) {
+              failures.push(`${label}: horizontal overflow ${geometry.scrollWidth - geometry.clientWidth}px`);
+            }
+          }
+
+          // WCAG 1.4.10 reflow proxy: 320 CSS px viewport.
+          {
+            const context = await browser.newContext({ viewport: { width: 320, height: 800 } });
+            for (const route of routes) {
+              const page = await context.newPage();
+              const response = await page.goto(base + route, { waitUntil: 'networkidle' });
+              if (!response?.ok()) failures.push(`320px ${route}: HTTP ${response?.status()}`);
+              await assertNoHorizontalOverflow(page, `320px ${route}`);
+              const mainVisible = await page.locator('main').isVisible();
+              if (!mainVisible) failures.push(`320px ${route}: main not visible`);
+              await page.close();
+            }
+            await context.close();
+          }
+
+          // WCAG 1.4.12 text-spacing stress values.
+          {
+            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+            for (const route of routes) {
+              const page = await context.newPage();
+              await page.goto(base + route, { waitUntil: 'networkidle' });
+              await page.addStyleTag({ content: `
+                * { line-height: 1.5 !important; letter-spacing: 0.12em !important; word-spacing: 0.16em !important; }
+                p { margin-bottom: 2em !important; }
+              ` });
+              await assertNoHorizontalOverflow(page, `text-spacing ${route}`);
+              const clippedControls = await page.evaluate(() =>
+                Array.from(document.querySelectorAll('a, button, input, select'))
+                  .filter((el) => {
+                    const r = el.getBoundingClientRect();
+                    return r.width > 0 && r.height > 0 && (
+                      r.right > document.documentElement.clientWidth + 1 ||
+                      r.left < -1
+                    );
+                  })
+                  .map((el) => (el.textContent || el.getAttribute('name') || el.tagName).trim().slice(0, 80))
+                  .slice(0, 10)
+              );
+              if (clippedControls.length) failures.push(`text-spacing ${route}: clipped controls ${clippedControls.join(' | ')}`);
+              await page.close();
+            }
+            await context.close();
+          }
+
+          // 200% text-only resize stress.
+          {
+            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+            for (const route of routes) {
+              const page = await context.newPage();
+              await page.goto(base + route, { waitUntil: 'networkidle' });
+              await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
+              await assertNoHorizontalOverflow(page, `200%-text ${route}`);
+              await page.close();
+            }
+            await context.close();
+          }
+
+          // Forced-colors should retain content and focusable navigation.
+          {
+            const context = await browser.newContext({
+              viewport: { width: 390, height: 844 },
+              forcedColors: 'active',
+            });
+            const page = await context.newPage();
+            await page.goto(base + '/', { waitUntil: 'networkidle' });
+            if (!(await page.locator('main').isVisible())) failures.push('forced-colors: main not visible');
+            await page.keyboard.press('Tab');
+            const focused = await page.evaluate(() => {
+              const el = document.activeElement;
+              return el ? { tag: el.tagName, text: el.textContent?.trim().slice(0, 80), href: el.getAttribute('href') } : null;
+            });
+            if (!focused || focused.tag !== 'A') failures.push(`forced-colors: first tab target unexpected ${JSON.stringify(focused)}`);
+            await page.close();
+            await context.close();
+          }
+
+          await browser.close();
+
+          if (failures.length) {
+            console.error('LIVE A11Y EDGE FAILURES');
+            for (const failure of failures) console.error('- ' + failure);
+            process.exit(1);
+          }
+
+          console.log(`LIVE A11Y EDGE PASS: ${routes.length} routes at 320px, text-spacing stress, 200% text resize, and forced-colors keyboard smoke.`);
           EOF
 
-      - name: Run full browser/Axe suite against live Vercel origin
-        run: npx playwright test --config=playwright.live.config.ts
-
-      - name: Verify live security, crawl and form-safety contract
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          headers="$(mktemp)"
-          home="$(mktemp)"
-          curl -fsS -D "$headers" -o "$home" "$LIVE_BASE_URL/"
-
-          grep -qi '^strict-transport-security: max-age=' "$headers"
-          grep -qi '^x-content-type-options: nosniff' "$headers"
-          grep -qi '^x-frame-options: DENY' "$headers"
-          grep -qi '^referrer-policy: strict-origin-when-cross-origin' "$headers"
-          grep -qi '^permissions-policy: camera=(), microphone=(), geolocation=()' "$headers"
-          grep -q 'name="robots" content="noindex, nofollow"' "$home"
-
-          robots="$(curl -fsS "$LIVE_BASE_URL/robots.txt")"
-          printf '%s\n' "$robots" | grep -q '^User-agent: \*$'
-          printf '%s\n' "$robots" | grep -q '^Disallow: /$'
-
-          sitemap_headers="$(mktemp)"
-          sitemap="$(mktemp)"
-          curl -fsS -D "$sitemap_headers" -o "$sitemap" "$LIVE_BASE_URL/sitemap-index.xml"
-          grep -qi '^content-type: application/xml' "$sitemap_headers"
-          grep -q '<urlset' "$sitemap"
-
-          not_found="$(curl -sS -o /dev/null -w '%{http_code}' "$LIVE_BASE_URL/__qa-not-found__")"
-          test "$not_found" = "404"
-
-          contact="$(curl -fsS "$LIVE_BASE_URL/contact/")"
-          form_tag="$(printf '%s' "$contact" | grep -o '<form[^>]*data-pilot-form[^>]*>' | head -1)"
-          submit_tag="$(printf '%s' "$contact" | grep -o '<button[^>]*data-submit[^>]*>' | head -1)"
-          ! printf '%s' "$form_tag" | grep -q ' action='
-          ! printf '%s' "$form_tag" | grep -q ' method='
-          printf '%s' "$submit_tag" | grep -q 'type="button"'
-          printf '%s' "$contact" | grep -q 'This preview is not connected to a submission service yet. Nothing was sent.'
-
-      - name: Upload live browser report on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: live-playwright-report
-          path: playwright-live-report
-          if-no-files-found: ignore
-          retention-days: 7
+          node /tmp/live-a11y-edge.mjs
