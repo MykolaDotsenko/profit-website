@@ -522,6 +522,9 @@ Use only if it survives final copy review; the underlying principle is LOCKED.
 ### Visual intent
 Evidence/confidence should feel integrated into the brand system, not like legal footnotes.
 
+### Progressive-disclosure rule
+Keep the evidence ladder, confidence treatment and current-site status immediately visible. Deeper verification mechanics may sit behind native accessible disclosure, provided the complete content remains available without JavaScript. This preserves the rule: the homepage should feel simple before it feels sophisticated.
+
 ---
 
 ## 08 — Current product boundary
