@@ -74,7 +74,7 @@ const priceValue = {
         <div class="hero__state-main">
           <p class="operational-label">{t.metrics.operating_profit}</p>
           <Metric value={perHa('operating_profit', focus.economics.operatingProfitPerHa)} size="l" signal />
-          <p class="hero__state-period">{fieldLabel(focus, t, locale.intl)} · one season</p>
+          <p class="hero__state-period">{fieldLabel(focus, t, locale.intl)} · {t.seasons(1)}</p>
         </div>
         <dl class="hero__state-context">
           <div>
