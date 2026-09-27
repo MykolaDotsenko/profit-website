@@ -147,6 +147,8 @@ test.describe('methodology surfaces', () => {
     await expect(main).toContainText('development principles, not claims about the current Field Profitability build');
     await expect(main).toContainText('Check completeness');
     await expect(main).toContainText('Check representativeness');
+    await expect(main).toContainText('Will I have to enter everything manually?');
+    await expect(main).toContainText('How would PROFIT forecast the future without guessing?');
   });
 
   test('product page keeps deterministic economics separate from future forecasting', async ({ page }) => {
