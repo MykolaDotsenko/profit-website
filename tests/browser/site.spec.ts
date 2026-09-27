@@ -276,6 +276,23 @@ test.describe('selected B2 production-unit grammar', () => {
   });
 });
 
+test.describe('B2 brand chrome', () => {
+  test('B2 brand chrome keeps the production-to-decision code without crowding mobile', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto('/');
+
+    await expect(page.locator('.site-header__flow')).toBeVisible();
+    await expect(page.locator('.site-header__flow')).toHaveText('Production → Economics → Evidence → Decision');
+    await expect(page.locator('.site-footer__flow')).toBeVisible();
+    await expect(page.locator('.site-footer__flow')).toHaveText('Production → Economics → Evidence → Decision');
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await expect(page.locator('.site-header__flow')).toBeHidden();
+    await expect(page.locator('.site-footer__flow')).toBeVisible();
+    await expect(page.locator('.production-scope')).toHaveAttribute('aria-label', 'PROFIT production-unit grammar');
+  });
+});
+
 test.describe('B2 mobile hierarchy', () => {
   test('mobile hero keeps value before supporting production context', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
