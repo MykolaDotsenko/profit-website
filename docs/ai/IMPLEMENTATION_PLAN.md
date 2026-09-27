@@ -265,18 +265,33 @@ Depends on: WWW-002.
 
 ### WWW-005 — Production platform decision
 
-Options:
-- remain in Framer for validation;
-- Astro coded production;
-- defer decision.
+Status: **DECIDED — Astro static production + Vercel hosting path. Account-level Vercel project/link still pending.**
+
+Decision:
+- retain the existing Astro static production architecture from ADR 0002;
+- use Vercel as the provisional hosting platform via ADR 0004;
+- do not add a server adapter/runtime solely for hosting;
+- preview deployment stays non-indexable;
+- production deployment runs the existing public-release gates before Vercel build/deploy;
+- deployment automation is manual-dispatch until live evidence/operations justify broader automation.
+
+Evidence:
+- `docs/decisions/0004-vercel-static-hosting.md`;
+- `vercel.json`;
+- `.github/workflows/deploy-website.yml`;
+- `docs/operations/vercel-hosting-runbook-v1.md`.
 
 Acceptance:
-- [ ] decision starts from current learning needs;
-- [ ] source ownership, iteration speed, complexity and custom interaction needs are compared;
-- [ ] ADR created if a durable production choice is made;
-- [ ] no framework is chosen because it is fashionable.
+- [x] decision starts from current learning/release-evidence needs;
+- [x] source ownership, iteration speed, complexity and custom interaction needs are compared;
+- [x] ADR created;
+- [x] no framework/runtime is chosen because it is fashionable;
+- [ ] Vercel account project is created/imported and deployment credentials are stored in GitHub Actions secrets;
+- [ ] first non-indexable preview deployment is captured as release evidence.
 
-Depends on: WWW-001, WWW-002, WWW-004.
+The final two items are account/operations closure, not architecture uncertainty.
+
+Depends on: owner-authorized reversible production track; this decision does **not** satisfy WWW-000/WWW-002/WWW-004 human-validation gates.
 
 ---
 
@@ -286,7 +301,7 @@ Start only after W0 produces enough evidence to justify production work.
 
 ### WWW-101 — Repository production scaffold
 
-Status: foundation built in Build Pass 01 (ADR 0002). WWW-005 is still open.
+Status: foundation built in Build Pass 01 (ADR 0002). WWW-005 architecture/hosting decision is now recorded in ADR 0004; Vercel account linking remains an operations task.
 
 If coded production is selected:
 
