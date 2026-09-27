@@ -1113,11 +1113,14 @@ test.describe('Finnish opt-in localization', () => {
     await expect(language.getByRole('link', { name: 'EN' })).toHaveAttribute('aria-current', 'true');
   });
 
-  test('all Finnish public routes resolve with fi language metadata', async ({ page }) => {
+  test('all Finnish public routes resolve without mobile horizontal overflow', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
     for (const route of ['/', '/farmers/', '/product/', '/trust/', '/company/', '/investors/', '/contact/']) {
       const response = await page.goto(`/fi${route}`);
       expect(response?.status(), route).toBe(200);
       await expect(page.locator('html'), route).toHaveAttribute('lang', 'fi');
+      const overflow = await page.locator('body').evaluate((el) => el.scrollWidth - el.clientWidth);
+      expect(overflow, route).toBeLessThanOrEqual(1);
     }
   });
 
