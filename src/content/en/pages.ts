@@ -752,7 +752,7 @@ export const investors = {
       {
         status: 'exists',
         title: 'An evidence standard',
-        text: 'Every published figure carries an evidence state, from Hypothetical to Verified, and a confidence state.',
+        text: 'PROFIT economic and value examples carry an evidence state, from Hypothetical to Verified, and a confidence state. External statistics are sourced separately.',
       },
       { status: 'open', title: 'Results', text: 'No customer or pilot results are published.' },
     ] satisfies StatusItem[],
