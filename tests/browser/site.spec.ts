@@ -1037,3 +1037,60 @@ test.describe('critical interactions', () => {
     await context.close();
   });
 });
+
+
+test.describe('English default + Ukrainian opt-in localization', () => {
+  test('English remains the unprefixed default and links to the equivalent Ukrainian route', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+    const language = page.locator('.language-switcher');
+    await expect(language.getByRole('link', { name: 'EN' })).toHaveAttribute('aria-current', 'true');
+    await expect(language.getByRole('link', { name: 'UA' })).toHaveAttribute('href', '/uk/');
+  });
+
+  test('Ukrainian homepage renders localized product truth without changing the economic example', async ({ page }) => {
+    await page.goto('/uk/');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'uk');
+    await expect(page.locator('main')).toContainText('Побачте економіку до того, як приймати рішення.');
+    await expect(page.locator('main')).toContainText('Операційний прибуток');
+    await expect(page.locator('main')).toContainText('Не оцінено');
+    await expect(page.locator('main')).toContainText('−69');
+    await expect(page.locator('main')).toContainText('225');
+  });
+
+  test('language switcher preserves the current route in both directions', async ({ page }) => {
+    await page.goto('/uk/trust/');
+    const language = page.locator('.language-switcher');
+    await expect(language.getByRole('link', { name: 'EN' })).toHaveAttribute('href', '/trust/');
+    await expect(language.getByRole('link', { name: 'UA' })).toHaveAttribute('href', '/uk/trust/');
+    await expect(language.getByRole('link', { name: 'UA' })).toHaveAttribute('aria-current', 'true');
+  });
+
+  test('Ukrainian navigation stays inside the Ukrainian locale', async ({ page }) => {
+    await page.goto('/uk/');
+    const nav = page.locator('#site-nav');
+    await expect(nav.getByRole('link', { name: 'Фермерам' })).toHaveAttribute('href', '/uk/farmers/');
+    await expect(nav.getByRole('link', { name: 'Продукт' })).toHaveAttribute('href', '/uk/product/');
+    await expect(nav.getByRole('link', { name: 'Довіра' })).toHaveAttribute('href', '/uk/trust/');
+    await expect(nav.getByRole('link', { name: 'Компанія' })).toHaveAttribute('href', '/uk/company/');
+    await expect(nav.getByRole('link', { name: 'Інвесторам' })).toHaveAttribute('href', '/uk/investors/');
+  });
+
+  test('Ukrainian pilot form is localized and remains safe while the endpoint is disabled', async ({ page }) => {
+    await page.goto('/uk/contact/');
+    const form = page.locator('[data-pilot-form]');
+    await expect(form).toContainText('Ваші дані');
+    await expect(form).toContainText('Господарство або компанія');
+    await expect(form).toContainText('Тип господарства');
+    await expect(form).toContainText('Без виробничих записів');
+    await expect(form).not.toHaveAttribute('action', /.+/);
+  });
+
+  test('Ukrainian company page remains readable at mobile width', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/uk/company/');
+    await expect(page.locator('main')).toContainText('Хто будує PROFIT');
+    const overflow = await page.locator('body').evaluate((el) => el.scrollWidth - el.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(1);
+  });
+});
