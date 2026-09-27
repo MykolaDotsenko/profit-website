@@ -39,7 +39,6 @@ REQUIRED_FILES = [
     "src/components/Metric.astro",
     "src/components/MethodPipeline.astro",
     "src/components/ModelComparisonTable.astro",
-    "src/components/DecisionChange.astro",
     "src/components/OnPageNav.astro",
     "src/pages/robots.txt.ts",
     "src/pages/sitemap-index.xml.ts",
@@ -192,21 +191,19 @@ TEXT_INVARIANTS = {
         "tabindex=\"0\"",
         "role=\"region\"",
     ],
-    "src/components/DecisionChange.astro": [
-        "decision-change__labels",
-        "decision-change__rows",
-        "decision-change__note",
-    ],
     "src/components/OnPageNav.astro": [
         "on-page-nav",
         "aria-label",
         "linked.map",
         "#${item.id}",
-    ],    "src/content/en/home.ts": [
-        "What changes in the decision process",
-        "When the economic view stays fragmented",
-        "PROFIT approach",
-        "not a claim that every farm currently works the same way",
+    ],
+    "src/content/en/home.ts": [
+        "Which fields actually make money?",
+        "What should change next season?",
+        "Two rules behind the system",
+        "Fit the farm",
+        "Keep uncertainty visible",
+        "Deeper data-quality and model-selection methodology lives on the trust page",
     ],
     "src/pages/robots.txt.ts": [
         "Disallow: /",

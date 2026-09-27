@@ -170,16 +170,15 @@ Note:
 
 **An outcome on its own does not prove that a decision caused it.**
 
-Three operating rules:
+Two homepage operating rules:
 
 ### Fit the farm
 **Start with the records a farm already has. Add automation where it genuinely reduces work; do not assume new machinery, perfect connectivity or constant manual entry.**
 
-### Quality before intelligence
-**Check completeness, consistency, duplicates, anomalies, freshness, provenance and representativeness before trusting a model or benchmark.**
-
 ### Keep uncertainty visible
 **Known economics stay explicit. Forecasts and scenarios should show assumptions and ranges when evidence supports them, rather than pretending the future is certain.**
+
+**Quality before intelligence remains a PROFIT doctrine, but its completeness/consistency/duplicates/anomalies/freshness/provenance/representativeness detail belongs on the deeper trust methodology surface rather than competing with the homepage mechanism.**
 
 Boundary:
 
@@ -295,15 +294,9 @@ Boundary note:
 
 **These production systems describe the direction of the PROFIT master brand. They are not a claim that every domain is a current product. Field Profitability is the first concrete product focus.**
 
-Supporting context:
+Current homepage decision:
 
-**€531.9B — EU agricultural output in 2024**
-
-**€267.7B came from crops and €218.8B from animals and animal products. Gross output values, not farm profit or PROFIT market size.**
-
-Source:
-
-**Eurostat · Key figures on the European food chain 2025**
+**Do not render an external market/output statistic in this section.** The production-unit grammar already communicates breadth. Keep Eurostat output statistics as supporting/investor context and restore them here only if farmer evidence shows a comprehension benefit.
 
 ---
 

@@ -337,6 +337,9 @@ State clearly:
 ### Deeper link
 Link to company/trust methodology rather than expanding technical detail on homepage.
 
+### Current surface decision
+Keep only **Fit the farm** and **Keep uncertainty visible** on the homepage. **Quality before intelligence** remains a core PROFIT doctrine but belongs on the deeper trust methodology surface, where the full data-quality sequence can be inspected without increasing first-pass cognitive load.
+
 ---
 
 ## 05 — Concrete product proof
@@ -497,6 +500,9 @@ External statistics are **supporting context**, not the farmer-facing value prop
 
 Preferred homepage maximum:
 **one compact statistical anchor**, if it improves comprehension.
+
+Current implementation decision:
+**omit the external market/output statistic from the homepage.** The production-unit grammar already communicates scope; external statistics remain supporting context and should return only if farmer evidence shows a comprehension benefit.
 
 Candidate:
 

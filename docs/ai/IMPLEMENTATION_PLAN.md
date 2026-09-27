@@ -571,6 +571,25 @@ Rules:
 - `npm run verify` must fail if scorecard arithmetic/IDs/gate coverage drift.
 
 
+### PR-13 — Farmer-first homepage compression
+
+Status: **implemented as a reversible brochure refinement pending farmer validation.**
+
+Scorecard focus:
+- `FC-02` — farmer problem remains concrete before methodological depth;
+- `BD-05` — every major homepage block must earn its communication purpose.
+
+Decision:
+- preserve the canonical homepage narrative order already implemented;
+- remove the duplicate before/after decision-process matrix from the farmer-problem section;
+- keep the fragmented-record story because it explains the real decision job;
+- keep only **Fit the farm** and **Keep uncertainty visible** as homepage operating principles;
+- keep **Quality before intelligence** on deeper trust/company methodology surfaces;
+- omit the EU agricultural-output statistic from the farmer-facing homepage scope;
+- retain all current product boundaries, evidence labels, uncertainty and farmer-control language.
+
+Reconsider if farmer testing shows that a removed element materially improves correct comprehension or calibrated trust.
+
 ### WWW-501 — Accessibility gate
 
 Target:

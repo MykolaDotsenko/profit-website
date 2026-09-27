@@ -75,16 +75,6 @@ export const home = {
     systems: productionSystems,
     units: productionUnitGrammar,
     note: productionScopeNote,
-    contextStat: {
-      value: '€531.9B',
-      label: 'EU agricultural output in 2024',
-      detail:
-        '€267.7B came from crops and €218.8B from animals and animal products. Gross output values, not farm profit or PROFIT market size.',
-    },
-    source: {
-      label: 'Eurostat · Key figures on the European food chain 2025',
-      href: 'https://ec.europa.eu/eurostat/en/web/products-key-figures/w/ks-01-25-049',
-    },
   },
   example: {
     intro: {
@@ -150,35 +140,6 @@ export const home = {
       conclusion:
         'The work is not collecting data for its own sake. It is bringing the right records together so the economic question can be inspected consistently.',
     },
-    changeFrame: {
-      title: 'What changes in the decision process',
-      leftLabel: 'When the economic view stays fragmented',
-      rightLabel: 'PROFIT approach',
-      rows: [
-        {
-          topic: 'Records',
-          before: 'Production, sales and cost records remain in different places and formats.',
-          after: 'Reuse the records around one decision and keep their provenance visible.',
-        },
-        {
-          topic: 'Economics',
-          before: 'Definitions and allocations can be reconstructed differently from one analysis to the next.',
-          after: 'Apply explicit, repeatable economic definitions before adding predictive models.',
-        },
-        {
-          topic: 'Uncertainty',
-          before: 'Assumptions can disappear inside one precise-looking result.',
-          after: 'Keep assumptions, evidence state and confidence inspectable.',
-        },
-        {
-          topic: 'Decision',
-          before: 'The farmer still has to reconcile the evidence before deciding.',
-          after: 'Put comparable economics in view while the farmer keeps decision authority.',
-        },
-      ],
-      note:
-        'This is the PROFIT operating approach, not a claim that every farm currently works the same way or that the current product already automates every step.',
-    },
   },
   how: {
     intro: {
@@ -216,15 +177,11 @@ export const home = {
       },
     ] satisfies Step[],
     note: 'An outcome on its own does not prove that a decision caused it.',
-    operatingPrinciplesTitle: 'Three rules behind the system',
+    operatingPrinciplesTitle: 'Two rules behind the system',
     operatingPrinciples: [
       {
         title: 'Fit the farm',
         text: 'Start from the records a farm already has. Add automation where it genuinely reduces work; do not assume new machinery, perfect connectivity or constant manual entry.',
-      },
-      {
-        title: 'Quality before intelligence',
-        text: 'Check completeness, consistency, duplicates, anomalies, freshness, provenance and representativeness before trusting a model or benchmark.',
       },
       {
         title: 'Keep uncertainty visible',
@@ -232,7 +189,7 @@ export const home = {
       },
     ] satisfies TextItem[],
     operatingPrinciplesNote:
-      'These are PROFIT development principles, not a claim that the current Field Profitability build already includes telemetry, forecasting or optimisation.',
+      'These are the two homepage principles most relevant to the decision flow. Deeper data-quality and model-selection methodology lives on the trust page; none of this implies that the current Field Profitability build already includes telemetry, forecasting or optimisation.',
     operatingPrinciplesLink: { label: 'How PROFIT handles data, models and decisions', href: '/trust/#data-lifecycle' },
   },
   value: {
