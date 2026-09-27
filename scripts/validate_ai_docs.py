@@ -192,8 +192,15 @@ TEXT_INVARIANTS = {
         "role=\"region\"",
     ],
     "src/components/DecisionChange.astro": [
+        "decision-change__labels",
+        "decision-change__rows",
+        "decision-change__note",
+    ],
+    "src/content/en/home.ts": [
+        "What changes in the decision process",
         "When the economic view stays fragmented",
         "PROFIT approach",
+        "not a claim that every farm currently works the same way",
     ],
     "src/pages/robots.txt.ts": [
         "Disallow: /",
