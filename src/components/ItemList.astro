@@ -1,5 +1,5 @@
 ---
-/** Titled items in an editorial ruled grid (not cards). */
+/** Titled operational records in the provisional B2 production-unit grammar. */
 import type { TextItem } from '../content/types';
 
 interface Props {
@@ -39,7 +39,9 @@ const Heading = `h${level}` as 'h3' | 'h4';
   @layer components {
     .items {
       display: grid;
-      gap: 0 var(--space-6);
+      gap: 1px;
+      background: var(--color-line);
+      border: 1px solid var(--color-line);
     }
     .item {
       display: grid;
@@ -47,8 +49,9 @@ const Heading = `h${level}` as 'h3' | 'h4';
       column-gap: var(--space-3);
       row-gap: var(--space-1);
       align-content: start;
-      padding-block: var(--space-4);
-      border-block-start: 1px solid var(--color-line);
+      min-width: 0;
+      padding: var(--space-4);
+      background: var(--color-surface);
     }
     .items--none .item {
       grid-template-columns: 1fr;
@@ -57,7 +60,8 @@ const Heading = `h${level}` as 'h3' | 'h4';
       grid-row: span 2;
       font-size: var(--text-caption);
       font-weight: var(--weight-strong);
-      color: var(--color-text-secondary);
+      color: var(--color-production);
+      font-family: var(--font-label);
       padding-block-start: 0.2em;
     }
     .item__title {
