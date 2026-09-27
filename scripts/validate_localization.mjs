@@ -15,15 +15,16 @@ const contentIndex = read('src/content/index.ts');
 const header = read('src/components/SiteHeader.astro');
 const layout = read('src/layouts/BaseLayout.astro');
 
-if (!config.includes("locales: ['en', 'uk', 'fi']")) fail('Astro must register EN, UK and FI in that order.');
+if (!config.includes("locales: ['en', 'uk', 'fi', 'da']")) fail('Astro must register EN, UK, FI and DA in that order.');
 if (!config.includes("defaultLocale: 'en'")) fail('English must remain the default locale.');
 if (!locales.includes("DEFAULT_LOCALE: Locale = 'en'")) fail('English must remain the unprefixed locale.');
 if (!locales.includes("uk: { code: 'uk'")) fail('Ukrainian locale registry entry is missing.');
 if (!locales.includes("fi: { code: 'fi'")) fail('Finnish locale registry entry is missing.');
-if (!dictionaries.includes('const DICTIONARIES: Record<Locale, UIStrings> = { en, uk, fi }')) fail('All UI dictionaries must be registered.');
-if (!contentIndex.includes('const BUNDLES: Record<Locale, SiteContent> = { en, uk, fi }')) fail('All content bundles must be registered.');
+if (!locales.includes("da: { code: 'da'")) fail('Danish locale registry entry is missing.');
+if (!dictionaries.includes('const DICTIONARIES: Record<Locale, UIStrings> = { en, uk, fi, da }')) fail('All UI dictionaries must be registered.');
+if (!contentIndex.includes('const BUNDLES: Record<Locale, SiteContent> = { en, uk, fi, da }')) fail('All content bundles must be registered.');
 
-for (const locale of ['uk', 'fi']) {
+for (const locale of ['uk', 'fi', 'da']) {
   for (const route of ['index', 'farmers', 'product', 'trust', 'company', 'investors', 'contact']) {
     const file = path.join(root, 'src/pages', locale, `${route}.astro`);
     if (!fs.existsSync(file)) fail(`missing localized route: src/pages/${locale}/${route}.astro`);
@@ -49,6 +50,15 @@ for (const file of [
   'src/content/fi/translations-pages-c.ts',
   'src/content/fi/translations-pages-d.ts',
   'src/content/fi/translations-simple.ts',
+  'src/i18n/da.ts',
+  'src/content/da/index.ts',
+  'src/content/da/translations-home.ts',
+  'src/content/da/translations-shared.ts',
+  'src/content/da/translations-pages-a.ts',
+  'src/content/da/translations-pages-b.ts',
+  'src/content/da/translations-pages-c.ts',
+  'src/content/da/translations-pages-d.ts',
+  'src/content/da/translations-simple.ts',
 ]) {
   if (!fs.existsSync(path.join(root, file))) fail(`missing localization artifact: ${file}`);
 }
@@ -56,6 +66,7 @@ for (const file of [
 if (!header.includes("localizedEquivalentPath('en'")) fail('language switcher must preserve the equivalent English route.');
 if (!header.includes("localizedEquivalentPath('uk'")) fail('language switcher must preserve the equivalent Ukrainian route.');
 if (!header.includes("localizedEquivalentPath('fi'")) fail('language switcher must preserve the equivalent Finnish route.');
+if (!header.includes("localizedEquivalentPath('da'")) fail('language switcher must preserve the equivalent Danish route.');
 if (!layout.includes('hreflang="x-default"')) fail('x-default hreflang must point to the English equivalent.');
 if (!layout.includes('languageAlternates')) fail('language alternate metadata is missing.');
 
@@ -80,11 +91,17 @@ const translationKeys = (locale) => {
   return keys;
 };
 
-const ukrainianKeys = translationKeys('uk');
-const finnishKeys = translationKeys('fi');
-const missingFinnish = [...ukrainianKeys].filter((key) => !finnishKeys.has(key));
-if (missingFinnish.length) {
-  fail(`Finnish public-copy coverage is missing ${missingFinnish.length} translated keys: ${missingFinnish.slice(0, 20).join(' | ')}`);
+const referenceKeys = translationKeys('uk');
+for (const locale of ['fi', 'da']) {
+  const keys = translationKeys(locale);
+  const missing = [...referenceKeys].filter((key) => !keys.has(key));
+  const extra = [...keys].filter((key) => !referenceKeys.has(key));
+  if (missing.length) {
+    fail(`${locale.toUpperCase()} public-copy coverage is missing ${missing.length} translated keys: ${missing.slice(0, 20).join(' | ')}`);
+  }
+  if (extra.length) {
+    fail(`${locale.toUpperCase()} public-copy coverage has ${extra.length} unexpected keys: ${extra.slice(0, 20).join(' | ')}`);
+  }
 }
 
 const sourceFiles = [
@@ -97,5 +114,5 @@ for (const forbidden of ['navigator.language', 'navigator.languages', 'location.
 }
 
 if (!process.exitCode) {
-  console.log('Localization contract OK: English remains default; Ukrainian and Finnish are opt-in under /uk and /fi with route-preserving switching.');
+  console.log('Localization contract OK: English remains default; Ukrainian, Finnish and Danish are opt-in under /uk, /fi and /da with route-preserving switching.');
 }
