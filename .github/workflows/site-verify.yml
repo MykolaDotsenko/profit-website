@@ -19,6 +19,8 @@ on:
       - "package.json"
       - "package-lock.json"
       - "astro.config.mjs"
+      - "vercel.json"
+      - ".github/workflows/deploy-website.yml"
       - "tsconfig.json"
       - ".github/workflows/site-verify.yml"
   push:
@@ -41,6 +43,8 @@ on:
       - "package.json"
       - "package-lock.json"
       - "astro.config.mjs"
+      - "vercel.json"
+      - ".github/workflows/deploy-website.yml"
       - "tsconfig.json"
       - ".github/workflows/site-verify.yml"
 
