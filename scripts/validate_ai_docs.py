@@ -36,6 +36,8 @@ REQUIRED_FILES = [
     "src/config/release.ts",
     "src/domain/economics.ts",
     "src/components/Metric.astro",
+    "src/components/MethodPipeline.astro",
+    "src/components/ModelComparisonTable.astro",
     "playwright.config.ts",
     "tests/browser/site.spec.ts",
     "prototypes/art-directions/README.md",
@@ -91,6 +93,10 @@ TEXT_INVARIANTS = {
         'international_validation:',
         'Domain × Market × Evidence',
         'AD-7 brand-system transfer',
+        'public_methodology_surface:',
+        'data_quality:',
+        'decision_support:',
+        'baseline-first',
     ],
     "docs/ai/IMPLEMENTATION_PLAN.md": [
         "Pre-production validation",
@@ -165,11 +171,23 @@ TEXT_INVARIANTS = {
     "src/components/Metric.astro": [
         "assertMetricPublishable",
     ],
+    "src/components/MethodPipeline.astro": [
+        "method-pipeline",
+        "aria-label",
+    ],
+    "src/components/ModelComparisonTable.astro": [
+        "model-table-wrap",
+        "tabindex=\"0\"",
+        "role=\"region\"",
+    ],
     "tests/browser/site.spec.ts": [
         "wcag22aa",
         "390",
         "1440",
         "reduced-motion",
+        "Quality before intelligence",
+        "No model wins by reputation",
+        "Support the decision. Do not replace the farmer.",
     ],
 }
 
