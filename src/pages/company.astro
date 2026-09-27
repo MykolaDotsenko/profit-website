@@ -9,16 +9,19 @@ import OnPageNav from '../components/OnPageNav.astro';
 import PageIntro from '../components/PageIntro.astro';
 import ProductionScope from '../components/ProductionScope.astro';
 import Section from '../components/Section.astro';
+import TeamCapabilities from '../components/TeamCapabilities.astro';
 import { content } from '../content';
 
-const p = content(Astro.currentLocale).company;
+const c = content(Astro.currentLocale);
+const p = c.company;
+const s = c.shared;
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
     <OnPageNav
       label={p.onPageLabel}
-      items={[p.building.intro, p.scope.intro, p.dataStrategy.intro, p.forecasting.intro, p.decisionSupport.intro, p.stillProven.intro]}
+      items={[p.building.intro, p.scope.intro, p.dataStrategy.intro, p.forecasting.intro, p.decisionSupport.intro, p.stillProven.intro, p.team.intro]}
     />
   </PageIntro>
 
@@ -87,7 +90,10 @@ const p = content(Astro.currentLocale).company;
   </Section>
 
   <Section intro={p.team.intro} layout="split">
-    <ContentGap owner={p.team.gap.owner} text={p.team.gap.text} />
+    <TeamCapabilities intro={s.teamCapability.intro} flow={s.teamCapability.flow} members={s.teamCapability.members} />
+    <div class="team-review">
+      <ContentGap kind="review" owner={p.team.gap.owner} text={p.team.gap.text} />
+    </div>
   </Section>
 
   <Section intro={p.details.intro} layout="split">
@@ -123,6 +129,9 @@ const p = content(Astro.currentLocale).company;
     padding-inline-start: var(--space-4);
     border-inline-start: 3px solid var(--color-line-strong);
     font-weight: var(--weight-strong);
+  }
+  .team-review {
+    margin-block-start: var(--space-5);
   }
   .prose {
     max-width: var(--measure-wide);
