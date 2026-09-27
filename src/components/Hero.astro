@@ -69,7 +69,7 @@ const priceValue = {
         <p class="hero__support">{variant.support}</p>
       </div>
 
-      <aside class="hero__state" aria-label="Illustrative economic state">
+      <aside class="hero__state" aria-label={t.production.economicState}>
         <EvidenceLabel meta={example.meta} />
         <div class="hero__state-main">
           <p class="operational-label">{t.metrics.operating_profit}</p>
@@ -100,7 +100,7 @@ const priceValue = {
         <a class="button button--secondary" href={href(secondary)}>{secondary.label}</a>
       </div>
 
-      <aside class="hero__rail" aria-label="Current production context">
+      <aside class="hero__rail" aria-label={t.production.productionContext}>
         <div class="hero__rail-top">
           <p class="operational-label">{t.production.currentUnit}</p>
           <p class="hero__unit">{fieldLabel(focus, t, locale.intl)}</p>
