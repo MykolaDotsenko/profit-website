@@ -57,6 +57,7 @@ const headingId = intro.id ? `${intro.id}-title` : undefined;
       --color-line: var(--color-inverse-line);
       --color-line-strong: var(--color-inverse-text);
       --color-focus: var(--color-inverse-focus);
+      --color-production-rail: var(--ink-800);
     }
     .section__inner {
       display: grid;
@@ -100,6 +101,9 @@ const headingId = intro.id ? `${intro.id}-title` : undefined;
       }
       .section--split .section__body {
         padding: var(--space-5);
+      }
+      .section--inverse.section--split .section__inner {
+        background: var(--color-inverse-canvas);
       }
     }
   }
