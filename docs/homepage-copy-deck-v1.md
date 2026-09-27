@@ -294,15 +294,9 @@ Boundary note:
 
 **These production systems describe the direction of the PROFIT master brand. They are not a claim that every domain is a current product. Field Profitability is the first concrete product focus.**
 
-Supporting context:
+Current homepage decision:
 
-**€531.9B — EU agricultural output in 2024**
-
-**€267.7B came from crops and €218.8B from animals and animal products. Gross output values, not farm profit or PROFIT market size.**
-
-Source:
-
-**Eurostat · Key figures on the European food chain 2025**
+**Do not render an external market/output statistic in this section.** The production-unit grammar already communicates breadth. Keep Eurostat output statistics as supporting/investor context and restore them here only if farmer evidence shows a comprehension benefit.
 
 ---
 
