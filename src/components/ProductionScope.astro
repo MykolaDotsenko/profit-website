@@ -1,4 +1,6 @@
 ---
+import { ui } from '../i18n';
+
 interface UnitItem {
   title: string;
   unit: string;
@@ -11,9 +13,10 @@ interface Props {
 }
 
 const { items } = Astro.props;
+const t = ui(Astro.currentLocale);
 ---
 
-<div class="production-scope" role="list" aria-label="PROFIT production-unit grammar">
+<div class="production-scope" role="list" aria-label={t.production.scopeLabel}>
   {items.map((item) => (
     <article class:list={['production-unit', { 'is-current': item.state === 'Current first focus' }]} role="listitem">
       <div class="production-unit__identity">
@@ -21,7 +24,7 @@ const { items } = Astro.props;
         <h3>{item.title}</h3>
       </div>
       <div class="production-unit__unit">
-        <span>Production unit</span>
+        <span>{t.production.unitLabel}</span>
         <strong>{item.unit}</strong>
       </div>
       <p class="production-unit__text">{item.text}</p>
