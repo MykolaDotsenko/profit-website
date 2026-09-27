@@ -9,16 +9,18 @@ import ProductionScope from '../components/ProductionScope.astro';
 import QuestionList from '../components/QuestionList.astro';
 import Section from '../components/Section.astro';
 import { content } from '../content';
+import { localeInfo, ui } from '../i18n';
 
 const c = content(Astro.currentLocale);
 const p = c.farmers;
+const t = ui(localeInfo(Astro.currentLocale).code);
 ---
 
 <BaseLayout title={p.meta.title} description={p.meta.description}>
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead}>
     <OnPageNav
       label={p.onPageLabel}
-      items={[p.scope.intro, p.dataCollection.intro, p.dataPath.intro, p.provide.intro, p.getBack.intro, p.notDo.intro, p.questions.intro, { id: 'pilot', title: 'Pilot' }]}
+      items={[p.scope.intro, p.dataCollection.intro, p.dataPath.intro, p.provide.intro, p.getBack.intro, p.notDo.intro, p.questions.intro, { id: 'pilot', title: t.common.pilot }]}
     />
   </PageIntro>
 
@@ -33,7 +35,7 @@ const p = c.farmers;
   </Section>
 
   <Section intro={p.dataPath.intro} tone="sunken">
-    <MethodPipeline steps={p.dataPath.steps} ariaLabel="Data quality path" />
+    <MethodPipeline steps={p.dataPath.steps} ariaLabel={t.common.dataQualityPath} />
   </Section>
 
   <Section intro={p.provide.intro} layout="split">
@@ -54,7 +56,7 @@ const p = c.farmers;
   </Section>
 
   <CtaBand
-    intro={{ ...p.pilot.intro, id: 'pilot', title: 'How the pilot would work' }}
+    intro={{ ...p.pilot.intro, id: 'pilot', title: t.common.howPilotWouldWork }}
     stepsTitle={p.pilot.stepsTitle}
     steps={p.pilot.steps}
     primary={p.pilot.primary}

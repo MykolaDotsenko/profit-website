@@ -162,7 +162,9 @@ Routes: `/`, `/farmers`, `/product`, `/trust`, `/company`, `/investors`, `/conta
 
 ### Localization
 
-English is the development content language, not a market decision. To add a locale: add it to `astro.config.mjs` (`i18n.locales`) and `src/i18n/locales.ts`, add `src/i18n/<code>.ts` and `src/content/<code>/`, then add routes under `src/pages/<code>/`. Numbers, currencies and units are formatted per locale from locale-neutral values; the currency travels with each value, and per-hectare units belong to the crop domain only. Translate all three hero candidates with the same care and back-translate economic terms (protocol D5/D6).
+English is the canonical/default website language and stays on unprefixed routes (`/`, `/product/`, `/trust/`, …). Ukrainian is an opt-in localization under `/uk/` with a route-preserving EN / UA switcher. The site does not geo-redirect or browser-language-redirect users.
+
+Numbers, currencies and units are formatted from locale-neutral values. Product formulas and evidence semantics are shared across locales; localization may translate labels and explanations but may not change metric identity, evidence state, confidence meaning or release gates. Equivalent EN/UK routes emit language alternates when `SITE_URL` is configured.
 
 ### Content gaps before launch
 

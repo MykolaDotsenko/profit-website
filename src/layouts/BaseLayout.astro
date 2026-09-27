@@ -3,7 +3,7 @@ import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { site } from '../config/site';
-import { localeInfo, ui } from '../i18n';
+import { LOCALES, localizedEquivalentPath, localeInfo, ui } from '../i18n';
 
 interface Props {
   /** Page title without the brand suffix. Omit on the homepage. */
@@ -17,6 +17,15 @@ const t = ui(locale.code);
 const fullTitle = title ? `${title} · ${t.meta.titleSuffix}` : t.meta.titleSuffix;
 const metaDescription = description ?? t.meta.defaultDescription;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+const languageAlternates = Astro.site
+  ? Object.values(LOCALES).map((target) => ({
+      lang: target.lang,
+      href: new URL(localizedEquivalentPath(target.code, locale.code, Astro.url.pathname), Astro.site).href,
+    }))
+  : [];
+const defaultAlternate = Astro.site
+  ? new URL(localizedEquivalentPath('en', locale.code, Astro.url.pathname), Astro.site).href
+  : null;
 const websiteStructuredData = Astro.site
   ? {
       '@context': 'https://schema.org',
@@ -38,11 +47,18 @@ const websiteStructuredData = Astro.site
     <meta name="description" content={metaDescription} />
     {!site.indexable && <meta name="robots" content="noindex, nofollow" />}
     {canonical && <link rel="canonical" href={canonical} />}
+    {languageAlternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />
+    ))}
+    {defaultAlternate && <link rel="alternate" hreflang="x-default" href={defaultAlternate} />}
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={t.brand} />
     <meta property="og:locale" content={locale.intl.replace('-', '_')} />
+    {Object.values(LOCALES)
+      .filter((candidate) => candidate.code !== locale.code)
+      .map((candidate) => <meta property="og:locale:alternate" content={candidate.intl.replace('-', '_')} />)}
     {canonical && <meta property="og:url" content={canonical} />}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={fullTitle} />

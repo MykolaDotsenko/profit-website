@@ -4,6 +4,24 @@ import type { UIStrings } from './types';
 export const en: UIStrings = {
   brand: 'PROFIT',
   skipLink: 'Skip to content',
+  language: {
+    label: 'Language',
+    english: 'English',
+    ukrainian: 'Ukrainian',
+  },
+  common: {
+    pilot: 'Pilot',
+    howPilotWouldWork: 'How the pilot would work',
+    dataQualityPath: 'Data quality path',
+    dataLifecycle: 'PROFIT data and evidence lifecycle',
+    decisionSupportMethod: 'PROFIT decision-support method',
+    dataQualityGates: 'PROFIT data quality gates',
+    decisionSupportArchitecture: 'PROFIT decision-support architecture',
+    primaryLegalReferences: 'Primary legal references',
+    or: 'or',
+    currentScope: 'Current scope',
+    qualifyConversation: 'Qualify the conversation before sharing anything.',
+  },
   nav: {
     label: 'Main',
     menu: 'Menu',
@@ -22,6 +40,7 @@ export const en: UIStrings = {
     tagline: 'PROFIT connects what happens on the farm with what it means economically.',
     evidenceNote:
       'PROFIT economic and value examples are labelled by evidence state and confidence. Sourced external statistics are identified separately and are not customer results.',
+    companyGap: 'Company details for the footer: legal name, business ID and registered address.',
     groups: [
       {
         title: 'PROFIT',

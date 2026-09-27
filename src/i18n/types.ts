@@ -23,6 +23,24 @@ export interface NavItem {
 export interface UIStrings {
   brand: string;
   skipLink: string;
+  language: {
+    label: string;
+    english: string;
+    ukrainian: string;
+  };
+  common: {
+    pilot: string;
+    howPilotWouldWork: string;
+    dataQualityPath: string;
+    dataLifecycle: string;
+    decisionSupportMethod: string;
+    dataQualityGates: string;
+    decisionSupportArchitecture: string;
+    primaryLegalReferences: string;
+    or: string;
+    currentScope: string;
+    qualifyConversation: string;
+  };
   nav: {
     label: string;
     menu: string;
@@ -34,6 +52,7 @@ export interface UIStrings {
     label: string;
     tagline: string;
     evidenceNote: string;
+    companyGap: string;
     groups: { title: string; items: NavItem[] }[];
   };
   status: {
