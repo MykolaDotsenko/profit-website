@@ -449,6 +449,36 @@ test.describe('production shell integrity', () => {
   });
 });
 
+test.describe('positioning and crawl hygiene', () => {
+  test('positioning comparison remains evidence-safe and farmer-owned', async ({ page }) => {
+    await page.goto('/');
+
+    const main = page.locator('main');
+    await expect(main).toContainText('What changes in the decision process');
+    await expect(main).toContainText('When the economic view stays fragmented');
+    await expect(main).toContainText('PROFIT approach');
+    await expect(main).toContainText('the farmer keeps decision authority');
+    await expect(main).toContainText('not a claim that every farm currently works the same way');
+  });
+
+  test('pre-launch robots file blocks crawling', async ({ request }) => {
+    const response = await request.get('/robots.txt');
+    expect(response.ok()).toBeTruthy();
+    const text = await response.text();
+    expect(text).toContain('User-agent: *');
+    expect(text).toContain('Disallow: /');
+  });
+
+  test('sitemap route is valid XML even before production origin is configured', async ({ request }) => {
+    const response = await request.get('/sitemap-index.xml');
+    expect(response.ok()).toBeTruthy();
+    expect(response.headers()['content-type']).toContain('application/xml');
+    const text = await response.text();
+    expect(text).toContain('<urlset');
+    expect(text).toContain('http://www.sitemaps.org/schemas/sitemap/0.9');
+  });
+});
+
 test.describe('critical interactions', () => {
   test('skip link is keyboard reachable and moves focus to main content', async ({ page }) => {
     await page.goto('/');
