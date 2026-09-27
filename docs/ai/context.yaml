@@ -270,10 +270,15 @@ hero_validation:
     - "CTA/next step is unclear"
 
 art_direction_validation:
-  status: "testing phase; broad research stopped for current cycle"
+  status: "B2 Production Unit Grammar selected as provisional production direction; farmer validation remains open"
   experiment_protocol: "docs/experiments/art-direction-farmer-test-v1.md"
   research_reopen_rule: "Re-open external research only for a specific observed test failure, material open hypothesis, or time-sensitive constraint."
-  research_prior: "A — Evidence-Led Editorial; theoretical prior only, not a test winner"
+  selected_production_direction: "B2 — Production Unit Grammar"
+  decision_record: "docs/decisions/0003-provisional-b2-production-unit-art-direction.md"
+  selection_evidence: "internal A/B/C + A2/B2/C2 red-team, cross-domain transfer, anti-AI-sameness and product-truth fit; not farmer evidence"
+  selected_grammar: "production unit → context / records → economics → evidence / confidence → farmer decision"
+  selected_guardrail: "field geometry is crop-domain expression only; production unit is the master-brand invariant"
+  research_prior: "A — Evidence-Led Editorial was the earlier theoretical prior; it is retained as a challenger, not selected production direction"
   objective: "maximize farmer comprehension + calibrated trust"
   directions:
     A: "Evidence-Led Editorial — real farm truth + editorial hierarchy + economic typography + inspectable evidence"
@@ -294,7 +299,8 @@ art_direction_validation:
     A: "consulting/report/editorial"
     B: "agronomy/satellite/mapping"
     C: "accounting/ERP/finance"
-  decision_rule: "Do not choose on aesthetics, novelty, investor preference or animation. Farmer comprehension and calibrated trust are primary."
+  decision_rule: "B2 is the current implementation decision, not a validated winner. Do not change it on aesthetics, novelty, investor preference or animation. Farmer comprehension and calibrated trust remain the validation criteria."
+  reconsider_if: ["repeated GIS/telemetry misclassification", "production-unit grammar fails beyond crops", "logo-off recognition remains generic", "mobile comprehension worsens", "challenger materially outperforms B2 on comprehension + calibrated trust"]
 
 homepage:
   desired_jobs:
