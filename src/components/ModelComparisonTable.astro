@@ -46,7 +46,11 @@ const { rows, labels } = Astro.props;
 
 <style>
   .model-table-wrap {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     overflow-x: auto;
+    overscroll-behavior-inline: contain;
     border: 1px solid var(--color-line-strong);
     background: var(--color-surface);
   }
