@@ -425,16 +425,57 @@ Depends on: W1 foundation and relevant validation evidence.
 Build only with enough real content.
 
 ### WWW-301 — /farmers
+
+Status: **implemented foundation + methodology pass; not farmer-validated.**
+
 Focus: farmer workflow, data requirements, objections, expected pilot journey.
 
+Current methodology additions:
+- existing-records-first collection;
+- connected machinery only where reliable/useful;
+- old/non-connected machinery path as development direction;
+- offline-first direction;
+- permission/provenance;
+- explicit data-quality gates before economic/model use.
+
 ### WWW-302 — /product
+
+Status: **implemented foundation + product-boundary pass.**
+
 Focus: concrete product behavior and current modules, not roadmap theater.
 
+Current boundary now explicitly separates:
+- deterministic Field Profitability arithmetic;
+- data-quality requirements;
+- wider forecasting/optimisation/activity-recognition/scenario-simulation research direction, which is not a current capability.
+
 ### WWW-303 — /trust
+
+Status: **implemented methodology foundation; legal/human evidence gates remain open.**
+
 Focus: methodology, evidence, confidence, data ownership/control, privacy/security principles.
 
+Current methodology surface:
+- evidence ladder + confidence;
+- deterministic economics + synthetic sensitivity;
+- data lifecycle and quality gates;
+- baseline-first model-comparison table;
+- decision-support sequence with farmer authority;
+- research sources and explicit shipped-vs-direction boundaries.
+
 ### WWW-304 — /company
+
+Status: **implemented research-backed company/methodology foundation; team/company identity gaps remain open.**
+
 Focus: factual team/company story and what is still being proven.
+
+Current research-backed sections:
+- whole-farm production scope;
+- realistic data collection strategy;
+- data-quality sequence;
+- forecasting/model-selection doctrine;
+- agricultural DSS design rationale;
+- explicit limitations and evidence boundaries.
 
 ### WWW-305 — /investors
 Focus:
