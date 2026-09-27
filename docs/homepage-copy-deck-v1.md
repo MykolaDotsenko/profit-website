@@ -7,7 +7,7 @@ Source: `docs/homepage-content-brief-v1.md`
 
 This deck is the copy source for the coded homepage.
 
-It does **not** promote an untested hero candidate to a winner. H1/H2/H3 remain controlled WWW-000 hypotheses.
+It does **not** promote an untested hero candidate to a winner. H1/H2/H3 remain the existing controlled WWW-000 v2 hypotheses. H4 is a reversible owner-directed development hypothesis added after the surrogate and is not yet admitted to that controlled instrument.
 
 ---
 
@@ -19,7 +19,18 @@ It does **not** promote an untested hero candidate to a winner. H1/H2/H3 remain 
 
 # 01 — Hero
 
-Use the canonical WWW-000 H1/H2/H3 candidates unchanged until farmer testing.
+H1/H2/H3 remain unchanged and selectable. The coded pre-launch default is currently **H4 — Economic decision clarity**, still an OPEN hypothesis:
+
+Eyebrow:
+**AGRICULTURAL DECISION INTELLIGENCE**
+
+Headline:
+**See the economics before you decide.**
+
+Support:
+**PROFIT is being built to connect what happens on the farm with what it means economically. It starts with Field Profitability: operating profit and break-even, field by field — while the decision stays with the farmer.**
+
+H4 is not a winner and must not close the hero-message gate.
 
 Primary CTA:
 
@@ -54,10 +65,10 @@ Documentary image requirement:
 **Farmers and farm businesses making production and cost decisions across crops, horticulture and livestock.**
 
 ### The problem
-**Production, sales and cost records are fragmented. The economics behind a decision are often hard to see before acting.**
+**Production, sales and cost records are fragmented. The economic meaning behind the next decision can be hard to see.**
 
-### What PROFIT does
-**Turns recorded farm reality into explicit economic meaning — without taking the decision away from the farmer.**
+### The goal
+**Less guesswork around the economics of a decision — with the farmer still in control.**
 
 ### First concrete focus
 **Field Profitability: operating economics, field by field. In development.**
