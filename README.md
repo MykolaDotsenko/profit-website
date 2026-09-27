@@ -105,7 +105,7 @@ Requires Node.js 22.12 or later.
 ```sh
 npm ci
 npm run dev       # http://localhost:4321
-npm run verify    # design + claim hygiene + scorecard/evidence contracts + astro check + domain/release tests + production build
+npm run verify    # design + claim hygiene + scorecard/evidence/deployment contracts + astro check + domain/release tests + production build
 npm run preview   # serve the production build
 
 # Deployment is manual and gated; see docs/operations/vercel-hosting-runbook-v1.md
