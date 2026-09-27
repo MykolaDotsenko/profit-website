@@ -42,8 +42,7 @@ const { label, items } = Astro.props;
         z-index: 20;
         display: block;
         border-block: 1px solid var(--color-line-strong);
-        background: color-mix(in srgb, var(--color-canvas) 96%, transparent);
-        backdrop-filter: blur(10px);
+        background: var(--color-canvas);
       }
 
       .journey-nav__inner {
@@ -100,11 +99,5 @@ const { label, items } = Astro.props;
       }
     }
 
-    @media (prefers-reduced-transparency: reduce) {
-      .journey-nav {
-        backdrop-filter: none;
-        background: var(--color-canvas);
-      }
-    }
   }
 </style>
