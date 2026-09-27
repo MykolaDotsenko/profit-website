@@ -5,6 +5,7 @@ on:
     paths:
       - "**/*.md"
       - "**/*.yaml"
+      - "docs/release/**"
       - "scripts/validate_ai_docs.py"
       - "prototypes/art-directions/**"
       - "src/config/release.ts"
@@ -21,6 +22,7 @@ on:
     paths:
       - "**/*.md"
       - "**/*.yaml"
+      - "docs/release/**"
       - "scripts/validate_ai_docs.py"
       - "prototypes/art-directions/**"
       - ".github/workflows/docs-contract.yml"
