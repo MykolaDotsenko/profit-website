@@ -69,8 +69,9 @@ export const RELEASE_GATES: readonly ReleaseGate[] = [
     id: 'pilot-process',
     area: 'content',
     owner: 'owner',
-    state: 'blocked',
-    reason: 'Pilot reply owner, channel and timing are not confirmed.',
+    state: 'ready',
+    reason: 'Pilot intake has a confirmed primary owner, email response channel, two-business-day response target, fit-first workflow and no-farm-records-before-terms boundary.',
+    evidence: 'docs/operations/pilot-intake-runbook-v1.md',
   },
   {
     id: 'company-details',
