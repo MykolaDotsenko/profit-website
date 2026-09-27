@@ -11,25 +11,55 @@ const { eyebrow, title, lead, status } = Astro.props;
 ---
 
 <header class="page-intro">
-  <div class="container page-intro__inner">
-    <p class="eyebrow">{eyebrow}</p>
-    <h1 class="page-intro__title">{title}</h1>
-    <p class="lead page-intro__lead">{lead}</p>
-    {status && <p class="status-chip">{status}</p>}
-    <slot />
+  <div class="container">
+    <div class="page-intro__frame">
+      <div class="page-intro__rail">
+        <p class="operational-label">PROFIT / {eyebrow}</p>
+        {status && <p class="status-chip">{status}</p>}
+      </div>
+      <div class="page-intro__main">
+        <p class="eyebrow">{eyebrow}</p>
+        <h1 class="page-intro__title">{title}</h1>
+        <p class="lead page-intro__lead">{lead}</p>
+        <slot />
+      </div>
+    </div>
   </div>
 </header>
 
 <style>
   @layer layout {
     .page-intro {
-      padding-block: clamp(3rem, 2rem + 4vw, 6rem) clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
-      border-block-end: 1px solid var(--color-line);
+      padding-block: var(--space-5) clamp(3rem, 2rem + 4vw, 6rem);
     }
-    .page-intro__inner {
+    .page-intro__frame {
+      display: grid;
+      border: 1px solid var(--color-line-strong);
+      background: var(--color-surface);
+    }
+    .page-intro__rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-5);
+      border-block-end: 1px solid var(--color-line-strong);
+      background: var(--color-production-rail);
+    }
+    .page-intro__main {
       display: grid;
       gap: var(--space-4);
       justify-items: start;
+      padding: clamp(1.5rem, 1rem + 3vw, 3.75rem);
+    }
+    .operational-label {
+      color: var(--color-text-secondary);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      font-weight: var(--weight-strong);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
     }
     .page-intro__title {
       font-size: var(--text-page-title);
@@ -37,6 +67,17 @@ const { eyebrow, title, lead, status } = Astro.props;
     }
     .page-intro__lead {
       max-width: var(--measure-wide);
+    }
+    @media (min-width: 62rem) {
+      .page-intro__frame {
+        grid-template-columns: minmax(12rem, 3fr) minmax(0, 9fr);
+      }
+      .page-intro__rail {
+        align-content: space-between;
+        align-items: start;
+        border-block-end: 0;
+        border-inline-end: 1px solid var(--color-line-strong);
+      }
     }
   }
 </style>
