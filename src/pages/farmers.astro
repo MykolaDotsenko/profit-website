@@ -4,6 +4,7 @@ import CtaBand from '../components/CtaBand.astro';
 import ItemList from '../components/ItemList.astro';
 import MethodPipeline from '../components/MethodPipeline.astro';
 import PageIntro from '../components/PageIntro.astro';
+import ProductionScope from '../components/ProductionScope.astro';
 import QuestionList from '../components/QuestionList.astro';
 import Section from '../components/Section.astro';
 import { content } from '../content';
@@ -16,7 +17,7 @@ const p = c.farmers;
   <PageIntro eyebrow={p.intro.eyebrow} title={p.intro.title} lead={p.intro.lead} />
 
   <Section intro={p.scope.intro} tone="sunken">
-    <ItemList items={p.scope.systems} columns={3} />
+    <ProductionScope items={p.scope.units} />
     <p class="scope-note">{p.scope.note}</p>
   </Section>
 
