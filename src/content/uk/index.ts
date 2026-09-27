@@ -8,6 +8,9 @@ import { PAGES_D_TRANSLATIONS } from './translations-pages-d';
 import { SIMPLE_TRANSLATIONS } from './translations-simple';
 
 const EXTRA_TRANSLATIONS: Record<string, string> = {
+  'The first PROFIT module. The operating economics of each field, season by season.':
+    'Перший модуль PROFIT. Операційна економіка кожного поля, сезон за сезоном.',
+  'Revenue': 'Виручка',
   'The operating economics of each field, season by season. It is where PROFIT starts.':
     'Операційна економіка кожного поля, сезон за сезоном. Саме з цього починає PROFIT.',
   'Field Profitability · In development — not yet available':
